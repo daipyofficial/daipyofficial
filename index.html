@@ -72,7 +72,6 @@
       transition: color 0.2s ease;
     }
 
-    /* Slider Estilos */
     .hero-editorial {
       max-width: 1300px;
       margin: 2rem auto;
@@ -335,7 +334,7 @@
   <header>
     <div class="nav-container">
       <a href="#" class="brand-logo">
-        <img src="logo.png" alt="DAI Logo">
+        <img src="/logo.png" alt="DAI Logo" onerror="this.src='logo.png'">
       </a>
       <nav class="nav-links">
         <a href="#coleccion">Colección</a>
@@ -344,11 +343,11 @@
     </div>
   </header>
 
-  <!-- Banner Editorial / Slider -->
+  <!-- Banner Slider -->
   <section class="hero-editorial">
     <div class="banner-wrapper" id="banner-slider">
       <div class="slide active">
-        <img src="banner.png" alt="DAI Banner">
+        <img src="/banner.png" alt="DAI Banner Principal" onerror="this.src='banner.png'">
       </div>
     </div>
 
@@ -361,7 +360,7 @@
   <!-- Catálogo -->
   <section id="coleccion" class="catalog-section">
     <div class="products-grid" id="grid-productos">
-      <!-- Productos -->
+      <!-- Los productos se cargarán dinámicamente -->
     </div>
     <div class="pagination" id="paginacion">
       <!-- Paginación -->
@@ -405,73 +404,52 @@
     const productosPorPagina = 9;
     let paginaActual = 1;
 
-    // Repositorio correcto para dai-py
     const repoUsuario = "designfastrax-ftx";
     const repoNombre = "dai-py";
 
-    // Función auxiliar para normalizar rutas de imágenes de Decap CMS
-    function normalizarRutaImagen(ruta) {
-      if (!ruta) return 'banner.png';
+    function limpiarRutaImagen(ruta) {
+      if (!ruta) return '/banner.png';
       if (ruta.startsWith('http://') || ruta.startsWith('https://')) return ruta;
       let limpia = ruta.replace(/^public\//, '').replace(/^\/+/, '');
       return '/' + limpia;
     }
 
-    // Cargar Banners (Slider)
+    // Cargar Banners
     async function cargarBanners() {
       try {
-        const respuesta = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/banners`);
+        const respuesta = await fetch(`https://raw.githubusercontent.com/${repoUsuario}/${repoNombre}/main/contenido/banners/banner-principal.json?t=${Date.now()}`);
         if (respuesta.ok) {
-          const archivos = await respuesta.json();
-          const promesas = archivos
-            .filter(a => a.name.endsWith('.json'))
-            .map(a => fetch(a.download_url).then(r => r.json()));
-          
-          const banners = await Promise.all(promesas);
-          if (banners.length > 0) {
+          const bannerData = await respuesta.json();
+          if (bannerData && bannerData.img) {
             const slider = document.getElementById('banner-slider');
-            slider.innerHTML = '';
-            banners.forEach((b, index) => {
-              const slide = document.createElement('div');
-              slide.className = `slide ${index === 0 ? 'active' : ''}`;
-              const imgUrl = normalizarRutaImagen(b.img);
-              slide.innerHTML = `<img src="${imgUrl}" alt="${b.titulo || 'Banner DAI'}">`;
-              slider.appendChild(slide);
-            });
-            iniciarRotacionSlider();
+            const imgUrl = limpiarRutaImagen(bannerData.img);
+            slider.innerHTML = `
+              <div class="slide active">
+                <img src="${imgUrl}" alt="${bannerData.titulo || 'Banner DAI'}" onerror="this.src='/banner.png'">
+              </div>`;
           }
         }
       } catch (e) {
-        console.log("Usando banner estático por defecto.");
+        console.log("Cargando banner de respaldo por defecto.");
       }
     }
 
-    function iniciarRotacionSlider() {
-      const slides = document.querySelectorAll('.slide');
-      if (slides.length <= 1) return;
-      let actual = 0;
-      setInterval(() => {
-        slides[actual].classList.remove('active');
-        actual = (actual + 1) % slides.length;
-        slides[actual].classList.add('active');
-      }, 4000);
-    }
-
-    // Cargar Productos
+    // Cargar Productos vía API con fallback
     async function cargarProductosDesdeCMS() {
       try {
-        const respuestaListado = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/productos`);
+        const respuestaListado = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/productos?t=${Date.now()}`);
         if (respuestaListado.ok) {
           const archivos = await respuestaListado.json();
           const promesasJson = archivos
             .filter(archivo => archivo.name.endsWith('.json'))
-            .map(archivo => fetch(archivo.download_url).then(r => r.json()));
+            .map(archivo => fetch(`https://raw.githubusercontent.com/${repoUsuario}/${repoNombre}/main/contenido/productos/${archivo.name}`).then(r => r.json()));
 
           productos = await Promise.all(promesasJson);
         }
       } catch (error) {
-        console.warn("Cargando lista vacía o por defecto:", error);
+        console.warn("Error consultando la API de GitHub:", error);
       }
+      
       renderProductos(paginaActual);
     }
 
@@ -484,16 +462,16 @@
       const productosPagina = productos.slice(inicio, fin);
 
       if (productosPagina.length === 0) {
-        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No hay productos disponibles por el momento.</p>';
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 2rem 0;">No se encontraron productos publicados. Si acabas de subir uno en el CMS, presiona "Publish" y guarda los cambios.</p>';
         return;
       }
 
       productosPagina.forEach(p => {
         const card = document.createElement('div');
         card.className = 'product-card';
-        const imgUrl = normalizarRutaImagen(p.img);
+        const imgUrl = limpiarRutaImagen(p.img);
         card.innerHTML = `
-          <img src="${imgUrl}" alt="${p.nombre}" class="product-img">
+          <img src="${imgUrl}" alt="${p.nombre}" class="product-img" onerror="this.src='/banner.png'">
           <div class="product-info">
             <div>
               <h3 class="product-title">${p.nombre}</h3>
@@ -551,7 +529,7 @@
       window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
     }
 
-    // Inicializar
+    // Inicialización
     cargarBanners();
     cargarProductosDesdeCMS();
   </script>
