@@ -3,140 +3,504 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda Dai - Accesorios para Móviles</title>
-  <!-- Script para la autenticación de usuarios de Netlify -->
+  <title>DAI — Accesorios & Regalos Exclusivos</title>
+  
+  <!-- Tipografía al estilo Hardgraft (Playfair Display + Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { color: #333; background-color: #f9f9f9; line-height: 1.6; }
+    :root {
+      --bg-color: #fcfbf9;
+      --card-bg: #ffffff;
+      --text-main: #1a1a1a;
+      --text-muted: #666666;
+      --accent-terracotta: #b8543f;
+      --border-color: #eae7e1;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     
-    /* Navegación */
-    nav { background: #111; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-    nav ul { display: flex; list-style: none; gap: 1.5rem; }
-    nav a { color: #fff; text-decoration: none; font-weight: 500; }
-    
-    /* Inicio / Banner */
-    .hero { height: 70vh; background: #1a1a1a; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 1rem; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; color: #ccc; }
-    .btn { background: #0070f3; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; display: inline-block; text-align: center; }
-    .btn-ws { background: #25D366; color: #fff; }
-    
-    /* Productos */
-    .section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; padding-bottom: 1.5rem; }
-    .card img { width: 100%; height: 220px; object-fit: cover; }
-    .card h3 { margin: 1rem 0 0.5rem; }
-    .card .price { font-size: 1.25rem; font-weight: bold; color: #0070f3; margin-bottom: 1rem; }
-    
-    /* Formulario / Contacto */
-    .form-group { margin-bottom: 1rem; text-align: left; }
-    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
-    .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; }
-    
-    /* Pie de página */
-    footer { background: #111; color: #888; text-align: center; padding: 1.5rem; font-size: 0.9rem; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Barra Superior Minimalista */
+    header {
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(252, 251, 249, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo img {
+      height: 38px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-terracotta);
+      transition: color 0.2s ease;
+    }
+
+    /* Editorial Hero / Banner */
+    .hero-editorial {
+      max-width: 1300px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .banner-wrapper {
+      width: 100%;
+      height: 65vh;
+      min-height: 420px;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .banner-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      text-align: center;
+      max-width: 700px;
+      margin: 3.5rem auto 2rem;
+      padding: 0 1rem;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    /* Cuadrícula de Productos (3x3 Hardgraft Style) */
+    .catalog-section {
+      max-width: 1300px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 2rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+    }
+
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background-color: #f4f2ee;
+    }
+
+    .product-info {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .product-price {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-buy {
+      background: var(--text-main);
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-buy:hover {
+      background: var(--accent-terracotta);
+    }
+
+    /* Paginación de 9 en 9 */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 4rem;
+    }
+
+    .page-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .page-btn.active, .page-btn:hover {
+      background: var(--text-main);
+      color: #fff;
+      border-color: var(--text-main);
+    }
+
+    /* Sección Pedidos y Contacto */
+    .contact-section {
+      background: #f4f2ee;
+      border-top: 1px solid var(--border-color);
+      padding: 5rem 2rem;
+      margin-top: 6rem;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-container h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-container p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--accent-terracotta);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--accent-terracotta);
+      color: #fff;
+      padding: 1rem;
+      border: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-submit:hover { opacity: 0.9; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a { color: var(--text-main); font-weight: 500; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .banner-wrapper { height: 40vh; }
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 1.8rem; }
+    }
   </style>
 </head>
 <body>
 
   <!-- Navegación -->
-  <nav>
-    <h2>Tienda Dai</h2>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#envios">Envíos</a></li>
-    </ul>
-  </nav>
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <!-- Reemplaza src con la ruta de tu logo guardado o enlace -->
+        <img src="dai 05.png" alt="DAI Logo">
+      </a>
+      <nav class="nav-links">
+        <a href="#coleccion">Colección</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- 1. Presentación -->
-  <section id="inicio" class="hero">
-    <h1>Estilo y Protección para tu Móvil</h1>
-    <p>Accesorios exclusivos para vestir tu celular con elegancia.</p>
-    <a href="#productos" class="btn">Ver Catálogo</a>
-  </section>
+  <!-- Banner Editorial -->
+  <section class="hero-editorial">
+    <div class="banner-wrapper">
+      <!-- Reemplaza src con la ruta de tu imagen de banner guardada -->
+      <img src="magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" alt="DAI Editorial Banner">
+    </div>
 
-  <!-- 2. Catálogo de Productos -->
-  <section id="productos" class="section">
-    <h2 class="section-title">Nuestros Productos</h2>
-    <div class="grid">
-      
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Cartera de mano">
-        <h3>Cartera de Mano para Móvil</h3>
-        <p class="price">$25.00</p>
-        <a href="#envios" class="btn">Solicitar Pedido</a>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Paraguas de protección">
-        <h3>Paraguas Compacto Dai</h3>
-        <p class="price">$15.00</p>
-        <a href="#envios" class="btn">Solicitar Pedido</a>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Correa para celular">
-        <h3>Correa Ajustable para Celular</h3>
-        <p class="price">$12.00</p>
-        <a href="#envios" class="btn">Solicitar Pedido</a>
-      </div>
-
+    <div class="hero-text">
+      <h1>Creado para los amantes de los detalles</h1>
+      <p>Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial.</p>
     </div>
   </section>
 
-  <!-- 3. Datos de Envío y Contacto por WhatsApp -->
-  <section id="envios" class="section" style="background: #fff; border-radius: 8px;">
-    <h2 class="section-title">Datos para Envío</h2>
-    <form id="pedidoForm" style="max-width: 500px; margin: 0 auto;">
-      <div class="form-group">
-        <label>Nombre Completo</label>
-        <input type="text" id="nombre" placeholder="Tu nombre" required>
-      </div>
-      <div class="form-group">
-        <label>Correo Electrónico</label>
-        <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
-      </div>
-      <div class="form-group">
-        <label>Dirección de Envío</label>
-        <textarea id="direccion" rows="3" placeholder="Calle, número, ciudad, datos de referencia" required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Producto de Interés</label>
-        <input type="text" id="producto" placeholder="Ej. Correa Ajustable para Celular" required>
-      </div>
-      <button type="button" onclick="enviarWhatsApp()" class="btn btn-ws" style="width: 100%;">Enviar Pedido por WhatsApp</button>
-    </form>
+  <!-- Catálogo de Productos (Paginación 9 por página) -->
+  <section id="coleccion" class="catalog-section">
+    <div class="products-grid" id="grid-productos">
+      <!-- Los productos se generan dinámicamente mediante JavaScript -->
+    </div>
+
+    <!-- Paginación -->
+    <div class="pagination" id="paginacion">
+      <!-- Botones generados automáticamente -->
+    </div>
   </section>
 
+  <!-- Sección de Contacto & Pedidos -->
+  <section id="contacto" class="contact-section">
+    <div class="contact-container">
+      <h2>Haz tu Consulta o Pedido</h2>
+      <p>Envíanos tus datos y el detalle del producto de tu interés para coordinar el envío directo por WhatsApp.</p>
+      
+      <form id="orderForm">
+        <div class="form-group">
+          <label>Nombre Completo</label>
+          <input type="text" id="nombre" placeholder="Ej. María González" required>
+        </div>
+        <div class="form-group">
+          <label>Producto de Interés</label>
+          <input type="text" id="producto" placeholder="Ej. Cartera de Mano DAI" required>
+        </div>
+        <div class="form-group">
+          <label>Dirección o Ciudad de Envío</label>
+          <textarea id="direccion" rows="2" placeholder="Ciudad, Barrio o dirección de entrega" required></textarea>
+        </div>
+        <button type="button" onclick="enviarWhatsApp()" class="btn-submit">Enviar Pedido vía WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Tienda Dai. Todos los derechos reservados.</p>
+    <p>© 2026 DAI — Todos los derechos reservados.</p>
+    <p style="margin-top: 0.5rem;">
+      Instagram: <a href="https://instagram.com/daiofficial.py" target="_blank">@daiofficial.py</a> | 
+      Email: <a href="mailto:daiofficial.py@gmail.com">daiofficial.py@gmail.com</a>
+    </p>
   </footer>
 
+  <!-- Lógica de Paginación y WhatsApp -->
   <script>
-    function enviarWhatsApp() {
-      // Reemplaza este número con tu número de teléfono real
-      const numeroTelefono = "000000000000"; 
+    // Lista de productos de ejemplo (9 por página)
+    const productos = [
+      { id: 1, nombre: "Cartera de Mano Minimalista", precio: "250.000 Gs.", desc: "Cuero sintético de alta textura y acabado fino.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 2, nombre: "Paraguas Compacto Transparent", precio: "120.000 Gs.", desc: "Estructura reforzada con diseño exclusivo.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 3, nombre: "Llavero & Charm Oso Café", precio: "65.000 Gs.", desc: "Detalle elegante para personalizar tu bolso.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 4, nombre: "Cuaderno / Libreta de Notas", precio: "95.000 Gs.", desc: "Encuadernación prémium para amantes de la escritura.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 5, nombre: "Correa para Celular Ajustable", precio: "85.000 Gs.", desc: "Seguridad y estilo cómodo para tu dispositivo.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 6, nombre: "Funda de Protección Dai", precio: "110.000 Gs.", desc: "Protección liviana y estética refinada.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 7, nombre: "Monedero de Bolsillo", precio: "75.000 Gs.", desc: "Diseño compacto con cierre suave.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 8, nombre: "Neceser Diario Elegance", precio: "140.000 Gs.", desc: "Espacio ideal para tus objetos personales.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 9, nombre: "Set de Charms de Bolso", precio: "90.000 Gs.", desc: "Accesorios combinables de edición limitada.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
       
-      const nombre = document.getElementById('nombre').value;
-      const correo = document.getElementById('correo').value;
-      const direccion = document.getElementById('direccion').value;
-      const producto = document.getElementById('producto').value;
+      // Página 2 (Próximos 9 productos)
+      { id: 10, nombre: "Porta Tarjetas Ultra Slim", precio: "80.000 Gs.", desc: "Perfil ultra delgado para guardado ágil.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 11, nombre: "Estuche Organizador de Cables", precio: "105.000 Gs.", desc: "Mantén tus accesorios tecnológicos en orden.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 12, nombre: "Portagafas de Cuero", precio: "115.000 Gs.", desc: "Protección suave interior para tus lentes.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" }
+    ];
 
-      if(!nombre || !direccion || !producto) {
-        alert('Por favor completa todos los campos requeridos.');
+    const productosPorPagina = 9;
+    let paginaActual = 1;
+
+    function renderProductos(pagina) {
+      const grid = document.getElementById('grid-productos');
+      grid.innerHTML = '';
+      
+      const inicio = (pagina - 1) * productosPorPagina;
+      const fin = inicio + productosPorPagina;
+      const productosPagina = productos.slice(inicio, fin);
+
+      productosPagina.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.nombre}" class="product-img">
+          <div class="product-info">
+            <div>
+              <h3 class="product-title">${p.nombre}</h3>
+              <p class="product-desc">${p.desc}</p>
+            </div>
+            <div class="product-meta">
+              <span class="product-price">${p.precio}</span>
+              <button class="btn-buy" onclick="seleccionarProducto('${p.nombre}')">Pedir</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      renderPaginacion();
+    }
+
+    function renderPaginacion() {
+      const paginacionContainer = document.getElementById('paginacion');
+      paginacionContainer.innerHTML = '';
+      const totalPaginas = Math.ceil(productos.length / productosPorPagina);
+
+      if (totalPaginas <= 1) return;
+
+      for (let i = 1; i <= totalPaginas; i++) {
+        const btn = document.createElement('button');
+        btn.className = `page-btn ${i === paginaActual ? 'active' : ''}`;
+        btn.innerText = i;
+        btn.onclick = () => {
+          paginaActual = i;
+          renderProductos(paginaActual);
+          document.getElementById('coleccion').scrollIntoView({ behavior: 'smooth' });
+        };
+        paginacionContainer.appendChild(btn);
+      }
+    }
+
+    function seleccionarProducto(nombre) {
+      document.getElementById('producto').value = nombre;
+      document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function enviarWhatsApp() {
+      const numeroWhatsApp = "595985824098";
+      const nombre = document.getElementById('nombre').value;
+      const producto = document.getElementById('producto').value;
+      const direccion = document.getElementById('direccion').value;
+
+      if (!nombre || !producto) {
+        alert("Por favor completa tu nombre y el producto de interés.");
         return;
       }
 
-      const mensaje = `Hola! Quiero hacer un pedido:%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Dirección:* ${direccion}%0A*Producto:* ${producto}`;
-      window.open(`https://wa.me/${numeroTelefono}?text=${mensaje}`, '_blank');
+      const mensaje = `¡Hola DAI! Quisiera realizar una consulta/pedido:%0A%0A*Nombre:* ${nombre}%0A*Producto:* ${producto}%0A*Ubicación/Dirección:* ${direccion}`;
+      window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
     }
+
+    // Inicializar catálogo
+    renderProductos(paginaActual);
   </script>
 
-  <!-- Redirección para activar la contraseña de invitación -->
+  <!-- Redirección automática de Identity -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -148,6 +512,5 @@
       });
     }
   </script>
-
 </body>
 </html>
