@@ -45,6 +45,7 @@
       justify-content: space-between;
       align-items: center;
       background: #fff;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .logo-container {
@@ -245,7 +246,6 @@
     const repoNombre = "dai-py";
     const numeroWhatsapp = "595981000000";
 
-    // Resuelve las rutas de imágenes para GitHub/Netlify
     function arreglarRutaImagen(ruta) {
       if (!ruta) return '';
       if (ruta.startsWith('http://') || ruta.startsWith('https://')) return ruta;
@@ -332,7 +332,7 @@
                 card.className = 'product-card';
                 card.innerHTML = `
                   <div class="product-img-wrap">
-                    ${imgRuta ? `<img src="${imgRuta}" alt="${prod.nombre}" onerror="this.style.opacity='0'">` : ''}
+                    ${imgRuta ? `<img src="${imgRuta}" alt="${prod.nombre}">` : ''}
                   </div>
                   <div class="product-info">
                     <h3>${prod.nombre}</h3>
