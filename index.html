@@ -335,8 +335,7 @@
   <header>
     <div class="nav-container">
       <a href="#" class="brand-logo">
-        <!-- Reemplaza src con la ruta de tu logo guardado o enlace -->
-        <img src="dai 05.png" alt="DAI Logo">
+        <img src="logo.png" alt="DAI Logo">
       </a>
       <nav class="nav-links">
         <a href="#coleccion">Colección</a>
@@ -348,8 +347,7 @@
   <!-- Banner Editorial -->
   <section class="hero-editorial">
     <div class="banner-wrapper">
-      <!-- Reemplaza src con la ruta de tu imagen de banner guardada -->
-      <img src="magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" alt="DAI Editorial Banner">
+      <img src="banner.jpg" alt="DAI Editorial Banner">
     </div>
 
     <div class="hero-text">
@@ -361,7 +359,7 @@
   <!-- Catálogo de Productos (Paginación 9 por página) -->
   <section id="coleccion" class="catalog-section">
     <div class="products-grid" id="grid-productos">
-      <!-- Los productos se generan dinámicamente mediante JavaScript -->
+      <!-- Productos generados por JavaScript -->
     </div>
 
     <!-- Paginación -->
@@ -405,22 +403,21 @@
 
   <!-- Lógica de Paginación y WhatsApp -->
   <script>
-    // Lista de productos de ejemplo (9 por página)
     const productos = [
-      { id: 1, nombre: "Cartera de Mano Minimalista", precio: "250.000 Gs.", desc: "Cuero sintético de alta textura y acabado fino.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 2, nombre: "Paraguas Compacto Transparent", precio: "120.000 Gs.", desc: "Estructura reforzada con diseño exclusivo.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 3, nombre: "Llavero & Charm Oso Café", precio: "65.000 Gs.", desc: "Detalle elegante para personalizar tu bolso.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 4, nombre: "Cuaderno / Libreta de Notas", precio: "95.000 Gs.", desc: "Encuadernación prémium para amantes de la escritura.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 5, nombre: "Correa para Celular Ajustable", precio: "85.000 Gs.", desc: "Seguridad y estilo cómodo para tu dispositivo.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 6, nombre: "Funda de Protección Dai", precio: "110.000 Gs.", desc: "Protección liviana y estética refinada.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 7, nombre: "Monedero de Bolsillo", precio: "75.000 Gs.", desc: "Diseño compacto con cierre suave.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 8, nombre: "Neceser Diario Elegance", precio: "140.000 Gs.", desc: "Espacio ideal para tus objetos personales.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 9, nombre: "Set de Charms de Bolso", precio: "90.000 Gs.", desc: "Accesorios combinables de edición limitada.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
+      { id: 1, nombre: "Cartera de Mano Minimalista", precio: "250.000 Gs.", desc: "Cuero sintético de alta textura y acabado fino.", img: "banner.jpg" },
+      { id: 2, nombre: "Paraguas Compacto Transparent", precio: "120.000 Gs.", desc: "Estructura reforzada con diseño exclusivo.", img: "banner.jpg" },
+      { id: 3, nombre: "Llavero & Charm Oso Café", precio: "65.000 Gs.", desc: "Detalle elegante para personalizar tu bolso.", img: "banner.jpg" },
+      { id: 4, nombre: "Cuaderno / Libreta de Notas", precio: "95.000 Gs.", desc: "Encuadernación prémium para amantes de la escritura.", img: "banner.jpg" },
+      { id: 5, nombre: "Correa para Celular Ajustable", precio: "85.000 Gs.", desc: "Seguridad y estilo cómodo para tu dispositivo.", img: "banner.jpg" },
+      { id: 6, nombre: "Funda de Protección Dai", precio: "110.000 Gs.", desc: "Protección liviana y estética refinada.", img: "banner.jpg" },
+      { id: 7, nombre: "Monedero de Bolsillo", precio: "75.000 Gs.", desc: "Diseño compacto con cierre suave.", img: "banner.jpg" },
+      { id: 8, nombre: "Neceser Diario Elegance", precio: "140.000 Gs.", desc: "Espacio ideal para tus objetos personales.", img: "banner.jpg" },
+      { id: 9, nombre: "Set de Charms de Bolso", precio: "90.000 Gs.", desc: "Accesorios combinables de edición limitada.", img: "banner.jpg" },
       
-      // Página 2 (Próximos 9 productos)
-      { id: 10, nombre: "Porta Tarjetas Ultra Slim", precio: "80.000 Gs.", desc: "Perfil ultra delgado para guardado ágil.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 11, nombre: "Estuche Organizador de Cables", precio: "105.000 Gs.", desc: "Mantén tus accesorios tecnológicos en orden.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" },
-      { id: 12, nombre: "Portagafas de Cuero", precio: "115.000 Gs.", desc: "Protección suave interior para tus lentes.", img: "magnific_horizontal-web-banner-169_MB8f7AaDCm.jpg" }
+      // Página 2 (Siguientes 9 productos)
+      { id: 10, nombre: "Porta Tarjetas Ultra Slim", precio: "80.000 Gs.", desc: "Perfil ultra delgado para guardado ágil.", img: "banner.jpg" },
+      { id: 11, nombre: "Estuche Organizador de Cables", precio: "105.000 Gs.", desc: "Mantén tus accesorios tecnológicos en orden.", img: "banner.jpg" },
+      { id: 12, nombre: "Portagafas de Cuero", precio: "115.000 Gs.", desc: "Protección suave interior para tus lentes.", img: "banner.jpg" }
     ];
 
     const productosPorPagina = 9;
@@ -496,7 +493,6 @@
       window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
     }
 
-    // Inicializar catálogo
     renderProductos(paginaActual);
   </script>
 
