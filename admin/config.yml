@@ -1,81 +1,40 @@
 backend:
   name: git-gateway
   branch: main
+  repo: designfastrax-ftx/dai-py
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-locale: "es"
-
-editor:
-  preview: false
-
 collections:
-  # -------------------------------------------------------------
-  # SECCIÓN 1: CONFIGURACIÓN WEB
-  # -------------------------------------------------------------
   - name: "configuracion"
-    label: "Configuración Web"
+    label: "Configuración General"
     delete: false
     editor:
       preview: false
     files:
       - name: "general"
-        label: "Ajustes Generales de la Tienda"
+        label: "Ajustes de la Tienda"
         file: "contenido/configuracion.json"
-        format: "json"
         fields:
-          - label: "Marca & Logotipo"
-            name: "brand"
-            widget: "object"
-            fields:
-              - { label: "Logo de la Tienda", name: "logo", widget: "image", choose_url: false, hint: "Sube tu imagen de logo" }
+          - { label: "Logo de la Marca", name: "brand", widget: "object", fields: [
+              { label: "Imagen del Logo", name: "logo", widget: "image", required: false }
+            ]}
+          - { label: "Sección Principal (Hero)", name: "hero", widget: "object", fields: [
+              { label: "Imagen de Banner", name: "banner", widget: "image", required: false },
+              { label: "Título Principal", name: "titulo", widget: "string", default: "Creado para los amantes de los detalles" },
+              { label: "Subtítulo / Descripción", name: "subtitulo", widget: "text", default: "Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial." }
+            ]}
 
-          - label: "Banner Principal"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Imagen del Banner", name: "banner", widget: "image", choose_url: false, hint: "Sube la imagen horizontal principal" }
-              - { label: "Título del Banner", name: "titulo", widget: "string", hint: "Ej. Creado para los amantes de los detalles" }
-              - { label: "Subtítulo / Descripción", name: "subtitulo", widget: "text", hint: "Texto descriptivo que va debajo del título" }
-
-          - label: "Tipografías & Estilos"
-            name: "typography"
-            widget: "object"
-            fields:
-              - label: "Tipografía de Títulos"
-                name: "font_headers"
-                widget: "select"
-                options:
-                  - { label: "Playfair Display (Serif Elegante)", value: "Playfair Display" }
-                  - { label: "Bodoni Moda (Serif Alta Costura)", value: "Bodoni Moda" }
-                  - { label: "Cinzel (Clásico & Editorial)", value: "Cinzel" }
-                  - { label: "Cormorant Garamond (Serif Tradicional)", value: "Cormorant Garamond" }
-                  - { label: "Inter (Sans-Serif Moderno)", value: "Inter" }
-                default: "Playfair Display"
-              
-              - label: "Tipografía de Texto General"
-                name: "font_body"
-                widget: "select"
-                options:
-                  - { label: "Inter (Limpio & Moderno)", value: "Inter" }
-                  - { label: "Roboto (Neutro)", value: "Roboto" }
-                  - { label: "Montserrat (Limpio & Geométrico)", value: "Montserrat" }
-                  - { label: "Lora (Serif para Lectura)", value: "Lora" }
-                default: "Inter"
-
-  # -------------------------------------------------------------
-  # SECCIÓN 2: PRODUCTOS
-  # -------------------------------------------------------------
   - name: "productos"
     label: "Productos"
-    label_singular: "Producto"
     folder: "contenido/productos"
     create: true
     slug: "{{slug}}"
-    summary: "{{nombre}} - {{precio}}"
+    editor:
+      preview: false
     fields:
       - { label: "Nombre del Producto", name: "nombre", widget: "string" }
+      - { label: "Imagen del Producto", name: "img", widget: "image" }
       - { label: "Precio", name: "precio", widget: "string" }
-      - { label: "Imagen del Producto", name: "img", widget: "image", choose_url: false }
       - { label: "Descripción Corta", name: "desc", widget: "text", required: false }
