@@ -2,20 +2,69 @@ backend:
   name: git-gateway
   branch: main
 
-# Ruta donde se guardan las imágenes subidas desde el editor
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-# Idioma de la interfaz del administrador
 locale: "es"
 
-# Configuración del Editor
 editor:
-  preview: false # Desactiva la vista previa lateral para dar mucho más espacio a los campos de entrada
+  preview: false
 
 collections:
   # -------------------------------------------------------------
-  # SECCIÓN 1: PRODUCTOS
+  # SECCIÓN 1: CONFIGURACIÓN GENERAL (Logo, Banner, Textos y Tipografías)
+  # -------------------------------------------------------------
+  - name: "configuracion"
+    label: "Configuración Web"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Ajustes Generales de la Tienda"
+        file: "contenido/configuracion.json"
+        fields:
+          - label: "Marca & Logotipo"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Logo de la Tienda", name: "logo", widget: "image", hint: "Sube tu imagen de logo (PNG sin fondo recomendado)" }
+
+          - label: "Banner Principal"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Imagen del Banner", name: "banner", widget: "image", hint: "Sube la imagen horizontal principal" }
+              - { label: "Título del Banner", name: "titulo", widget: "string", hint: "Ejemplo: Creado para los amantes de los detalles" }
+              - { label: "Subtítulo / Descripción", name: "subtitulo", widget: "text", hint: "Texto descriptivo que va debajo del título principal" }
+
+          - label: "Tipografías & Estilos"
+            name: "typography"
+            widget: "object"
+            fields:
+              - label: "Tipografía de Títulos"
+                name: "font_headers"
+                widget: "select"
+                options:
+                  - { label: "Playfair Display (Serif Elegante)", value: "Playfair Display" }
+                  - { label: "Bodoni Moda (Serif Alta Costura)", value: "Bodoni Moda" }
+                  - { label: "Cinzel (Clásico & Editorial)", value: "Cinzel" }
+                  - { label: "Cormorant Garamond (Serif Tradicional)", value: "Cormorant Garamond" }
+                  - { label: "Inter (Sans-Serif Moderno)", value: "Inter" }
+                default: "Playfair Display"
+              
+              - label: "Tipografía de Texto General"
+                name: "font_body"
+                widget: "select"
+                options:
+                  - { label: "Inter (Limpio & Moderno)", value: "Inter" }
+                  - { label: "Roboto (Neutro)", value: "Roboto" }
+                  - { label: "Montserrat (Limpio & Geométrico)", value: "Montserrat" }
+                  - { label: "Lora (Serif para Lectura)", value: "Lora" }
+                default: "Inter"
+
+  # -------------------------------------------------------------
+  # SECCIÓN 2: PRODUCTOS
   # -------------------------------------------------------------
   - name: "productos"
     label: "Productos"
@@ -27,13 +76,7 @@ collections:
     fields:
       - { label: "Nombre del Producto", name: "nombre", widget: "string", hint: "Ejemplo: Bolso de Mano Eclat" }
       - { label: "Precio", name: "precio", widget: "string", hint: "Ejemplo: 250.000 Gs." }
-      - { 
-          label: "Imagen del Producto", 
-          name: "img", 
-          widget: "image", 
-          choose_url: false,
-          hint: "Sube una imagen cuadrada de alta calidad"
-        }
+      - { label: "Imagen del Producto", name: "img", widget: "image", choose_url: false, hint: "Sube una imagen cuadrada de alta calidad" }
       - { 
           label: "Descripción Corta / Detalle", 
           name: "desc", 
@@ -42,19 +85,5 @@ collections:
           buttons: ["bold", "italic", "bulleted-list", "numbered-list"],
           editor_components: [],
           modes: ["rich_text"],
-          hint: "Escribe aquí los detalles del producto (materiales, dimensiones, características)."
+          hint: "Escribe aquí los detalles del producto."
         }
-
-  # -------------------------------------------------------------
-  # SECCIÓN 2: BANNERS PRINCIPALES
-  # -------------------------------------------------------------
-  - name: "banners"
-    label: "Banners Principales"
-    label_singular: "Banner"
-    folder: "contenido/banners"
-    create: true
-    slug: "{{slug}}"
-    summary: "{{titulo}}"
-    fields:
-      - { label: "Título del Banner (Opcional)", name: "titulo", widget: "string", required: false }
-      - { label: "Imagen del Banner", name: "img", widget: "image", choose_url: false }
