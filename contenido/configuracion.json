@@ -1,14 +1,14 @@
 {
+  "brand": {
+    "logo": "/uploads/logo.png"
+  },
   "hero": {
-    "banner": "/uploads/magnific_horizontal-web-banner-169_mb8f7aadcm.png",
+    "banner": "/uploads/banner.png",
     "titulo": "Creado para los amantes de los detalles",
     "subtitulo": "Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial."
   },
-  "brand": {
-    "logo": "/uploads/dai-05.png"
-  },
   "typography": {
-    "font_headers": "Cinzel",
-    "font_body": "Roboto"
+    "font_headers": "Playfair Display",
+    "font_body": "Inter"
   }
 }
