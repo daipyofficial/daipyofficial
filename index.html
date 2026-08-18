@@ -23,7 +23,6 @@
       --accent-hover: #333333;
       --border-color: #eee9e0;
       
-      /* Tipografías dinámicas */
       --font-serif: 'Playfair Display', serif;
       --font-sans: 'Inter', sans-serif;
     }
@@ -42,7 +41,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, .font-serif {
+    h1, h2, h3 {
       font-family: var(--font-serif);
       font-weight: 400;
     }
@@ -57,11 +56,6 @@
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo-container {
-      display: flex;
       align-items: center;
     }
 
@@ -98,7 +92,6 @@
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: var(--accent);
-      letter-spacing: -0.02em;
     }
 
     .hero p {
@@ -106,7 +99,6 @@
       color: var(--text-muted);
       max-width: 680px;
       margin: 0 auto;
-      font-weight: 300;
     }
 
     .products-grid {
@@ -125,12 +117,6 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
     }
 
     .product-img-wrap {
@@ -178,19 +164,11 @@
       border: none;
       padding: 0.75rem 1rem;
       border-radius: 6px;
-      font-family: var(--font-sans);
       font-size: 0.9rem;
       font-weight: 500;
-      cursor: pointer;
-      width: 100%;
       text-decoration: none;
       text-align: center;
-      transition: background 0.2s ease;
       display: block;
-    }
-
-    .btn-buy:hover {
-      background: var(--accent-hover);
     }
 
     footer {
@@ -204,14 +182,12 @@
 </head>
 <body>
 
-  <!-- Encabezado con Logo -->
   <header>
     <div class="logo-container">
       <img id="img-logo" src="/uploads/logo.png" alt="DAI Logo">
     </div>
   </header>
 
-  <!-- Banner Principal & Presentación -->
   <section class="hero">
     <div class="hero-banner-wrap">
       <img id="img-banner" src="/uploads/banner.png" alt="Banner DAI">
@@ -220,9 +196,7 @@
     <p id="hero-subtitulo">Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial.</p>
   </section>
 
-  <!-- Catálogo de Productos -->
   <main class="products-grid" id="contenedor-productos">
-    <!-- Los productos se cargan dinámicamente -->
   </main>
 
   <footer>
@@ -232,7 +206,7 @@
   <script>
     const repoUsuario = "designfastrax-ftx";
     const repoNombre = "dai-py";
-    const numeroWhatsapp = "595981000000"; // Reemplazar por tu número con código de país
+    const numeroWhatsapp = "595981000000";
 
     function limpiarRutaImagen(ruta) {
       if (!ruta) return '';
@@ -241,7 +215,6 @@
       return '/' + limpia;
     }
 
-    // 1. Cargar Configuración General (Logo, Banner, Textos, Tipografías)
     async function cargarConfiguracionWeb() {
       const timestamp = Date.now();
       const urls = [
@@ -254,22 +227,13 @@
           const res = await fetch(url);
           if (res.ok) {
             const texto = await res.text();
-            let config;
-            
-            try {
-              config = JSON.parse(texto);
-            } catch (err) {
-              console.warn("Error interpretando JSON de configuración:", err);
-              continue;
-            }
+            let config = JSON.parse(texto);
 
-            // Aplicar Logo
             if (config.brand && config.brand.logo) {
               const logoElem = document.getElementById('img-logo');
               if (logoElem) logoElem.src = limpiarRutaImagen(config.brand.logo);
             }
 
-            // Aplicar Banner y Textos
             if (config.hero) {
               if (config.hero.banner) {
                 const bannerElem = document.getElementById('img-banner');
@@ -285,7 +249,6 @@
               }
             }
 
-            // Aplicar Tipografías Dinámicas
             if (config.typography) {
               if (config.typography.font_headers) {
                 document.documentElement.style.setProperty('--font-serif', `'${config.typography.font_headers}', serif`);
@@ -297,12 +260,11 @@
             break;
           }
         } catch (e) {
-          console.warn("Fallo al obtener configuración desde:", url);
+          console.warn("Error cargando configuración:", e);
         }
       }
     }
 
-    // 2. Cargar Lista de Productos
     async function cargarProductos() {
       const contenedor = document.getElementById('contenedor-productos');
       try {
@@ -319,7 +281,6 @@
               const texto = await resProd.text();
               let prod = {};
 
-              // Parsear frontmatter si es Markdown o parsear JSON directamente
               if (archivo.name.endsWith('.json')) {
                 prod = JSON.parse(texto);
               } else {
@@ -362,11 +323,10 @@
           }
         }
       } catch (e) {
-        console.warn("Error al cargar productos:", e);
+        console.warn("Error cargando productos:", e);
       }
     }
 
-    // Inicializar cargas
     document.addEventListener("DOMContentLoaded", () => {
       cargarConfiguracionWeb();
       cargarProductos();
