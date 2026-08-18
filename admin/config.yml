@@ -6,6 +6,17 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "banner_slides"
+    label: "Banner Superior (Slider)"
+    folder: "contenido/banners"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Título del Slide", name: "titulo", widget: "string", required: false }
+      - { label: "Imagen del Banner", name: "img", widget: "image" }
+
   - name: "productos"
     label: "Productos"
     folder: "contenido/productos"
