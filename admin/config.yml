@@ -12,7 +12,7 @@ editor:
 
 collections:
   # -------------------------------------------------------------
-  # SECCIÓN 1: CONFIGURACIÓN GENERAL (Logo, Banner, Textos y Tipografías)
+  # SECCIÓN 1: CONFIGURACIÓN WEB
   # -------------------------------------------------------------
   - name: "configuracion"
     label: "Configuración Web"
@@ -23,20 +23,21 @@ collections:
       - name: "general"
         label: "Ajustes Generales de la Tienda"
         file: "contenido/configuracion.json"
+        format: "json"
         fields:
           - label: "Marca & Logotipo"
             name: "brand"
             widget: "object"
             fields:
-              - { label: "Logo de la Tienda", name: "logo", widget: "image", hint: "Sube tu imagen de logo (PNG sin fondo recomendado)" }
+              - { label: "Logo de la Tienda", name: "logo", widget: "image", choose_url: false, hint: "Sube tu imagen de logo" }
 
           - label: "Banner Principal"
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Imagen del Banner", name: "banner", widget: "image", hint: "Sube la imagen horizontal principal" }
-              - { label: "Título del Banner", name: "titulo", widget: "string", hint: "Ejemplo: Creado para los amantes de los detalles" }
-              - { label: "Subtítulo / Descripción", name: "subtitulo", widget: "text", hint: "Texto descriptivo que va debajo del título principal" }
+              - { label: "Imagen del Banner", name: "banner", widget: "image", choose_url: false, hint: "Sube la imagen horizontal principal" }
+              - { label: "Título del Banner", name: "titulo", widget: "string", hint: "Ej. Creado para los amantes de los detalles" }
+              - { label: "Subtítulo / Descripción", name: "subtitulo", widget: "text", hint: "Texto descriptivo que va debajo del título" }
 
           - label: "Tipografías & Estilos"
             name: "typography"
@@ -74,16 +75,7 @@ collections:
     slug: "{{slug}}"
     summary: "{{nombre}} - {{precio}}"
     fields:
-      - { label: "Nombre del Producto", name: "nombre", widget: "string", hint: "Ejemplo: Bolso de Mano Eclat" }
-      - { label: "Precio", name: "precio", widget: "string", hint: "Ejemplo: 250.000 Gs." }
-      - { label: "Imagen del Producto", name: "img", widget: "image", choose_url: false, hint: "Sube una imagen cuadrada de alta calidad" }
-      - { 
-          label: "Descripción Corta / Detalle", 
-          name: "desc", 
-          widget: "markdown", 
-          required: false,
-          buttons: ["bold", "italic", "bulleted-list", "numbered-list"],
-          editor_components: [],
-          modes: ["rich_text"],
-          hint: "Escribe aquí los detalles del producto."
-        }
+      - { label: "Nombre del Producto", name: "nombre", widget: "string" }
+      - { label: "Precio", name: "precio", widget: "string" }
+      - { label: "Imagen del Producto", name: "img", widget: "image", choose_url: false }
+      - { label: "Descripción Corta", name: "desc", widget: "text", required: false }
