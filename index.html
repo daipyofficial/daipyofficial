@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda Dai - Accesorios para Móviles</title>
+  <!-- Script para la autenticación de usuarios de Netlify -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { color: #333; background-color: #f9f9f9; line-height: 1.6; }
@@ -116,8 +118,8 @@
 
   <script>
     function enviarWhatsApp() {
-      // Reemplaza este número con tu número de teléfono con código de país (ejemplo: 521234567890 o 5491123456789)
-      const numeroTelefono = "595985824098"; 
+      // Reemplaza este número con tu número de teléfono real
+      const numeroTelefono = "000000000000"; 
       
       const nombre = document.getElementById('nombre').value;
       const correo = document.getElementById('correo').value;
@@ -131,6 +133,19 @@
 
       const mensaje = `Hola! Quiero hacer un pedido:%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Dirección:* ${direccion}%0A*Producto:* ${producto}`;
       window.open(`https://wa.me/${numeroTelefono}?text=${mensaje}`, '_blank');
+    }
+  </script>
+
+  <!-- Redirección para activar la contraseña de invitación -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
     }
   </script>
 
