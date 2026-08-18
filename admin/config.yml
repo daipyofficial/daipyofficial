@@ -2,30 +2,59 @@ backend:
   name: git-gateway
   branch: main
 
+# Ruta donde se guardan las imágenes subidas desde el editor
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-collections:
-  - name: "banner_slides"
-    label: "Banner Superior (Slider)"
-    folder: "contenido/banners"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - { label: "Título del Slide", name: "titulo", widget: "string", required: false }
-      - { label: "Imagen del Banner", name: "img", widget: "image" }
+# Idioma de la interfaz del administrador
+locale: "es"
 
+# Configuración del Editor
+editor:
+  preview: false # Desactiva la vista previa lateral para dar mucho más espacio a los campos de entrada
+
+collections:
+  # -------------------------------------------------------------
+  # SECCIÓN 1: PRODUCTOS
+  # -------------------------------------------------------------
   - name: "productos"
     label: "Productos"
+    label_singular: "Producto"
     folder: "contenido/productos"
     create: true
     slug: "{{slug}}"
-    extension: "json"
-    format: "json"
+    summary: "{{nombre}} - {{precio}}"
     fields:
-      - { label: "Nombre", name: "nombre", widget: "string" }
-      - { label: "Precio", name: "precio", widget: "string" }
-      - { label: "Descripción", name: "desc", widget: "text" }
-      - { label: "Imagen", name: "img", widget: "image" }
+      - { label: "Nombre del Producto", name: "nombre", widget: "string", hint: "Ejemplo: Bolso de Mano Eclat" }
+      - { label: "Precio", name: "precio", widget: "string", hint: "Ejemplo: 250.000 Gs." }
+      - { 
+          label: "Imagen del Producto", 
+          name: "img", 
+          widget: "image", 
+          choose_url: false,
+          hint: "Sube una imagen cuadrada de alta calidad"
+        }
+      - { 
+          label: "Descripción Corta / Detalle", 
+          name: "desc", 
+          widget: "markdown", 
+          required: false,
+          buttons: ["bold", "italic", "bulleted-list", "numbered-list"],
+          editor_components: [],
+          modes: ["rich_text"],
+          hint: "Escribe aquí los detalles del producto (materiales, dimensiones, características)."
+        }
+
+  # -------------------------------------------------------------
+  # SECCIÓN 2: BANNERS PRINCIPALES
+  # -------------------------------------------------------------
+  - name: "banners"
+    label: "Banners Principales"
+    label_singular: "Banner"
+    folder: "contenido/banners"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{titulo}}"
+    fields:
+      - { label: "Título del Banner (Opcional)", name: "titulo", widget: "string", required: false }
+      - { label: "Imagen del Banner", name: "img", widget: "image", choose_url: false }
