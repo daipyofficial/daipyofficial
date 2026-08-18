@@ -1,66 +1,376 @@
-function limpiarRutaImagen(ruta) {
-  if (!ruta) return '';
-  if (ruta.startsWith('http://') || ruta.startsWith('https://')) return ruta;
-  let limpia = ruta.replace(/^public\//, '').replace(/^\/+/, '');
-  return '/' + limpia;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAI – Accesorios & Regalos Exclusivos</title>
 
-async function cargarConfiguracionWeb() {
-  const timestamp = Date.now();
-  const urls = [
-    `/contenido/configuracion.json?t=${timestamp}`,
-    `https://raw.githubusercontent.com/${repoUsuario}/${repoNombre}/main/contenido/configuracion.json?t=${timestamp}`
-  ];
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-  for (let url of urls) {
-    try {
-      const res = await fetch(url);
-      if (res.ok) {
-        const texto = await res.text();
-        let config;
-        
-        try {
-          config = JSON.parse(texto);
-        } catch (err) {
-          console.warn("Error interpretando JSON, intentando nuevamente...");
-          continue;
-        }
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-        // Aplicar Logo
-        if (config.brand && config.brand.logo) {
-          const logoElem = document.getElementById('img-logo');
-          if (logoElem) logoElem.src = limpiarRutaImagen(config.brand.logo);
-        }
-
-        // Aplicar Banner y Textos
-        if (config.hero) {
-          if (config.hero.banner) {
-            const bannerElem = document.getElementById('img-banner');
-            if (bannerElem) bannerElem.src = limpiarRutaImagen(config.hero.banner);
-          }
-          if (config.hero.titulo) {
-            const titElem = document.getElementById('hero-titulo');
-            if (titElem) titElem.innerText = config.hero.titulo;
-          }
-          if (config.hero.subtitulo) {
-            const subElem = document.getElementById('hero-subtitulo');
-            if (subElem) subElem.innerText = config.hero.subtitulo;
-          }
-        }
-
-        // Aplicar Tipografías Dinámicas
-        if (config.typography) {
-          if (config.typography.font_headers) {
-            document.documentElement.style.setProperty('--font-serif', `'${config.typography.font_headers}', serif`);
-          }
-          if (config.typography.font_body) {
-            document.documentElement.style.setProperty('--font-sans', `'${config.typography.font_body}', sans-serif`);
-          }
-        }
-        break; // Detener bucle tras carga exitosa
-      }
-    } catch (e) {
-      console.warn("Fallo al obtener configuración desde:", url);
+  <style>
+    :root {
+      --bg-color: #fcfbf9;
+      --card-bg: #ffffff;
+      --text-main: #2b2b2b;
+      --text-muted: #666666;
+      --accent: #1a1a1a;
+      --accent-hover: #333333;
+      --border-color: #eee9e0;
+      
+      /* Tipografías dinámicas */
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
     }
-  }
-}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+    }
+
+    header {
+      background: rgba(252, 251, 249, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      max-height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .hero-banner-wrap {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .hero-banner-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    .products-grid {
+      max-width: 1200px;
+      margin: 3rem auto 5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+    }
+
+    .product-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .btn-buy {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s ease;
+      display: block;
+    }
+
+    .btn-buy:hover {
+      background: var(--accent-hover);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado con Logo -->
+  <header>
+    <div class="logo-container">
+      <img id="img-logo" src="/uploads/logo.png" alt="DAI Logo">
+    </div>
+  </header>
+
+  <!-- Banner Principal & Presentación -->
+  <section class="hero">
+    <div class="hero-banner-wrap">
+      <img id="img-banner" src="/uploads/banner.png" alt="Banner DAI">
+    </div>
+    <h1 id="hero-titulo">Creado para los amantes de los detalles</h1>
+    <p id="hero-subtitulo">Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial.</p>
+  </section>
+
+  <!-- Catálogo de Productos -->
+  <main class="products-grid" id="contenedor-productos">
+    <!-- Los productos se cargan dinámicamente -->
+  </main>
+
+  <footer>
+    <p>&copy; DAI - Accesorios & Regalos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const repoUsuario = "designfastrax-ftx";
+    const repoNombre = "dai-py";
+    const numeroWhatsapp = "595981000000"; // Reemplazar por tu número con código de país
+
+    function limpiarRutaImagen(ruta) {
+      if (!ruta) return '';
+      if (ruta.startsWith('http://') || ruta.startsWith('https://')) return ruta;
+      let limpia = ruta.replace(/^public\//, '').replace(/^\/+/, '');
+      return '/' + limpia;
+    }
+
+    // 1. Cargar Configuración General (Logo, Banner, Textos, Tipografías)
+    async function cargarConfiguracionWeb() {
+      const timestamp = Date.now();
+      const urls = [
+        `/contenido/configuracion.json?t=${timestamp}`,
+        `https://raw.githubusercontent.com/${repoUsuario}/${repoNombre}/main/contenido/configuracion.json?t=${timestamp}`
+      ];
+
+      for (let url of urls) {
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            const texto = await res.text();
+            let config;
+            
+            try {
+              config = JSON.parse(texto);
+            } catch (err) {
+              console.warn("Error interpretando JSON de configuración:", err);
+              continue;
+            }
+
+            // Aplicar Logo
+            if (config.brand && config.brand.logo) {
+              const logoElem = document.getElementById('img-logo');
+              if (logoElem) logoElem.src = limpiarRutaImagen(config.brand.logo);
+            }
+
+            // Aplicar Banner y Textos
+            if (config.hero) {
+              if (config.hero.banner) {
+                const bannerElem = document.getElementById('img-banner');
+                if (bannerElem) bannerElem.src = limpiarRutaImagen(config.hero.banner);
+              }
+              if (config.hero.titulo) {
+                const titElem = document.getElementById('hero-titulo');
+                if (titElem) titElem.innerText = config.hero.titulo;
+              }
+              if (config.hero.subtitulo) {
+                const subElem = document.getElementById('hero-subtitulo');
+                if (subElem) subElem.innerText = config.hero.subtitulo;
+              }
+            }
+
+            // Aplicar Tipografías Dinámicas
+            if (config.typography) {
+              if (config.typography.font_headers) {
+                document.documentElement.style.setProperty('--font-serif', `'${config.typography.font_headers}', serif`);
+              }
+              if (config.typography.font_body) {
+                document.documentElement.style.setProperty('--font-sans', `'${config.typography.font_body}', sans-serif`);
+              }
+            }
+            break;
+          }
+        } catch (e) {
+          console.warn("Fallo al obtener configuración desde:", url);
+        }
+      }
+    }
+
+    // 2. Cargar Lista de Productos
+    async function cargarProductos() {
+      const contenedor = document.getElementById('contenedor-productos');
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/productos`);
+        if (!res.ok) return;
+        
+        const archivos = await res.json();
+        contenedor.innerHTML = '';
+
+        for (let archivo of archivos) {
+          if (archivo.name.endsWith('.md') || archivo.name.endsWith('.json')) {
+            const resProd = await fetch(archivo.download_url);
+            if (resProd.ok) {
+              const texto = await resProd.text();
+              let prod = {};
+
+              // Parsear frontmatter si es Markdown o parsear JSON directamente
+              if (archivo.name.endsWith('.json')) {
+                prod = JSON.parse(texto);
+              } else {
+                const lineas = texto.split('\n');
+                let enFrontmatter = false;
+                lineas.forEach(linea => {
+                  if (linea.trim() === '---') {
+                    enFrontmatter = !enFrontmatter;
+                    return;
+                  }
+                  if (enFrontmatter) {
+                    const partes = linea.split(':');
+                    if (partes.length >= 2) {
+                      const clave = partes[0].trim();
+                      const valor = partes.slice(1).join(':').trim().replace(/^["']|["']$/g, '');
+                      prod[clave] = valor;
+                    }
+                  }
+                });
+              }
+
+              if (prod.nombre) {
+                const mensajeWa = encodeURIComponent(`Hola! Quisiera consultar sobre el producto: ${prod.nombre}`);
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                  <div class="product-img-wrap">
+                    <img src="${limpiarRutaImagen(prod.img || '/uploads/placeholder.png')}" alt="${prod.nombre}">
+                  </div>
+                  <div class="product-info">
+                    <h3>${prod.nombre}</h3>
+                    <div class="product-price">${prod.precio || ''}</div>
+                    <div class="product-desc">${prod.desc || ''}</div>
+                    <a href="https://wa.me/${numeroWhatsapp}?text=${mensajeWa}" target="_blank" class="btn-buy">Pedir por WhatsApp</a>
+                  </div>
+                `;
+                contenedor.appendChild(card);
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.warn("Error al cargar productos:", e);
+      }
+    }
+
+    // Inicializar cargas
+    document.addEventListener("DOMContentLoaded", () => {
+      cargarConfiguracionWeb();
+      cargarProductos();
+    });
+  </script>
+</body>
+</html>
