@@ -8,21 +8,19 @@
   <!-- Fuentes de Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
     :root {
-      --bg-color: #fcfbf9;
+      --bg-color: #ffffff;
       --card-bg: #ffffff;
-      --text-main: #2b2b2b;
-      --text-muted: #666666;
-      --accent: #1a1a1a;
-      --accent-hover: #333333;
-      --border-color: #eee9e0;
-      
+      --text-main: #1a1a1a;
+      --text-muted: #777777;
+      --border-color: #f0f0f0;
+      --img-bg: #f2efe9;
       --font-serif: 'Playfair Display', serif;
       --font-sans: 'Inter', sans-serif;
     }
@@ -37,99 +35,126 @@
       background-color: var(--bg-color);
       color: var(--text-main);
       font-family: var(--font-sans);
-      line-height: 1.6;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3 {
-      font-family: var(--font-serif);
-      font-weight: 400;
-    }
-
     header {
-      background: rgba(252, 251, 249, 0.95);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--border-color);
-      padding: 1rem 2rem;
+      padding: 1.5rem 3rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      background: #fff;
+    }
+
+    .logo-container {
+      display: flex;
       align-items: center;
     }
 
     .logo-container img {
-      max-height: 48px;
+      max-height: 38px;
       width: auto;
-      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      letter-spacing: -0.03em;
+      text-transform: lowercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
     .hero {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      max-width: 800px;
+      margin: 3rem auto 4rem;
       text-align: center;
+      padding: 0 1rem;
     }
 
     .hero-banner-wrap {
       width: 100%;
-      max-height: 420px;
+      max-height: 350px;
       overflow: hidden;
-      border-radius: 12px;
       margin-bottom: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .hero-banner-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      color: #1a1a1a;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      max-width: 680px;
+      max-width: 500px;
       margin: 0 auto;
+      font-weight: 300;
     }
 
     .products-grid {
-      max-width: 1200px;
-      margin: 3rem auto 5rem;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+    }
+
+    @media (max-width: 850px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .product-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
     .product-img-wrap {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 5;
+      background-color: var(--img-bg);
       overflow: hidden;
-      background: #f5f5f5;
+      position: relative;
     }
 
     .product-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .product-info {
@@ -140,128 +165,151 @@
     }
 
     .product-info h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .product-price {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+      color: #222;
     }
 
     .product-desc {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
       flex-grow: 1;
     }
 
-    .btn-buy {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      text-align: center;
-      display: block;
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
     }
 
-    footer {
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      padding: 2rem;
+    .product-price {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .btn-buy {
+      background: #000000;
+      color: #ffffff;
+      border: none;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-buy:hover {
+      background: #333333;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 4rem;
+    }
+
+    .pagination button {
+      border: 1px solid #e0e0e0;
+      background: #fff;
+      width: 28px;
+      height: 28px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    .pagination button.active {
+      background: #000;
+      color: #fff;
+      border-color: #000;
     }
   </style>
 </head>
 <body>
 
+  <!-- Encabezado Estilo Minimalista -->
   <header>
     <div class="logo-container">
-      <img id="img-logo" src="/uploads/logo.png" alt="DAI Logo">
+      <img id="img-logo" src="" alt="DAI" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+      <span id="text-logo" class="logo-text" style="display:none;">dai</span>
     </div>
+    <nav>
+      <a href="#">COLECCIÓN</a>
+      <a href="#">CONTACTO</a>
+    </nav>
   </header>
 
+  <!-- Banner & Título Principal -->
   <section class="hero">
-    <div class="hero-banner-wrap">
-      <img id="img-banner" src="/uploads/banner.png" alt="Banner DAI">
+    <div class="hero-banner-wrap" id="banner-container" style="display: none;">
+      <img id="img-banner" src="" alt="Banner">
     </div>
     <h1 id="hero-titulo">Creado para los amantes de los detalles</h1>
     <p id="hero-subtitulo">Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial.</p>
   </section>
 
+  <!-- Grilla de Productos -->
   <main class="products-grid" id="contenedor-productos">
+    <!-- Carga dinámica -->
   </main>
-
-  <footer>
-    <p>&copy; DAI - Accesorios & Regalos. Todos los derechos reservados.</p>
-  </footer>
 
   <script>
     const repoUsuario = "designfastrax-ftx";
-    const repoNombre = "dai-py";
+    const repoNombre = "tienda-dai";
     const numeroWhatsapp = "595981000000";
 
-    function limpiarRutaImagen(ruta) {
+    // Función inteligente para resolver rutas de imágenes en GitHub / Netlify
+    function arreglarRutaImagen(ruta) {
       if (!ruta) return '';
       if (ruta.startsWith('http://') || ruta.startsWith('https://')) return ruta;
+      
+      // Limpiar prefijos comunes como 'public/' o '/' iniciales
       let limpia = ruta.replace(/^public\//, '').replace(/^\/+/, '');
+      
+      // Retornar la ruta relativa correcta
       return '/' + limpia;
     }
 
-    async function cargarConfiguracionWeb() {
+    async function cargarConfiguracion() {
       const timestamp = Date.now();
-      const urls = [
-        `/contenido/configuracion.json?t=${timestamp}`,
-        `https://raw.githubusercontent.com/${repoUsuario}/${repoNombre}/main/contenido/configuracion.json?t=${timestamp}`
-      ];
+      const url = `https://raw.githubusercontent.com/${repoUsuario}/${repoNombre}/main/contenido/configuracion.json?t=${timestamp}`;
 
-      for (let url of urls) {
-        try {
-          const res = await fetch(url);
-          if (res.ok) {
-            const texto = await res.text();
-            let config = JSON.parse(texto);
+      try {
+        const res = await fetch(url);
+        if (res.ok) {
+          const config = await res.json();
 
-            if (config.brand && config.brand.logo) {
-              const logoElem = document.getElementById('img-logo');
-              if (logoElem) logoElem.src = limpiarRutaImagen(config.brand.logo);
-            }
-
-            if (config.hero) {
-              if (config.hero.banner) {
-                const bannerElem = document.getElementById('img-banner');
-                if (bannerElem) bannerElem.src = limpiarRutaImagen(config.hero.banner);
-              }
-              if (config.hero.titulo) {
-                const titElem = document.getElementById('hero-titulo');
-                if (titElem) titElem.innerText = config.hero.titulo;
-              }
-              if (config.hero.subtitulo) {
-                const subElem = document.getElementById('hero-subtitulo');
-                if (subElem) subElem.innerText = config.hero.subtitulo;
-              }
-            }
-
-            if (config.typography) {
-              if (config.typography.font_headers) {
-                document.documentElement.style.setProperty('--font-serif', `'${config.typography.font_headers}', serif`);
-              }
-              if (config.typography.font_body) {
-                document.documentElement.style.setProperty('--font-sans', `'${config.typography.font_body}', sans-serif`);
-              }
-            }
-            break;
+          if (config.brand && config.brand.logo) {
+            const logoElem = document.getElementById('img-logo');
+            logoElem.src = arreglarRutaImagen(config.brand.logo);
+            logoElem.style.display = 'block';
           }
-        } catch (e) {
-          console.warn("Error cargando configuración:", e);
+
+          if (config.hero) {
+            if (config.hero.banner) {
+              const bannerElem = document.getElementById('img-banner');
+              bannerElem.src = arreglarRutaImagen(config.hero.banner);
+              document.getElementById('banner-container').style.display = 'block';
+            }
+            if (config.hero.titulo) {
+              document.getElementById('hero-titulo').innerText = config.hero.titulo;
+            }
+            if (config.hero.subtitulo) {
+              document.getElementById('hero-subtitulo').innerText = config.hero.subtitulo;
+            }
+          }
         }
+      } catch (e) {
+        console.warn("No se pudo cargar la configuración personalizada:", e);
       }
     }
 
@@ -304,17 +352,21 @@
 
               if (prod.nombre) {
                 const mensajeWa = encodeURIComponent(`Hola! Quisiera consultar sobre el producto: ${prod.nombre}`);
+                const imgRuta = arreglarRutaImagen(prod.img);
+
                 const card = document.createElement('div');
                 card.className = 'product-card';
                 card.innerHTML = `
                   <div class="product-img-wrap">
-                    <img src="${limpiarRutaImagen(prod.img || '/uploads/placeholder.png')}" alt="${prod.nombre}">
+                    ${imgRuta ? `<img src="${imgRuta}" alt="${prod.nombre}" onerror="this.style.opacity='0'">` : ''}
                   </div>
                   <div class="product-info">
                     <h3>${prod.nombre}</h3>
-                    <div class="product-price">${prod.precio || ''}</div>
                     <div class="product-desc">${prod.desc || ''}</div>
-                    <a href="https://wa.me/${numeroWhatsapp}?text=${mensajeWa}" target="_blank" class="btn-buy">Pedir por WhatsApp</a>
+                    <div class="product-bottom">
+                      <span class="product-price">${prod.precio || ''}</span>
+                      <a href="https://wa.me/${numeroWhatsapp}?text=${mensajeWa}" target="_blank" class="btn-buy">PEDIR</a>
+                    </div>
                   </div>
                 `;
                 contenedor.appendChild(card);
@@ -323,12 +375,12 @@
           }
         }
       } catch (e) {
-        console.warn("Error cargando productos:", e);
+        console.warn("Error al obtener los productos:", e);
       }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      cargarConfiguracionWeb();
+      cargarConfiguracion();
       cargarProductos();
     });
   </script>
