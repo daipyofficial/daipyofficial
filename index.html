@@ -210,28 +210,6 @@
     .btn-buy:hover {
       background: #333333;
     }
-
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: 0.4rem;
-      margin-bottom: 4rem;
-    }
-
-    .pagination button {
-      border: 1px solid #e0e0e0;
-      background: #fff;
-      width: 28px;
-      height: 28px;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-
-    .pagination button.active {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-    }
   </style>
 </head>
 <body>
@@ -259,23 +237,19 @@
 
   <!-- Grilla de Productos -->
   <main class="products-grid" id="contenedor-productos">
-    <!-- Carga dinámica -->
+    <!-- Carga dinámica de productos -->
   </main>
 
   <script>
     const repoUsuario = "designfastrax-ftx";
-    const repoNombre = "tienda-dai";
+    const repoNombre = "dai-py";
     const numeroWhatsapp = "595981000000";
 
-    // Función inteligente para resolver rutas de imágenes en GitHub / Netlify
+    // Resuelve las rutas de imágenes para GitHub/Netlify
     function arreglarRutaImagen(ruta) {
       if (!ruta) return '';
       if (ruta.startsWith('http://') || ruta.startsWith('https://')) return ruta;
-      
-      // Limpiar prefijos comunes como 'public/' o '/' iniciales
       let limpia = ruta.replace(/^public\//, '').replace(/^\/+/, '');
-      
-      // Retornar la ruta relativa correcta
       return '/' + limpia;
     }
 
