@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAI — Accesorios & Regalos Exclusivos</title>
   
-  <!-- Tipografía al estilo Hardgraft -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
-  <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
@@ -74,6 +72,7 @@
       transition: color 0.2s ease;
     }
 
+    /* Slider Estilos */
     .hero-editorial {
       max-width: 1300px;
       margin: 2rem auto;
@@ -89,7 +88,19 @@
       position: relative;
     }
 
-    .banner-wrapper img {
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -332,10 +343,13 @@
     </div>
   </header>
 
-  <!-- Banner Editorial -->
+  <!-- Banner Editorial / Slider -->
   <section class="hero-editorial">
-    <div class="banner-wrapper">
-      <img src="banner.png" alt="DAI Editorial Banner">
+    <div class="banner-wrapper" id="banner-slider">
+      <!-- Los banners se insertan aquí dinámicamente -->
+      <div class="slide active">
+        <img src="banner.png" alt="DAI Banner">
+      </div>
     </div>
 
     <div class="hero-text">
@@ -344,18 +358,17 @@
     </div>
   </section>
 
-  <!-- Catálogo de Productos -->
+  <!-- Catálogo -->
   <section id="coleccion" class="catalog-section">
     <div class="products-grid" id="grid-productos">
-      <!-- Carga dinámica -->
+      <!-- Productos -->
     </div>
-
     <div class="pagination" id="paginacion">
-      <!-- Paginación dinámica -->
+      <!-- Paginación -->
     </div>
   </section>
 
-  <!-- Sección de Contacto -->
+  <!-- Contacto -->
   <section id="contacto" class="contact-section">
     <div class="contact-container">
       <h2>Haz tu Consulta o Pedido</h2>
@@ -379,7 +392,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2026 DAI — Todos los derechos reservados.</p>
     <p style="margin-top: 0.5rem;">
@@ -388,21 +400,57 @@
     </p>
   </footer>
 
-  <!-- Lógica Dinámica con GitHub API -->
   <script>
     let productos = [];
     const productosPorPagina = 9;
     let paginaActual = 1;
 
-    // Configuración del repositorio GitHub para consulta dinámica
     const repoUsuario = "designfastrax-ftx";
     const repoNombre = "tienda-dai";
-    const rutaCarpeta = "contenido/productos";
 
+    // Cargar Banners (Slider)
+    async function cargarBanners() {
+      try {
+        const respuesta = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/banners`);
+        if (respuesta.ok) {
+          const archivos = await respuesta.json();
+          const promesas = archivos
+            .filter(a => a.name.endsWith('.json'))
+            .map(a => fetch(a.download_url).then(r => r.json()));
+          
+          const banners = await Promise.all(promesas);
+          if (banners.length > 0) {
+            const slider = document.getElementById('banner-slider');
+            slider.innerHTML = '';
+            banners.forEach((b, index) => {
+              const slide = document.createElement('div');
+              slide.className = `slide ${index === 0 ? 'active' : ''}`;
+              slide.innerHTML = `<img src="${b.img}" alt="${b.titulo || 'Banner DAI'}">`;
+              slider.appendChild(slide);
+            });
+            iniciarRotacionSlider();
+          }
+        }
+      } catch (e) {
+        console.log("Usando banner estático por defecto.");
+      }
+    }
+
+    function iniciarRotacionSlider() {
+      const slides = document.querySelectorAll('.slide');
+      if (slides.length <= 1) return;
+      let actual = 0;
+      setInterval(() => {
+        slides[actual].classList.remove('active');
+        actual = (actual + 1) % slides.length;
+        slides[actual].classList.add('active');
+      }, 4000); // Cambia cada 4 segundos
+    }
+
+    // Cargar Productos
     async function cargarProductosDesdeCMS() {
       try {
-        const respuestaListado = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/${rutaCarpeta}`);
-        
+        const respuestaListado = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/productos`);
         if (respuestaListado.ok) {
           const archivos = await respuestaListado.json();
           const promesasJson = archivos
@@ -410,16 +458,12 @@
             .map(archivo => fetch(archivo.download_url).then(r => r.json()));
 
           productos = await Promise.all(promesasJson);
-        } else {
-          throw new Error("No se encontraron productos en la carpeta CMS.");
         }
       } catch (error) {
-        console.warn("Cargando productos por defecto de respaldo:", error);
         productos = [
           { nombre: "Cartera de Mano Minimalista", precio: "250.000 Gs.", desc: "Cuero sintético de alta textura y acabado fino.", img: "banner.png" }
         ];
       }
-
       renderProductos(paginaActual);
     }
 
@@ -498,11 +542,11 @@
       window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
     }
 
-    // Inicializar la carga automática
+    // Inicializar
+    cargarBanners();
     cargarProductosDesdeCMS();
   </script>
 
-  <!-- Redirección de Netlify Identity -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
