@@ -17,14 +17,6 @@
 
   <title>DAI PY — Tienda Oficial</title>
 
-
-  <!--
-    FUENTE POR DEFECTO
-
-    Luego el panel de administración
-    puede cambiarla automáticamente.
-  -->
-
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -48,23 +40,10 @@
     :root {
 
       --fondo: #f1efe9;
-
       --texto: #171717;
-
       --suave: #77736d;
-
-      --linea:
-        rgba(0, 0, 0, 0.13);
-
+      --linea: rgba(0, 0, 0, 0.14);
       --negro: #151515;
-
-
-      /*
-        TIPOGRAFÍA
-
-        JavaScript modifica estas
-        variables desde el CMS.
-      */
 
       --font-principal:
         "Poppins",
@@ -79,35 +58,27 @@
     * {
 
       margin: 0;
-
       padding: 0;
-
-      box-sizing:
-        border-box;
+      box-sizing: border-box;
 
     }
 
 
     html {
 
-      scroll-behavior:
-        smooth;
+      scroll-behavior: smooth;
 
     }
 
 
     body {
 
-      background:
-        var(--fondo);
+      background: var(--fondo);
 
-      color:
-        var(--texto);
+      color: var(--texto);
 
       font-family:
         var(--font-principal);
-
-      font-weight: 400;
 
       -webkit-font-smoothing:
         antialiased;
@@ -125,7 +96,6 @@
     a {
 
       color: inherit;
-
       text-decoration: none;
 
     }
@@ -157,28 +127,20 @@
       min-height: 30px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
-      padding:
-        7px 20px;
+      padding: 7px 20px;
 
-      background:
-        var(--negro);
-
+      background: var(--negro);
       color: white;
 
       font-size: 10px;
-
       font-weight: 500;
 
-      letter-spacing:
-        .16em;
+      letter-spacing: .16em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
     }
 
@@ -194,8 +156,7 @@
 
       height: 76px;
 
-      padding:
-        0 28px;
+      padding: 0 28px;
 
       display: grid;
 
@@ -215,18 +176,16 @@
           241,
           239,
           233,
-          .95
+          .96
         );
 
-      backdrop-filter:
-        blur(12px);
+      backdrop-filter: blur(12px);
 
       -webkit-backdrop-filter:
         blur(12px);
 
       border-bottom:
-        1px solid
-        var(--linea);
+        1px solid var(--linea);
 
     }
 
@@ -237,11 +196,9 @@
 
       border: 0;
 
-      background:
-        transparent;
+      background: transparent;
 
-      color:
-        var(--texto);
+      color: var(--texto);
 
       cursor: pointer;
 
@@ -249,19 +206,16 @@
 
       font-weight: 500;
 
-      letter-spacing:
-        .14em;
+      letter-spacing: .14em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
     }
 
 
     .logo {
 
-      justify-self:
-        center;
+      justify-self: center;
 
     }
 
@@ -276,8 +230,7 @@
 
       height: auto;
 
-      object-fit:
-        contain;
+      object-fit: contain;
 
     }
 
@@ -290,11 +243,69 @@
 
       font-weight: 500;
 
-      letter-spacing:
-        .14em;
+      letter-spacing: .14em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
+
+    }
+
+
+    /*
+    ========================================
+    CONTACTO SUPERIOR
+    ========================================
+    */
+
+
+    .contacto-superior {
+
+      min-height: 40px;
+
+      padding: 8px 28px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      border-bottom:
+        1px solid var(--linea);
+
+      font-size: 10px;
+
+      font-weight: 500;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .contacto-superior-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 24px;
+
+    }
+
+
+    .contacto-superior a {
+
+      transition: opacity .2s;
+
+    }
+
+
+    .contacto-superior a:hover {
+
+      opacity: .5;
 
     }
 
@@ -315,19 +326,13 @@
       z-index: 100;
 
       background:
-        rgba(
-          0,
-          0,
-          0,
-          .32
-        );
+        rgba(0, 0, 0, .32);
 
       opacity: 0;
 
       visibility: hidden;
 
-      transition:
-        .3s ease;
+      transition: .3s ease;
 
     }
 
@@ -336,38 +341,30 @@
 
       opacity: 1;
 
-      visibility:
-        visible;
+      visibility: visible;
 
     }
 
 
     .menu-panel {
 
-      width:
-        min(
-          440px,
-          90vw
-        );
+      width: min(440px, 90vw);
 
       height: 100%;
 
       padding: 30px;
 
-      background:
-        var(--fondo);
+      background: var(--fondo);
 
       display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
       transform:
         translateX(-100%);
 
       transition:
-        transform
-        .4s ease;
+        transform .4s ease;
 
     }
 
@@ -383,35 +380,28 @@
 
     .menu-header {
 
-      padding-bottom:
-        27px;
+      padding-bottom: 27px;
 
       display: flex;
 
       justify-content:
         space-between;
 
-      align-items:
-        center;
+      align-items: center;
 
       border-bottom:
-        1px solid
-        var(--linea);
+        1px solid var(--linea);
 
     }
 
 
-    .menu-brand {
+    .menu-logo img {
 
-      font-family:
-        var(--font-principal);
+      max-width: 95px;
 
-      font-size: 24px;
+      max-height: 48px;
 
-      font-weight: 600;
-
-      letter-spacing:
-        -.03em;
+      width: auto;
 
     }
 
@@ -420,8 +410,7 @@
 
       border: 0;
 
-      background:
-        transparent;
+      background: transparent;
 
       cursor: pointer;
 
@@ -429,24 +418,20 @@
 
       font-weight: 500;
 
-      letter-spacing:
-        .12em;
+      letter-spacing: .12em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
     }
 
 
     .menu-links {
 
-      padding-top:
-        50px;
+      padding-top: 50px;
 
       display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
       gap: 12px;
 
@@ -454,9 +439,6 @@
 
 
     .menu-links a {
-
-      font-family:
-        var(--font-principal);
 
       font-size:
         clamp(
@@ -469,39 +451,29 @@
 
       line-height: 1.08;
 
-      letter-spacing:
-        -.04em;
-
-      transition:
-        opacity
-        .2s;
+      letter-spacing: -.04em;
 
     }
 
 
-    .menu-links a:hover {
-
-      opacity: .45;
-
-    }
-
-
-    .menu-footer {
+    .menu-contacto {
 
       margin-top: auto;
 
       padding-top: 25px;
 
-      border-top:
-        1px solid
-        var(--linea);
+      display: flex;
 
-      color:
-        var(--suave);
+      flex-direction: column;
+
+      gap: 8px;
+
+      border-top:
+        1px solid var(--linea);
+
+      color: var(--suave);
 
       font-size: 11px;
-
-      line-height: 1.6;
 
     }
 
@@ -535,8 +507,7 @@
 
       overflow: hidden;
 
-      background:
-        #d4d0c8;
+      background: #d4d0c8;
 
     }
 
@@ -580,14 +551,11 @@
 
       opacity: 0;
 
-      transform:
-        scale(1.015);
+      transform: scale(1.015);
 
       transition:
-        opacity
-        .8s ease,
-        transform
-        6s ease;
+        opacity .8s ease,
+        transform 6s ease;
 
     }
 
@@ -596,8 +564,7 @@
 
       opacity: 1;
 
-      transform:
-        scale(1.04);
+      transform: scale(1.04);
 
     }
 
@@ -612,8 +579,7 @@
 
       z-index: 2;
 
-      pointer-events:
-        none;
+      pointer-events: none;
 
       background:
 
@@ -621,28 +587,13 @@
 
           to top,
 
-          rgba(
-            0,
-            0,
-            0,
-            .62
-          )
+          rgba(0,0,0,.62)
           0%,
 
-          rgba(
-            0,
-            0,
-            0,
-            .17
-          )
+          rgba(0,0,0,.17)
           48%,
 
-          rgba(
-            0,
-            0,
-            0,
-            .02
-          )
+          rgba(0,0,0,.02)
           80%
 
         );
@@ -679,18 +630,15 @@
 
     .hero-label {
 
-      margin-bottom:
-        17px;
+      margin-bottom: 17px;
 
       font-size: 10px;
 
       font-weight: 500;
 
-      letter-spacing:
-        .18em;
+      letter-spacing: .18em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
     }
 
@@ -698,9 +646,6 @@
     .hero-title {
 
       max-width: 800px;
-
-      font-family:
-        var(--font-principal);
 
       font-size:
         clamp(
@@ -713,8 +658,7 @@
 
       line-height: .98;
 
-      letter-spacing:
-        -.055em;
+      letter-spacing: -.055em;
 
     }
 
@@ -723,12 +667,9 @@
 
       max-width: 560px;
 
-      margin-top:
-        25px;
+      margin-top: 25px;
 
       font-size: 14px;
-
-      font-weight: 400;
 
       line-height: 1.65;
 
@@ -767,48 +708,23 @@
 
       border:
         1px solid
-        rgba(
-          255,
-          255,
-          255,
-          .55
-        );
+        rgba(255,255,255,.55);
 
       background:
-        rgba(
-          0,
-          0,
-          0,
-          .15
-        );
+        rgba(0,0,0,.15);
 
       color: white;
 
       cursor: pointer;
 
-      font-family:
-        var(--font-principal);
-
       font-size: 18px;
-
-      transition:
-        .2s;
-
-    }
-
-
-    .hero-control:hover {
-
-      background: white;
-
-      color: black;
 
     }
 
 
     /*
     ========================================
-    INTRO PRODUCTOS
+    PRODUCTOS
     ========================================
     */
 
@@ -856,29 +772,22 @@
 
       display: block;
 
-      margin-bottom:
-        13px;
+      margin-bottom: 13px;
 
-      color:
-        var(--suave);
+      color: var(--suave);
 
       font-size: 10px;
 
       font-weight: 500;
 
-      letter-spacing:
-        .17em;
+      letter-spacing: .17em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
     }
 
 
     .productos-title {
-
-      font-family:
-        var(--font-principal);
 
       font-size:
         clamp(
@@ -891,8 +800,7 @@
 
       line-height: 1;
 
-      letter-spacing:
-        -.05em;
+      letter-spacing: -.05em;
 
     }
 
@@ -901,8 +809,7 @@
 
       margin-left: 7px;
 
-      color:
-        var(--suave);
+      color: var(--suave);
 
       font-size: 12px;
 
@@ -917,21 +824,13 @@
 
       max-width: 370px;
 
-      color:
-        var(--suave);
+      color: var(--suave);
 
       font-size: 13px;
 
       line-height: 1.65;
 
     }
-
-
-    /*
-    ========================================
-    PRODUCTOS
-    ========================================
-    */
 
 
     .productos-section {
@@ -945,8 +844,7 @@
 
       margin: auto;
 
-      padding-bottom:
-        130px;
+      padding-bottom: 100px;
 
     }
 
@@ -959,10 +857,7 @@
 
         repeat(
           2,
-          minmax(
-            0,
-            1fr
-          )
+          minmax(0, 1fr)
         );
 
       column-gap: 2px;
@@ -978,15 +873,7 @@
 
       margin: auto;
 
-      grid-template-columns:
-        1fr;
-
-    }
-
-
-    .producto {
-
-      min-width: 0;
+      grid-template-columns: 1fr;
 
     }
 
@@ -995,13 +882,11 @@
 
       width: 100%;
 
-      aspect-ratio:
-        4 / 5;
+      aspect-ratio: 4 / 5;
 
       overflow: hidden;
 
-      background:
-        #dedad2;
+      background: #dedad2;
 
     }
 
@@ -1015,8 +900,7 @@
       object-fit: cover;
 
       transition:
-        transform
-        .7s ease;
+        transform .7s ease;
 
     }
 
@@ -1038,26 +922,22 @@
 
       display: flex;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      align-items:
-        center;
+      align-items: center;
 
-      color:
-        #918c84;
+    }
 
-      font-family:
-        var(--font-principal);
 
-      font-size:
-        clamp(
-          30px,
-          6vw,
-          65px
-        );
+    .producto-placeholder img {
 
-      font-weight: 600;
+      max-width: 120px;
+
+      height: auto;
+
+      object-fit: contain;
+
+      opacity: .35;
 
     }
 
@@ -1077,18 +957,12 @@
       justify-content:
         space-between;
 
-      align-items:
-        flex-start;
-
       gap: 20px;
 
     }
 
 
     .producto-nombre {
-
-      font-family:
-        var(--font-principal);
 
       font-size: 13px;
 
@@ -1097,19 +971,9 @@
     }
 
 
-    /*
-      PRECIO
-
-      Este peso puede cambiarse
-      desde /admin/
-    */
-
     .producto-precio {
 
       flex-shrink: 0;
-
-      font-family:
-        var(--font-principal);
 
       font-size: 13px;
 
@@ -1125,12 +989,9 @@
 
       margin-top: 10px;
 
-      color:
-        var(--suave);
+      color: var(--suave);
 
       font-size: 12px;
-
-      font-weight: 400;
 
       line-height: 1.6;
 
@@ -1139,134 +1000,177 @@
 
     /*
     ========================================
-    CARGA
+    LISTA DE COMPRA
     ========================================
     */
 
 
-    .skeleton {
+    .comprar-section {
 
-      width: 100%;
-
-    }
-
-
-    .skeleton-image {
-
-      width: 100%;
-
-      aspect-ratio:
-        4 / 5;
-
-      background:
-
-        linear-gradient(
-
-          100deg,
-
-          #ddd9d1
-          25%,
-
-          #ebe8e2
-          40%,
-
-          #ddd9d1
-          55%
-
+      width:
+        calc(
+          100% - 28px
         );
 
-      background-size:
-        200% 100%;
+      max-width: 1600px;
 
-      animation:
-        skeleton
-        1.4s
-        infinite;
+      margin:
+        0 auto 130px;
 
     }
 
 
-    @keyframes skeleton {
+    .comprar-cabecera {
 
-      to {
-
-        background-position:
-          -200% 0;
-
-      }
-
-    }
-
-
-    /*
-    ========================================
-    ESTADO VACÍO
-    ========================================
-    */
-
-
-    .estado-vacio {
-
-      grid-column:
-        1 / -1;
-
-      min-height: 350px;
-
-      padding: 40px;
+      padding-bottom: 30px;
 
       display: flex;
 
-      flex-direction:
-        column;
-
       justify-content:
-        center;
+        space-between;
 
       align-items:
-        center;
+        flex-end;
 
-      text-align:
-        center;
-
-      border-top:
-        1px solid
-        var(--linea);
-
-      border-bottom:
-        1px solid
-        var(--linea);
+      gap: 30px;
 
     }
 
 
-    .estado-vacio h3 {
-
-      font-family:
-        var(--font-principal);
+    .comprar-cabecera h2 {
 
       font-size:
         clamp(
-          32px,
+          30px,
           5vw,
-          52px
+          55px
         );
 
       font-weight: 500;
 
-      letter-spacing:
-        -.04em;
+      letter-spacing: -.045em;
 
     }
 
 
-    .estado-vacio p {
+    .comprar-cabecera p {
 
-      margin-top: 13px;
+      max-width: 390px;
 
-      color:
-        var(--suave);
+      color: var(--suave);
+
+      font-size: 12px;
+
+      line-height: 1.6;
+
+    }
+
+
+    .tabla-compra {
+
+      border-top:
+        1px solid var(--texto);
+
+    }
+
+
+    .fila-compra {
+
+      min-height: 76px;
+
+      padding: 16px 6px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.8fr)
+        minmax(120px, .7fr)
+        auto;
+
+      align-items: center;
+
+      gap: 25px;
+
+      border-bottom:
+        1px solid var(--linea);
+
+    }
+
+
+    .fila-compra.encabezado {
+
+      min-height: 45px;
+
+      color: var(--suave);
+
+      font-size: 9px;
+
+      font-weight: 500;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .compra-nombre {
 
       font-size: 13px;
+
+      font-weight: 500;
+
+    }
+
+
+    .compra-precio {
+
+      font-size: 13px;
+
+      font-weight:
+        var(--peso-precio);
+
+    }
+
+
+    .boton-whatsapp {
+
+      min-width: 128px;
+
+      padding:
+        12px 17px;
+
+      border:
+        1px solid var(--texto);
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: transparent;
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: .1em;
+
+      text-transform: uppercase;
+
+      transition:
+        background .2s,
+        color .2s;
+
+    }
+
+
+    .boton-whatsapp:hover {
+
+      background: var(--texto);
+
+      color: white;
 
     }
 
@@ -1294,8 +1198,7 @@
           130px
         );
 
-      background:
-        var(--negro);
+      background: var(--negro);
 
       color: white;
 
@@ -1311,28 +1214,22 @@
     }
 
 
-    .editorial-label {
+    .editorial-logo {
 
-      margin-bottom:
-        30px;
+      margin-bottom: 45px;
 
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          .55
-        );
+    }
 
-      font-size: 10px;
 
-      font-weight: 500;
+    .editorial-logo img {
 
-      letter-spacing:
-        .18em;
+      max-width: 120px;
 
-      text-transform:
-        uppercase;
+      max-height: 70px;
+
+      width: auto;
+
+      filter: brightness(0) invert(1);
 
     }
 
@@ -1340,9 +1237,6 @@
     .editorial-text {
 
       max-width: 1100px;
-
-      font-family:
-        var(--font-principal);
 
       font-size:
         clamp(
@@ -1355,8 +1249,7 @@
 
       line-height: 1.1;
 
-      letter-spacing:
-        -.045em;
+      letter-spacing: -.045em;
 
     }
 
@@ -1370,51 +1263,104 @@
 
     footer {
 
-      min-height: 310px;
-
       padding:
-        50px 30px 30px;
-
-      display: flex;
-
-      flex-direction:
-        column;
-
-      justify-content:
-        space-between;
+        70px 30px 30px;
 
       border-top:
-        1px solid
-        var(--linea);
+        1px solid var(--linea);
+
+    }
+
+
+    .footer-contenido {
+
+      max-width: 1600px;
+
+      margin: auto;
 
     }
 
 
     .footer-logo {
 
-      font-family:
-        var(--font-principal);
+      padding-bottom: 70px;
 
-      font-size:
+    }
+
+
+    .footer-logo img {
+
+      width: auto;
+
+      max-width:
         clamp(
-          65px,
-          14vw,
-          175px
+          150px,
+          20vw,
+          300px
         );
 
-      font-weight: 600;
+      max-height: 150px;
 
-      line-height: .8;
+      object-fit: contain;
 
-      letter-spacing:
-        -.07em;
+    }
+
+
+    .footer-contacto {
+
+      padding:
+        30px 0;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap: 30px;
+
+      border-top:
+        1px solid var(--linea);
+
+      border-bottom:
+        1px solid var(--linea);
+
+    }
+
+
+    .footer-contacto-item span {
+
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--suave);
+
+      font-size: 9px;
+
+      font-weight: 500;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .footer-contacto-item a {
+
+      font-size: 13px;
+
+      font-weight: 500;
 
     }
 
 
     .footer-bottom {
 
-      padding-top: 60px;
+      padding-top: 30px;
 
       display: flex;
 
@@ -1423,18 +1369,90 @@
 
       gap: 20px;
 
-      color:
-        var(--suave);
+      color: var(--suave);
 
       font-size: 10px;
 
       font-weight: 500;
 
-      letter-spacing:
-        .1em;
+      letter-spacing: .1em;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
+
+    }
+
+
+    /*
+    ========================================
+    SKELETON
+    ========================================
+    */
+
+
+    .skeleton-image {
+
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      background:
+
+        linear-gradient(
+
+          100deg,
+
+          #ddd9d1 25%,
+
+          #ebe8e2 40%,
+
+          #ddd9d1 55%
+
+        );
+
+      background-size:
+        200% 100%;
+
+      animation:
+        skeleton 1.4s infinite;
+
+    }
+
+
+    @keyframes skeleton {
+
+      to {
+
+        background-position:
+          -200% 0;
+
+      }
+
+    }
+
+
+    .estado-vacio {
+
+      grid-column: 1 / -1;
+
+      min-height: 300px;
+
+      padding: 40px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      border-top:
+        1px solid var(--linea);
+
+      border-bottom:
+        1px solid var(--linea);
 
     }
 
@@ -1446,17 +1464,14 @@
     */
 
 
-    @media (
-      max-width: 760px
-    ) {
+    @media (max-width: 760px) {
 
 
       .header {
 
         height: 66px;
 
-        padding:
-          0 16px;
+        padding: 0 16px;
 
       }
 
@@ -1465,15 +1480,28 @@
 
         max-width: 82px;
 
-        max-height: 42px;
+      }
+
+
+      .contacto-superior {
+
+        padding:
+          9px 16px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
 
       }
 
 
-      .menu-button,
-      .productos-link {
+      .contacto-superior-links {
 
-        font-size: 9px;
+        gap: 15px;
+
+        flex-wrap: wrap;
 
       }
 
@@ -1485,11 +1513,11 @@
             100% - 16px
           );
 
-        margin-top: 8px;
+        min-height: 540px;
 
         height: 72vh;
 
-        min-height: 540px;
+        margin-top: 8px;
 
       }
 
@@ -1507,20 +1535,11 @@
 
       .hero-controls {
 
-        right: 16px;
-
         top: 16px;
 
+        right: 16px;
+
         bottom: auto;
-
-      }
-
-
-      .hero-control {
-
-        width: 38px;
-
-        height: 38px;
 
       }
 
@@ -1534,7 +1553,7 @@
 
       .productos-intro p {
 
-        margin-top: 28px;
+        margin-top: 25px;
 
       }
 
@@ -1552,46 +1571,93 @@
       .productos-grid,
       .productos-grid.unico {
 
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .comprar-section {
+
+        width:
+          calc(
+            100% - 32px
+          );
+
+        margin-bottom: 90px;
+
+      }
+
+
+      .comprar-cabecera {
+
+        display: block;
+
+      }
+
+
+      .comprar-cabecera p {
+
+        margin-top: 18px;
+
+      }
+
+
+      .fila-compra {
+
         grid-template-columns:
-          1fr;
+          minmax(0, 1fr)
+          auto;
+
+        gap: 8px 15px;
 
       }
 
 
-      .productos-grid {
+      .fila-compra.encabezado {
 
-        row-gap: 55px;
-
-      }
-
-
-      .editorial {
-
-        padding-top:
-          100px;
-
-        padding-bottom:
-          100px;
+        display: none;
 
       }
 
 
-      footer {
+      .compra-precio {
 
-        min-height: 250px;
+        grid-column: 1;
 
-        padding:
-          40px 18px 25px;
+      }
+
+
+      .boton-whatsapp {
+
+        grid-column: 2;
+
+        grid-row: 1 / span 2;
+
+      }
+
+
+      .footer-contacto {
+
+        grid-template-columns: 1fr;
 
       }
 
 
       .footer-bottom {
 
-        flex-direction:
-          column;
+        flex-direction: column;
 
       }
+
+
+      .editorial {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+
+      }
+
 
     }
 
@@ -1618,9 +1684,7 @@
       id="abrir-menu"
       type="button"
     >
-
       Menú
-
     </button>
 
 
@@ -1641,13 +1705,59 @@
       class="productos-link"
       href="#productos"
     >
-
       Productos
-
     </a>
 
 
   </header>
+
+
+  <!-- CONTACTO SUPERIOR -->
+
+
+  <div class="contacto-superior">
+
+
+    <span>
+      Contacto
+    </span>
+
+
+    <div class="contacto-superior-links">
+
+
+      <a
+        id="contacto-email-superior"
+        href="mailto:daiofficial.py@gmail.com"
+      >
+        daiofficial.py@gmail.com
+      </a>
+
+
+      <a
+        id="contacto-instagram-superior"
+        href="https://www.instagram.com/daiofficial.py/"
+        target="_blank"
+        rel="noopener"
+      >
+        @daiofficial.py
+      </a>
+
+
+      <a
+        id="contacto-whatsapp-superior"
+        href="https://wa.me/595985824098"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
+
+
+    </div>
+
+
+  </div>
 
 
   <!-- MENÚ -->
@@ -1665,9 +1775,12 @@
       <div class="menu-header">
 
 
-        <div class="menu-brand">
+        <div class="menu-logo">
 
-          DAI PY
+          <img
+            src="logo.png"
+            alt="DAI PY"
+          >
 
         </div>
 
@@ -1677,9 +1790,7 @@
           id="cerrar-menu"
           type="button"
         >
-
           Cerrar
-
         </button>
 
 
@@ -1690,33 +1801,48 @@
 
 
         <a href="#inicio">
-
           Inicio
-
         </a>
 
 
         <a href="#productos">
-
           Productos
-
         </a>
 
 
-        <a href="#dai">
+        <a href="#comprar">
+          Comprar
+        </a>
 
-          DAI PY
 
+        <a href="#contacto">
+          Contacto
         </a>
 
 
       </div>
 
 
-      <div class="menu-footer">
+      <div class="menu-contacto">
 
-        Objetos, accesorios y detalles
-        seleccionados para acompañar tu día.
+
+        <a
+          id="menu-email"
+          href="mailto:daiofficial.py@gmail.com"
+        >
+          daiofficial.py@gmail.com
+        </a>
+
+
+        <a
+          id="menu-instagram"
+          href="https://www.instagram.com/daiofficial.py/"
+          target="_blank"
+          rel="noopener"
+        >
+          @daiofficial.py
+        </a>
+
 
       </div>
 
@@ -1753,9 +1879,7 @@
 
 
         <div class="hero-label">
-
           DAI PY
-
         </div>
 
 
@@ -1763,9 +1887,7 @@
           class="hero-title"
           id="hero-title"
         >
-
           DAI PY
-
         </h1>
 
 
@@ -1773,10 +1895,8 @@
           class="hero-subtitle"
           id="hero-subtitle"
         >
-
           Objetos y detalles seleccionados
           para acompañar tu día.
-
         </p>
 
 
@@ -1793,11 +1913,8 @@
           class="hero-control"
           id="banner-anterior"
           type="button"
-          aria-label="Banner anterior"
         >
-
           ←
-
         </button>
 
 
@@ -1805,11 +1922,8 @@
           class="hero-control"
           id="banner-siguiente"
           type="button"
-          aria-label="Banner siguiente"
         >
-
           →
-
         </button>
 
 
@@ -1832,9 +1946,7 @@
 
 
         <span class="productos-label">
-
           Tienda
-
         </span>
 
 
@@ -1874,19 +1986,68 @@
 
 
         <div class="skeleton">
-
-          <div
-            class="skeleton-image"
-          ></div>
-
+          <div class="skeleton-image"></div>
         </div>
 
 
         <div class="skeleton">
+          <div class="skeleton-image"></div>
+        </div>
 
-          <div
-            class="skeleton-image"
-          ></div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- TABLA DE COMPRA -->
+
+
+    <section
+      class="comprar-section"
+      id="comprar"
+    >
+
+
+      <div class="comprar-cabecera">
+
+
+        <h2>
+          Comprar
+        </h2>
+
+
+        <p>
+
+          Elegí tu producto y realizá
+          tu pedido directamente por WhatsApp.
+
+        </p>
+
+
+      </div>
+
+
+      <div
+        class="tabla-compra"
+        id="tabla-compra"
+      >
+
+
+        <div class="fila-compra encabezado">
+
+          <div>
+            Producto
+          </div>
+
+          <div>
+            Precio
+          </div>
+
+          <div>
+            Pedido
+          </div>
 
         </div>
 
@@ -1900,18 +2061,18 @@
     <!-- EDITORIAL -->
 
 
-    <section
-      class="editorial"
-      id="dai"
-    >
+    <section class="editorial">
 
 
       <div class="editorial-inner">
 
 
-        <div class="editorial-label">
+        <div class="editorial-logo">
 
-          DAI PY
+          <img
+            src="logo.png"
+            alt="DAI PY"
+          >
 
         </div>
 
@@ -1934,35 +2095,101 @@
   </main>
 
 
-  <footer>
+  <!-- FOOTER -->
 
 
-    <div class="footer-logo">
-
-      dai
-
-    </div>
+  <footer id="contacto">
 
 
-    <div class="footer-bottom">
+    <div class="footer-contenido">
 
 
-      <span>
+      <div class="footer-logo">
 
-        ©
+        <img
+          src="logo.png"
+          alt="DAI PY"
+        >
 
-        <span id="year"></span>
-
-        DAI PY
-
-      </span>
+      </div>
 
 
-      <span>
+      <div class="footer-contacto">
 
-        Tienda Oficial
 
-      </span>
+        <div class="footer-contacto-item">
+
+          <span>
+            Correo
+          </span>
+
+          <a
+            id="footer-email"
+            href="mailto:daiofficial.py@gmail.com"
+          >
+            daiofficial.py@gmail.com
+          </a>
+
+        </div>
+
+
+        <div class="footer-contacto-item">
+
+          <span>
+            Instagram
+          </span>
+
+          <a
+            id="footer-instagram"
+            href="https://www.instagram.com/daiofficial.py/"
+            target="_blank"
+            rel="noopener"
+          >
+            @daiofficial.py
+          </a>
+
+        </div>
+
+
+        <div class="footer-contacto-item">
+
+          <span>
+            Pedidos
+          </span>
+
+          <a
+            id="footer-whatsapp"
+            href="https://wa.me/595985824098"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+
+        <span>
+
+          ©
+          <span id="year"></span>
+          DAI PY
+
+        </span>
+
+
+        <span>
+          Tienda Oficial
+        </span>
+
+
+      </div>
 
 
     </div>
@@ -1976,7 +2203,7 @@
 
     /*
     ========================================
-    CONFIGURACIÓN GENERAL
+    CONFIGURACIÓN
     ========================================
     */
 
@@ -2010,7 +2237,393 @@
 
     /*
     ========================================
-    TIPOGRAFÍAS DISPONIBLES
+    DATOS DE CONTACTO
+    ========================================
+    */
+
+
+    let CONTACTO = {
+
+      whatsapp:
+        "+595985824098",
+
+      email:
+        "daiofficial.py@gmail.com",
+
+      instagram:
+        "@daiofficial.py"
+
+    };
+
+
+
+    function limpiarWhatsApp(
+      numero
+    ) {
+
+
+      return String(
+        numero || ""
+      )
+        .replace(
+          /\D/g,
+          ""
+        );
+
+
+    }
+
+
+
+    function usuarioInstagram(
+      usuario
+    ) {
+
+
+      return String(
+        usuario || ""
+      )
+        .trim()
+        .replace(
+          /^@/,
+          ""
+        );
+
+
+    }
+
+
+
+    function urlInstagram(
+      usuario
+    ) {
+
+
+      const limpio =
+
+        usuarioInstagram(
+          usuario
+        );
+
+
+      return limpio
+
+        ?
+
+        `https://www.instagram.com/${limpio}/`
+
+        :
+
+        "#";
+
+
+    }
+
+
+
+    function urlWhatsApp(
+      mensaje = ""
+    ) {
+
+
+      const numero =
+
+        limpiarWhatsApp(
+          CONTACTO.whatsapp
+        );
+
+
+      let url =
+
+        `https://wa.me/${numero}`;
+
+
+      if (
+        mensaje
+      ) {
+
+
+        url +=
+
+          "?text="
+
+          +
+
+          encodeURIComponent(
+            mensaje
+          );
+
+
+      }
+
+
+      return url;
+
+
+    }
+
+
+
+    function aplicarContacto() {
+
+
+      const instagramTexto =
+
+        CONTACTO.instagram
+          .startsWith("@")
+
+        ?
+
+        CONTACTO.instagram
+
+        :
+
+        "@"
+        +
+        CONTACTO.instagram;
+
+
+      const instagramURL =
+
+        urlInstagram(
+          CONTACTO.instagram
+        );
+
+
+      const emailURL =
+
+        "mailto:"
+        +
+        CONTACTO.email;
+
+
+      const whatsappURL =
+
+        urlWhatsApp(
+          "Hola DAI PY, quisiera realizar una consulta."
+        );
+
+
+      const emails = [
+
+        "contacto-email-superior",
+
+        "menu-email",
+
+        "footer-email"
+
+      ];
+
+
+      emails.forEach(
+
+        id => {
+
+
+          const elemento =
+
+            document
+              .getElementById(
+                id
+              );
+
+
+          if (
+            elemento
+          ) {
+
+
+            elemento.textContent =
+              CONTACTO.email;
+
+
+            elemento.href =
+              emailURL;
+
+
+          }
+
+
+        }
+
+      );
+
+
+
+      const instagrams = [
+
+        "contacto-instagram-superior",
+
+        "menu-instagram",
+
+        "footer-instagram"
+
+      ];
+
+
+      instagrams.forEach(
+
+        id => {
+
+
+          const elemento =
+
+            document
+              .getElementById(
+                id
+              );
+
+
+          if (
+            elemento
+          ) {
+
+
+            elemento.textContent =
+              instagramTexto;
+
+
+            elemento.href =
+              instagramURL;
+
+
+          }
+
+
+        }
+
+      );
+
+
+
+      [
+
+        "contacto-whatsapp-superior",
+
+        "footer-whatsapp"
+
+      ]
+        .forEach(
+
+
+          id => {
+
+
+            const elemento =
+
+              document
+                .getElementById(
+                  id
+                );
+
+
+            if (
+              elemento
+            ) {
+
+
+              elemento.href =
+                whatsappURL;
+
+
+            }
+
+
+          }
+
+
+        );
+
+
+    }
+
+
+
+    async function cargarContacto() {
+
+
+      aplicarContacto();
+
+
+      try {
+
+
+        const respuesta =
+
+          await fetch(
+
+            RAW_BASE
+
+            +
+
+            "contenido/configuracion/contacto.json"
+
+            +
+
+            "?v="
+
+            +
+
+            VERSION,
+
+            {
+
+              cache:
+                "no-store"
+
+            }
+
+          );
+
+
+        if (
+          !respuesta.ok
+        ) {
+
+          return;
+
+        }
+
+
+        const configuracion =
+
+          await respuesta.json();
+
+
+        CONTACTO = {
+
+          ...CONTACTO,
+
+          ...configuracion
+
+        };
+
+
+        aplicarContacto();
+
+
+      }
+
+      catch (
+        error
+      ) {
+
+
+        console.log(
+          "Se utilizan los datos de contacto predeterminados."
+        );
+
+
+      }
+
+
+    }
+
+
+
+    /*
+    ========================================
+    APARIENCIA
     ========================================
     */
 
@@ -2077,13 +2690,6 @@
 
 
 
-    /*
-    ========================================
-    APLICAR DISEÑO DESDE EL CMS
-    ========================================
-    */
-
-
     function aplicarDiseno(
       configuracion
     ) {
@@ -2091,8 +2697,6 @@
 
       const nombreFuente =
 
-        configuracion.fuente
-        &&
         FUENTES[
           configuracion.fuente
         ]
@@ -2113,39 +2717,25 @@
         ];
 
 
-
-      /*
-        Cambiar archivo de Google Fonts
-      */
-
-
-      const linkFuente =
-
-        document.getElementById(
+      document
+        .getElementById(
           "fuente-google"
-        );
+        )
+        .href =
+
+          "https://fonts.googleapis.com/css2?family="
+
+          +
+
+          fuente.css
+
+          +
+
+          "&display=swap";
 
 
-      linkFuente.href =
-
-        "https://fonts.googleapis.com/css2?family="
-
-        +
-
-        fuente.css
-
-        +
-
-        "&display=swap";
-
-
-
-      /*
-        Cambiar fuente global
-      */
-
-
-      document.documentElement
+      document
+        .documentElement
         .style
         .setProperty(
 
@@ -2156,29 +2746,24 @@
         );
 
 
-
-      /*
-        Precio en negrita
-      */
-
-
-      const precioNegrita =
-
-        configuracion
-          .precio_negrita
-          !== false;
-
-
-
-      document.documentElement
+      document
+        .documentElement
         .style
         .setProperty(
 
           "--peso-precio",
 
-          precioNegrita
-            ? "700"
-            : "400"
+          configuracion
+            .precio_negrita
+            !== false
+
+          ?
+
+          "700"
+
+          :
+
+          "400"
 
         );
 
@@ -2190,16 +2775,6 @@
     async function cargarDiseno() {
 
 
-      /*
-        Antes de descargar nada,
-        aplicamos Poppins + negrita.
-
-        Así la web siempre funciona
-        aunque el archivo todavía
-        no exista.
-      */
-
-
       aplicarDiseno({
 
         fuente:
@@ -2209,7 +2784,6 @@
           true
 
       });
-
 
 
       try {
@@ -2243,7 +2817,6 @@
           );
 
 
-
         if (
           !respuesta.ok
         ) {
@@ -2253,11 +2826,9 @@
         }
 
 
-
         const configuracion =
 
           await respuesta.json();
-
 
 
         aplicarDiseno(
@@ -2273,7 +2844,7 @@
 
 
         console.log(
-          "Se utiliza Poppins por defecto."
+          "Poppins por defecto."
         );
 
 
@@ -2296,7 +2867,9 @@
     ) {
 
 
-      if (!valor) {
+      if (
+        !valor
+      ) {
 
         return "";
 
@@ -2305,7 +2878,6 @@
 
       valor =
         valor.trim();
-
 
 
       if (
@@ -2342,7 +2914,6 @@
       }
 
 
-
       if (
 
         valor.startsWith("'")
@@ -2359,7 +2930,6 @@
 
 
       }
-
 
 
       return valor;
@@ -2387,7 +2957,6 @@
           );
 
 
-
       const regex =
 
         new RegExp(
@@ -2403,7 +2972,6 @@
           ":\\s*(.*)$"
 
         );
-
 
 
       for (
@@ -2425,20 +2993,19 @@
             );
 
 
-
-        if (!resultado) {
+        if (
+          !resultado
+        ) {
 
           continue;
 
         }
 
 
-
         let valor =
 
           resultado[1]
             .trim();
-
 
 
         if (
@@ -2462,7 +3029,6 @@
             [];
 
 
-
           for (
 
             let j = i + 1;
@@ -2478,7 +3044,6 @@
               lineas[j];
 
 
-
             if (
 
               linea.trim()
@@ -2490,7 +3055,6 @@
               break;
 
             }
-
 
 
             if (
@@ -2514,24 +3078,18 @@
             }
 
 
-
             contenido.push(
-
               linea.trim()
-
             );
 
 
           }
 
 
-
           if (
-
             valor.startsWith(
               ">"
             )
-
           ) {
 
 
@@ -2550,7 +3108,6 @@
           }
 
 
-
           return contenido
 
             .join("\n")
@@ -2561,14 +3118,12 @@
         }
 
 
-
         return limpiarValor(
           valor
         );
 
 
       }
-
 
 
       return "";
@@ -2590,12 +3145,13 @@
     ) {
 
 
-      if (!ruta) {
+      if (
+        !ruta
+      ) {
 
         return "";
 
       }
-
 
 
       ruta =
@@ -2603,7 +3159,6 @@
         limpiarValor(
           String(ruta)
         );
-
 
 
       if (
@@ -2620,12 +3175,9 @@
 
       ) {
 
-
         return ruta;
 
-
       }
-
 
 
       ruta =
@@ -2639,7 +3191,6 @@
         );
 
 
-
       ruta =
 
         ruta.replace(
@@ -2649,7 +3200,6 @@
           ""
 
         );
-
 
 
       if (
@@ -2664,17 +3214,14 @@
         ruta =
 
           "public/"
-
           +
-
           ruta;
 
 
       }
 
 
-
-      const rutaCodificada =
+      const codificada =
 
         ruta
 
@@ -2693,14 +3240,13 @@
           .join("/");
 
 
-
       return (
 
         RAW_BASE
 
         +
 
-        rutaCodificada
+        codificada
 
         +
 
@@ -2745,7 +3291,6 @@
         );
 
 
-
       if (
 
         respuesta.status
@@ -2754,36 +3299,25 @@
 
       ) {
 
-
         return [];
 
-
       }
-
 
 
       if (
-
         !respuesta.ok
-
       ) {
 
-
         throw new Error(
-
-          "No se pudo consultar GitHub"
-
+          "Error GitHub"
         );
 
-
       }
-
 
 
       const archivos =
 
         await respuesta.json();
-
 
 
       const markdowns =
@@ -2807,7 +3341,6 @@
         );
 
 
-
       return Promise.all(
 
 
@@ -2817,7 +3350,7 @@
           async archivo => {
 
 
-            const respuestaMarkdown =
+            const response =
 
               await fetch(
 
@@ -2841,34 +3374,23 @@
               );
 
 
-
             if (
-
-              !respuestaMarkdown.ok
-
+              !response.ok
             ) {
 
-
               return null;
-
 
             }
 
 
-
             const texto =
 
-              await respuestaMarkdown
-                .text();
-
+              await response.text();
 
 
             return {
 
               texto,
-
-              nombreArchivo:
-                archivo.name,
 
               sha:
                 archivo.sha
@@ -2896,16 +3418,11 @@
     */
 
 
-    let banners =
-      [];
+    let banners = [];
 
+    let bannerActual = 0;
 
-    let bannerActual =
-      0;
-
-
-    let temporizadorBanner =
-      null;
+    let temporizadorBanner = null;
 
 
 
@@ -2915,58 +3432,35 @@
 
 
       if (
-
-        banners.length
-        ===
-        0
-
+        banners.length === 0
       ) {
-
 
         return;
 
-
       }
 
 
-
       if (
-
         indice < 0
-
       ) {
-
 
         indice =
-
-          banners.length
-          -
-          1;
-
+          banners.length - 1;
 
       }
 
 
-
       if (
-
-        indice
-        >=
-        banners.length
-
+        indice >= banners.length
       ) {
-
 
         indice = 0;
 
-
       }
-
 
 
       bannerActual =
         indice;
-
 
 
       document
@@ -2988,8 +3482,8 @@
                 "activo",
 
                 posicion
-                ===
-                indice
+                  ===
+                  indice
 
               );
 
@@ -2999,13 +3493,11 @@
         );
 
 
-
       const banner =
 
         banners[
           indice
         ];
-
 
 
       document
@@ -3019,7 +3511,6 @@
           ||
 
           "DAI PY";
-
 
 
       document
@@ -3043,9 +3534,7 @@
 
 
       if (
-
         temporizadorBanner
-
       ) {
 
 
@@ -3057,11 +3546,8 @@
       }
 
 
-
       if (
-
         banners.length > 1
-
       ) {
 
 
@@ -3073,11 +3559,7 @@
 
 
               actualizarBanner(
-
-                bannerActual
-                +
-                1
-
+                bannerActual + 1
               );
 
 
@@ -3125,21 +3607,20 @@
           );
 
 
-
       const contenedor =
 
-        document.getElementById(
-          "hero-slides"
-        );
-
+        document
+          .getElementById(
+            "hero-slides"
+          );
 
 
       const controles =
 
-        document.getElementById(
-          "hero-controls"
-        );
-
+        document
+          .getElementById(
+            "hero-controls"
+          );
 
 
       contenedor.innerHTML =
@@ -3147,32 +3628,9 @@
         '<div class="hero-fondo"></div>';
 
 
-
       if (
-
-        banners.length
-        ===
-        0
-
+        banners.length === 0
       ) {
-
-
-        document
-          .getElementById(
-            "hero-title"
-          )
-          .textContent =
-            "DAI PY";
-
-
-        document
-          .getElementById(
-            "hero-subtitle"
-          )
-          .textContent =
-
-            "Objetos y detalles seleccionados para acompañar tu día.";
-
 
 
         controles
@@ -3188,7 +3646,6 @@
       }
 
 
-
       banners.forEach(
 
 
@@ -3200,21 +3657,18 @@
 
           const imagen =
 
-            document.createElement(
-              "img"
-            );
-
+            document
+              .createElement(
+                "img"
+              );
 
 
           imagen.className =
             "hero-slide";
 
 
-
           if (
-
             indice === 0
-
           ) {
 
 
@@ -3228,13 +3682,11 @@
           }
 
 
-
           imagen.src =
 
             obtenerImagen(
               banner.imagen
             );
-
 
 
           imagen.alt =
@@ -3244,20 +3696,6 @@
             ||
 
             "DAI PY";
-
-
-
-          imagen.onerror =
-
-            () => {
-
-
-              imagen.style.display =
-                "none";
-
-
-            };
-
 
 
           contenedor
@@ -3272,25 +3710,18 @@
       );
 
 
-
       controles
         .classList
         .toggle(
 
           "oculto",
 
-          banners.length
-          <=
-          1
+          banners.length <= 1
 
         );
 
 
-
-      actualizarBanner(
-        0
-      );
-
+      actualizarBanner(0);
 
       reiniciarCarrusel();
 
@@ -3312,14 +3743,11 @@
           );
 
 
-
         const lista =
 
           entradas
 
-            .filter(
-              Boolean
-            )
+            .filter(Boolean)
 
             .map(
 
@@ -3327,7 +3755,7 @@
               entrada => {
 
 
-                const activoTexto =
+                const activo =
 
                   extraerCampo(
 
@@ -3338,61 +3766,46 @@
                   );
 
 
-
                 return {
 
 
                   titulo:
 
                     extraerCampo(
-
                       entrada.texto,
-
                       "titulo"
-
                     ),
 
 
                   subtitulo:
 
                     extraerCampo(
-
                       entrada.texto,
-
                       "subtitulo"
-
                     ),
 
 
                   imagen:
 
                     extraerCampo(
-
                       entrada.texto,
-
                       "imagen"
-
                     ),
 
 
                   activo:
 
-                    activoTexto === ""
+                    activo === ""
 
                     ||
 
                     ![
-
                       "false",
                       "0",
                       "no",
                       "off"
-
                     ].includes(
-
-                      activoTexto
-                        .toLowerCase()
-
+                      activo.toLowerCase()
                     ),
 
 
@@ -3401,11 +3814,8 @@
                     Number(
 
                       extraerCampo(
-
                         entrada.texto,
-
                         "orden"
-
                       )
 
                     )
@@ -3424,7 +3834,6 @@
             );
 
 
-
         mostrarBanners(
           lista
         );
@@ -3438,13 +3847,7 @@
 
 
         console.error(
-          "Error cargando banners:",
           error
-        );
-
-
-        mostrarBanners(
-          []
         );
 
 
@@ -3467,30 +3870,32 @@
     ) {
 
 
-      if (!precio) {
+      if (
+        !precio
+      ) {
 
         return "";
 
       }
 
 
-
       const numero =
 
         String(precio)
+
           .replace(
             /[^\d]/g,
             ""
           );
 
 
-
-      if (!numero) {
+      if (
+        !numero
+      ) {
 
         return precio;
 
       }
-
 
 
       return (
@@ -3511,6 +3916,85 @@
 
 
 
+    function mensajeProducto(
+      producto
+    ) {
+
+
+      return (
+
+        "Hola DAI PY, quisiera realizar un pedido."
+
+        +
+
+        "\n\nProducto: "
+
+        +
+
+        producto.nombre
+
+        +
+
+        "\nPrecio: "
+
+        +
+
+        formatearPrecio(
+          producto.precio
+        )
+
+      );
+
+
+    }
+
+
+
+    function crearBotonCompra(
+      producto
+    ) {
+
+
+      const link =
+
+        document
+          .createElement(
+            "a"
+          );
+
+
+      link.className =
+        "boton-whatsapp";
+
+
+      link.textContent =
+        "Comprar";
+
+
+      link.href =
+
+        urlWhatsApp(
+          mensajeProducto(
+            producto
+          )
+        );
+
+
+      link.target =
+        "_blank";
+
+
+      link.rel =
+        "noopener";
+
+
+      return link;
+
+
+    }
+
+
+
     function crearProducto(
       producto
     ) {
@@ -3518,41 +4002,39 @@
 
       const articulo =
 
-        document.createElement(
-          "article"
-        );
+        document
+          .createElement(
+            "article"
+          );
 
 
       articulo.className =
         "producto";
 
 
-
       const imagenBox =
 
-        document.createElement(
-          "div"
-        );
+        document
+          .createElement(
+            "div"
+          );
 
 
       imagenBox.className =
         "producto-imagen";
 
 
-
       if (
-
         producto.img
-
       ) {
 
 
         const imagen =
 
-          document.createElement(
-            "img"
-          );
-
+          document
+            .createElement(
+              "img"
+            );
 
 
         imagen.src =
@@ -3560,7 +4042,6 @@
           obtenerImagen(
             producto.img
           );
-
 
 
         imagen.alt =
@@ -3572,10 +4053,8 @@
           "Producto DAI PY";
 
 
-
         imagen.loading =
           "lazy";
-
 
 
         imagen.onerror =
@@ -3585,22 +4064,19 @@
 
             const placeholder =
 
-              document.createElement(
-                "div"
-              );
-
+              document
+                .createElement(
+                  "div"
+                );
 
 
             placeholder.className =
-
               "producto-placeholder";
 
 
+            placeholder.innerHTML =
 
-            placeholder.textContent =
-
-              "DAI PY";
-
+              '<img src="logo.png" alt="DAI PY">';
 
 
             imagenBox
@@ -3610,7 +4086,6 @@
 
 
           };
-
 
 
         imagenBox
@@ -3626,22 +4101,19 @@
 
         const placeholder =
 
-          document.createElement(
-            "div"
-          );
-
+          document
+            .createElement(
+              "div"
+            );
 
 
         placeholder.className =
-
           "producto-placeholder";
 
 
+        placeholder.innerHTML =
 
-        placeholder.textContent =
-
-          "DAI PY";
-
+          '<img src="logo.png" alt="DAI PY">';
 
 
         imagenBox
@@ -3653,36 +4125,36 @@
       }
 
 
-
       const info =
 
-        document.createElement(
-          "div"
-        );
+        document
+          .createElement(
+            "div"
+          );
 
 
       info.className =
         "producto-info";
 
 
-
       const cabecera =
 
-        document.createElement(
-          "div"
-        );
+        document
+          .createElement(
+            "div"
+          );
 
 
       cabecera.className =
         "producto-cabecera";
 
 
-
       const nombre =
 
-        document.createElement(
-          "h3"
-        );
+        document
+          .createElement(
+            "h3"
+          );
 
 
       nombre.className =
@@ -3698,12 +4170,12 @@
         "Producto";
 
 
-
       const precio =
 
-        document.createElement(
-          "div"
-        );
+        document
+          .createElement(
+            "div"
+          );
 
 
       precio.className =
@@ -3717,38 +4189,32 @@
         );
 
 
-
-      cabecera
-        .appendChild(
-          nombre
-        );
+      cabecera.appendChild(
+        nombre
+      );
 
 
-      cabecera
-        .appendChild(
-          precio
-        );
+      cabecera.appendChild(
+        precio
+      );
 
 
-      info
-        .appendChild(
-          cabecera
-        );
-
+      info.appendChild(
+        cabecera
+      );
 
 
       if (
-
         producto.desc
-
       ) {
 
 
         const descripcion =
 
-          document.createElement(
-            "p"
-          );
+          document
+            .createElement(
+              "p"
+            );
 
 
         descripcion.className =
@@ -3759,30 +4225,140 @@
           producto.desc;
 
 
-        info
-          .appendChild(
-            descripcion
-          );
+        info.appendChild(
+          descripcion
+        );
 
 
       }
 
 
-
-      articulo
-        .appendChild(
-          imagenBox
-        );
+      articulo.appendChild(
+        imagenBox
+      );
 
 
-      articulo
-        .appendChild(
-          info
-        );
-
+      articulo.appendChild(
+        info
+      );
 
 
       return articulo;
+
+
+    }
+
+
+
+    function mostrarTablaCompra(
+      productos
+    ) {
+
+
+      const tabla =
+
+        document
+          .getElementById(
+            "tabla-compra"
+          );
+
+
+      tabla.innerHTML = `
+
+        <div class="fila-compra encabezado">
+
+          <div>Producto</div>
+
+          <div>Precio</div>
+
+          <div>Pedido</div>
+
+        </div>
+
+      `;
+
+
+      productos.forEach(
+
+
+        producto => {
+
+
+          const fila =
+
+            document
+              .createElement(
+                "div"
+              );
+
+
+          fila.className =
+            "fila-compra";
+
+
+          const nombre =
+
+            document
+              .createElement(
+                "div"
+              );
+
+
+          nombre.className =
+            "compra-nombre";
+
+
+          nombre.textContent =
+            producto.nombre;
+
+
+          const precio =
+
+            document
+              .createElement(
+                "div"
+              );
+
+
+          precio.className =
+            "compra-precio";
+
+
+          precio.textContent =
+
+            formatearPrecio(
+              producto.precio
+            );
+
+
+          fila.appendChild(
+            nombre
+          );
+
+
+          fila.appendChild(
+            precio
+          );
+
+
+          fila.appendChild(
+
+            crearBotonCompra(
+              producto
+            )
+
+          );
+
+
+          tabla.appendChild(
+            fila
+          );
+
+
+        }
+
+
+      );
 
 
     }
@@ -3796,58 +4372,44 @@
 
       const grid =
 
-        document.getElementById(
-          "productos-grid"
-        );
-
-
-      const cantidad =
-
-        document.getElementById(
-          "cantidad-productos"
-        );
-
+        document
+          .getElementById(
+            "productos-grid"
+          );
 
 
       grid.innerHTML =
         "";
 
 
-
-      cantidad.textContent =
-
-        productos.length
-
-        ?
-
-        `(${productos.length})`
-
-        :
-
-        "";
-
-
-
-      grid
-        .classList
-        .toggle(
-
-          "unico",
+      document
+        .getElementById(
+          "cantidad-productos"
+        )
+        .textContent =
 
           productos.length
-          ===
-          1
 
-        );
+          ?
 
+          `(${productos.length})`
+
+          :
+
+          "";
+
+
+      grid.classList.toggle(
+
+        "unico",
+
+        productos.length === 1
+
+      );
 
 
       if (
-
-        productos.length
-        ===
-        0
-
+        productos.length === 0
       ) {
 
 
@@ -3868,11 +4430,15 @@
         `;
 
 
+        mostrarTablaCompra(
+          []
+        );
+
+
         return;
 
 
       }
-
 
 
       productos.forEach(
@@ -3881,19 +4447,23 @@
         producto => {
 
 
-          grid
-            .appendChild(
+          grid.appendChild(
 
-              crearProducto(
-                producto
-              )
+            crearProducto(
+              producto
+            )
 
-            );
+          );
 
 
         }
 
 
+      );
+
+
+      mostrarTablaCompra(
+        productos
       );
 
 
@@ -3914,14 +4484,11 @@
           );
 
 
-
         const productos =
 
           entradas
 
-            .filter(
-              Boolean
-            )
+            .filter(Boolean)
 
             .map(
 
@@ -3932,44 +4499,32 @@
                 nombre:
 
                   extraerCampo(
-
                     entrada.texto,
-
                     "nombre"
-
                   ),
 
 
                 img:
 
                   extraerCampo(
-
                     entrada.texto,
-
                     "img"
-
                   ),
 
 
                 precio:
 
                   extraerCampo(
-
                     entrada.texto,
-
                     "precio"
-
                   ),
 
 
                 desc:
 
                   extraerCampo(
-
                     entrada.texto,
-
                     "desc"
-
                   )
 
 
@@ -3977,7 +4532,6 @@
 
 
             );
-
 
 
         mostrarProductos(
@@ -3993,31 +4547,8 @@
 
 
         console.error(
-          "Error cargando productos:",
           error
         );
-
-
-
-        document
-          .getElementById(
-            "productos-grid"
-          )
-          .innerHTML = `
-
-            <div class="estado-vacio">
-
-              <h3>
-                Actualizando tienda
-              </h3>
-
-              <p>
-                Intenta nuevamente en unos segundos.
-              </p>
-
-            </div>
-
-          `;
 
 
       }
@@ -4029,7 +4560,7 @@
 
     /*
     ========================================
-    CONTROLES DE BANNERS
+    CONTROLES
     ========================================
     */
 
@@ -4048,11 +4579,7 @@
 
 
           actualizarBanner(
-
-            bannerActual
-            -
-            1
-
+            bannerActual - 1
           );
 
 
@@ -4080,11 +4607,7 @@
 
 
           actualizarBanner(
-
-            bannerActual
-            +
-            1
-
+            bannerActual + 1
           );
 
 
@@ -4098,18 +4621,12 @@
 
 
 
-    /*
-    ========================================
-    MENÚ
-    ========================================
-    */
-
-
     const menu =
 
-      document.getElementById(
-        "menu"
-      );
+      document
+        .getElementById(
+          "menu"
+        );
 
 
 
@@ -4160,11 +4677,8 @@
         "abrir-menu"
       )
       .addEventListener(
-
         "click",
-
         abrirMenu
-
       );
 
 
@@ -4174,11 +4688,8 @@
         "cerrar-menu"
       )
       .addEventListener(
-
         "click",
-
         cerrarMenu
-
       );
 
 
@@ -4194,11 +4705,7 @@
 
 
           if (
-
-            evento.target
-            ===
-            menu
-
+            evento.target === menu
           ) {
 
 
@@ -4222,16 +4729,13 @@
       .forEach(
 
 
-        link => {
+        enlace => {
 
 
-          link
+          enlace
             .addEventListener(
-
               "click",
-
               cerrarMenu
-
             );
 
 
@@ -4260,15 +4764,11 @@
 
 
 
-    /*
-      Estas tres cosas se cargan
-      al mismo tiempo.
-    */
-
-
     Promise.allSettled([
 
       cargarDiseno(),
+
+      cargarContacto(),
 
       cargarBanners(),
 
