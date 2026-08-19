@@ -3,13 +3,13 @@ backend:
   repo: daipyofficial/daipyofficial
   branch: main
 
-media_folder: "public/uploads"
-public_folder: "public/uploads"
+media_folder: public/uploads
+public_folder: public/uploads
 
 collections:
-  - name: "productos"
-    label: "Productos"
-    folder: "contenido/productos"
+  - name: productos
+    label: Productos
+    folder: contenido/productos
     create: true
     slug: "{{slug}}"
     fields:
