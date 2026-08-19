@@ -8,15 +8,50 @@ public_folder: "/daipyofficial/public/uploads"
 
 collections:
 
+  - name: "banners"
+    label: "Banners"
+    label_singular: "Banner"
+    folder: "contenido/banners"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{titulo}}"
+
+    fields:
+
+      - label: "Título del Banner"
+        name: "titulo"
+        widget: "string"
+        required: false
+
+      - label: "Texto del Banner"
+        name: "subtitulo"
+        widget: "text"
+        required: false
+
+      - label: "Imagen del Banner"
+        name: "imagen"
+        widget: "image"
+
+      - label: "Mostrar Banner"
+        name: "activo"
+        widget: "boolean"
+        default: true
+
+      - label: "Orden"
+        name: "orden"
+        widget: "number"
+        value_type: "int"
+        min: 1
+        default: 1
+
+
   - name: "productos"
     label: "Productos"
     label_singular: "Producto"
-
     folder: "contenido/productos"
-
     create: true
-
     slug: "{{slug}}"
+    summary: "{{nombre}}"
 
     fields:
 
