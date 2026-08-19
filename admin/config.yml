@@ -4,16 +4,30 @@ backend:
   branch: main
 
 media_folder: "public/uploads"
-public_folder: "public/uploads"
+public_folder: "/daipyofficial/public/uploads"
 
 collections:
   - name: "productos"
     label: "Productos"
+    label_singular: "Producto"
     folder: "contenido/productos"
     create: true
     slug: "{{slug}}"
+
     fields:
-      - { label: "Nombre del Producto", name: "nombre", widget: "string" }
-      - { label: "Imagen del Producto", name: "img", widget: "image" }
-      - { label: "Precio (Gs.)", name: "precio", widget: "string" }
-      - { label: "Descripción", name: "desc", widget: "text", required: false }
+      - label: "Nombre del Producto"
+        name: "nombre"
+        widget: "string"
+
+      - label: "Imagen del Producto"
+        name: "img"
+        widget: "image"
+
+      - label: "Precio (Gs.)"
+        name: "precio"
+        widget: "string"
+
+      - label: "Descripción"
+        name: "desc"
+        widget: "text"
+        required: false
