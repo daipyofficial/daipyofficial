@@ -1,40 +1,19 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: daipyofficial/daipyofficial
   branch: main
-  repo: designfastrax-ftx/dai-py
 
 media_folder: "public/uploads"
-public_folder: "/uploads"
+public_folder: "uploads"
 
 collections:
-  - name: "configuracion"
-    label: "Configuración General"
-    delete: false
-    editor:
-      preview: false
-    files:
-      - name: "general"
-        label: "Ajustes de la Tienda"
-        file: "contenido/configuracion.json"
-        fields:
-          - { label: "Logo de la Marca", name: "brand", widget: "object", fields: [
-              { label: "Imagen del Logo", name: "logo", widget: "image", required: false }
-            ]}
-          - { label: "Sección Principal (Hero)", name: "hero", widget: "object", fields: [
-              { label: "Imagen de Banner", name: "banner", widget: "image", required: false },
-              { label: "Título Principal", name: "titulo", widget: "string", default: "Creado para los amantes de los detalles" },
-              { label: "Subtítulo / Descripción", name: "subtitulo", widget: "text", default: "Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial." }
-            ]}
-
   - name: "productos"
     label: "Productos"
     folder: "contenido/productos"
     create: true
     slug: "{{slug}}"
-    editor:
-      preview: false
     fields:
       - { label: "Nombre del Producto", name: "nombre", widget: "string" }
       - { label: "Imagen del Producto", name: "img", widget: "image" }
-      - { label: "Precio", name: "precio", widget: "string" }
-      - { label: "Descripción Corta", name: "desc", widget: "text", required: false }
+      - { label: "Precio (Gs.)", name: "precio", widget: "string" }
+      - { label: "Descripción", name: "desc", widget: "text", required: false }
