@@ -3,360 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAI – Accesorios & Regalos Exclusivos</title>
-
-  <!-- Fuentes de Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
+  <title>Tienda DAI PY</title>
   <style>
     :root {
-      --bg-color: #ffffff;
+      --primary: #111827;
+      --accent: #25d366;
+      --bg: #f9fafb;
       --card-bg: #ffffff;
-      --text-main: #1a1a1a;
-      --text-muted: #777777;
-      --border-color: #f0f0f0;
-      --img-bg: #f2efe9;
-      --font-serif: 'Playfair Display', serif;
-      --font-sans: 'Inter', sans-serif;
+      --text: #1f2937;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding-bottom: 60px; }
+    
     header {
-      padding: 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #fff;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-container img {
-      max-height: 38px;
-      width: auto;
-    }
-
-    .logo-text {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      letter-spacing: -0.03em;
-      text-transform: lowercase;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .hero {
-      max-width: 800px;
-      margin: 3rem auto 4rem;
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .hero-banner-wrap {
-      width: 100%;
-      max-height: 350px;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .hero-banner-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero h1 {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      color: #1a1a1a;
-    }
-
-    .hero p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      max-width: 500px;
-      margin: 0 auto;
-      font-weight: 300;
-    }
-
-    .products-grid {
-      max-width: 1100px;
-      margin: 0 auto 4rem;
-      padding: 0 1.5rem;
+    .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
-    @media (max-width: 850px) {
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 550px) {
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .product-card {
+    .card {
       background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-img-wrap {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      background-color: var(--img-bg);
+      border-radius: 8px;
       overflow: hidden;
-      position: relative;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
     }
 
-    .product-img-wrap img {
+    .card:hover { transform: translateY(-4px); }
+
+    .card img {
       width: 100%;
-      height: 100%;
+      height: 220px;
       object-fit: cover;
-      display: block;
+      background-color: #eee;
     }
 
-    .product-info {
-      padding: 1.25rem;
+    .card-body {
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .product-info h3 {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      font-weight: 400;
-      margin-bottom: 0.3rem;
-      color: #222;
-    }
+    .card-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card-price { font-size: 1.25rem; font-weight: bold; color: var(--primary); margin-bottom: 1rem; }
+    .card-desc { font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem; flex-grow: 1; }
 
-    .product-desc {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.4;
-      flex-grow: 1;
-    }
-
-    .product-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-    }
-
-    .product-price {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #1a1a1a;
-    }
-
-    .btn-buy {
-      background: #000000;
-      color: #ffffff;
-      border: none;
-      padding: 0.4rem 0.9rem;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    .btn-ws {
+      display: block;
+      width: 100%;
+      background-color: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: 6px;
       text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s;
+      font-weight: bold;
     }
 
-    .btn-buy:hover {
-      background: #333333;
-    }
+    #loading { text-align: center; padding: 3rem; font-size: 1.2rem; color: #6b7280; }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado Estilo Minimalista -->
   <header>
-    <div class="logo-container">
-      <img id="img-logo" src="" alt="DAI" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
-      <span id="text-logo" class="logo-text" style="display:none;">dai</span>
-    </div>
-    <nav>
-      <a href="#">COLECCIÓN</a>
-      <a href="#">CONTACTO</a>
-    </nav>
+    <h1>Tienda DAI PY</h1>
   </header>
 
-  <!-- Banner & Título Principal -->
-  <section class="hero">
-    <div class="hero-banner-wrap" id="banner-container" style="display: none;">
-      <img id="img-banner" src="" alt="Banner">
-    </div>
-    <h1 id="hero-titulo">Creado para los amantes de los detalles</h1>
-    <p id="hero-subtitulo">Una selección cuidadosa de accesorios y regalos pensados para acompañar tu estilo diario y hacerte sentir especial.</p>
-  </section>
-
-  <!-- Grilla de Productos -->
-  <main class="products-grid" id="contenedor-productos">
-    <!-- Carga dinámica de productos -->
-  </main>
+  <div class="container">
+    <div id="loading">Cargando productos...</div>
+    <div id="grid-productos" class="grid"></div>
+  </div>
 
   <script>
-    const repoUsuario = "designfastrax-ftx";
-    const repoNombre = "dai-py";
-    const numeroWhatsapp = "595981000000";
+    // Configuración unificada para tu cuenta de GitHub
+    const repoUsuario = "daipyofficial"; 
+    const repoNombre = "daipyofficial";  
+    const numeroWhatsapp = "595981000000"; // Modifica este número con tu código de país y número de WhatsApp
 
+    // Función para corregir rutas de imágenes en GitHub Pages
     function arreglarRutaImagen(ruta) {
-      if (!ruta) return '';
+      if (!ruta) return 'https://via.placeholder.com/300?text=Sin+Imagen';
       if (ruta.startsWith('http://') || ruta.startsWith('https://')) return ruta;
+      
       let limpia = ruta.replace(/^public\//, '').replace(/^\/+/, '');
-      return '/' + limpia;
+      return './' + limpia;
     }
 
-    async function cargarConfiguracion() {
-      const timestamp = Date.now();
-      const url = `https://raw.githubusercontent.com/${repoUsuario}/${repoNombre}/main/contenido/configuracion.json?t=${timestamp}`;
+    // Función para parsear el contenido Frontmatter de los archivos Markdown (.md)
+    function parsearMarkdown(texto) {
+      const lineas = texto.split('\n');
+      let datos = {};
+      let enFrontmatter = false;
 
-      try {
-        const res = await fetch(url);
-        if (res.ok) {
-          const config = await res.json();
-
-          if (config.brand && config.brand.logo) {
-            const logoElem = document.getElementById('img-logo');
-            logoElem.src = arreglarRutaImagen(config.brand.logo);
-            logoElem.style.display = 'block';
-          }
-
-          if (config.hero) {
-            if (config.hero.banner) {
-              const bannerElem = document.getElementById('img-banner');
-              bannerElem.src = arreglarRutaImagen(config.hero.banner);
-              document.getElementById('banner-container').style.display = 'block';
-            }
-            if (config.hero.titulo) {
-              document.getElementById('hero-titulo').innerText = config.hero.titulo;
-            }
-            if (config.hero.subtitulo) {
-              document.getElementById('hero-subtitulo').innerText = config.hero.subtitulo;
-            }
+      for (let linea of lineas) {
+        if (linea.trim() === '---') {
+          enFrontmatter = !enFrontmatter;
+          continue;
+        }
+        if (enFrontmatter) {
+          const partes = linea.split(':');
+          if (partes.length >= 2) {
+            const clave = partes[0].trim();
+            const valor = partes.slice(1).join(':').trim().replace(/^["']|["']$/g, '');
+            datos[clave] = valor;
           }
         }
-      } catch (e) {
-        console.warn("No se pudo cargar la configuración personalizada:", e);
       }
+      return datos;
     }
 
+    // Función principal para leer los productos guardados en /contenido/productos
     async function cargarProductos() {
-      const contenedor = document.getElementById('contenedor-productos');
+      const grid = document.getElementById('grid-productos');
+      const loading = document.getElementById('loading');
+
       try {
-        const res = await fetch(`https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/productos`);
-        if (!res.ok) return;
+        const urlAPI = `https://api.github.com/repos/${repoUsuario}/${repoNombre}/contents/contenido/productos`;
+        const res = await fetch(urlAPI);
         
+        if (!res.ok) throw new Error("No se encontraron productos o la carpeta está vacía.");
+
         const archivos = await res.json();
-        contenedor.innerHTML = '';
+        grid.innerHTML = '';
 
         for (let archivo of archivos) {
           if (archivo.name.endsWith('.md') || archivo.name.endsWith('.json')) {
-            const resProd = await fetch(archivo.download_url);
-            if (resProd.ok) {
-              const texto = await resProd.text();
-              let prod = {};
+            const resArchivo = await fetch(archivo.download_url);
+            const contenidoTexto = await resArchivo.text();
+            
+            const prod = parsearMarkdown(contenidoTexto);
 
-              if (archivo.name.endsWith('.json')) {
-                prod = JSON.parse(texto);
-              } else {
-                const lineas = texto.split('\n');
-                let enFrontmatter = false;
-                lineas.forEach(linea => {
-                  if (linea.trim() === '---') {
-                    enFrontmatter = !enFrontmatter;
-                    return;
-                  }
-                  if (enFrontmatter) {
-                    const partes = linea.split(':');
-                    if (partes.length >= 2) {
-                      const clave = partes[0].trim();
-                      const valor = partes.slice(1).join(':').trim().replace(/^["']|["']$/g, '');
-                      prod[clave] = valor;
-                    }
-                  }
-                });
-              }
+            if (prod.nombre) {
+              const imgUrl = arreglarRutaImagen(prod.img || prod.imagen);
+              const mensajeWS = encodeURIComponent(`Hola! Me interesa el producto: ${prod.nombre}`);
 
-              if (prod.nombre) {
-                const mensajeWa = encodeURIComponent(`Hola! Quisiera consultar sobre el producto: ${prod.nombre}`);
-                const imgRuta = arreglarRutaImagen(prod.img);
-
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                  <div class="product-img-wrap">
-                    ${imgRuta ? `<img src="${imgRuta}" alt="${prod.nombre}">` : ''}
+              grid.innerHTML += `
+                <div class="card">
+                  <img src="${imgUrl}" alt="${prod.nombre}" onerror="this.src='https://via.placeholder.com/300?text=Imagen+No+Encontrada'">
+                  <div class="card-body">
+                    <h2 class="card-title">${prod.nombre}</h2>
+                    <div class="card-price">${prod.precio ? prod.precio + ' Gs.' : ''}</div>
+                    <p class="card-desc">${prod.desc || prod.descripcion || ''}</p>
+                    <a href="https://wa.me/${numeroWhatsapp}?text=${mensajeWS}" target="_blank" class="btn-ws">Pedir por WhatsApp</a>
                   </div>
-                  <div class="product-info">
-                    <h3>${prod.nombre}</h3>
-                    <div class="product-desc">${prod.desc || ''}</div>
-                    <div class="product-bottom">
-                      <span class="product-price">${prod.precio || ''}</span>
-                      <a href="https://wa.me/${numeroWhatsapp}?text=${mensajeWa}" target="_blank" class="btn-buy">PEDIR</a>
-                    </div>
-                  </div>
-                `;
-                contenedor.appendChild(card);
-              }
+                </div>
+              `;
             }
           }
         }
-      } catch (e) {
-        console.warn("Error al obtener los productos:", e);
+
+        loading.style.display = 'none';
+
+      } catch (err) {
+        console.error(err);
+        loading.textContent = "No se encontraron productos en la carpeta contenido/productos o el repositorio está procesando.";
       }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      cargarConfiguracion();
-      cargarProductos();
-    });
+    cargarProductos();
   </script>
 </body>
 </html>
