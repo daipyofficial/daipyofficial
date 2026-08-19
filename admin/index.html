@@ -4,12 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel Admin - DAI PY</title>
-  <link rel="stylesheet" href="https://unpkg.com/@staticcms/app@^2.0.0/dist/main.css" />
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/@staticcms/app@^2.0.0/dist/static-cms-app.js"></script>
   <script>
-    window.CMS.init();
+    // Intercepta el inicio de sesión para usar el token directo sin servidores externos
+    (function() {
+      const storageKey = 'decap-cms-user';
+      if (!localStorage.getItem(storageKey)) {
+        const token = prompt("Ingresa tu Personal Access Token de GitHub (github_pat_...):");
+        if (token) {
+          const userData = {
+            token: token.trim(),
+            backendName: 'github'
+          };
+          localStorage.setItem(storageKey, JSON.stringify(userData));
+          window.location.reload();
+        }
+      }
+    })();
   </script>
 </body>
 </html>
