@@ -6,7 +6,19 @@
   <title>Panel Admin - DAI PY</title>
 </head>
 <body>
-  <!-- Carga el editor estático de Decap CMS -->
+  <!-- Carga Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- Script que fuerza el login por Token Personal en la pantalla sin usar Netlify -->
+  <script>
+    CMS.registerBackend('github-token', {
+      init: function() {
+        const token = prompt("Ingresa tu Personal Access Token de GitHub:");
+        if (token) {
+          localStorage.setItem('decap-cms-user', JSON.stringify({ token: token }));
+        }
+      }
+    });
+  </script>
 </body>
 </html>
