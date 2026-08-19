@@ -6,14 +6,19 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/daipyofficial/public/uploads"
 
+
 collections:
+
+  # ==========================================
+  # APARIENCIA
+  # ==========================================
 
   - name: "apariencia"
     label: "Apariencia"
 
     files:
 
-      - name: "tipografia"
+      - name: "diseno"
         label: "Tipografía y Estilo"
         file: "contenido/configuracion/diseno.json"
         format: "json"
@@ -26,26 +31,21 @@ collections:
             default: "Poppins"
 
             options:
-              - label: "Poppins"
-                value: "Poppins"
-
-              - label: "Montserrat"
-                value: "Montserrat"
-
-              - label: "Inter"
-                value: "Inter"
-
-              - label: "Lato"
-                value: "Lato"
-
-              - label: "Roboto"
-                value: "Roboto"
+              - "Poppins"
+              - "Montserrat"
+              - "Inter"
+              - "Roboto"
+              - "Lato"
 
           - label: "Precios en Negrita"
             name: "precio_negrita"
             widget: "boolean"
             default: true
 
+
+  # ==========================================
+  # CONTACTO
+  # ==========================================
 
   - name: "contacto"
     label: "Contacto y Compras"
@@ -75,27 +75,35 @@ collections:
             default: "@daiofficial.py"
 
 
+  # ==========================================
+  # BANNERS
+  # ==========================================
+
   - name: "banners"
     label: "Banners"
     label_singular: "Banner"
+
     folder: "contenido/banners"
+
     create: true
+
     slug: "{{slug}}"
+
     summary: "{{titulo}}"
 
     fields:
 
-      - label: "Título del Banner"
+      - label: "Título"
         name: "titulo"
         widget: "string"
         required: false
 
-      - label: "Texto del Banner"
+      - label: "Texto"
         name: "subtitulo"
         widget: "text"
         required: false
 
-      - label: "Imagen del Banner"
+      - label: "Imagen"
         name: "imagen"
         widget: "image"
 
@@ -112,12 +120,20 @@ collections:
         default: 1
 
 
+  # ==========================================
+  # PRODUCTOS
+  # ==========================================
+
   - name: "productos"
     label: "Productos"
     label_singular: "Producto"
+
     folder: "contenido/productos"
+
     create: true
+
     slug: "{{slug}}"
+
     summary: "{{nombre}}"
 
     fields:
