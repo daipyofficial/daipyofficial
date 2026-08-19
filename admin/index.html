@@ -1,12 +1,1968 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
-  <title>Panel Admin - DAI PY</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="DAI PY - Tienda oficial"
+  >
+
+  <title>DAI PY — Tienda Oficial</title>
+
+  <style>
+    :root {
+      --fondo: #f2f0eb;
+      --blanco: #ffffff;
+      --texto: #181818;
+      --texto-suave: #77736d;
+      --linea: rgba(24, 24, 24, 0.14);
+      --crema: #e8e5de;
+      --negro: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--fondo);
+      color: var(--texto);
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-abierto {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================
+       BARRA SUPERIOR
+    ========================== */
+
+    .announcement {
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 20px;
+      background: var(--negro);
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .site-header {
+      height: 76px;
+      padding: 0 24px;
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      background: rgba(242, 240, 235, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .header-left {
+      justify-self: start;
+    }
+
+    .header-right {
+      justify-self: end;
+    }
+
+    .header-button,
+    .header-link {
+      border: 0;
+      background: transparent;
+      color: var(--texto);
+      cursor: pointer;
+
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .header-button:hover,
+    .header-link:hover {
+      opacity: 0.55;
+    }
+
+    .brand {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand img {
+      display: block;
+      width: auto;
+      max-width: 110px;
+      max-height: 50px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      letter-spacing: 0.04em;
+    }
+
+    /* =========================
+       MENÚ LATERAL
+    ========================== */
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+
+      background: rgba(0, 0, 0, 0.28);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+    .menu-overlay.activo {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: min(440px, 90vw);
+      height: 100%;
+
+      background: var(--fondo);
+      padding: 28px;
+
+      display: flex;
+      flex-direction: column;
+
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    .menu-overlay.activo .menu-panel {
+      transform: translateX(0);
+    }
+
+    .menu-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .menu-logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+    }
+
+    .menu-close {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      padding-top: 50px;
+    }
+
+    .menu-links a {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.05;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .menu-links a:hover {
+      opacity: 0.45;
+    }
+
+    .menu-bottom {
+      margin-top: auto;
+      padding-top: 30px;
+
+      border-top: 1px solid var(--linea);
+
+      color: var(--texto-suave);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+
+      width: calc(100% - 28px);
+      margin: 14px auto 0;
+
+      height: min(78vh, 850px);
+      min-height: 520px;
+
+      overflow: hidden;
+      background: var(--crema);
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+
+      transform: scale(1.001);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.48) 0%,
+          rgba(0, 0, 0, 0.08) 50%,
+          rgba(0, 0, 0, 0.02) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: absolute;
+      z-index: 2;
+
+      left: clamp(22px, 5vw, 72px);
+      bottom: clamp(28px, 7vw, 80px);
+
+      max-width: 720px;
+
+      color: #fff;
+    }
+
+    .hero-kicker {
+      margin-bottom: 16px;
+
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(38px, 6.5vw, 86px);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+
+      margin-bottom: 22px;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+
+      font-size: clamp(13px, 1.2vw, 16px);
+      line-height: 1.55;
+    }
+
+    /* =========================
+       INTRO PRODUCTOS
+    ========================== */
+
+    .shop-intro {
+      padding:
+        clamp(80px, 10vw, 150px)
+        clamp(20px, 5vw, 72px)
+        clamp(45px, 6vw, 80px);
+    }
+
+    .shop-intro-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+    }
+
+    .shop-label {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: var(--texto-suave);
+
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .shop-title {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(38px, 5vw, 68px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.025em;
+    }
+
+    #cantidad-productos {
+      color: var(--texto-suave);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      vertical-align: top;
+      margin-left: 7px;
+    }
+
+    .shop-description {
+      max-width: 370px;
+
+      color: var(--texto-suave);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       PRODUCTOS
+    ========================== */
+
+    .products-section {
+      width: calc(100% - 28px);
+      max-width: 1700px;
+
+      margin: 0 auto;
+      padding-bottom: 120px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2px;
+    }
+
+    .products-grid.producto-unico {
+      grid-template-columns: minmax(0, 760px);
+      justify-content: center;
+    }
+
+    .product-card {
+      min-width: 0;
+      padding-bottom: 64px;
+    }
+
+    .product-media {
+      position: relative;
+
+      width: 100%;
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+      background: var(--crema);
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+      object-fit: cover;
+
+      transition: transform 0.7s cubic-bezier(.2, .6, .2, 1);
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.025);
+    }
+
+    .product-placeholder {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #dedbd4;
+      color: #9c9890;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(28px, 5vw, 60px);
+      letter-spacing: 0.05em;
+    }
+
+    .product-info {
+      padding: 16px 4px 0;
+    }
+
+    .product-main {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .product-name {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .product-price {
+      flex-shrink: 0;
+
+      font-size: 13px;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .product-desc {
+      max-width: 520px;
+
+      margin-top: 9px;
+
+      color: var(--texto-suave);
+
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       VACÍO / ERROR
+    ========================== */
+
+    .empty-state {
+      grid-column: 1 / -1;
+
+      min-height: 360px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 60px 20px;
+
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+
+      text-align: center;
+    }
+
+    .empty-state h3 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .empty-state p {
+      color: var(--texto-suave);
+      font-size: 13px;
+    }
+
+    /* =========================
+       SKELETON
+    ========================== */
+
+    .skeleton {
+      padding-bottom: 64px;
+    }
+
+    .skeleton-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+
+      background:
+        linear-gradient(
+          100deg,
+          #e2dfd8 25%,
+          #ece9e3 40%,
+          #e2dfd8 55%
+        );
+
+      background-size: 200% 100%;
+      animation: skeleton 1.4s infinite;
+    }
+
+    .skeleton-line {
+      height: 11px;
+      width: 32%;
+
+      margin-top: 17px;
+
+      background: #ddd9d1;
+    }
+
+    @keyframes skeleton {
+      to {
+        background-position-x: -200%;
+      }
+    }
+
+    /* =========================
+       EDITORIAL
+    ========================== */
+
+    .editorial {
+      background: var(--negro);
+      color: #fff;
+
+      padding:
+        clamp(90px, 13vw, 190px)
+        clamp(25px, 8vw, 130px);
+    }
+
+    .editorial-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .editorial-small {
+      margin-bottom: 30px;
+
+      color: rgba(255, 255, 255, 0.58);
+
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .editorial-text {
+      max-width: 1050px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(31px, 4.8vw, 69px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      min-height: 280px;
+
+      padding: 45px 28px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background: var(--fondo);
+
+      border-top: 1px solid var(--linea);
+    }
+
+    .footer-brand {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(50px, 10vw, 150px);
+      line-height: 0.85;
+      letter-spacing: -0.05em;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      padding-top: 50px;
+
+      color: var(--texto-suave);
+
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 760px) {
+      .site-header {
+        height: 66px;
+        padding: 0 16px;
+      }
+
+      .brand img {
+        max-width: 82px;
+        max-height: 42px;
+      }
+
+      .header-link {
+        font-size: 9px;
+      }
+
+      .header-button {
+        font-size: 9px;
+      }
+
+      .hero {
+        width: calc(100% - 16px);
+        margin-top: 8px;
+
+        height: 72vh;
+        min-height: 520px;
+      }
+
+      .hero-content {
+        left: 22px;
+        right: 22px;
+        bottom: 30px;
+      }
+
+      .shop-intro-inner {
+        display: block;
+      }
+
+      .shop-description {
+        margin-top: 28px;
+      }
+
+      .products-section {
+        width: calc(100% - 16px);
+      }
+
+      .products-grid,
+      .products-grid.producto-unico {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        padding-bottom: 46px;
+      }
+
+      .product-main {
+        gap: 12px;
+      }
+
+      .editorial {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      footer {
+        min-height: 230px;
+        padding: 32px 16px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .header-right .header-link {
+        font-size: 0;
+      }
+
+      .header-right .header-link::after {
+        content: "SHOP";
+        font-size: 9px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+
+  <!-- BARRA SUPERIOR -->
+
+  <div class="announcement">
+    DAI PY · TIENDA OFICIAL
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="header-left">
+      <button
+        class="header-button"
+        id="abrir-menu"
+        type="button"
+        aria-label="Abrir menú"
+      >
+        Menú
+      </button>
+    </div>
+
+
+    <a
+      href="#inicio"
+      class="brand"
+      aria-label="DAI PY Inicio"
+    >
+      <img
+        id="logo-principal"
+        src="https://raw.githubusercontent.com/daipyofficial/daipyofficial/main/logo.png"
+        alt="DAI PY"
+      >
+
+      <span class="brand-text">
+        DAI PY
+      </span>
+    </a>
+
+
+    <div class="header-right">
+      <a
+        href="#productos"
+        class="header-link"
+      >
+        Productos
+      </a>
+    </div>
+
+  </header>
+
+
+  <!-- MENÚ -->
+
+  <div
+    class="menu-overlay"
+    id="menu-overlay"
+  >
+
+    <nav class="menu-panel">
+
+      <div class="menu-top">
+
+        <div class="menu-logo">
+          DAI PY
+        </div>
+
+        <button
+          type="button"
+          class="menu-close"
+          id="cerrar-menu"
+        >
+          Cerrar
+        </button>
+
+      </div>
+
+
+      <div class="menu-links">
+
+        <a href="#inicio" class="menu-link">
+          Inicio
+        </a>
+
+        <a href="#productos" class="menu-link">
+          Productos
+        </a>
+
+        <a href="#historia" class="menu-link">
+          DAI PY
+        </a>
+
+      </div>
+
+
+      <div class="menu-bottom">
+        Objetos, accesorios y detalles seleccionados
+        para acompañar tu día.
+      </div>
+
+    </nav>
+
+  </div>
+
+
+  <!-- HERO -->
+
+  <main id="inicio">
+
+    <section class="hero">
+
+      <img
+        src="https://raw.githubusercontent.com/daipyofficial/daipyofficial/main/banner.png"
+        alt="DAI PY"
+        id="hero-imagen"
+      >
+
+      <div class="hero-content">
+
+        <div class="hero-kicker">
+          DAI PY
+        </div>
+
+        <h1
+          class="hero-title"
+          id="hero-titulo"
+        >
+          Creado para los amantes de los detalles
+        </h1>
+
+        <p
+          class="hero-subtitle"
+          id="hero-subtitulo"
+        >
+          Una selección cuidadosa de accesorios y regalos
+          pensados para acompañar tu estilo diario.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section
+      class="shop-intro"
+      id="productos"
+    >
+
+      <div class="shop-intro-inner">
+
+        <div>
+
+          <span class="shop-label">
+            Tienda
+          </span>
+
+          <h2 class="shop-title">
+            Productos
+            <sup id="cantidad-productos"></sup>
+          </h2>
+
+        </div>
+
+
+        <p class="shop-description">
+          Una colección cambiante de objetos,
+          accesorios y pequeños detalles elegidos
+          con intención.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- GRID PRODUCTOS -->
+
+    <section class="products-section">
+
+      <div
+        class="products-grid"
+        id="productos-grid"
+      >
+
+        <div class="skeleton">
+          <div class="skeleton-image"></div>
+          <div class="skeleton-line"></div>
+        </div>
+
+        <div class="skeleton">
+          <div class="skeleton-image"></div>
+          <div class="skeleton-line"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECCIÓN EDITORIAL -->
+
+    <section
+      class="editorial"
+      id="historia"
+    >
+
+      <div class="editorial-inner">
+
+        <div class="editorial-small">
+          DAI PY
+        </div>
+
+        <p class="editorial-text">
+          Las cosas que elegimos llevar con nosotros
+          también cuentan una historia.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-brand">
+      dai
+    </div>
+
+    <div class="footer-bottom">
+
+      <span>
+        © <span id="anio"></span> DAI PY
+      </span>
+
+      <span>
+        Tienda Oficial
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    /* =========================================
+       CONFIGURACIÓN
+    ========================================== */
+
+    const REPO = "daipyofficial/daipyofficial";
+    const BRANCH = "main";
+
+    const RAW_BASE =
+      `https://raw.githubusercontent.com/${REPO}/${BRANCH}/`;
+
+    const API_PRODUCTOS =
+      `https://api.github.com/repos/${REPO}/contents/contenido/productos?ref=${BRANCH}`;
+
+    const CACHE_KEY =
+      "daipy-productos-cache-v4";
+
+
+    /* =========================================
+       ELEMENTOS
+    ========================================== */
+
+    const grid =
+      document.getElementById("productos-grid");
+
+    const cantidad =
+      document.getElementById("cantidad-productos");
+
+    const menuOverlay =
+      document.getElementById("menu-overlay");
+
+    const botonAbrirMenu =
+      document.getElementById("abrir-menu");
+
+    const botonCerrarMenu =
+      document.getElementById("cerrar-menu");
+
+
+    /* =========================================
+       MENÚ
+    ========================================== */
+
+    function abrirMenu() {
+      menuOverlay.classList.add("activo");
+      document.body.classList.add("menu-abierto");
+    }
+
+    function cerrarMenu() {
+      menuOverlay.classList.remove("activo");
+      document.body.classList.remove("menu-abierto");
+    }
+
+    botonAbrirMenu.addEventListener(
+      "click",
+      abrirMenu
+    );
+
+    botonCerrarMenu.addEventListener(
+      "click",
+      cerrarMenu
+    );
+
+    menuOverlay.addEventListener(
+      "click",
+      function(evento) {
+        if (evento.target === menuOverlay) {
+          cerrarMenu();
+        }
+      }
+    );
+
+    document
+      .querySelectorAll(".menu-link")
+      .forEach(function(link) {
+        link.addEventListener(
+          "click",
+          cerrarMenu
+        );
+      });
+
+
+    /* =========================================
+       UTILIDADES
+    ========================================== */
+
+    function quitarComillas(valor) {
+
+      if (!valor) {
+        return "";
+      }
+
+      valor = valor.trim();
+
+      if (
+        valor.startsWith('"') &&
+        valor.endsWith('"')
+      ) {
+
+        try {
+          return JSON.parse(valor);
+        }
+        catch (error) {
+          return valor.slice(1, -1);
+        }
+      }
+
+      if (
+        valor.startsWith("'") &&
+        valor.endsWith("'")
+      ) {
+
+        return valor
+          .slice(1, -1)
+          .replace(/''/g, "'");
+      }
+
+      return valor;
+    }
+
+
+    function extraerCampo(texto, campo) {
+
+      const lineas =
+        texto
+          .replace(/\r/g, "")
+          .split("\n");
+
+      const expresion =
+        new RegExp(
+          "^" + campo + ":\\s*(.*)$"
+        );
+
+      for (
+        let i = 0;
+        i < lineas.length;
+        i++
+      ) {
+
+        const coincidencia =
+          lineas[i].match(expresion);
+
+        if (!coincidencia) {
+          continue;
+        }
+
+        let valor =
+          coincidencia[1].trim();
+
+
+        /* YAML multilínea */
+
+        if (
+          valor === "|" ||
+          valor === "|-" ||
+          valor === "|+" ||
+          valor === ">" ||
+          valor === ">-" ||
+          valor === ">+"
+        ) {
+
+          const contenido = [];
+
+          for (
+            let j = i + 1;
+            j < lineas.length;
+            j++
+          ) {
+
+            const linea =
+              lineas[j];
+
+            if (linea.trim() === "---") {
+              break;
+            }
+
+            if (
+              /^[A-Za-z0-9_-]+:\s*/.test(linea) &&
+              !/^\s/.test(linea)
+            ) {
+              break;
+            }
+
+            contenido.push(
+              linea
+                .replace(/^\s{2,}/, "")
+                .trimEnd()
+            );
+          }
+
+          if (valor.startsWith(">")) {
+
+            return contenido
+              .join(" ")
+              .replace(/\s+/g, " ")
+              .trim();
+          }
+
+          return contenido
+            .join("\n")
+            .trim();
+        }
+
+        return quitarComillas(valor);
+      }
+
+      return "";
+    }
+
+
+    function formatearPrecio(precio) {
+
+      if (!precio) {
+        return "";
+      }
+
+      const soloNumeros =
+        String(precio)
+          .replace(/[^\d]/g, "");
+
+      if (!soloNumeros) {
+        return String(precio);
+      }
+
+      const numero =
+        Number(soloNumeros);
+
+      return (
+        "Gs. " +
+        new Intl.NumberFormat(
+          "es-PY"
+        ).format(numero)
+      );
+    }
+
+
+    function codificarRuta(ruta) {
+
+      return ruta
+        .split("/")
+        .map(function(parte) {
+          return encodeURIComponent(parte);
+        })
+        .join("/");
+    }
+
+
+    /* =========================================
+       CONVERTIR RUTAS DE IMÁGENES
+
+       Funciona con:
+       public/uploads/imagen.jpg
+
+       /daipyofficial/public/uploads/imagen.jpg
+
+       /uploads/imagen.jpg
+    ========================================== */
+
+    function obtenerURLImagen(
+      rutaOriginal,
+      version
+    ) {
+
+      if (!rutaOriginal) {
+        return "";
+      }
+
+      let ruta =
+        quitarComillas(
+          String(rutaOriginal)
+        ).trim();
+
+
+      if (
+        ruta.startsWith("http://") ||
+        ruta.startsWith("https://")
+      ) {
+        return ruta;
+      }
+
+
+      ruta =
+        ruta.replace(
+          /^\/?daipyofficial\//,
+          ""
+        );
+
+
+      ruta =
+        ruta.replace(
+          /^\/+/,
+          ""
+        );
+
+
+      if (
+        ruta.startsWith("uploads/")
+      ) {
+
+        ruta =
+          "public/" + ruta;
+      }
+
+
+      const url =
+        RAW_BASE +
+        codificarRuta(ruta);
+
+
+      if (version) {
+        return (
+          url +
+          "?v=" +
+          encodeURIComponent(version)
+        );
+      }
+
+      return url;
+    }
+
+
+    /* =========================================
+       CREAR PRODUCTO
+    ========================================== */
+
+    function crearProducto(producto) {
+
+      const articulo =
+        document.createElement("article");
+
+      articulo.className =
+        "product-card";
+
+
+      /* IMAGEN */
+
+      const media =
+        document.createElement("div");
+
+      media.className =
+        "product-media";
+
+
+      const urlImagen =
+        obtenerURLImagen(
+          producto.img,
+          producto.version
+        );
+
+
+      if (urlImagen) {
+
+        const imagen =
+          document.createElement("img");
+
+        imagen.src =
+          urlImagen;
+
+        imagen.alt =
+          producto.nombre || "Producto DAI PY";
+
+        imagen.loading =
+          "lazy";
+
+        imagen.decoding =
+          "async";
+
+
+        imagen.addEventListener(
+          "error",
+          function() {
+
+            const placeholder =
+              document.createElement("div");
+
+            placeholder.className =
+              "product-placeholder";
+
+            placeholder.textContent =
+              "DAI PY";
+
+            media.replaceChildren(
+              placeholder
+            );
+          }
+        );
+
+
+        media.appendChild(imagen);
+      }
+
+      else {
+
+        const placeholder =
+          document.createElement("div");
+
+        placeholder.className =
+          "product-placeholder";
+
+        placeholder.textContent =
+          "DAI PY";
+
+        media.appendChild(
+          placeholder
+        );
+      }
+
+
+      /* INFORMACIÓN */
+
+      const info =
+        document.createElement("div");
+
+      info.className =
+        "product-info";
+
+
+      const principal =
+        document.createElement("div");
+
+      principal.className =
+        "product-main";
+
+
+      const nombre =
+        document.createElement("h3");
+
+      nombre.className =
+        "product-name";
+
+      nombre.textContent =
+        producto.nombre || "Producto";
+
+
+      const precio =
+        document.createElement("div");
+
+      precio.className =
+        "product-price";
+
+      precio.textContent =
+        formatearPrecio(
+          producto.precio
+        );
+
+
+      principal.appendChild(
+        nombre
+      );
+
+      principal.appendChild(
+        precio
+      );
+
+      info.appendChild(
+        principal
+      );
+
+
+      if (producto.desc) {
+
+        const descripcion =
+          document.createElement("p");
+
+        descripcion.className =
+          "product-desc";
+
+        descripcion.textContent =
+          producto.desc;
+
+        info.appendChild(
+          descripcion
+        );
+      }
+
+
+      articulo.appendChild(
+        media
+      );
+
+      articulo.appendChild(
+        info
+      );
+
+
+      return articulo;
+    }
+
+
+    /* =========================================
+       MOSTRAR PRODUCTOS
+    ========================================== */
+
+    function mostrarProductos(productos) {
+
+      grid.replaceChildren();
+
+      cantidad.textContent =
+        productos.length
+          ? "(" + productos.length + ")"
+          : "";
+
+
+      grid.classList.toggle(
+        "producto-unico",
+        productos.length === 1
+      );
+
+
+      if (
+        productos.length === 0
+      ) {
+
+        const vacio =
+          document.createElement("div");
+
+        vacio.className =
+          "empty-state";
+
+
+        const titulo =
+          document.createElement("h3");
+
+        titulo.textContent =
+          "Próximamente";
+
+
+        const texto =
+          document.createElement("p");
+
+        texto.textContent =
+          "Estamos preparando nuevos productos.";
+
+
+        vacio.appendChild(
+          titulo
+        );
+
+        vacio.appendChild(
+          texto
+        );
+
+        grid.appendChild(
+          vacio
+        );
+
+        return;
+      }
+
+
+      productos.forEach(
+        function(producto) {
+
+          grid.appendChild(
+            crearProducto(producto)
+          );
+        }
+      );
+    }
+
+
+    /* =========================================
+       CACHE DEL NAVEGADOR
+
+       Permite mostrar productos inmediatamente
+       mientras GitHub comprueba cambios.
+    ========================================== */
+
+    function cargarCache() {
+
+      try {
+
+        const guardado =
+          localStorage.getItem(
+            CACHE_KEY
+          );
+
+        if (!guardado) {
+          return false;
+        }
+
+        const datos =
+          JSON.parse(guardado);
+
+        if (
+          !datos ||
+          !Array.isArray(datos.productos)
+        ) {
+          return false;
+        }
+
+        mostrarProductos(
+          datos.productos
+        );
+
+        return true;
+      }
+
+      catch (error) {
+
+        return false;
+      }
+    }
+
+
+    function guardarCache(productos) {
+
+      try {
+
+        localStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({
+            fecha: Date.now(),
+            productos: productos
+          })
+        );
+
+      }
+
+      catch (error) {
+        /* Sin problema si el navegador
+           no permite localStorage */
+      }
+    }
+
+
+    /* =========================================
+       CARGAR PRODUCTOS DESDE GITHUB
+
+       Todos los Markdown se descargan
+       AL MISMO TIEMPO.
+    ========================================== */
+
+    async function descargarProductos() {
+
+      const respuesta =
+        await fetch(
+          API_PRODUCTOS,
+          {
+            cache: "no-store",
+            headers: {
+              "Accept":
+                "application/vnd.github+json"
+            }
+          }
+        );
+
+
+      if (!respuesta.ok) {
+
+        throw new Error(
+          "No se pudo consultar GitHub"
+        );
+      }
+
+
+      const archivos =
+        await respuesta.json();
+
+
+      const markdowns =
+        archivos.filter(
+          function(archivo) {
+
+            return (
+              archivo.type === "file" &&
+              archivo.name
+                .toLowerCase()
+                .endsWith(".md")
+            );
+          }
+        );
+
+
+      if (
+        markdowns.length === 0
+      ) {
+
+        return [];
+      }
+
+
+      const productos =
+        await Promise.all(
+
+          markdowns.map(
+            async function(archivo) {
+
+              try {
+
+                const url =
+                  archivo.download_url +
+                  "?v=" +
+                  encodeURIComponent(
+                    archivo.sha
+                  );
+
+
+                const respuestaMarkdown =
+                  await fetch(
+                    url,
+                    {
+                      cache: "no-store"
+                    }
+                  );
+
+
+                if (
+                  !respuestaMarkdown.ok
+                ) {
+                  return null;
+                }
+
+
+                const texto =
+                  await respuestaMarkdown.text();
+
+
+                return {
+
+                  nombre:
+                    extraerCampo(
+                      texto,
+                      "nombre"
+                    ),
+
+                  img:
+                    extraerCampo(
+                      texto,
+                      "img"
+                    ),
+
+                  precio:
+                    extraerCampo(
+                      texto,
+                      "precio"
+                    ),
+
+                  desc:
+                    extraerCampo(
+                      texto,
+                      "desc"
+                    ),
+
+                  version:
+                    archivo.sha,
+
+                  archivo:
+                    archivo.name
+                };
+              }
+
+              catch (error) {
+
+                return null;
+              }
+            }
+          )
+        );
+
+
+      return productos.filter(
+        function(producto) {
+          return producto !== null;
+        }
+      );
+    }
+
+
+    async function actualizarProductos(
+      habiaCache
+    ) {
+
+      try {
+
+        const productos =
+          await descargarProductos();
+
+
+        guardarCache(
+          productos
+        );
+
+
+        mostrarProductos(
+          productos
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "Error cargando productos:",
+          error
+        );
+
+
+        /* Si ya hay cache,
+           dejamos visible lo anterior */
+
+        if (habiaCache) {
+          return;
+        }
+
+
+        grid.replaceChildren();
+
+
+        const errorVisual =
+          document.createElement("div");
+
+        errorVisual.className =
+          "empty-state";
+
+
+        const titulo =
+          document.createElement("h3");
+
+        titulo.textContent =
+          "Estamos actualizando la tienda";
+
+
+        const texto =
+          document.createElement("p");
+
+        texto.textContent =
+          "Vuelve a intentarlo en unos segundos.";
+
+
+        errorVisual.appendChild(
+          titulo
+        );
+
+        errorVisual.appendChild(
+          texto
+        );
+
+        grid.appendChild(
+          errorVisual
+        );
+      }
+    }
+
+
+    /* =========================================
+       CONFIGURACIÓN GENERAL
+    ========================================== */
+
+    async function cargarConfiguracion() {
+
+      try {
+
+        const respuesta =
+          await fetch(
+            RAW_BASE +
+            "contenido/configuracion.json?v=" +
+            Date.now(),
+            {
+              cache: "no-store"
+            }
+          );
+
+
+        if (!respuesta.ok) {
+          return;
+        }
+
+
+        const configuracion =
+          await respuesta.json();
+
+
+        if (
+          configuracion.hero &&
+          configuracion.hero.titulo
+        ) {
+
+          document
+            .getElementById(
+              "hero-titulo"
+            )
+            .textContent =
+              configuracion.hero.titulo;
+        }
+
+
+        if (
+          configuracion.hero &&
+          configuracion.hero.subtitulo
+        ) {
+
+          document
+            .getElementById(
+              "hero-subtitulo"
+            )
+            .textContent =
+              configuracion.hero.subtitulo;
+        }
+
+      }
+
+      catch (error) {
+
+        /* Se mantienen los textos
+           predeterminados */
+      }
+    }
+
+
+    /* =========================================
+       LOGO DE RESPALDO
+    ========================================== */
+
+    const logo =
+      document.getElementById(
+        "logo-principal"
+      );
+
+
+    logo.addEventListener(
+      "error",
+      function() {
+
+        logo.style.display =
+          "none";
+
+        const textoLogo =
+          document.querySelector(
+            ".brand-text"
+          );
+
+        textoLogo.style.display =
+          "block";
+      }
+    );
+
+
+    /* =========================================
+       INICIO
+    ========================================== */
+
+    document.getElementById(
+      "anio"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    const habiaCache =
+      cargarCache();
+
+
+    actualizarProductos(
+      habiaCache
+    );
+
+
+    cargarConfiguracion();
+
+  </script>
+
 </body>
 </html>
