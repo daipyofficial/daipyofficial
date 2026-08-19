@@ -4,17 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel Admin - DAI PY</title>
+  <!-- Cargamos el motor de Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <script>
     (function() {
-      const key = 'decap-cms-user';
-      if (!localStorage.getItem(key)) {
+      const storageKey = 'decap-cms-user';
+      let user = localStorage.getItem(storageKey);
+
+      // Si no existe sesión válida o no tiene token, solicitamos el Personal Access Token
+      if (!user || !JSON.parse(user).token) {
         const token = prompt("Ingresa tu Personal Access Token de GitHub (github_pat_...):");
-        if (token) {
-          localStorage.setItem(key, JSON.stringify({ token: token.trim(), backendName: 'github' }));
-          window.location.reload();
+        if (token && token.trim() !== '') {
+          const userData = {
+            token: token.trim(),
+            backendName: 'github',
+            login: 'daipyofficial'
+          };
+          localStorage.setItem(storageKey, JSON.stringify(userData));
         }
       }
     })();
