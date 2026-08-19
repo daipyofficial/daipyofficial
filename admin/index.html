@@ -8,18 +8,12 @@
 </head>
 <body>
   <script>
-    // Intercepta el inicio de sesión para usar el token directo sin servidores externos
     (function() {
-      const storageKey = 'decap-cms-user';
-      if (!localStorage.getItem(storageKey)) {
+      const key = 'decap-cms-user';
+      if (!localStorage.getItem(key)) {
         const token = prompt("Ingresa tu Personal Access Token de GitHub (github_pat_...):");
         if (token) {
-          const userData = {
-            token: token.trim(),
-            backendName: 'github'
-          };
-          localStorage.setItem(storageKey, JSON.stringify(userData));
-          window.location.reload();
+          localStorage.setItem(key, JSON.stringify({ token: token.trim(), backendName: 'github' }));
         }
       }
     })();
