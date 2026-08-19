@@ -47,6 +47,34 @@ collections:
             default: true
 
 
+  - name: "contacto"
+    label: "Contacto y Compras"
+
+    files:
+
+      - name: "datos_contacto"
+        label: "Datos de Contacto"
+        file: "contenido/configuracion/contacto.json"
+        format: "json"
+
+        fields:
+
+          - label: "Número de WhatsApp"
+            name: "whatsapp"
+            widget: "string"
+            default: "+595985824098"
+
+          - label: "Correo Electrónico"
+            name: "email"
+            widget: "string"
+            default: "daiofficial.py@gmail.com"
+
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+            default: "@daiofficial.py"
+
+
   - name: "banners"
     label: "Banners"
     label_singular: "Banner"
