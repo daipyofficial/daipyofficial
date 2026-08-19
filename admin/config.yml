@@ -7,14 +7,19 @@ media_folder: "public/uploads"
 public_folder: "/daipyofficial/public/uploads"
 
 collections:
+
   - name: "productos"
     label: "Productos"
     label_singular: "Producto"
+
     folder: "contenido/productos"
+
     create: true
+
     slug: "{{slug}}"
 
     fields:
+
       - label: "Nombre del Producto"
         name: "nombre"
         widget: "string"
