@@ -2,7 +2,6 @@ backend:
   name: github
   repo: daipyofficial/daipyofficial
   branch: main
-  auth_type: implicit
 
 media_folder: "public/uploads"
 public_folder: "public/uploads"
