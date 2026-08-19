@@ -2,16 +2,12 @@ backend:
   name: github
   repo: daipyofficial/daipyofficial
   branch: main
+  auth_methods: [token]
 
 media_folder: "public/uploads"
 public_folder: "/daipyofficial/public/uploads"
 
-
 collections:
-
-  # ==========================================
-  # APARIENCIA
-  # ==========================================
 
   - name: "apariencia"
     label: "Apariencia"
@@ -43,10 +39,6 @@ collections:
             default: true
 
 
-  # ==========================================
-  # CONTACTO
-  # ==========================================
-
   - name: "contacto"
     label: "Contacto y Compras"
 
@@ -75,20 +67,12 @@ collections:
             default: "@daiofficial.py"
 
 
-  # ==========================================
-  # BANNERS
-  # ==========================================
-
   - name: "banners"
     label: "Banners"
     label_singular: "Banner"
-
     folder: "contenido/banners"
-
     create: true
-
     slug: "{{slug}}"
-
     summary: "{{titulo}}"
 
     fields:
@@ -120,20 +104,12 @@ collections:
         default: 1
 
 
-  # ==========================================
-  # PRODUCTOS
-  # ==========================================
-
   - name: "productos"
     label: "Productos"
     label_singular: "Producto"
-
     folder: "contenido/productos"
-
     create: true
-
     slug: "{{slug}}"
-
     summary: "{{nombre}}"
 
     fields:
