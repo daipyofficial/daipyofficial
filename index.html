@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -16,7 +15,6 @@
   >
 
   <title>DAI PY — Tienda Oficial</title>
-
 
   <link
     rel="preconnect"
@@ -35,15 +33,13 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
   >
 
-
   <style>
 
     :root {
-
       --fondo: #f2f0eb;
       --texto: #141414;
       --suave: #77736d;
-      --linea: rgba(20,20,20,.14);
+      --linea: rgba(20, 20, 20, 0.14);
       --oscuro: #151515;
 
       --fuente:
@@ -52,78 +48,60 @@
         sans-serif;
 
       --peso-precio: 700;
-
     }
 
 
     * {
-
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-
     }
 
 
     html {
-
       scroll-behavior: smooth;
-
     }
 
 
     body {
-
       background: var(--fondo);
       color: var(--texto);
 
       font-family: var(--fuente);
 
-      -webkit-font-smoothing:
-        antialiased;
-
+      -webkit-font-smoothing: antialiased;
     }
 
 
     body.menu-abierto {
-
       overflow: hidden;
-
     }
 
 
     a {
-
       color: inherit;
       text-decoration: none;
-
     }
 
 
     button {
-
       color: inherit;
       font: inherit;
-
     }
 
 
     img {
-
       display: block;
       max-width: 100%;
-
     }
 
 
-
     /* =====================================
-       BARRA NEGRA
+       BARRA SUPERIOR
     ===================================== */
 
 
     .topbar {
-
       min-height: 30px;
 
       padding: 7px 20px;
@@ -139,10 +117,9 @@
       font-weight: 500;
 
       letter-spacing: .15em;
+
       text-transform: uppercase;
-
     }
-
 
 
     /* =====================================
@@ -151,7 +128,6 @@
 
 
     .contact-bar {
-
       min-height: 40px;
 
       padding: 8px 28px;
@@ -166,45 +142,36 @@
         1px solid var(--linea);
 
       font-size: 10px;
-
     }
 
 
     .contact-label {
-
       color: var(--suave);
 
       font-weight: 500;
 
       letter-spacing: .12em;
-      text-transform: uppercase;
 
+      text-transform: uppercase;
     }
 
 
     .contact-links {
-
       display: flex;
       align-items: center;
 
       gap: 25px;
-
     }
 
 
     .contact-links a {
-
       transition: opacity .2s;
-
     }
 
 
     .contact-links a:hover {
-
       opacity: .5;
-
     }
-
 
 
     /* =====================================
@@ -213,7 +180,6 @@
 
 
     .header {
-
       height: 76px;
 
       padding: 0 28px;
@@ -232,7 +198,7 @@
       z-index: 50;
 
       background:
-        rgba(242,240,235,.95);
+        rgba(242, 240, 235, .95);
 
       backdrop-filter: blur(12px);
 
@@ -241,12 +207,10 @@
 
       border-bottom:
         1px solid var(--linea);
-
     }
 
 
     .menu-button {
-
       justify-self: start;
 
       border: 0;
@@ -261,31 +225,25 @@
       letter-spacing: .13em;
 
       text-transform: uppercase;
-
     }
 
 
     .header-logo {
-
       justify-self: center;
-
     }
 
 
     .header-logo img {
-
       width: auto;
 
       max-width: 110px;
       max-height: 50px;
 
       object-fit: contain;
-
     }
 
 
     .header-products {
-
       justify-self: end;
 
       font-size: 10px;
@@ -294,9 +252,7 @@
       letter-spacing: .13em;
 
       text-transform: uppercase;
-
     }
-
 
 
     /* =====================================
@@ -305,7 +261,6 @@
 
 
     .menu-overlay {
-
       position: fixed;
 
       inset: 0;
@@ -317,26 +272,22 @@
       opacity: 0;
 
       background:
-        rgba(0,0,0,.35);
+        rgba(0, 0, 0, .35);
 
       transition:
         opacity .3s,
         visibility .3s;
-
     }
 
 
     .menu-overlay.abierto {
-
       visibility: visible;
 
       opacity: 1;
-
     }
 
 
     .menu-panel {
-
       width:
         min(
           440px,
@@ -358,48 +309,37 @@
 
       transition:
         transform .4s ease;
-
     }
 
 
     .menu-overlay.abierto
     .menu-panel {
-
       transform:
         translateX(0);
-
     }
 
 
     .menu-top {
-
       padding-bottom: 28px;
 
       display: flex;
-
       align-items: center;
-
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       border-bottom:
         1px solid var(--linea);
-
     }
 
 
     .menu-logo img {
-
       width: auto;
 
       max-width: 100px;
       max-height: 50px;
-
     }
 
 
     .menu-close {
-
       border: 0;
 
       background: transparent;
@@ -412,12 +352,10 @@
       letter-spacing: .12em;
 
       text-transform: uppercase;
-
     }
 
 
     .menu-links {
-
       padding-top: 48px;
 
       display: flex;
@@ -425,12 +363,10 @@
       flex-direction: column;
 
       gap: 10px;
-
     }
 
 
     .menu-links a {
-
       font-size:
         clamp(
           34px,
@@ -443,12 +379,10 @@
       line-height: 1.08;
 
       letter-spacing: -.045em;
-
     }
 
 
     .menu-contact {
-
       margin-top: auto;
 
       padding-top: 25px;
@@ -465,9 +399,7 @@
       color: var(--suave);
 
       font-size: 11px;
-
     }
-
 
 
     /* =====================================
@@ -476,7 +408,6 @@
 
 
     .hero {
-
       width:
         calc(
           100% - 28px
@@ -497,21 +428,17 @@
       overflow: hidden;
 
       background: #d8d4cc;
-
     }
 
 
     .hero-media {
-
       position: absolute;
 
       inset: 0;
-
     }
 
 
     .hero-fallback {
-
       position: absolute;
 
       inset: 0;
@@ -522,12 +449,10 @@
       justify-content: center;
 
       background: #dedad2;
-
     }
 
 
     .hero-fallback img {
-
       width:
         min(
           240px,
@@ -535,12 +460,10 @@
         );
 
       height: auto;
-
     }
 
 
     .hero-slide {
-
       position: absolute;
 
       inset: 0;
@@ -558,22 +481,18 @@
       transition:
         opacity .7s ease,
         transform 7s ease;
-
     }
 
 
     .hero-slide.activo {
-
       opacity: 1;
 
       transform:
         scale(1.04);
-
     }
 
 
     .hero::after {
-
       content: "";
 
       position: absolute;
@@ -585,24 +504,16 @@
       pointer-events: none;
 
       background:
-
         linear-gradient(
-
           to top,
-
           rgba(0,0,0,.62),
-
           rgba(0,0,0,.15) 50%,
-
           rgba(0,0,0,.02)
-
         );
-
     }
 
 
     .hero-content {
-
       position: absolute;
 
       z-index: 3;
@@ -624,12 +535,10 @@
       max-width: 850px;
 
       color: white;
-
     }
 
 
     .hero-label {
-
       margin-bottom: 15px;
 
       font-size: 10px;
@@ -638,12 +547,10 @@
       letter-spacing: .18em;
 
       text-transform: uppercase;
-
     }
 
 
     .hero-title {
-
       max-width: 800px;
 
       font-size:
@@ -658,12 +565,10 @@
       line-height: .99;
 
       letter-spacing: -.055em;
-
     }
 
 
     .hero-subtitle {
-
       max-width: 580px;
 
       margin-top: 23px;
@@ -671,12 +576,10 @@
       font-size: 14px;
 
       line-height: 1.65;
-
     }
 
 
     .hero-controls {
-
       position: absolute;
 
       z-index: 4;
@@ -687,19 +590,15 @@
       display: flex;
 
       gap: 5px;
-
     }
 
 
     .hero-controls.oculto {
-
       display: none;
-
     }
 
 
     .hero-arrow {
-
       width: 45px;
       height: 45px;
 
@@ -715,18 +614,15 @@
       cursor: pointer;
 
       font-size: 18px;
-
     }
 
 
-
     /* =====================================
-       PRODUCTOS INTRO
+       PRODUCTOS
     ===================================== */
 
 
     .products-heading {
-
       max-width: 1600px;
 
       margin: auto;
@@ -759,12 +655,10 @@
         space-between;
 
       gap: 40px;
-
     }
 
 
     .section-label {
-
       display: block;
 
       margin-bottom: 12px;
@@ -777,12 +671,10 @@
       letter-spacing: .16em;
 
       text-transform: uppercase;
-
     }
 
 
     .products-heading h2 {
-
       font-size:
         clamp(
           40px,
@@ -795,26 +687,10 @@
       line-height: 1;
 
       letter-spacing: -.05em;
-
-    }
-
-
-    .product-count {
-
-      margin-left: 7px;
-
-      color: var(--suave);
-
-      font-size: 12px;
-      font-weight: 400;
-
-      vertical-align: top;
-
     }
 
 
     .products-heading p {
-
       max-width: 380px;
 
       color: var(--suave);
@@ -822,18 +698,15 @@
       font-size: 13px;
 
       line-height: 1.7;
-
     }
 
 
-
     /* =====================================
-       GRID PRODUCTOS
+       GRID
     ===================================== */
 
 
     .products-section {
-
       width:
         calc(
           100% - 28px
@@ -844,16 +717,13 @@
       margin: auto;
 
       padding-bottom: 130px;
-
     }
 
 
     .products-grid {
-
       display: grid;
 
       grid-template-columns:
-
         repeat(
           2,
           minmax(0,1fr)
@@ -862,40 +732,29 @@
       column-gap: 2px;
 
       row-gap: 80px;
-
     }
 
 
     .products-grid.unico {
-
       max-width: 760px;
 
       margin: auto;
 
       grid-template-columns: 1fr;
-
     }
 
 
-
     /* =====================================
-       PRODUCTO INDIVIDUAL
+       PRODUCTO
     ===================================== */
 
 
     .product {
-
       min-width: 0;
-
-      display: flex;
-
-      flex-direction: column;
-
     }
 
 
     .product-image {
-
       width: 100%;
 
       aspect-ratio: 4 / 5;
@@ -903,12 +762,10 @@
       overflow: hidden;
 
       background: #ddd9d1;
-
     }
 
 
     .product-image > img {
-
       width: 100%;
       height: 100%;
 
@@ -916,21 +773,17 @@
 
       transition:
         transform .7s ease;
-
     }
 
 
     .product:hover
     .product-image > img {
-
       transform:
         scale(1.025);
-
     }
 
 
     .product-image-fallback {
-
       width: 100%;
       height: 100%;
 
@@ -938,12 +791,10 @@
 
       align-items: center;
       justify-content: center;
-
     }
 
 
     .product-image-fallback img {
-
       width:
         min(
           150px,
@@ -955,151 +806,66 @@
       object-fit: contain;
 
       opacity: .35;
-
     }
 
 
+    /*
+       UNA SOLA FILA:
 
-    /* =====================================
-       INFORMACIÓN PRODUCTO
-    ===================================== */
+       NOMBRE | PRECIO | COMPRAR
+    */
 
 
-    .product-info {
+    .product-row {
+      min-height: 70px;
 
       padding:
-        17px 5px 0;
-
-    }
-
-
-    .product-head {
-
-      display: flex;
-
-      align-items: flex-start;
-
-      justify-content:
-        space-between;
-
-      gap: 20px;
-
-    }
-
-
-    .product-name {
-
-      font-size: 13px;
-
-      font-weight: 500;
-
-    }
-
-
-    .product-price {
-
-      flex-shrink: 0;
-
-      font-size: 13px;
-
-      font-weight:
-        var(--peso-precio);
-
-    }
-
-
-    .product-description {
-
-      max-width: 540px;
-
-      margin-top: 10px;
-
-      color: var(--suave);
-
-      font-size: 12px;
-
-      line-height: 1.65;
-
-    }
-
-
-
-    /* =====================================
-       COMPRA DENTRO DE CADA PRODUCTO
-    ===================================== */
-
-
-    .product-purchase {
-
-      margin-top: 18px;
-
-      padding-top: 15px;
+        15px 5px;
 
       display: grid;
 
       grid-template-columns:
-        minmax(0,1fr)
+        minmax(0, 1.5fr)
+        minmax(100px, .6fr)
         auto;
 
       align-items: center;
 
       gap: 20px;
 
-      border-top:
+      border-bottom:
         1px solid var(--linea);
-
     }
 
 
-    .purchase-info {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 3px;
-
-    }
-
-
-    .purchase-label {
-
-      color: var(--suave);
-
-      font-size: 9px;
+    .product-name {
+      font-size: 13px;
 
       font-weight: 500;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
-
     }
 
 
-    .purchase-price {
-
+    .product-price {
       font-size: 13px;
 
       font-weight:
         var(--peso-precio);
 
+      white-space: nowrap;
     }
 
 
     .purchase-button {
-
-      min-width: 135px;
+      min-width: 175px;
 
       min-height: 43px;
 
       padding:
-        11px 20px;
+        10px 18px;
 
       display: inline-flex;
 
       align-items: center;
-
       justify-content: center;
 
       border:
@@ -1111,54 +877,59 @@
 
       cursor: pointer;
 
-      font-size: 10px;
+      font-size: 9px;
 
       font-weight: 600;
 
-      letter-spacing: .11em;
+      letter-spacing: .10em;
 
       text-transform: uppercase;
 
       transition:
         background .2s,
         color .2s;
-
     }
 
 
     .purchase-button:hover {
-
       background: var(--texto);
 
       color: white;
-
     }
 
 
+    .product-description {
+      max-width: 620px;
+
+      padding:
+        0 5px;
+
+      margin-top: 10px;
+
+      color: var(--suave);
+
+      font-size: 12px;
+
+      line-height: 1.65;
+    }
+
 
     /* =====================================
-       CARGA
+       SKELETON
     ===================================== */
 
 
     .skeleton-image {
-
       width: 100%;
 
       aspect-ratio: 4 / 5;
 
       background:
-
         linear-gradient(
-
           100deg,
-
           #dedad3 25%,
-
           #ebe8e2 40%,
-
           #dedad3 55%
-
         );
 
       background-size:
@@ -1166,21 +937,15 @@
 
       animation:
         skeleton 1.4s infinite;
-
     }
 
 
     @keyframes skeleton {
-
       to {
-
         background-position:
           -200% 0;
-
       }
-
     }
-
 
 
     /* =====================================
@@ -1189,7 +954,6 @@
 
 
     .editorial {
-
       padding:
 
         clamp(
@@ -1207,39 +971,32 @@
       background: var(--oscuro);
 
       color: white;
-
     }
 
 
     .editorial-inner {
-
       max-width: 1250px;
 
       margin: auto;
-
     }
 
 
     .editorial-label {
-
       margin-bottom: 28px;
 
       color:
         rgba(255,255,255,.5);
 
       font-size: 10px;
-
       font-weight: 500;
 
       letter-spacing: .17em;
 
       text-transform: uppercase;
-
     }
 
 
     .editorial-text {
-
       max-width: 1100px;
 
       font-size:
@@ -1254,9 +1011,7 @@
       line-height: 1.1;
 
       letter-spacing: -.045em;
-
     }
-
 
 
     /* =====================================
@@ -1265,31 +1020,24 @@
 
 
     .footer {
-
       padding:
         75px 30px 30px;
-
     }
 
 
     .footer-inner {
-
       max-width: 1600px;
 
       margin: auto;
-
     }
 
 
     .footer-logo {
-
       padding-bottom: 70px;
-
     }
 
 
     .footer-logo img {
-
       width: auto;
 
       max-width:
@@ -1301,12 +1049,10 @@
       max-height: 160px;
 
       object-fit: contain;
-
     }
 
 
     .footer-contact {
-
       padding:
         30px 0;
 
@@ -1325,12 +1071,10 @@
 
       border-bottom:
         1px solid var(--linea);
-
     }
 
 
     .footer-label {
-
       display: block;
 
       margin-bottom: 10px;
@@ -1343,23 +1087,19 @@
       letter-spacing: .15em;
 
       text-transform: uppercase;
-
     }
 
 
     .footer-item a {
-
       font-size: 13px;
 
       font-weight: 500;
 
       word-break: break-word;
-
     }
 
 
     .footer-bottom {
-
       padding-top: 28px;
 
       display: flex;
@@ -1379,18 +1119,15 @@
       letter-spacing: .1em;
 
       text-transform: uppercase;
-
     }
 
 
-
     /* =====================================
-       SIN PRODUCTOS
+       VACÍO
     ===================================== */
 
 
     .empty-state {
-
       grid-column:
         1 / -1;
 
@@ -1403,7 +1140,6 @@
       flex-direction: column;
 
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
@@ -1413,34 +1149,7 @@
 
       border-bottom:
         1px solid var(--linea);
-
     }
-
-
-    .empty-state h3 {
-
-      font-size:
-        clamp(
-          30px,
-          5vw,
-          50px
-        );
-
-      font-weight: 500;
-
-    }
-
-
-    .empty-state p {
-
-      margin-top: 12px;
-
-      color: var(--suave);
-
-      font-size: 13px;
-
-    }
-
 
 
     /* =====================================
@@ -1452,66 +1161,51 @@
 
 
       .contact-bar {
-
         padding:
           9px 16px;
-
       }
 
 
       .contact-label {
-
         display: none;
-
       }
 
 
       .contact-links {
-
         width: 100%;
 
         justify-content:
           space-between;
 
         gap: 10px;
-
       }
 
 
       .contact-email {
-
         display: none;
-
       }
 
 
       .header {
-
         height: 66px;
 
         padding:
           0 16px;
-
       }
 
 
       .header-logo img {
-
         max-width: 83px;
-
       }
 
 
       .menu-button,
       .header-products {
-
         font-size: 9px;
-
       }
 
 
       .hero {
-
         width:
           calc(
             100% - 16px
@@ -1522,127 +1216,130 @@
         min-height: 540px;
 
         margin-top: 8px;
-
       }
 
 
       .hero-content {
-
         left: 23px;
 
         right: 23px;
 
         bottom: 31px;
-
       }
 
 
       .hero-controls {
-
         top: 16px;
 
         right: 16px;
 
         bottom: auto;
-
       }
 
 
       .products-heading {
-
         display: block;
-
       }
 
 
       .products-heading p {
-
         margin-top: 25px;
-
       }
 
 
       .products-section {
-
         width:
           calc(
             100% - 16px
           );
-
       }
 
 
       .products-grid,
       .products-grid.unico {
-
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
       }
 
 
       .products-grid {
-
         row-gap: 60px;
-
       }
 
 
-      .product-purchase {
+      /*
+         En celular:
+         nombre + precio arriba
+         comprar abajo
+      */
 
+
+      .product-row {
         grid-template-columns:
           minmax(0,1fr)
-          125px;
+          auto;
 
+        gap:
+          12px 15px;
+
+        padding-top: 14px;
+
+        padding-bottom: 14px;
+      }
+
+
+      .product-name {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+
+      .product-price {
+        grid-column: 2;
+        grid-row: 1;
       }
 
 
       .purchase-button {
+        grid-column:
+          1 / -1;
 
-        min-width: 125px;
+        grid-row: 2;
 
+        width: 100%;
+
+        margin-top: 5px;
       }
 
 
       .editorial {
-
         padding-top: 100px;
 
         padding-bottom: 100px;
-
       }
 
 
       .footer {
-
         padding:
           55px 18px 25px;
-
       }
 
 
       .footer-logo {
-
         padding-bottom: 45px;
-
       }
 
 
       .footer-contact {
-
         grid-template-columns: 1fr;
 
         gap: 25px;
-
       }
 
 
       .footer-bottom {
-
         flex-direction: column;
 
         align-items: flex-start;
-
       }
 
 
@@ -1663,17 +1360,11 @@
   </div>
 
 
-
-  <!-- CONTACTO -->
-
-
   <div class="contact-bar">
 
 
     <span class="contact-label">
-
       Contacto
-
     </span>
 
 
@@ -1715,10 +1406,6 @@
   </div>
 
 
-
-  <!-- HEADER -->
-
-
   <header class="header">
 
 
@@ -1753,10 +1440,6 @@
 
 
   </header>
-
-
-
-  <!-- MENÚ -->
 
 
   <div
@@ -1855,12 +1538,10 @@
   </div>
 
 
-
   <main>
 
 
-
-    <!-- BANNERS -->
+    <!-- BANNER -->
 
 
     <section
@@ -1892,9 +1573,7 @@
 
 
         <div class="hero-label">
-
           DAI PY
-
         </div>
 
 
@@ -1948,7 +1627,6 @@
     </section>
 
 
-
     <!-- PRODUCTOS -->
 
 
@@ -1962,21 +1640,17 @@
 
 
         <span class="section-label">
-
           Tienda
-
         </span>
 
 
+        <!--
+          YA NO MOSTRAMOS (2), (3), ETC.
+        -->
+
+
         <h2>
-
           Productos
-
-          <sup
-            class="product-count"
-            id="product-count"
-          ></sup>
-
         </h2>
 
 
@@ -1984,15 +1658,12 @@
 
 
       <p>
-
         Elegí tu producto y realizá
         tu pedido directamente por WhatsApp.
-
       </p>
 
 
     </section>
-
 
 
     <section class="products-section">
@@ -2005,16 +1676,12 @@
 
 
         <div>
-
           <div class="skeleton-image"></div>
-
         </div>
 
 
         <div>
-
           <div class="skeleton-image"></div>
-
         </div>
 
 
@@ -2022,7 +1689,6 @@
 
 
     </section>
-
 
 
     <!-- EDITORIAL -->
@@ -2035,18 +1701,14 @@
 
 
         <div class="editorial-label">
-
           DAI PY
-
         </div>
 
 
         <p class="editorial-text">
-
           Las cosas que elegimos llevar
           con nosotros también cuentan
           una historia.
-
         </p>
 
 
@@ -2059,7 +1721,6 @@
   </main>
 
 
-
   <!-- FOOTER -->
 
 
@@ -2070,6 +1731,9 @@
 
 
     <div class="footer-inner">
+
+
+      <!-- LOGO REAL -->
 
 
       <div class="footer-logo">
@@ -2087,9 +1751,11 @@
 
         <div class="footer-item">
 
+
           <span class="footer-label">
             Correo
           </span>
+
 
           <a
             id="footer-email"
@@ -2098,14 +1764,17 @@
             daiofficial.py@gmail.com
           </a>
 
+
         </div>
 
 
         <div class="footer-item">
 
+
           <span class="footer-label">
             Instagram
           </span>
+
 
           <a
             id="footer-instagram"
@@ -2115,14 +1784,17 @@
             @daiofficial.py
           </a>
 
+
         </div>
 
 
         <div class="footer-item">
 
+
           <span class="footer-label">
             Pedidos
           </span>
+
 
           <a
             id="footer-whatsapp"
@@ -2131,6 +1803,7 @@
           >
             WhatsApp
           </a>
+
 
         </div>
 
@@ -2142,18 +1815,14 @@
 
 
         <span>
-
           ©
           <span id="year"></span>
           DAI PY
-
         </span>
 
 
         <span>
-
           Tienda Oficial
-
         </span>
 
 
@@ -2166,13 +1835,7 @@
   </footer>
 
 
-
   <script>
-
-
-    /* =====================================
-       CONFIGURACIÓN
-    ===================================== */
 
 
     const OWNER =
@@ -2188,18 +1851,15 @@
 
 
     const API_BASE =
-
       `https://api.github.com/repos/${OWNER}/${REPO}/contents`;
 
 
     const RAW_BASE =
-
       `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/`;
 
 
     const VERSION =
       Date.now();
-
 
 
     let CONTACTO = {
@@ -2221,7 +1881,6 @@
     let bannerActual = 0;
 
     let bannerTimer = null;
-
 
 
     /* =====================================
@@ -2290,7 +1949,6 @@
     };
 
 
-
     /* =====================================
        UTILIDADES
     ===================================== */
@@ -2354,7 +2012,6 @@
     }
 
 
-
     function campo(
       texto,
       nombre
@@ -2362,14 +2019,12 @@
 
 
       const lineas =
-
         texto
           .replace(/\r/g,"")
           .split("\n");
 
 
       const regex =
-
         new RegExp(
           "^"
           +
@@ -2483,7 +2138,6 @@
     }
 
 
-
     function precioFormateado(
       precio
     ) {
@@ -2495,7 +2149,6 @@
 
 
       const numero =
-
         String(precio)
           .replace(/[^\d]/g,"");
 
@@ -2520,7 +2173,6 @@
 
 
     }
-
 
 
     function mediaURL(
@@ -2575,7 +2227,6 @@
 
 
       const segura =
-
         ruta
           .split("/")
           .map(
@@ -2607,7 +2258,6 @@
     }
 
 
-
     /* =====================================
        GITHUB
     ===================================== */
@@ -2619,15 +2269,12 @@
 
 
       const respuesta =
-
         await fetch(
 
           `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
 
           {
-
             cache: "no-store"
-
           }
 
         );
@@ -2656,7 +2303,6 @@
 
 
       const markdown =
-
         archivos.filter(
 
           archivo =>
@@ -2673,7 +2319,6 @@
 
 
       const resultados =
-
         await Promise.all(
 
 
@@ -2687,7 +2332,6 @@
 
 
                 const response =
-
                   await fetch(
 
                     archivo.download_url
@@ -2713,10 +2357,7 @@
                 return {
 
                   texto:
-                    await response.text(),
-
-                  archivo:
-                    archivo.name
+                    await response.text()
 
                 };
 
@@ -2745,14 +2386,12 @@
     }
 
 
-
     async function cargarJSON(
       ruta
     ) {
 
 
       const respuesta =
-
         await fetch(
 
           RAW_BASE
@@ -2785,7 +2424,6 @@
     }
 
 
-
     /* =====================================
        APARIENCIA
     ===================================== */
@@ -2797,7 +2435,6 @@
 
 
       const nombre =
-
         FUENTES[config.fuente]
 
         ?
@@ -2863,7 +2500,6 @@
     }
 
 
-
     async function cargarApariencia() {
 
 
@@ -2882,7 +2518,6 @@
 
 
         const datos =
-
           await cargarJSON(
 
             "contenido/configuracion/diseno.json"
@@ -2897,13 +2532,10 @@
 
       catch {
 
-        /* Poppins predeterminado */
-
       }
 
 
     }
-
 
 
     /* =====================================
@@ -2921,7 +2553,6 @@
 
 
     }
-
 
 
     function whatsappURL(
@@ -2957,7 +2588,6 @@
     }
 
 
-
     function instagramUsuario() {
 
 
@@ -2969,7 +2599,6 @@
 
 
     }
-
 
 
     function aplicarContacto() {
@@ -3003,11 +2632,8 @@
 
 
       const whatsappGeneral =
-
         whatsappURL(
-
           "Hola DAI PY, quisiera realizar una consulta."
-
         );
 
 
@@ -3113,7 +2739,6 @@
     }
 
 
-
     async function cargarContacto() {
 
 
@@ -3121,7 +2746,6 @@
 
 
         const datos =
-
           await cargarJSON(
 
             "contenido/configuracion/contacto.json"
@@ -3142,8 +2766,6 @@
 
       catch {
 
-        /* Datos predeterminados */
-
       }
 
 
@@ -3153,13 +2775,14 @@
     }
 
 
-
     /* =====================================
        BANNERS
     ===================================== */
 
 
-    function bannerActivo(valor) {
+    function bannerActivo(
+      valor
+    ) {
 
 
       if (valor === "") {
@@ -3181,7 +2804,6 @@
 
 
     }
-
 
 
     function actualizarBanner(
@@ -3278,7 +2900,6 @@
     }
 
 
-
     function iniciarCarrusel() {
 
 
@@ -3297,25 +2918,17 @@
 
 
         bannerTimer =
-
           setInterval(
-
 
             () => {
 
-
               actualizarBanner(
-
                 bannerActual + 1
-
               );
-
 
             },
 
-
             6500
-
 
           );
 
@@ -3326,7 +2939,6 @@
     }
 
 
-
     async function cargarBanners() {
 
 
@@ -3334,7 +2946,6 @@
 
 
         const archivos =
-
           await cargarColeccion(
 
             "contenido/banners"
@@ -3343,7 +2954,6 @@
 
 
         BANNERS =
-
           archivos
 
             .map(
@@ -3353,7 +2963,6 @@
 
 
                 titulo:
-
                   campo(
                     archivo.texto,
                     "titulo"
@@ -3361,7 +2970,6 @@
 
 
                 subtitulo:
-
                   campo(
                     archivo.texto,
                     "subtitulo"
@@ -3369,7 +2977,6 @@
 
 
                 imagen:
-
                   campo(
                     archivo.texto,
                     "imagen"
@@ -3377,7 +2984,6 @@
 
 
                 activo:
-
                   bannerActivo(
 
                     campo(
@@ -3389,7 +2995,6 @@
 
 
                 orden:
-
                   Number(
 
                     campo(
@@ -3421,7 +3026,6 @@
 
 
         const media =
-
           document.getElementById(
             "hero-media"
           );
@@ -3451,7 +3055,6 @@
 
 
             const imagen =
-
               document.createElement(
                 "img"
               );
@@ -3536,7 +3139,6 @@
     }
 
 
-
     /* =====================================
        PRODUCTOS
     ===================================== */
@@ -3575,12 +3177,10 @@
     }
 
 
-
     function crearFallback() {
 
 
       const contenedor =
-
         document.createElement(
           "div"
         );
@@ -3591,7 +3191,6 @@
 
 
       const logo =
-
         document.createElement(
           "img"
         );
@@ -3616,14 +3215,12 @@
     }
 
 
-
     function crearProducto(
       producto
     ) {
 
 
       const articulo =
-
         document.createElement(
           "article"
         );
@@ -3633,11 +3230,12 @@
         "product";
 
 
-      /* FOTO */
+      /*
+        IMAGEN
+      */
 
 
       const cajaImagen =
-
         document.createElement(
           "div"
         );
@@ -3653,7 +3251,6 @@
 
 
         const imagen =
-
           document.createElement(
             "img"
           );
@@ -3675,9 +3272,7 @@
 
         imagen.addEventListener(
 
-
           "error",
-
 
           () => {
 
@@ -3691,7 +3286,6 @@
 
 
           }
-
 
         );
 
@@ -3716,33 +3310,24 @@
       }
 
 
-      /* INFORMACIÓN */
+      /*
+        UNA SOLA FILA
+
+        NOMBRE | PRECIO | COMPRAR
+      */
 
 
-      const info =
-
+      const fila =
         document.createElement(
           "div"
         );
 
 
-      info.className =
-        "product-info";
-
-
-      const cabecera =
-
-        document.createElement(
-          "div"
-        );
-
-
-      cabecera.className =
-        "product-head";
+      fila.className =
+        "product-row";
 
 
       const nombre =
-
         document.createElement(
           "h3"
         );
@@ -3757,7 +3342,6 @@
 
 
       const precio =
-
         document.createElement(
           "div"
         );
@@ -3773,22 +3357,66 @@
         );
 
 
-      cabecera.appendChild(
+      const comprar =
+        document.createElement(
+          "a"
+        );
+
+
+      comprar.className =
+        "purchase-button";
+
+
+      comprar.textContent =
+        "Pedido directo · Comprar";
+
+
+      comprar.href =
+        whatsappURL(
+
+          mensajeCompra(
+            producto
+          )
+
+        );
+
+
+      comprar.target =
+        "_blank";
+
+
+      comprar.rel =
+        "noopener noreferrer";
+
+
+      fila.appendChild(
         nombre
       );
 
 
-      cabecera.appendChild(
+      fila.appendChild(
         precio
       );
 
 
-      info.appendChild(
-        cabecera
+      fila.appendChild(
+        comprar
       );
 
 
-      /* DESCRIPCIÓN */
+      articulo.appendChild(
+        cajaImagen
+      );
+
+
+      articulo.appendChild(
+        fila
+      );
+
+
+      /*
+        DESCRIPCIÓN OPCIONAL
+      */
 
 
       if (
@@ -3797,7 +3425,6 @@
 
 
         const descripcion =
-
           document.createElement(
             "p"
           );
@@ -3811,138 +3438,12 @@
           producto.desc;
 
 
-        info.appendChild(
+        articulo.appendChild(
           descripcion
         );
 
 
       }
-
-
-      /* COMPRA DEL MISMO PRODUCTO */
-
-
-      const compra =
-
-        document.createElement(
-          "div"
-        );
-
-
-      compra.className =
-        "product-purchase";
-
-
-      const compraInfo =
-
-        document.createElement(
-          "div"
-        );
-
-
-      compraInfo.className =
-        "purchase-info";
-
-
-      const compraLabel =
-
-        document.createElement(
-          "span"
-        );
-
-
-      compraLabel.className =
-        "purchase-label";
-
-
-      compraLabel.textContent =
-        "Pedido directo";
-
-
-      const compraPrecio =
-
-        document.createElement(
-          "span"
-        );
-
-
-      compraPrecio.className =
-        "purchase-price";
-
-
-      compraPrecio.textContent =
-        precioFormateado(
-          producto.precio
-        );
-
-
-      compraInfo.appendChild(
-        compraLabel
-      );
-
-
-      compraInfo.appendChild(
-        compraPrecio
-      );
-
-
-      const boton =
-
-        document.createElement(
-          "a"
-        );
-
-
-      boton.className =
-        "purchase-button";
-
-
-      boton.textContent =
-        "Comprar";
-
-
-      boton.href =
-
-        whatsappURL(
-
-          mensajeCompra(
-            producto
-          )
-
-        );
-
-
-      boton.target =
-        "_blank";
-
-
-      boton.rel =
-        "noopener noreferrer";
-
-
-      compra.appendChild(
-        compraInfo
-      );
-
-
-      compra.appendChild(
-        boton
-      );
-
-
-      info.appendChild(
-        compra
-      );
-
-
-      articulo.appendChild(
-        cajaImagen
-      );
-
-
-      articulo.appendChild(
-        info
-      );
 
 
       return articulo;
@@ -3951,14 +3452,12 @@
     }
 
 
-
     function mostrarProductos(
       productos
     ) {
 
 
       const grid =
-
         document.getElementById(
           "products-grid"
         );
@@ -3966,27 +3465,6 @@
 
       grid.innerHTML =
         "";
-
-
-      document
-        .getElementById(
-          "product-count"
-        )
-        .textContent =
-
-          productos.length
-
-          ?
-
-          "("
-          +
-          productos.length
-          +
-          ")"
-
-          :
-
-          "";
 
 
       grid.classList.toggle(
@@ -4004,7 +3482,6 @@
 
 
         const vacio =
-
           document.createElement(
             "div"
           );
@@ -4062,7 +3539,6 @@
     }
 
 
-
     async function cargarProductos() {
 
 
@@ -4070,7 +3546,6 @@
 
 
         const archivos =
-
           await cargarColeccion(
 
             "contenido/productos"
@@ -4079,7 +3554,6 @@
 
 
         const productos =
-
           archivos.map(
 
 
@@ -4087,7 +3561,6 @@
 
 
               nombre:
-
                 campo(
                   archivo.texto,
                   "nombre"
@@ -4099,7 +3572,6 @@
 
 
               img:
-
                 campo(
                   archivo.texto,
                   "img"
@@ -4107,7 +3579,6 @@
 
 
               precio:
-
                 campo(
                   archivo.texto,
                   "precio"
@@ -4115,7 +3586,6 @@
 
 
               desc:
-
                 campo(
                   archivo.texto,
                   "desc"
@@ -4156,14 +3626,12 @@
     }
 
 
-
     /* =====================================
        MENÚ
     ===================================== */
 
 
     const menu =
-
       document.getElementById(
         "menu"
       );
@@ -4223,9 +3691,7 @@
 
     menu.addEventListener(
 
-
       "click",
-
 
       evento => {
 
@@ -4241,7 +3707,6 @@
 
       }
 
-
     );
 
 
@@ -4251,25 +3716,20 @@
       )
       .forEach(
 
-
         enlace => {
-
 
           enlace.addEventListener(
             "click",
             cerrarMenu
           );
 
-
         }
-
 
       );
 
 
-
     /* =====================================
-       BANNER CONTROLES
+       BANNERS
     ===================================== */
 
 
@@ -4279,23 +3739,17 @@
       )
       .addEventListener(
 
-
         "click",
 
-
         () => {
-
 
           actualizarBanner(
             bannerActual - 1
           );
 
-
           iniciarCarrusel();
 
-
         }
-
 
       );
 
@@ -4306,30 +3760,23 @@
       )
       .addEventListener(
 
-
         "click",
 
-
         () => {
-
 
           actualizarBanner(
             bannerActual + 1
           );
 
-
           iniciarCarrusel();
 
-
         }
-
 
       );
 
 
-
     /* =====================================
-       INICIO
+       AÑO
     ===================================== */
 
 
@@ -4338,19 +3785,24 @@
         "year"
       )
       .textContent =
-
         new Date()
           .getFullYear();
 
+
+    /* =====================================
+       INICIAR
+    ===================================== */
 
 
     async function iniciar() {
 
 
       /*
-        Primero contacto para asegurarnos
-        de que cada botón de producto use
-        el WhatsApp correcto.
+        Primero cargamos contacto.
+
+        Así los botones Comprar
+        ya nacen con el WhatsApp
+        correcto.
       */
 
 
@@ -4375,7 +3827,6 @@
 
 
   </script>
-
 
 </body>
 
