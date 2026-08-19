@@ -17,6 +17,9 @@
 
   <title>DAI PY — Tienda Oficial</title>
 
+
+  <!-- Poppins por defecto -->
+
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -29,7 +32,7 @@
   >
 
   <link
-    id="fuente-google"
+    id="google-font"
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
   >
@@ -39,13 +42,18 @@
 
     :root {
 
-      --fondo: #f1efe9;
-      --texto: #171717;
-      --suave: #77736d;
-      --linea: rgba(0, 0, 0, 0.14);
-      --negro: #151515;
+      --fondo: #f2f0eb;
 
-      --font-principal:
+      --texto: #141414;
+
+      --suave: #77736d;
+
+      --linea:
+        rgba(20, 20, 20, 0.14);
+
+      --oscuro: #151515;
+
+      --fuente:
         "Poppins",
         Arial,
         sans-serif;
@@ -57,28 +65,36 @@
 
     * {
 
+      box-sizing:
+        border-box;
+
       margin: 0;
+
       padding: 0;
-      box-sizing: border-box;
 
     }
 
 
     html {
 
-      scroll-behavior: smooth;
+      scroll-behavior:
+        smooth;
 
     }
 
 
     body {
 
-      background: var(--fondo);
+      background:
+        var(--fondo);
 
-      color: var(--texto);
+      color:
+        var(--texto);
 
       font-family:
-        var(--font-principal);
+        var(--fuente);
+
+      font-weight: 400;
 
       -webkit-font-smoothing:
         antialiased;
@@ -93,9 +109,19 @@
     }
 
 
+    img {
+
+      display: block;
+
+      max-width: 100%;
+
+    }
+
+
     a {
 
       color: inherit;
+
       text-decoration: none;
 
     }
@@ -103,60 +129,143 @@
 
     button {
 
+      color: inherit;
+
       font: inherit;
 
     }
 
 
-    img {
 
-      display: block;
-
-    }
-
-
-    /*
-    ========================================
-    BARRA SUPERIOR
-    ========================================
-    */
+    /* ========================================
+       BARRA NEGRA
+    ======================================== */
 
 
     .topbar {
 
       min-height: 30px;
 
+      padding:
+        7px 20px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      padding: 7px 20px;
+      background:
+        var(--oscuro);
 
-      background: var(--negro);
       color: white;
 
-      font-size: 10px;
+      font-size: 9px;
+
       font-weight: 500;
 
-      letter-spacing: .16em;
+      letter-spacing:
+        .15em;
 
-      text-transform: uppercase;
+      text-align: center;
+
+      text-transform:
+        uppercase;
 
     }
 
 
-    /*
-    ========================================
-    HEADER
-    ========================================
-    */
+
+    /* ========================================
+       CONTACTO SUPERIOR
+    ======================================== */
+
+
+    .contact-bar {
+
+      min-height: 39px;
+
+      padding:
+        8px 28px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
+      font-size: 10px;
+
+    }
+
+
+    .contact-bar-label {
+
+      color:
+        var(--suave);
+
+      font-weight: 500;
+
+      letter-spacing:
+        .12em;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .contact-bar-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 25px;
+
+    }
+
+
+    .contact-bar a {
+
+      transition:
+        opacity .2s ease;
+
+    }
+
+
+    .contact-bar a:hover {
+
+      opacity: .5;
+
+    }
+
+
+
+    /* ========================================
+       HEADER
+    ======================================== */
 
 
     .header {
 
       height: 76px;
 
-      padding: 0 28px;
+      padding:
+        0 28px;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 50;
 
       display: grid;
 
@@ -165,27 +274,23 @@
 
       align-items: center;
 
-      position: sticky;
-
-      top: 0;
-
-      z-index: 50;
-
       background:
         rgba(
-          241,
-          239,
-          233,
-          .96
+          242,
+          240,
+          235,
+          .95
         );
 
-      backdrop-filter: blur(12px);
+      backdrop-filter:
+        blur(12px);
 
       -webkit-backdrop-filter:
         blur(12px);
 
       border-bottom:
-        1px solid var(--linea);
+        1px solid
+        var(--linea);
 
     }
 
@@ -196,9 +301,8 @@
 
       border: 0;
 
-      background: transparent;
-
-      color: var(--texto);
+      background:
+        transparent;
 
       cursor: pointer;
 
@@ -206,36 +310,36 @@
 
       font-weight: 500;
 
-      letter-spacing: .14em;
+      letter-spacing:
+        .13em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
     }
 
 
-    .logo {
+    .header-logo {
 
       justify-self: center;
 
     }
 
 
-    .logo img {
-
-      max-width: 110px;
-
-      max-height: 52px;
+    .header-logo img {
 
       width: auto;
 
-      height: auto;
+      max-width: 110px;
+
+      max-height: 50px;
 
       object-fit: contain;
 
     }
 
 
-    .productos-link {
+    .header-shop {
 
       justify-self: end;
 
@@ -243,78 +347,19 @@
 
       font-weight: 500;
 
-      letter-spacing: .14em;
+      letter-spacing:
+        .13em;
 
-      text-transform: uppercase;
-
-    }
-
-
-    /*
-    ========================================
-    CONTACTO SUPERIOR
-    ========================================
-    */
-
-
-    .contacto-superior {
-
-      min-height: 40px;
-
-      padding: 8px 28px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      border-bottom:
-        1px solid var(--linea);
-
-      font-size: 10px;
-
-      font-weight: 500;
-
-      letter-spacing: .08em;
-
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
     }
 
 
-    .contacto-superior-links {
 
-      display: flex;
-
-      align-items: center;
-
-      gap: 24px;
-
-    }
-
-
-    .contacto-superior a {
-
-      transition: opacity .2s;
-
-    }
-
-
-    .contacto-superior a:hover {
-
-      opacity: .5;
-
-    }
-
-
-    /*
-    ========================================
-    MENÚ
-    ========================================
-    */
+    /* ========================================
+       MENÚ LATERAL
+    ======================================== */
 
 
     .menu-overlay {
@@ -325,40 +370,47 @@
 
       z-index: 100;
 
+      visibility: hidden;
+
       background:
-        rgba(0, 0, 0, .32);
+        rgba(0, 0, 0, .35);
 
       opacity: 0;
 
-      visibility: hidden;
-
-      transition: .3s ease;
+      transition:
+        opacity .3s ease,
+        visibility .3s ease;
 
     }
 
 
     .menu-overlay.abierto {
 
-      opacity: 1;
-
       visibility: visible;
+
+      opacity: 1;
 
     }
 
 
     .menu-panel {
 
-      width: min(440px, 90vw);
+      width:
+        min(
+          440px,
+          90vw
+        );
 
       height: 100%;
 
-      padding: 30px;
-
-      background: var(--fondo);
+      padding: 28px;
 
       display: flex;
 
       flex-direction: column;
+
+      background:
+        var(--fondo);
 
       transform:
         translateX(-100%);
@@ -378,39 +430,42 @@
     }
 
 
-    .menu-header {
+    .menu-top {
 
-      padding-bottom: 27px;
+      padding-bottom:
+        28px;
 
       display: flex;
+
+      align-items: center;
 
       justify-content:
         space-between;
 
-      align-items: center;
-
       border-bottom:
-        1px solid var(--linea);
+        1px solid
+        var(--linea);
 
     }
 
 
     .menu-logo img {
 
-      max-width: 95px;
-
-      max-height: 48px;
-
       width: auto;
+
+      max-width: 100px;
+
+      max-height: 50px;
 
     }
 
 
-    .cerrar-menu {
+    .menu-close {
 
       border: 0;
 
-      background: transparent;
+      background:
+        transparent;
 
       cursor: pointer;
 
@@ -418,22 +473,25 @@
 
       font-weight: 500;
 
-      letter-spacing: .12em;
+      letter-spacing:
+        .12em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
     }
 
 
     .menu-links {
 
-      padding-top: 50px;
+      padding-top:
+        48px;
 
       display: flex;
 
       flex-direction: column;
 
-      gap: 12px;
+      gap: 10px;
 
     }
 
@@ -444,19 +502,30 @@
         clamp(
           34px,
           6vw,
-          52px
+          53px
         );
 
       font-weight: 500;
 
       line-height: 1.08;
 
-      letter-spacing: -.04em;
+      letter-spacing:
+        -.045em;
+
+      transition:
+        opacity .2s;
 
     }
 
 
-    .menu-contacto {
+    .menu-links a:hover {
+
+      opacity: .45;
+
+    }
+
+
+    .menu-contact {
 
       margin-top: auto;
 
@@ -466,23 +535,24 @@
 
       flex-direction: column;
 
-      gap: 8px;
+      gap: 9px;
 
       border-top:
-        1px solid var(--linea);
+        1px solid
+        var(--linea);
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 11px;
 
     }
 
 
-    /*
-    ========================================
-    BANNERS
-    ========================================
-    */
+
+    /* ========================================
+       HERO / BANNERS
+    ======================================== */
 
 
     .hero {
@@ -494,11 +564,11 @@
 
       height:
         min(
-          80vh,
+          79vh,
           850px
         );
 
-      min-height: 580px;
+      min-height: 570px;
 
       margin:
         14px auto 0;
@@ -507,12 +577,13 @@
 
       overflow: hidden;
 
-      background: #d4d0c8;
+      background:
+        #d8d4cc;
 
     }
 
 
-    .hero-slides {
+    .hero-media {
 
       position: absolute;
 
@@ -521,18 +592,35 @@
     }
 
 
-    .hero-fondo {
+    .hero-fallback {
 
       position: absolute;
 
       inset: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       background:
-        linear-gradient(
-          135deg,
-          #c9c4ba,
-          #e2dfd8
+        #dedad2;
+
+    }
+
+
+    .hero-fallback img {
+
+      width:
+        min(
+          240px,
+          45vw
         );
+
+      height: auto;
+
+      opacity: .9;
 
     }
 
@@ -551,11 +639,12 @@
 
       opacity: 0;
 
-      transform: scale(1.015);
+      transform:
+        scale(1.01);
 
       transition:
-        opacity .8s ease,
-        transform 6s ease;
+        opacity .7s ease,
+        transform 7s ease;
 
     }
 
@@ -564,7 +653,8 @@
 
       opacity: 1;
 
-      transform: scale(1.04);
+      transform:
+        scale(1.04);
 
     }
 
@@ -579,7 +669,8 @@
 
       z-index: 2;
 
-      pointer-events: none;
+      pointer-events:
+        none;
 
       background:
 
@@ -587,14 +678,29 @@
 
           to top,
 
-          rgba(0,0,0,.62)
+          rgba(
+            0,
+            0,
+            0,
+            .62
+          )
           0%,
 
-          rgba(0,0,0,.17)
-          48%,
+          rgba(
+            0,
+            0,
+            0,
+            .18
+          )
+          46%,
 
-          rgba(0,0,0,.02)
-          80%
+          rgba(
+            0,
+            0,
+            0,
+            .02
+          )
+          78%
 
         );
 
@@ -630,15 +736,18 @@
 
     .hero-label {
 
-      margin-bottom: 17px;
+      margin-bottom:
+        15px;
 
       font-size: 10px;
 
       font-weight: 500;
 
-      letter-spacing: .18em;
+      letter-spacing:
+        .18em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
     }
 
@@ -649,25 +758,27 @@
 
       font-size:
         clamp(
-          42px,
+          40px,
           7vw,
-          92px
+          90px
         );
 
       font-weight: 500;
 
-      line-height: .98;
+      line-height: .99;
 
-      letter-spacing: -.055em;
+      letter-spacing:
+        -.055em;
 
     }
 
 
     .hero-subtitle {
 
-      max-width: 560px;
+      max-width: 580px;
 
-      margin-top: 25px;
+      margin-top:
+        23px;
 
       font-size: 14px;
 
@@ -680,11 +791,11 @@
 
       position: absolute;
 
+      right: 28px;
+
+      bottom: 28px;
+
       z-index: 4;
-
-      right: 30px;
-
-      bottom: 30px;
 
       display: flex;
 
@@ -700,7 +811,7 @@
     }
 
 
-    .hero-control {
+    .hero-arrow {
 
       width: 45px;
 
@@ -708,10 +819,20 @@
 
       border:
         1px solid
-        rgba(255,255,255,.55);
+        rgba(
+          255,
+          255,
+          255,
+          .65
+        );
 
       background:
-        rgba(0,0,0,.15);
+        rgba(
+          0,
+          0,
+          0,
+          .12
+        );
 
       color: white;
 
@@ -722,14 +843,22 @@
     }
 
 
-    /*
-    ========================================
-    PRODUCTOS
-    ========================================
-    */
+    .hero-arrow:hover {
+
+      background: white;
+
+      color: black;
+
+    }
 
 
-    .productos-intro {
+
+    /* ========================================
+       INTRO PRODUCTOS
+    ======================================== */
+
+
+    .shop-heading {
 
       max-width: 1600px;
 
@@ -738,7 +867,7 @@
       padding:
 
         clamp(
-          80px,
+          85px,
           10vw,
           150px
         )
@@ -757,37 +886,39 @@
 
       display: flex;
 
+      align-items: flex-end;
+
       justify-content:
         space-between;
-
-      align-items:
-        flex-end;
 
       gap: 40px;
 
     }
 
 
-    .productos-label {
+    .section-label {
 
       display: block;
 
-      margin-bottom: 13px;
+      margin-bottom: 12px;
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 10px;
 
       font-weight: 500;
 
-      letter-spacing: .17em;
+      letter-spacing:
+        .16em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
     }
 
 
-    .productos-title {
+    .shop-heading h2 {
 
       font-size:
         clamp(
@@ -800,16 +931,18 @@
 
       line-height: 1;
 
-      letter-spacing: -.05em;
+      letter-spacing:
+        -.05em;
 
     }
 
 
-    #cantidad-productos {
+    .product-count {
 
       margin-left: 7px;
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 12px;
 
@@ -820,20 +953,27 @@
     }
 
 
-    .productos-intro p {
+    .shop-heading p {
 
-      max-width: 370px;
+      max-width: 380px;
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 13px;
 
-      line-height: 1.65;
+      line-height: 1.7;
 
     }
 
 
-    .productos-section {
+
+    /* ========================================
+       GRID PRODUCTOS
+    ======================================== */
+
+
+    .products-section {
 
       width:
         calc(
@@ -844,12 +984,13 @@
 
       margin: auto;
 
-      padding-bottom: 100px;
+      padding-bottom:
+        100px;
 
     }
 
 
-    .productos-grid {
+    .products-grid {
 
       display: grid;
 
@@ -857,7 +998,10 @@
 
         repeat(
           2,
-          minmax(0, 1fr)
+          minmax(
+            0,
+            1fr
+          )
         );
 
       column-gap: 2px;
@@ -867,31 +1011,41 @@
     }
 
 
-    .productos-grid.unico {
+    .products-grid.unico {
 
       max-width: 760px;
 
       margin: auto;
 
-      grid-template-columns: 1fr;
+      grid-template-columns:
+        1fr;
 
     }
 
 
-    .producto-imagen {
+    .product {
+
+      min-width: 0;
+
+    }
+
+
+    .product-image {
 
       width: 100%;
 
-      aspect-ratio: 4 / 5;
+      aspect-ratio:
+        4 / 5;
 
       overflow: hidden;
 
-      background: #dedad2;
+      background:
+        #ddd9d1;
 
     }
 
 
-    .producto-imagen img {
+    .product-image img {
 
       width: 100%;
 
@@ -905,8 +1059,8 @@
     }
 
 
-    .producto:hover
-    .producto-imagen img {
+    .product:hover
+    .product-image > img {
 
       transform:
         scale(1.025);
@@ -914,7 +1068,7 @@
     }
 
 
-    .producto-placeholder {
+    .product-image-fallback {
 
       width: 100%;
 
@@ -922,27 +1076,31 @@
 
       display: flex;
 
-      justify-content: center;
-
       align-items: center;
+
+      justify-content: center;
 
     }
 
 
-    .producto-placeholder img {
+    .product-image-fallback img {
 
-      max-width: 120px;
+      width:
+        min(
+          150px,
+          35%
+        );
 
       height: auto;
 
       object-fit: contain;
 
-      opacity: .35;
+      opacity: .32;
 
     }
 
 
-    .producto-info {
+    .product-info {
 
       padding:
         16px 4px 0;
@@ -950,9 +1108,11 @@
     }
 
 
-    .producto-cabecera {
+    .product-head {
 
       display: flex;
+
+      align-items: flex-start;
 
       justify-content:
         space-between;
@@ -962,7 +1122,7 @@
     }
 
 
-    .producto-nombre {
+    .product-name {
 
       font-size: 13px;
 
@@ -971,7 +1131,7 @@
     }
 
 
-    .producto-precio {
+    .product-price {
 
       flex-shrink: 0;
 
@@ -983,417 +1143,34 @@
     }
 
 
-    .producto-desc {
+    .product-desc {
 
-      max-width: 530px;
+      max-width: 540px;
 
-      margin-top: 10px;
+      margin-top: 9px;
 
-      color: var(--suave);
-
-      font-size: 12px;
-
-      line-height: 1.6;
-
-    }
-
-
-    /*
-    ========================================
-    LISTA DE COMPRA
-    ========================================
-    */
-
-
-    .comprar-section {
-
-      width:
-        calc(
-          100% - 28px
-        );
-
-      max-width: 1600px;
-
-      margin:
-        0 auto 130px;
-
-    }
-
-
-    .comprar-cabecera {
-
-      padding-bottom: 30px;
-
-      display: flex;
-
-      justify-content:
-        space-between;
-
-      align-items:
-        flex-end;
-
-      gap: 30px;
-
-    }
-
-
-    .comprar-cabecera h2 {
-
-      font-size:
-        clamp(
-          30px,
-          5vw,
-          55px
-        );
-
-      font-weight: 500;
-
-      letter-spacing: -.045em;
-
-    }
-
-
-    .comprar-cabecera p {
-
-      max-width: 390px;
-
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 12px;
 
-      line-height: 1.6;
+      line-height: 1.65;
 
     }
 
 
-    .tabla-compra {
 
-      border-top:
-        1px solid var(--texto);
-
-    }
-
-
-    .fila-compra {
-
-      min-height: 76px;
-
-      padding: 16px 6px;
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1.8fr)
-        minmax(120px, .7fr)
-        auto;
-
-      align-items: center;
-
-      gap: 25px;
-
-      border-bottom:
-        1px solid var(--linea);
-
-    }
-
-
-    .fila-compra.encabezado {
-
-      min-height: 45px;
-
-      color: var(--suave);
-
-      font-size: 9px;
-
-      font-weight: 500;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .compra-nombre {
-
-      font-size: 13px;
-
-      font-weight: 500;
-
-    }
-
-
-    .compra-precio {
-
-      font-size: 13px;
-
-      font-weight:
-        var(--peso-precio);
-
-    }
-
-
-    .boton-whatsapp {
-
-      min-width: 128px;
-
-      padding:
-        12px 17px;
-
-      border:
-        1px solid var(--texto);
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background: transparent;
-
-      font-size: 10px;
-
-      font-weight: 600;
-
-      letter-spacing: .1em;
-
-      text-transform: uppercase;
-
-      transition:
-        background .2s,
-        color .2s;
-
-    }
-
-
-    .boton-whatsapp:hover {
-
-      background: var(--texto);
-
-      color: white;
-
-    }
-
-
-    /*
-    ========================================
-    EDITORIAL
-    ========================================
-    */
-
-
-    .editorial {
-
-      padding:
-
-        clamp(
-          100px,
-          14vw,
-          190px
-        )
-
-        clamp(
-          25px,
-          8vw,
-          130px
-        );
-
-      background: var(--negro);
-
-      color: white;
-
-    }
-
-
-    .editorial-inner {
-
-      max-width: 1300px;
-
-      margin: auto;
-
-    }
-
-
-    .editorial-logo {
-
-      margin-bottom: 45px;
-
-    }
-
-
-    .editorial-logo img {
-
-      max-width: 120px;
-
-      max-height: 70px;
-
-      width: auto;
-
-      filter: brightness(0) invert(1);
-
-    }
-
-
-    .editorial-text {
-
-      max-width: 1100px;
-
-      font-size:
-        clamp(
-          32px,
-          5vw,
-          68px
-        );
-
-      font-weight: 500;
-
-      line-height: 1.1;
-
-      letter-spacing: -.045em;
-
-    }
-
-
-    /*
-    ========================================
-    FOOTER
-    ========================================
-    */
-
-
-    footer {
-
-      padding:
-        70px 30px 30px;
-
-      border-top:
-        1px solid var(--linea);
-
-    }
-
-
-    .footer-contenido {
-
-      max-width: 1600px;
-
-      margin: auto;
-
-    }
-
-
-    .footer-logo {
-
-      padding-bottom: 70px;
-
-    }
-
-
-    .footer-logo img {
-
-      width: auto;
-
-      max-width:
-        clamp(
-          150px,
-          20vw,
-          300px
-        );
-
-      max-height: 150px;
-
-      object-fit: contain;
-
-    }
-
-
-    .footer-contacto {
-
-      padding:
-        30px 0;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
-      gap: 30px;
-
-      border-top:
-        1px solid var(--linea);
-
-      border-bottom:
-        1px solid var(--linea);
-
-    }
-
-
-    .footer-contacto-item span {
-
-      display: block;
-
-      margin-bottom: 10px;
-
-      color: var(--suave);
-
-      font-size: 9px;
-
-      font-weight: 500;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .footer-contacto-item a {
-
-      font-size: 13px;
-
-      font-weight: 500;
-
-    }
-
-
-    .footer-bottom {
-
-      padding-top: 30px;
-
-      display: flex;
-
-      justify-content:
-        space-between;
-
-      gap: 20px;
-
-      color: var(--suave);
-
-      font-size: 10px;
-
-      font-weight: 500;
-
-      letter-spacing: .1em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    /*
-    ========================================
-    SKELETON
-    ========================================
-    */
+    /* ========================================
+       SKELETON
+    ======================================== */
 
 
     .skeleton-image {
 
       width: 100%;
 
-      aspect-ratio: 4 / 5;
+      aspect-ratio:
+        4 / 5;
 
       background:
 
@@ -1401,11 +1178,11 @@
 
           100deg,
 
-          #ddd9d1 25%,
+          #dedad3 25%,
 
           #ebe8e2 40%,
 
-          #ddd9d1 55%
+          #dedad3 55%
 
         );
 
@@ -1430,11 +1207,470 @@
     }
 
 
-    .estado-vacio {
 
-      grid-column: 1 / -1;
+    /* ========================================
+       COMPRAR
+    ======================================== */
 
-      min-height: 300px;
+
+    .buy-section {
+
+      width:
+        calc(
+          100% - 56px
+        );
+
+      max-width: 1500px;
+
+      margin:
+        15px auto 130px;
+
+    }
+
+
+    .buy-heading {
+
+      padding-bottom:
+        35px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content:
+        space-between;
+
+      gap: 30px;
+
+    }
+
+
+    .buy-heading h2 {
+
+      font-size:
+        clamp(
+          32px,
+          5vw,
+          58px
+        );
+
+      font-weight: 500;
+
+      letter-spacing:
+        -.05em;
+
+    }
+
+
+    .buy-heading p {
+
+      max-width: 400px;
+
+      color:
+        var(--suave);
+
+      font-size: 12px;
+
+      line-height: 1.65;
+
+    }
+
+
+    .buy-table {
+
+      border-top:
+        1px solid
+        var(--texto);
+
+    }
+
+
+    .buy-row {
+
+      min-height: 76px;
+
+      padding:
+        15px 5px;
+
+      display: grid;
+
+      grid-template-columns:
+
+        minmax(
+          0,
+          1.8fr
+        )
+
+        minmax(
+          130px,
+          .7fr
+        )
+
+        145px;
+
+      gap: 25px;
+
+      align-items: center;
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
+    }
+
+
+    .buy-row.header-row {
+
+      min-height: 44px;
+
+      color:
+        var(--suave);
+
+      font-size: 9px;
+
+      font-weight: 500;
+
+      letter-spacing:
+        .15em;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .buy-name {
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+    }
+
+
+    .buy-price {
+
+      font-size: 13px;
+
+      font-weight:
+        var(--peso-precio);
+
+    }
+
+
+    .buy-button {
+
+      width: 100%;
+
+      min-height: 42px;
+
+      padding:
+        10px 15px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border:
+        1px solid
+        var(--texto);
+
+      background:
+        transparent;
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing:
+        .1em;
+
+      text-transform:
+        uppercase;
+
+      transition:
+        background .2s ease,
+        color .2s ease;
+
+    }
+
+
+    .buy-button:hover {
+
+      background:
+        var(--texto);
+
+      color: white;
+
+    }
+
+
+    .buy-empty {
+
+      padding:
+        55px 5px;
+
+      color:
+        var(--suave);
+
+      font-size: 13px;
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
+    }
+
+
+
+    /* ========================================
+       EDITORIAL
+    ======================================== */
+
+
+    .editorial {
+
+      padding:
+
+        clamp(
+          100px,
+          14vw,
+          190px
+        )
+
+        clamp(
+          25px,
+          8vw,
+          130px
+        );
+
+      background:
+        var(--oscuro);
+
+      color: white;
+
+    }
+
+
+    .editorial-inner {
+
+      max-width: 1250px;
+
+      margin: auto;
+
+    }
+
+
+    .editorial-small {
+
+      margin-bottom:
+        28px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          .5
+        );
+
+      font-size: 10px;
+
+      font-weight: 500;
+
+      letter-spacing:
+        .17em;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .editorial-text {
+
+      max-width: 1100px;
+
+      font-size:
+        clamp(
+          32px,
+          5vw,
+          68px
+        );
+
+      font-weight: 500;
+
+      line-height: 1.1;
+
+      letter-spacing:
+        -.045em;
+
+    }
+
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+
+    .footer {
+
+      padding:
+        75px 30px 30px;
+
+    }
+
+
+    .footer-inner {
+
+      max-width: 1600px;
+
+      margin: auto;
+
+    }
+
+
+    .footer-logo {
+
+      padding-bottom:
+        70px;
+
+    }
+
+
+    /*
+      AQUÍ YA NO HAY NINGÚN "dai"
+      CREADO CON TEXTO.
+
+      SE UTILIZA logo.png
+    */
+
+
+    .footer-logo img {
+
+      width: auto;
+
+      max-width:
+        min(
+          300px,
+          55vw
+        );
+
+      max-height: 160px;
+
+      object-fit: contain;
+
+    }
+
+
+    .footer-contact {
+
+      padding:
+        30px 0;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(
+            0,
+            1fr
+          )
+        );
+
+      gap: 30px;
+
+      border-top:
+        1px solid
+        var(--linea);
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
+    }
+
+
+    .footer-item-label {
+
+      display: block;
+
+      margin-bottom: 10px;
+
+      color:
+        var(--suave);
+
+      font-size: 9px;
+
+      font-weight: 500;
+
+      letter-spacing:
+        .15em;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .footer-item a {
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      word-break:
+        break-word;
+
+    }
+
+
+    .footer-bottom {
+
+      padding-top:
+        28px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+      color:
+        var(--suave);
+
+      font-size: 9px;
+
+      font-weight: 500;
+
+      letter-spacing:
+        .1em;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+
+    /* ========================================
+       ESTADOS VACÍOS
+    ======================================== */
+
+
+    .empty-state {
+
+      grid-column:
+        1 / -1;
+
+      min-height: 320px;
 
       padding: 40px;
 
@@ -1449,59 +1685,113 @@
       text-align: center;
 
       border-top:
-        1px solid var(--linea);
+        1px solid
+        var(--linea);
 
       border-bottom:
-        1px solid var(--linea);
+        1px solid
+        var(--linea);
 
     }
 
 
-    /*
-    ========================================
-    CELULAR
-    ========================================
-    */
+    .empty-state h3 {
+
+      font-size:
+        clamp(
+          30px,
+          5vw,
+          50px
+        );
+
+      font-weight: 500;
+
+      letter-spacing:
+        -.04em;
+
+    }
 
 
-    @media (max-width: 760px) {
+    .empty-state p {
+
+      margin-top: 12px;
+
+      color:
+        var(--suave);
+
+      font-size: 13px;
+
+    }
+
+
+
+    /* ========================================
+       CELULAR
+    ======================================== */
+
+
+    @media (
+      max-width: 760px
+    ) {
+
+
+      .contact-bar {
+
+        padding:
+          9px 16px;
+
+        display: block;
+
+      }
+
+
+      .contact-bar-label {
+
+        display: none;
+
+      }
+
+
+      .contact-bar-links {
+
+        justify-content:
+          space-between;
+
+        gap: 12px;
+
+      }
+
+
+      .contact-bar-email {
+
+        display: none;
+
+      }
 
 
       .header {
 
         height: 66px;
 
-        padding: 0 16px;
-
-      }
-
-
-      .logo img {
-
-        max-width: 82px;
-
-      }
-
-
-      .contacto-superior {
-
         padding:
-          9px 16px;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 5px;
+          0 16px;
 
       }
 
 
-      .contacto-superior-links {
+      .header-logo img {
 
-        gap: 15px;
+        max-width: 83px;
 
-        flex-wrap: wrap;
+        max-height: 42px;
+
+      }
+
+
+      .menu-button,
+      .header-shop {
+
+        font-size: 9px;
 
       }
 
@@ -1513,9 +1803,9 @@
             100% - 16px
           );
 
-        min-height: 540px;
-
         height: 72vh;
+
+        min-height: 540px;
 
         margin-top: 8px;
 
@@ -1528,7 +1818,7 @@
 
         right: 23px;
 
-        bottom: 32px;
+        bottom: 31px;
 
       }
 
@@ -1544,21 +1834,30 @@
       }
 
 
-      .productos-intro {
+      .hero-arrow {
+
+        width: 39px;
+
+        height: 39px;
+
+      }
+
+
+      .shop-heading {
 
         display: block;
 
       }
 
 
-      .productos-intro p {
+      .shop-heading p {
 
         margin-top: 25px;
 
       }
 
 
-      .productos-section {
+      .products-section {
 
         width:
           calc(
@@ -1568,93 +1867,153 @@
       }
 
 
-      .productos-grid,
-      .productos-grid.unico {
+      .products-grid,
+      .products-grid.unico {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
       }
 
 
-      .comprar-section {
+      .products-grid {
+
+        row-gap:
+          55px;
+
+      }
+
+
+      .buy-section {
 
         width:
           calc(
             100% - 32px
           );
 
-        margin-bottom: 90px;
+        margin-bottom:
+          90px;
 
       }
 
 
-      .comprar-cabecera {
+      .buy-heading {
 
         display: block;
 
       }
 
 
-      .comprar-cabecera p {
+      .buy-heading p {
 
-        margin-top: 18px;
-
-      }
-
-
-      .fila-compra {
-
-        grid-template-columns:
-          minmax(0, 1fr)
-          auto;
-
-        gap: 8px 15px;
+        margin-top:
+          18px;
 
       }
 
 
-      .fila-compra.encabezado {
+      .buy-row.header-row {
 
         display: none;
 
       }
 
 
-      .compra-precio {
+      .buy-row {
+
+        min-height: 95px;
+
+        grid-template-columns:
+          minmax(
+            0,
+            1fr
+          )
+          120px;
+
+        grid-template-rows:
+          auto auto;
+
+        gap:
+          5px 15px;
+
+      }
+
+
+      .buy-name {
 
         grid-column: 1;
 
+        grid-row: 1;
+
       }
 
 
-      .boton-whatsapp {
+      .buy-price {
+
+        grid-column: 1;
+
+        grid-row: 2;
+
+      }
+
+
+      .buy-button {
 
         grid-column: 2;
 
-        grid-row: 1 / span 2;
+        grid-row:
+          1 / span 2;
 
-      }
-
-
-      .footer-contacto {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .footer-bottom {
-
-        flex-direction: column;
+        align-self:
+          center;
 
       }
 
 
       .editorial {
 
-        padding-top: 100px;
+        padding-top:
+          100px;
 
-        padding-bottom: 100px;
+        padding-bottom:
+          100px;
+
+      }
+
+
+      .footer {
+
+        padding:
+          55px 18px 25px;
+
+      }
+
+
+      .footer-logo {
+
+        padding-bottom:
+          45px;
+
+      }
+
+
+      .footer-contact {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 25px;
+
+      }
+
+
+      .footer-bottom {
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
 
       }
 
@@ -1669,6 +2028,9 @@
 <body>
 
 
+  <!-- BARRA SUPERIOR -->
+
+
   <div class="topbar">
 
     DAI PY · TIENDA OFICIAL
@@ -1676,12 +2038,66 @@
   </div>
 
 
+
+  <!-- CONTACTO SUPERIOR -->
+
+
+  <div class="contact-bar">
+
+    <span class="contact-bar-label">
+
+      Contacto
+
+    </span>
+
+
+    <div class="contact-bar-links">
+
+
+      <a
+        id="top-email"
+        class="contact-bar-email"
+        href="mailto:daiofficial.py@gmail.com"
+      >
+        daiofficial.py@gmail.com
+      </a>
+
+
+      <a
+        id="top-instagram"
+        href="https://instagram.com/daiofficial.py"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @daiofficial.py
+      </a>
+
+
+      <a
+        id="top-whatsapp"
+        href="https://wa.me/595985824098"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp
+      </a>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- HEADER -->
+
+
   <header class="header">
 
 
     <button
       class="menu-button"
-      id="abrir-menu"
+      id="open-menu"
       type="button"
     >
       Menú
@@ -1689,8 +2105,9 @@
 
 
     <a
-      class="logo"
+      class="header-logo"
       href="#inicio"
+      aria-label="DAI PY"
     >
 
       <img
@@ -1702,7 +2119,7 @@
 
 
     <a
-      class="productos-link"
+      class="header-shop"
       href="#productos"
     >
       Productos
@@ -1711,53 +2128,6 @@
 
   </header>
 
-
-  <!-- CONTACTO SUPERIOR -->
-
-
-  <div class="contacto-superior">
-
-
-    <span>
-      Contacto
-    </span>
-
-
-    <div class="contacto-superior-links">
-
-
-      <a
-        id="contacto-email-superior"
-        href="mailto:daiofficial.py@gmail.com"
-      >
-        daiofficial.py@gmail.com
-      </a>
-
-
-      <a
-        id="contacto-instagram-superior"
-        href="https://www.instagram.com/daiofficial.py/"
-        target="_blank"
-        rel="noopener"
-      >
-        @daiofficial.py
-      </a>
-
-
-      <a
-        id="contacto-whatsapp-superior"
-        href="https://wa.me/595985824098"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp
-      </a>
-
-
-    </div>
-
-
-  </div>
 
 
   <!-- MENÚ -->
@@ -1772,22 +2142,25 @@
     <nav class="menu-panel">
 
 
-      <div class="menu-header">
+      <div class="menu-top">
 
 
-        <div class="menu-logo">
+        <a
+          href="#inicio"
+          class="menu-logo"
+        >
 
           <img
             src="logo.png"
             alt="DAI PY"
           >
 
-        </div>
+        </a>
 
 
         <button
-          class="cerrar-menu"
-          id="cerrar-menu"
+          class="menu-close"
+          id="close-menu"
           type="button"
         >
           Cerrar
@@ -1823,7 +2196,7 @@
       </div>
 
 
-      <div class="menu-contacto">
+      <div class="menu-contact">
 
 
         <a
@@ -1836,11 +2209,21 @@
 
         <a
           id="menu-instagram"
-          href="https://www.instagram.com/daiofficial.py/"
+          href="https://instagram.com/daiofficial.py"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           @daiofficial.py
+        </a>
+
+
+        <a
+          id="menu-whatsapp"
+          href="https://wa.me/595985824098"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
         </a>
 
 
@@ -1853,10 +2236,12 @@
   </div>
 
 
+
   <main>
 
 
-    <!-- BANNERS -->
+
+    <!-- HERO -->
 
 
     <section
@@ -1866,11 +2251,23 @@
 
 
       <div
-        class="hero-slides"
-        id="hero-slides"
+        class="hero-media"
+        id="hero-media"
       >
 
-        <div class="hero-fondo"></div>
+
+        <div
+          class="hero-fallback"
+          id="hero-fallback"
+        >
+
+          <img
+            src="logo.png"
+            alt="DAI PY"
+          >
+
+        </div>
+
 
       </div>
 
@@ -1879,7 +2276,9 @@
 
 
         <div class="hero-label">
+
           DAI PY
+
         </div>
 
 
@@ -1887,7 +2286,7 @@
           class="hero-title"
           id="hero-title"
         >
-          DAI PY
+          Detalles que forman parte de tu historia.
         </h1>
 
 
@@ -1895,8 +2294,8 @@
           class="hero-subtitle"
           id="hero-subtitle"
         >
-          Objetos y detalles seleccionados
-          para acompañar tu día.
+          Accesorios, objetos y detalles
+          seleccionados para acompañar tu día.
         </p>
 
 
@@ -1910,18 +2309,20 @@
 
 
         <button
-          class="hero-control"
-          id="banner-anterior"
+          class="hero-arrow"
+          id="previous-banner"
           type="button"
+          aria-label="Banner anterior"
         >
           ←
         </button>
 
 
         <button
-          class="hero-control"
-          id="banner-siguiente"
+          class="hero-arrow"
+          id="next-banner"
           type="button"
+          aria-label="Banner siguiente"
         >
           →
         </button>
@@ -1933,11 +2334,12 @@
     </section>
 
 
+
     <!-- PRODUCTOS -->
 
 
     <section
-      class="productos-intro"
+      class="shop-heading"
       id="productos"
     >
 
@@ -1945,17 +2347,20 @@
       <div>
 
 
-        <span class="productos-label">
+        <span class="section-label">
+
           Tienda
+
         </span>
 
 
-        <h2 class="productos-title">
+        <h2>
 
           Productos
 
           <sup
-            id="cantidad-productos"
+            class="product-count"
+            id="product-count"
           ></sup>
 
         </h2>
@@ -1976,21 +2381,22 @@
     </section>
 
 
-    <section class="productos-section">
+
+    <section class="products-section">
 
 
       <div
-        class="productos-grid"
-        id="productos-grid"
+        class="products-grid"
+        id="products-grid"
       >
 
 
-        <div class="skeleton">
+        <div>
           <div class="skeleton-image"></div>
         </div>
 
 
-        <div class="skeleton">
+        <div>
           <div class="skeleton-image"></div>
         </div>
 
@@ -2001,27 +2407,43 @@
     </section>
 
 
-    <!-- TABLA DE COMPRA -->
+
+    <!-- COMPRAR -->
 
 
     <section
-      class="comprar-section"
+      class="buy-section"
       id="comprar"
     >
 
 
-      <div class="comprar-cabecera">
+      <div class="buy-heading">
 
 
-        <h2>
-          Comprar
-        </h2>
+        <div>
+
+
+          <span class="section-label">
+
+            Pedido directo
+
+          </span>
+
+
+          <h2>
+
+            Comprar
+
+          </h2>
+
+
+        </div>
 
 
         <p>
 
-          Elegí tu producto y realizá
-          tu pedido directamente por WhatsApp.
+          Seleccioná un producto y continuá
+          el pedido directamente por WhatsApp.
 
         </p>
 
@@ -2030,12 +2452,12 @@
 
 
       <div
-        class="tabla-compra"
-        id="tabla-compra"
+        class="buy-table"
+        id="buy-table"
       >
 
 
-        <div class="fila-compra encabezado">
+        <div class="buy-row header-row">
 
           <div>
             Producto
@@ -2046,8 +2468,15 @@
           </div>
 
           <div>
-            Pedido
+            Compra
           </div>
+
+        </div>
+
+
+        <div class="buy-empty">
+
+          Cargando productos...
 
         </div>
 
@@ -2056,6 +2485,7 @@
 
 
     </section>
+
 
 
     <!-- EDITORIAL -->
@@ -2067,23 +2497,20 @@
       <div class="editorial-inner">
 
 
-        <div class="editorial-logo">
+        <div class="editorial-small">
 
-          <img
-            src="logo.png"
-            alt="DAI PY"
-          >
+          DAI PY
 
         </div>
 
 
-        <div class="editorial-text">
+        <p class="editorial-text">
 
           Las cosas que elegimos llevar
           con nosotros también cuentan
           una historia.
 
-        </div>
+        </p>
 
 
       </div>
@@ -2095,13 +2522,20 @@
   </main>
 
 
+
   <!-- FOOTER -->
 
 
-  <footer id="contacto">
+  <footer
+    class="footer"
+    id="contacto"
+  >
 
 
-    <div class="footer-contenido">
+    <div class="footer-inner">
+
+
+      <!-- SIEMPRE EL LOGO REAL -->
 
 
       <div class="footer-logo">
@@ -2114,14 +2548,18 @@
       </div>
 
 
-      <div class="footer-contacto">
+      <div class="footer-contact">
 
 
-        <div class="footer-contacto-item">
+        <div class="footer-item">
 
-          <span>
+
+          <span class="footer-item-label">
+
             Correo
+
           </span>
+
 
           <a
             id="footer-email"
@@ -2130,41 +2568,54 @@
             daiofficial.py@gmail.com
           </a>
 
+
         </div>
 
 
-        <div class="footer-contacto-item">
 
-          <span>
+        <div class="footer-item">
+
+
+          <span class="footer-item-label">
+
             Instagram
+
           </span>
+
 
           <a
             id="footer-instagram"
-            href="https://www.instagram.com/daiofficial.py/"
+            href="https://instagram.com/daiofficial.py"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             @daiofficial.py
           </a>
 
+
         </div>
 
 
-        <div class="footer-contacto-item">
 
-          <span>
+        <div class="footer-item">
+
+
+          <span class="footer-item-label">
+
             Pedidos
+
           </span>
+
 
           <a
             id="footer-whatsapp"
             href="https://wa.me/595985824098"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             WhatsApp
           </a>
+
 
         </div>
 
@@ -2185,7 +2636,9 @@
 
 
         <span>
+
           Tienda Oficial
+
         </span>
 
 
@@ -2198,14 +2651,13 @@
   </footer>
 
 
+
   <script>
 
 
-    /*
-    ========================================
-    CONFIGURACIÓN
-    ========================================
-    */
+    /* ========================================
+       CONFIGURACIÓN GENERAL
+    ======================================== */
 
 
     const OWNER =
@@ -2235,11 +2687,9 @@
 
 
 
-    /*
-    ========================================
-    DATOS DE CONTACTO
-    ========================================
-    */
+    /* ========================================
+       ESTADO
+    ======================================== */
 
 
     let CONTACTO = {
@@ -2256,14 +2706,897 @@
     };
 
 
+    let PRODUCTOS =
+      [];
 
-    function limpiarWhatsApp(
-      numero
+
+    let BANNERS =
+      [];
+
+
+    let bannerActual =
+      0;
+
+
+    let bannerTimer =
+      null;
+
+
+
+    /* ========================================
+       TIPOGRAFÍAS
+    ======================================== */
+
+
+    const FUENTES = {
+
+
+      Poppins: {
+
+        google:
+          "Poppins:wght@400;500;600;700",
+
+        family:
+          '"Poppins", Arial, sans-serif'
+
+      },
+
+
+      Montserrat: {
+
+        google:
+          "Montserrat:wght@400;500;600;700",
+
+        family:
+          '"Montserrat", Arial, sans-serif'
+
+      },
+
+
+      Inter: {
+
+        google:
+          "Inter:wght@400;500;600;700",
+
+        family:
+          '"Inter", Arial, sans-serif'
+
+      },
+
+
+      Roboto: {
+
+        google:
+          "Roboto:wght@400;500;600;700",
+
+        family:
+          '"Roboto", Arial, sans-serif'
+
+      },
+
+
+      Lato: {
+
+        google:
+          "Lato:wght@400;700",
+
+        family:
+          '"Lato", Arial, sans-serif'
+
+      }
+
+
+    };
+
+
+
+    /* ========================================
+       UTILIDADES
+    ======================================== */
+
+
+    function limpiarValor(
+      valor
     ) {
 
 
+      if (
+        valor === undefined
+        ||
+        valor === null
+      ) {
+
+        return "";
+
+      }
+
+
+      valor =
+        String(valor).trim();
+
+
+      if (
+        valor.startsWith('"')
+        &&
+        valor.endsWith('"')
+      ) {
+
+
+        try {
+
+          return JSON.parse(
+            valor
+          );
+
+        }
+
+        catch {
+
+          return valor.slice(
+            1,
+            -1
+          );
+
+        }
+
+
+      }
+
+
+      if (
+        valor.startsWith("'")
+        &&
+        valor.endsWith("'")
+      ) {
+
+
+        return valor.slice(
+          1,
+          -1
+        );
+
+
+      }
+
+
+      return valor;
+
+
+    }
+
+
+
+    function campo(
+      texto,
+      nombre
+    ) {
+
+
+      const lineas =
+
+        texto
+          .replace(
+            /\r/g,
+            ""
+          )
+          .split(
+            "\n"
+          );
+
+
+      const expresion =
+
+        new RegExp(
+
+          "^"
+
+          +
+
+          nombre
+
+          +
+
+          ":\\s*(.*)$"
+
+        );
+
+
+      for (
+        let i = 0;
+        i < lineas.length;
+        i++
+      ) {
+
+
+        const resultado =
+
+          lineas[i].match(
+            expresion
+          );
+
+
+        if (
+          !resultado
+        ) {
+
+          continue;
+
+        }
+
+
+        let valor =
+
+          resultado[1].trim();
+
+
+        if (
+          [
+            "|",
+            "|-",
+            "|+",
+            ">",
+            ">-",
+            ">+"
+          ].includes(
+            valor
+          )
+        ) {
+
+
+          const bloque =
+            [];
+
+
+          for (
+            let j = i + 1;
+            j < lineas.length;
+            j++
+          ) {
+
+
+            const linea =
+              lineas[j];
+
+
+            if (
+              linea.trim()
+              ===
+              "---"
+            ) {
+
+              break;
+
+            }
+
+
+            if (
+              linea.trim()
+              &&
+              !/^\s/.test(
+                linea
+              )
+            ) {
+
+              break;
+
+            }
+
+
+            bloque.push(
+
+              linea
+                .replace(
+                  /^\s+/,
+                  ""
+                )
+                .trimEnd()
+
+            );
+
+
+          }
+
+
+          if (
+            valor.startsWith(
+              ">"
+            )
+          ) {
+
+
+            return bloque
+
+              .join(" ")
+
+              .replace(
+                /\s+/g,
+                " "
+              )
+
+              .trim();
+
+
+          }
+
+
+          return bloque
+
+            .join("\n")
+
+            .trim();
+
+
+        }
+
+
+        return limpiarValor(
+          valor
+        );
+
+
+      }
+
+
+      return "";
+
+
+    }
+
+
+
+    function esActivo(
+      valor
+    ) {
+
+
+      if (
+        valor === ""
+      ) {
+
+        return true;
+
+      }
+
+
+      return ![
+        "false",
+        "0",
+        "no",
+        "off"
+      ].includes(
+        String(valor)
+          .toLowerCase()
+      );
+
+
+    }
+
+
+
+    function formatearPrecio(
+      precio
+    ) {
+
+
+      if (
+        !precio
+      ) {
+
+        return "";
+
+      }
+
+
+      const numeros =
+
+        String(precio)
+          .replace(
+            /[^\d]/g,
+            ""
+          );
+
+
+      if (
+        !numeros
+      ) {
+
+        return String(
+          precio
+        );
+
+      }
+
+
+      return (
+
+        "Gs. "
+
+        +
+
+        Number(numeros)
+          .toLocaleString(
+            "es-PY"
+          )
+
+      );
+
+
+    }
+
+
+
+    function mediaURL(
+      ruta
+    ) {
+
+
+      if (
+        !ruta
+      ) {
+
+        return "";
+
+      }
+
+
+      ruta =
+        limpiarValor(
+          ruta
+        );
+
+
+      if (
+        /^https?:\/\//i.test(
+          ruta
+        )
+      ) {
+
+        return ruta;
+
+      }
+
+
+      ruta =
+
+        ruta.replace(
+          /^\/?daipyofficial\//,
+          ""
+        );
+
+
+      ruta =
+
+        ruta.replace(
+          /^\/+/,
+          ""
+        );
+
+
+      if (
+        ruta.startsWith(
+          "uploads/"
+        )
+      ) {
+
+
+        ruta =
+          "public/"
+          +
+          ruta;
+
+
+      }
+
+
+      const rutaSegura =
+
+        ruta
+
+          .split("/")
+
+          .map(
+
+            parte =>
+
+              encodeURIComponent(
+                parte
+              )
+
+          )
+
+          .join("/");
+
+
+      return (
+
+        RAW_BASE
+
+        +
+
+        rutaSegura
+
+        +
+
+        "?v="
+
+        +
+
+        VERSION
+
+      );
+
+
+    }
+
+
+
+    /* ========================================
+       GITHUB
+    ======================================== */
+
+
+    async function cargarColeccion(
+      carpeta
+    ) {
+
+
+      const respuesta =
+
+        await fetch(
+
+          `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
+
+          {
+
+            cache:
+              "no-store",
+
+            headers: {
+
+              Accept:
+                "application/vnd.github+json"
+
+            }
+
+          }
+
+        );
+
+
+      if (
+        respuesta.status
+        ===
+        404
+      ) {
+
+        return [];
+
+      }
+
+
+      if (
+        !respuesta.ok
+      ) {
+
+        throw new Error(
+          "No se pudo consultar GitHub."
+        );
+
+      }
+
+
+      const archivos =
+
+        await respuesta.json();
+
+
+      const markdown =
+
+        archivos.filter(
+
+          archivo =>
+
+            archivo.type
+              ===
+              "file"
+
+            &&
+
+            archivo.name
+              .toLowerCase()
+              .endsWith(
+                ".md"
+              )
+
+        );
+
+
+      const resultados =
+
+        await Promise.all(
+
+
+          markdown.map(
+
+
+            async archivo => {
+
+
+              try {
+
+
+                const respuestaArchivo =
+
+                  await fetch(
+
+                    archivo.download_url
+
+                    +
+
+                    "?v="
+
+                    +
+
+                    archivo.sha,
+
+                    {
+
+                      cache:
+                        "no-store"
+
+                    }
+
+                  );
+
+
+                if (
+                  !respuestaArchivo.ok
+                ) {
+
+                  return null;
+
+                }
+
+
+                return {
+
+                  texto:
+
+                    await respuestaArchivo
+                      .text(),
+
+                  archivo:
+                    archivo.name,
+
+                  sha:
+                    archivo.sha
+
+                };
+
+
+              }
+
+              catch {
+
+
+                return null;
+
+
+              }
+
+
+            }
+
+
+          )
+
+
+        );
+
+
+      return resultados.filter(
+        Boolean
+      );
+
+
+    }
+
+
+
+    async function cargarJSON(
+      ruta
+    ) {
+
+
+      const respuesta =
+
+        await fetch(
+
+          RAW_BASE
+          +
+          ruta
+          +
+          "?v="
+          +
+          VERSION,
+
+          {
+
+            cache:
+              "no-store"
+
+          }
+
+        );
+
+
+      if (
+        !respuesta.ok
+      ) {
+
+        throw new Error(
+          "Archivo no disponible."
+        );
+
+      }
+
+
+      return respuesta.json();
+
+
+    }
+
+
+
+    /* ========================================
+       APARIENCIA
+    ======================================== */
+
+
+    function aplicarApariencia(
+      configuracion
+    ) {
+
+
+      const nombreFuente =
+
+        FUENTES[
+          configuracion.fuente
+        ]
+
+        ?
+
+        configuracion.fuente
+
+        :
+
+        "Poppins";
+
+
+      const fuente =
+
+        FUENTES[
+          nombreFuente
+        ];
+
+
+      document
+        .getElementById(
+          "google-font"
+        )
+        .href =
+
+          "https://fonts.googleapis.com/css2?family="
+
+          +
+
+          fuente.google
+
+          +
+
+          "&display=swap";
+
+
+      document
+        .documentElement
+        .style
+        .setProperty(
+
+          "--fuente",
+
+          fuente.family
+
+        );
+
+
+      document
+        .documentElement
+        .style
+        .setProperty(
+
+          "--peso-precio",
+
+          configuracion
+            .precio_negrita
+            === false
+
+          ?
+
+          "400"
+
+          :
+
+          "700"
+
+        );
+
+
+    }
+
+
+
+    async function cargarApariencia() {
+
+
+      aplicarApariencia({
+
+        fuente:
+          "Poppins",
+
+        precio_negrita:
+          true
+
+      });
+
+
+      try {
+
+
+        const datos =
+
+          await cargarJSON(
+
+            "contenido/configuracion/diseno.json"
+
+          );
+
+
+        aplicarApariencia(
+          datos
+        );
+
+
+      }
+
+      catch (
+        error
+      ) {
+
+
+        console.log(
+          "Poppins se mantiene como fuente predeterminada."
+        );
+
+
+      }
+
+
+    }
+
+
+
+    /* ========================================
+       CONTACTO
+    ======================================== */
+
+
+    function numeroWhatsApp() {
+
+
       return String(
-        numero || ""
+        CONTACTO.whatsapp
+        ||
+        ""
       )
         .replace(
           /\D/g,
@@ -2275,13 +3608,13 @@
 
 
 
-    function usuarioInstagram(
-      usuario
-    ) {
+    function instagramUsuario() {
 
 
       return String(
-        usuario || ""
+        CONTACTO.instagram
+        ||
+        ""
       )
         .trim()
         .replace(
@@ -2294,23 +3627,42 @@
 
 
 
-    function urlInstagram(
-      usuario
-    ) {
+    function instagramTexto() {
 
 
-      const limpio =
-
-        usuarioInstagram(
-          usuario
-        );
+      const usuario =
+        instagramUsuario();
 
 
-      return limpio
+      return usuario
+        ?
+        "@"
+        +
+        usuario
+        :
+        "Instagram";
+
+
+    }
+
+
+
+    function instagramURL() {
+
+
+      const usuario =
+        instagramUsuario();
+
+
+      return usuario
 
         ?
 
-        `https://www.instagram.com/${limpio}/`
+        "https://www.instagram.com/"
+        +
+        usuario
+        +
+        "/"
 
         :
 
@@ -2321,21 +3673,18 @@
 
 
 
-    function urlWhatsApp(
+    function whatsappURL(
       mensaje = ""
     ) {
 
 
-      const numero =
-
-        limpiarWhatsApp(
-          CONTACTO.whatsapp
-        );
-
-
       let url =
 
-        `https://wa.me/${numero}`;
+        "https://wa.me/"
+
+        +
+
+        numeroWhatsApp();
 
 
       if (
@@ -2367,65 +3716,59 @@
     function aplicarContacto() {
 
 
-      const instagramTexto =
+      const email =
 
-        CONTACTO.instagram
-          .startsWith("@")
+        CONTACTO.email
 
-        ?
+        ||
 
-        CONTACTO.instagram
-
-        :
-
-        "@"
-        +
-        CONTACTO.instagram;
-
-
-      const instagramURL =
-
-        urlInstagram(
-          CONTACTO.instagram
-        );
+        "daiofficial.py@gmail.com";
 
 
       const emailURL =
 
         "mailto:"
+
         +
-        CONTACTO.email;
+
+        email;
 
 
-      const whatsappURL =
+      const instagram =
 
-        urlWhatsApp(
+        instagramTexto();
+
+
+      const instagramLink =
+
+        instagramURL();
+
+
+      const whatsappGeneral =
+
+        whatsappURL(
+
           "Hola DAI PY, quisiera realizar una consulta."
+
         );
 
 
-      const emails = [
-
-        "contacto-email-superior",
-
+      [
+        "top-email",
         "menu-email",
-
         "footer-email"
+      ]
+      .forEach(
 
-      ];
-
-
-      emails.forEach(
 
         id => {
 
 
           const elemento =
 
-            document
-              .getElementById(
-                id
-              );
+            document.getElementById(
+              id
+            );
 
 
           if (
@@ -2434,7 +3777,7 @@
 
 
             elemento.textContent =
-              CONTACTO.email;
+              email;
 
 
             elemento.href =
@@ -2446,32 +3789,26 @@
 
         }
 
+
       );
 
 
-
-      const instagrams = [
-
-        "contacto-instagram-superior",
-
+      [
+        "top-instagram",
         "menu-instagram",
-
         "footer-instagram"
+      ]
+      .forEach(
 
-      ];
-
-
-      instagrams.forEach(
 
         id => {
 
 
           const elemento =
 
-            document
-              .getElementById(
-                id
-              );
+            document.getElementById(
+              id
+            );
 
 
           if (
@@ -2480,11 +3817,11 @@
 
 
             elemento.textContent =
-              instagramTexto;
+              instagram;
 
 
             elemento.href =
-              instagramURL;
+              instagramLink;
 
 
           }
@@ -2492,47 +3829,64 @@
 
         }
 
+
       );
 
 
-
       [
-
-        "contacto-whatsapp-superior",
-
+        "top-whatsapp",
+        "menu-whatsapp",
         "footer-whatsapp"
-
       ]
-        .forEach(
+      .forEach(
 
 
-          id => {
+        id => {
 
 
-            const elemento =
+          const elemento =
 
-              document
-                .getElementById(
-                  id
-                );
-
-
-            if (
-              elemento
-            ) {
+            document.getElementById(
+              id
+            );
 
 
-              elemento.href =
-                whatsappURL;
+          if (
+            elemento
+          ) {
 
 
-            }
+            elemento.href =
+              whatsappGeneral;
 
 
           }
 
 
+        }
+
+
+      );
+
+
+      /*
+        Si los productos ya cargaron,
+        reconstruimos la tabla para que
+        utilice el WhatsApp actualizado.
+      */
+
+
+      if (
+        PRODUCTOS.length
+      ) {
+
+
+        mostrarTablaCompra(
+          PRODUCTOS
         );
+
+
+      }
 
 
     }
@@ -2548,53 +3902,20 @@
       try {
 
 
-        const respuesta =
+        const datos =
 
-          await fetch(
-
-            RAW_BASE
-
-            +
+          await cargarJSON(
 
             "contenido/configuracion/contacto.json"
 
-            +
-
-            "?v="
-
-            +
-
-            VERSION,
-
-            {
-
-              cache:
-                "no-store"
-
-            }
-
           );
-
-
-        if (
-          !respuesta.ok
-        ) {
-
-          return;
-
-        }
-
-
-        const configuracion =
-
-          await respuesta.json();
 
 
         CONTACTO = {
 
           ...CONTACTO,
 
-          ...configuracion
+          ...datos
 
         };
 
@@ -2621,809 +3942,9 @@
 
 
 
-    /*
-    ========================================
-    APARIENCIA
-    ========================================
-    */
-
-
-    const FUENTES = {
-
-
-      Poppins: {
-
-        css:
-          "Poppins:wght@400;500;600;700",
-
-        familia:
-          '"Poppins", Arial, sans-serif'
-
-      },
-
-
-      Montserrat: {
-
-        css:
-          "Montserrat:wght@400;500;600;700",
-
-        familia:
-          '"Montserrat", Arial, sans-serif'
-
-      },
-
-
-      Inter: {
-
-        css:
-          "Inter:wght@400;500;600;700",
-
-        familia:
-          '"Inter", Arial, sans-serif'
-
-      },
-
-
-      Lato: {
-
-        css:
-          "Lato:wght@400;700",
-
-        familia:
-          '"Lato", Arial, sans-serif'
-
-      },
-
-
-      Roboto: {
-
-        css:
-          "Roboto:wght@400;500;700",
-
-        familia:
-          '"Roboto", Arial, sans-serif'
-
-      }
-
-
-    };
-
-
-
-    function aplicarDiseno(
-      configuracion
-    ) {
-
-
-      const nombreFuente =
-
-        FUENTES[
-          configuracion.fuente
-        ]
-
-        ?
-
-        configuracion.fuente
-
-        :
-
-        "Poppins";
-
-
-      const fuente =
-
-        FUENTES[
-          nombreFuente
-        ];
-
-
-      document
-        .getElementById(
-          "fuente-google"
-        )
-        .href =
-
-          "https://fonts.googleapis.com/css2?family="
-
-          +
-
-          fuente.css
-
-          +
-
-          "&display=swap";
-
-
-      document
-        .documentElement
-        .style
-        .setProperty(
-
-          "--font-principal",
-
-          fuente.familia
-
-        );
-
-
-      document
-        .documentElement
-        .style
-        .setProperty(
-
-          "--peso-precio",
-
-          configuracion
-            .precio_negrita
-            !== false
-
-          ?
-
-          "700"
-
-          :
-
-          "400"
-
-        );
-
-
-    }
-
-
-
-    async function cargarDiseno() {
-
-
-      aplicarDiseno({
-
-        fuente:
-          "Poppins",
-
-        precio_negrita:
-          true
-
-      });
-
-
-      try {
-
-
-        const respuesta =
-
-          await fetch(
-
-            RAW_BASE
-
-            +
-
-            "contenido/configuracion/diseno.json"
-
-            +
-
-            "?v="
-
-            +
-
-            VERSION,
-
-            {
-
-              cache:
-                "no-store"
-
-            }
-
-          );
-
-
-        if (
-          !respuesta.ok
-        ) {
-
-          return;
-
-        }
-
-
-        const configuracion =
-
-          await respuesta.json();
-
-
-        aplicarDiseno(
-          configuracion
-        );
-
-
-      }
-
-      catch (
-        error
-      ) {
-
-
-        console.log(
-          "Poppins por defecto."
-        );
-
-
-      }
-
-
-    }
-
-
-
-    /*
-    ========================================
-    LEER MARKDOWN
-    ========================================
-    */
-
-
-    function limpiarValor(
-      valor
-    ) {
-
-
-      if (
-        !valor
-      ) {
-
-        return "";
-
-      }
-
-
-      valor =
-        valor.trim();
-
-
-      if (
-
-        valor.startsWith('"')
-        &&
-        valor.endsWith('"')
-
-      ) {
-
-
-        try {
-
-
-          return JSON.parse(
-            valor
-          );
-
-
-        }
-
-        catch {
-
-
-          return valor.slice(
-            1,
-            -1
-          );
-
-
-        }
-
-
-      }
-
-
-      if (
-
-        valor.startsWith("'")
-        &&
-        valor.endsWith("'")
-
-      ) {
-
-
-        return valor.slice(
-          1,
-          -1
-        );
-
-
-      }
-
-
-      return valor;
-
-
-    }
-
-
-
-    function extraerCampo(
-      texto,
-      campo
-    ) {
-
-
-      const lineas =
-
-        texto
-          .replace(
-            /\r/g,
-            ""
-          )
-          .split(
-            "\n"
-          );
-
-
-      const regex =
-
-        new RegExp(
-
-          "^"
-
-          +
-
-          campo
-
-          +
-
-          ":\\s*(.*)$"
-
-        );
-
-
-      for (
-
-        let i = 0;
-
-        i < lineas.length;
-
-        i++
-
-      ) {
-
-
-        const resultado =
-
-          lineas[i]
-            .match(
-              regex
-            );
-
-
-        if (
-          !resultado
-        ) {
-
-          continue;
-
-        }
-
-
-        let valor =
-
-          resultado[1]
-            .trim();
-
-
-        if (
-
-          valor === "|"
-          ||
-          valor === "|-"
-          ||
-          valor === "|+"
-          ||
-          valor === ">"
-          ||
-          valor === ">-"
-          ||
-          valor === ">+"
-
-        ) {
-
-
-          const contenido =
-            [];
-
-
-          for (
-
-            let j = i + 1;
-
-            j < lineas.length;
-
-            j++
-
-          ) {
-
-
-            const linea =
-              lineas[j];
-
-
-            if (
-
-              linea.trim()
-              ===
-              "---"
-
-            ) {
-
-              break;
-
-            }
-
-
-            if (
-
-              /^[A-Za-z0-9_-]+:\s*/
-                .test(
-                  linea
-                )
-
-              &&
-
-              !/^\s/
-                .test(
-                  linea
-                )
-
-            ) {
-
-              break;
-
-            }
-
-
-            contenido.push(
-              linea.trim()
-            );
-
-
-          }
-
-
-          if (
-            valor.startsWith(
-              ">"
-            )
-          ) {
-
-
-            return contenido
-
-              .join(" ")
-
-              .replace(
-                /\s+/g,
-                " "
-              )
-
-              .trim();
-
-
-          }
-
-
-          return contenido
-
-            .join("\n")
-
-            .trim();
-
-
-        }
-
-
-        return limpiarValor(
-          valor
-        );
-
-
-      }
-
-
-      return "";
-
-
-    }
-
-
-
-    /*
-    ========================================
-    IMÁGENES
-    ========================================
-    */
-
-
-    function obtenerImagen(
-      ruta
-    ) {
-
-
-      if (
-        !ruta
-      ) {
-
-        return "";
-
-      }
-
-
-      ruta =
-
-        limpiarValor(
-          String(ruta)
-        );
-
-
-      if (
-
-        ruta.startsWith(
-          "http://"
-        )
-
-        ||
-
-        ruta.startsWith(
-          "https://"
-        )
-
-      ) {
-
-        return ruta;
-
-      }
-
-
-      ruta =
-
-        ruta.replace(
-
-          /^\/?daipyofficial\//,
-
-          ""
-
-        );
-
-
-      ruta =
-
-        ruta.replace(
-
-          /^\/+/,
-
-          ""
-
-        );
-
-
-      if (
-
-        ruta.startsWith(
-          "uploads/"
-        )
-
-      ) {
-
-
-        ruta =
-
-          "public/"
-          +
-          ruta;
-
-
-      }
-
-
-      const codificada =
-
-        ruta
-
-          .split("/")
-
-          .map(
-
-            parte =>
-
-              encodeURIComponent(
-                parte
-              )
-
-          )
-
-          .join("/");
-
-
-      return (
-
-        RAW_BASE
-
-        +
-
-        codificada
-
-        +
-
-        "?v="
-
-        +
-
-        VERSION
-
-      );
-
-
-    }
-
-
-
-    /*
-    ========================================
-    DESCARGAR COLECCIONES
-    ========================================
-    */
-
-
-    async function cargarMarkdowns(
-      carpeta
-    ) {
-
-
-      const respuesta =
-
-        await fetch(
-
-          `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
-
-          {
-
-            cache:
-              "no-store"
-
-          }
-
-        );
-
-
-      if (
-
-        respuesta.status
-        ===
-        404
-
-      ) {
-
-        return [];
-
-      }
-
-
-      if (
-        !respuesta.ok
-      ) {
-
-        throw new Error(
-          "Error GitHub"
-        );
-
-      }
-
-
-      const archivos =
-
-        await respuesta.json();
-
-
-      const markdowns =
-
-        archivos.filter(
-
-          archivo =>
-
-            archivo.type
-              ===
-              "file"
-
-            &&
-
-            archivo.name
-              .toLowerCase()
-              .endsWith(
-                ".md"
-              )
-
-        );
-
-
-      return Promise.all(
-
-
-        markdowns.map(
-
-
-          async archivo => {
-
-
-            const response =
-
-              await fetch(
-
-                archivo.download_url
-
-                +
-
-                "?v="
-
-                +
-
-                archivo.sha,
-
-                {
-
-                  cache:
-                    "no-store"
-
-                }
-
-              );
-
-
-            if (
-              !response.ok
-            ) {
-
-              return null;
-
-            }
-
-
-            const texto =
-
-              await response.text();
-
-
-            return {
-
-              texto,
-
-              sha:
-                archivo.sha
-
-            };
-
-
-          }
-
-
-        )
-
-
-      );
-
-
-    }
-
-
-
-    /*
-    ========================================
-    BANNERS
-    ========================================
-    */
-
-
-    let banners = [];
-
-    let bannerActual = 0;
-
-    let temporizadorBanner = null;
-
+    /* ========================================
+       BANNERS
+    ======================================== */
 
 
     function actualizarBanner(
@@ -3432,7 +3953,9 @@
 
 
       if (
-        banners.length === 0
+        BANNERS.length
+        ===
+        0
       ) {
 
         return;
@@ -3444,17 +3967,25 @@
         indice < 0
       ) {
 
+
         indice =
-          banners.length - 1;
+          BANNERS.length
+          -
+          1;
+
 
       }
 
 
       if (
-        indice >= banners.length
+        indice
+        >=
+        BANNERS.length
       ) {
 
+
         indice = 0;
+
 
       }
 
@@ -3469,34 +4000,36 @@
         )
         .forEach(
 
+
           (
-            slide,
+            imagen,
             posicion
           ) => {
 
 
-            slide
+            imagen
               .classList
               .toggle(
 
                 "activo",
 
                 posicion
-                  ===
-                  indice
+                ===
+                bannerActual
 
               );
 
 
           }
 
+
         );
 
 
       const banner =
 
-        banners[
-          indice
+        BANNERS[
+          bannerActual
         ];
 
 
@@ -3530,16 +4063,16 @@
 
 
 
-    function reiniciarCarrusel() {
+    function iniciarCarrusel() {
 
 
       if (
-        temporizadorBanner
+        bannerTimer
       ) {
 
 
         clearInterval(
-          temporizadorBanner
+          bannerTimer
         );
 
 
@@ -3547,25 +4080,32 @@
 
 
       if (
-        banners.length > 1
+        BANNERS.length > 1
       ) {
 
 
-        temporizadorBanner =
+        bannerTimer =
 
           setInterval(
+
 
             () => {
 
 
               actualizarBanner(
-                bannerActual + 1
+
+                bannerActual
+                +
+                1
+
               );
 
 
             },
 
+
             6500
+
 
           );
 
@@ -3578,17 +4118,18 @@
 
 
     function mostrarBanners(
-      lista
+      banners
     ) {
 
 
-      banners =
+      BANNERS =
 
-        lista
+        banners
 
           .filter(
 
             banner =>
+
               banner.activo
 
           )
@@ -3607,37 +4148,44 @@
           );
 
 
-      const contenedor =
+      const media =
 
-        document
-          .getElementById(
-            "hero-slides"
-          );
+        document.getElementById(
+          "hero-media"
+        );
 
 
       const controles =
 
-        document
-          .getElementById(
-            "hero-controls"
-          );
+        document.getElementById(
+          "hero-controls"
+        );
 
 
-      contenedor.innerHTML =
+      media.innerHTML = `
 
-        '<div class="hero-fondo"></div>';
+        <div class="hero-fallback">
+
+          <img
+            src="logo.png"
+            alt="DAI PY"
+          >
+
+        </div>
+
+      `;
 
 
       if (
-        banners.length === 0
+        BANNERS.length
+        ===
+        0
       ) {
 
 
-        controles
-          .classList
-          .add(
-            "oculto"
-          );
+        controles.classList.add(
+          "oculto"
+        );
 
 
         return;
@@ -3646,7 +4194,7 @@
       }
 
 
-      banners.forEach(
+      BANNERS.forEach(
 
 
         (
@@ -3657,10 +4205,9 @@
 
           const imagen =
 
-            document
-              .createElement(
-                "img"
-              );
+            document.createElement(
+              "img"
+            );
 
 
           imagen.className =
@@ -3672,11 +4219,9 @@
           ) {
 
 
-            imagen
-              .classList
-              .add(
-                "activo"
-              );
+            imagen.classList.add(
+              "activo"
+            );
 
 
           }
@@ -3684,7 +4229,7 @@
 
           imagen.src =
 
-            obtenerImagen(
+            mediaURL(
               banner.imagen
             );
 
@@ -3695,13 +4240,28 @@
 
             ||
 
-            "DAI PY";
+            "Banner DAI PY";
 
 
-          contenedor
-            .appendChild(
-              imagen
-            );
+          imagen.addEventListener(
+
+            "error",
+
+            () => {
+
+
+              imagen.style.display =
+                "none";
+
+
+            }
+
+          );
+
+
+          media.appendChild(
+            imagen
+          );
 
 
         }
@@ -3710,20 +4270,23 @@
       );
 
 
-      controles
-        .classList
-        .toggle(
+      controles.classList.toggle(
 
-          "oculto",
+        "oculto",
 
-          banners.length <= 1
+        BANNERS.length
+        <=
+        1
 
-        );
+      );
 
 
-      actualizarBanner(0);
+      actualizarBanner(
+        0
+      );
 
-      reiniciarCarrusel();
+
+      iniciarCarrusel();
 
 
     }
@@ -3736,106 +4299,92 @@
       try {
 
 
-        const entradas =
+        const archivos =
 
-          await cargarMarkdowns(
+          await cargarColeccion(
+
             "contenido/banners"
+
           );
 
 
-        const lista =
+        const banners =
 
-          entradas
-
-            .filter(Boolean)
-
-            .map(
+          archivos.map(
 
 
-              entrada => {
+            archivo => {
 
 
-                const activo =
+              const activo =
 
-                  extraerCampo(
-
-                    entrada.texto,
-
-                    "activo"
-
-                  );
+                campo(
+                  archivo.texto,
+                  "activo"
+                );
 
 
-                return {
+              return {
 
 
-                  titulo:
+                titulo:
 
-                    extraerCampo(
-                      entrada.texto,
-                      "titulo"
-                    ),
-
-
-                  subtitulo:
-
-                    extraerCampo(
-                      entrada.texto,
-                      "subtitulo"
-                    ),
+                  campo(
+                    archivo.texto,
+                    "titulo"
+                  ),
 
 
-                  imagen:
+                subtitulo:
 
-                    extraerCampo(
-                      entrada.texto,
-                      "imagen"
-                    ),
-
-
-                  activo:
-
-                    activo === ""
-
-                    ||
-
-                    ![
-                      "false",
-                      "0",
-                      "no",
-                      "off"
-                    ].includes(
-                      activo.toLowerCase()
-                    ),
+                  campo(
+                    archivo.texto,
+                    "subtitulo"
+                  ),
 
 
-                  orden:
+                imagen:
 
-                    Number(
+                  campo(
+                    archivo.texto,
+                    "imagen"
+                  ),
 
-                      extraerCampo(
-                        entrada.texto,
-                        "orden"
-                      )
 
+                activo:
+
+                  esActivo(
+                    activo
+                  ),
+
+
+                orden:
+
+                  Number(
+
+                    campo(
+                      archivo.texto,
+                      "orden"
                     )
 
-                    ||
+                  )
 
-                    999
+                  ||
 
-
-                };
-
-
-              }
+                  999
 
 
-            );
+              };
+
+
+            }
+
+
+          );
 
 
         mostrarBanners(
-          lista
+          banners
         );
 
 
@@ -3847,148 +4396,63 @@
 
 
         console.error(
+          "Error cargando banners:",
           error
         );
 
 
-      }
-
-
-    }
-
-
-
-    /*
-    ========================================
-    PRODUCTOS
-    ========================================
-    */
-
-
-    function formatearPrecio(
-      precio
-    ) {
-
-
-      if (
-        !precio
-      ) {
-
-        return "";
-
-      }
-
-
-      const numero =
-
-        String(precio)
-
-          .replace(
-            /[^\d]/g,
-            ""
-          );
-
-
-      if (
-        !numero
-      ) {
-
-        return precio;
-
-      }
-
-
-      return (
-
-        "Gs. "
-
-        +
-
-        Number(numero)
-          .toLocaleString(
-            "es-PY"
-          )
-
-      );
-
-
-    }
-
-
-
-    function mensajeProducto(
-      producto
-    ) {
-
-
-      return (
-
-        "Hola DAI PY, quisiera realizar un pedido."
-
-        +
-
-        "\n\nProducto: "
-
-        +
-
-        producto.nombre
-
-        +
-
-        "\nPrecio: "
-
-        +
-
-        formatearPrecio(
-          producto.precio
-        )
-
-      );
-
-
-    }
-
-
-
-    function crearBotonCompra(
-      producto
-    ) {
-
-
-      const link =
-
-        document
-          .createElement(
-            "a"
-          );
-
-
-      link.className =
-        "boton-whatsapp";
-
-
-      link.textContent =
-        "Comprar";
-
-
-      link.href =
-
-        urlWhatsApp(
-          mensajeProducto(
-            producto
-          )
+        mostrarBanners(
+          []
         );
 
 
-      link.target =
-        "_blank";
+      }
 
 
-      link.rel =
-        "noopener";
+    }
 
 
-      return link;
+
+    /* ========================================
+       PRODUCTOS
+    ======================================== */
+
+
+    function crearFallbackImagen() {
+
+
+      const fallback =
+
+        document.createElement(
+          "div"
+        );
+
+
+      fallback.className =
+        "product-image-fallback";
+
+
+      const logo =
+
+        document.createElement(
+          "img"
+        );
+
+
+      logo.src =
+        "logo.png";
+
+
+      logo.alt =
+        "DAI PY";
+
+
+      fallback.appendChild(
+        logo
+      );
+
+
+      return fallback;
 
 
     }
@@ -4002,26 +4466,24 @@
 
       const articulo =
 
-        document
-          .createElement(
-            "article"
-          );
+        document.createElement(
+          "article"
+        );
 
 
       articulo.className =
-        "producto";
+        "product";
 
 
-      const imagenBox =
+      const cajaImagen =
 
-        document
-          .createElement(
-            "div"
-          );
+        document.createElement(
+          "div"
+        );
 
 
-      imagenBox.className =
-        "producto-imagen";
+      cajaImagen.className =
+        "product-image";
 
 
       if (
@@ -4031,15 +4493,14 @@
 
         const imagen =
 
-          document
-            .createElement(
-              "img"
-            );
+          document.createElement(
+            "img"
+          );
 
 
         imagen.src =
 
-          obtenerImagen(
+          mediaURL(
             producto.img
           );
 
@@ -4057,41 +4518,32 @@
           "lazy";
 
 
-        imagen.onerror =
+        imagen.decoding =
+          "async";
+
+
+        imagen.addEventListener(
+
+          "error",
 
           () => {
 
 
-            const placeholder =
+            cajaImagen.replaceChildren(
 
-              document
-                .createElement(
-                  "div"
-                );
+              crearFallbackImagen()
 
-
-            placeholder.className =
-              "producto-placeholder";
+            );
 
 
-            placeholder.innerHTML =
+          }
 
-              '<img src="logo.png" alt="DAI PY">';
-
-
-            imagenBox
-              .replaceChildren(
-                placeholder
-              );
+        );
 
 
-          };
-
-
-        imagenBox
-          .appendChild(
-            imagen
-          );
+        cajaImagen.appendChild(
+          imagen
+        );
 
 
       }
@@ -4099,27 +4551,11 @@
       else {
 
 
-        const placeholder =
+        cajaImagen.appendChild(
 
-          document
-            .createElement(
-              "div"
-            );
+          crearFallbackImagen()
 
-
-        placeholder.className =
-          "producto-placeholder";
-
-
-        placeholder.innerHTML =
-
-          '<img src="logo.png" alt="DAI PY">';
-
-
-        imagenBox
-          .appendChild(
-            placeholder
-          );
+        );
 
 
       }
@@ -4127,38 +4563,35 @@
 
       const info =
 
-        document
-          .createElement(
-            "div"
-          );
+        document.createElement(
+          "div"
+        );
 
 
       info.className =
-        "producto-info";
+        "product-info";
 
 
       const cabecera =
 
-        document
-          .createElement(
-            "div"
-          );
+        document.createElement(
+          "div"
+        );
 
 
       cabecera.className =
-        "producto-cabecera";
+        "product-head";
 
 
       const nombre =
 
-        document
-          .createElement(
-            "h3"
-          );
+        document.createElement(
+          "h3"
+        );
 
 
       nombre.className =
-        "producto-nombre";
+        "product-name";
 
 
       nombre.textContent =
@@ -4172,14 +4605,13 @@
 
       const precio =
 
-        document
-          .createElement(
-            "div"
-          );
+        document.createElement(
+          "div"
+        );
 
 
       precio.className =
-        "producto-precio";
+        "product-price";
 
 
       precio.textContent =
@@ -4211,14 +4643,13 @@
 
         const descripcion =
 
-          document
-            .createElement(
-              "p"
-            );
+          document.createElement(
+            "p"
+          );
 
 
         descripcion.className =
-          "producto-desc";
+          "product-desc";
 
 
         descripcion.textContent =
@@ -4234,7 +4665,7 @@
 
 
       articulo.appendChild(
-        imagenBox
+        cajaImagen
       );
 
 
@@ -4250,6 +4681,86 @@
 
 
 
+    function mensajeCompra(
+      producto
+    ) {
+
+
+      return (
+
+        "Hola DAI PY, quiero realizar un pedido."
+
+        +
+
+        "\n\nProducto: "
+
+        +
+
+        producto.nombre
+
+        +
+
+        "\nPrecio: "
+
+        +
+
+        formatearPrecio(
+          producto.precio
+        )
+
+      );
+
+
+    }
+
+
+
+    function crearBotonCompra(
+      producto
+    ) {
+
+
+      const enlace =
+
+        document.createElement(
+          "a"
+        );
+
+
+      enlace.className =
+        "buy-button";
+
+
+      enlace.textContent =
+        "Comprar";
+
+
+      enlace.href =
+
+        whatsappURL(
+
+          mensajeCompra(
+            producto
+          )
+
+        );
+
+
+      enlace.target =
+        "_blank";
+
+
+      enlace.rel =
+        "noopener noreferrer";
+
+
+      return enlace;
+
+
+    }
+
+
+
     function mostrarTablaCompra(
       productos
     ) {
@@ -4257,25 +4768,64 @@
 
       const tabla =
 
-        document
-          .getElementById(
-            "tabla-compra"
-          );
+        document.getElementById(
+          "buy-table"
+        );
 
 
       tabla.innerHTML = `
 
-        <div class="fila-compra encabezado">
+        <div class="buy-row header-row">
 
-          <div>Producto</div>
+          <div>
+            Producto
+          </div>
 
-          <div>Precio</div>
+          <div>
+            Precio
+          </div>
 
-          <div>Pedido</div>
+          <div>
+            Compra
+          </div>
 
         </div>
 
       `;
+
+
+      if (
+        productos.length
+        ===
+        0
+      ) {
+
+
+        const vacio =
+
+          document.createElement(
+            "div"
+          );
+
+
+        vacio.className =
+          "buy-empty";
+
+
+        vacio.textContent =
+
+          "Los productos disponibles aparecerán aquí.";
+
+
+        tabla.appendChild(
+          vacio
+        );
+
+
+        return;
+
+
+      }
 
 
       productos.forEach(
@@ -4286,26 +4836,24 @@
 
           const fila =
 
-            document
-              .createElement(
-                "div"
-              );
+            document.createElement(
+              "div"
+            );
 
 
           fila.className =
-            "fila-compra";
+            "buy-row";
 
 
           const nombre =
 
-            document
-              .createElement(
-                "div"
-              );
+            document.createElement(
+              "div"
+            );
 
 
           nombre.className =
-            "compra-nombre";
+            "buy-name";
 
 
           nombre.textContent =
@@ -4314,14 +4862,13 @@
 
           const precio =
 
-            document
-              .createElement(
-                "div"
-              );
+            document.createElement(
+              "div"
+            );
 
 
           precio.className =
-            "compra-precio";
+            "buy-price";
 
 
           precio.textContent =
@@ -4370,64 +4917,90 @@
     ) {
 
 
+      PRODUCTOS =
+        productos;
+
+
       const grid =
 
-        document
-          .getElementById(
-            "productos-grid"
-          );
+        document.getElementById(
+          "products-grid"
+        );
+
+
+      const contador =
+
+        document.getElementById(
+          "product-count"
+        );
 
 
       grid.innerHTML =
         "";
 
 
-      document
-        .getElementById(
-          "cantidad-productos"
-        )
-        .textContent =
+      contador.textContent =
 
-          productos.length
+        productos.length
 
-          ?
+        ?
 
-          `(${productos.length})`
+        "("
+        +
+        productos.length
+        +
+        ")"
 
-          :
+        :
 
-          "";
+        "";
 
 
       grid.classList.toggle(
 
         "unico",
 
-        productos.length === 1
+        productos.length
+        ===
+        1
 
       );
 
 
       if (
-        productos.length === 0
+        productos.length
+        ===
+        0
       ) {
 
 
-        grid.innerHTML = `
+        const vacio =
 
-          <div class="estado-vacio">
+          document.createElement(
+            "div"
+          );
 
-            <h3>
-              Próximamente
-            </h3>
 
-            <p>
-              Estamos preparando nuevos productos.
-            </p>
+        vacio.className =
+          "empty-state";
 
-          </div>
+
+        vacio.innerHTML = `
+
+          <h3>
+            Próximamente
+          </h3>
+
+          <p>
+            Estamos preparando nuevos productos.
+          </p>
 
         `;
+
+
+        grid.appendChild(
+          vacio
+        );
 
 
         mostrarTablaCompra(
@@ -4477,61 +5050,63 @@
       try {
 
 
-        const entradas =
+        const archivos =
 
-          await cargarMarkdowns(
+          await cargarColeccion(
+
             "contenido/productos"
+
           );
 
 
         const productos =
 
-          entradas
-
-            .filter(Boolean)
-
-            .map(
+          archivos.map(
 
 
-              entrada => ({
+            archivo => ({
 
 
-                nombre:
+              nombre:
 
-                  extraerCampo(
-                    entrada.texto,
-                    "nombre"
-                  ),
+                campo(
+                  archivo.texto,
+                  "nombre"
+                )
 
+                ||
 
-                img:
-
-                  extraerCampo(
-                    entrada.texto,
-                    "img"
-                  ),
+                "Producto",
 
 
-                precio:
+              img:
 
-                  extraerCampo(
-                    entrada.texto,
-                    "precio"
-                  ),
-
-
-                desc:
-
-                  extraerCampo(
-                    entrada.texto,
-                    "desc"
-                  )
+                campo(
+                  archivo.texto,
+                  "img"
+                ),
 
 
-              })
+              precio:
+
+                campo(
+                  archivo.texto,
+                  "precio"
+                ),
 
 
-            );
+              desc:
+
+                campo(
+                  archivo.texto,
+                  "desc"
+                )
+
+
+            })
+
+
+          );
 
 
         mostrarProductos(
@@ -4547,7 +5122,13 @@
 
 
         console.error(
+          "Error cargando productos:",
           error
+        );
+
+
+        mostrarProductos(
+          []
         );
 
 
@@ -4558,93 +5139,29 @@
 
 
 
-    /*
-    ========================================
-    CONTROLES
-    ========================================
-    */
-
-
-    document
-      .getElementById(
-        "banner-anterior"
-      )
-      .addEventListener(
-
-
-        "click",
-
-
-        () => {
-
-
-          actualizarBanner(
-            bannerActual - 1
-          );
-
-
-          reiniciarCarrusel();
-
-
-        }
-
-
-      );
-
-
-
-    document
-      .getElementById(
-        "banner-siguiente"
-      )
-      .addEventListener(
-
-
-        "click",
-
-
-        () => {
-
-
-          actualizarBanner(
-            bannerActual + 1
-          );
-
-
-          reiniciarCarrusel();
-
-
-        }
-
-
-      );
-
+    /* ========================================
+       MENÚ
+    ======================================== */
 
 
     const menu =
 
-      document
-        .getElementById(
-          "menu"
-        );
-
+      document.getElementById(
+        "menu"
+      );
 
 
     function abrirMenu() {
 
 
-      menu
-        .classList
-        .add(
-          "abierto"
-        );
+      menu.classList.add(
+        "abierto"
+      );
 
 
-      document.body
-        .classList
-        .add(
-          "menu-abierto"
-        );
+      document.body.classList.add(
+        "menu-abierto"
+      );
 
 
     }
@@ -4654,18 +5171,14 @@
     function cerrarMenu() {
 
 
-      menu
-        .classList
-        .remove(
-          "abierto"
-        );
+      menu.classList.remove(
+        "abierto"
+      );
 
 
-      document.body
-        .classList
-        .remove(
-          "menu-abierto"
-        );
+      document.body.classList.remove(
+        "menu-abierto"
+      );
 
 
     }
@@ -4674,51 +5187,58 @@
 
     document
       .getElementById(
-        "abrir-menu"
+        "open-menu"
       )
       .addEventListener(
+
         "click",
+
         abrirMenu
+
       );
 
 
 
     document
       .getElementById(
-        "cerrar-menu"
+        "close-menu"
       )
       .addEventListener(
+
         "click",
+
         cerrarMenu
+
       );
 
 
 
-    menu
-      .addEventListener(
+    menu.addEventListener(
 
 
-        "click",
+      "click",
 
 
-        evento => {
+      evento => {
 
 
-          if (
-            evento.target === menu
-          ) {
+        if (
+          evento.target
+          ===
+          menu
+        ) {
 
 
-            cerrarMenu();
-
-
-          }
+          cerrarMenu();
 
 
         }
 
 
-      );
+      }
+
+
+    );
 
 
 
@@ -4732,11 +5252,13 @@
         enlace => {
 
 
-          enlace
-            .addEventListener(
-              "click",
-              cerrarMenu
-            );
+          enlace.addEventListener(
+
+            "click",
+
+            cerrarMenu
+
+          );
 
 
         }
@@ -4746,11 +5268,78 @@
 
 
 
-    /*
-    ========================================
-    INICIO
-    ========================================
-    */
+    /* ========================================
+       CONTROLES BANNER
+    ======================================== */
+
+
+    document
+      .getElementById(
+        "previous-banner"
+      )
+      .addEventListener(
+
+
+        "click",
+
+
+        () => {
+
+
+          actualizarBanner(
+
+            bannerActual
+            -
+            1
+
+          );
+
+
+          iniciarCarrusel();
+
+
+        }
+
+
+      );
+
+
+
+    document
+      .getElementById(
+        "next-banner"
+      )
+      .addEventListener(
+
+
+        "click",
+
+
+        () => {
+
+
+          actualizarBanner(
+
+            bannerActual
+            +
+            1
+
+          );
+
+
+          iniciarCarrusel();
+
+
+        }
+
+
+      );
+
+
+
+    /* ========================================
+       AÑO
+    ======================================== */
 
 
     document
@@ -4764,9 +5353,14 @@
 
 
 
+    /* ========================================
+       INICIAR TODO
+    ======================================== */
+
+
     Promise.allSettled([
 
-      cargarDiseno(),
+      cargarApariencia(),
 
       cargarContacto(),
 
