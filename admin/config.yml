@@ -8,6 +8,45 @@ public_folder: "/daipyofficial/public/uploads"
 
 collections:
 
+  - name: "apariencia"
+    label: "Apariencia"
+
+    files:
+
+      - name: "tipografia"
+        label: "Tipografía y Estilo"
+        file: "contenido/configuracion/diseno.json"
+        format: "json"
+
+        fields:
+
+          - label: "Tipografía de la Web"
+            name: "fuente"
+            widget: "select"
+            default: "Poppins"
+
+            options:
+              - label: "Poppins"
+                value: "Poppins"
+
+              - label: "Montserrat"
+                value: "Montserrat"
+
+              - label: "Inter"
+                value: "Inter"
+
+              - label: "Lato"
+                value: "Lato"
+
+              - label: "Roboto"
+                value: "Roboto"
+
+          - label: "Precios en Negrita"
+            name: "precio_negrita"
+            widget: "boolean"
+            default: true
+
+
   - name: "banners"
     label: "Banners"
     label_singular: "Banner"
