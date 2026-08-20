@@ -1,6 +1,6 @@
 ---
-nombre: Remera DAI PY
-img: public/uploads/remera.jpg
-precio: 85000
-desc: Remera 100% algodón de excelente calidad.
+nombre: Cuaderno Snoopy
+img: /daipyofficial/public/uploads/pasted-image-1787220348125.png
+precio: '95.000'
+desc: ''
 ---
