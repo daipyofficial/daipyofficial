@@ -2,14 +2,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="DAI PY - Tienda Oficial">
-  <meta name="theme-color" content="#f2f0eb">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="DAI PY - Tienda Oficial"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f2f0eb"
+  >
 
   <title>DAI PY — Tienda Oficial</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     id="google-font"
@@ -17,71 +38,147 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
   >
 
+
   <style>
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
     :root {
+
       --fondo: #f2f0eb;
+
       --texto: #141414;
+
       --suave: #77736d;
-      --linea: rgba(20, 20, 20, 0.14);
+
+      --linea:
+        rgba(20, 20, 20, 0.14);
+
       --oscuro: #151515;
+
       --blanco: #ffffff;
 
-      --fuente: "Poppins", Arial, sans-serif;
+      --fuente:
+        "Poppins",
+        Arial,
+        sans-serif;
+
       --peso-precio: 700;
 
+
+      /* Escritorio */
+
       --hero-title-desktop: 72px;
+
       --hero-subtitle-desktop: 14px;
+
       --products-title-desktop: 64px;
+
       --products-text-desktop: 13px;
+
       --editorial-text-desktop: 56px;
 
+
+      /* Móvil */
+
       --hero-title-mobile: 34px;
+
       --hero-subtitle-mobile: 12px;
+
       --products-title-mobile: 30px;
+
       --products-text-mobile: 11px;
+
       --editorial-text-mobile: 30px;
 
       --hero-mobile-height: 58svh;
+
       --products-mobile-top-space: 30px;
+
       --products-mobile-lines: 2;
+
     }
+
+
+
+    /* =========================================================
+       GENERAL
+    ========================================================= */
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
+
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
+
     body {
-      background: var(--fondo);
-      color: var(--texto);
-      font-family: var(--fuente);
-      -webkit-font-smoothing: antialiased;
+
+      background:
+        var(--fondo);
+
+      color:
+        var(--texto);
+
+      font-family:
+        var(--fuente);
+
+      -webkit-font-smoothing:
+        antialiased;
+
+      text-rendering:
+        optimizeLegibility;
+
     }
+
 
     body.menu-abierto,
     body.modal-abierto {
+
       overflow: hidden;
+
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
 
     a {
+
       color: inherit;
+
       text-decoration: none;
+
     }
 
+
     button {
-      font: inherit;
+
       color: inherit;
+
+      font: inherit;
+
     }
+
+
+    img {
+
+      display: block;
+
+      max-width: 100%;
+
+    }
+
 
 
     /* =========================================================
@@ -89,63 +186,101 @@
     ========================================================= */
 
     .topbar {
+
       min-height: 30px;
+
       padding: 7px 20px;
 
       display: flex;
-      justify-content: center;
+
       align-items: center;
 
-      background: var(--oscuro);
+      justify-content: center;
+
+      background:
+        var(--oscuro);
+
       color: white;
 
       font-size: 9px;
+
       font-weight: 500;
+
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
       text-align: center;
+
     }
+
 
 
     /* =========================================================
-       CONTACTO
+       CONTACTO SUPERIOR
     ========================================================= */
 
     .contact-bar {
+
       min-height: 40px;
+
       padding: 8px 28px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 20px;
 
-      border-bottom: 1px solid var(--linea);
+      border-bottom:
+        1px solid var(--linea);
 
       font-size: 10px;
+
     }
+
 
     .contact-label {
-      color: var(--suave);
+
+      color:
+        var(--suave);
 
       font-weight: 500;
+
       letter-spacing: .12em;
+
       text-transform: uppercase;
+
     }
+
 
     .contact-links {
+
       display: flex;
+
       align-items: center;
+
       gap: 25px;
+
     }
+
 
     .contact-links a {
-      transition: opacity .2s ease;
+
+      transition:
+        opacity .2s ease;
+
     }
 
+
     .contact-links a:hover {
+
       opacity: .55;
+
     }
+
 
 
     /* =========================================================
@@ -153,158 +288,264 @@
     ========================================================= */
 
     .header {
+
       height: 76px;
+
       padding: 0 28px;
 
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+
+      grid-template-columns:
+        1fr auto 1fr;
+
       align-items: center;
 
       position: sticky;
+
       top: 0;
+
       z-index: 50;
 
-      background: rgba(242, 240, 235, .96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background:
+        rgba(242, 240, 235, .96);
 
-      border-bottom: 1px solid var(--linea);
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
+      border-bottom:
+        1px solid var(--linea);
+
     }
 
+
     .menu-button {
+
       justify-self: start;
 
       border: 0;
+
       background: transparent;
 
       cursor: pointer;
 
       font-size: 10px;
+
       font-weight: 500;
+
       letter-spacing: .13em;
+
       text-transform: uppercase;
+
     }
+
 
     .header-logo {
+
       justify-self: center;
+
     }
+
 
     .header-logo img {
+
       width: auto;
+
       max-width: 110px;
+
       max-height: 50px;
+
       object-fit: contain;
+
     }
 
+
     .header-products {
+
       justify-self: end;
 
       font-size: 10px;
+
       font-weight: 500;
+
       letter-spacing: .13em;
+
       text-transform: uppercase;
+
     }
 
 
+
     /* =========================================================
-       MENÚ LATERAL
+       MENÚ
     ========================================================= */
 
     .menu-overlay {
+
       position: fixed;
+
       inset: 0;
+
       z-index: 100;
 
       visibility: hidden;
+
       opacity: 0;
 
-      background: rgba(0, 0, 0, .35);
+      background:
+        rgba(0,0,0,.35);
 
       transition:
         opacity .3s ease,
         visibility .3s ease;
+
     }
+
 
     .menu-overlay.abierto {
+
       visibility: visible;
+
       opacity: 1;
+
     }
 
+
     .menu-panel {
-      width: min(440px, 90vw);
+
+      width:
+        min(440px, 90vw);
+
       height: 100%;
 
       padding: 28px;
 
       display: flex;
+
       flex-direction: column;
 
-      background: var(--fondo);
+      background:
+        var(--fondo);
 
-      transform: translateX(-100%);
-      transition: transform .4s ease;
+      transform:
+        translateX(-100%);
+
+      transition:
+        transform .35s ease;
+
     }
 
-    .menu-overlay.abierto .menu-panel {
-      transform: translateX(0);
+
+    .menu-overlay.abierto
+    .menu-panel {
+
+      transform:
+        translateX(0);
+
     }
+
 
     .menu-top {
+
       padding-bottom: 28px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      border-bottom: 1px solid var(--linea);
+      border-bottom:
+        1px solid var(--linea);
+
     }
+
 
     .menu-logo img {
+
       width: auto;
+
       max-width: 100px;
+
       max-height: 50px;
+
     }
 
+
     .menu-close {
+
       border: 0;
+
       background: transparent;
 
       cursor: pointer;
 
       font-size: 10px;
+
       font-weight: 500;
+
       letter-spacing: .12em;
+
       text-transform: uppercase;
+
     }
 
+
     .menu-links {
+
       padding-top: 48px;
 
       display: flex;
+
       flex-direction: column;
+
       gap: 10px;
+
     }
+
 
     .menu-links a {
-      font-size: clamp(34px, 6vw, 53px);
+
+      font-size:
+        clamp(
+          34px,
+          6vw,
+          53px
+        );
+
       font-weight: 500;
+
       line-height: 1.08;
+
       letter-spacing: -.045em;
+
     }
 
+
     .menu-contact {
+
       margin-top: auto;
+
       padding-top: 25px;
 
       display: flex;
+
       flex-direction: column;
+
       gap: 9px;
 
-      border-top: 1px solid var(--linea);
+      border-top:
+        1px solid var(--linea);
 
-      color: var(--suave);
+      color:
+        var(--suave);
+
       font-size: 11px;
+
     }
+
 
 
     /* =========================================================
@@ -312,403 +553,680 @@
     ========================================================= */
 
     .hero {
-      width: calc(100% - 28px);
-      height: min(79vh, 850px);
+
+      width:
+        calc(100% - 28px);
+
+      height:
+        min(79vh, 850px);
+
       min-height: 570px;
 
-      margin: 14px auto 0;
+      margin:
+        14px auto 0;
 
       position: relative;
+
       overflow: hidden;
 
-      background: #d8d4cc;
+      background:
+        #d8d4cc;
+
     }
+
 
     .hero-media,
     .hero-fallback {
+
       position: absolute;
+
       inset: 0;
+
     }
+
 
     .hero-fallback {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      background: #dedad2;
+      background:
+        #dedad2;
+
     }
+
 
     .hero-fallback img {
-      width: min(240px, 45vw);
+
+      width:
+        min(240px, 45vw);
+
       height: auto;
-      opacity: .55;
+
+      opacity: .5;
+
     }
 
+
     .hero-slide {
+
       position: absolute;
+
       inset: 0;
 
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
 
       opacity: 0;
 
-      transform: scale(1.01);
+      transform:
+        scale(1.01);
 
       transition:
         opacity .7s ease,
         transform 7s ease;
+
     }
+
 
     .hero-slide.activo {
+
       opacity: 1;
-      transform: scale(1.04);
+
+      transform:
+        scale(1.04);
+
     }
 
+
     .hero::after {
+
       content: "";
 
       position: absolute;
+
       inset: 0;
+
       z-index: 2;
 
       pointer-events: none;
 
       background:
+
         linear-gradient(
+
           to top,
-          rgba(0,0,0,.62),
-          rgba(0,0,0,.15) 50%,
+
+          rgba(0,0,0,.63),
+
+          rgba(0,0,0,.14) 50%,
+
           rgba(0,0,0,.02)
+
         );
+
     }
 
+
     .hero-content {
+
       position: absolute;
+
       z-index: 3;
 
-      left: clamp(24px, 6vw, 90px);
-      bottom: clamp(35px, 7vw, 90px);
+      left:
+        clamp(
+          24px,
+          6vw,
+          90px
+        );
+
+      bottom:
+        clamp(
+          35px,
+          7vw,
+          90px
+        );
 
       max-width: 850px;
 
       color: white;
+
     }
 
+
     .hero-label {
+
       margin-bottom: 15px;
 
       font-size: 10px;
+
       font-weight: 500;
+
       letter-spacing: .18em;
+
       text-transform: uppercase;
+
     }
+
 
     .hero-title {
+
       max-width: 800px;
 
-      font-size: clamp(40px, 7vw, var(--hero-title-desktop));
+      font-size:
+        clamp(
+          40px,
+          7vw,
+          var(--hero-title-desktop)
+        );
+
       font-weight: 500;
+
       line-height: .99;
+
       letter-spacing: -.055em;
 
-      text-wrap: balance;
     }
 
+
     .hero-subtitle {
+
       max-width: 580px;
 
       margin-top: 18px;
 
-      font-size: var(--hero-subtitle-desktop);
+      font-size:
+        var(--hero-subtitle-desktop);
+
       line-height: 1.55;
 
-      text-wrap: pretty;
     }
 
+
     .hero-controls {
+
       position: absolute;
+
       z-index: 4;
 
       right: 28px;
+
       bottom: 28px;
 
       display: flex;
+
       gap: 5px;
+
     }
+
 
     .hero-controls.oculto {
+
       display: none;
+
     }
 
+
     .hero-arrow {
+
       width: 45px;
+
       height: 45px;
 
-      border: 1px solid rgba(255,255,255,.65);
-      background: rgba(0,0,0,.12);
+      border:
+        1px solid
+        rgba(255,255,255,.65);
+
+      background:
+        rgba(0,0,0,.12);
 
       color: white;
 
       cursor: pointer;
 
       font-size: 18px;
+
     }
+
 
 
     /* =========================================================
-       ENCABEZADO PRODUCTOS
+       CABECERA DE PRODUCTOS
     ========================================================= */
 
     .products-heading {
+
       max-width: 1600px;
+
       margin: auto;
 
       padding:
-        clamp(72px, 8vw, 120px)
-        clamp(20px, 5vw, 70px)
-        clamp(38px, 5vw, 62px);
+
+        clamp(
+          72px,
+          8vw,
+          120px
+        )
+
+        clamp(
+          20px,
+          5vw,
+          70px
+        )
+
+        clamp(
+          38px,
+          5vw,
+          62px
+        );
 
       display: flex;
+
       align-items: flex-end;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       gap: 40px;
+
     }
 
+
     .section-label {
+
       display: block;
 
       margin-bottom: 12px;
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 10px;
+
       font-weight: 500;
+
       letter-spacing: .16em;
+
       text-transform: uppercase;
+
     }
+
 
     .products-heading h2 {
-      font-size: clamp(
-        40px,
-        6vw,
-        var(--products-title-desktop)
-      );
+
+      font-size:
+
+        clamp(
+
+          40px,
+
+          6vw,
+
+          var(
+            --products-title-desktop
+          )
+
+        );
 
       font-weight: 500;
+
       line-height: 1;
+
       letter-spacing: -.05em;
+
     }
+
 
     .products-heading p {
+
       max-width: 380px;
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
-      font-size: var(--products-text-desktop);
+      font-size:
+        var(
+          --products-text-desktop
+        );
+
       line-height: 1.65;
+
     }
+
 
 
     /* =========================================================
-       PRODUCTOS
+       GRID DE PRODUCTOS
     ========================================================= */
 
     .products-section {
-      width: calc(100% - 28px);
+
+      width:
+        calc(100% - 28px);
+
       max-width: 1700px;
 
       margin: auto;
 
       padding-bottom: 120px;
+
     }
 
+
     .products-grid {
+
       display: grid;
 
       grid-template-columns:
-        repeat(2, minmax(0, 1fr));
 
-      column-gap: 2px;
-      row-gap: 80px;
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
+      gap:
+        75px 16px;
+
     }
 
+
     .products-grid.unico {
+
       max-width: 760px;
+
       margin: auto;
 
       grid-template-columns: 1fr;
+
     }
 
+
     .product {
+
       min-width: 0;
+
       cursor: pointer;
 
       outline: none;
+
     }
+
 
     .product:focus-visible {
-      outline: 2px solid var(--texto);
+
+      outline:
+        2px solid
+        var(--texto);
+
       outline-offset: 4px;
+
     }
 
+
+
+    /* =========================================================
+       IMPORTANTE:
+       TODAS LAS FOTOS DE PRODUCTOS SON CUADRADAS
+    ========================================================= */
+
     .product-image {
+
       width: 100%;
 
-      aspect-ratio: 4 / 5;
-
-      overflow: hidden;
+      aspect-ratio: 1 / 1;
 
       position: relative;
 
-      background: #ddd9d1;
-    }
-
-    .product-image > img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: transform .7s ease;
-    }
-
-    .product:hover .product-image > img {
-      transform: scale(1.025);
-    }
-
-    .product-image-fallback {
-      width: 100%;
-      height: 100%;
+      overflow: hidden;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
+      background:
+        #e2ded6;
+
     }
 
-    .product-image-fallback img {
-      width: min(150px, 35%);
-      height: auto;
+
+    .product-image > img {
+
+      width: 100%;
+
+      height: 100%;
 
       object-fit: contain;
 
-      opacity: .35;
+      object-position: center;
+
+      transition:
+        transform .45s ease;
+
     }
 
+
+    .product:hover
+    .product-image > img {
+
+      transform:
+        scale(1.018);
+
+    }
+
+
+    .product-image-fallback {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+    .product-image-fallback img {
+
+      width: 30%;
+
+      height: auto;
+
+      opacity: .35;
+
+    }
+
+
     .product-zoom-hint {
+
       position: absolute;
 
+      z-index: 4;
+
       right: 14px;
+
       bottom: 14px;
 
-      padding: 8px 10px;
+      padding:
+        8px 10px;
 
-      background: rgba(242, 240, 235, .92);
+      border:
+        1px solid
+        rgba(20,20,20,.14);
 
-      border: 1px solid rgba(20,20,20,.12);
+      background:
+        rgba(255,255,255,.94);
 
       font-size: 8px;
+
       font-weight: 600;
-      letter-spacing: .10em;
+
+      letter-spacing: .1em;
+
       text-transform: uppercase;
 
       opacity: 0;
-      transform: translateY(4px);
+
+      transform:
+        translateY(4px);
+
+      pointer-events: none;
 
       transition:
         opacity .2s ease,
         transform .2s ease;
 
-      pointer-events: none;
     }
 
-    .product:hover .product-zoom-hint {
+
+    .product:hover
+    .product-zoom-hint {
+
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
+
     }
+
 
     .product-row {
+
       min-height: 70px;
 
-      padding: 15px 5px;
+      padding:
+        15px 5px;
 
       display: grid;
 
       grid-template-columns:
-        minmax(0, 1.5fr)
-        minmax(100px, .6fr)
+
+        minmax(0,1.5fr)
+
+        minmax(100px,.6fr)
+
         auto;
 
       align-items: center;
+
       gap: 20px;
 
-      border-bottom: 1px solid var(--linea);
+      border-bottom:
+        1px solid
+        var(--linea);
+
     }
+
 
     .product-name {
+
       font-size: 13px;
+
       font-weight: 500;
+
     }
+
 
     .product-price {
+
       font-size: 13px;
-      font-weight: var(--peso-precio);
+
+      font-weight:
+        var(--peso-precio);
 
       white-space: nowrap;
+
     }
 
+
     .purchase-button {
+
       min-width: 175px;
+
       min-height: 43px;
 
-      padding: 10px 18px;
+      padding:
+        10px 18px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
-      border: 1px solid var(--texto);
+      border:
+        1px solid
+        var(--texto);
 
       background: transparent;
-      color: var(--texto);
+
+      color:
+        var(--texto);
 
       cursor: pointer;
 
       font-size: 9px;
+
       font-weight: 600;
-      letter-spacing: .10em;
+
+      letter-spacing: .1em;
+
       text-transform: uppercase;
 
       transition:
         background .2s ease,
         color .2s ease;
+
     }
+
 
     .purchase-button:hover {
-      background: var(--texto);
+
+      background:
+        var(--texto);
+
       color: white;
+
     }
+
 
     .product-description {
+
       max-width: 620px;
 
-      padding: 0 5px;
       margin-top: 10px;
 
-      color: var(--suave);
+      padding: 0 5px;
+
+      color:
+        var(--suave);
 
       font-size: 11px;
+
       line-height: 1.6;
+
     }
+
 
 
     /* =========================================================
-       ESTADO VACÍO
+       VACÍO
     ========================================================= */
 
     .empty-state {
+
       grid-column: 1 / -1;
 
       min-height: 280px;
@@ -716,26 +1234,44 @@
       padding: 40px;
 
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 8px;
 
       text-align: center;
 
-      border-top: 1px solid var(--linea);
-      border-bottom: 1px solid var(--linea);
+      border-top:
+        1px solid var(--linea);
+
+      border-bottom:
+        1px solid var(--linea);
+
     }
+
 
     .empty-state strong {
+
       font-size: 16px;
+
       font-weight: 500;
+
     }
 
+
     .empty-state span {
-      color: var(--suave);
+
+      color:
+        var(--suave);
+
       font-size: 12px;
+
     }
+
 
 
     /* =========================================================
@@ -743,45 +1279,78 @@
     ========================================================= */
 
     .editorial {
-      padding:
-        130px
-        clamp(20px, 6vw, 90px);
 
-      background: var(--oscuro);
+      padding:
+
+        130px
+
+        clamp(
+          20px,
+          6vw,
+          90px
+        );
+
+      background:
+        var(--oscuro);
+
       color: white;
+
     }
+
 
     .editorial-inner {
+
       max-width: 1250px;
+
       margin: auto;
+
     }
+
 
     .editorial-label {
+
       margin-bottom: 28px;
 
-      color: rgba(255,255,255,.5);
+      color:
+        rgba(255,255,255,.5);
 
       font-size: 10px;
+
       font-weight: 500;
+
       letter-spacing: .17em;
+
       text-transform: uppercase;
+
     }
+
 
     .editorial-text {
+
       max-width: 1100px;
 
-      font-size: clamp(
-        32px,
-        5vw,
-        var(--editorial-text-desktop)
-      );
+      font-size:
+
+        clamp(
+
+          32px,
+
+          5vw,
+
+          var(
+            --editorial-text-desktop
+          )
+
+        );
 
       font-weight: 500;
+
       line-height: 1.1;
+
       letter-spacing: -.045em;
 
-      text-wrap: balance;
     }
+
 
 
     /* =========================================================
@@ -789,766 +1358,1424 @@
     ========================================================= */
 
     .footer {
-      padding: 75px 30px 30px;
+
+      padding:
+        75px 30px 30px;
+
     }
+
 
     .footer-inner {
+
       max-width: 1600px;
+
       margin: auto;
+
     }
+
 
     .footer-logo {
+
       padding-bottom: 70px;
+
     }
 
+
     .footer-logo img {
+
       width: auto;
-      max-width: min(300px, 55vw);
+
+      max-width:
+        min(300px,55vw);
+
       max-height: 160px;
 
       object-fit: contain;
+
     }
 
+
     .footer-contact {
-      padding: 30px 0;
+
+      padding:
+        30px 0;
 
       display: grid;
 
       grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+
+        repeat(
+          3,
+          minmax(0,1fr)
+        );
 
       gap: 30px;
 
-      border-top: 1px solid var(--linea);
-      border-bottom: 1px solid var(--linea);
+      border-top:
+        1px solid
+        var(--linea);
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
     }
 
+
     .footer-label {
+
       display: block;
 
       margin-bottom: 10px;
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 9px;
+
       font-weight: 500;
+
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
     }
+
 
     .footer-item a {
+
       font-size: 13px;
+
       font-weight: 500;
-      word-break: break-word;
+
+      word-break:
+        break-word;
+
     }
 
+
     .footer-bottom {
+
       padding-top: 28px;
 
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       gap: 20px;
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 9px;
+
       font-weight: 500;
+
       letter-spacing: .1em;
+
       text-transform: uppercase;
+
     }
+
 
 
     /* =========================================================
-       MODAL PRODUCTO
+       POPUP
     ========================================================= */
 
     .product-modal {
+
       position: fixed;
+
       inset: 0;
 
-      z-index: 300;
+      z-index: 500;
 
       display: none;
 
-      align-items: center;
-      justify-content: center;
+      overflow-y: auto;
 
-      padding: 24px;
+      padding:
+        90px 110px;
 
-      background: rgba(15, 15, 15, .68);
+      background:
+        rgba(20,20,20,.70);
 
-      backdrop-filter: blur(9px);
-      -webkit-backdrop-filter: blur(9px);
+      backdrop-filter:
+        blur(10px);
+
+      -webkit-backdrop-filter:
+        blur(10px);
+
     }
+
 
     .product-modal.abierto {
+
       display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
     }
 
-    .product-modal-dialog {
-      width: min(1120px, 96vw);
-      max-height: 94svh;
+
+
+    /*
+       SHELL EXTERNO.
+
+       Los globos pertenecen a este contenedor,
+       NO al cuadro de la imagen.
+
+       Por eso pueden salir del popup
+       sin ponerse encima del producto.
+    */
+
+    .modal-shell {
+
+      width:
+        min(
+          1040px,
+          calc(100vw - 240px)
+        );
+
+      position: relative;
+
+      flex: 0 0 auto;
+
+    }
+
+
+
+    /*
+       TARJETA REAL DEL POPUP
+    */
+
+    .modal-card {
+
+      width: 100%;
 
       position: relative;
 
       display: grid;
 
       grid-template-columns:
-        minmax(0, 1.35fr)
-        minmax(260px, .65fr);
 
-      overflow: hidden;
+        minmax(0,1fr)
 
-      background: var(--fondo);
+        340px;
+
+      background:
+        var(--fondo);
 
       box-shadow:
-        0 24px 80px rgba(0,0,0,.28);
+
+        0 30px 90px
+
+        rgba(0,0,0,.28);
+
+      overflow: hidden;
+
     }
 
-    .modal-close {
-      width: 42px;
-      height: 42px;
 
-      position: absolute;
-      z-index: 12;
 
-      top: 14px;
-      right: 14px;
+    /* =========================================================
+       IMAGEN CUADRADA DEL POPUP
+    ========================================================= */
 
-      border: 1px solid rgba(20,20,20,.16);
-      border-radius: 999px;
+    .modal-visual {
 
-      background: rgba(242,240,235,.92);
+      width: 100%;
 
-      cursor: pointer;
+      aspect-ratio: 1 / 1;
 
-      font-size: 20px;
-      line-height: 1;
-    }
-
-    .modal-image-stage {
-      min-height: min(78svh, 760px);
+      min-width: 0;
 
       position: relative;
+
       overflow: hidden;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      background: #dedad2;
+      background:
+        #e1ddd5;
+
     }
 
-    .modal-image-frame {
-      width: 100%;
-      height: 100%;
 
-      min-height: inherit;
+    .modal-image-frame {
+
+      width: 100%;
+
+      height: 100%;
 
       overflow: hidden;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       cursor: zoom-in;
 
-      touch-action: pan-x pan-y;
     }
+
 
     .modal-image-frame.zoom-activo {
+
       cursor: zoom-out;
+
     }
 
-    .modal-product-image {
-      width: 100%;
-      height: 100%;
 
-      max-height: 82svh;
+    .modal-product-image {
+
+      width: 100%;
+
+      height: 100%;
 
       object-fit: contain;
 
-      transform: scale(1);
+      object-position: center;
 
-      transition: transform .25s ease;
+      transform:
+        scale(1);
+
+      transform-origin:
+        center center;
+
+      transition:
+        transform .3s ease;
 
       user-select: none;
+
       -webkit-user-drag: none;
+
     }
 
-    .modal-image-frame.zoom-activo .modal-product-image {
-      transform: scale(1.65);
+
+    .modal-image-frame.zoom-activo
+    .modal-product-image {
+
+      transform:
+        scale(1.6);
+
     }
+
 
 
     /* =========================================================
-       GLOBOS DE FRASES
+       INFO POPUP
+    ========================================================= */
+
+    .modal-info {
+
+      min-width: 0;
+
+      padding:
+        62px 32px 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      background:
+        var(--fondo);
+
+    }
+
+
+    .modal-close {
+
+      width: 38px;
+
+      height: 38px;
+
+      position: absolute;
+
+      z-index: 15;
+
+      top: 12px;
+
+      right: 12px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border:
+        1px solid
+        rgba(20,20,20,.15);
+
+      border-radius: 50%;
+
+      background:
+        rgba(242,240,235,.96);
+
+      cursor: pointer;
+
+      font-size: 17px;
+
+    }
+
+
+    .modal-eyebrow {
+
+      margin-bottom: 15px;
+
+      color:
+        var(--suave);
+
+      font-size: 8px;
+
+      font-weight: 600;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .modal-product-name {
+
+      font-size:
+
+        clamp(
+          26px,
+          3vw,
+          42px
+        );
+
+      font-weight: 500;
+
+      line-height: 1.02;
+
+      letter-spacing: -.045em;
+
+    }
+
+
+    .modal-product-price {
+
+      margin-top: 18px;
+
+      font-size: 15px;
+
+      font-weight:
+        var(--peso-precio);
+
+    }
+
+
+    .modal-product-description {
+
+      margin-top: 22px;
+
+      color:
+        var(--suave);
+
+      font-size: 11px;
+
+      line-height: 1.65;
+
+      white-space: pre-line;
+
+    }
+
+
+    .modal-buy {
+
+      margin-top: auto;
+
+      padding-top: 30px;
+
+    }
+
+
+    .modal-buy
+    .purchase-button {
+
+      width: 100%;
+
+      min-width: 0;
+
+    }
+
+
+    .modal-zoom-help {
+
+      margin-top: 11px;
+
+      color:
+        var(--suave);
+
+      font-size: 8px;
+
+      text-align: center;
+
+    }
+
+
+
+    /* =========================================================
+       GLOBOS
+
+       IMPORTANTE:
+       ESTÁN FUERA DE .modal-card.
+       NO PUEDEN TAPAR EL PRODUCTO.
     ========================================================= */
 
     .speech-bubble {
+
       position: absolute;
-      z-index: 8;
 
-      max-width: 235px;
+      z-index: 30;
 
-      padding: 12px 17px;
+      width:
+        max-content;
 
-      border: 1px solid rgba(20,20,20,.55);
-      border-radius: 22px;
+      max-width: 220px;
 
-      background: rgba(255,255,255,.96);
+      padding:
+        12px 18px;
 
-      color: #181818;
+      border:
+        1px solid
+        rgba(20,20,20,.65);
 
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 1.25;
-      text-align: center;
+      border-radius: 24px;
+
+      background:
+        rgba(255,255,255,.98);
+
+      color:
+        #151515;
 
       box-shadow:
-        0 8px 28px rgba(0,0,0,.08);
+        0 8px 26px
+        rgba(0,0,0,.10);
+
+      font-size: 11px;
+
+      font-weight: 500;
+
+      line-height: 1.25;
+
+      text-align: center;
 
       pointer-events: none;
+
     }
 
+
     .speech-bubble::after {
+
       content: "";
+
+      width: 15px;
+
+      height: 15px;
 
       position: absolute;
 
-      width: 14px;
-      height: 14px;
+      background:
+        inherit;
 
-      background: inherit;
-
-      border-left:
-        1px solid rgba(20,20,20,.55);
-
-      border-bottom:
-        1px solid rgba(20,20,20,.55);
     }
+
+
+
+    /*
+       Primer globo:
+       FUERA A LA IZQUIERDA.
+    */
 
     .speech-bubble.one {
-      top: 7%;
-      right: 5%;
 
-      transform: rotate(1deg);
+      top: 17%;
+
+      left: -32px;
+
+      transform:
+        translateX(-100%)
+        rotate(-1deg);
+
     }
+
 
     .speech-bubble.one::after {
-      right: 24px;
-      bottom: -8px;
 
-      transform: rotate(-45deg);
+      right: -8px;
+
+      bottom: 10px;
+
+      border-right:
+        1px solid
+        rgba(20,20,20,.65);
+
+      border-bottom:
+        1px solid
+        rgba(20,20,20,.65);
+
+      transform:
+        rotate(-45deg);
+
     }
+
+
+
+    /*
+       Segundo globo:
+       FUERA A LA DERECHA.
+    */
 
     .speech-bubble.two {
-      left: 4%;
-      bottom: 8%;
 
-      transform: rotate(-1deg);
+      right: -32px;
+
+      bottom: 18%;
+
+      transform:
+        translateX(100%)
+        rotate(1deg);
+
     }
+
 
     .speech-bubble.two::after {
-      left: 25px;
-      top: -8px;
 
-      transform: rotate(135deg);
+      left: -8px;
+
+      top: 10px;
+
+      border-left:
+        1px solid
+        rgba(20,20,20,.65);
+
+      border-top:
+        1px solid
+        rgba(20,20,20,.65);
+
+      transform:
+        rotate(-45deg);
+
     }
+
 
 
     /* =========================================================
-       INFORMACIÓN MODAL
+       TABLET
     ========================================================= */
 
-    .modal-product-info {
-      padding: 70px 34px 34px;
+    @media
+    (max-width: 1000px) {
 
-      display: flex;
-      flex-direction: column;
+      .product-modal {
 
-      min-width: 0;
+        padding:
+          80px 80px;
 
-      overflow-y: auto;
+      }
+
+
+      .modal-shell {
+
+        width:
+          min(
+            850px,
+            calc(100vw - 180px)
+          );
+
+      }
+
+
+      .modal-card {
+
+        grid-template-columns:
+
+          minmax(0,1fr)
+
+          285px;
+
+      }
+
+
+      .modal-info {
+
+        padding:
+          55px 24px 24px;
+
+      }
+
+
+      .speech-bubble {
+
+        max-width: 180px;
+
+        font-size: 10px;
+
+      }
+
+
+      .speech-bubble.one {
+
+        left: -22px;
+
+      }
+
+
+      .speech-bubble.two {
+
+        right: -22px;
+
+      }
+
     }
 
-    .modal-eyebrow {
-      margin-bottom: 18px;
-
-      color: var(--suave);
-
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .modal-product-name {
-      font-size: clamp(28px, 3vw, 44px);
-
-      font-weight: 500;
-      line-height: 1.04;
-      letter-spacing: -.04em;
-    }
-
-    .modal-product-price {
-      margin-top: 20px;
-
-      font-size: 17px;
-      font-weight: var(--peso-precio);
-    }
-
-    .modal-product-description {
-      margin-top: 24px;
-
-      color: var(--suave);
-
-      font-size: 12px;
-      line-height: 1.7;
-
-      white-space: pre-line;
-    }
-
-    .modal-buy {
-      margin-top: auto;
-      padding-top: 32px;
-    }
-
-    .modal-buy .purchase-button {
-      width: 100%;
-      min-width: 0;
-    }
-
-    .modal-zoom-help {
-      margin-top: 12px;
-
-      color: var(--suave);
-
-      font-size: 9px;
-      line-height: 1.45;
-
-      text-align: center;
-    }
 
 
     /* =========================================================
        MÓVIL
     ========================================================= */
 
-    @media (max-width: 760px) {
+    @media
+    (max-width: 760px) {
+
 
       .topbar {
+
         min-height: 26px;
 
-        padding: 6px 12px;
+        padding:
+          6px 12px;
 
         font-size: 8px;
+
       }
+
 
       .contact-bar {
+
         min-height: 34px;
 
-        padding: 7px 16px;
+        padding:
+          7px 16px;
+
       }
+
 
       .contact-label,
       .contact-email {
+
         display: none;
+
       }
+
 
       .contact-links {
+
         width: 100%;
 
-        justify-content: space-between;
+        justify-content:
+          space-between;
 
         gap: 10px;
+
       }
+
 
       .header {
+
         height: 60px;
 
-        padding: 0 16px;
+        padding:
+          0 16px;
+
       }
 
+
       .header-logo img {
+
         max-width: 79px;
+
         max-height: 42px;
+
       }
+
 
       .menu-button,
       .header-products {
+
         font-size: 8px;
+
       }
 
 
-      /* =====================================================
-         BANNER MÓVIL MÁS CORTO
-      ===================================================== */
+
+      /* Banner más corto */
 
       .hero {
-        width: calc(100% - 16px);
+
+        width:
+          calc(100% - 16px);
 
         height:
+
           clamp(
-            360px,
-            var(--hero-mobile-height),
-            520px
+
+            350px,
+
+            var(
+              --hero-mobile-height
+            ),
+
+            510px
+
           );
 
-        min-height: 360px;
+        min-height: 350px;
 
         margin-top: 8px;
+
       }
+
 
       .hero-content {
-        left: 20px;
-        right: 20px;
-        bottom: 24px;
 
-        max-width: 90%;
+        left: 20px;
+
+        right: 20px;
+
+        bottom: 23px;
+
+        max-width: 92%;
+
       }
+
 
       .hero-label {
-        margin-bottom: 9px;
+
+        margin-bottom: 8px;
 
         font-size: 8px;
+
       }
+
 
       .hero-title {
-        max-width: 94%;
+
+        max-width: 95%;
 
         font-size:
-          var(--hero-title-mobile);
+          var(
+            --hero-title-mobile
+          );
 
         line-height: 1.02;
+
         letter-spacing: -.045em;
+
       }
+
 
       .hero-subtitle {
+
         max-width: 94%;
 
-        margin-top: 10px;
+        margin-top: 9px;
 
         font-size:
-          var(--hero-subtitle-mobile);
+          var(
+            --hero-subtitle-mobile
+          );
 
-        line-height: 1.42;
+        line-height: 1.4;
+
       }
+
 
       .hero-controls {
-        top: 13px;
-        right: 13px;
+
+        top: 12px;
+
+        right: 12px;
+
         bottom: auto;
+
       }
+
 
       .hero-arrow {
-        width: 38px;
-        height: 38px;
+
+        width: 37px;
+
+        height: 37px;
+
       }
 
 
-      /* =====================================================
-         MENOS ESPACIO ANTES DE PRODUCTOS
-      ===================================================== */
+
+      /* Menos distancia hasta productos */
 
       .products-heading {
+
         padding:
-          var(--products-mobile-top-space)
+
+          var(
+            --products-mobile-top-space
+          )
+
           16px
-          24px;
+
+          23px;
 
         display: block;
+
       }
 
+
       .section-label {
+
         margin-bottom: 7px;
 
         font-size: 8px;
+
       }
+
 
       .products-heading h2 {
-        font-size:
-          var(--products-title-mobile);
 
-        line-height: 1;
+        font-size:
+          var(
+            --products-title-mobile
+          );
+
       }
+
 
       .products-heading p {
+
         max-width: 100%;
 
-        margin-top: 10px;
+        margin-top: 9px;
 
         font-size:
-          var(--products-text-mobile);
+          var(
+            --products-text-mobile
+          );
 
-        line-height: 1.45;
+        line-height: 1.42;
 
-        display: -webkit-box;
+        display:
+          -webkit-box;
 
-        -webkit-box-orient: vertical;
+        -webkit-box-orient:
+          vertical;
 
         -webkit-line-clamp:
-          var(--products-mobile-lines);
+          var(
+            --products-mobile-lines
+          );
 
         overflow: hidden;
+
       }
 
 
-      /* =====================================================
-         PRODUCTOS MÓVIL
-      ===================================================== */
+
+      /* Productos cuadrados */
 
       .products-section {
-        width: calc(100% - 16px);
 
-        padding-bottom: 80px;
+        width:
+          calc(100% - 16px);
+
+        padding-bottom: 75px;
+
       }
+
 
       .products-grid,
       .products-grid.unico {
+
         grid-template-columns: 1fr;
+
       }
+
 
       .products-grid {
-        row-gap: 48px;
+
+        gap: 48px;
+
       }
 
+
+      .product-image {
+
+        aspect-ratio: 1 / 1;
+
+      }
+
+
+      .product-image > img {
+
+        object-fit: contain;
+
+      }
+
+
       .product-row {
+
         grid-template-columns:
           minmax(0,1fr)
           auto;
 
-        gap: 12px 15px;
+        gap:
+          12px 15px;
 
-        padding-top: 13px;
-        padding-bottom: 13px;
+        padding:
+          13px 5px;
+
       }
+
 
       .product-name {
+
         grid-column: 1;
+
         grid-row: 1;
 
         font-size: 12px;
+
       }
+
 
       .product-price {
+
         grid-column: 2;
+
         grid-row: 1;
 
         font-size: 12px;
+
       }
 
+
       .purchase-button {
-        grid-column: 1 / -1;
+
+        grid-column:
+          1 / -1;
+
         grid-row: 2;
 
         width: 100%;
+
         min-width: 0;
 
         min-height: 41px;
 
         margin-top: 4px;
+
       }
+
 
       .product-description {
+
         font-size: 10px;
+
       }
 
+
       .product-zoom-hint {
+
         opacity: 1;
+
         transform: none;
 
         right: 10px;
+
         bottom: 10px;
 
-        padding: 7px 9px;
-
         font-size: 7px;
+
       }
 
 
-      /* =====================================================
-         EDITORIAL MÓVIL
-      ===================================================== */
+
+      /* Editorial */
 
       .editorial {
-        padding: 82px 20px;
+
+        padding:
+          82px 20px;
+
       }
 
-      .editorial-label {
-        margin-bottom: 20px;
-
-        font-size: 8px;
-      }
 
       .editorial-text {
+
         font-size:
-          var(--editorial-text-mobile);
+          var(
+            --editorial-text-mobile
+          );
+
       }
 
 
-      /* =====================================================
-         FOOTER MÓVIL
-      ===================================================== */
+
+      /* Footer */
 
       .footer {
-        padding: 50px 18px 24px;
+
+        padding:
+          50px 18px 24px;
+
       }
+
 
       .footer-logo {
+
         padding-bottom: 42px;
+
       }
 
+
       .footer-contact {
+
         grid-template-columns: 1fr;
 
         gap: 24px;
+
       }
 
+
       .footer-bottom {
+
         flex-direction: column;
-        align-items: flex-start;
+
       }
+
 
 
       /* =====================================================
-         MODAL MÓVIL
+         POPUP MÓVIL
+
+         Imagen cuadrada.
+
+         Los globos van ARRIBA y ABAJO.
+         Nunca encima del producto.
       ===================================================== */
 
       .product-modal {
-        padding: 8px;
+
+        padding:
+          80px 16px;
+
+        align-items:
+          flex-start;
+
       }
 
-      .product-modal-dialog {
+
+      .modal-shell {
+
         width: 100%;
 
-        max-height: 96svh;
+        max-width: 520px;
 
-        grid-template-columns: 1fr;
+        margin: auto;
 
-        grid-template-rows:
-          minmax(0, 1fr)
-          auto;
       }
 
-      .modal-close {
-        top: 10px;
-        right: 10px;
 
-        width: 38px;
-        height: 38px;
+      .modal-card {
+
+        display: block;
+
+        overflow: hidden;
+
       }
 
-      .modal-image-stage,
-      .modal-image-frame {
-        min-height: 0;
 
-        height: min(66svh, 620px);
+      .modal-visual {
+
+        width: 100%;
+
+        aspect-ratio: 1 / 1;
+
       }
+
 
       .modal-product-image {
-        max-height: 66svh;
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
       }
 
-      .speech-bubble {
-        max-width: 46%;
 
-        padding: 10px 12px;
+      .modal-info {
 
-        border-radius: 18px;
+        min-height: 230px;
 
-        font-size: 10px;
+        padding:
+          25px 20px 20px;
+
       }
 
-      .speech-bubble.one {
-        top: 7%;
-        right: 4%;
+
+      .modal-close {
+
+        top: 9px;
+
+        right: 9px;
+
       }
 
-      .speech-bubble.two {
-        left: 4%;
-        bottom: 6%;
-      }
-
-      .modal-product-info {
-        padding: 20px 18px 18px;
-
-        max-height: 31svh;
-      }
 
       .modal-eyebrow {
-        display: none;
+
+        margin-bottom: 10px;
+
       }
+
 
       .modal-product-name {
+
         padding-right: 42px;
 
-        font-size: 23px;
+        font-size: 25px;
+
       }
+
 
       .modal-product-price {
-        margin-top: 8px;
+
+        margin-top: 9px;
 
         font-size: 14px;
+
       }
+
 
       .modal-product-description {
-        margin-top: 10px;
+
+        margin-top: 11px;
 
         font-size: 10px;
-        line-height: 1.5;
+
       }
+
 
       .modal-buy {
-        padding-top: 14px;
+
+        padding-top: 18px;
+
       }
 
+
       .modal-zoom-help {
+
         display: none;
+
       }
+
+
+
+      /*
+         Globo 1:
+         FUERA, ENCIMA DEL POPUP.
+      */
+
+      .speech-bubble.one {
+
+        top: -14px;
+
+        left: 8px;
+
+        right: auto;
+
+        bottom: auto;
+
+        transform:
+          translateY(-100%)
+          rotate(-1deg);
+
+      }
+
+
+      .speech-bubble.one::after {
+
+        right: auto;
+
+        left: 24px;
+
+        top: auto;
+
+        bottom: -8px;
+
+        border:
+          0;
+
+        border-right:
+          1px solid
+          rgba(20,20,20,.65);
+
+        border-bottom:
+          1px solid
+          rgba(20,20,20,.65);
+
+        transform:
+          rotate(45deg);
+
+      }
+
+
+
+      /*
+         Globo 2:
+         FUERA, DEBAJO DEL POPUP.
+      */
+
+      .speech-bubble.two {
+
+        top: auto;
+
+        right: 8px;
+
+        bottom: -14px;
+
+        left: auto;
+
+        transform:
+          translateY(100%)
+          rotate(1deg);
+
+      }
+
+
+      .speech-bubble.two::after {
+
+        left: auto;
+
+        right: 24px;
+
+        top: -8px;
+
+        bottom: auto;
+
+        border: 0;
+
+        border-left:
+          1px solid
+          rgba(20,20,20,.65);
+
+        border-top:
+          1px solid
+          rgba(20,20,20,.65);
+
+        transform:
+          rotate(45deg);
+
+      }
+
+
+      .speech-bubble {
+
+        max-width:
+          min(
+            210px,
+            75vw
+          );
+
+        padding:
+          10px 14px;
+
+        font-size: 10px;
+
+      }
+
     }
 
 
-    @media (max-width: 390px) {
-      .hero {
-        height:
-          clamp(
-            340px,
-            var(--hero-mobile-height),
-            480px
-          );
 
-        min-height: 340px;
+    @media
+    (max-width: 390px) {
+
+      .hero {
+
+        min-height: 335px;
+
       }
+
 
       .hero-title {
+
         font-size:
+
           min(
-            var(--hero-title-mobile),
-            32px
+
+            var(
+              --hero-title-mobile
+            ),
+
+            31px
+
           );
+
       }
 
-      .speech-bubble {
-        max-width: 48%;
-        font-size: 9px;
+
+      .product-modal {
+
+        padding:
+          76px 10px;
+
       }
+
     }
 
   </style>
 </head>
 
 
+
 <body>
 
-  <div class="topbar" id="topbar-text">
+
+  <!-- =========================================================
+       TOP BAR
+  ========================================================== -->
+
+  <div
+    class="topbar"
+    id="topbar-text"
+  >
     DAI PY · TIENDA OFICIAL
   </div>
 
 
+
+  <!-- =========================================================
+       CONTACTO
+  ========================================================== -->
+
   <div class="contact-bar">
+
 
     <span
       class="contact-label"
@@ -1559,6 +2786,7 @@
 
 
     <div class="contact-links">
+
 
       <a
         id="top-email"
@@ -1588,12 +2816,19 @@
         WhatsApp
       </a>
 
+
     </div>
 
   </div>
 
 
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+
   <header class="header">
+
 
     <button
       class="menu-button"
@@ -1608,46 +2843,54 @@
       class="header-logo"
       href="#inicio"
     >
+
       <img
         src="./logo.png"
         alt="DAI PY"
       >
+
     </a>
 
 
     <a
       class="header-products"
-      href="#productos"
       id="header-products-text"
+      href="#productos"
     >
       Productos
     </a>
 
+
   </header>
 
 
-  <!-- =======================================================
-       MENÚ
-  ======================================================== -->
+
+  <!-- =========================================================
+       MENÚ LATERAL
+  ========================================================== -->
 
   <div
     class="menu-overlay"
     id="menu"
   >
 
+
     <nav class="menu-panel">
 
 
       <div class="menu-top">
 
+
         <a
           class="menu-logo"
           href="#inicio"
         >
+
           <img
             src="./logo.png"
             alt="DAI PY"
           >
+
         </a>
 
 
@@ -1659,10 +2902,12 @@
           Cerrar
         </button>
 
+
       </div>
 
 
       <div class="menu-links">
+
 
         <a
           href="#inicio"
@@ -1671,12 +2916,14 @@
           Inicio
         </a>
 
+
         <a
           href="#productos"
           id="menu-productos-text"
         >
           Productos
         </a>
+
 
         <a
           href="#contacto"
@@ -1685,10 +2932,12 @@
           Contacto
         </a>
 
+
       </div>
 
 
       <div class="menu-contact">
+
 
         <a
           id="menu-email"
@@ -1715,6 +2964,7 @@
           WhatsApp
         </a>
 
+
       </div>
 
 
@@ -1724,22 +2974,26 @@
 
 
 
+  <!-- =========================================================
+       CONTENIDO
+  ========================================================== -->
+
   <main>
 
 
-    <!-- =====================================================
-         BANNER
-    ====================================================== -->
+    <!-- HERO -->
 
     <section
       class="hero"
       id="inicio"
     >
 
+
       <div
         class="hero-media"
         id="hero-media"
       >
+
 
         <div class="hero-fallback">
 
@@ -1750,10 +3004,12 @@
 
         </div>
 
+
       </div>
 
 
       <div class="hero-content">
+
 
         <div
           class="hero-label"
@@ -1778,6 +3034,7 @@
           Accesorios, objetos y detalles seleccionados para acompañar tu día.
         </p>
 
+
       </div>
 
 
@@ -1785,6 +3042,7 @@
         class="hero-controls oculto"
         id="hero-controls"
       >
+
 
         <button
           class="hero-arrow"
@@ -1803,22 +3061,24 @@
           →
         </button>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
-         PRODUCTOS
-    ====================================================== -->
+    <!-- PRODUCTOS HEADER -->
 
     <section
       class="products-heading"
       id="productos"
     >
 
+
       <div>
+
 
         <span
           class="section-label"
@@ -1832,6 +3092,7 @@
           Productos
         </h2>
 
+
       </div>
 
 
@@ -1839,16 +3100,21 @@
         Elegí tu producto y realizá tu pedido directamente por WhatsApp.
       </p>
 
+
     </section>
 
 
 
+    <!-- GRID -->
+
     <section class="products-section">
+
 
       <div
         class="products-grid"
         id="products-grid"
       >
+
 
         <div class="empty-state">
 
@@ -1862,19 +3128,21 @@
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =====================================================
-         EDITORIAL
-    ====================================================== -->
+    <!-- EDITORIAL -->
 
     <section class="editorial">
 
+
       <div class="editorial-inner">
+
 
         <div
           class="editorial-label"
@@ -1891,22 +3159,26 @@
           Las cosas que elegimos llevar con nosotros también cuentan una historia.
         </p>
 
+
       </div>
 
+
     </section>
+
 
   </main>
 
 
 
-  <!-- =======================================================
+  <!-- =========================================================
        FOOTER
-  ======================================================== -->
+  ========================================================== -->
 
   <footer
     class="footer"
     id="contacto"
   >
+
 
     <div class="footer-inner">
 
@@ -1933,7 +3205,6 @@
             Correo
           </span>
 
-
           <a
             id="footer-email"
             href="mailto:daiofficial.py@gmail.com"
@@ -1944,6 +3215,7 @@
         </div>
 
 
+
         <div class="footer-item">
 
           <span
@@ -1952,7 +3224,6 @@
           >
             Instagram
           </span>
-
 
           <a
             id="footer-instagram"
@@ -1965,6 +3236,7 @@
         </div>
 
 
+
         <div class="footer-item">
 
           <span
@@ -1973,7 +3245,6 @@
           >
             Pedidos
           </span>
-
 
           <a
             id="footer-whatsapp"
@@ -1991,272 +3262,356 @@
 
       <div class="footer-bottom">
 
+
         <span id="footer-copy">
           © DAI PY Tienda Oficial
         </span>
+
 
         <span id="footer-country">
           Paraguay
         </span>
 
+
       </div>
 
+
     </div>
+
 
   </footer>
 
 
 
-  <!-- =======================================================
+  <!-- =========================================================
        POPUP PRODUCTO
-  ======================================================== -->
+
+       Los globos están fuera de .modal-card.
+  ========================================================== -->
 
   <div
     class="product-modal"
     id="product-modal"
     role="dialog"
     aria-modal="true"
+    aria-hidden="true"
   >
 
-    <div
-      class="product-modal-dialog"
-      id="product-modal-dialog"
-    >
+
+    <div class="modal-shell">
 
 
-      <button
-        class="modal-close"
-        id="modal-close"
-        type="button"
+      <!-- GLOBO IZQUIERDO -->
+
+      <div
+        class="speech-bubble one"
+        id="speech-one"
       >
-        ×
-      </button>
+        Lo merezco.
+      </div>
 
 
-      <div class="modal-image-stage">
+
+      <!-- TARJETA -->
+
+      <div class="modal-card">
 
 
-        <div
-          class="modal-image-frame"
-          id="modal-image-frame"
+        <button
+          class="modal-close"
+          id="modal-close"
+          type="button"
+          aria-label="Cerrar"
         >
+          ×
+        </button>
 
-          <img
-            class="modal-product-image"
-            id="modal-product-image"
-            src="./logo.png"
-            alt=""
+
+
+        <!-- CUADRO DE IMAGEN -->
+
+        <div class="modal-visual">
+
+
+          <div
+            class="modal-image-frame"
+            id="modal-image-frame"
           >
 
+
+            <img
+              class="modal-product-image"
+              id="modal-product-image"
+              src="./logo.png"
+              alt=""
+            >
+
+
+          </div>
+
+
         </div>
 
 
-        <div
-          class="speech-bubble one"
-          id="speech-one"
-        >
-          Lo merezco.
-        </div>
+
+        <!-- INFO -->
+
+        <div class="modal-info">
 
 
-        <div
-          class="speech-bubble two"
-          id="speech-two"
-        >
-          Es una compra necesaria.
+          <div
+            class="modal-eyebrow"
+            id="modal-eyebrow"
+          >
+            DAI PY · Detalle
+          </div>
+
+
+          <h3
+            class="modal-product-name"
+            id="modal-product-name"
+          >
+            Producto
+          </h3>
+
+
+          <div
+            class="modal-product-price"
+            id="modal-product-price"
+          >
+            Consultar
+          </div>
+
+
+          <p
+            class="modal-product-description"
+            id="modal-product-description"
+          ></p>
+
+
+          <div class="modal-buy">
+
+
+            <a
+              class="purchase-button"
+              id="modal-buy-button"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Comprar por WhatsApp
+            </a>
+
+
+            <div
+              class="modal-zoom-help"
+              id="modal-zoom-help"
+            >
+              Tocá la imagen para acercar.
+            </div>
+
+
+          </div>
+
+
         </div>
 
 
       </div>
 
 
-      <div class="modal-product-info">
 
+      <!-- GLOBO DERECHO -->
 
-        <div
-          class="modal-eyebrow"
-          id="modal-eyebrow"
-        >
-          DAI PY · Detalle
-        </div>
-
-
-        <h3
-          class="modal-product-name"
-          id="modal-product-name"
-        >
-          Producto
-        </h3>
-
-
-        <div
-          class="modal-product-price"
-          id="modal-product-price"
-        >
-          Consultar
-        </div>
-
-
-        <p
-          class="modal-product-description"
-          id="modal-product-description"
-        ></p>
-
-
-        <div class="modal-buy">
-
-          <a
-            class="purchase-button"
-            id="modal-buy-button"
-            href="#"
-            target="_blank"
-          >
-            Comprar por WhatsApp
-          </a>
-
-
-          <div
-            class="modal-zoom-help"
-            id="modal-zoom-help"
-          >
-            Tocá la imagen para acercar.
-          </div>
-
-        </div>
-
-
+      <div
+        class="speech-bubble two"
+        id="speech-two"
+      >
+        Es una compra necesaria.
       </div>
 
 
     </div>
 
+
   </div>
 
 
 
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
   <script>
 
+
     /* =========================================================
-       CONFIGURACIÓN
+       REPOSITORIO
     ========================================================= */
 
-    const REPO = "daipyofficial/daipyofficial";
-    const BRANCH = "main";
+    const REPO =
+      "daipyofficial/daipyofficial";
+
+
+    const BRANCH =
+      "main";
+
 
     const API_BASE =
       `https://api.github.com/repos/${REPO}/contents`;
 
-    const VERSION = Date.now();
+
+    const VERSION =
+      Date.now();
 
 
+
+    /* =========================================================
+       TEXTOS POR DEFECTO
+    ========================================================= */
 
     const DEFAULT_TEXTOS = {
+
 
       topbar_texto:
         "DAI PY · TIENDA OFICIAL",
 
+
       contacto_etiqueta:
         "Contacto",
+
 
       menu_inicio:
         "Inicio",
 
+
       menu_productos:
         "Productos",
+
 
       menu_contacto:
         "Contacto",
 
+
       hero_etiqueta:
         "DAI PY",
+
 
       productos_etiqueta:
         "Tienda",
 
+
       productos_titulo:
         "Productos",
+
 
       productos_texto:
         "Elegí tu producto y realizá tu pedido directamente por WhatsApp.",
 
+
       editorial_etiqueta:
         "DAI PY",
+
 
       editorial_texto:
         "Las cosas que elegimos llevar con nosotros también cuentan una historia.",
 
+
       footer_correo:
         "Correo",
+
 
       footer_instagram:
         "Instagram",
 
+
       footer_pedidos:
         "Pedidos",
+
 
       footer_copy:
         "© DAI PY Tienda Oficial",
 
+
       footer_pais:
         "Paraguay",
+
 
       boton_comprar:
         "Comprar por WhatsApp",
 
+
       texto_zoom:
         "Ver detalle",
 
+
       modal_etiqueta:
         "DAI PY · Detalle",
+
 
       modal_ayuda_zoom:
         "Tocá la imagen para acercar.",
 
 
+
       tamano_titulo_banner:
         72,
+
 
       tamano_subtitulo_banner:
         14,
 
+
       tamano_titulo_productos:
         64,
 
+
       tamano_texto_productos:
         13,
+
 
       tamano_editorial:
         56,
 
 
+
       tamano_titulo_banner_movil:
         34,
+
 
       tamano_subtitulo_banner_movil:
         12,
 
+
       tamano_titulo_productos_movil:
         30,
 
+
       tamano_texto_productos_movil:
         11,
+
 
       tamano_editorial_movil:
         30,
 
 
+
       alto_banner_movil:
         58,
 
+
       espacio_banner_productos_movil:
         30,
+
 
       max_lineas_texto_productos_movil:
         2,
 
 
+
       popup_activo:
         true,
+
 
 
       frases_popup: [
@@ -2269,95 +3624,135 @@
 
         "Es una inversión.",
 
-        "Lo necesito."
+        "Lo necesito.",
+
+        "Esto sí suma.",
+
+        "Un gusto bien elegido.",
+
+        "Pequeño detalle, gran acierto.",
+
+        "Tiene sentido decir que sí.",
+
+        "Un regalo que no falla."
 
       ]
+
 
     };
 
 
 
+    /* =========================================================
+       FUENTES
+    ========================================================= */
+
     const FUENTES = {
 
+
       Poppins: {
+
         google:
           "Poppins:wght@400;500;600;700",
 
         family:
           '"Poppins", Arial, sans-serif'
+
       },
 
 
       Montserrat: {
+
         google:
           "Montserrat:wght@400;500;600;700",
 
         family:
           '"Montserrat", Arial, sans-serif'
+
       },
 
 
       Inter: {
+
         google:
           "Inter:wght@400;500;600;700",
 
         family:
           '"Inter", Arial, sans-serif'
+
       },
 
 
       Roboto: {
+
         google:
           "Roboto:wght@400;500;700",
 
         family:
           '"Roboto", Arial, sans-serif'
+
       },
 
 
       Lato: {
+
         google:
           "Lato:wght@400;700",
 
         family:
           '"Lato", Arial, sans-serif'
+
       }
+
 
     };
 
 
 
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
     let CONTACTO = {
+
 
       whatsapp:
         "+595985824098",
 
+
       email:
         "daiofficial.py@gmail.com",
+
 
       instagram:
         "@daiofficial.py"
 
+
     };
 
 
-
     let TEXTOS = {
+
       ...DEFAULT_TEXTOS
+
     };
 
 
     let BANNERS = [];
 
-    let bannerActual = 0;
-
-    let bannerTimer = null;
 
     let PRODUCTOS = [];
 
 
+    let bannerActual = 0;
+
+
+    let bannerTimer = null;
+
+
+
     /* =========================================================
-       FUNCIONES BÁSICAS
+       UTILIDADES
     ========================================================= */
 
     function numeroSeguro(
@@ -2367,15 +3762,39 @@
       max = Infinity
     ) {
 
-      const numero = Number(valor);
 
-      if (!Number.isFinite(numero)) {
+      /*
+         Esta función se utiliza SOLO
+         donde realmente esperamos números,
+         por ejemplo tamaños, orden, etc.
+
+         NO se utiliza automáticamente
+         sobre los precios.
+      */
+
+
+      const numero =
+        Number(valor);
+
+
+      if (
+        !Number.isFinite(numero)
+      ) {
+
         return respaldo;
+
       }
 
+
       return Math.min(
+
         max,
-        Math.max(min, numero)
+
+        Math.max(
+          min,
+          numero
+        )
+
       );
 
     }
@@ -2387,17 +3806,26 @@
       respaldo = true
     ) {
 
-      if (typeof valor === "boolean") {
+
+      if (
+        typeof valor === "boolean"
+      ) {
+
         return valor;
+
       }
+
 
       if (
         valor === null ||
         valor === undefined ||
         valor === ""
       ) {
+
         return respaldo;
+
       }
+
 
       const texto =
         String(valor)
@@ -2406,18 +3834,31 @@
 
 
       if (
-        ["false", "0", "no", "off"]
-          .includes(texto)
+        [
+          "false",
+          "0",
+          "no",
+          "off"
+        ].includes(texto)
       ) {
+
         return false;
+
       }
 
 
       if (
-        ["true", "1", "si", "sí", "on"]
-          .includes(texto)
+        [
+          "true",
+          "1",
+          "si",
+          "sí",
+          "on"
+        ].includes(texto)
       ) {
+
         return true;
+
       }
 
 
@@ -2431,121 +3872,240 @@
       valor = ""
     ) {
 
+
       return String(valor)
 
-        .replaceAll("&", "&amp;")
+        .replaceAll(
+          "&",
+          "&amp;"
+        )
 
-        .replaceAll("<", "&lt;")
+        .replaceAll(
+          "<",
+          "&lt;"
+        )
 
-        .replaceAll(">", "&gt;")
+        .replaceAll(
+          ">",
+          "&gt;"
+        )
 
-        .replaceAll('"', "&quot;")
+        .replaceAll(
+          '"',
+          "&quot;"
+        )
 
-        .replaceAll("'", "&#039;");
+        .replaceAll(
+          "'",
+          "&#039;"
+        );
 
     }
 
 
+
+    /* =========================================================
+       PRECIOS
+
+       CORRECCIÓN IMPORTANTE.
+
+       32.000 permanece 32.000
+       y NO se convierte en 32.
+    ========================================================= */
 
     function precioFormateado(
       precio
     ) {
 
+
       const valor =
-        String(precio ?? "")
-          .trim();
+        String(
+          precio ?? ""
+        ).trim();
 
 
       if (!valor) {
+
         return "Consultar";
+
       }
 
+
+
+      /*
+         Si ya dice Gs. o ₲,
+         no modificamos nada.
+      */
 
       if (
         /gs\.?/i.test(valor) ||
         /₲/.test(valor)
       ) {
+
         return valor;
+
       }
 
 
-      const soloNumeros =
-        valor.replace(/[^\d]/g, "");
 
+      /*
+         Caso:
+         32.000
+         120.000
+         1.200.000
 
-      if (!soloNumeros) {
-        return valor;
-      }
+         Conservamos el punto.
+      */
 
-
-      try {
-
-        return (
-          `${new Intl.NumberFormat("es-PY")
-            .format(Number(soloNumeros))} Gs.`
-        );
-
-      } catch {
+      if (
+        /^\d{1,3}(\.\d{3})+$/
+          .test(valor)
+      ) {
 
         return `${valor} Gs.`;
 
       }
 
+
+
+      /*
+         Caso:
+         32000
+         120000
+
+         Aquí sí agregamos separadores.
+      */
+
+      if (
+        /^\d+$/
+          .test(valor)
+      ) {
+
+
+        try {
+
+
+          const numero =
+            Number(valor);
+
+
+          return (
+
+            `${new Intl.NumberFormat("es-PY")
+              .format(numero)} Gs.`
+
+          );
+
+
+        } catch {
+
+
+          return `${valor} Gs.`;
+
+
+        }
+
+
+      }
+
+
+
+      /*
+         Cualquier formato diferente
+         se conserva como fue escrito.
+      */
+
+      return valor;
+
     }
 
 
+
+    /* =========================================================
+       RUTA DE IMÁGENES
+    ========================================================= */
 
     function rutaMedia(
       ruta
     ) {
 
+
       if (!ruta) {
+
         return "";
+
       }
 
 
       let valor =
-        String(ruta).trim();
-
-
-      if (
-        /^https?:\/\//i.test(valor)
-      ) {
-        return valor;
-      }
-
-
-      valor =
-        valor.replace(
-          /^\/?daipyofficial\//i,
-          ""
-        );
-
-
-      valor =
-        valor.replace(
-          /^\/+/,
-          ""
-        );
+        String(ruta)
+          .trim();
 
 
       /*
-        Decap CMS usa:
-        public_folder: /daipyofficial/public/uploads
-
-        Algunos archivos viejos pueden quedar como:
-        /daipyofficial/public/uploads/foto.jpg
-
-        Esta función los convierte correctamente a:
-        public/uploads/foto.jpg
+         URLs externas.
       */
 
       if (
-        valor.startsWith("uploads/")
+        /^https?:\/\//i
+          .test(valor)
       ) {
+
+        return valor;
+
+      }
+
+
+
+      /*
+         Quitar nombre del proyecto
+         si viene guardado en la ruta.
+      */
+
+      valor =
+        valor.replace(
+
+          /^\/?daipyofficial\//i,
+
+          ""
+
+        );
+
+
+
+      /*
+         Quitar slash inicial.
+      */
+
+      valor =
+        valor.replace(
+
+          /^\/+/,
+
+          ""
+
+        );
+
+
+
+      /*
+         Compatibilidad con
+         uploads/archivo.jpg
+      */
+
+      if (
+        valor.startsWith(
+          "uploads/"
+        )
+      ) {
+
+
         valor =
           `public/${valor}`;
+
+
       }
+
 
 
       return `./${valor}`;
@@ -2554,9 +4114,14 @@
 
 
 
+    /* =========================================================
+       JSON
+    ========================================================= */
+
     async function cargarJSON(
       ruta
     ) {
+
 
       const separador =
         ruta.includes("?")
@@ -2566,18 +4131,28 @@
 
       const respuesta =
         await fetch(
+
           `${ruta}${separador}v=${VERSION}`,
+
           {
-            cache: "no-store"
+            cache:
+              "no-store"
           }
+
         );
 
 
-      if (!respuesta.ok) {
+      if (
+        !respuesta.ok
+      ) {
+
 
         throw new Error(
+
           `No se pudo cargar ${ruta}`
+
         );
+
 
       }
 
@@ -2589,66 +4164,107 @@
 
 
     /* =========================================================
-       LECTURA DE ARCHIVOS MD
+       FRONT MATTER
     ========================================================= */
 
     function limpiarValorYaml(
       valor
     ) {
 
+
       let salida =
-        String(valor ?? "")
-          .trim();
+        String(
+          valor ?? ""
+        ).trim();
 
 
       if (
+
         (
           salida.startsWith('"') &&
           salida.endsWith('"')
         )
+
         ||
+
         (
           salida.startsWith("'") &&
           salida.endsWith("'")
         )
+
       ) {
 
+
         salida =
-          salida.slice(1, -1);
+          salida.slice(
+            1,
+            -1
+          );
+
 
       }
+
 
 
       salida =
         salida
-          .replace(/\\"/g, '"')
-          .replace(/\\'/g, "'");
+
+          .replace(
+            /\\"/g,
+            '"'
+          )
+
+          .replace(
+            /\\'/g,
+            "'"
+          );
 
 
-      if (salida === "true") {
+
+      if (
+        salida === "true"
+      ) {
+
         return true;
-      }
 
-
-      if (salida === "false") {
-        return false;
-      }
-
-
-      if (salida === "null") {
-        return "";
       }
 
 
       if (
-        /^-?\d+(\.\d+)?$/
-          .test(salida)
+        salida === "false"
       ) {
 
-        return Number(salida);
+        return false;
 
       }
 
+
+      if (
+        salida === "null"
+      ) {
+
+        return "";
+
+      }
+
+
+
+      /*
+         MUY IMPORTANTE:
+
+         NO CONVERTIMOS números
+         automáticamente.
+
+         Si un precio es:
+
+         32.000
+
+         debe permanecer exactamente:
+
+         "32.000"
+
+         y no convertirse a 32.
+      */
 
       return salida;
 
@@ -2660,22 +4276,32 @@
       texto = ""
     ) {
 
+
       const resultado = {};
 
 
       const normalizado =
         String(texto)
-          .replace(/\r\n/g, "\n");
+          .replace(
+            /\r\n/g,
+            "\n"
+          );
 
 
       const coincidencia =
         normalizado.match(
+
           /^---\s*\n([\s\S]*?)\n---/
+
         );
 
 
-      if (!coincidencia) {
+      if (
+        !coincidencia
+      ) {
+
         return resultado;
+
       }
 
 
@@ -2690,26 +4316,41 @@
         i++
       ) {
 
+
         const linea =
           lineas[i];
 
 
         if (
-          !linea ||
-          /^\s*#/.test(linea)
+
+          !linea
+
+          ||
+
+          /^\s*#/
+            .test(linea)
+
         ) {
+
           continue;
+
         }
 
 
         const match =
           linea.match(
+
             /^([A-Za-z0-9_-]+):\s*(.*)$/
+
           );
 
 
-        if (!match) {
+        if (
+          !match
+        ) {
+
           continue;
+
         }
 
 
@@ -2726,6 +4367,7 @@
           valor === ">"
         ) {
 
+
           const partes = [];
 
 
@@ -2733,19 +4375,36 @@
 
 
           while (
-            i < lineas.length &&
+
+            i < lineas.length
+
+            &&
+
             (
-              /^\s+/.test(lineas[i]) ||
+              /^\s+/
+                .test(lineas[i])
+
+              ||
+
               lineas[i] === ""
             )
+
           ) {
 
+
             partes.push(
+
               lineas[i]
-                .replace(/^\s{2}/, "")
+                .replace(
+                  /^\s{2}/,
+                  ""
+                )
+
             );
 
+
             i++;
+
 
           }
 
@@ -2754,22 +4413,30 @@
 
 
           resultado[clave] =
+
             partes
+
               .join(
                 valor === ">"
                   ? " "
                   : "\n"
               )
+
               .trim();
 
 
           continue;
 
+
         }
 
 
+
         resultado[clave] =
-          limpiarValorYaml(valor);
+          limpiarValorYaml(
+            valor
+          );
+
 
       }
 
@@ -2780,16 +4447,25 @@
 
 
 
+    /* =========================================================
+       COLECCIONES
+    ========================================================= */
+
     async function cargarColeccion(
       carpeta
     ) {
 
+
       const respuesta =
         await fetch(
+
           `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
+
           {
-            cache: "no-store"
+            cache:
+              "no-store"
           }
+
         );
 
 
@@ -2802,11 +4478,17 @@
       }
 
 
-      if (!respuesta.ok) {
+      if (
+        !respuesta.ok
+      ) {
+
 
         throw new Error(
+
           `No se pudo consultar ${carpeta}`
+
         );
+
 
       }
 
@@ -2815,73 +4497,110 @@
         await respuesta.json();
 
 
+
       const markdown =
         archivos
 
+
           .filter(
+
             archivo =>
-              archivo.type === "file" &&
+
+              archivo.type === "file"
+
+              &&
+
               archivo.name
                 .toLowerCase()
                 .endsWith(".md")
+
           )
 
+
           .sort(
-            (a, b) =>
+
+            (a,b) =>
+
               a.name.localeCompare(
                 b.name,
                 "es"
               )
+
           );
+
 
 
       const resultados =
         await Promise.all(
 
+
           markdown.map(
+
             async archivo => {
+
 
               try {
 
+
                 const response =
                   await fetch(
+
                     `${archivo.download_url}?v=${archivo.sha}`,
+
                     {
-                      cache: "no-store"
+                      cache:
+                        "no-store"
                     }
+
                   );
 
 
-                if (!response.ok) {
+                if (
+                  !response.ok
+                ) {
+
                   return null;
+
                 }
 
 
                 return {
 
+
                   nombreArchivo:
                     archivo.name,
 
+
                   datos:
                     parsearFrontMatter(
+
                       await response.text()
+
                     )
+
 
                 };
 
+
               } catch {
+
 
                 return null;
 
+
               }
 
+
             }
+
           )
+
 
         );
 
 
-      return resultados.filter(Boolean);
+      return resultados
+        .filter(Boolean);
 
     }
 
@@ -2895,9 +4614,12 @@
       config = {}
     ) {
 
+
       const nombre =
         FUENTES[config.fuente]
+
           ? config.fuente
+
           : "Poppins";
 
 
@@ -2911,29 +4633,46 @@
         );
 
 
-      if (googleFont) {
+      if (
+        googleFont
+      ) {
+
 
         googleFont.href =
+
           `https://fonts.googleapis.com/css2?family=${fuente.google}&display=swap`;
+
 
       }
 
 
-      document.documentElement
+
+      document
+        .documentElement
         .style
         .setProperty(
+
           "--fuente",
+
           fuente.family
+
         );
 
 
-      document.documentElement
+
+      document
+        .documentElement
         .style
         .setProperty(
+
           "--peso-precio",
+
           config.precio_negrita === false
+
             ? "400"
+
             : "700"
+
         );
 
     }
@@ -2942,27 +4681,42 @@
 
     async function cargarApariencia() {
 
+
       aplicarApariencia({
-        fuente: "Poppins",
-        precio_negrita: true
+
+        fuente:
+          "Poppins",
+
+        precio_negrita:
+          true
+
       });
 
 
       try {
 
+
         const config =
           await cargarJSON(
+
             "./contenido/configuracion/diseno.json"
+
           );
 
 
-        aplicarApariencia(config);
+        aplicarApariencia(
+          config
+        );
+
 
       } catch {
 
-        /* valores por defecto */
+
+        /* Mantener defaults */
+
 
       }
+
 
     }
 
@@ -2977,20 +4731,34 @@
       valor
     ) {
 
+
       const elemento =
-        document.getElementById(id);
+        document.getElementById(
+          id
+        );
 
 
       if (
-        elemento &&
-        valor !== undefined &&
+
+        elemento
+
+        &&
+
+        valor !== undefined
+
+        &&
+
         valor !== null
+
       ) {
+
 
         elemento.textContent =
           String(valor);
 
+
       }
+
 
     }
 
@@ -3000,295 +4768,420 @@
       config = {}
     ) {
 
+
       TEXTOS = {
+
         ...DEFAULT_TEXTOS,
+
         ...config
+
       };
 
 
+
       if (
+
         !Array.isArray(
           TEXTOS.frases_popup
         )
+
         ||
+
         !TEXTOS.frases_popup.length
+
       ) {
 
+
         TEXTOS.frases_popup =
-          [...DEFAULT_TEXTOS.frases_popup];
+
+          [
+            ...DEFAULT_TEXTOS.frases_popup
+          ];
+
 
       }
 
 
+
       setTexto(
+
         "topbar-text",
+
         TEXTOS.topbar_texto
+
       );
 
 
       setTexto(
+
         "contact-label",
+
         TEXTOS.contacto_etiqueta
+
       );
 
 
       setTexto(
+
         "header-products-text",
+
         TEXTOS.menu_productos
+
       );
 
 
       setTexto(
+
         "menu-inicio-text",
+
         TEXTOS.menu_inicio
+
       );
 
 
       setTexto(
+
         "menu-productos-text",
+
         TEXTOS.menu_productos
+
       );
 
 
       setTexto(
+
         "menu-contacto-text",
+
         TEXTOS.menu_contacto
+
       );
 
 
       setTexto(
+
         "hero-label",
+
         TEXTOS.hero_etiqueta
+
       );
 
 
       setTexto(
+
         "products-label",
+
         TEXTOS.productos_etiqueta
+
       );
 
 
       setTexto(
+
         "products-title",
+
         TEXTOS.productos_titulo
+
       );
 
 
       setTexto(
+
         "products-intro",
+
         TEXTOS.productos_texto
+
       );
 
 
       setTexto(
+
         "editorial-label",
+
         TEXTOS.editorial_etiqueta
+
       );
 
 
       setTexto(
+
         "editorial-text",
+
         TEXTOS.editorial_texto
+
       );
 
 
       setTexto(
+
         "footer-email-label",
+
         TEXTOS.footer_correo
+
       );
 
 
       setTexto(
+
         "footer-instagram-label",
+
         TEXTOS.footer_instagram
+
       );
 
 
       setTexto(
+
         "footer-orders-label",
+
         TEXTOS.footer_pedidos
+
       );
 
 
       setTexto(
+
         "footer-copy",
+
         TEXTOS.footer_copy
+
       );
 
 
       setTexto(
+
         "footer-country",
+
         TEXTOS.footer_pais
+
       );
 
 
       setTexto(
+
         "modal-eyebrow",
+
         TEXTOS.modal_etiqueta
+
       );
 
 
       setTexto(
+
         "modal-zoom-help",
+
         TEXTOS.modal_ayuda_zoom
+
       );
+
 
 
       const raiz =
         document.documentElement.style;
 
 
+
       raiz.setProperty(
+
         "--hero-title-desktop",
+
         `${numeroSeguro(
           TEXTOS.tamano_titulo_banner,
           72,
           24,
           120
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--hero-subtitle-desktop",
+
         `${numeroSeguro(
           TEXTOS.tamano_subtitulo_banner,
           14,
           9,
           28
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--products-title-desktop",
+
         `${numeroSeguro(
           TEXTOS.tamano_titulo_productos,
           64,
           24,
           100
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--products-text-desktop",
+
         `${numeroSeguro(
           TEXTOS.tamano_texto_productos,
           13,
           9,
           24
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--editorial-text-desktop",
+
         `${numeroSeguro(
           TEXTOS.tamano_editorial,
           56,
           24,
           100
         )}px`
+
       );
 
 
+
       raiz.setProperty(
+
         "--hero-title-mobile",
+
         `${numeroSeguro(
           TEXTOS.tamano_titulo_banner_movil,
           34,
           22,
           60
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--hero-subtitle-mobile",
+
         `${numeroSeguro(
           TEXTOS.tamano_subtitulo_banner_movil,
           12,
           9,
           22
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--products-title-mobile",
+
         `${numeroSeguro(
           TEXTOS.tamano_titulo_productos_movil,
           30,
           20,
           54
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--products-text-mobile",
+
         `${numeroSeguro(
           TEXTOS.tamano_texto_productos_movil,
           11,
           9,
           20
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--editorial-text-mobile",
+
         `${numeroSeguro(
           TEXTOS.tamano_editorial_movil,
           30,
           20,
           56
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--hero-mobile-height",
+
         `${numeroSeguro(
           TEXTOS.alto_banner_movil,
           58,
           42,
           78
         )}svh`
+
       );
 
 
       raiz.setProperty(
+
         "--products-mobile-top-space",
+
         `${numeroSeguro(
           TEXTOS.espacio_banner_productos_movil,
           30,
           12,
           100
         )}px`
+
       );
 
 
       raiz.setProperty(
+
         "--products-mobile-lines",
+
         String(
+
           Math.round(
+
             numeroSeguro(
+
               TEXTOS.max_lineas_texto_productos_movil,
+
               2,
+
               1,
+
               8
+
             )
+
           )
+
         )
+
       );
+
 
     }
 
 
 
     async function cargarTextos() {
+
 
       aplicarTextos(
         DEFAULT_TEXTOS
@@ -3297,22 +5190,28 @@
 
       try {
 
+
         const config =
           await cargarJSON(
+
             "./contenido/textos.json"
+
           );
 
 
-        aplicarTextos(config);
+        aplicarTextos(
+          config
+        );
+
 
       } catch {
 
-        /*
-          Si textos.json aún no existe
-          la web igual funciona.
-        */
+
+        /* Defaults */
+
 
       }
+
 
     }
 
@@ -3324,10 +5223,15 @@
 
     function whatsappNumero() {
 
+
       return String(
         CONTACTO.whatsapp || ""
       )
-      .replace(/\D/g, "");
+      .replace(
+        /\D/g,
+        ""
+      );
+
 
     }
 
@@ -3337,14 +5241,20 @@
       mensaje = ""
     ) {
 
+
       let url =
         `https://wa.me/${whatsappNumero()}`;
 
 
-      if (mensaje) {
+      if (
+        mensaje
+      ) {
+
 
         url +=
+
           `?text=${encodeURIComponent(mensaje)}`;
+
 
       }
 
@@ -3355,44 +5265,53 @@
 
 
 
-    function instagramUsuario() {
-
-      return String(
-        CONTACTO.instagram || ""
-      )
-      .trim()
-      .replace(/^@/, "");
-
-    }
-
-
-
     function aplicarContacto() {
+
 
       const email =
         CONTACTO.email || "";
 
 
-      const instagram =
-        instagramUsuario();
+      const usuarioInstagram =
+
+        String(
+          CONTACTO.instagram || ""
+        )
+
+        .trim()
+
+        .replace(
+          /^@/,
+          ""
+        );
 
 
       const instagramTexto =
-        instagram
-          ? `@${instagram}`
+
+        usuarioInstagram
+
+          ? `@${usuarioInstagram}`
+
           : "";
 
 
       const instagramURL =
-        instagram
-          ? `https://www.instagram.com/${instagram}/`
+
+        usuarioInstagram
+
+          ? `https://www.instagram.com/${usuarioInstagram}/`
+
           : "#";
 
 
       const whatsappGeneral =
+
         whatsappURL(
+
           "Hola DAI PY, quisiera realizar una consulta."
+
         );
+
 
 
       [
@@ -3400,14 +5319,19 @@
         "menu-email",
         "footer-email"
       ]
+
       .forEach(
         id => {
+
 
           const elemento =
             document.getElementById(id);
 
 
-          if (elemento) {
+          if (
+            elemento
+          ) {
+
 
             elemento.textContent =
               email;
@@ -3416,10 +5340,13 @@
             elemento.href =
               `mailto:${email}`;
 
+
           }
+
 
         }
       );
+
 
 
       [
@@ -3427,14 +5354,19 @@
         "menu-instagram",
         "footer-instagram"
       ]
+
       .forEach(
         id => {
+
 
           const elemento =
             document.getElementById(id);
 
 
-          if (elemento) {
+          if (
+            elemento
+          ) {
+
 
             elemento.textContent =
               instagramTexto;
@@ -3443,10 +5375,13 @@
             elemento.href =
               instagramURL;
 
+
           }
+
 
         }
       );
+
 
 
       [
@@ -3454,22 +5389,30 @@
         "menu-whatsapp",
         "footer-whatsapp"
       ]
+
       .forEach(
         id => {
+
 
           const elemento =
             document.getElementById(id);
 
 
-          if (elemento) {
+          if (
+            elemento
+          ) {
+
 
             elemento.href =
               whatsappGeneral;
 
+
           }
+
 
         }
       );
+
 
     }
 
@@ -3477,26 +5420,34 @@
 
     async function cargarContacto() {
 
+
       try {
+
 
         CONTACTO = {
 
           ...CONTACTO,
 
           ...(await cargarJSON(
+
             "./contenido/configuracion/contacto.json"
+
           ))
 
         };
 
+
       } catch {
 
-        /* valores por defecto */
+
+        /* Default */
+
 
       }
 
 
       aplicarContacto();
+
 
     }
 
@@ -3508,6 +5459,7 @@
 
     function abrirMenu() {
 
+
       document
         .getElementById("menu")
         .classList
@@ -3518,11 +5470,13 @@
         .classList
         .add("menu-abierto");
 
+
     }
 
 
 
     function cerrarMenu() {
+
 
       document
         .getElementById("menu")
@@ -3533,6 +5487,7 @@
       document.body
         .classList
         .remove("menu-abierto");
+
 
     }
 
@@ -3546,24 +5501,36 @@
       indice
     ) {
 
-      if (!BANNERS.length) {
+
+      if (
+        !BANNERS.length
+      ) {
+
         return;
-      }
-
-
-      if (indice < 0) {
-
-        indice =
-          BANNERS.length - 1;
 
       }
 
 
       if (
-        indice >= BANNERS.length
+        indice < 0
       ) {
 
+
+        indice =
+          BANNERS.length - 1;
+
+
+      }
+
+
+      if (
+        indice >=
+        BANNERS.length
+      ) {
+
+
         indice = 0;
+
 
       }
 
@@ -3572,22 +5539,35 @@
         indice;
 
 
+
       document
         .querySelectorAll(
           ".hero-slide"
         )
+
         .forEach(
-          (imagen, posicion) => {
+
+          (
+            imagen,
+            posicion
+          ) => {
+
 
             imagen
               .classList
               .toggle(
+
                 "activo",
+
                 posicion === indice
+
               );
 
+
           }
+
         );
+
 
 
       const banner =
@@ -3595,17 +5575,24 @@
 
 
       document
-        .getElementById("hero-title")
+        .getElementById(
+          "hero-title"
+        )
         .textContent =
+
           banner.titulo ||
           "DAI PY";
 
 
       document
-        .getElementById("hero-subtitle")
+        .getElementById(
+          "hero-subtitle"
+        )
         .textContent =
+
           banner.subtitulo ||
           "";
+
 
     }
 
@@ -3613,11 +5600,16 @@
 
     function iniciarCarrusel() {
 
-      if (bannerTimer) {
+
+      if (
+        bannerTimer
+      ) {
+
 
         clearInterval(
           bannerTimer
         );
+
 
       }
 
@@ -3626,19 +5618,30 @@
         BANNERS.length > 1
       ) {
 
+
         bannerTimer =
+
           setInterval(
+
             () => {
 
+
               actualizarBanner(
+
                 bannerActual + 1
+
               );
 
+
             },
+
             6500
+
           );
 
+
       }
+
 
     }
 
@@ -3646,73 +5649,122 @@
 
     async function cargarBanners() {
 
+
       try {
+
 
         const archivos =
           await cargarColeccion(
+
             "contenido/banners"
+
           );
 
 
+
         BANNERS =
+
           archivos
 
             .map(
+
               archivo => ({
+
 
                 titulo:
                   archivo.datos.titulo || "",
 
+
                 subtitulo:
                   archivo.datos.subtitulo || "",
+
 
                 imagen:
                   archivo.datos.imagen || "",
 
+
                 activo:
                   booleanoSeguro(
+
                     archivo.datos.activo,
+
                     true
+
                   ),
+
 
                 orden:
                   numeroSeguro(
+
                     archivo.datos.orden,
+
                     999,
+
                     1,
+
                     9999
+
                   )
 
+
               })
+
             )
+
 
             .filter(
+
               banner =>
-                banner.activo &&
+
+                banner.activo
+
+                &&
+
                 banner.imagen
+
             )
 
+
             .sort(
-              (a, b) =>
+
+              (a,b) =>
                 a.orden - b.orden
+
             );
+
 
 
         const media =
           document.getElementById(
+
             "hero-media"
+
           );
 
 
+
         media.innerHTML = `
+
           <div class="hero-fallback">
-            <img src="./logo.png" alt="DAI PY">
+
+            <img
+              src="./logo.png"
+              alt="DAI PY"
+            >
+
           </div>
+
         `;
 
 
+
         BANNERS.forEach(
-          (banner, indice) => {
+
+          (
+            banner,
+            indice
+          ) => {
+
 
             const imagen =
               document.createElement(
@@ -3724,11 +5776,15 @@
               "hero-slide";
 
 
-            if (indice === 0) {
+            if (
+              indice === 0
+            ) {
+
 
               imagen.classList.add(
                 "activo"
               );
+
 
             }
 
@@ -3754,8 +5810,11 @@
               imagen
             );
 
+
           }
+
         );
+
 
 
         document
@@ -3764,52 +5823,82 @@
           )
           .classList
           .toggle(
+
             "oculto",
+
             BANNERS.length <= 1
+
           );
+
 
 
         if (
           BANNERS.length
         ) {
 
+
           actualizarBanner(0);
+
 
           iniciarCarrusel();
 
+
         }
 
-      } catch (error) {
+
+      } catch (
+        error
+      ) {
+
 
         console.error(
+
           "Error cargando banners:",
+
           error
+
         );
 
+
       }
+
 
     }
 
 
 
     /* =========================================================
-       PRODUCTOS
+       COMPRA
     ========================================================= */
 
     function mensajeCompra(
       producto
     ) {
 
+
       let mensaje =
-        `Hola DAI PY, quiero realizar un pedido.\n\n` +
-        `Producto: ${producto.nombre}\n` +
+
+        `Hola DAI PY, quiero realizar un pedido.\n\n`
+
+        +
+
+        `Producto: ${producto.nombre}\n`
+
+        +
+
         `Precio: ${precioFormateado(producto.precio)}`;
 
 
-      if (producto.desc) {
+
+      if (
+        producto.desc
+      ) {
+
 
         mensaje +=
+
           `\n\n${producto.desc}`;
+
 
       }
 
@@ -3820,10 +5909,15 @@
 
 
 
+    /* =========================================================
+       PRODUCTO HTML
+    ========================================================= */
+
     function htmlProducto(
       producto,
       indice
     ) {
+
 
       const nombre =
         escaparHTML(
@@ -3833,13 +5927,15 @@
 
       const precio =
         escaparHTML(
+
           precioFormateado(
             producto.precio
           )
+
         );
 
 
-      const desc =
+      const descripcion =
         escaparHTML(
           producto.desc || ""
         );
@@ -3863,83 +5959,144 @@
         );
 
 
-      const media =
+
+      const imagenHTML =
+
         imagen
+
           ? `
+
             <img
+
               src="${escaparHTML(imagen)}"
+
               alt="${nombre}"
+
               loading="${indice < 2 ? "eager" : "lazy"}"
+
+              decoding="async"
+
             >
+
           `
+
           : `
-            <div class="product-image-fallback">
+
+            <div
+              class="product-image-fallback"
+            >
+
               <img
                 src="./logo.png"
                 alt="DAI PY"
               >
+
             </div>
+
           `;
+
 
 
       return `
 
+
         <article
+
           class="product"
+
           tabindex="0"
+
           data-product-index="${indice}"
+
+          aria-label="Ver ${nombre}"
+
         >
+
 
           <div class="product-image">
 
-            ${media}
+
+            ${imagenHTML}
+
 
             <span class="product-zoom-hint">
+
               ${textoZoom}
+
             </span>
 
+
           </div>
+
 
 
           <div class="product-row">
 
+
             <div class="product-name">
+
               ${nombre}
+
             </div>
 
 
             <div class="product-price">
+
               ${precio}
+
             </div>
 
 
             <a
+
               class="purchase-button product-buy-button"
+
               href="${escaparHTML(
+
                 whatsappURL(
+
                   mensajeCompra(producto)
+
                 )
+
               )}"
+
               target="_blank"
+
               rel="noopener noreferrer"
+
             >
+
               ${botonComprar}
+
             </a>
+
 
           </div>
 
 
+
           ${
-            desc
+
+            descripcion
+
               ? `
+
                 <p class="product-description">
-                  ${desc}
+
+                  ${descripcion}
+
                 </p>
+
               `
+
               : ""
+
           }
 
+
         </article>
+
 
       `;
 
@@ -3947,9 +6104,14 @@
 
 
 
+    /* =========================================================
+       MOSTRAR PRODUCTOS
+    ========================================================= */
+
     function mostrarProductos(
       productos
     ) {
+
 
       PRODUCTOS =
         productos;
@@ -3961,7 +6123,11 @@
         );
 
 
-      if (!productos.length) {
+
+      if (
+        !productos.length
+      ) {
+
 
         grid.className =
           "products-grid";
@@ -3986,161 +6152,253 @@
 
         return;
 
+
       }
 
 
+
       grid.className =
+
         productos.length === 1
+
           ? "products-grid unico"
+
           : "products-grid";
 
 
+
       grid.innerHTML =
+
         productos
+
           .map(
-            (producto, indice) =>
+
+            (
+              producto,
+              indice
+            ) =>
+
               htmlProducto(
                 producto,
                 indice
               )
+
           )
+
           .join("");
+
 
 
       grid
         .querySelectorAll(
           ".product"
         )
+
         .forEach(
+
           tarjeta => {
 
+
             const indice =
+
               Number(
-                tarjeta.dataset.productIndex
+
+                tarjeta
+                  .dataset
+                  .productIndex
+
               );
 
 
+
             tarjeta.addEventListener(
+
               "click",
+
               evento => {
 
+
                 if (
+
                   evento.target.closest(
+
                     ".product-buy-button"
+
                   )
+
                 ) {
+
+
                   return;
+
+
                 }
 
 
                 abrirProducto(
+
                   PRODUCTOS[indice]
+
                 );
 
+
               }
+
             );
 
 
+
             tarjeta.addEventListener(
+
               "keydown",
+
               evento => {
 
-                if (
-                  evento.key === "Enter" ||
-                  evento.key === " "
-                ) {
 
-                  if (
-                    evento.target.closest(
-                      ".product-buy-button"
-                    )
-                  ) {
-                    return;
-                  }
+                if (
+
+                  evento.key === "Enter"
+
+                  ||
+
+                  evento.key === " "
+
+                ) {
 
 
                   evento.preventDefault();
 
 
                   abrirProducto(
+
                     PRODUCTOS[indice]
+
                   );
+
 
                 }
 
+
               }
+
             );
 
+
           }
+
         );
+
 
 
       grid
         .querySelectorAll(
           ".product-buy-button"
         )
+
         .forEach(
+
           boton => {
 
+
             boton.addEventListener(
+
               "click",
+
               evento => {
+
 
                 evento.stopPropagation();
 
+
               }
+
             );
 
+
           }
+
         );
+
 
     }
 
 
 
+    /* =========================================================
+       CARGAR PRODUCTOS
+    ========================================================= */
+
     async function cargarProductos() {
+
 
       try {
 
+
         const archivos =
           await cargarColeccion(
+
             "contenido/productos"
+
           );
 
 
+
         const productos =
+
           archivos.map(
+
             archivo => ({
+
 
               nombre:
                 archivo.datos.nombre ||
                 "Producto",
 
+
               img:
                 archivo.datos.img ||
                 "",
+
+
+              /*
+                 PRECIO SE CONSERVA
+                 COMO TEXTO.
+
+                 No hacemos Number().
+              */
 
               precio:
                 archivo.datos.precio ||
                 "",
 
+
               desc:
                 archivo.datos.desc ||
                 ""
 
+
             })
+
           );
+
 
 
         mostrarProductos(
           productos
         );
 
-      } catch (error) {
+
+      } catch (
+        error
+      ) {
+
 
         console.error(
+
           "Error cargando productos:",
+
           error
+
         );
 
 
@@ -4150,97 +6408,157 @@
           )
           .innerHTML = `
 
+
             <div class="empty-state">
+
 
               <strong>
                 No se pudieron cargar los productos.
               </strong>
 
+
               <span>
                 Recargá la página.
               </span>
 
+
             </div>
+
 
           `;
 
+
       }
+
 
     }
 
 
 
     /* =========================================================
-       FRASES ALEATORIAS
+       FRASES RANDOM
     ========================================================= */
 
     function frasesAleatorias(
       cantidad = 2
     ) {
 
+
       const base =
+
         (
+
           Array.isArray(
             TEXTOS.frases_popup
           )
+
             ? TEXTOS.frases_popup
+
             : DEFAULT_TEXTOS.frases_popup
+
         )
 
+
         .map(
+
           frase =>
-            String(frase || "")
-              .trim()
+
+            String(
+              frase || ""
+            ).trim()
+
         )
+
 
         .filter(Boolean);
 
 
-      if (!base.length) {
 
-        return DEFAULT_TEXTOS
-          .frases_popup
-          .slice(0, cantidad);
+      if (
+        !base.length
+      ) {
+
+
+        return (
+
+          DEFAULT_TEXTOS
+            .frases_popup
+            .slice(
+              0,
+              cantidad
+            )
+
+        );
+
 
       }
+
 
 
       const mezcladas =
         [...base];
 
 
+
       for (
-        let i = mezcladas.length - 1;
+
+        let i =
+          mezcladas.length - 1;
+
         i > 0;
+
         i--
+
       ) {
 
+
         const j =
+
           Math.floor(
-            Math.random() *
+
+            Math.random()
+            *
             (i + 1)
+
           );
 
 
         [
+
           mezcladas[i],
+
           mezcladas[j]
-        ] = [
+
+        ]
+
+        =
+
+        [
+
           mezcladas[j],
+
           mezcladas[i]
+
         ];
 
+
       }
+
 
 
       if (
         mezcladas.length === 1
       ) {
 
+
         return [
+
           mezcladas[0],
+
           mezcladas[0]
+
         ];
+
 
       }
 
@@ -4254,11 +6572,8 @@
 
 
 
-    /* =========================================================
-       MODAL
-    ========================================================= */
-
     function aplicarFrasesModal() {
+
 
       const bubbleOne =
         document.getElementById(
@@ -4274,9 +6589,13 @@
 
       const activo =
         booleanoSeguro(
+
           TEXTOS.popup_activo,
+
           true
+
         );
+
 
 
       bubbleOne.style.display =
@@ -4291,9 +6610,14 @@
           : "none";
 
 
-      if (!activo) {
+      if (
+        !activo
+      ) {
+
         return;
+
       }
+
 
 
       const frases =
@@ -4311,12 +6635,21 @@
 
 
 
+    /* =========================================================
+       ABRIR PRODUCTO
+    ========================================================= */
+
     function abrirProducto(
       producto
     ) {
 
-      if (!producto) {
+
+      if (
+        !producto
+      ) {
+
         return;
+
       }
 
 
@@ -4344,17 +6677,24 @@
         );
 
 
+
       imagen.src =
+
         rutaMedia(
           producto.img
         )
+
         ||
+
         "./logo.png";
 
 
       imagen.alt =
+
         producto.nombre ||
+
         "Producto";
+
 
 
       document
@@ -4362,8 +6702,11 @@
           "modal-product-name"
         )
         .textContent =
+
           producto.nombre ||
+
           "Producto";
+
 
 
       document
@@ -4371,9 +6714,13 @@
           "modal-product-price"
         )
         .textContent =
+
           precioFormateado(
+
             producto.precio
+
           );
+
 
 
       document
@@ -4381,30 +6728,49 @@
           "modal-product-description"
         )
         .textContent =
+
           producto.desc ||
+
           "";
+
 
 
       comprar.textContent =
         TEXTOS.boton_comprar;
 
 
+
       comprar.href =
+
         whatsappURL(
+
           mensajeCompra(producto)
+
         );
 
 
-      marco.classList.remove(
-        "zoom-activo"
-      );
+
+      marco
+        .classList
+        .remove(
+          "zoom-activo"
+        );
 
 
       aplicarFrasesModal();
 
 
-      modal.classList.add(
-        "abierto"
+
+      modal
+        .classList
+        .add(
+          "abierto"
+        );
+
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
       );
 
 
@@ -4414,18 +6780,35 @@
           "modal-abierto"
         );
 
+
     }
 
 
 
+    /* =========================================================
+       CERRAR PRODUCTO
+    ========================================================= */
+
     function cerrarProducto() {
 
-      document
-        .getElementById(
+
+      const modal =
+        document.getElementById(
           "product-modal"
-        )
+        );
+
+
+      modal
         .classList
-        .remove("abierto");
+        .remove(
+          "abierto"
+        );
+
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
 
 
       document
@@ -4444,11 +6827,17 @@
           "modal-abierto"
         );
 
+
     }
 
 
 
+    /* =========================================================
+       ZOOM
+    ========================================================= */
+
     function alternarZoomModal() {
+
 
       document
         .getElementById(
@@ -4458,6 +6847,7 @@
         .toggle(
           "zoom-activo"
         );
+
 
     }
 
@@ -4472,9 +6862,13 @@
         "open-menu"
       )
       .addEventListener(
+
         "click",
+
         abrirMenu
+
       );
+
 
 
     document
@@ -4482,9 +6876,13 @@
         "close-menu"
       )
       .addEventListener(
+
         "click",
+
         cerrarMenu
+
       );
+
 
 
     document
@@ -4492,35 +6890,54 @@
         "menu"
       )
       .addEventListener(
+
         "click",
+
         evento => {
 
+
           if (
-            evento.target.id === "menu"
+            evento.target.id ===
+            "menu"
           ) {
+
 
             cerrarMenu();
 
+
           }
 
+
         }
+
       );
+
 
 
     document
       .querySelectorAll(
+
         ".menu-links a, .menu-logo"
+
       )
       .forEach(
+
         enlace => {
 
+
           enlace.addEventListener(
+
             "click",
+
             cerrarMenu
+
           );
 
+
         }
+
       );
+
 
 
     document
@@ -4528,17 +6945,26 @@
         "previous-banner"
       )
       .addEventListener(
+
         "click",
+
         () => {
 
+
           actualizarBanner(
+
             bannerActual - 1
+
           );
+
 
           iniciarCarrusel();
 
+
         }
+
       );
+
 
 
     document
@@ -4546,17 +6972,26 @@
         "next-banner"
       )
       .addEventListener(
+
         "click",
+
         () => {
 
+
           actualizarBanner(
+
             bannerActual + 1
+
           );
+
 
           iniciarCarrusel();
 
+
         }
+
       );
+
 
 
     document
@@ -4564,9 +6999,13 @@
         "modal-close"
       )
       .addEventListener(
+
         "click",
+
         cerrarProducto
+
       );
+
 
 
     document
@@ -4574,20 +7013,28 @@
         "product-modal"
       )
       .addEventListener(
+
         "click",
+
         evento => {
+
 
           if (
             evento.target.id ===
             "product-modal"
           ) {
 
+
             cerrarProducto();
+
 
           }
 
+
         }
+
       );
+
 
 
     document
@@ -4595,20 +7042,30 @@
         "modal-image-frame"
       )
       .addEventListener(
+
         "click",
+
         alternarZoomModal
+
       );
 
 
+
     document.addEventListener(
+
       "keydown",
+
       evento => {
 
+
         if (
-          evento.key === "Escape"
+          evento.key ===
+          "Escape"
         ) {
 
+
           if (
+
             document
               .getElementById(
                 "product-modal"
@@ -4617,55 +7074,74 @@
               .contains(
                 "abierto"
               )
+
           ) {
+
 
             cerrarProducto();
 
-            return;
+
+          } else {
+
+
+            cerrarMenu();
+
 
           }
 
 
-          cerrarMenu();
-
         }
 
+
       }
+
     );
 
 
 
     /* =========================================================
-       INICIAR
+       INICIAR WEB
     ========================================================= */
 
     async function iniciar() {
 
+
       await Promise.allSettled([
+
 
         cargarApariencia(),
 
+
         cargarTextos(),
+
 
         cargarContacto()
 
+
       ]);
+
 
 
       await Promise.allSettled([
 
+
         cargarBanners(),
+
 
         cargarProductos()
 
+
       ]);
+
 
     }
 
 
     iniciar();
 
+
   </script>
+
 
 </body>
 </html>
