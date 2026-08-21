@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="DAI PY - Tienda Oficial">
-  <meta name="theme-color" content="#f2f0eb">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="DAI PY - Tienda Oficial"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f2f0eb"
+  >
 
   <title>DAI PY — Tienda Oficial</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     id="google-font"
@@ -17,9 +40,15 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
   >
 
+
   <style>
 
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
     :root {
+
       --fondo: #f2f0eb;
       --texto: #141414;
       --suave: #77736d;
@@ -27,72 +56,118 @@
       --oscuro: #151515;
       --blanco: #ffffff;
 
-      --fuente: "Poppins", Arial, sans-serif;
+      --fuente:
+        "Poppins",
+        Arial,
+        sans-serif;
+
       --peso-precio: 700;
 
       --hero-title-desktop: 72px;
       --hero-subtitle-desktop: 14px;
+
       --products-title-desktop: 64px;
       --products-text-desktop: 13px;
+
       --editorial-text-desktop: 56px;
 
       --hero-title-mobile: 34px;
       --hero-subtitle-mobile: 12px;
+
       --products-title-mobile: 30px;
       --products-text-mobile: 11px;
+
       --editorial-text-mobile: 30px;
 
-      --hero-mobile-height: 58svh;
-      --products-mobile-top-space: 30px;
+      --products-mobile-top-space: 28px;
+
       --products-mobile-lines: 2;
+
+      /*
+        Se actualiza automáticamente
+        cuando carga el banner.
+      */
+      --hero-mobile-aspect: 16 / 9;
+
     }
 
 
+    /* =========================================================
+       GENERAL
+    ========================================================= */
+
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
 
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
 
     body {
-      background: var(--fondo);
-      color: var(--texto);
 
-      font-family: var(--fuente);
+      background:
+        var(--fondo);
 
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      color:
+        var(--texto);
+
+      font-family:
+        var(--fuente);
+
+      -webkit-font-smoothing:
+        antialiased;
+
+      text-rendering:
+        optimizeLegibility;
+
     }
 
 
     body.menu-abierto,
     body.modal-abierto {
+
       overflow: hidden;
-    }
 
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-
-    button {
-      color: inherit;
-      font: inherit;
     }
 
 
     img {
+
       display: block;
+
       max-width: 100%;
+
     }
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    button {
+
+      color: inherit;
+
+      font: inherit;
+
+    }
+
 
 
     /* =========================================================
@@ -100,37 +175,53 @@
     ========================================================= */
 
     .topbar {
+
       min-height: 30px;
 
-      padding: 7px 20px;
+      padding:
+        7px 20px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      background: var(--oscuro);
-      color: var(--blanco);
+      background:
+        var(--oscuro);
+
+      color:
+        var(--blanco);
 
       font-size: 9px;
+
       font-weight: 500;
 
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
       text-align: center;
+
     }
 
 
+
     /* =========================================================
-       CONTACTO
+       CONTACTO SUPERIOR
     ========================================================= */
 
     .contact-bar {
+
       min-height: 40px;
 
-      padding: 8px 28px;
+      padding:
+        8px 28px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
@@ -139,40 +230,53 @@
         1px solid var(--linea);
 
       font-size: 10px;
+
     }
 
 
     .contact-label {
-      color: var(--suave);
+
+      color:
+        var(--suave);
 
       font-weight: 500;
 
       letter-spacing: .12em;
+
       text-transform: uppercase;
+
     }
 
 
     .contact-links {
+
       display: flex;
+
       align-items: center;
 
       gap: 25px;
+
     }
 
 
     .contact-links a,
     .menu-contact a,
     .footer-item a {
+
       transition:
         opacity .2s ease;
+
     }
 
 
     .contact-links a:hover,
     .menu-contact a:hover,
     .footer-item a:hover {
+
       opacity: .55;
+
     }
+
 
 
     /* =========================================================
@@ -180,9 +284,11 @@
     ========================================================= */
 
     .header {
+
       height: 76px;
 
-      padding: 0 28px;
+      padding:
+        0 28px;
 
       display: grid;
 
@@ -194,6 +300,7 @@
       position: sticky;
 
       top: 0;
+
       z-index: 50;
 
       background:
@@ -207,49 +314,65 @@
 
       border-bottom:
         1px solid var(--linea);
+
     }
 
 
     .menu-button {
+
       justify-self: start;
 
       border: 0;
+
       background: transparent;
 
       cursor: pointer;
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: .13em;
+
       text-transform: uppercase;
+
     }
 
 
     .header-logo {
+
       justify-self: center;
+
     }
 
 
     .header-logo img {
+
       width: auto;
 
       max-width: 110px;
+
       max-height: 50px;
 
       object-fit: contain;
+
     }
 
 
     .header-products {
+
       justify-self: end;
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: .13em;
+
       text-transform: uppercase;
+
     }
+
 
 
     /* =========================================================
@@ -257,6 +380,7 @@
     ========================================================= */
 
     .menu-overlay {
+
       position: fixed;
 
       inset: 0;
@@ -264,6 +388,7 @@
       z-index: 100;
 
       visibility: hidden;
+
       opacity: 0;
 
       background:
@@ -272,24 +397,33 @@
       transition:
         opacity .3s ease,
         visibility .3s ease;
+
     }
 
 
     .menu-overlay.abierto {
+
       visibility: visible;
+
       opacity: 1;
+
     }
 
 
     .menu-panel {
+
       width:
-        min(440px, 90vw);
+        min(
+          440px,
+          90vw
+        );
 
       height: 100%;
 
       padding: 28px;
 
       display: flex;
+
       flex-direction: column;
 
       background:
@@ -300,37 +434,48 @@
 
       transition:
         transform .35s ease;
+
     }
 
 
     .menu-overlay.abierto
     .menu-panel {
+
       transform:
         translateX(0);
+
     }
 
 
     .menu-top {
+
       padding-bottom: 28px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       border-bottom:
         1px solid var(--linea);
+
     }
 
 
     .menu-logo img {
+
       width: auto;
 
       max-width: 100px;
+
       max-height: 50px;
+
     }
 
 
     .menu-close {
+
       border: 0;
 
       background: transparent;
@@ -338,24 +483,31 @@
       cursor: pointer;
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: .12em;
+
       text-transform: uppercase;
+
     }
 
 
     .menu-links {
+
       padding-top: 48px;
 
       display: flex;
+
       flex-direction: column;
 
       gap: 10px;
+
     }
 
 
     .menu-links a {
+
       font-size:
         clamp(
           34px,
@@ -366,16 +518,20 @@
       font-weight: 500;
 
       line-height: 1.08;
+
       letter-spacing: -.045em;
+
     }
 
 
     .menu-contact {
+
       margin-top: auto;
 
       padding-top: 25px;
 
       display: flex;
+
       flex-direction: column;
 
       gap: 9px;
@@ -383,22 +539,29 @@
       border-top:
         1px solid var(--linea);
 
-      color: var(--suave);
+      color:
+        var(--suave);
 
       font-size: 11px;
+
     }
 
 
+
     /* =========================================================
-       HERO
+       HERO / BANNER
     ========================================================= */
 
     .hero {
+
       width:
         calc(100% - 28px);
 
       height:
-        min(79vh, 850px);
+        min(
+          79vh,
+          850px
+        );
 
       min-height: 570px;
 
@@ -409,47 +572,72 @@
 
       overflow: hidden;
 
-      background: #d8d4cc;
+      background:
+        #d8d4cc;
+
     }
 
 
     .hero-media,
     .hero-fallback {
+
       position: absolute;
 
       inset: 0;
+
     }
 
 
     .hero-fallback {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      background: #dedad2;
+      background:
+        #dedad2;
+
     }
 
 
     .hero-fallback img {
+
       width:
-        min(240px, 45vw);
+        min(
+          240px,
+          45vw
+        );
 
       height: auto;
 
       opacity: .5;
+
     }
 
 
+    /*
+       ESCRITORIO:
+
+       cover está bien porque queremos
+       un banner grande de portada.
+    */
+
     .hero-slide {
+
       position: absolute;
 
       inset: 0;
 
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
-      object-position: center;
+
+      object-position:
+        center center;
 
       opacity: 0;
 
@@ -459,18 +647,22 @@
       transition:
         opacity .7s ease,
         transform 7s ease;
+
     }
 
 
     .hero-slide.activo {
+
       opacity: 1;
 
       transform:
         scale(1.04);
+
     }
 
 
     .hero::after {
+
       content: "";
 
       position: absolute;
@@ -488,10 +680,12 @@
           rgba(0,0,0,.15) 50%,
           rgba(0,0,0,.02)
         );
+
     }
 
 
     .hero-content {
+
       position: absolute;
 
       z-index: 3;
@@ -512,22 +706,29 @@
 
       max-width: 850px;
 
-      color: var(--blanco);
+      color:
+        var(--blanco);
+
     }
 
 
     .hero-label {
+
       margin-bottom: 15px;
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: .18em;
+
       text-transform: uppercase;
+
     }
 
 
     .hero-title {
+
       max-width: 800px;
 
       font-size:
@@ -540,13 +741,16 @@
       font-weight: 500;
 
       line-height: .99;
+
       letter-spacing: -.055em;
 
       text-wrap: balance;
+
     }
 
 
     .hero-subtitle {
+
       max-width: 580px;
 
       margin-top: 18px;
@@ -555,30 +759,38 @@
         var(--hero-subtitle-desktop);
 
       line-height: 1.55;
+
     }
 
 
     .hero-controls {
+
       position: absolute;
 
       z-index: 4;
 
       right: 28px;
+
       bottom: 28px;
 
       display: flex;
 
       gap: 5px;
+
     }
 
 
     .hero-controls.oculto {
+
       display: none;
+
     }
 
 
     .hero-arrow {
+
       width: 45px;
+
       height: 45px;
 
       border:
@@ -594,32 +806,54 @@
       cursor: pointer;
 
       font-size: 18px;
+
     }
 
 
+
     /* =========================================================
-       ENCABEZADO PRODUCTOS
+       CABECERA PRODUCTOS
     ========================================================= */
 
     .products-heading {
+
       max-width: 1600px;
 
       margin: auto;
 
       padding:
-        clamp(72px, 8vw, 120px)
-        clamp(20px, 5vw, 70px)
-        clamp(38px, 5vw, 62px);
+
+        clamp(
+          72px,
+          8vw,
+          120px
+        )
+
+        clamp(
+          20px,
+          5vw,
+          70px
+        )
+
+        clamp(
+          38px,
+          5vw,
+          62px
+        );
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: space-between;
 
       gap: 40px;
+
     }
 
 
     .section-label {
+
       display: block;
 
       margin-bottom: 12px;
@@ -628,49 +862,68 @@
         var(--suave);
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: .16em;
+
       text-transform: uppercase;
+
     }
 
 
     .products-heading h2 {
+
       font-size:
+
         clamp(
+
           40px,
+
           6vw,
-          var(--products-title-desktop)
+
+          var(
+            --products-title-desktop
+          )
+
         );
 
       font-weight: 500;
 
       line-height: 1;
+
       letter-spacing: -.05em;
+
     }
 
 
     .products-heading p {
+
       max-width: 380px;
 
       color:
         var(--suave);
 
       font-size:
-        var(--products-text-desktop);
+        var(
+          --products-text-desktop
+        );
 
       line-height: 1.65;
+
     }
+
 
 
     /* =========================================================
        PRODUCTOS
 
        WEB:
-       3 PRODUCTOS POR FILA
+       3 POR FILA
     ========================================================= */
 
     .products-section {
+
       width:
         calc(100% - 28px);
 
@@ -678,51 +931,63 @@
 
       margin: auto;
 
-      padding-bottom: 42px;
+      padding-bottom: 30px;
+
     }
 
 
     .products-grid {
+
       display: grid;
 
       grid-template-columns:
+
         repeat(
           3,
           minmax(0, 1fr)
         );
 
-      gap:
-        58px 16px;
+      column-gap: 16px;
+
+      row-gap: 54px;
+
     }
 
 
     .product {
+
       min-width: 0;
 
       cursor: pointer;
 
       outline: none;
+
     }
 
 
     .product:focus-visible {
+
       outline:
         2px solid
         var(--texto);
 
       outline-offset: 4px;
+
     }
 
 
-    /* =========================================================
-       IMAGEN PRINCIPAL
 
-       TODAS CUADRADAS
-       TODAS CENTRADAS
-       TODAS MISMA ALTURA
+    /* =========================================================
+       FOTO PRINCIPAL PRODUCTO
+
+       SIEMPRE:
+       - CUADRADA
+       - MISMO TAMAÑO
+       - CENTRADA
     ========================================================= */
 
     .product-image {
+
       width: 100%;
 
       aspect-ratio:
@@ -732,12 +997,16 @@
 
       overflow: hidden;
 
-      background: #e2ded6;
+      background:
+        #e2ded6;
+
     }
 
 
     .product-image > img {
+
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
@@ -747,6 +1016,7 @@
 
       transition:
         transform .45s ease;
+
     }
 
 
@@ -755,37 +1025,48 @@
 
     .product:focus-visible
     .product-image > img {
+
       transform:
         scale(1.018);
+
     }
 
 
     .product-image-fallback {
+
       width: 100%;
+
       height: 100%;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
     }
 
 
     .product-image-fallback img {
+
       width: 28%;
 
       height: auto;
 
       opacity: .35;
+
     }
 
 
     .product-zoom-hint {
+
       position: absolute;
 
-      right: 10px;
-      bottom: 10px;
+      z-index: 4;
 
-      z-index: 3;
+      right: 10px;
+
+      bottom: 10px;
 
       padding:
         7px 9px;
@@ -798,9 +1079,11 @@
         rgba(255,255,255,.94);
 
       font-size: 7px;
+
       font-weight: 600;
 
       letter-spacing: .1em;
+
       text-transform: uppercase;
 
       opacity: 0;
@@ -813,6 +1096,7 @@
       transition:
         opacity .2s ease,
         transform .2s ease;
+
     }
 
 
@@ -821,31 +1105,45 @@
 
     .product:focus-visible
     .product-zoom-hint {
+
       opacity: 1;
 
       transform:
         translateY(0);
+
     }
+
 
 
     /* =========================================================
-       INFORMACIÓN PRODUCTO
+       CONTENIDO PRODUCTO
 
-       NOMBRE + PRECIO:
-       SIEMPRE MISMA ALTURA.
+       LA LÍNEA DIVISORIA ESTÁ AL FINAL,
+       DEBAJO DEL BOTÓN.
 
-       COMENTARIO:
-       SIEMPRE RESERVA ESPACIO,
-       AUNQUE EL PRODUCTO NO TENGA COMENTARIO.
+       NO HAY LÍNEA SOBRE EL BOTÓN.
     ========================================================= */
 
     .product-body {
+
       padding:
-        13px 4px 0;
+        13px 4px 14px;
+
+      border-bottom:
+        1px solid var(--linea);
+
     }
 
 
+
+    /* =========================================================
+       NOMBRE + PRECIO
+
+       SIEMPRE MISMA ALTURA
+    ========================================================= */
+
     .product-head {
+
       min-height: 42px;
 
       display: grid;
@@ -857,18 +1155,22 @@
       align-items: start;
 
       gap: 12px;
+
     }
 
 
     .product-name {
+
       min-width: 0;
 
       font-size: 11px;
+
       font-weight: 500;
 
       line-height: 1.35;
 
-      display: -webkit-box;
+      display:
+        -webkit-box;
 
       -webkit-box-orient:
         vertical;
@@ -876,10 +1178,12 @@
       -webkit-line-clamp: 2;
 
       overflow: hidden;
+
     }
 
 
     .product-price {
+
       font-size: 11px;
 
       font-weight:
@@ -890,34 +1194,42 @@
       white-space: nowrap;
 
       text-align: right;
+
     }
 
 
+
     /* =========================================================
-       COMENTARIO / DETALLE
+       COMENTARIO
 
-       ESTÁ DEBAJO DEL NOMBRE
-       Y ENCIMA DE LA LÍNEA.
+       SI NO EXISTE:
+       SE DEJA EL ESPACIO VACÍO.
 
-       TODAS LAS TARJETAS RESERVAN
-       EL MISMO ESPACIO.
+       ESTO MANTIENE TODO ALINEADO.
     ========================================================= */
 
     .product-description-slot {
+
       height: 44px;
 
       padding:
-        7px 0 9px;
-
-      border-bottom:
-        1px solid
-        var(--linea);
+        7px 0 8px;
 
       overflow: hidden;
+
+      /*
+        IMPORTANTE:
+
+        aquí YA NO hay border-bottom.
+      */
+
+      border: 0;
+
     }
 
 
     .product-description {
+
       color:
         var(--suave);
 
@@ -925,7 +1237,8 @@
 
       line-height: 1.45;
 
-      display: -webkit-box;
+      display:
+        -webkit-box;
 
       -webkit-box-orient:
         vertical;
@@ -933,33 +1246,45 @@
       -webkit-line-clamp: 2;
 
       overflow: hidden;
+
     }
 
 
     .product-description.vacia {
+
       visibility: hidden;
+
     }
 
 
+
+    /* =========================================================
+       BOTÓN COMPRA
+    ========================================================= */
+
     .purchase-button {
+
       width: 100%;
 
       min-height: 39px;
 
-      margin-top: 10px;
+      margin-top: 4px;
 
       padding:
         9px 10px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       border:
         1px solid
         var(--texto);
 
-      background: transparent;
+      background:
+        transparent;
 
       color:
         var(--texto);
@@ -967,107 +1292,133 @@
       cursor: pointer;
 
       font-size: 7px;
+
       font-weight: 600;
 
       letter-spacing: .095em;
+
       text-transform: uppercase;
+
       text-align: center;
 
       transition:
         background .2s ease,
         color .2s ease;
+
     }
 
 
     .purchase-button:hover,
     .purchase-button:focus-visible {
+
       background:
         var(--texto);
 
       color:
         var(--blanco);
+
     }
+
 
 
     /* =========================================================
        PAGINACIÓN
-
-       12 PRODUCTOS POR PÁGINA
+       12 PRODUCTOS
     ========================================================= */
 
     .pagination {
+
       max-width: 1700px;
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
       padding:
-        26px 14px 110px;
+        27px 14px 105px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 7px;
 
       flex-wrap: wrap;
+
     }
 
 
     .pagination.oculta {
+
       display: none;
+
     }
 
 
     .page-button {
+
       min-width: 40px;
+
       height: 40px;
 
       padding:
         0 12px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       border:
         1px solid
         var(--linea);
 
-      background: transparent;
+      background:
+        transparent;
 
       cursor: pointer;
 
       font-size: 9px;
+
       font-weight: 600;
 
       letter-spacing: .08em;
+
       text-transform: uppercase;
+
     }
 
 
     .page-button.activa {
+
+      border-color:
+        var(--texto);
+
       background:
         var(--texto);
 
       color:
         var(--blanco);
 
-      border-color:
-        var(--texto);
     }
 
 
     .page-button:disabled {
+
       opacity: .3;
 
       cursor: default;
+
     }
 
 
     .page-status {
+
       width: 100%;
 
-      margin-top: 6px;
+      margin-top: 7px;
 
       color:
         var(--suave);
@@ -1077,8 +1428,11 @@
       text-align: center;
 
       letter-spacing: .08em;
+
       text-transform: uppercase;
+
     }
+
 
 
     /* =========================================================
@@ -1086,6 +1440,7 @@
     ========================================================= */
 
     .empty-state {
+
       grid-column:
         1 / -1;
 
@@ -1094,8 +1449,11 @@
       padding: 40px;
 
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 8px;
@@ -1107,22 +1465,28 @@
 
       border-bottom:
         1px solid var(--linea);
+
     }
 
 
     .empty-state strong {
+
       font-size: 16px;
 
       font-weight: 500;
+
     }
 
 
     .empty-state span {
+
       color:
         var(--suave);
 
       font-size: 12px;
+
     }
+
 
 
     /* =========================================================
@@ -1130,54 +1494,82 @@
     ========================================================= */
 
     .editorial {
+
       padding:
         130px
-        clamp(20px, 6vw, 90px);
+        clamp(
+          20px,
+          6vw,
+          90px
+        );
 
       background:
         var(--oscuro);
 
       color:
         var(--blanco);
+
     }
 
 
     .editorial-inner {
+
       max-width: 1250px;
 
       margin: auto;
+
     }
 
 
     .editorial-label {
+
       margin-bottom: 28px;
 
       color:
-        rgba(255,255,255,.5);
+        rgba(
+          255,
+          255,
+          255,
+          .5
+        );
 
       font-size: 10px;
+
       font-weight: 500;
 
       letter-spacing: .17em;
+
       text-transform: uppercase;
+
     }
 
 
     .editorial-text {
+
       max-width: 1100px;
 
       font-size:
+
         clamp(
+
           32px,
+
           5vw,
-          var(--editorial-text-desktop)
+
+          var(
+            --editorial-text-desktop
+          )
+
         );
 
       font-weight: 500;
 
       line-height: 1.1;
+
       letter-spacing: -.045em;
+
     }
+
 
 
     /* =========================================================
@@ -1185,60 +1577,73 @@
     ========================================================= */
 
     .footer {
+
       padding:
         75px 30px 30px;
+
     }
 
 
     .footer-inner {
+
       max-width: 1600px;
 
       margin: auto;
+
     }
 
 
     .footer-logo {
+
       padding-bottom: 70px;
+
     }
 
 
     .footer-logo img {
+
       width: auto;
 
       max-width:
-        min(300px, 55vw);
+        min(
+          300px,
+          55vw
+        );
 
       max-height: 160px;
 
       object-fit: contain;
+
     }
 
 
     .footer-contact {
+
       padding:
         30px 0;
 
       display: grid;
 
       grid-template-columns:
+
         repeat(
           3,
-          minmax(0,1fr)
+          minmax(0, 1fr)
         );
 
       gap: 30px;
 
       border-top:
-        1px solid
-        var(--linea);
+        1px solid var(--linea);
 
       border-bottom:
-        1px solid
-        var(--linea);
+        1px solid var(--linea);
+
     }
 
 
     .footer-label {
+
       display: block;
 
       margin-bottom: 10px;
@@ -1247,27 +1652,36 @@
         var(--suave);
 
       font-size: 9px;
+
       font-weight: 500;
 
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
     }
 
 
     .footer-item a {
+
       font-size: 13px;
 
       font-weight: 500;
 
-      word-break: break-word;
+      word-break:
+        break-word;
+
     }
 
 
     .footer-bottom {
+
       padding-top: 28px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
@@ -1276,11 +1690,15 @@
         var(--suave);
 
       font-size: 9px;
+
       font-weight: 500;
 
       letter-spacing: .1em;
+
       text-transform: uppercase;
+
     }
+
 
 
     /* =========================================================
@@ -1288,6 +1706,7 @@
     ========================================================= */
 
     .product-modal {
+
       position: fixed;
 
       inset: 0;
@@ -1302,38 +1721,57 @@
         90px 150px;
 
       background:
-        rgba(20,20,20,.72);
+        rgba(
+          20,
+          20,
+          20,
+          .72
+        );
 
       backdrop-filter:
         blur(10px);
 
       -webkit-backdrop-filter:
         blur(10px);
+
     }
 
 
     .product-modal.abierto {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
     }
 
 
     .modal-shell {
+
       width:
+
         min(
+
           1080px,
-          calc(100vw - 360px)
+
+          calc(
+            100vw - 360px
+          )
+
         );
 
       position: relative;
 
       flex:
         0 0 auto;
+
     }
 
 
     .modal-card {
+
       width: 100%;
 
       position: relative;
@@ -1351,12 +1789,20 @@
 
       box-shadow:
         0 30px 90px
-        rgba(0,0,0,.28);
+        rgba(
+          0,
+          0,
+          0,
+          .28
+        );
+
     }
 
 
     .modal-close {
+
       width: 40px;
+
       height: 40px;
 
       position: absolute;
@@ -1364,41 +1810,58 @@
       z-index: 30;
 
       top: 12px;
+
       right: 12px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       border:
         1px solid
-        rgba(20,20,20,.15);
+        rgba(
+          20,
+          20,
+          20,
+          .15
+        );
 
       border-radius: 50%;
 
       background:
-        rgba(242,240,235,.96);
+        rgba(
+          242,
+          240,
+          235,
+          .96
+        );
 
       cursor: pointer;
 
       font-size: 18px;
+
     }
 
 
-    /* =========================================================
-       FOTO DEL POPUP
 
-       SIEMPRE CUADRADA.
-       MISMO FORMATO EN TODOS LOS PRODUCTOS.
+    /* =========================================================
+       FOTO POPUP
+
+       SIEMPRE CUADRADA
+       SIEMPRE MISMO ENCUADRE
     ========================================================= */
 
     .modal-visual {
+
       width: 100%;
 
       aspect-ratio:
         1 / 1;
 
       min-width: 0;
+
       min-height: 0;
 
       position: relative;
@@ -1407,11 +1870,14 @@
 
       background:
         #e2ded6;
+
     }
 
 
     .modal-image-frame {
+
       width: 100%;
+
       height: 100%;
 
       position: relative;
@@ -1419,42 +1885,53 @@
       overflow: hidden;
 
       border: 0;
+
       outline: 0;
 
       cursor: zoom-in;
 
       user-select: none;
+
       -webkit-user-select: none;
 
       touch-action: none;
+
     }
 
 
     .modal-image-frame:focus,
     .modal-image-frame:focus-visible,
     .modal-image-frame:active {
+
       outline: 0;
 
       box-shadow: none;
+
     }
 
 
     .modal-image-frame.zoom-activo {
+
       cursor: grab;
+
     }
 
 
     .modal-image-frame.zoom-activo.arrastrando {
+
       cursor: grabbing;
+
     }
 
 
     .modal-product-image {
+
       position: absolute;
 
       inset: 0;
 
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
@@ -1463,11 +1940,15 @@
         50% 50%;
 
       transform:
-        translate3d(0,0,0)
+        translate3d(
+          0,
+          0,
+          0
+        )
         scale(1);
 
       transform-origin:
-        center;
+        center center;
 
       transition:
         transform .28s
@@ -1479,79 +1960,103 @@
         );
 
       user-select: none;
+
       -webkit-user-select: none;
+
       -webkit-user-drag: none;
 
       pointer-events: none;
 
       will-change: transform;
+
     }
 
 
     .modal-image-frame.zoom-activo.arrastrando
     .modal-product-image {
+
       transition: none;
+
     }
 
 
+
     /* =========================================================
-       INFORMACIÓN DEL POPUP
+       INFORMACIÓN POPUP
     ========================================================= */
 
     .modal-info {
+
       min-width: 0;
 
       padding:
         62px 32px 30px;
 
       display: flex;
+
       flex-direction: column;
 
       background:
         var(--fondo);
+
     }
 
 
     .modal-eyebrow {
+
       margin-bottom: 15px;
 
       color:
         var(--suave);
 
       font-size: 8px;
+
       font-weight: 600;
 
       letter-spacing: .16em;
+
       text-transform: uppercase;
+
     }
 
 
     .modal-product-name {
+
       font-size:
+
         clamp(
+
           26px,
+
           3vw,
+
           42px
+
         );
 
       font-weight: 500;
 
       line-height: 1.02;
+
       letter-spacing: -.045em;
+
     }
 
 
     .modal-product-price {
+
       margin-top: 18px;
 
       font-size: 15px;
 
       font-weight:
         var(--peso-precio);
+
     }
 
 
     .modal-product-description {
+
       margin-top: 22px;
 
       color:
@@ -1561,24 +2066,31 @@
 
       line-height: 1.65;
 
-      white-space: pre-line;
+      white-space:
+        pre-line;
+
     }
 
 
     .modal-buy {
+
       margin-top: auto;
 
       padding-top: 30px;
+
     }
 
 
     .modal-buy
     .purchase-button {
+
       width: 100%;
+
     }
 
 
     .modal-zoom-help {
+
       margin-top: 11px;
 
       color:
@@ -1587,21 +2099,24 @@
       font-size: 8px;
 
       line-height: 1.45;
+
       text-align: center;
+
     }
 
 
-    /* =========================================================
-       GLOBOS WEB
 
-       FORMA REAL DE GLOBO.
-       GRANDES.
-       FUERA DEL PRODUCTO.
+    /* =========================================================
+       GLOBOS ESCRITORIO
+
+       GRANDES + COLA TRIANGULAR REAL
     ========================================================= */
 
     @media (min-width: 1051px) {
 
+
       .speech-bubble {
+
         position: absolute;
 
         z-index: 40;
@@ -1609,6 +2124,7 @@
         width: max-content;
 
         min-width: 200px;
+
         max-width: 300px;
 
         padding:
@@ -1617,19 +2133,31 @@
         background:
           var(--blanco);
 
-        color: #151515;
+        color:
+          #151515;
 
         border:
           1.5px solid
-          rgba(20,20,20,.68);
+          rgba(
+            20,
+            20,
+            20,
+            .68
+          );
 
         border-radius: 30px;
 
         box-shadow:
           0 10px 30px
-          rgba(0,0,0,.13);
+          rgba(
+            0,
+            0,
+            0,
+            .13
+          );
 
         font-size: 16px;
+
         font-weight: 500;
 
         line-height: 1.3;
@@ -1637,40 +2165,40 @@
         text-align: center;
 
         pointer-events: none;
+
       }
 
 
-      /*
-         Dos triángulos crean la cola.
-
-         El grande dibuja el borde.
-         El pequeño dibuja el interior blanco.
-      */
-
       .speech-bubble::before,
       .speech-bubble::after {
+
         content: "";
 
         position: absolute;
 
         width: 0;
+
         height: 0;
+
       }
 
 
-      /* GLOBO IZQUIERDO */
+      /* IZQUIERDO */
 
       .speech-bubble.one {
+
         top: 14%;
 
         left: -32px;
 
         transform:
           translateX(-100%);
+
       }
 
 
       .speech-bubble.one::before {
+
         right: -20px;
 
         bottom: 17px;
@@ -1683,11 +2211,18 @@
 
         border-left:
           20px solid
-          rgba(20,20,20,.68);
+          rgba(
+            20,
+            20,
+            20,
+            .68
+          );
+
       }
 
 
       .speech-bubble.one::after {
+
         right: -17px;
 
         bottom: 18px;
@@ -1701,22 +2236,26 @@
         border-left:
           18px solid
           var(--blanco);
+
       }
 
 
-      /* GLOBO DERECHO */
+      /* DERECHO */
 
       .speech-bubble.two {
+
         right: -32px;
 
         bottom: 16%;
 
         transform:
           translateX(100%);
+
       }
 
 
       .speech-bubble.two::before {
+
         left: -20px;
 
         top: 17px;
@@ -1729,11 +2268,18 @@
 
         border-right:
           20px solid
-          rgba(20,20,20,.68);
+          rgba(
+            20,
+            20,
+            20,
+            .68
+          );
+
       }
 
 
       .speech-bubble.two::after {
+
         left: -17px;
 
         top: 18px;
@@ -1747,16 +2293,15 @@
         border-right:
           18px solid
           var(--blanco);
+
       }
 
     }
 
 
+
     /* =========================================================
        TABLET
-
-       EN TABLET LOS GLOBOS PASAN ARRIBA/ABAJO
-       PARA EVITAR QUE SE CORTEN.
     ========================================================= */
 
     @media
@@ -1764,31 +2309,42 @@
     and
     (max-width: 1050px) {
 
+
       .product-modal {
+
         padding:
           84px 40px;
 
         align-items:
           flex-start;
+
       }
 
 
       .modal-shell {
+
         width:
-          min(850px, 100%);
+          min(
+            850px,
+            100%
+          );
 
         margin: auto;
+
       }
 
 
       .modal-card {
+
         grid-template-columns:
           minmax(0, 1fr)
           290px;
+
       }
 
 
       .speech-bubble {
+
         position: absolute;
 
         z-index: 40;
@@ -1803,11 +2359,17 @@
 
         border:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         border-radius: 25px;
 
         font-size: 12px;
+
         font-weight: 500;
 
         line-height: 1.3;
@@ -1816,247 +2378,432 @@
 
         box-shadow:
           0 8px 24px
-          rgba(0,0,0,.11);
+          rgba(
+            0,
+            0,
+            0,
+            .11
+          );
+
       }
 
 
       .speech-bubble.one {
+
         top: -14px;
 
         left: 14px;
 
         transform:
           translateY(-100%);
+
       }
 
 
       .speech-bubble.two {
+
         right: 14px;
 
         bottom: -14px;
 
         transform:
           translateY(100%);
+
       }
 
 
       .speech-bubble.one::after,
       .speech-bubble.two::after {
+
         content: "";
 
         position: absolute;
 
         width: 14px;
+
         height: 14px;
 
         background:
           var(--blanco);
+
       }
 
 
       .speech-bubble.one::after {
+
         left: 24px;
 
         bottom: -8px;
 
         border-right:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         border-bottom:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         transform:
           rotate(45deg);
+
       }
 
 
       .speech-bubble.two::after {
+
         right: 24px;
 
         top: -8px;
 
         border-left:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         border-top:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         transform:
           rotate(45deg);
+
       }
 
     }
 
 
+
     /* =========================================================
        MÓVIL
-
-       2 PRODUCTOS POR FILA
     ========================================================= */
 
     @media (max-width: 760px) {
 
+
       .topbar {
+
         min-height: 26px;
 
         padding:
           6px 12px;
 
         font-size: 8px;
+
       }
 
 
       .contact-bar {
+
         min-height: 34px;
 
         padding:
           7px 16px;
+
       }
 
 
       .contact-label,
       .contact-email {
+
         display: none;
+
       }
 
 
       .contact-links {
+
         width: 100%;
 
         justify-content:
           space-between;
 
         gap: 10px;
+
       }
 
 
       .header {
+
         height: 60px;
 
         padding:
           0 16px;
+
       }
 
 
       .header-logo img {
+
         max-width: 79px;
+
         max-height: 42px;
+
       }
 
 
       .menu-button,
       .header-products {
+
         font-size: 8px;
+
       }
 
 
-      /* HERO MÓVIL */
+
+      /* =====================================================
+         BANNER MÓVIL COMPLETO
+
+         CAMBIO IMPORTANTE:
+
+         - YA NO USA COVER.
+         - USA CONTAIN.
+         - NO APLICA EL ZOOM SCALE DEL DESKTOP.
+         - SE VE LA IMAGEN ENTERA.
+      ===================================================== */
 
       .hero {
+
         width:
           calc(100% - 16px);
 
-        height:
-          clamp(
-            350px,
-            var(--hero-mobile-height),
-            510px
+        /*
+          El alto se adapta al formato
+          real del banner.
+        */
+
+        height: auto;
+
+        min-height: 245px;
+
+        aspect-ratio:
+          var(
+            --hero-mobile-aspect
           );
 
-        min-height: 350px;
-
         margin-top: 8px;
+
+        background:
+          #dedad2;
+
+      }
+
+
+      .hero-slide {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit:
+          contain !important;
+
+        object-position:
+          center center !important;
+
+        /*
+          Muy importante:
+
+          en móvil NO ampliamos la foto.
+          Así no se pierde ningún borde.
+        */
+
+        transform:
+          none !important;
+
+        background:
+          #dedad2;
+
+      }
+
+
+      .hero-slide.activo {
+
+        transform:
+          none !important;
+
+      }
+
+
+      /*
+        Gradiente más suave
+        para no oscurecer demasiado
+        la imagen completa.
+      */
+
+      .hero::after {
+
+        background:
+
+          linear-gradient(
+
+            to top,
+
+            rgba(
+              0,
+              0,
+              0,
+              .48
+            ),
+
+            rgba(
+              0,
+              0,
+              0,
+              .05
+            )
+            52%,
+
+            transparent
+
+          );
+
       }
 
 
       .hero-content {
-        left: 20px;
-        right: 20px;
-        bottom: 23px;
+
+        left: 18px;
+
+        right: 18px;
+
+        bottom: 18px;
 
         max-width: 92%;
+
       }
 
 
       .hero-label {
-        margin-bottom: 8px;
 
-        font-size: 8px;
+        margin-bottom: 7px;
+
+        font-size: 7px;
+
       }
 
 
       .hero-title {
+
         max-width: 95%;
 
         font-size:
-          var(--hero-title-mobile);
+          var(
+            --hero-title-mobile
+          );
 
         line-height: 1.02;
+
         letter-spacing: -.045em;
+
       }
 
 
       .hero-subtitle {
-        max-width: 94%;
 
-        margin-top: 9px;
+        max-width: 95%;
+
+        margin-top: 8px;
 
         font-size:
-          var(--hero-subtitle-mobile);
+          var(
+            --hero-subtitle-mobile
+          );
 
-        line-height: 1.4;
+        line-height: 1.38;
+
       }
 
 
       .hero-controls {
-        top: 12px;
-        right: 12px;
+
+        top: 10px;
+
+        right: 10px;
+
         bottom: auto;
+
       }
 
 
       .hero-arrow {
-        width: 37px;
-        height: 37px;
+
+        width: 35px;
+
+        height: 35px;
+
       }
 
 
-      /* CABECERA PRODUCTOS MÓVIL */
+
+      /* =====================================================
+         CABECERA PRODUCTOS
+      ===================================================== */
 
       .products-heading {
+
         padding:
-          var(--products-mobile-top-space)
+
+          var(
+            --products-mobile-top-space
+          )
+
           12px
+
           22px;
 
         display: block;
+
       }
 
 
       .section-label {
+
         margin-bottom: 7px;
 
         font-size: 8px;
+
       }
 
 
       .products-heading h2 {
+
         font-size:
-          var(--products-title-mobile);
+          var(
+            --products-title-mobile
+          );
+
       }
 
 
       .products-heading p {
+
         max-width: 100%;
 
         margin-top: 9px;
 
         font-size:
-          var(--products-text-mobile);
+          var(
+            --products-text-mobile
+          );
 
         line-height: 1.42;
 
@@ -2067,98 +2814,126 @@
           vertical;
 
         -webkit-line-clamp:
-          var(--products-mobile-lines);
+          var(
+            --products-mobile-lines
+          );
 
         overflow: hidden;
+
       }
 
 
-      /* =====================================================
-         GRID MÓVIL
 
-         EXACTAMENTE 2 PRODUCTOS POR FILA
+      /* =====================================================
+         MÓVIL:
+         2 PRODUCTOS POR FILA
       ===================================================== */
 
       .products-section {
+
         width:
           calc(100% - 16px);
 
-        padding-bottom: 30px;
+        padding-bottom: 25px;
+
       }
 
 
       .products-grid {
+
         grid-template-columns:
+
           repeat(
             2,
             minmax(0, 1fr)
           );
 
-        gap:
-          34px 8px;
+        column-gap: 8px;
+
+        row-gap: 32px;
+
       }
 
 
       .product-body {
+
+        /*
+          Línea continúa al final,
+          después del botón.
+        */
+
         padding:
-          9px 2px 0;
+          9px 2px 12px;
+
+        border-bottom:
+          1px solid
+          var(--linea);
+
       }
 
 
-      /*
-         Nombre y precio ocupan exactamente
-         el mismo bloque en cada tarjeta.
-      */
-
       .product-head {
+
         min-height: 45px;
 
         grid-template-columns:
-          minmax(0, 1fr)
+          minmax(0,1fr)
           auto;
 
         gap: 5px;
+
       }
 
 
       .product-name {
+
         font-size: 9px;
 
         line-height: 1.35;
+
       }
 
 
       .product-price {
+
         font-size: 9px;
 
         line-height: 1.35;
+
       }
 
 
-      /*
-         Incluso si no hay comentario,
-         conservamos los 42px.
-      */
-
       .product-description-slot {
+
         height: 42px;
 
         padding:
-          6px 0 8px;
+          6px 0 7px;
+
+        /*
+          IMPORTANTE:
+          ninguna línea aquí.
+        */
+
+        border: 0;
+
       }
 
 
       .product-description {
+
         font-size: 8px;
 
         line-height: 1.35;
+
       }
 
 
       .purchase-button {
+
         min-height: 36px;
 
-        margin-top: 8px;
+        margin-top: 3px;
 
         padding:
           7px 5px;
@@ -2166,89 +2941,124 @@
         font-size: 6px;
 
         letter-spacing: .075em;
+
       }
 
 
       .product-zoom-hint {
+
         opacity: 1;
 
         transform: none;
 
         right: 6px;
+
         bottom: 6px;
 
         padding:
           5px 6px;
 
         font-size: 6px;
+
       }
 
 
-      /* PAGINACIÓN MÓVIL */
+
+      /* =====================================================
+         PAGINACIÓN MÓVIL
+      ===================================================== */
 
       .pagination {
+
         padding:
-          20px 8px 72px;
+          20px 8px 70px;
 
         gap: 5px;
+
       }
 
 
       .page-button {
+
         min-width: 36px;
+
         height: 36px;
 
         padding:
           0 9px;
 
         font-size: 8px;
+
       }
 
 
       .page-status {
+
         font-size: 8px;
+
       }
 
 
-      /* EDITORIAL */
+
+      /* =====================================================
+         EDITORIAL
+      ===================================================== */
 
       .editorial {
+
         padding:
           82px 20px;
+
       }
 
 
       .editorial-text {
+
         font-size:
-          var(--editorial-text-mobile);
+          var(
+            --editorial-text-mobile
+          );
+
       }
 
 
-      /* FOOTER */
+
+      /* =====================================================
+         FOOTER
+      ===================================================== */
 
       .footer {
+
         padding:
           50px 18px 24px;
+
       }
 
 
       .footer-logo {
+
         padding-bottom: 42px;
+
       }
 
 
       .footer-contact {
+
         grid-template-columns: 1fr;
 
         gap: 24px;
+
       }
 
 
       .footer-bottom {
+
         flex-direction: column;
 
         align-items: flex-start;
+
       }
+
 
 
       /* =====================================================
@@ -2256,110 +3066,137 @@
       ===================================================== */
 
       .product-modal {
+
         padding:
           78px 10px;
 
         align-items:
           flex-start;
+
       }
 
 
       .modal-shell {
+
         width: 100%;
 
         max-width: 520px;
 
         margin: auto;
+
       }
 
 
       .modal-card {
+
         display: block;
 
         overflow: hidden;
+
       }
 
 
       .modal-visual,
       .modal-image-frame {
+
         width: 100%;
 
         aspect-ratio:
           1 / 1;
 
         height: auto;
+
       }
 
 
       .modal-product-image {
+
         width: 100%;
+
         height: 100%;
 
         object-fit: cover;
 
         object-position:
           50% 50%;
+
       }
 
 
       .modal-info {
+
         min-height: 220px;
 
         padding:
           25px 20px 20px;
+
       }
 
 
       .modal-close {
+
         top: 9px;
+
         right: 9px;
+
       }
 
 
       .modal-eyebrow {
+
         margin-bottom: 10px;
+
       }
 
 
       .modal-product-name {
+
         padding-right: 42px;
 
         font-size: 25px;
+
       }
 
 
       .modal-product-price {
+
         margin-top: 9px;
 
         font-size: 14px;
+
       }
 
 
       .modal-product-description {
+
         margin-top: 11px;
 
         font-size: 10px;
+
       }
 
 
       .modal-buy {
+
         padding-top: 18px;
+
       }
 
 
       .modal-zoom-help {
+
         font-size: 8px;
+
       }
+
 
 
       /* =====================================================
          GLOBOS MÓVIL
-
-         ARRIBA Y ABAJO.
-         NUNCA ENCIMA DEL PRODUCTO.
       ===================================================== */
 
       .speech-bubble {
+
         position: absolute;
 
         z-index: 40;
@@ -2367,6 +3204,7 @@
         width: max-content;
 
         max-width:
+
           min(
             230px,
             78vw
@@ -2378,19 +3216,31 @@
         background:
           var(--blanco);
 
-        color: #151515;
+        color:
+          #151515;
 
         border:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         border-radius: 24px;
 
         box-shadow:
           0 8px 26px
-          rgba(0,0,0,.10);
+          rgba(
+            0,
+            0,
+            0,
+            .10
+          );
 
         font-size: 11px;
+
         font-weight: 500;
 
         line-height: 1.25;
@@ -2398,115 +3248,173 @@
         text-align: center;
 
         pointer-events: none;
+
       }
 
 
       .speech-bubble::after {
+
         content: "";
 
         position: absolute;
 
         width: 15px;
+
         height: 15px;
 
         background: inherit;
+
       }
 
 
-      /* GLOBO SUPERIOR */
-
       .speech-bubble.one {
+
         top: -14px;
+
         left: 8px;
 
         transform:
           translateY(-100%);
+
       }
 
 
       .speech-bubble.one::after {
+
         left: 24px;
 
         bottom: -8px;
 
         border-right:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         border-bottom:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         transform:
           rotate(45deg);
+
       }
 
 
-      /* GLOBO INFERIOR */
-
       .speech-bubble.two {
+
         right: 8px;
+
         bottom: -14px;
 
         transform:
           translateY(100%);
+
       }
 
 
       .speech-bubble.two::after {
+
         right: 24px;
 
         top: -8px;
 
         border-left:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         border-top:
           1px solid
-          rgba(20,20,20,.65);
+          rgba(
+            20,
+            20,
+            20,
+            .65
+          );
 
         transform:
           rotate(45deg);
+
       }
 
     }
 
 
+
+    /* =========================================================
+       MÓVILES MUY PEQUEÑOS
+    ========================================================= */
+
     @media (max-width: 390px) {
 
+
       .hero {
-        min-height: 335px;
+
+        min-height: 225px;
+
       }
 
 
       .hero-title {
+
         font-size:
+
           min(
-            var(--hero-title-mobile),
-            31px
+
+            var(
+              --hero-title-mobile
+            ),
+
+            30px
+
           );
+
       }
 
 
       .product-name,
       .product-price {
+
         font-size: 8.5px;
+
       }
 
 
       .purchase-button {
+
         font-size: 5.7px;
+
       }
 
     }
 
 
-    @media (prefers-reduced-motion: reduce) {
+
+    /* =========================================================
+       REDUCIR ANIMACIONES
+    ========================================================= */
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
 
       *,
       *::before,
       *::after {
+
         scroll-behavior:
           auto !important;
 
@@ -2515,11 +3423,13 @@
 
         animation-duration:
           .01ms !important;
+
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -2527,19 +3437,22 @@
 
 
   <!-- =========================================================
-       TOPBAR
+       TOP BAR
   ========================================================== -->
 
   <div
     class="topbar"
     id="topbar-text"
   >
+
     DAI PY · TIENDA OFICIAL
+
   </div>
 
 
+
   <!-- =========================================================
-       CONTACTO
+       CONTACTO SUPERIOR
   ========================================================== -->
 
   <div class="contact-bar">
@@ -2549,7 +3462,9 @@
       class="contact-label"
       id="contact-label"
     >
+
       Contacto
+
     </span>
 
 
@@ -2561,7 +3476,9 @@
         class="contact-email"
         href="mailto:daiofficial.py@gmail.com"
       >
+
         daiofficial.py@gmail.com
+
       </a>
 
 
@@ -2571,7 +3488,9 @@
         target="_blank"
         rel="noopener noreferrer"
       >
+
         @daiofficial.py
+
       </a>
 
 
@@ -2581,13 +3500,17 @@
         target="_blank"
         rel="noopener noreferrer"
       >
+
         WhatsApp
+
       </a>
 
 
     </div>
 
+
   </div>
+
 
 
   <!-- =========================================================
@@ -2602,7 +3525,9 @@
       id="open-menu"
       type="button"
     >
+
       Menú
+
     </button>
 
 
@@ -2625,11 +3550,14 @@
       id="header-products-text"
       href="#productos"
     >
+
       Productos
+
     </a>
 
 
   </header>
+
 
 
   <!-- =========================================================
@@ -2670,7 +3598,9 @@
           id="close-menu"
           type="button"
         >
+
           Cerrar
+
         </button>
 
 
@@ -2684,7 +3614,9 @@
           href="#inicio"
           id="menu-inicio-text"
         >
+
           Inicio
+
         </a>
 
 
@@ -2692,7 +3624,9 @@
           href="#productos"
           id="menu-productos-text"
         >
+
           Productos
+
         </a>
 
 
@@ -2700,7 +3634,9 @@
           href="#contacto"
           id="menu-contacto-text"
         >
+
           Contacto
+
         </a>
 
 
@@ -2714,7 +3650,9 @@
           id="menu-email"
           href="mailto:daiofficial.py@gmail.com"
         >
+
           daiofficial.py@gmail.com
+
         </a>
 
 
@@ -2724,7 +3662,9 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+
           @daiofficial.py
+
         </a>
 
 
@@ -2734,7 +3674,9 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+
           WhatsApp
+
         </a>
 
 
@@ -2743,7 +3685,9 @@
 
     </nav>
 
+
   </div>
+
 
 
   <!-- =========================================================
@@ -2753,7 +3697,9 @@
   <main>
 
 
-    <!-- HERO -->
+    <!-- =====================================================
+         BANNER
+    ====================================================== -->
 
     <section
       class="hero"
@@ -2769,10 +3715,12 @@
 
         <div class="hero-fallback">
 
+
           <img
             src="./logo.png"
             alt="DAI PY"
           >
+
 
         </div>
 
@@ -2787,7 +3735,9 @@
           class="hero-label"
           id="hero-label"
         >
+
           DAI PY
+
         </div>
 
 
@@ -2795,7 +3745,9 @@
           class="hero-title"
           id="hero-title"
         >
+
           Detalles que forman parte de tu historia.
+
         </h1>
 
 
@@ -2803,7 +3755,9 @@
           class="hero-subtitle"
           id="hero-subtitle"
         >
+
           Accesorios, objetos y detalles seleccionados para acompañar tu día.
+
         </p>
 
 
@@ -2822,7 +3776,9 @@
           type="button"
           aria-label="Banner anterior"
         >
+
           ←
+
         </button>
 
 
@@ -2832,7 +3788,9 @@
           type="button"
           aria-label="Banner siguiente"
         >
+
           →
+
         </button>
 
 
@@ -2840,6 +3798,7 @@
 
 
     </section>
+
 
 
     <!-- =====================================================
@@ -2859,28 +3818,39 @@
           class="section-label"
           id="products-label"
         >
+
           Tienda
+
         </span>
 
 
-        <h2 id="products-title">
+        <h2
+          id="products-title"
+        >
+
           Productos
+
         </h2>
 
 
       </div>
 
 
-      <p id="products-intro">
+      <p
+        id="products-intro"
+      >
+
         Elegí tu producto y realizá tu pedido directamente por WhatsApp.
+
       </p>
 
 
     </section>
 
 
+
     <!-- =====================================================
-         GRID PRODUCTOS
+         PRODUCTOS
     ====================================================== -->
 
     <section
@@ -2897,13 +3867,20 @@
 
         <div class="empty-state">
 
+
           <strong>
+
             Cargando productos…
+
           </strong>
 
+
           <span>
+
             Un momento, por favor.
+
           </span>
+
 
         </div>
 
@@ -2914,6 +3891,7 @@
     </section>
 
 
+
     <!-- =====================================================
          PAGINACIÓN
     ====================================================== -->
@@ -2922,7 +3900,9 @@
       class="pagination oculta"
       id="pagination"
       aria-label="Páginas de productos"
-    ></nav>
+    >
+    </nav>
+
 
 
     <!-- =====================================================
@@ -2939,7 +3919,9 @@
           class="editorial-label"
           id="editorial-label"
         >
+
           DAI PY
+
         </div>
 
 
@@ -2947,7 +3929,9 @@
           class="editorial-text"
           id="editorial-text"
         >
+
           Las cosas que elegimos llevar con nosotros también cuentan una historia.
+
         </p>
 
 
@@ -2958,6 +3942,7 @@
 
 
   </main>
+
 
 
   <!-- =========================================================
@@ -2975,10 +3960,12 @@
 
       <div class="footer-logo">
 
+
         <img
           src="./logo.png"
           alt="DAI PY"
         >
+
 
       </div>
 
@@ -2993,7 +3980,9 @@
             class="footer-label"
             id="footer-email-label"
           >
+
             Correo
+
           </span>
 
 
@@ -3001,7 +3990,9 @@
             id="footer-email"
             href="mailto:daiofficial.py@gmail.com"
           >
+
             daiofficial.py@gmail.com
+
           </a>
 
 
@@ -3015,7 +4006,9 @@
             class="footer-label"
             id="footer-instagram-label"
           >
+
             Instagram
+
           </span>
 
 
@@ -3025,7 +4018,9 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
             @daiofficial.py
+
           </a>
 
 
@@ -3039,7 +4034,9 @@
             class="footer-label"
             id="footer-orders-label"
           >
+
             Pedidos
+
           </span>
 
 
@@ -3049,7 +4046,9 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
             WhatsApp
+
           </a>
 
 
@@ -3062,13 +4061,21 @@
       <div class="footer-bottom">
 
 
-        <span id="footer-copy">
+        <span
+          id="footer-copy"
+        >
+
           © DAI PY Tienda Oficial
+
         </span>
 
 
-        <span id="footer-country">
+        <span
+          id="footer-country"
+        >
+
           Paraguay
+
         </span>
 
 
@@ -3079,6 +4086,7 @@
 
 
   </footer>
+
 
 
   <!-- =========================================================
@@ -3098,17 +4106,19 @@
     <div class="modal-shell">
 
 
-      <!-- GLOBO 1 -->
+      <!-- FRASE 1 -->
 
       <div
         class="speech-bubble one"
         id="speech-one"
       >
+
         Lo merezco.
+
       </div>
 
 
-      <!-- TARJETA PRODUCTO -->
+      <!-- TARJETA -->
 
       <div class="modal-card">
 
@@ -3119,7 +4129,9 @@
           type="button"
           aria-label="Cerrar producto"
         >
+
           ×
+
         </button>
 
 
@@ -3160,7 +4172,9 @@
             class="modal-eyebrow"
             id="modal-eyebrow"
           >
+
             DAI PY · Detalle
+
           </div>
 
 
@@ -3168,7 +4182,9 @@
             class="modal-product-name"
             id="modal-product-name"
           >
+
             Producto
+
           </h3>
 
 
@@ -3176,14 +4192,17 @@
             class="modal-product-price"
             id="modal-product-price"
           >
+
             Consultar
+
           </div>
 
 
           <p
             class="modal-product-description"
             id="modal-product-description"
-          ></p>
+          >
+          </p>
 
 
           <div class="modal-buy">
@@ -3196,7 +4215,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
+
               Comprar por WhatsApp
+
             </a>
 
 
@@ -3204,7 +4225,9 @@
               class="modal-zoom-help"
               id="modal-zoom-help"
             >
+
               Click para acercar. Con zoom activo, mantené presionado y arrastrá para recorrer.
+
             </div>
 
 
@@ -3217,13 +4240,15 @@
       </div>
 
 
-      <!-- GLOBO 2 -->
+      <!-- FRASE 2 -->
 
       <div
         class="speech-bubble two"
         id="speech-two"
       >
+
         Es una compra necesaria.
+
       </div>
 
 
@@ -3233,11 +4258,13 @@
   </div>
 
 
+
   <!-- =========================================================
        JAVASCRIPT
   ========================================================== -->
 
   <script>
+
 
     /* =========================================================
        CONFIGURACIÓN
@@ -3259,21 +4286,13 @@
       Date.now();
 
 
-    /*
-       Cada página muestra exactamente
-       12 productos.
-    */
-
     const PRODUCTS_PER_PAGE =
       12;
 
 
-    /*
-       Zoom de la fotografía.
-    */
-
     const ZOOM_ESCALA =
       2.15;
+
 
 
     /* =========================================================
@@ -3403,12 +4422,8 @@
         30,
 
 
-      alto_banner_movil:
-        58,
-
-
       espacio_banner_productos_movil:
-        30,
+        28,
 
 
       max_lineas_texto_productos_movil:
@@ -3445,6 +4460,7 @@
 
 
     };
+
 
 
     /* =========================================================
@@ -3512,8 +4528,9 @@
     };
 
 
+
     /* =========================================================
-       ESTADO GENERAL
+       ESTADO
     ========================================================= */
 
     let CONTACTO = {
@@ -3541,10 +4558,12 @@
     };
 
 
-    let BANNERS = [];
+    let BANNERS =
+      [];
 
 
-    let PRODUCTOS = [];
+    let PRODUCTOS =
+      [];
 
 
     let paginaActual =
@@ -3559,8 +4578,9 @@
       null;
 
 
+
     /* =========================================================
-       ESTADO DEL ZOOM
+       ZOOM
     ========================================================= */
 
     let zoomActivo =
@@ -3607,6 +4627,7 @@
       false;
 
 
+
     /* =========================================================
        UTILIDADES
     ========================================================= */
@@ -3647,6 +4668,7 @@
 
 
     }
+
 
 
     function booleanoSeguro(
@@ -3736,6 +4758,7 @@
     }
 
 
+
     function escaparHTML(
       valor = ""
     ) {
@@ -3772,16 +4795,14 @@
     }
 
 
+
     /* =========================================================
-       PRECIOS
+       PRECIO
 
        IMPORTANTE:
 
-       29.000
-       SIGUE SIENDO
-       29.000
-
-       NO SE CONVIERTE EN 29.
+       32.000 permanece 32.000
+       32000 se convierte en 32.000
     ========================================================= */
 
     function precioFormateado(
@@ -3806,12 +4827,6 @@
       }
 
 
-      /*
-         Si el precio ya tiene
-         Gs. o ₲,
-         respetamos el texto.
-      */
-
       if (
 
         /gs\.?/i.test(valor)
@@ -3829,14 +4844,6 @@
       }
 
 
-      /*
-         Casos:
-
-         29.000
-         120.000
-         1.250.000
-      */
-
       if (
 
         /^\d{1,3}(\.\d{3})+$/
@@ -3850,13 +4857,6 @@
 
       }
 
-
-      /*
-         Casos:
-
-         29000
-         120000
-      */
 
       if (
 
@@ -3895,8 +4895,9 @@
     }
 
 
+
     /* =========================================================
-       RUTAS IMÁGENES
+       RUTA MEDIA
     ========================================================= */
 
     function rutaMedia(
@@ -3976,8 +4977,9 @@
     }
 
 
+
     /* =========================================================
-       CARGAR JSON
+       JSON
     ========================================================= */
 
     async function cargarJSON(
@@ -4028,6 +5030,7 @@
     }
 
 
+
     /* =========================================================
        FRONT MATTER
     ========================================================= */
@@ -4047,7 +5050,9 @@
 
         (
           salida.startsWith('"')
+
           &&
+
           salida.endsWith('"')
         )
 
@@ -4055,7 +5060,9 @@
 
         (
           salida.startsWith("'")
+
           &&
+
           salida.endsWith("'")
         )
 
@@ -4120,12 +5127,12 @@
 
 
       /*
-         NO convertimos automáticamente
-         valores numéricos.
+        MUY IMPORTANTE:
 
-         Esto protege precios como:
+        No hacemos Number()
+        automáticamente.
 
-         29.000
+        Así 32.000 no pasa a 32.
       */
 
       return salida;
@@ -4134,12 +5141,14 @@
     }
 
 
+
     function parsearFrontMatter(
       texto = ""
     ) {
 
 
-      const resultado = {};
+      const resultado =
+        {};
 
 
       const normalizado =
@@ -4234,10 +5243,6 @@
           match[2];
 
 
-        /*
-           Textos multilínea.
-        */
-
         if (
 
           valor === "|"
@@ -4249,7 +5254,8 @@
         ) {
 
 
-          const partes = [];
+          const partes =
+            [];
 
 
           i++;
@@ -4298,9 +5304,13 @@
             partes
 
               .join(
+
                 valor === ">"
+
                   ? " "
+
                   : "\n"
+
               )
 
               .trim();
@@ -4327,8 +5337,9 @@
     }
 
 
+
     /* =========================================================
-       CARGAR CARPETAS DESDE GITHUB
+       COLECCIONES GITHUB
     ========================================================= */
 
     async function cargarColeccion(
@@ -4487,6 +5498,7 @@
     }
 
 
+
     /* =========================================================
        APARIENCIA
     ========================================================= */
@@ -4559,6 +5571,7 @@
     }
 
 
+
     async function cargarApariencia() {
 
 
@@ -4591,7 +5604,7 @@
 
 
         /*
-           Continúa con valores por defecto.
+          Valores por defecto.
         */
 
 
@@ -4601,8 +5614,9 @@
     }
 
 
+
     /* =========================================================
-       TEXTOS / ADMIN
+       TEXTOS ADMIN
     ========================================================= */
 
     function setTexto(
@@ -4642,23 +5656,6 @@
     }
 
 
-    /*
-       Acepta tanto:
-
-       [
-         "Lo merezco"
-       ]
-
-       como:
-
-       [
-         {
-           "frase": "Lo merezco"
-         }
-       ]
-
-       por compatibilidad con el admin.
-    */
 
     function normalizarFrases(
       valor
@@ -4679,6 +5676,7 @@
 
 
       const frases =
+
         valor
 
           .map(
@@ -4748,6 +5746,7 @@
     }
 
 
+
     function aplicarTextos(
       config = {}
     ) {
@@ -4769,173 +5768,116 @@
 
 
       setTexto(
-
         "topbar-text",
-
         TEXTOS.topbar_texto
-
       );
 
 
       setTexto(
-
         "contact-label",
-
         TEXTOS.contacto_etiqueta
-
       );
 
 
       setTexto(
-
         "header-products-text",
-
         TEXTOS.menu_productos
-
       );
 
 
       setTexto(
-
         "menu-inicio-text",
-
         TEXTOS.menu_inicio
-
       );
 
 
       setTexto(
-
         "menu-productos-text",
-
         TEXTOS.menu_productos
-
       );
 
 
       setTexto(
-
         "menu-contacto-text",
-
         TEXTOS.menu_contacto
-
       );
 
 
       setTexto(
-
         "hero-label",
-
         TEXTOS.hero_etiqueta
-
       );
 
 
       setTexto(
-
         "products-label",
-
         TEXTOS.productos_etiqueta
-
       );
 
 
       setTexto(
-
         "products-title",
-
         TEXTOS.productos_titulo
-
       );
 
 
       setTexto(
-
         "products-intro",
-
         TEXTOS.productos_texto
-
       );
 
 
       setTexto(
-
         "editorial-label",
-
         TEXTOS.editorial_etiqueta
-
       );
 
 
       setTexto(
-
         "editorial-text",
-
         TEXTOS.editorial_texto
-
       );
 
 
       setTexto(
-
         "footer-email-label",
-
         TEXTOS.footer_correo
-
       );
 
 
       setTexto(
-
         "footer-instagram-label",
-
         TEXTOS.footer_instagram
-
       );
 
 
       setTexto(
-
         "footer-orders-label",
-
         TEXTOS.footer_pedidos
-
       );
 
 
       setTexto(
-
         "footer-copy",
-
         TEXTOS.footer_copy
-
       );
 
 
       setTexto(
-
         "footer-country",
-
         TEXTOS.footer_pais
-
       );
 
 
       setTexto(
-
         "modal-eyebrow",
-
         TEXTOS.modal_etiqueta
-
       );
 
 
       setTexto(
-
         "modal-zoom-help",
-
         TEXTOS.modal_ayuda_zoom
-
       );
 
 
@@ -5087,26 +6029,12 @@
 
       raiz.setProperty(
 
-        "--hero-mobile-height",
-
-        `${numeroSeguro(
-          TEXTOS.alto_banner_movil,
-          58,
-          42,
-          78
-        )}svh`
-
-      );
-
-
-      raiz.setProperty(
-
         "--products-mobile-top-space",
 
         `${numeroSeguro(
           TEXTOS.espacio_banner_productos_movil,
-          30,
-          12,
+          28,
+          8,
           100
         )}px`
 
@@ -5143,6 +6071,7 @@
     }
 
 
+
     async function cargarTextos() {
 
 
@@ -5169,8 +6098,7 @@
 
 
         /*
-           Si textos.json no existe,
-           la web sigue funcionando.
+          Valores por defecto.
         */
 
 
@@ -5178,6 +6106,7 @@
 
 
     }
+
 
 
     /* =========================================================
@@ -5198,6 +6127,7 @@
 
 
     }
+
 
 
     function whatsappURL(
@@ -5225,6 +6155,7 @@
 
 
     }
+
 
 
     function aplicarContacto() {
@@ -5388,6 +6319,7 @@
     }
 
 
+
     async function cargarContacto() {
 
 
@@ -5411,7 +6343,7 @@
 
 
         /*
-           Defaults.
+          Defaults.
         */
 
 
@@ -5422,6 +6354,7 @@
 
 
     }
+
 
 
     /* =========================================================
@@ -5458,6 +6391,7 @@
     }
 
 
+
     function cerrarMenu() {
 
 
@@ -5486,6 +6420,63 @@
 
 
     }
+
+
+
+    /* =========================================================
+       BANNER MÓVIL
+
+       AJUSTA EL CONTENEDOR A LA PROPORCIÓN
+       REAL DE CADA IMAGEN.
+    ========================================================= */
+
+    function actualizarProporcionHero(
+      imagen
+    ) {
+
+
+      if (
+        !imagen
+      ) {
+
+
+        return;
+
+
+      }
+
+
+      if (
+
+        !imagen.naturalWidth
+
+        ||
+
+        !imagen.naturalHeight
+
+      ) {
+
+
+        return;
+
+
+      }
+
+
+      document
+        .documentElement
+        .style
+        .setProperty(
+
+          "--hero-mobile-aspect",
+
+          `${imagen.naturalWidth} / ${imagen.naturalHeight}`
+
+        );
+
+
+    }
+
 
 
     /* =========================================================
@@ -5535,33 +6526,60 @@
         indice;
 
 
-      document
-        .querySelectorAll(
-          ".hero-slide"
-        )
-
-        .forEach(
-
-          (
-            imagen,
-            posicion
-          ) => {
+      const slides =
+        document
+          .querySelectorAll(
+            ".hero-slide"
+          );
 
 
-            imagen
-              .classList
-              .toggle(
+      slides.forEach(
 
-                "activo",
-
-                posicion === indice
-
-              );
+        (
+          imagen,
+          posicion
+        ) => {
 
 
-          }
+          imagen
+            .classList
+            .toggle(
 
-        );
+              "activo",
+
+              posicion === indice
+
+            );
+
+
+        }
+
+      );
+
+
+      const imagenActiva =
+        slides[indice];
+
+
+      if (
+        imagenActiva
+      ) {
+
+
+        if (
+          imagenActiva.complete
+        ) {
+
+
+          actualizarProporcionHero(
+            imagenActiva
+          );
+
+
+        }
+
+
+      }
 
 
       const banner =
@@ -5595,6 +6613,7 @@
 
 
     }
+
 
 
     function iniciarCarrusel() {
@@ -5643,6 +6662,7 @@
 
 
     }
+
 
 
     async function cargarBanners() {
@@ -5811,6 +6831,39 @@
               "async";
 
 
+            /*
+              Al cargar la imagen,
+              guardamos su proporción real.
+
+              Esto permite que en móvil
+              se vea COMPLETA.
+            */
+
+            imagen.addEventListener(
+
+              "load",
+
+              () => {
+
+
+                if (
+                  indice === bannerActual
+                ) {
+
+
+                  actualizarProporcionHero(
+                    imagen
+                  );
+
+
+                }
+
+
+              }
+
+            );
+
+
             media.appendChild(
               imagen
             );
@@ -5871,8 +6924,9 @@
     }
 
 
+
     /* =========================================================
-       MENSAJE COMPRA
+       COMPRA
     ========================================================= */
 
     function mensajeCompra(
@@ -5882,7 +6936,15 @@
 
       let mensaje =
 
-        `Hola DAI PY, quiero realizar un pedido.\n\nProducto: ${producto.nombre}\nPrecio: ${precioFormateado(producto.precio)}`;
+        `Hola DAI PY, quiero realizar un pedido.\n\n`
+
+        +
+
+        `Producto: ${producto.nombre}\n`
+
+        +
+
+        `Precio: ${precioFormateado(producto.precio)}`;
 
 
       if (
@@ -5904,8 +6966,9 @@
     }
 
 
+
     /* =========================================================
-       CREAR PRODUCTO
+       PRODUCTO HTML
     ========================================================= */
 
     function htmlProducto(
@@ -5930,7 +6993,7 @@
         );
 
 
-      const desc =
+      const descripcion =
         escaparHTML(
           producto.desc || ""
         );
@@ -5954,7 +7017,7 @@
         );
 
 
-      const media =
+      const imagenHTML =
 
         imagen
 
@@ -5969,8 +7032,6 @@
               loading="lazy"
 
               decoding="async"
-
-              onerror="this.parentElement.innerHTML='<div class=&quot;product-image-fallback&quot;><img src=&quot;./logo.png&quot; alt=&quot;DAI PY&quot;></div>'"
 
             >
 
@@ -5993,22 +7054,19 @@
 
 
       /*
-         Si el producto no tiene comentario,
-         igualmente ponemos una línea invisible.
-
-         Así la altura es exactamente la misma
-         que los demás productos.
+        Si no hay comentario,
+        se mantiene exactamente el mismo espacio.
       */
 
       const descripcionHTML =
 
-        desc
+        descripcion
 
           ? `
 
             <p class="product-description">
 
-              ${desc}
+              ${descripcion}
 
             </p>
 
@@ -6047,7 +7105,7 @@
           <div class="product-image">
 
 
-            ${media}
+            ${imagenHTML}
 
 
             <span
@@ -6094,6 +7152,13 @@
             </div>
 
 
+            <!--
+              BOTÓN ANTES DE LA LÍNEA.
+
+              LA LÍNEA ESTÁ EN .product-body,
+              POR LO TANTO QUEDA DEBAJO.
+            -->
+
             <a
 
               class="purchase-button product-buy-button"
@@ -6133,6 +7198,7 @@
     }
 
 
+
     /* =========================================================
        PAGINACIÓN
     ========================================================= */
@@ -6158,6 +7224,7 @@
     }
 
 
+
     function renderizarPaginacion() {
 
 
@@ -6170,11 +7237,6 @@
       const total =
         totalPaginas();
 
-
-      /*
-         Si hay 12 productos o menos,
-         no necesitamos paginación.
-      */
 
       if (
         PRODUCTOS.length <=
@@ -6303,7 +7365,9 @@
         <div class="page-status">
 
           Página ${paginaActual} de ${total}
+
           ·
+
           ${PRODUCTOS.length} productos
 
         </div>
@@ -6366,8 +7430,9 @@
     }
 
 
+
     /* =========================================================
-       RENDER DE PÁGINA
+       RENDER PRODUCTOS
     ========================================================= */
 
     function renderizarPaginaProductos() {
@@ -6430,41 +7495,19 @@
         totalPaginas();
 
 
-      if (
-        paginaActual > total
-      ) {
+      paginaActual =
 
+        Math.min(
 
-        paginaActual =
-          total;
+          total,
 
+          Math.max(
+            1,
+            paginaActual
+          )
 
-      }
+        );
 
-
-      if (
-        paginaActual < 1
-      ) {
-
-
-        paginaActual =
-          1;
-
-
-      }
-
-
-      /*
-         Producto inicial de la página.
-
-         Página 1:
-         0 - 11
-
-         Página 2:
-         12 - 23
-
-         etc.
-      */
 
       const inicio =
 
@@ -6487,13 +7530,9 @@
 
 
       const pagina =
-
         PRODUCTOS.slice(
-
           inicio,
-
           fin
-
         );
 
 
@@ -6522,11 +7561,6 @@
 
           .join("");
 
-
-      /*
-         Click en la tarjeta
-         abre el producto.
-      */
 
       grid
         .querySelectorAll(
@@ -6646,11 +7680,6 @@
         );
 
 
-      /*
-         El botón Comprar no abre
-         accidentalmente el popup.
-      */
-
       grid
         .querySelectorAll(
           ".product-buy-button"
@@ -6685,6 +7714,7 @@
 
 
     }
+
 
 
     function cambiarPagina(
@@ -6728,12 +7758,6 @@
       renderizarPaginaProductos();
 
 
-      /*
-         Al cambiar página,
-         volvemos suavemente al encabezado
-         de Productos.
-      */
-
       const cabecera =
         document.getElementById(
           "productos"
@@ -6766,6 +7790,7 @@
 
 
     }
+
 
 
     /* =========================================================
@@ -6810,13 +7835,6 @@
 
                 "",
 
-
-              /*
-                 PRECIO COMO TEXTO.
-
-                 IMPORTANTE:
-                 NO CONVERTIR A NUMBER.
-              */
 
               precio:
 
@@ -6875,8 +7893,9 @@
     }
 
 
+
     /* =========================================================
-       FRASES ALEATORIAS
+       FRASES
     ========================================================= */
 
     function frasesAleatorias(
@@ -6884,29 +7903,11 @@
     ) {
 
 
-      const base =
-
-        TEXTOS
-          .frases_popup
-
-          .map(
-
-            frase =>
-
-              String(
-                frase || ""
-              ).trim()
-
-          )
-
-          .filter(Boolean);
-
-
       const origen =
 
-        base.length
+        TEXTOS.frases_popup.length
 
-          ? base
+          ? TEXTOS.frases_popup
 
           : DEFAULT_TEXTOS.frases_popup;
 
@@ -6939,15 +7940,21 @@
 
 
         [
+
           mezcladas[i],
+
           mezcladas[j]
+
         ]
 
         =
 
         [
+
           mezcladas[j],
+
           mezcladas[i]
+
         ];
 
 
@@ -6972,15 +7979,13 @@
 
 
       return mezcladas.slice(
-
         0,
-
         cantidad
-
       );
 
 
     }
+
 
 
     function aplicarFrasesModal() {
@@ -7058,8 +8063,9 @@
     }
 
 
+
     /* =========================================================
-       ZOOM + ARRASTRE
+       ZOOM
     ========================================================= */
 
     function limitar(
@@ -7082,6 +8088,7 @@
 
 
     }
+
 
 
     function limitesPan() {
@@ -7146,6 +8153,7 @@
 
 
     }
+
 
 
     function aplicarTransformZoom(
@@ -7282,6 +8290,7 @@
     }
 
 
+
     function activarZoom() {
 
 
@@ -7303,6 +8312,7 @@
 
 
     }
+
 
 
     function desactivarZoom() {
@@ -7336,15 +8346,6 @@
     }
 
 
-    /*
-       CLICK:
-
-       si no hay zoom:
-       ACTIVA.
-
-       si ya hay zoom:
-       DESACTIVA.
-    */
 
     function alternarZoomPorClick(
       evento
@@ -7392,12 +8393,6 @@
     }
 
 
-    /*
-       ARRASTRE.
-
-       Solo funciona
-       si ya tenemos zoom.
-    */
 
     function iniciarArrastreZoom(
       evento
@@ -7486,11 +8481,6 @@
       } catch {
 
 
-        /*
-           No es crítico.
-        */
-
-
       }
 
 
@@ -7498,6 +8488,7 @@
 
 
     }
+
 
 
     function moverArrastreZoom(
@@ -7609,6 +8600,7 @@
     }
 
 
+
     function terminarArrastreZoom(
       evento
     ) {
@@ -7651,11 +8643,6 @@
       } catch {
 
 
-        /*
-           No es crítico.
-        */
-
-
       }
 
 
@@ -7673,15 +8660,6 @@
       pointerIdActivo =
         null;
 
-
-      /*
-         Si hubo arrastre,
-         ignoramos el click que el navegador
-         genera al final.
-
-         Así no se cierra el zoom
-         accidentalmente.
-      */
 
       if (
         movimientoArrastre
@@ -7712,6 +8690,7 @@
 
 
     }
+
 
 
     /* =========================================================
@@ -7826,10 +8805,6 @@
         );
 
 
-      /*
-         Reiniciamos zoom para cada producto.
-      */
-
       zoomActivo =
         false;
 
@@ -7854,11 +8829,6 @@
         false
       );
 
-
-      /*
-         Cada vez que se abre
-         elegimos dos frases nuevas.
-      */
 
       aplicarFrasesModal();
 
@@ -7889,9 +8859,6 @@
     }
 
 
-    /* =========================================================
-       CERRAR PRODUCTO
-    ========================================================= */
 
     function cerrarProducto() {
 
@@ -7931,8 +8898,9 @@
     }
 
 
+
     /* =========================================================
-       EVENTOS MENÚ
+       EVENTOS
     ========================================================= */
 
     document
@@ -7995,7 +8963,6 @@
         ".menu-links a, .menu-logo"
 
       )
-
       .forEach(
 
         enlace => {
@@ -8014,10 +8981,6 @@
 
       );
 
-
-    /* =========================================================
-       EVENTOS BANNERS
-    ========================================================= */
 
     document
       .getElementById(
@@ -8071,10 +9034,6 @@
       );
 
 
-    /* =========================================================
-       EVENTOS MODAL
-    ========================================================= */
-
     document
       .getElementById(
         "modal-close"
@@ -8116,6 +9075,7 @@
       );
 
 
+
     /* =========================================================
        EVENTOS ZOOM
     ========================================================= */
@@ -8126,11 +9086,6 @@
       );
 
 
-    /*
-       Click simple:
-       zoom / quitar zoom.
-    */
-
     marcoZoom.addEventListener(
 
       "click",
@@ -8139,11 +9094,6 @@
 
     );
 
-
-    /*
-       Mantener presionado:
-       comienza arrastre.
-    */
 
     marcoZoom.addEventListener(
 
@@ -8154,11 +9104,6 @@
     );
 
 
-    /*
-       Mover:
-       recorre la fotografía.
-    */
-
     marcoZoom.addEventListener(
 
       "pointermove",
@@ -8167,11 +9112,6 @@
 
     );
 
-
-    /*
-       Soltar:
-       termina recorrido.
-    */
 
     marcoZoom.addEventListener(
 
@@ -8190,10 +9130,6 @@
 
     );
 
-
-    /*
-       Control con teclado.
-    */
 
     marcoZoom.addEventListener(
 
@@ -8324,11 +9260,6 @@
     );
 
 
-    /*
-       Si cambia el tamaño
-       de la pantalla,
-       recalculamos límites.
-    */
 
     window.addEventListener(
 
@@ -8350,14 +9281,36 @@
         }
 
 
+        /*
+          Al girar el teléfono o cambiar ancho,
+          volvemos a tomar la proporción
+          del banner visible.
+        */
+
+        const activo =
+          document.querySelector(
+            ".hero-slide.activo"
+          );
+
+
+        if (
+          activo
+        ) {
+
+
+          actualizarProporcionHero(
+            activo
+          );
+
+
+        }
+
+
       }
 
     );
 
 
-    /*
-       ESC cierra modal o menú.
-    */
 
     document.addEventListener(
 
@@ -8408,24 +9361,13 @@
     );
 
 
+
     /* =========================================================
        INICIAR
     ========================================================= */
 
     async function iniciar() {
 
-
-      /*
-         Primero cargamos configuraciones.
-
-         Esto garantiza que cuando dibujemos
-         los productos ya tengamos:
-
-         - textos
-         - frases
-         - contacto
-         - tipografía
-      */
 
       await Promise.allSettled([
 
@@ -8441,10 +9383,6 @@
 
       ]);
 
-
-      /*
-         Luego banners y productos.
-      */
 
       await Promise.allSettled([
 
@@ -8468,4 +9406,5 @@
 
 
 </body>
+
 </html>
