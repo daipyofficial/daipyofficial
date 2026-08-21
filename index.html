@@ -2,22 +2,55 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="DAI PY - Tienda Oficial">
-  <meta name="theme-color" content="#f2f0eb">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="DAI PY - Tienda Oficial"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f2f0eb"
+  >
+
   <title>DAI PY — Tienda Oficial</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link id="google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    id="google-font"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+  >
 
   <style>
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
     :root {
       --fondo: #f2f0eb;
       --texto: #141414;
       --suave: #77736d;
-      --linea: rgba(20,20,20,.14);
+      --linea: rgba(20, 20, 20, 0.14);
       --oscuro: #151515;
+      --blanco: #ffffff;
+
       --fuente: "Poppins", Arial, sans-serif;
       --peso-precio: 700;
 
@@ -32,10 +65,16 @@
       --products-title-mobile: 30px;
       --products-text-mobile: 11px;
       --editorial-text-mobile: 30px;
+
       --hero-mobile-height: 58svh;
       --products-mobile-top-space: 30px;
       --products-mobile-lines: 2;
     }
+
+
+    /* =========================================================
+       GENERAL
+    ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -48,9 +87,13 @@
     }
 
     body {
+      margin: 0;
+
       background: var(--fondo);
       color: var(--texto);
+
       font-family: var(--fuente);
+
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -58,6 +101,11 @@
     body.menu-abierto,
     body.modal-abierto {
       overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a {
@@ -70,12 +118,10 @@
       font: inherit;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
 
-    /* TOPBAR */
+    /* =========================================================
+       TOPBAR
+    ========================================================= */
 
     .topbar {
       min-height: 30px;
@@ -86,17 +132,20 @@
       justify-content: center;
 
       background: var(--oscuro);
-      color: #fff;
+      color: var(--blanco);
 
       font-size: 9px;
       font-weight: 500;
+
       letter-spacing: .15em;
       text-transform: uppercase;
       text-align: center;
     }
 
 
-    /* CONTACTO */
+    /* =========================================================
+       CONTACTO SUPERIOR
+    ========================================================= */
 
     .contact-bar {
       min-height: 40px;
@@ -116,6 +165,7 @@
       color: var(--suave);
 
       font-weight: 500;
+
       letter-spacing: .12em;
       text-transform: uppercase;
     }
@@ -139,7 +189,9 @@
     }
 
 
-    /* HEADER */
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
     .header {
       height: 76px;
@@ -153,7 +205,7 @@
       top: 0;
       z-index: 50;
 
-      background: rgba(242,240,235,.96);
+      background: rgba(242, 240, 235, .96);
 
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -171,6 +223,7 @@
 
       font-size: 10px;
       font-weight: 500;
+
       letter-spacing: .13em;
       text-transform: uppercase;
     }
@@ -181,6 +234,7 @@
 
     .header-logo img {
       width: auto;
+
       max-width: 110px;
       max-height: 50px;
 
@@ -192,12 +246,15 @@
 
       font-size: 10px;
       font-weight: 500;
+
       letter-spacing: .13em;
       text-transform: uppercase;
     }
 
 
-    /* MENU */
+    /* =========================================================
+       MENÚ LATERAL
+    ========================================================= */
 
     .menu-overlay {
       position: fixed;
@@ -207,7 +264,7 @@
       visibility: hidden;
       opacity: 0;
 
-      background: rgba(0,0,0,.35);
+      background: rgba(0, 0, 0, .35);
 
       transition:
         opacity .3s ease,
@@ -220,7 +277,7 @@
     }
 
     .menu-panel {
-      width: min(440px,90vw);
+      width: min(440px, 90vw);
       height: 100%;
 
       padding: 28px;
@@ -251,6 +308,7 @@
 
     .menu-logo img {
       width: auto;
+
       max-width: 100px;
       max-height: 50px;
     }
@@ -263,6 +321,7 @@
 
       font-size: 10px;
       font-weight: 500;
+
       letter-spacing: .12em;
       text-transform: uppercase;
     }
@@ -276,8 +335,9 @@
     }
 
     .menu-links a {
-      font-size: clamp(34px,6vw,53px);
+      font-size: clamp(34px, 6vw, 53px);
       font-weight: 500;
+
       line-height: 1.08;
       letter-spacing: -.045em;
     }
@@ -293,16 +353,19 @@
       border-top: 1px solid var(--linea);
 
       color: var(--suave);
+
       font-size: 11px;
     }
 
 
-    /* HERO */
+    /* =========================================================
+       HERO
+    ========================================================= */
 
     .hero {
       width: calc(100% - 28px);
 
-      height: min(79vh,850px);
+      height: min(79vh, 850px);
       min-height: 570px;
 
       margin: 14px auto 0;
@@ -328,7 +391,7 @@
     }
 
     .hero-fallback img {
-      width: min(240px,45vw);
+      width: min(240px, 45vw);
       height: auto;
 
       opacity: .5;
@@ -342,7 +405,7 @@
       height: 100%;
 
       object-fit: cover;
-      object-position: center;
+      object-position: center center;
 
       opacity: 0;
 
@@ -371,9 +434,9 @@
       background:
         linear-gradient(
           to top,
-          rgba(0,0,0,.63),
-          rgba(0,0,0,.14) 50%,
-          rgba(0,0,0,.02)
+          rgba(0, 0, 0, .63),
+          rgba(0, 0, 0, .14) 50%,
+          rgba(0, 0, 0, .02)
         );
     }
 
@@ -381,12 +444,12 @@
       position: absolute;
       z-index: 3;
 
-      left: clamp(24px,6vw,90px);
-      bottom: clamp(35px,7vw,90px);
+      left: clamp(24px, 6vw, 90px);
+      bottom: clamp(35px, 7vw, 90px);
 
       max-width: 850px;
 
-      color: #fff;
+      color: var(--blanco);
     }
 
     .hero-label {
@@ -394,6 +457,7 @@
 
       font-size: 10px;
       font-weight: 500;
+
       letter-spacing: .18em;
       text-transform: uppercase;
     }
@@ -409,6 +473,7 @@
         );
 
       font-weight: 500;
+
       line-height: .99;
       letter-spacing: -.055em;
 
@@ -421,6 +486,7 @@
       margin-top: 18px;
 
       font-size: var(--hero-subtitle-desktop);
+
       line-height: 1.55;
     }
 
@@ -445,11 +511,11 @@
 
       border:
         1px solid
-        rgba(255,255,255,.65);
+        rgba(255, 255, 255, .65);
 
-      background: rgba(0,0,0,.12);
+      background: rgba(0, 0, 0, .12);
 
-      color: #fff;
+      color: var(--blanco);
 
       cursor: pointer;
 
@@ -457,7 +523,9 @@
     }
 
 
-    /* CABECERA PRODUCTOS */
+    /* =========================================================
+       CABECERA PRODUCTOS
+    ========================================================= */
 
     .products-heading {
       max-width: 1600px;
@@ -465,14 +533,13 @@
       margin: auto;
 
       padding:
-        clamp(72px,8vw,120px)
-        clamp(20px,5vw,70px)
-        clamp(38px,5vw,62px);
+        clamp(72px, 8vw, 120px)
+        clamp(20px, 5vw, 70px)
+        clamp(38px, 5vw, 62px);
 
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-
       gap: 40px;
     }
 
@@ -485,6 +552,7 @@
 
       font-size: 10px;
       font-weight: 500;
+
       letter-spacing: .16em;
       text-transform: uppercase;
     }
@@ -498,6 +566,7 @@
         );
 
       font-weight: 500;
+
       line-height: 1;
       letter-spacing: -.05em;
     }
@@ -508,11 +577,14 @@
       color: var(--suave);
 
       font-size: var(--products-text-desktop);
+
       line-height: 1.65;
     }
 
 
-    /* GRID PRODUCTOS */
+    /* =========================================================
+       PRODUCTOS
+    ========================================================= */
 
     .products-section {
       width: calc(100% - 28px);
@@ -527,7 +599,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(2, minmax(0, 1fr));
 
       gap: 75px 16px;
     }
@@ -549,15 +621,18 @@
     }
 
     .product:focus-visible {
-      outline:
-        2px solid
-        var(--texto);
-
+      outline: 2px solid var(--texto);
       outline-offset: 4px;
     }
 
 
-    /* Todas las imágenes principales quedan cuadradas y centradas */
+    /* =========================================================
+       IMÁGENES DEL CATÁLOGO
+
+       TODAS CUADRADAS.
+       TODAS CENTRADAS.
+       TODAS LLENAN EL MISMO ESPACIO.
+    ========================================================= */
 
     .product-image {
       width: 100%;
@@ -579,7 +654,10 @@
       height: 100%;
 
       object-fit: cover;
-      object-position: center center;
+      object-position: 50% 50%;
+
+      border: 0;
+      outline: 0;
 
       transition: transform .45s ease;
     }
@@ -616,13 +694,14 @@
 
       border:
         1px solid
-        rgba(20,20,20,.14);
+        rgba(20, 20, 20, .14);
 
       background:
-        rgba(255,255,255,.94);
+        rgba(255, 255, 255, .94);
 
       font-size: 8px;
       font-weight: 600;
+
       letter-spacing: .1em;
       text-transform: uppercase;
 
@@ -652,12 +731,11 @@
       display: grid;
 
       grid-template-columns:
-        minmax(0,1.5fr)
-        minmax(100px,.6fr)
+        minmax(0, 1.5fr)
+        minmax(100px, .6fr)
         auto;
 
       align-items: center;
-
       gap: 20px;
 
       border-bottom: 1px solid var(--linea);
@@ -694,6 +772,7 @@
 
       font-size: 9px;
       font-weight: 600;
+
       letter-spacing: .1em;
       text-transform: uppercase;
 
@@ -705,27 +784,29 @@
     .purchase-button:hover,
     .purchase-button:focus-visible {
       background: var(--texto);
-      color: #fff;
+      color: var(--blanco);
     }
 
     .product-description {
       max-width: 620px;
 
       margin-top: 10px;
-
       padding: 0 5px;
 
       color: var(--suave);
 
       font-size: 11px;
+
       line-height: 1.6;
     }
 
 
-    /* ESTADO VACÍO */
+    /* =========================================================
+       VACÍO
+    ========================================================= */
 
     .empty-state {
-      grid-column: 1/-1;
+      grid-column: 1 / -1;
 
       min-height: 280px;
 
@@ -751,19 +832,22 @@
 
     .empty-state span {
       color: var(--suave);
+
       font-size: 12px;
     }
 
 
-    /* EDITORIAL */
+    /* =========================================================
+       EDITORIAL
+    ========================================================= */
 
     .editorial {
       padding:
         130px
-        clamp(20px,6vw,90px);
+        clamp(20px, 6vw, 90px);
 
       background: var(--oscuro);
-      color: #fff;
+      color: var(--blanco);
     }
 
     .editorial-inner {
@@ -775,10 +859,11 @@
     .editorial-label {
       margin-bottom: 28px;
 
-      color: rgba(255,255,255,.5);
+      color: rgba(255, 255, 255, .5);
 
       font-size: 10px;
       font-weight: 500;
+
       letter-spacing: .17em;
       text-transform: uppercase;
     }
@@ -794,12 +879,15 @@
         );
 
       font-weight: 500;
+
       line-height: 1.1;
       letter-spacing: -.045em;
     }
 
 
-    /* FOOTER */
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
     .footer {
       padding: 75px 30px 30px;
@@ -818,7 +906,7 @@
     .footer-logo img {
       width: auto;
 
-      max-width: min(300px,55vw);
+      max-width: min(300px, 55vw);
       max-height: 160px;
 
       object-fit: contain;
@@ -830,7 +918,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(3,minmax(0,1fr));
+        repeat(3, minmax(0, 1fr));
 
       gap: 30px;
 
@@ -847,6 +935,7 @@
 
       font-size: 9px;
       font-weight: 500;
+
       letter-spacing: .15em;
       text-transform: uppercase;
     }
@@ -863,20 +952,20 @@
 
       display: flex;
       justify-content: space-between;
-
       gap: 20px;
 
       color: var(--suave);
 
       font-size: 9px;
       font-weight: 500;
+
       letter-spacing: .1em;
       text-transform: uppercase;
     }
 
 
     /* =========================================================
-       MODAL PRODUCTO
+       POPUP PRODUCTO
     ========================================================= */
 
     .product-modal {
@@ -890,7 +979,7 @@
 
       padding: 90px 120px;
 
-      background: rgba(20,20,20,.70);
+      background: rgba(20, 20, 20, .70);
 
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -903,13 +992,18 @@
     }
 
 
-    /* Espacio exterior para que los globos sobresalgan */
+    /*
+       Contenedor externo.
+
+       Los globos se colocan fuera de la tarjeta
+       para no tapar nunca el producto.
+    */
 
     .modal-shell {
       width:
         min(
           1040px,
-          calc(100vw - 260px)
+          calc(100vw - 280px)
         );
 
       position: relative;
@@ -917,6 +1011,10 @@
       flex: 0 0 auto;
     }
 
+
+    /*
+       Tarjeta del popup
+    */
 
     .modal-card {
       width: 100%;
@@ -926,16 +1024,19 @@
       display: grid;
 
       grid-template-columns:
-        minmax(0,1fr)
+        minmax(0, 1fr)
         340px;
 
       background: var(--fondo);
 
+      overflow: hidden;
+
+      border: 0;
+      outline: 0;
+
       box-shadow:
         0 30px 90px
-        rgba(0,0,0,.28);
-
-      overflow: hidden;
+        rgba(0, 0, 0, .28);
     }
 
 
@@ -944,7 +1045,7 @@
       height: 40px;
 
       position: absolute;
-      z-index: 20;
+      z-index: 30;
 
       top: 12px;
       right: 12px;
@@ -955,12 +1056,12 @@
 
       border:
         1px solid
-        rgba(20,20,20,.15);
+        rgba(20, 20, 20, .15);
 
       border-radius: 50%;
 
       background:
-        rgba(242,240,235,.96);
+        rgba(242, 240, 235, .96);
 
       cursor: pointer;
 
@@ -968,7 +1069,11 @@
     }
 
 
-    /* Imagen popup cuadrada */
+    /* =========================================================
+       CUADRO DE FOTO DEL POPUP
+
+       SIEMPRE 1 : 1
+    ========================================================= */
 
     .modal-visual {
       width: 100%;
@@ -976,38 +1081,70 @@
       aspect-ratio: 1 / 1;
 
       min-width: 0;
+      min-height: 0;
 
       position: relative;
-
       overflow: hidden;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      background: #e1ddd5;
+      background: #e2ded6;
+
+      border: 0 !important;
+      outline: 0 !important;
+
+      box-shadow: none !important;
     }
 
 
     /* =========================================================
-       ZOOM
+       VISOR DE ZOOM
     ========================================================= */
 
     .modal-image-frame {
       width: 100%;
       height: 100%;
 
+      aspect-ratio: 1 / 1;
+
+      position: relative;
       overflow: hidden;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
+      margin: 0;
+      padding: 0;
+
+      background: #e2ded6;
+
+      border: 0 !important;
+      outline: 0 !important;
+
+      box-shadow: none !important;
+
       cursor: zoom-in;
 
       user-select: none;
+      -webkit-user-select: none;
 
+      /*
+         Necesario para que en móvil podamos
+         arrastrar la fotografía cuando hay zoom.
+      */
       touch-action: none;
+    }
+
+    .modal-image-frame:focus,
+    .modal-image-frame:focus-visible,
+    .modal-image-frame:active {
+      border: 0 !important;
+      outline: 0 !important;
+
+      box-shadow: none !important;
     }
 
     .modal-image-frame.zoom-activo {
@@ -1019,25 +1156,51 @@
     }
 
 
+    /*
+       FOTO DEL POPUP.
+
+       IMPORTANTE:
+
+       object-fit: cover llena completamente
+       el cuadrado.
+
+       object-position: center mantiene siempre
+       el producto enfocado desde el centro.
+    */
+
     .modal-product-image {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
       width: 100%;
       height: 100%;
 
-      object-fit: contain;
-      object-position: center;
+      margin: 0;
+      padding: 0;
+
+      object-fit: cover !important;
+      object-position: 50% 50% !important;
+
+      display: block;
+
+      border: 0 !important;
+      outline: 0 !important;
+
+      box-shadow: none !important;
 
       transform:
-        translate3d(0,0,0)
+        translate3d(0, 0, 0)
         scale(1);
 
-      transform-origin:
-        center center;
+      transform-origin: center center;
 
       transition:
-        transform .28s ease;
+        transform .28s cubic-bezier(.22, .61, .36, 1);
 
       user-select: none;
-
+      -webkit-user-select: none;
       -webkit-user-drag: none;
 
       pointer-events: none;
@@ -1045,21 +1208,15 @@
       will-change: transform;
     }
 
-
-    .modal-image-frame.zoom-activo
-    .modal-product-image {
-      transition:
-        transform .20s ease;
-    }
-
-
     .modal-image-frame.zoom-activo.arrastrando
     .modal-product-image {
-      transition: none;
+      transition: none !important;
     }
 
 
-    /* INFORMACIÓN MODAL */
+    /* =========================================================
+       INFORMACIÓN PRODUCTO
+    ========================================================= */
 
     .modal-info {
       min-width: 0;
@@ -1079,6 +1236,7 @@
 
       font-size: 8px;
       font-weight: 600;
+
       letter-spacing: .16em;
       text-transform: uppercase;
     }
@@ -1092,6 +1250,7 @@
         );
 
       font-weight: 500;
+
       line-height: 1.02;
       letter-spacing: -.045em;
     }
@@ -1109,6 +1268,7 @@
       color: var(--suave);
 
       font-size: 11px;
+
       line-height: 1.65;
 
       white-space: pre-line;
@@ -1116,7 +1276,6 @@
 
     .modal-buy {
       margin-top: auto;
-
       padding-top: 30px;
     }
 
@@ -1131,119 +1290,175 @@
       color: var(--suave);
 
       font-size: 8px;
-      line-height: 1.45;
 
+      line-height: 1.45;
       text-align: center;
     }
 
 
     /* =========================================================
-       GLOBOS GRANDES EN ESCRITORIO
+       GLOBOS ESCRITORIO
     ========================================================= */
 
-    .speech-bubble {
-      position: absolute;
-      z-index: 30;
+    @media (min-width: 761px) {
 
-      width: max-content;
-      max-width: 320px;
+      .speech-bubble {
+        position: absolute;
+        z-index: 40;
 
-      padding: 18px 24px;
+        width: max-content;
 
-      border:
-        1px solid
-        rgba(20,20,20,.68);
+        min-width: 190px;
+        max-width: 330px;
 
-      border-radius: 32px;
+        padding: 17px 24px;
 
-      background:
-        rgba(255,255,255,.98);
+        background: var(--blanco);
+        color: #151515;
 
-      color: #151515;
+        border:
+          1.5px solid
+          rgba(20, 20, 20, .68);
 
-      box-shadow:
-        0 12px 34px
-        rgba(0,0,0,.13);
+        border-radius: 28px;
 
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.25;
-      text-align: center;
+        box-shadow:
+          0 10px 30px
+          rgba(0, 0, 0, .13);
 
-      pointer-events: none;
+        font-size: 16px;
+        font-weight: 500;
+
+        line-height: 1.3;
+
+        text-align: center;
+
+        pointer-events: none;
+      }
+
+
+      /*
+         Dos triángulos crean una punta limpia
+         con borde.
+      */
+
+      .speech-bubble::before,
+      .speech-bubble::after {
+        content: "";
+
+        position: absolute;
+
+        width: 0;
+        height: 0;
+
+        background: transparent;
+
+        border: 0;
+
+        transform: none;
+      }
+
+
+      /*
+         Globo izquierdo.
+         Punta hacia el producto.
+      */
+
+      .speech-bubble.one {
+        top: 15%;
+        left: -42px;
+
+        transform:
+          translateX(-100%)
+          rotate(-1deg);
+      }
+
+      .speech-bubble.one::before {
+        right: -19px;
+        bottom: 20px;
+
+        border-top:
+          12px solid transparent;
+
+        border-bottom:
+          12px solid transparent;
+
+        border-left:
+          19px solid
+          rgba(20, 20, 20, .68);
+      }
+
+      .speech-bubble.one::after {
+        right: -16px;
+        bottom: 21px;
+
+        border-top:
+          11px solid transparent;
+
+        border-bottom:
+          11px solid transparent;
+
+        border-left:
+          17px solid
+          var(--blanco);
+      }
+
+
+      /*
+         Globo derecho.
+         Punta hacia el producto.
+      */
+
+      .speech-bubble.two {
+        right: -42px;
+        bottom: 17%;
+
+        transform:
+          translateX(100%)
+          rotate(1deg);
+      }
+
+      .speech-bubble.two::before {
+        left: -19px;
+        top: 20px;
+
+        border-top:
+          12px solid transparent;
+
+        border-bottom:
+          12px solid transparent;
+
+        border-right:
+          19px solid
+          rgba(20, 20, 20, .68);
+      }
+
+      .speech-bubble.two::after {
+        left: -16px;
+        top: 21px;
+
+        border-top:
+          11px solid transparent;
+
+        border-bottom:
+          11px solid transparent;
+
+        border-right:
+          17px solid
+          var(--blanco);
+      }
+
     }
 
-    .speech-bubble::after {
-      content: "";
 
-      width: 18px;
-      height: 18px;
+    /* =========================================================
+       TABLET
+    ========================================================= */
 
-      position: absolute;
-
-      background: inherit;
-    }
-
-
-    /* Globo izquierdo */
-
-    .speech-bubble.one {
-      top: 15%;
-      left: -38px;
-
-      transform:
-        translateX(-100%)
-        rotate(-1deg);
-    }
-
-    .speech-bubble.one::after {
-      right: -9px;
-      bottom: 13px;
-
-      border-right:
-        1px solid
-        rgba(20,20,20,.68);
-
-      border-bottom:
-        1px solid
-        rgba(20,20,20,.68);
-
-      transform:
-        rotate(-45deg);
-    }
-
-
-    /* Globo derecho */
-
-    .speech-bubble.two {
-      right: -38px;
-      bottom: 17%;
-
-      transform:
-        translateX(100%)
-        rotate(1deg);
-    }
-
-    .speech-bubble.two::after {
-      left: -9px;
-      top: 13px;
-
-      border-left:
-        1px solid
-        rgba(20,20,20,.68);
-
-      border-top:
-        1px solid
-        rgba(20,20,20,.68);
-
-      transform:
-        rotate(-45deg);
-    }
-
-
-    /* TABLET */
-
-    @media (max-width: 1120px) {
+    @media
+    (min-width: 761px)
+    and
+    (max-width: 1120px) {
 
       .product-modal {
         padding: 80px 90px;
@@ -1253,13 +1468,13 @@
         width:
           min(
             900px,
-            calc(100vw - 200px)
+            calc(100vw - 210px)
           );
       }
 
       .modal-card {
         grid-template-columns:
-          minmax(0,1fr)
+          minmax(0, 1fr)
           300px;
       }
 
@@ -1268,6 +1483,7 @@
       }
 
       .speech-bubble {
+        min-width: 150px;
         max-width: 235px;
 
         padding: 14px 18px;
@@ -1276,17 +1492,18 @@
       }
 
       .speech-bubble.one {
-        left: -26px;
+        left: -28px;
       }
 
       .speech-bubble.two {
-        right: -26px;
+        right: -28px;
       }
+
     }
 
 
     /* =========================================================
-       MOVIL
+       MÓVIL
     ========================================================= */
 
     @media (max-width: 760px) {
@@ -1335,7 +1552,9 @@
       }
 
 
-      /* Banner */
+      /* =====================================================
+         HERO MÓVIL
+      ===================================================== */
 
       .hero {
         width: calc(100% - 16px);
@@ -1399,7 +1618,9 @@
       }
 
 
-      /* Productos */
+      /* =====================================================
+         PRODUCTOS MÓVIL
+      ===================================================== */
 
       .products-heading {
         padding:
@@ -1433,8 +1654,7 @@
 
         display: -webkit-box;
 
-        -webkit-box-orient:
-          vertical;
+        -webkit-box-orient: vertical;
 
         -webkit-line-clamp:
           var(--products-mobile-lines);
@@ -1457,18 +1677,24 @@
         gap: 48px;
       }
 
+
+      /*
+         Vista principal móvil también
+         completamente cuadrada.
+      */
+
       .product-image {
         aspect-ratio: 1 / 1;
       }
 
       .product-image > img {
         object-fit: cover;
-        object-position: center center;
+        object-position: 50% 50%;
       }
 
       .product-row {
         grid-template-columns:
-          minmax(0,1fr)
+          minmax(0, 1fr)
           auto;
 
         gap: 12px 15px;
@@ -1491,7 +1717,7 @@
       }
 
       .purchase-button {
-        grid-column: 1/-1;
+        grid-column: 1 / -1;
         grid-row: 2;
 
         width: 100%;
@@ -1517,7 +1743,9 @@
       }
 
 
-      /* Editorial */
+      /* =====================================================
+         EDITORIAL
+      ===================================================== */
 
       .editorial {
         padding: 82px 20px;
@@ -1529,7 +1757,9 @@
       }
 
 
-      /* Footer */
+      /* =====================================================
+         FOOTER
+      ===================================================== */
 
       .footer {
         padding: 50px 18px 24px;
@@ -1550,7 +1780,9 @@
       }
 
 
-      /* Popup móvil */
+      /* =====================================================
+         POPUP MÓVIL
+      ===================================================== */
 
       .product-modal {
         padding: 78px 14px;
@@ -1571,18 +1803,40 @@
         overflow: hidden;
       }
 
+
+      /*
+         Misma proporción que escritorio.
+      */
+
       .modal-visual {
         width: 100%;
 
+        height: auto !important;
+
         aspect-ratio: 1 / 1;
+
+        min-height: 0 !important;
+        max-height: none !important;
+      }
+
+      .modal-image-frame {
+        width: 100%;
+        height: 100% !important;
+
+        aspect-ratio: 1 / 1;
+
+        min-height: 0 !important;
+        max-height: none !important;
       }
 
       .modal-product-image {
         width: 100%;
         height: 100%;
 
-        object-fit: contain;
+        object-fit: cover !important;
+        object-position: 50% 50% !important;
       }
+
 
       .modal-info {
         min-height: 220px;
@@ -1626,9 +1880,19 @@
       }
 
 
-      /* Globos móvil */
+      /* =====================================================
+         GLOBOS MÓVIL
+
+         Conservamos el comportamiento que ya
+         funcionaba bien.
+      ===================================================== */
 
       .speech-bubble {
+        position: absolute;
+        z-index: 40;
+
+        width: max-content;
+
         max-width:
           min(
             230px,
@@ -1637,16 +1901,48 @@
 
         padding: 11px 15px;
 
+        background: var(--blanco);
+        color: #151515;
+
+        border:
+          1px solid
+          rgba(20, 20, 20, .65);
+
         border-radius: 24px;
 
+        box-shadow:
+          0 8px 26px
+          rgba(0, 0, 0, .10);
+
         font-size: 11px;
+        font-weight: 500;
+
+        line-height: 1.25;
+
+        text-align: center;
+
+        pointer-events: none;
       }
+
+      .speech-bubble::after {
+        content: "";
+
+        position: absolute;
+
+        width: 15px;
+        height: 15px;
+
+        background: inherit;
+      }
+
+
+      /*
+         Globo superior
+      */
 
       .speech-bubble.one {
         top: -14px;
         left: 8px;
-        right: auto;
-        bottom: auto;
 
         transform:
           translateY(-100%)
@@ -1654,30 +1950,28 @@
       }
 
       .speech-bubble.one::after {
-        right: auto;
         left: 24px;
-        top: auto;
         bottom: -8px;
-
-        border: 0;
 
         border-right:
           1px solid
-          rgba(20,20,20,.68);
+          rgba(20, 20, 20, .65);
 
         border-bottom:
           1px solid
-          rgba(20,20,20,.68);
+          rgba(20, 20, 20, .65);
 
-        transform:
-          rotate(45deg);
+        transform: rotate(45deg);
       }
 
+
+      /*
+         Globo inferior
+      */
+
       .speech-bubble.two {
-        top: auto;
         right: 8px;
         bottom: -14px;
-        left: auto;
 
         transform:
           translateY(100%)
@@ -1685,24 +1979,20 @@
       }
 
       .speech-bubble.two::after {
-        left: auto;
         right: 24px;
         top: -8px;
-        bottom: auto;
-
-        border: 0;
 
         border-left:
           1px solid
-          rgba(20,20,20,.68);
+          rgba(20, 20, 20, .65);
 
         border-top:
           1px solid
-          rgba(20,20,20,.68);
+          rgba(20, 20, 20, .65);
 
-        transform:
-          rotate(45deg);
+        transform: rotate(45deg);
       }
+
     }
 
 
@@ -1723,6 +2013,7 @@
       .product-modal {
         padding: 76px 10px;
       }
+
     }
 
 
@@ -1733,12 +2024,10 @@
       *::after {
         scroll-behavior: auto !important;
 
-        transition-duration:
-          .01ms !important;
-
-        animation-duration:
-          .01ms !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
       }
+
     }
 
   </style>
@@ -1748,6 +2037,10 @@
 <body>
 
 
+  <!-- =========================================================
+       TOPBAR
+  ========================================================== -->
+
   <div
     class="topbar"
     id="topbar-text"
@@ -1755,6 +2048,10 @@
     DAI PY · TIENDA OFICIAL
   </div>
 
+
+  <!-- =========================================================
+       CONTACTO
+  ========================================================== -->
 
   <div class="contact-bar">
 
@@ -1801,6 +2098,10 @@
   </div>
 
 
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+
   <header class="header">
 
     <button
@@ -1834,7 +2135,9 @@
   </header>
 
 
-  <!-- MENU -->
+  <!-- =========================================================
+       MENÚ
+  ========================================================== -->
 
   <div
     class="menu-overlay"
@@ -1931,10 +2234,15 @@
 
       </div>
 
+
     </nav>
 
   </div>
 
+
+  <!-- =========================================================
+       CONTENIDO
+  ========================================================== -->
 
   <main>
 
@@ -2020,7 +2328,7 @@
     </section>
 
 
-    <!-- PRODUCTOS -->
+    <!-- CABECERA PRODUCTOS -->
 
     <section
       class="products-heading"
@@ -2050,6 +2358,8 @@
 
     </section>
 
+
+    <!-- GRID PRODUCTOS -->
 
     <section
       class="products-section"
@@ -2107,7 +2417,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
 
   <footer
     class="footer"
@@ -2217,7 +2529,7 @@
 
 
   <!-- =========================================================
-       MODAL PRODUCTO
+       POPUP PRODUCTO
   ========================================================== -->
 
   <div
@@ -2233,7 +2545,7 @@
     <div class="modal-shell">
 
 
-      <!-- GLOBO IZQUIERDO -->
+      <!-- GLOBO 1 -->
 
       <div
         class="speech-bubble one"
@@ -2252,25 +2564,23 @@
           class="modal-close"
           id="modal-close"
           type="button"
-          aria-label="Cerrar"
+          aria-label="Cerrar producto"
         >
           ×
         </button>
 
 
-        <!-- FOTO -->
+        <!-- IMAGEN -->
 
         <div class="modal-visual">
-
 
           <div
             class="modal-image-frame"
             id="modal-image-frame"
             role="button"
             tabindex="0"
-            aria-label="Ampliar y recorrer imagen"
+            aria-label="Ampliar imagen"
           >
-
 
             <img
               class="modal-product-image"
@@ -2279,9 +2589,7 @@
               alt=""
             >
 
-
           </div>
-
 
         </div>
 
@@ -2289,7 +2597,6 @@
         <!-- INFORMACIÓN -->
 
         <div class="modal-info">
-
 
           <div
             class="modal-eyebrow"
@@ -2323,7 +2630,6 @@
 
           <div class="modal-buy">
 
-
             <a
               class="purchase-button"
               id="modal-buy-button"
@@ -2342,7 +2648,6 @@
               Click para acercar. Con zoom activo, mantené presionado y arrastrá para recorrer.
             </div>
 
-
           </div>
 
 
@@ -2352,7 +2657,7 @@
       </div>
 
 
-      <!-- GLOBO DERECHO -->
+      <!-- GLOBO 2 -->
 
       <div
         class="speech-bubble two"
@@ -2368,6 +2673,10 @@
   </div>
 
 
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
   <script>
 
     /* =========================================================
@@ -2377,161 +2686,123 @@
     const REPO =
       "daipyofficial/daipyofficial";
 
-
     const BRANCH =
       "main";
 
-
     const API_BASE =
       `https://api.github.com/repos/${REPO}/contents`;
-
 
     const VERSION =
       Date.now();
 
 
     /* =========================================================
-       TEXTOS
+       CONFIGURACIÓN POR DEFECTO
     ========================================================= */
 
     const DEFAULT_TEXTOS = {
 
-
       topbar_texto:
         "DAI PY · TIENDA OFICIAL",
-
 
       contacto_etiqueta:
         "Contacto",
 
-
       menu_inicio:
         "Inicio",
-
 
       menu_productos:
         "Productos",
 
-
       menu_contacto:
         "Contacto",
-
 
       hero_etiqueta:
         "DAI PY",
 
-
       productos_etiqueta:
         "Tienda",
-
 
       productos_titulo:
         "Productos",
 
-
       productos_texto:
         "Elegí tu producto y realizá tu pedido directamente por WhatsApp.",
-
 
       editorial_etiqueta:
         "DAI PY",
 
-
       editorial_texto:
         "Las cosas que elegimos llevar con nosotros también cuentan una historia.",
-
 
       footer_correo:
         "Correo",
 
-
       footer_instagram:
         "Instagram",
-
 
       footer_pedidos:
         "Pedidos",
 
-
       footer_copy:
         "© DAI PY Tienda Oficial",
-
 
       footer_pais:
         "Paraguay",
 
-
       boton_comprar:
         "Comprar por WhatsApp",
-
 
       texto_zoom:
         "Ver detalle",
 
-
       modal_etiqueta:
         "DAI PY · Detalle",
-
 
       modal_ayuda_zoom:
         "Click para acercar. Con zoom activo, mantené presionado y arrastrá para recorrer.",
 
-
       tamano_titulo_banner:
         72,
-
 
       tamano_subtitulo_banner:
         14,
 
-
       tamano_titulo_productos:
         64,
-
 
       tamano_texto_productos:
         13,
 
-
       tamano_editorial:
         56,
-
 
       tamano_titulo_banner_movil:
         34,
 
-
       tamano_subtitulo_banner_movil:
         12,
-
 
       tamano_titulo_productos_movil:
         30,
 
-
       tamano_texto_productos_movil:
         11,
-
 
       tamano_editorial_movil:
         30,
 
-
       alto_banner_movil:
         58,
-
 
       espacio_banner_productos_movil:
         30,
 
-
       max_lineas_texto_productos_movil:
         2,
 
-
       popup_activo:
         true,
-
 
       frases_popup: [
 
@@ -2557,7 +2828,6 @@
 
       ]
 
-
     };
 
 
@@ -2566,7 +2836,6 @@
     ========================================================= */
 
     const FUENTES = {
-
 
       Poppins: {
 
@@ -2578,7 +2847,6 @@
 
       },
 
-
       Montserrat: {
 
         google:
@@ -2588,7 +2856,6 @@
           '"Montserrat", Arial, sans-serif'
 
       },
-
 
       Inter: {
 
@@ -2600,7 +2867,6 @@
 
       },
 
-
       Roboto: {
 
         google:
@@ -2610,7 +2876,6 @@
           '"Roboto", Arial, sans-serif'
 
       },
-
 
       Lato: {
 
@@ -2622,24 +2887,23 @@
 
       }
 
-
     };
 
 
-    let CONTACTO = {
+    /* =========================================================
+       ESTADO GENERAL
+    ========================================================= */
 
+    let CONTACTO = {
 
       whatsapp:
         "+595985824098",
 
-
       email:
         "daiofficial.py@gmail.com",
 
-
       instagram:
         "@daiofficial.py"
-
 
     };
 
@@ -2651,22 +2915,24 @@
 
     let BANNERS = [];
 
-
     let PRODUCTOS = [];
 
-
     let bannerActual = 0;
-
 
     let bannerTimer = null;
 
 
     /* =========================================================
-       ESTADO DEL ZOOM
+       ESTADO ZOOM
     ========================================================= */
 
+    /*
+       2.15 proporciona un zoom más útil
+       para observar detalles.
+    */
+
     const ZOOM_ESCALA =
-      1.9;
+      2.15;
 
 
     let zoomActivo =
@@ -2705,7 +2971,16 @@
       0;
 
 
+    /*
+       Sirve para distinguir un click
+       normal de un arrastre.
+    */
+
     let movimientoArrastre =
+      false;
+
+
+    let ignorarSiguienteClick =
       false;
 
 
@@ -2719,7 +2994,6 @@
       min = -Infinity,
       max = Infinity
     ) {
-
 
       const numero =
         Number(valor);
@@ -2753,7 +3027,6 @@
       respaldo = true
     ) {
 
-
       if (
         typeof valor === "boolean"
       ) {
@@ -2764,17 +3037,11 @@
 
 
       if (
-
         valor === null
-
         ||
-
         valor === undefined
-
         ||
-
         valor === ""
-
       ) {
 
         return respaldo;
@@ -2789,14 +3056,12 @@
 
 
       if (
-
         [
           "false",
           "0",
           "no",
           "off"
         ].includes(texto)
-
       ) {
 
         return false;
@@ -2805,7 +3070,6 @@
 
 
       if (
-
         [
           "true",
           "1",
@@ -2813,7 +3077,6 @@
           "sí",
           "on"
         ].includes(texto)
-
       ) {
 
         return true;
@@ -2829,7 +3092,6 @@
     function escaparHTML(
       valor = ""
     ) {
-
 
       return String(valor)
 
@@ -2864,14 +3126,13 @@
     /* =========================================================
        PRECIOS
 
-       32.000 se mantiene 32.000
-       32000 se muestra como 32.000 Gs.
+       IMPORTANTE:
+       NO volver a convertir 32.000 en 32.
     ========================================================= */
 
     function precioFormateado(
       precio
     ) {
-
 
       const valor =
         String(
@@ -2888,14 +3149,15 @@
       }
 
 
+      /*
+         Si ya viene con Gs. o ₲,
+         lo respetamos.
+      */
+
       if (
-
         /gs\.?/i.test(valor)
-
         ||
-
         /₲/.test(valor)
-
       ) {
 
         return valor;
@@ -2903,11 +3165,18 @@
       }
 
 
-      if (
+      /*
+         Caso:
+         32.000
+         120.000
+         1.200.000
 
+         Se conserva exactamente.
+      */
+
+      if (
         /^\d{1,3}(\.\d{3})+$/
           .test(valor)
-
       ) {
 
         return `${valor} Gs.`;
@@ -2915,33 +3184,29 @@
       }
 
 
-      if (
+      /*
+         Caso:
+         32000
+         120000
+      */
 
+      if (
         /^\d+$/
           .test(valor)
-
       ) {
-
 
         try {
 
-
           return (
-
             `${new Intl.NumberFormat("es-PY")
               .format(Number(valor))} Gs.`
-
           );
-
 
         } catch {
 
-
           return `${valor} Gs.`;
 
-
         }
-
 
       }
 
@@ -2952,13 +3217,12 @@
 
 
     /* =========================================================
-       RUTAS DE IMÁGENES
+       RUTAS
     ========================================================= */
 
     function rutaMedia(
       ruta
     ) {
-
 
       if (
         !ruta
@@ -2975,10 +3239,8 @@
 
 
       if (
-
         /^https?:\/\//i
           .test(valor)
-
       ) {
 
         return valor;
@@ -3007,17 +3269,13 @@
 
 
       if (
-
         valor.startsWith(
           "uploads/"
         )
-
       ) {
-
 
         valor =
           `public/${valor}`;
-
 
       }
 
@@ -3034,7 +3292,6 @@
     async function cargarJSON(
       ruta
     ) {
-
 
       const separador =
 
@@ -3062,13 +3319,9 @@
         !respuesta.ok
       ) {
 
-
         throw new Error(
-
           `No se pudo cargar ${ruta}`
-
         );
-
 
       }
 
@@ -3079,13 +3332,12 @@
 
 
     /* =========================================================
-       YAML
+       FRONT MATTER
     ========================================================= */
 
     function limpiarValorYaml(
       valor
     ) {
-
 
       let salida =
         String(
@@ -3094,30 +3346,24 @@
 
 
       if (
-
         (
           salida.startsWith('"')
           &&
           salida.endsWith('"')
         )
-
         ||
-
         (
           salida.startsWith("'")
           &&
           salida.endsWith("'")
         )
-
       ) {
-
 
         salida =
           salida.slice(
             1,
             -1
           );
-
 
       }
 
@@ -3164,13 +3410,13 @@
 
 
       /*
-        MUY IMPORTANTE:
+         MUY IMPORTANTE:
 
-        NO convertir automáticamente
-        "32.000" en Number.
+         No transformamos valores numéricos
+         automáticamente.
 
-        De esta forma no se pierde
-        el precio.
+         Un precio "32.000" debe permanecer
+         "32.000".
       */
 
       return salida;
@@ -3181,7 +3427,6 @@
     function parsearFrontMatter(
       texto = ""
     ) {
-
 
       const resultado = {};
 
@@ -3217,29 +3462,20 @@
 
 
       for (
-
         let i = 0;
-
         i < lineas.length;
-
         i++
-
       ) {
-
 
         const linea =
           lineas[i];
 
 
         if (
-
           !linea
-
           ||
-
           /^\s*#/
             .test(linea)
-
         ) {
 
           continue;
@@ -3272,16 +3508,15 @@
           match[2];
 
 
+        /*
+           Textos multilínea.
+        */
+
         if (
-
           valor === "|"
-
           ||
-
           valor === ">"
-
         ) {
-
 
           const partes = [];
 
@@ -3290,22 +3525,15 @@
 
 
           while (
-
             i < lineas.length
-
             &&
-
             (
               /^\s+/
                 .test(lineas[i])
-
               ||
-
               lineas[i] === ""
             )
-
           ) {
-
 
             partes.push(
 
@@ -3319,7 +3547,6 @@
 
 
             i++;
-
 
           }
 
@@ -3350,7 +3577,6 @@
             valor
           );
 
-
       }
 
 
@@ -3360,13 +3586,12 @@
 
 
     /* =========================================================
-       CARGAR COLECCIONES
+       COLECCIONES GITHUB
     ========================================================= */
 
     async function cargarColeccion(
       carpeta
     ) {
-
 
       const respuesta =
         await fetch(
@@ -3394,13 +3619,9 @@
         !respuesta.ok
       ) {
 
-
         throw new Error(
-
           `No se pudo consultar ${carpeta}`
-
         );
-
 
       }
 
@@ -3418,9 +3639,7 @@
             archivo =>
 
               archivo.type === "file"
-
               &&
-
               archivo.name
                 .toLowerCase()
                 .endsWith(".md")
@@ -3429,7 +3648,7 @@
 
           .sort(
 
-            (a,b) =>
+            (a, b) =>
 
               a.name.localeCompare(
                 b.name,
@@ -3442,14 +3661,11 @@
       const resultados =
         await Promise.all(
 
-
           markdown.map(
 
             async archivo => {
 
-
               try {
-
 
                 const response =
                   await fetch(
@@ -3475,10 +3691,8 @@
 
                 return {
 
-
                   nombreArchivo:
                     archivo.name,
-
 
                   datos:
                     parsearFrontMatter(
@@ -3487,23 +3701,18 @@
 
                     )
 
-
                 };
 
 
               } catch {
 
-
                 return null;
 
-
               }
-
 
             }
 
           )
-
 
         );
 
@@ -3521,7 +3730,6 @@
     function aplicarApariencia(
       config = {}
     ) {
-
 
       const nombre =
 
@@ -3546,11 +3754,9 @@
         googleFont
       ) {
 
-
         googleFont.href =
 
           `https://fonts.googleapis.com/css2?family=${fuente.google}&display=swap`;
-
 
       }
 
@@ -3587,7 +3793,6 @@
 
     async function cargarApariencia() {
 
-
       aplicarApariencia({
 
         fuente:
@@ -3601,7 +3806,6 @@
 
       try {
 
-
         aplicarApariencia(
 
           await cargarJSON(
@@ -3612,12 +3816,13 @@
 
         );
 
-
       } catch {
 
+        /*
+           Mantener valores por defecto.
+        */
 
       }
-
 
     }
 
@@ -3631,32 +3836,24 @@
       valor
     ) {
 
-
       const elemento =
-        document.getElementById(id);
+        document.getElementById(
+          id
+        );
 
 
       if (
-
         elemento
-
         &&
-
         valor !== undefined
-
         &&
-
         valor !== null
-
       ) {
-
 
         elemento.textContent =
           String(valor);
 
-
       }
-
 
     }
 
@@ -3664,7 +3861,6 @@
     function aplicarTextos(
       config = {}
     ) {
-
 
       TEXTOS = {
 
@@ -3676,24 +3872,18 @@
 
 
       if (
-
         !Array.isArray(
           TEXTOS.frases_popup
         )
-
         ||
-
         !TEXTOS.frases_popup.length
-
       ) {
-
 
         TEXTOS.frases_popup =
 
           [
             ...DEFAULT_TEXTOS.frases_popup
           ];
-
 
       }
 
@@ -3703,108 +3893,90 @@
         TEXTOS.topbar_texto
       );
 
-
       setTexto(
         "contact-label",
         TEXTOS.contacto_etiqueta
       );
-
 
       setTexto(
         "header-products-text",
         TEXTOS.menu_productos
       );
 
-
       setTexto(
         "menu-inicio-text",
         TEXTOS.menu_inicio
       );
-
 
       setTexto(
         "menu-productos-text",
         TEXTOS.menu_productos
       );
 
-
       setTexto(
         "menu-contacto-text",
         TEXTOS.menu_contacto
       );
-
 
       setTexto(
         "hero-label",
         TEXTOS.hero_etiqueta
       );
 
-
       setTexto(
         "products-label",
         TEXTOS.productos_etiqueta
       );
-
 
       setTexto(
         "products-title",
         TEXTOS.productos_titulo
       );
 
-
       setTexto(
         "products-intro",
         TEXTOS.productos_texto
       );
-
 
       setTexto(
         "editorial-label",
         TEXTOS.editorial_etiqueta
       );
 
-
       setTexto(
         "editorial-text",
         TEXTOS.editorial_texto
       );
-
 
       setTexto(
         "footer-email-label",
         TEXTOS.footer_correo
       );
 
-
       setTexto(
         "footer-instagram-label",
         TEXTOS.footer_instagram
       );
-
 
       setTexto(
         "footer-orders-label",
         TEXTOS.footer_pedidos
       );
 
-
       setTexto(
         "footer-copy",
         TEXTOS.footer_copy
       );
-
 
       setTexto(
         "footer-country",
         TEXTOS.footer_pais
       );
 
-
       setTexto(
         "modal-eyebrow",
         TEXTOS.modal_etiqueta
       );
-
 
       setTexto(
         "modal-zoom-help",
@@ -4010,12 +4182,10 @@
 
       );
 
-
     }
 
 
     async function cargarTextos() {
-
 
       aplicarTextos(
         DEFAULT_TEXTOS
@@ -4023,7 +4193,6 @@
 
 
       try {
-
 
         aplicarTextos(
 
@@ -4035,12 +4204,13 @@
 
         );
 
-
       } catch {
 
+        /*
+           Defaults.
+        */
 
       }
-
 
     }
 
@@ -4051,7 +4221,6 @@
 
     function whatsappNumero() {
 
-
       return String(
 
         CONTACTO.whatsapp || ""
@@ -4061,14 +4230,12 @@
         ""
       );
 
-
     }
 
 
     function whatsappURL(
       mensaje = ""
     ) {
-
 
       let url =
 
@@ -4079,11 +4246,9 @@
         mensaje
       ) {
 
-
         url +=
 
           `?text=${encodeURIComponent(mensaje)}`;
-
 
       }
 
@@ -4094,7 +4259,6 @@
 
 
     function aplicarContacto() {
-
 
       const email =
         CONTACTO.email || "";
@@ -4150,15 +4314,15 @@
       .forEach(
         id => {
 
-
           const elemento =
-            document.getElementById(id);
+            document.getElementById(
+              id
+            );
 
 
           if (
             elemento
           ) {
-
 
             elemento.textContent =
               email;
@@ -4167,9 +4331,7 @@
             elemento.href =
               `mailto:${email}`;
 
-
           }
-
 
         }
       );
@@ -4184,15 +4346,15 @@
       .forEach(
         id => {
 
-
           const elemento =
-            document.getElementById(id);
+            document.getElementById(
+              id
+            );
 
 
           if (
             elemento
           ) {
-
 
             elemento.textContent =
               instagramTexto;
@@ -4201,9 +4363,7 @@
             elemento.href =
               instagramURL;
 
-
           }
-
 
         }
       );
@@ -4218,35 +4378,30 @@
       .forEach(
         id => {
 
-
           const elemento =
-            document.getElementById(id);
+            document.getElementById(
+              id
+            );
 
 
           if (
             elemento
           ) {
 
-
             elemento.href =
               whatsappGeneral;
 
-
           }
-
 
         }
       );
-
 
     }
 
 
     async function cargarContacto() {
 
-
       try {
-
 
         CONTACTO = {
 
@@ -4260,25 +4415,25 @@
 
         };
 
-
       } catch {
 
+        /*
+           Defaults.
+        */
 
       }
 
 
       aplicarContacto();
 
-
     }
 
 
     /* =========================================================
-       MENU
+       MENÚ
     ========================================================= */
 
     function abrirMenu() {
-
 
       const menu =
         document.getElementById(
@@ -4303,12 +4458,10 @@
           "menu-abierto"
         );
 
-
     }
 
 
     function cerrarMenu() {
-
 
       const menu =
         document.getElementById(
@@ -4333,7 +4486,6 @@
           "menu-abierto"
         );
 
-
     }
 
 
@@ -4344,7 +4496,6 @@
     function actualizarBanner(
       indice
     ) {
-
 
       if (
         !BANNERS.length
@@ -4359,10 +4510,8 @@
         indice < 0
       ) {
 
-
         indice =
           BANNERS.length - 1;
-
 
       }
 
@@ -4371,9 +4520,7 @@
         indice >= BANNERS.length
       ) {
 
-
         indice = 0;
-
 
       }
 
@@ -4394,7 +4541,6 @@
             posicion
           ) => {
 
-
             imagen
               .classList
               .toggle(
@@ -4404,7 +4550,6 @@
                 posicion === indice
 
               );
-
 
           }
 
@@ -4421,7 +4566,8 @@
         )
         .textContent =
 
-          banner.titulo ||
+          banner.titulo
+          ||
           "DAI PY";
 
 
@@ -4431,25 +4577,22 @@
         )
         .textContent =
 
-          banner.subtitulo ||
+          banner.subtitulo
+          ||
           "";
-
 
     }
 
 
     function iniciarCarrusel() {
 
-
       if (
         bannerTimer
       ) {
 
-
         clearInterval(
           bannerTimer
         );
-
 
       }
 
@@ -4458,33 +4601,30 @@
         BANNERS.length > 1
       ) {
 
-
         bannerTimer =
 
           setInterval(
 
-            () =>
+            () => {
 
               actualizarBanner(
                 bannerActual + 1
-              ),
+              );
+
+            },
 
             6500
 
           );
 
-
       }
-
 
     }
 
 
     async function cargarBanners() {
 
-
       try {
-
 
         const archivos =
           await cargarColeccion(
@@ -4502,18 +4642,14 @@
 
               archivo => ({
 
-
                 titulo:
                   archivo.datos.titulo || "",
-
 
                 subtitulo:
                   archivo.datos.subtitulo || "",
 
-
                 imagen:
                   archivo.datos.imagen || "",
-
 
                 activo:
                   booleanoSeguro(
@@ -4523,7 +4659,6 @@
                     true
 
                   ),
-
 
                 orden:
                   numeroSeguro(
@@ -4537,7 +4672,6 @@
                     9999
 
                   )
-
 
               })
 
@@ -4557,7 +4691,7 @@
 
             .sort(
 
-              (a,b) =>
+              (a, b) =>
 
                 a.orden - b.orden
 
@@ -4566,9 +4700,7 @@
 
         const media =
           document.getElementById(
-
             "hero-media"
-
           );
 
 
@@ -4593,7 +4725,6 @@
             indice
           ) => {
 
-
             const imagen =
               document.createElement(
                 "img"
@@ -4608,11 +4739,9 @@
               indice === 0
             ) {
 
-
               imagen.classList.add(
                 "activo"
               );
-
 
             }
 
@@ -4624,7 +4753,8 @@
 
 
             imagen.alt =
-              banner.titulo ||
+              banner.titulo
+              ||
               "DAI PY";
 
 
@@ -4644,7 +4774,6 @@
             media.appendChild(
               imagen
             );
-
 
           }
 
@@ -4669,7 +4798,6 @@
           BANNERS.length
         ) {
 
-
           actualizarBanner(
             0
           );
@@ -4677,14 +4805,12 @@
 
           iniciarCarrusel();
 
-
         }
 
 
       } catch (
         error
       ) {
-
 
         console.error(
 
@@ -4694,21 +4820,18 @@
 
         );
 
-
       }
-
 
     }
 
 
     /* =========================================================
-       COMPRA
+       MENSAJE DE COMPRA
     ========================================================= */
 
     function mensajeCompra(
       producto
     ) {
-
 
       let mensaje =
 
@@ -4727,11 +4850,9 @@
         producto.desc
       ) {
 
-
         mensaje +=
 
           `\n\n${producto.desc}`;
-
 
       }
 
@@ -4742,14 +4863,13 @@
 
 
     /* =========================================================
-       PRODUCTO
+       HTML PRODUCTO
     ========================================================= */
 
     function htmlProducto(
       producto,
       indice
     ) {
-
 
       const nombre =
         escaparHTML(
@@ -4844,33 +4964,23 @@
 
           <div class="product-image">
 
-
             ${imagenHTML}
 
-
-            <span
-              class="product-zoom-hint"
-            >
+            <span class="product-zoom-hint">
               ${textoZoom}
             </span>
-
 
           </div>
 
 
           <div class="product-row">
 
-
-            <div
-              class="product-name"
-            >
+            <div class="product-name">
               ${nombre}
             </div>
 
 
-            <div
-              class="product-price"
-            >
+            <div class="product-price">
               ${precio}
             </div>
 
@@ -4901,7 +5011,6 @@
 
             </a>
 
-
           </div>
 
 
@@ -4911,9 +5020,7 @@
 
               ? `
 
-                <p
-                  class="product-description"
-                >
+                <p class="product-description">
                   ${descripcion}
                 </p>
 
@@ -4931,10 +5038,13 @@
     }
 
 
+    /* =========================================================
+       MOSTRAR PRODUCTOS
+    ========================================================= */
+
     function mostrarProductos(
       productos
     ) {
-
 
       PRODUCTOS =
         productos;
@@ -4942,9 +5052,7 @@
 
       const grid =
         document.getElementById(
-
           "products-grid"
-
         );
 
 
@@ -4952,16 +5060,13 @@
         !productos.length
       ) {
 
-
         grid.className =
           "products-grid";
 
 
         grid.innerHTML = `
 
-          <div
-            class="empty-state"
-          >
+          <div class="empty-state">
 
             <strong>
               No hay productos publicados.
@@ -5020,7 +5125,6 @@
 
           tarjeta => {
 
-
             const indice =
 
               Number(
@@ -5038,7 +5142,6 @@
 
               evento => {
 
-
                 if (
 
                   evento.target.closest(
@@ -5049,9 +5152,7 @@
 
                 ) {
 
-
                   return;
-
 
                 }
 
@@ -5061,7 +5162,6 @@
                   PRODUCTOS[indice]
 
                 );
-
 
               }
 
@@ -5074,7 +5174,6 @@
 
               evento => {
 
-
                 if (
 
                   evento.key === "Enter"
@@ -5084,7 +5183,6 @@
                   evento.key === " "
 
                 ) {
-
 
                   if (
 
@@ -5096,9 +5194,7 @@
 
                   ) {
 
-
                     return;
-
 
                   }
 
@@ -5112,14 +5208,11 @@
 
                   );
 
-
                 }
-
 
               }
 
             );
-
 
           }
 
@@ -5135,31 +5228,32 @@
 
           boton => {
 
-
             boton.addEventListener(
 
               "click",
 
-              evento =>
+              evento => {
 
-                evento.stopPropagation()
+                evento.stopPropagation();
+
+              }
 
             );
-
 
           }
 
         );
 
-
     }
 
 
+    /* =========================================================
+       CARGAR PRODUCTOS
+    ========================================================= */
+
     async function cargarProductos() {
 
-
       try {
-
 
         const archivos =
           await cargarColeccion(
@@ -5175,26 +5269,30 @@
 
             archivo => ({
 
-
               nombre:
-                archivo.datos.nombre ||
+                archivo.datos.nombre
+                ||
                 "Producto",
 
-
               img:
-                archivo.datos.img ||
+                archivo.datos.img
+                ||
                 "",
 
+              /*
+                 PRECIO COMO TEXTO.
+                 NO USAR Number().
+              */
 
               precio:
-                archivo.datos.precio ||
+                archivo.datos.precio
+                ||
                 "",
 
-
               desc:
-                archivo.datos.desc ||
+                archivo.datos.desc
+                ||
                 ""
-
 
             })
 
@@ -5209,7 +5307,6 @@
       } catch (
         error
       ) {
-
 
         console.error(
 
@@ -5226,9 +5323,7 @@
           )
           .innerHTML = `
 
-            <div
-              class="empty-state"
-            >
+            <div class="empty-state">
 
               <strong>
                 No se pudieron cargar los productos.
@@ -5242,9 +5337,7 @@
 
           `;
 
-
       }
-
 
     }
 
@@ -5256,7 +5349,6 @@
     function frasesAleatorias(
       cantidad = 2
     ) {
-
 
       const base =
 
@@ -5289,7 +5381,6 @@
         !base.length
       ) {
 
-
         return (
 
           DEFAULT_TEXTOS
@@ -5301,7 +5392,6 @@
 
         );
 
-
       }
 
 
@@ -5310,16 +5400,13 @@
 
 
       for (
-
         let i =
           mezcladas.length - 1;
 
         i > 0;
 
         i--
-
       ) {
-
 
         const j =
 
@@ -5333,23 +5420,16 @@
 
 
         [
-
           mezcladas[i],
-
           mezcladas[j]
-
         ]
 
         =
 
         [
-
           mezcladas[j],
-
           mezcladas[i]
-
         ];
-
 
       }
 
@@ -5358,7 +5438,6 @@
         mezcladas.length === 1
       ) {
 
-
         return [
 
           mezcladas[0],
@@ -5366,7 +5445,6 @@
           mezcladas[0]
 
         ];
-
 
       }
 
@@ -5380,7 +5458,6 @@
 
 
     function aplicarFrasesModal() {
-
 
       const uno =
         document.getElementById(
@@ -5438,27 +5515,57 @@
 
 
       uno.textContent =
-        frases[0] || "";
+        frases[0]
+        ||
+        "";
 
 
       dos.textContent =
-        frases[1] || "";
+        frases[1]
+        ||
+        "";
 
     }
 
 
     /* =========================================================
-       ZOOM + ARRASTRE
+       ZOOM
     ========================================================= */
+
+    function limitar(
+      valor,
+      minimo,
+      maximo
+    ) {
+
+      return Math.min(
+
+        maximo,
+
+        Math.max(
+          minimo,
+          valor
+        )
+
+      );
+
+    }
+
+
+    /*
+       Calcula cuánto podemos desplazar
+       la fotografía ampliada.
+
+       Se deja un pequeño margen para evitar
+       que el producto desaparezca por completo
+       fuera del visor.
+    */
 
     function limitesPan() {
 
-
       const marco =
         document.getElementById(
-
           "modal-image-frame"
-
         );
 
 
@@ -5466,37 +5573,29 @@
         marco.getBoundingClientRect();
 
 
+      const extraX =
+        rect.width
+        *
+        (ZOOM_ESCALA - 1);
+
+
+      const extraY =
+        rect.height
+        *
+        (ZOOM_ESCALA - 1);
+
+
       const maxX =
-
         Math.max(
-
           0,
-
-          (
-            rect.width
-            *
-            (ZOOM_ESCALA - 1)
-          )
-          /
-          2
-
+          extraX * .46
         );
 
 
       const maxY =
-
         Math.max(
-
           0,
-
-          (
-            rect.height
-            *
-            (ZOOM_ESCALA - 1)
-          )
-          /
-          2
-
+          extraY * .46
         );
 
 
@@ -5511,45 +5610,19 @@
     }
 
 
-    function limitar(
-      valor,
-      min,
-      max
-    ) {
-
-
-      return Math.min(
-
-        max,
-
-        Math.max(
-          min,
-          valor
-        )
-
-      );
-
-    }
-
-
     function aplicarTransformZoom(
       animar = true
     ) {
 
-
       const imagen =
         document.getElementById(
-
           "modal-product-image"
-
         );
 
 
       const marco =
         document.getElementById(
-
           "modal-image-frame"
-
         );
 
 
@@ -5557,9 +5630,7 @@
         !zoomActivo
       ) {
 
-
         panX = 0;
-
         panY = 0;
 
 
@@ -5567,7 +5638,7 @@
 
           animar
 
-            ? "transform .28s ease"
+            ? "transform .28s cubic-bezier(.22,.61,.36,1)"
 
             : "none";
 
@@ -5626,14 +5697,14 @@
 
         animar
 
-          ? "transform .20s ease"
+          ? "transform .22s cubic-bezier(.22,.61,.36,1)"
 
           : "none";
 
 
       imagen.style.transform =
 
-        `translate3d(${panX}px,${panY}px,0) scale(${ZOOM_ESCALA})`;
+        `translate3d(${panX}px, ${panY}px, 0) scale(${ZOOM_ESCALA})`;
 
 
       marco
@@ -5651,19 +5722,16 @@
 
       );
 
-
     }
 
 
     function activarZoom() {
-
 
       zoomActivo =
         true;
 
 
       panX = 0;
-
       panY = 0;
 
 
@@ -5675,7 +5743,6 @@
 
 
     function desactivarZoom() {
-
 
       zoomActivo =
         false;
@@ -5690,7 +5757,6 @@
 
 
       panX = 0;
-
       panY = 0;
 
 
@@ -5702,15 +5768,58 @@
 
 
     /*
-      Cuando el zoom está activo,
-      presionamos el mouse o dedo
-      para comenzar el recorrido.
+       Click normal:
+
+       1er click -> zoom
+       2do click -> volver a tamaño normal
+    */
+
+    function alternarZoomPorClick(
+      evento
+    ) {
+
+      if (
+        ignorarSiguienteClick
+      ) {
+
+        ignorarSiguienteClick =
+          false;
+
+
+        evento.preventDefault();
+
+
+        return;
+
+      }
+
+
+      evento.preventDefault();
+
+
+      if (
+        zoomActivo
+      ) {
+
+        desactivarZoom();
+
+      } else {
+
+        activarZoom();
+
+      }
+
+    }
+
+
+    /*
+       Empieza arrastre solamente
+       cuando la imagen ya está ampliada.
     */
 
     function iniciarArrastreZoom(
       evento
     ) {
-
 
       if (
         !zoomActivo
@@ -5722,13 +5831,9 @@
 
 
       if (
-
         evento.button !== undefined
-
         &&
-
         evento.button !== 0
-
       ) {
 
         return;
@@ -5738,9 +5843,7 @@
 
       const marco =
         document.getElementById(
-
           "modal-image-frame"
-
         );
 
 
@@ -5781,16 +5884,11 @@
 
       try {
 
-
         marco.setPointerCapture(
-
           pointerIdActivo
-
         );
 
-
       } catch {
-
 
       }
 
@@ -5800,29 +5898,17 @@
     }
 
 
-    /*
-      Mientras mantenemos presionado,
-      desplazamos la fotografía.
-    */
-
     function moverArrastreZoom(
       evento
     ) {
 
-
       if (
-
         !zoomActivo
-
         ||
-
         !arrastrando
-
         ||
-
         evento.pointerId !==
         pointerIdActivo
-
       ) {
 
         return;
@@ -5845,19 +5931,13 @@
 
 
       if (
-
         Math.abs(deltaX) > 4
-
         ||
-
         Math.abs(deltaY) > 4
-
       ) {
-
 
         movimientoArrastre =
           true;
-
 
       }
 
@@ -5907,24 +5987,15 @@
     }
 
 
-    /*
-      Soltar mouse/dedo.
-    */
-
     function terminarArrastreZoom(
       evento
     ) {
 
-
       if (
-
         !arrastrando
-
         ||
-
         evento.pointerId !==
         pointerIdActivo
-
       ) {
 
         return;
@@ -5934,24 +6005,17 @@
 
       const marco =
         document.getElementById(
-
           "modal-image-frame"
-
         );
 
 
       try {
 
-
         marco.releasePointerCapture(
-
           pointerIdActivo
-
         );
 
-
       } catch {
-
 
       }
 
@@ -5972,57 +6036,36 @@
 
 
       /*
-        Si simplemente hizo click
-        sin mover el producto,
-        quitamos el zoom.
+         Si realmente hubo movimiento,
+         ignoramos el click que el navegador
+         genera después del pointerup.
+
+         Así el zoom no se desactiva
+         accidentalmente al terminar de arrastrar.
       */
 
       if (
-
-        !movimientoArrastre
-
-        &&
-
-        zoomActivo
-
+        movimientoArrastre
       ) {
 
-
-        desactivarZoom();
-
-
-      }
+        ignorarSiguienteClick =
+          true;
 
 
-    }
+        setTimeout(
 
+          () => {
 
-    /*
-      Primer click:
-      activa zoom.
+            ignorarSiguienteClick =
+              false;
 
-      Con zoom activo,
-      mantener presionado permite recorrer.
-    */
+          },
 
-    function clickParaZoom(
-      evento
-    ) {
+          120
 
-
-      if (
-        !zoomActivo
-      ) {
-
-
-        evento.preventDefault();
-
-
-        activarZoom();
-
+        );
 
       }
-
 
     }
 
@@ -6035,7 +6078,6 @@
       producto
     ) {
 
-
       if (
         !producto
       ) {
@@ -6047,25 +6089,19 @@
 
       const modal =
         document.getElementById(
-
           "product-modal"
-
         );
 
 
       const imagen =
         document.getElementById(
-
           "modal-product-image"
-
         );
 
 
       const comprar =
         document.getElementById(
-
           "modal-buy-button"
-
         );
 
 
@@ -6147,8 +6183,15 @@
         false;
 
 
-      panX = 0;
+      arrastrando =
+        false;
 
+
+      ignorarSiguienteClick =
+        false;
+
+
+      panX = 0;
       panY = 0;
 
 
@@ -6182,7 +6225,6 @@
           "modal-abierto"
         );
 
-
     }
 
 
@@ -6192,12 +6234,9 @@
 
     function cerrarProducto() {
 
-
       const modal =
         document.getElementById(
-
           "product-modal"
-
         );
 
 
@@ -6226,12 +6265,11 @@
 
       desactivarZoom();
 
-
     }
 
 
     /* =========================================================
-       EVENTOS
+       EVENTOS GENERALES
     ========================================================= */
 
     document
@@ -6270,18 +6308,14 @@
 
         evento => {
 
-
           if (
             evento.target.id ===
             "menu"
           ) {
 
-
             cerrarMenu();
 
-
           }
-
 
         }
 
@@ -6299,7 +6333,6 @@
 
         enlace => {
 
-
           enlace.addEventListener(
 
             "click",
@@ -6307,7 +6340,6 @@
             cerrarMenu
 
           );
-
 
         }
 
@@ -6324,16 +6356,12 @@
 
         () => {
 
-
           actualizarBanner(
-
             bannerActual - 1
-
           );
 
 
           iniciarCarrusel();
-
 
         }
 
@@ -6350,16 +6378,12 @@
 
         () => {
 
-
           actualizarBanner(
-
             bannerActual + 1
-
           );
 
 
           iniciarCarrusel();
-
 
         }
 
@@ -6389,20 +6413,14 @@
 
         evento => {
 
-
           if (
-
             evento.target.id ===
             "product-modal"
-
           ) {
-
 
             cerrarProducto();
 
-
           }
-
 
         }
 
@@ -6410,33 +6428,31 @@
 
 
     /* =========================================================
-       EVENTOS DE ZOOM Y ARRASTRE
+       EVENTOS ZOOM
     ========================================================= */
 
     const marcoZoom =
       document.getElementById(
-
         "modal-image-frame"
-
       );
 
 
     /*
-      Click normal:
-      activa el zoom.
+       Click:
+       activa/desactiva zoom.
     */
 
     marcoZoom.addEventListener(
 
       "click",
 
-      clickParaZoom
+      alternarZoomPorClick
 
     );
 
 
     /*
-      Mantener presionado.
+       Mantener presionado.
     */
 
     marcoZoom.addEventListener(
@@ -6449,7 +6465,7 @@
 
 
     /*
-      Mover mouse/dedo.
+       Mover manteniendo presionado.
     */
 
     marcoZoom.addEventListener(
@@ -6462,7 +6478,7 @@
 
 
     /*
-      Soltar.
+       Soltar.
     */
 
     marcoZoom.addEventListener(
@@ -6484,7 +6500,7 @@
 
 
     /*
-      También funciona con teclado.
+       Teclado.
     */
 
     marcoZoom.addEventListener(
@@ -6493,17 +6509,11 @@
 
       evento => {
 
-
         if (
-
           evento.key === "Enter"
-
           ||
-
           evento.key === " "
-
         ) {
-
 
           evento.preventDefault();
 
@@ -6512,109 +6522,99 @@
             zoomActivo
           ) {
 
-
             desactivarZoom();
-
 
           } else {
 
-
             activarZoom();
-
 
           }
 
+
+          return;
 
         }
 
 
         if (
-          zoomActivo
+          !zoomActivo
         ) {
 
-
-          const paso =
-            30;
-
-
-          if (
-            evento.key === "ArrowLeft"
-          ) {
-
-
-            panX -= paso;
-
-
-            aplicarTransformZoom(
-              false
-            );
-
-
-            evento.preventDefault();
-
-
-          }
-
-
-          if (
-            evento.key === "ArrowRight"
-          ) {
-
-
-            panX += paso;
-
-
-            aplicarTransformZoom(
-              false
-            );
-
-
-            evento.preventDefault();
-
-
-          }
-
-
-          if (
-            evento.key === "ArrowUp"
-          ) {
-
-
-            panY -= paso;
-
-
-            aplicarTransformZoom(
-              false
-            );
-
-
-            evento.preventDefault();
-
-
-          }
-
-
-          if (
-            evento.key === "ArrowDown"
-          ) {
-
-
-            panY += paso;
-
-
-            aplicarTransformZoom(
-              false
-            );
-
-
-            evento.preventDefault();
-
-
-          }
-
+          return;
 
         }
 
+
+        const paso =
+          30;
+
+
+        if (
+          evento.key === "ArrowLeft"
+        ) {
+
+          panX -= paso;
+
+
+          aplicarTransformZoom(
+            false
+          );
+
+
+          evento.preventDefault();
+
+        }
+
+
+        if (
+          evento.key === "ArrowRight"
+        ) {
+
+          panX += paso;
+
+
+          aplicarTransformZoom(
+            false
+          );
+
+
+          evento.preventDefault();
+
+        }
+
+
+        if (
+          evento.key === "ArrowUp"
+        ) {
+
+          panY -= paso;
+
+
+          aplicarTransformZoom(
+            false
+          );
+
+
+          evento.preventDefault();
+
+        }
+
+
+        if (
+          evento.key === "ArrowDown"
+        ) {
+
+          panY += paso;
+
+
+          aplicarTransformZoom(
+            false
+          );
+
+
+          evento.preventDefault();
+
+        }
 
       }
 
@@ -6622,8 +6622,8 @@
 
 
     /*
-      Si cambia el tamaño de pantalla,
-      recalculamos límites del zoom.
+       Si cambia el tamaño de pantalla,
+       recalculamos los límites.
     */
 
     window.addEventListener(
@@ -6632,19 +6632,15 @@
 
       () => {
 
-
         if (
           zoomActivo
         ) {
-
 
           aplicarTransformZoom(
             false
           );
 
-
         }
-
 
       }
 
@@ -6652,7 +6648,7 @@
 
 
     /*
-      Escape cierra modal o menú.
+       ESC cierra popup o menú.
     */
 
     document.addEventListener(
@@ -6661,40 +6657,37 @@
 
       evento => {
 
-
         if (
-          evento.key === "Escape"
+          evento.key !== "Escape"
         ) {
 
-
-          if (
-
-            document
-              .getElementById(
-                "product-modal"
-              )
-              .classList
-              .contains(
-                "abierto"
-              )
-
-          ) {
-
-
-            cerrarProducto();
-
-
-          } else {
-
-
-            cerrarMenu();
-
-
-          }
-
+          return;
 
         }
 
+
+        if (
+
+          document
+            .getElementById(
+              "product-modal"
+            )
+            .classList
+            .contains(
+              "abierto"
+            )
+
+        ) {
+
+          cerrarProducto();
+
+
+          return;
+
+        }
+
+
+        cerrarMenu();
 
       }
 
@@ -6702,47 +6695,36 @@
 
 
     /* =========================================================
-       INICIAR
+       INICIO
     ========================================================= */
 
     async function iniciar() {
 
-
       await Promise.allSettled([
-
 
         cargarApariencia(),
 
-
         cargarTextos(),
 
-
         cargarContacto()
-
 
       ]);
 
 
       await Promise.allSettled([
 
-
         cargarBanners(),
-
 
         cargarProductos()
 
-
       ]);
-
 
     }
 
 
     iniciar();
 
-
   </script>
-
 
 </body>
 </html>
