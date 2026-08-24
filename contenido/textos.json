@@ -1,5 +1,5 @@
 {
-  "topbar_texto": "dai - Tienda Oficial",
+  "topbar_texto": "Y todo lo que hagan, háganlo con amor • 1 Cor 16:14",
   "contacto_etiqueta": "Contacto",
   "menu_inicio": "Inicio",
   "menu_productos": "Productos",
@@ -34,22 +34,20 @@
   "max_lineas_texto_productos_movil": 2,
   "popup_activo": true,
   "frases_popup": [
-    "Un gustito no se le niega a nadie.",
-    "Necesito dos.",
+    "Un gustito no te lo puedes negar",
+    "Necesitas dos.",
     "Un buen detalle para regalar.",
     "Es una inversión.",
-    "Porque sí, porque puedo.",
-    "Yo no lo buscaba, él me encontró.",
-    "un buen autoregalo",
-    "Mi yo del futuro me lo agradecerá.",
-    "Que lindo... lo quiero",
-    "Uno para mi otro para...",
-    "Un regalito de mí para mí.",
-    "Me lo compro porque me caigo bien.",
-    "Esto claramente me hacía falta.",
+    "Porque sí, porque puedes.",
+    "No lo buscabas, él te encontró.",
+    "Un buen autoregalo",
+    "Tu yo del futuro te lo agradecerá.",
+    "Que lindo... lo quieres",
+    "Uno para ti otro para...",
+    "Un regalito de ti para ti.",
+    "Esto claramente te hacía falta.",
     "Una compra responsable :)",
-    "Qué casualidad, es de mi estilo.",
-    "Autoregalo desbloqueado",
-    "Para mí, con cariño: yo."
+    "Qué casualidad, es de tu estilo.",
+    "Autoregalo desbloqueado"
   ]
 }
