@@ -1,7 +1,7 @@
 ---
 nombre: Cordón peluche
-img: /daipyofficial/public/uploads/IMG_7498.jpeg
-precio: 35.000
+img: /daipyofficial/public/uploads/IMG_7690.jpeg
+precio: '35'
 desc: AGOTADO.
 categoria: Accesorios
 tipo: Cordones
