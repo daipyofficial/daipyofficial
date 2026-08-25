@@ -5,184 +5,121 @@ backend:
   auth_methods:
     - token
 
-
 media_folder: "public/uploads"
-
 public_folder: "/daipyofficial/public/uploads"
 
-
 collections:
-
   - name: "apariencia"
     label: "Apariencia"
-
     files:
-
       - name: "diseno"
         label: "Tipografía y Estilo"
-
         file: "contenido/configuracion/diseno.json"
-
         format: "json"
-
         fields:
-
           - label: "Tipografía de la Web"
             name: "fuente"
             widget: "select"
             default: "Poppins"
-
             options:
               - "Poppins"
               - "Montserrat"
               - "Inter"
               - "Roboto"
               - "Lato"
-
-
           - label: "Precios en Negrita"
             name: "precio_negrita"
             widget: "boolean"
             default: true
 
-
-
   - name: "textos"
     label: "Textos, Tamaños y Popups"
-
     files:
-
       - name: "textos_web"
         label: "Configuración de textos de la web"
-
         file: "contenido/textos.json"
-
         format: "json"
-
         fields:
-
-
           - label: "Barra superior"
             name: "topbar_texto"
             widget: "string"
             default: "DAI PY · TIENDA OFICIAL"
-
-
           - label: "Etiqueta contacto"
             name: "contacto_etiqueta"
             widget: "string"
             default: "Contacto"
-
-
           - label: "Menú - Inicio"
             name: "menu_inicio"
             widget: "string"
             default: "Inicio"
-
-
           - label: "Menú - Productos"
             name: "menu_productos"
             widget: "string"
             default: "Productos"
-
-
           - label: "Menú - Contacto"
             name: "menu_contacto"
             widget: "string"
             default: "Contacto"
-
-
           - label: "Etiqueta sobre título del banner"
             name: "hero_etiqueta"
             widget: "string"
             default: "DAI PY"
-
-
           - label: "Productos - Etiqueta"
             name: "productos_etiqueta"
             widget: "string"
             default: "Tienda"
-
-
           - label: "Productos - Título"
             name: "productos_titulo"
             widget: "string"
             default: "Productos"
-
-
           - label: "Productos - Texto"
             name: "productos_texto"
             widget: "text"
             default: "Elegí tu producto y realizá tu pedido directamente por WhatsApp."
-
-
           - label: "Editorial - Etiqueta"
             name: "editorial_etiqueta"
             widget: "string"
             default: "DAI PY"
-
-
           - label: "Editorial - Texto"
             name: "editorial_texto"
             widget: "text"
             default: "Las cosas que elegimos llevar con nosotros también cuentan una historia."
-
-
           - label: "Footer - Correo"
             name: "footer_correo"
             widget: "string"
             default: "Correo"
-
-
           - label: "Footer - Instagram"
             name: "footer_instagram"
             widget: "string"
             default: "Instagram"
-
-
           - label: "Footer - Pedidos"
             name: "footer_pedidos"
             widget: "string"
             default: "Pedidos"
-
-
           - label: "Footer - Copyright"
             name: "footer_copy"
             widget: "string"
             default: "© DAI PY Tienda Oficial"
-
-
           - label: "Footer - País"
             name: "footer_pais"
             widget: "string"
             default: "Paraguay"
-
-
           - label: "Texto botón comprar"
             name: "boton_comprar"
             widget: "string"
             default: "Comprar por WhatsApp"
-
-
           - label: "Texto sobre foto del producto"
             name: "texto_zoom"
             widget: "string"
             default: "Ver detalle"
-
-
           - label: "Modal - Etiqueta"
             name: "modal_etiqueta"
             widget: "string"
             default: "DAI PY · Detalle"
-
-
           - label: "Modal - Texto ayuda zoom"
             name: "modal_ayuda_zoom"
             widget: "string"
             default: "Tocá la imagen para acercar."
-
-
-
           - label: "Tamaño título banner - Escritorio (px)"
             name: "tamano_titulo_banner"
             widget: "number"
@@ -191,8 +128,6 @@ collections:
             max: 120
             step: 1
             default: 72
-
-
           - label: "Tamaño texto banner - Escritorio (px)"
             name: "tamano_subtitulo_banner"
             widget: "number"
@@ -201,8 +136,6 @@ collections:
             max: 28
             step: 1
             default: 14
-
-
           - label: "Tamaño título Productos - Escritorio (px)"
             name: "tamano_titulo_productos"
             widget: "number"
@@ -211,8 +144,6 @@ collections:
             max: 100
             step: 1
             default: 64
-
-
           - label: "Tamaño texto Productos - Escritorio (px)"
             name: "tamano_texto_productos"
             widget: "number"
@@ -221,8 +152,6 @@ collections:
             max: 24
             step: 1
             default: 13
-
-
           - label: "Tamaño texto Editorial - Escritorio (px)"
             name: "tamano_editorial"
             widget: "number"
@@ -231,9 +160,6 @@ collections:
             max: 100
             step: 1
             default: 56
-
-
-
           - label: "Tamaño título banner - Móvil (px)"
             name: "tamano_titulo_banner_movil"
             widget: "number"
@@ -242,8 +168,6 @@ collections:
             max: 60
             step: 1
             default: 34
-
-
           - label: "Tamaño texto banner - Móvil (px)"
             name: "tamano_subtitulo_banner_movil"
             widget: "number"
@@ -252,8 +176,6 @@ collections:
             max: 22
             step: 1
             default: 12
-
-
           - label: "Tamaño título Productos - Móvil (px)"
             name: "tamano_titulo_productos_movil"
             widget: "number"
@@ -262,8 +184,6 @@ collections:
             max: 54
             step: 1
             default: 30
-
-
           - label: "Tamaño texto Productos - Móvil (px)"
             name: "tamano_texto_productos_movil"
             widget: "number"
@@ -272,8 +192,6 @@ collections:
             max: 20
             step: 1
             default: 11
-
-
           - label: "Tamaño texto Editorial - Móvil (px)"
             name: "tamano_editorial_movil"
             widget: "number"
@@ -282,21 +200,6 @@ collections:
             max: 56
             step: 1
             default: 30
-
-
-
-          - label: "Alto banner móvil (% de pantalla)"
-            name: "alto_banner_movil"
-            widget: "number"
-            value_type: "int"
-            min: 42
-            max: 78
-            step: 1
-            default: 58
-
-            hint: "58 significa aproximadamente 58% de la altura visible del celular."
-
-
           - label: "Espacio entre banner y Productos - Móvil (px)"
             name: "espacio_banner_productos_movil"
             widget: "number"
@@ -304,9 +207,7 @@ collections:
             min: 12
             max: 100
             step: 1
-            default: 30
-
-
+            default: 28
           - label: "Máximo de líneas del texto Productos - Móvil"
             name: "max_lineas_texto_productos_movil"
             widget: "number"
@@ -315,22 +216,14 @@ collections:
             max: 8
             step: 1
             default: 2
-
-
-
           - label: "Mostrar frases sobre producto ampliado"
             name: "popup_activo"
             widget: "boolean"
             default: true
-
-
-
           - label: "Frases aleatorias del popup"
             name: "frases_popup"
             widget: "list"
-
             default:
-
               - "Lo merezco."
               - "Es una compra necesaria."
               - "Un buen detalle para regalar."
@@ -339,85 +232,58 @@ collections:
               - "Esto sí suma."
               - "Pequeño detalle, gran acierto."
               - "Un regalo que no falla."
-
             field:
-
               label: "Frase"
               name: "frase"
               widget: "string"
 
-
-
   - name: "contacto"
     label: "Contacto y Compras"
-
     files:
-
       - name: "datos_contacto"
         label: "Datos de Contacto"
-
         file: "contenido/configuracion/contacto.json"
-
         format: "json"
-
         fields:
-
           - label: "Número de WhatsApp"
             name: "whatsapp"
             widget: "string"
             default: "+595985824098"
-
-
           - label: "Correo Electrónico"
             name: "email"
             widget: "string"
             default: "daiofficial.py@gmail.com"
-
-
           - label: "Instagram"
             name: "instagram"
             widget: "string"
             default: "@daiofficial.py"
 
-
-
   - name: "banners"
     label: "Banners"
     label_singular: "Banner"
-
     folder: "contenido/banners"
-
     create: true
-
     slug: "{{slug}}"
-
     summary: "{{titulo}}"
-
+    sortable_fields:
+      - "orden"
+      - "titulo"
     fields:
-
       - label: "Título"
         name: "titulo"
         widget: "string"
         required: false
-
-
       - label: "Texto"
         name: "subtitulo"
         widget: "text"
         required: false
-
-
       - label: "Imagen"
         name: "imagen"
         widget: "image"
-
-
       - label: "Mostrar Banner"
         name: "activo"
         widget: "boolean"
         default: true
-
-
       - label: "Orden"
         name: "orden"
         widget: "number"
@@ -425,38 +291,53 @@ collections:
         min: 1
         default: 1
 
-
-
   - name: "productos"
     label: "Productos"
     label_singular: "Producto"
-
     folder: "contenido/productos"
-
     create: true
-
     slug: "{{slug}}"
-
     summary: "{{nombre}}"
-
+    sortable_fields:
+      - "categoria"
+      - "tipo"
+      - "orden"
+      - "nombre"
     fields:
-
       - label: "Nombre del Producto"
         name: "nombre"
         widget: "string"
-
-
       - label: "Imagen del Producto"
         name: "img"
         widget: "image"
-
-
       - label: "Precio (Gs.)"
         name: "precio"
         widget: "string"
-
-
       - label: "Descripción"
         name: "desc"
         widget: "text"
         required: false
+      - label: "Categoría interna"
+        name: "categoria"
+        widget: "select"
+        default: "Otros"
+        hint: "Sirve para ordenar productos internamente. No se muestra en la tienda."
+        options:
+          - "Bolsos"
+          - "Joyería"
+          - "Llaveros"
+          - "Papelería"
+          - "Accesorios"
+          - "Otros"
+      - label: "Tipo interno"
+        name: "tipo"
+        widget: "string"
+        default: "General"
+        hint: "Ej.: Mini Bag, Collares, Fitness, Snoopy. No se muestra en la tienda."
+      - label: "Orden interno"
+        name: "orden"
+        widget: "number"
+        value_type: "int"
+        min: 1
+        default: 1
+        hint: "Orden dentro de su categoría y tipo. No se muestra en la tienda."
