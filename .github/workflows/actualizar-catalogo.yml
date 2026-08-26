@@ -1,1 +1,128 @@
+name: Actualizar catalogo
 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'contenido/productos/**'
+      - 'contenido/banners/**'
+      - '.github/workflows/actualizar-catalogo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar lector YAML
+        run: python -m pip install --disable-pip-version-check pyyaml
+
+      - name: Generar catalogo estatico
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import yaml
+
+          ROOT = Path('.')
+
+          def leer_frontmatter(path: Path):
+              text = path.read_text(encoding='utf-8-sig')
+
+              if not text.lstrip().startswith('---'):
+                  return {}
+
+              parts = text.split('---', 2)
+
+              if len(parts) < 3:
+                  return {}
+
+              data = yaml.safe_load(parts[1]) or {}
+
+              if not isinstance(data, dict):
+                  return {}
+
+              return data
+
+          def cargar(carpeta: str):
+              base = ROOT / carpeta
+              items = []
+
+              if not base.exists():
+                  return items
+
+              for path in sorted(base.glob('*.md')):
+                  try:
+                      data = leer_frontmatter(path)
+
+                      items.append({
+                          'nombreArchivo': path.name,
+                          'datos': data,
+                      })
+
+                  except Exception as exc:
+                      print(f'No se pudo leer {path}: {exc}')
+
+              return items
+
+          catalogo = {
+              'version': 1,
+              'productos': cargar('contenido/productos'),
+              'banners': cargar('contenido/banners'),
+          }
+
+          destino = ROOT / 'contenido' / 'catalogo.json'
+
+          destino.parent.mkdir(
+              parents=True,
+              exist_ok=True
+          )
+
+          destino.write_text(
+              json.dumps(
+                  catalogo,
+                  ensure_ascii=False,
+                  indent=2
+              ) + '\n',
+              encoding='utf-8'
+          )
+
+          print(
+              f"Productos: {len(catalogo['productos'])}"
+          )
+
+          print(
+              f"Banners: {len(catalogo['banners'])}"
+          )
+          PY
+
+      - name: Guardar catalogo en el repositorio
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add contenido/catalogo.json
+
+          if git diff --cached --quiet; then
+            echo "El catalogo ya estaba actualizado."
+            exit 0
+          fi
+
+          git commit -m "Actualizar catalogo automatico"
+          git push
