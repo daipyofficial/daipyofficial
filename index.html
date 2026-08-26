@@ -7,7 +7,7 @@
   <title>DAI PY · Tienda Oficial</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link id="dynamic-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap">
 
@@ -36,12 +36,34 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--fuente);font-size:14px}
+
+    body{
+      margin:0;
+      background:var(--fondo);
+      color:var(--texto);
+      font-family:var(--fuente);
+      font-size:14px;
+    }
+
     body.locked{overflow:hidden}
-    a{color:inherit;text-decoration:none}
-    button,input{font:inherit;color:inherit}
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,input{
+      font:inherit;
+      color:inherit;
+    }
+
     button{cursor:pointer}
-    img{display:block;max-width:100%}
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
     .oculto{display:none!important}
 
     .topbar{
@@ -244,7 +266,12 @@
       inset:0;
       z-index:2;
       pointer-events:none;
-      background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,.15) 50%,rgba(0,0,0,.02));
+      background:linear-gradient(
+        to top,
+        rgba(0,0,0,.62),
+        rgba(0,0,0,.15) 50%,
+        rgba(0,0,0,.02)
+      );
     }
 
     .hero-content{
@@ -360,9 +387,7 @@
       letter-spacing:.01em;
     }
 
-    .search-input:focus{
-      border-color:#777;
-    }
+    .search-input:focus{border-color:#777}
 
     .search-clear{
       position:absolute;
@@ -1007,15 +1032,23 @@
       color:var(--suave);
     }
 
-    /* GLOBO */
+    /* =========================================================
+       GLOBO SVG
+       Escritorio 15% más grande
+    ========================================================= */
+
     .speech-bubble{
       position:absolute;
       z-index:45;
-      width:36.2%;
+
+      width:41.63%;
       aspect-ratio:940/300;
+
       right:-10.5%;
       top:13%;
+
       pointer-events:none;
+
       opacity:0;
       transition:opacity .14s ease;
     }
@@ -1035,46 +1068,54 @@
       height:100%;
     }
 
+    /*
+      El SVG tiene espacio transparente alrededor.
+      Esta caja coincide con el área blanca REAL del globo.
+      Así el texto nunca utiliza las zonas transparentes.
+    */
     .speech-text{
       position:absolute;
       z-index:2;
-      left:9.5%;
-      right:9.5%;
-      top:43%;
+
+      left:22%;
+      right:20.5%;
+
+      top:49.5%;
+      height:36%;
+
       transform:translateY(-50%);
-      display:block;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
       overflow:hidden;
+
       text-align:center;
+
       color:#171717;
+
       font-family:"Handjet",sans-serif;
       font-weight:500;
+
       letter-spacing:.01em;
-      line-height:.98;
+      line-height:.94;
+
       opacity:1;
+
       transition:opacity .12s ease;
+
       word-break:normal;
+      white-space:nowrap;
     }
 
-    .speech-text.corta{
-      font-size:24px;
+    .speech-text.una-linea{
+      white-space:nowrap;
+    }
+
+    .speech-text.dos-lineas{
+      white-space:pre-line;
       line-height:.92;
-      white-space:nowrap;
-    }
-
-    .speech-text.media{
-      font-size:18px;
-      line-height:.95;
-      white-space:nowrap;
-    }
-
-    .speech-text.larga{
-      font-size:13px;
-      line-height:1.02;
-      display:-webkit-box;
-      -webkit-box-orient:vertical;
-      -webkit-line-clamp:2;
-      white-space:normal;
-      overflow-wrap:anywhere;
     }
 
     @keyframes globoParpadeo{
@@ -1089,6 +1130,7 @@
     }
 
     @media(max-width:900px){
+
       .products-heading{
         grid-template-columns:1fr;
         gap:18px;
@@ -1117,6 +1159,7 @@
     }
 
     @media(max-width:760px){
+
       .topbar{
         min-height:26px;
         padding:6px 12px;
@@ -1181,7 +1224,12 @@
       }
 
       .hero::after{
-        background:linear-gradient(to top,rgba(0,0,0,.48),rgba(0,0,0,.05) 52%,transparent);
+        background:linear-gradient(
+          to top,
+          rgba(0,0,0,.48),
+          rgba(0,0,0,.05) 52%,
+          transparent
+        );
       }
 
       .hero-content{
@@ -1404,6 +1452,9 @@
         min-height:38px;
       }
 
+      /*
+        En móvil conservamos exactamente el tamaño anterior.
+      */
       .speech-bubble{
         width:40.5%;
         left:5%;
@@ -1413,28 +1464,15 @@
       }
 
       .speech-text{
-        left:9%;
-        right:9%;
-        top:43%;
-      }
-
-      .speech-text.corta{
-        font-size:17px;
-        line-height:.92;
-      }
-
-      .speech-text.media{
-        font-size:13.5px;
-        line-height:.95;
-      }
-
-      .speech-text.larga{
-        font-size:10px;
-        line-height:1;
+        left:22%;
+        right:20.5%;
+        top:49.5%;
+        height:36%;
       }
     }
 
     @media(max-width:390px){
+
       .hero-title{
         font-size:min(var(--hero-title-mobile),30px);
       }
@@ -1443,21 +1481,10 @@
       .product-price{
         font-size:8.5px;
       }
-
-      .speech-text.corta{
-        font-size:16px;
-      }
-
-      .speech-text.media{
-        font-size:12.5px;
-      }
-
-      .speech-text.larga{
-        font-size:9.5px;
-      }
     }
 
     @media(prefers-reduced-motion:reduce){
+
       *,
       *::before,
       *::after{
@@ -1510,7 +1537,6 @@
       </a>
 
     </div>
-
   </div>
 
   <header class="header">
@@ -1555,10 +1581,7 @@
 
       <div class="menu-top">
 
-        <a
-          class="menu-logo"
-          href="#inicio"
-        >
+        <a class="menu-logo" href="#inicio">
           <img src="./logo.png" alt="DAI PY">
         </a>
 
@@ -1620,44 +1643,32 @@
         </a>
 
       </div>
-
     </nav>
-
   </div>
 
   <main>
 
     <section class="hero" id="inicio">
 
-      <div
-        class="hero-media"
-        id="hero-media"
-      >
+      <div class="hero-media" id="hero-media">
+
         <div class="hero-fallback">
           <img src="./logo.png" alt="DAI PY">
         </div>
+
       </div>
 
       <div class="hero-content">
 
-        <div
-          class="hero-label"
-          id="hero-label"
-        >
+        <div class="hero-label" id="hero-label">
           DAI PY
         </div>
 
-        <h1
-          class="hero-title"
-          id="hero-title"
-        >
+        <h1 class="hero-title" id="hero-title">
           Detalles que forman parte de tu historia.
         </h1>
 
-        <p
-          class="hero-subtitle"
-          id="hero-subtitle"
-        >
+        <p class="hero-subtitle" id="hero-subtitle">
           Accesorios, objetos y detalles seleccionados para acompañar tu día.
         </p>
 
@@ -1687,7 +1698,6 @@
         </button>
 
       </div>
-
     </section>
 
     <section
@@ -1696,6 +1706,7 @@
     >
 
       <div>
+
         <span
           class="section-label"
           id="products-label"
@@ -1706,6 +1717,7 @@
         <h2 id="products-title">
           Productos
         </h2>
+
       </div>
 
       <p id="products-intro">
@@ -1757,10 +1769,12 @@
         class="products-grid"
         id="products-grid"
       >
+
         <div class="empty-state">
           <strong>Cargando productos…</strong>
           <span>Un momento, por favor.</span>
         </div>
+
       </div>
 
     </section>
@@ -1792,7 +1806,6 @@
       </div>
 
     </section>
-
   </main>
 
   <footer
@@ -1879,9 +1892,7 @@
         </span>
 
       </div>
-
     </div>
-
   </footer>
 
   <button
@@ -1939,7 +1950,6 @@
       </div>
 
     </aside>
-
   </div>
 
   <div
@@ -1976,12 +1986,12 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1500 500"
           >
+
             <g id="OBJECTS">
 
               <g>
 
                 <g>
-
                   <rect fill="#a5a5a5" x="368.79" y="360" width="11.4" height="45.41"/>
                   <rect fill="#a5a5a5" x="380.19" y="405.41" width="11.41" height="11.37"/>
                   <rect fill="#a5a5a5" x="391.6" y="394.07" width="11.4" height="11.37"/>
@@ -2001,7 +2011,6 @@
                   <rect fill="#a5a5a5" x="305.43" y="159.96" width="11.4" height="11.37"/>
                   <rect fill="#a5a5a5" x="316.84" y="348.62" width="11.41" height="11.37"/>
                   <rect fill="#a5a5a5" x="305.43" y="337.25" width="11.4" height="11.37"/>
-
                 </g>
 
                 <g>
@@ -2011,13 +2020,11 @@
                     <rect fill="#231f20" x="362.68" y="357.96" width="11.4" height="45.41"/>
 
                     <g>
-
                       <rect fill="#231f20" x="374.08" y="403.37" width="11.41" height="11.37"/>
                       <rect fill="#231f20" x="385.49" y="392.04" width="11.4" height="11.37"/>
                       <rect fill="#231f20" x="396.89" y="380.66" width="11.41" height="11.37"/>
                       <rect fill="#231f20" x="408.29" y="369.33" width="11.4" height="11.37"/>
                       <rect fill="#231f20" x="419.69" y="357.96" width="11.41" height="11.37"/>
-
                     </g>
 
                   </g>
@@ -2050,7 +2057,7 @@
           </svg>
 
           <span
-            class="speech-text corta"
+            class="speech-text una-linea"
             id="speech-text"
           ></span>
 
@@ -2133,13 +2140,10 @@
         </div>
 
       </div>
-
     </div>
-
   </div>
 
   <script>
-
     const REPO="daipyofficial/daipyofficial";
     const BRANCH="main";
     const API_BASE=`https://api.github.com/repos/${REPO}/contents`;
@@ -2225,22 +2229,62 @@
     ];
 
     const SYNONYM_GROUPS=[
-      ["bolso","bolsos","bolson","bolsones","bolsa","bolsas","cartera","carteras","mochila","mochilas","bag","bags","minibag","mini bag","mini-bag"],
-      ["llavero","llaveros","keychain","keychains","keyring","keyrings"],
-      ["collar","collares","necklace","necklaces"],
-      ["brazalete","brazaletes","pulsera","pulseras","bracelet","bracelets"],
-      ["cuaderno","cuadernos","cuadernito","cuadernitos","libreta","libretas","notebook","notebooks","agenda","agendas"],
-      ["paraguas","umbrella","sombrilla"],
-      ["cordon","cordones","lanyard","strap","cinta"],
-      ["joyeria","joyas","accesorio","accesorios"],
-      ["fitness","gym","gimnasio","deporte","sport"],
-      ["cafe","coffee","coffe"],
-      ["musica","music","musical"],
-      ["dentista","dentist","odontologo","odontologia"],
-      ["doctor","doc","medico","medicina"],
-      ["oso","osito","ositos","bear","bears"],
-      ["pareja","parejas","lovers","amor","heart","corazon","corazones"],
-      ["snoopy","peanuts"]
+      [
+        "bolso","bolsos","bolson","bolsones",
+        "bolsa","bolsas","cartera","carteras",
+        "mochila","mochilas","bag","bags",
+        "minibag","mini bag","mini-bag"
+      ],
+      [
+        "llavero","llaveros","keychain","keychains",
+        "keyring","keyrings"
+      ],
+      [
+        "collar","collares","necklace","necklaces"
+      ],
+      [
+        "brazalete","brazaletes","pulsera","pulseras",
+        "bracelet","bracelets"
+      ],
+      [
+        "cuaderno","cuadernos","cuadernito","cuadernitos",
+        "libreta","libretas","notebook","notebooks",
+        "agenda","agendas"
+      ],
+      [
+        "paraguas","umbrella","sombrilla"
+      ],
+      [
+        "cordon","cordones","lanyard","strap","cinta"
+      ],
+      [
+        "joyeria","joyas","accesorio","accesorios"
+      ],
+      [
+        "fitness","gym","gimnasio","deporte","sport"
+      ],
+      [
+        "cafe","coffee","coffe"
+      ],
+      [
+        "musica","music","musical"
+      ],
+      [
+        "dentista","dentist","odontologo","odontologia"
+      ],
+      [
+        "doctor","doc","medico","medicina"
+      ],
+      [
+        "oso","osito","ositos","bear","bears"
+      ],
+      [
+        "pareja","parejas","lovers","amor",
+        "heart","corazon","corazones"
+      ],
+      [
+        "snoopy","peanuts"
+      ]
     ];
 
     let CONTACTO={
@@ -2291,8 +2335,15 @@
 
     const rutaMedia=r=>{
       if(!r)return"";
-      if(/^https?:\/\//i.test(r))return r;
-      if(r.startsWith("/"))return r;
+
+      if(/^https?:\/\//i.test(r)){
+        return r;
+      }
+
+      if(r.startsWith("/")){
+        return r;
+      }
+
       return `./${r.replace(/^\.\//,"")}`;
     };
 
@@ -2310,7 +2361,9 @@
     const precioFormateado=v=>{
       const s=String(v??"").trim();
 
-      if(!s)return"Consultar";
+      if(!s){
+        return"Consultar";
+      }
 
       if(/[a-z]/i.test(s)){
         return s;
@@ -2331,20 +2384,48 @@
         `${p.nombre}|${p.img}`
       );
 
+    /*
+      Un producto se considera agotado si AGOTADO
+      aparece en el precio O en la descripción.
+      Esto corrige productos antiguos donde el estado
+      quedó guardado en descripción.
+    */
     const esAgotado=p=>
       normalizar(
-        p?.precio
-      ).includes("agotado");
+        `${p?.precio||""} ${p?.desc||""}`
+      )
+      .includes("agotado");
+
+    /*
+      Si la descripción es solamente AGOTADO
+      no se vuelve a mostrar debajo del precio.
+    */
+    const descripcionProducto=p=>
+      /^agotado[.!]*$/i
+      .test(
+        String(p?.desc||"").trim()
+      )
+        ?""
+        :String(p?.desc||"").trim();
+
+    /*
+      Los agotados siempre muestran AGOTADO como precio.
+    */
+    const precioProducto=p=>
+      esAgotado(p)
+        ?"AGOTADO"
+        :precioFormateado(
+          p?.precio
+        );
 
     async function cargarJSON(ruta){
 
-      const r=
-        await fetch(
-          `${ruta}?v=${VERSION}`,
-          {
-            cache:"no-store"
-          }
-        );
+      const r=await fetch(
+        `${ruta}?v=${VERSION}`,
+        {
+          cache:"no-store"
+        }
+      );
 
       if(!r.ok){
         throw new Error(r.status);
@@ -2365,10 +2446,7 @@
 
         const t=linea.trim();
 
-        if(
-          !t||
-          t.startsWith("#")
-        ){
+        if(!t||t.startsWith("#")){
           return;
         }
 
@@ -2416,13 +2494,12 @@
 
     async function cargarColeccion(carpeta){
 
-      const r=
-        await fetch(
-          `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
-          {
-            cache:"no-store"
-          }
-        );
+      const r=await fetch(
+        `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
+        {
+          cache:"no-store"
+        }
+      );
 
       if(!r.ok){
         throw new Error(
@@ -2430,27 +2507,24 @@
         );
       }
 
-      const lista=
-        await r.json();
+      const lista=await r.json();
 
-      const md=
-        lista.filter(
-          x=>
-            x.type==="file"&&
-            x.name.endsWith(".md")
-        );
+      const md=lista.filter(
+        x=>
+          x.type==="file"&&
+          x.name.endsWith(".md")
+      );
 
       return Promise.all(
         md.map(
           async archivo=>{
 
-            const rr=
-              await fetch(
-                `${archivo.download_url}?v=${VERSION}`,
-                {
-                  cache:"no-store"
-                }
-              );
+            const rr=await fetch(
+              `${archivo.download_url}?v=${VERSION}`,
+              {
+                cache:"no-store"
+              }
+            );
 
             if(!rr.ok){
               throw new Error(
@@ -2459,12 +2533,10 @@
             }
 
             return{
-              nombreArchivo:
-                archivo.name,
-              datos:
-                parsearYamlSimple(
-                  await rr.text()
-                )
+              nombreArchivo:archivo.name,
+              datos:parsearYamlSimple(
+                await rr.text()
+              )
             };
           }
         )
@@ -2542,103 +2614,27 @@
         }
       };
 
-      set(
-        "topbar-text",
-        TEXTOS.topbar_texto
-      );
+      set("topbar-text",TEXTOS.topbar_texto);
+      set("contact-label",TEXTOS.contacto_etiqueta);
+      set("menu-home",TEXTOS.menu_inicio);
+      set("menu-products",TEXTOS.menu_productos);
+      set("header-products-text",TEXTOS.menu_productos);
+      set("menu-contact",TEXTOS.menu_contacto);
+      set("hero-label",TEXTOS.hero_etiqueta);
+      set("products-label",TEXTOS.productos_etiqueta);
+      set("products-title",TEXTOS.productos_titulo);
+      set("products-intro",TEXTOS.productos_texto);
+      set("editorial-label",TEXTOS.editorial_etiqueta);
+      set("editorial-text",TEXTOS.editorial_texto);
+      set("footer-email-label",TEXTOS.footer_correo);
+      set("footer-instagram-label",TEXTOS.footer_instagram);
+      set("footer-orders-label",TEXTOS.footer_pedidos);
+      set("footer-copy",TEXTOS.footer_copy);
+      set("footer-country",TEXTOS.footer_pais);
+      set("modal-eyebrow",TEXTOS.modal_etiqueta);
+      set("modal-zoom-help",TEXTOS.modal_ayuda_zoom);
 
-      set(
-        "contact-label",
-        TEXTOS.contacto_etiqueta
-      );
-
-      set(
-        "menu-home",
-        TEXTOS.menu_inicio
-      );
-
-      set(
-        "menu-products",
-        TEXTOS.menu_productos
-      );
-
-      set(
-        "header-products-text",
-        TEXTOS.menu_productos
-      );
-
-      set(
-        "menu-contact",
-        TEXTOS.menu_contacto
-      );
-
-      set(
-        "hero-label",
-        TEXTOS.hero_etiqueta
-      );
-
-      set(
-        "products-label",
-        TEXTOS.productos_etiqueta
-      );
-
-      set(
-        "products-title",
-        TEXTOS.productos_titulo
-      );
-
-      set(
-        "products-intro",
-        TEXTOS.productos_texto
-      );
-
-      set(
-        "editorial-label",
-        TEXTOS.editorial_etiqueta
-      );
-
-      set(
-        "editorial-text",
-        TEXTOS.editorial_texto
-      );
-
-      set(
-        "footer-email-label",
-        TEXTOS.footer_correo
-      );
-
-      set(
-        "footer-instagram-label",
-        TEXTOS.footer_instagram
-      );
-
-      set(
-        "footer-orders-label",
-        TEXTOS.footer_pedidos
-      );
-
-      set(
-        "footer-copy",
-        TEXTOS.footer_copy
-      );
-
-      set(
-        "footer-country",
-        TEXTOS.footer_pais
-      );
-
-      set(
-        "modal-eyebrow",
-        TEXTOS.modal_etiqueta
-      );
-
-      set(
-        "modal-zoom-help",
-        TEXTOS.modal_ayuda_zoom
-      );
-
-      const root=
-        document.documentElement;
+      const root=document.documentElement;
 
       const s=(k,v)=>
         root.style.setProperty(
@@ -2864,12 +2860,12 @@
 
       if(
         !$("favorites-overlay")
-          .classList
-          .contains("abierto")
+        .classList
+        .contains("abierto")
         &&
         !$("product-modal")
-          .classList
-          .contains("abierto")
+        .classList
+        .contains("abierto")
       ){
         document.body
         .classList
@@ -2884,6 +2880,7 @@
         img.naturalWidth&&
         img.naturalHeight
       ){
+
         document.documentElement
         .style
         .setProperty(
@@ -2919,8 +2916,7 @@
           )
       );
 
-      const b=
-        BANNERS[i];
+      const b=BANNERS[i];
 
       $("hero-title").textContent=
         b.titulo||"";
@@ -2947,9 +2943,14 @@
       if(img){
 
         if(img.complete){
-          actualizarRatioHero(img);
+
+          actualizarRatioHero(
+            img
+          );
+
         }
         else{
+
           img.addEventListener(
             "load",
             ()=>actualizarRatioHero(img),
@@ -2957,6 +2958,7 @@
               once:true
             }
           );
+
         }
       }
     }
@@ -2991,20 +2993,22 @@
 
         BANNERS=
           archivos
-          .map(a=>({
-            titulo:
-              a.datos.titulo||"",
-            subtitulo:
-              a.datos.subtitulo||"",
-            imagen:
-              a.datos.imagen||"",
-            activo:
-              a.datos.activo!==false,
-            orden:
-              Number(
-                a.datos.orden
-              )||999
-          }))
+          .map(
+            a=>({
+              titulo:
+                a.datos.titulo||"",
+              subtitulo:
+                a.datos.subtitulo||"",
+              imagen:
+                a.datos.imagen||"",
+              activo:
+                a.datos.activo!==false,
+              orden:
+                Number(
+                  a.datos.orden
+                )||999
+            })
+          )
           .filter(
             b=>
               b.activo&&
@@ -3060,9 +3064,11 @@
                 if(
                   i===bannerActual
                 ){
+
                   actualizarRatioHero(
                     img
                   );
+
                 }
               }
             );
@@ -3222,6 +3228,16 @@
       };
     }
 
+    /*
+      PRIMER CRITERIO DE ORDEN:
+      disponibilidad.
+
+      Esto se ejecuta antes de categoría,
+      tipo y orden interno.
+
+      Por eso absolutamente todos los
+      productos agotados terminan al final.
+    */
     function ordenarProductos(a,b){
 
       const agotadoA=
@@ -3239,14 +3255,12 @@
       }
 
       const ca=
-        CATEGORY_ORDER
-        .indexOf(
+        CATEGORY_ORDER.indexOf(
           a.categoria
         );
 
       const cb=
-        CATEGORY_ORDER
-        .indexOf(
+        CATEGORY_ORDER.indexOf(
           b.categoria
         );
 
@@ -3279,15 +3293,11 @@
 
       const o=
         (
-          Number(
-            a.orden
-          )||999
+          Number(a.orden)||999
         )
         -
         (
-          Number(
-            b.orden
-          )||999
+          Number(b.orden)||999
         );
 
       if(o){
@@ -3335,17 +3345,16 @@
           const tmp=
             dp[j];
 
-          dp[j]=
-            Math.min(
-              dp[j]+1,
-              dp[j-1]+1,
-              prev+
-              (
-                a[i-1]===b[j-1]
-                  ?0
-                  :1
-              )
-            );
+          dp[j]=Math.min(
+            dp[j]+1,
+            dp[j-1]+1,
+            prev+
+            (
+              a[i-1]===b[j-1]
+                ?0
+                :1
+            )
+          );
 
           prev=tmp;
         }
@@ -3377,6 +3386,7 @@
                   token
                 )<=1
               );
+
           })
         ){
           return g.map(
@@ -3390,8 +3400,7 @@
 
     function coincideBusqueda(p,q){
 
-      q=
-        normalizar(q);
+      q=normalizar(q);
 
       if(!q){
         return true;
@@ -3500,11 +3509,14 @@
 
     function mensajeCompra(p){
 
-      let m=
-        `Hola DAI PY, quiero realizar un pedido.\n\nProducto: ${p.nombre}\nPrecio: ${precioFormateado(p.precio)}`;
+      const desc=
+        descripcionProducto(p);
 
-      if(p.desc){
-        m+=`\n\n${p.desc}`;
+      let m=
+        `Hola DAI PY, quiero realizar un pedido.\n\nProducto: ${p.nombre}\nPrecio: ${precioProducto(p)}`;
+
+      if(desc){
+        m+=`\n\n${desc}`;
       }
 
       return m;
@@ -3522,12 +3534,18 @@
           idProducto(p)
         );
 
+      const desc=
+        descripcionProducto(p);
+
+      const precio=
+        precioProducto(p);
+
       return`
         <article
           class="product"
           tabindex="0"
           data-visible-index="${indice}"
-          data-has-description="${p.desc?"true":"false"}"
+          data-has-description="${desc?"true":"false"}"
           aria-label="Ver ${escaparHTML(p.nombre)}"
         >
 
@@ -3577,7 +3595,7 @@
               </h3>
 
               <div class="product-price">
-                ${escaparHTML(precioFormateado(p.precio))}
+                ${escaparHTML(precio)}
               </div>
 
             </div>
@@ -3585,10 +3603,10 @@
             <div class="product-description-slot">
 
               ${
-                p.desc
+                desc
                   ?`
                     <p class="product-description">
-                      ${escaparHTML(p.desc)}
+                      ${escaparHTML(desc)}
                     </p>
                   `
                   :`
@@ -3613,7 +3631,6 @@
             </a>
 
           </div>
-
         </article>
       `;
     }
@@ -3621,12 +3638,12 @@
     function columnasActuales(){
 
       return window
-        .matchMedia(
-          "(max-width:900px)"
-        )
-        .matches
-          ?2
-          :3;
+      .matchMedia(
+        "(max-width:900px)"
+      )
+      .matches
+        ?2
+        :3;
     }
 
     function ajustarFilasDescripcion(){
@@ -3700,6 +3717,7 @@
                 return s
                   ?s.scrollHeight
                   :0;
+
               })
             );
 
@@ -3857,18 +3875,20 @@
       .querySelectorAll(
         ".favorite-heart"
       )
-      .forEach(b=>
-        b.addEventListener(
-          "click",
-          e=>{
+      .forEach(
+        b=>
+          b.addEventListener(
+            "click",
+            e=>{
 
-            e.stopPropagation();
+              e.stopPropagation();
 
-            alternarFavorito(
-              b.dataset.favoriteId
-            );
-          }
-        )
+              alternarFavorito(
+                b.dataset.favoriteId
+              );
+
+            }
+          )
       );
 
       renderizarPaginacion();
@@ -3977,6 +3997,7 @@
               renderizarProductos();
 
               window.scrollTo({
+
                 top:
                   $("productos")
                   .getBoundingClientRect()
@@ -3985,6 +4006,7 @@
                   window.scrollY
                   -
                   70,
+
                 behavior:"smooth"
               });
 
@@ -4007,25 +4029,39 @@
           .map(
             a=>
               inferirClasificacion({
+
                 id:
                   a.nombreArchivo,
+
                 nombre:
                   a.datos.nombre||
                   "Producto",
+
                 img:
-                  a.datos.img||"",
+                  a.datos.img||
+                  "",
+
                 precio:
-                  a.datos.precio||"",
+                  a.datos.precio||
+                  "",
+
                 desc:
-                  a.datos.desc||"",
+                  a.datos.desc||
+                  "",
+
                 categoria:
-                  a.datos.categoria||"",
+                  a.datos.categoria||
+                  "",
+
                 tipo:
-                  a.datos.tipo||"",
+                  a.datos.tipo||
+                  "",
+
                 orden:
                   Number(
                     a.datos.orden
                   )||999
+
               })
           )
           .sort(
@@ -4117,6 +4153,7 @@
           productoModal
         )===id
       ){
+
         actualizarBotonModalFavorito();
       }
     }
@@ -4165,7 +4202,7 @@
                   </div>
 
                   <div class="favorite-row-price">
-                    ${escaparHTML(precioFormateado(p.precio))}
+                    ${escaparHTML(precioProducto(p))}
                   </div>
 
                 </div>
@@ -4241,13 +4278,14 @@
 
       if(
         !$("menu")
-          .classList
-          .contains("abierto")
+        .classList
+        .contains("abierto")
         &&
         !$("product-modal")
-          .classList
-          .contains("abierto")
+        .classList
+        .contains("abierto")
       ){
+
         document.body
         .classList
         .remove("locked");
@@ -4266,7 +4304,7 @@
       const lineas=
         items.map(
           (p,i)=>
-            `${i+1}. ${p.nombre} — ${precioFormateado(p.precio)}`
+            `${i+1}. ${p.nombre} — ${precioProducto(p)}`
         );
 
       const m=
@@ -4279,32 +4317,310 @@
       );
     }
 
-    function claseFrase(texto){
+    /* =========================================================
+       AJUSTE AUTOMÁTICO DEL TEXTO DEL GLOBO
+    ========================================================= */
 
-      const n=
-        String(
-          texto||""
-        )
+    function medirHandjet(texto,tamano){
+
+      if(!medirHandjet.canvas){
+
+        medirHandjet.canvas=
+          document.createElement(
+            "canvas"
+          );
+      }
+
+      const ctx=
+        medirHandjet.canvas
+        .getContext("2d");
+
+      ctx.font=
+        `500 ${tamano}px Handjet`;
+
+      return ctx.measureText(
+        String(texto||"")
+      )
+      .width;
+    }
+
+    /*
+      Busca el mejor punto para dividir una frase
+      en solamente dos líneas.
+    */
+    function mejorCorteDosLineas(
+      frase,
+      tamano,
+      maxWidth
+    ){
+
+      const palabras=
+        String(frase||"")
         .trim()
-        .length;
+        .split(/\s+/)
+        .filter(Boolean);
 
-      if(n<=20){
-        return"corta";
+      if(palabras.length<2){
+        return null;
       }
 
-      if(n<=34){
-        return"media";
+      let mejor=null;
+
+      for(
+        let i=1;
+        i<palabras.length;
+        i++
+      ){
+
+        const a=
+          palabras
+          .slice(0,i)
+          .join(" ");
+
+        const b=
+          palabras
+          .slice(i)
+          .join(" ");
+
+        const wa=
+          medirHandjet(
+            a,
+            tamano
+          );
+
+        const wb=
+          medirHandjet(
+            b,
+            tamano
+          );
+
+        const ancho=
+          Math.max(
+            wa,
+            wb
+          );
+
+        if(
+          ancho<=maxWidth
+        ){
+
+          const equilibrio=
+            Math.abs(
+              wa-wb
+            );
+
+          if(
+            !mejor
+            ||
+            ancho<mejor.ancho
+            ||
+            (
+              Math.abs(
+                ancho-mejor.ancho
+              )<1
+              &&
+              equilibrio<
+              mejor.equilibrio
+            )
+          ){
+
+            mejor={
+              a,
+              b,
+              ancho,
+              equilibrio
+            };
+          }
+        }
       }
 
-      return"larga";
+      return mejor;
+    }
+
+    /*
+      Esta función mide el ancho REAL disponible
+      dentro del globo.
+
+      1. Intenta mantener una sola línea y tamaño grande.
+      2. Reduce levemente si hace falta.
+      3. Solo si ya no entra de forma elegante,
+         pasa a dos líneas.
+      4. Nunca utiliza más de dos líneas.
+    */
+    function ajustarTextoGlobo(frase){
+
+      const texto=
+        $("speech-text");
+
+      if(!texto){
+        return;
+      }
+
+      const movil=
+        window
+        .matchMedia(
+          "(max-width:760px)"
+        )
+        .matches;
+
+      /*
+        Escritorio tiene más impacto.
+        Móvil mantiene el tamaño del globo actual.
+      */
+      const maxUna=
+        movil
+          ?20
+          :31;
+
+      const minUna=
+        movil
+          ?14
+          :20;
+
+      const maxDos=
+        movil
+          ?13.5
+          :20;
+
+      const minDos=
+        movil
+          ?9
+          :12;
+
+      /*
+        96% deja un pequeño margen adicional
+        para que nunca toque el borde.
+      */
+      const ancho=
+        Math.max(
+          1,
+          texto.clientWidth
+        )
+        *
+        .96;
+
+      const alto=
+        Math.max(
+          1,
+          texto.clientHeight
+        )
+        *
+        .95;
+
+      const aplicarUna=t=>{
+
+        texto.className=
+          "speech-text una-linea";
+
+        texto.style.fontSize=
+          `${t}px`;
+
+        texto.style.lineHeight=
+          ".92";
+
+        texto.textContent=
+          frase;
+      };
+
+      /*
+        PRIMER INTENTO:
+        una sola línea y letra grande.
+      */
+      for(
+        let t=maxUna;
+        t>=minUna;
+        t-=.5
+      ){
+
+        if(
+          medirHandjet(
+            frase,
+            t
+          )<=ancho
+          &&
+          t*.98<=alto
+        ){
+
+          aplicarUna(t);
+
+          return;
+        }
+      }
+
+      /*
+        SEGUNDO INTENTO:
+        exactamente dos líneas.
+      */
+      for(
+        let t=maxDos;
+        t>=minDos;
+        t-=.5
+      ){
+
+        const corte=
+          mejorCorteDosLineas(
+            frase,
+            t,
+            ancho
+          );
+
+        if(
+          corte
+          &&
+          t*1.84<=alto
+        ){
+
+          texto.className=
+            "speech-text dos-lineas";
+
+          texto.style.fontSize=
+            `${t}px`;
+
+          texto.style.lineHeight=
+            ".92";
+
+          texto.textContent=
+            `${corte.a}\n${corte.b}`;
+
+          return;
+        }
+      }
+
+      /*
+        Fallback extremo.
+        Incluso una frase excepcionalmente larga
+        queda dentro del globo.
+      */
+      texto.className=
+        "speech-text dos-lineas";
+
+      texto.style.fontSize=
+        `${minDos}px`;
+
+      texto.style.lineHeight=
+        ".9";
+
+      const palabras=
+        String(frase||"")
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean);
+
+      const mitad=
+        Math.ceil(
+          palabras.length/2
+        );
+
+      texto.textContent=
+        palabras.length>1
+          ?`${palabras.slice(0,mitad).join(" ")}\n${palabras.slice(mitad).join(" ")}`
+          :frase;
     }
 
     function tiempoLecturaFrase(texto){
 
       const n=
-        String(
-          texto||""
-        )
+        String(texto||"")
         .trim()
         .length;
 
@@ -4387,8 +4703,10 @@
         $("speech-text");
 
       if(
-        !globo||
-        !texto||
+        !globo
+        ||
+        !texto
+        ||
         !frasesRotacion.length
       ){
         return;
@@ -4412,17 +4730,42 @@
 
       const colocar=()=>{
 
-        texto.textContent=
-          frase;
+        ajustarTextoGlobo(
+          frase
+        );
 
-        texto.className=
-          `speech-text ${claseFrase(frase)}`;
+        /*
+          Cuando termina de cargar Handjet
+          volvemos a medir con la fuente real.
+        */
+        if(
+          document.fonts
+          &&
+          document.fonts.ready
+        ){
+
+          document.fonts.ready
+          .then(()=>{
+
+            if(
+              productoModal
+              &&
+              texto.isConnected
+            ){
+
+              ajustarTextoGlobo(
+                frase
+              );
+            }
+          });
+        }
 
         globo.classList.add(
           "visible"
         );
 
         if(!primera){
+
           parpadearGlobo();
         }
       };
@@ -4520,7 +4863,9 @@
         );
 
       globo.style.display=
-        activo&&frasesRotacion.length
+        activo
+        &&
+        frasesRotacion.length
           ?""
           :"none";
 
@@ -4531,9 +4876,11 @@
       );
 
       if(
-        activo&&
+        activo
+        &&
         frasesRotacion.length
       ){
+
         mostrarFraseModal(
           0,
           true
@@ -4558,6 +4905,7 @@
         $("speech-bubble");
 
       if(globo){
+
         globo.classList.remove(
           "visible",
           "cambiando",
@@ -4611,15 +4959,21 @@
       .textContent=
         p.nombre;
 
+      /*
+        Si está agotado, aquí también aparecerá
+        AGOTADO en vez del precio viejo.
+      */
       $("modal-product-price")
       .textContent=
-        precioFormateado(
-          p.precio
-        );
+        precioProducto(p);
 
+      /*
+        Si la descripción era únicamente AGOTADO,
+        queda vacía para evitar duplicación.
+      */
       $("modal-product-description")
       .textContent=
-        p.desc||"";
+        descripcionProducto(p);
 
       $("modal-buy-button")
       .textContent=
@@ -4637,8 +4991,11 @@
 
       actualizarBotonModalFavorito();
 
-      aplicarFrasesModal();
-
+      /*
+        Primero mostramos el modal.
+        Después medimos el globo.
+        Esto es importante para conocer su tamaño real.
+      */
       $("product-modal")
       .classList
       .add("abierto");
@@ -4652,6 +5009,11 @@
       document.body
       .classList
       .add("locked");
+
+      requestAnimationFrame(
+        ()=>
+          aplicarFrasesModal()
+      );
     }
 
     function cerrarProducto(){
@@ -4676,13 +5038,14 @@
 
       if(
         !$("menu")
-          .classList
-          .contains("abierto")
+        .classList
+        .contains("abierto")
         &&
         !$("favorites-overlay")
-          .classList
-          .contains("abierto")
+        .classList
+        .contains("abierto")
       ){
+
         document.body
         .classList
         .remove("locked");
@@ -4709,6 +5072,7 @@
         if(
           e.target===$("menu")
         ){
+
           cerrarMenu();
         }
       }
@@ -4830,6 +5194,7 @@
           e.target===
           $("favorites-overlay")
         ){
+
           cerrarFavoritos();
         }
       }
@@ -4856,6 +5221,7 @@
           e.target===
           $("product-modal")
         ){
+
           cerrarProducto();
         }
       }
@@ -4880,10 +5246,12 @@
     $("modal-image-frame")
     .addEventListener(
       "click",
-      ()=>
+      ()=>{
+
         $("modal-image-frame")
         .classList
-        .toggle("zoom")
+        .toggle("zoom");
+      }
     );
 
     $("modal-image-frame")
@@ -4936,7 +5304,6 @@
         else{
 
           cerrarMenu();
-
         }
       }
     );
@@ -4963,12 +5330,31 @@
                 );
 
               if(activo){
+
                 actualizarRatioHero(
                   activo
                 );
               }
 
               ajustarFilasDescripcion();
+
+              /*
+                Si se gira el teléfono o cambia el tamaño
+                de la ventana, recalculamos automáticamente
+                el tamaño del texto del globo.
+              */
+              if(
+                productoModal
+                &&
+                frasesRotacion.length
+              ){
+
+                ajustarTextoGlobo(
+                  frasesRotacion[
+                    fraseIndice
+                  ]||""
+                );
+              }
 
             },
             120
@@ -4991,7 +5377,6 @@
     }
 
     iniciar();
-
   </script>
 
 </body>
