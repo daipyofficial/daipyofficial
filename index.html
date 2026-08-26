@@ -1,305 +1,594 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="DAI PY · Tienda oficial">
-  <title>DAI PY · Tienda Oficial</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link id="dynamic-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap">
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="DAI PY · Tienda oficial"
+  >
+
+  <title>
+    DAI PY · Tienda Oficial
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    id="dynamic-font"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap"
+  >
 
   <style>
+
     :root{
+
       --fondo:#f4f2ed;
+
       --texto:#111;
+
       --suave:#77736d;
+
       --linea:#d7d3cc;
-      --fuente:"Poppins",Arial,sans-serif;
+
+      --fuente:
+        "Poppins",
+        Arial,
+        sans-serif;
+
       --peso-precio:700;
+
       --hero-mobile-ratio:16/9;
 
       --hero-title-desktop:72px;
+
       --hero-subtitle-desktop:14px;
+
       --products-title-desktop:64px;
+
       --products-text-desktop:13px;
+
       --editorial-text-desktop:56px;
 
       --hero-title-mobile:34px;
+
       --hero-subtitle-mobile:12px;
+
       --products-title-mobile:30px;
+
       --products-text-mobile:11px;
+
       --editorial-text-mobile:30px;
 
       --products-mobile-top-space:28px;
+
       --products-mobile-lines:2;
     }
+
 
     *{
       box-sizing:border-box;
     }
 
+
     html{
       scroll-behavior:smooth;
     }
 
+
     body{
+
       margin:0;
-      background:var(--fondo);
-      color:var(--texto);
-      font-family:var(--fuente);
+
+      background:
+        var(--fondo);
+
+      color:
+        var(--texto);
+
+      font-family:
+        var(--fuente);
+
       font-size:14px;
     }
+
 
     body.locked{
       overflow:hidden;
     }
 
+
     a{
+
       color:inherit;
+
       text-decoration:none;
     }
 
+
     button,
     input{
+
       font:inherit;
+
       color:inherit;
     }
+
 
     button{
       cursor:pointer;
     }
 
+
     img{
+
       display:block;
+
       max-width:100%;
     }
+
 
     .oculto{
       display:none!important;
     }
 
-    /* =========================================================
-       CABECERA
-    ========================================================= */
+
+    /* =========================================
+       BARRA SUPERIOR
+    ========================================= */
+
 
     .topbar{
+
       min-height:28px;
-      padding:7px 14px;
+
+      padding:
+        7px 14px;
+
       background:#171717;
+
       color:#fff;
+
       text-align:center;
+
       font-size:9px;
+
       font-weight:600;
+
       letter-spacing:.08em;
+
       text-transform:uppercase;
     }
 
+
     .contact-bar{
+
       min-height:42px;
-      padding:8px 26px;
+
+      padding:
+        8px 26px;
+
       display:flex;
+
       align-items:center;
-      justify-content:space-between;
-      border-bottom:1px solid var(--linea);
+
+      justify-content:
+        space-between;
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
       font-size:10px;
     }
 
+
     .contact-label{
+
       font-size:8px;
+
       letter-spacing:.16em;
+
       text-transform:uppercase;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
+
     .contact-links{
+
       display:flex;
+
       align-items:center;
+
       gap:22px;
     }
+
 
     .contact-links a:hover{
       text-decoration:underline;
     }
 
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+
     .header{
+
       height:76px;
-      padding:0 28px;
+
+      padding:
+        0 28px;
+
       display:grid;
-      grid-template-columns:1fr auto 1fr;
+
+      grid-template-columns:
+        1fr auto 1fr;
+
       align-items:center;
-      border-bottom:1px solid var(--linea);
-      background:rgba(244,242,237,.96);
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
+      background:
+        rgba(
+          244,
+          242,
+          237,
+          .96
+        );
+
       position:sticky;
+
       top:0;
+
       z-index:90;
-      backdrop-filter:blur(10px);
+
+      backdrop-filter:
+        blur(10px);
     }
+
 
     .menu-button,
     .header-products{
+
       border:0;
+
       background:none;
+
       padding:0;
+
       font-size:9px;
+
       font-weight:500;
+
       letter-spacing:.16em;
+
       text-transform:uppercase;
     }
+
 
     .menu-button{
       justify-self:start;
     }
 
+
     .header-products{
       justify-self:end;
     }
 
+
     .header-logo img{
+
       width:auto;
+
       max-width:100px;
+
       max-height:54px;
     }
 
-    /* =========================================================
-       MENÚ
-    ========================================================= */
+
+    /* =========================================
+       MENU
+    ========================================= */
+
 
     .menu-overlay{
+
       position:fixed;
+
       inset:0;
+
       z-index:300;
-      background:rgba(0,0,0,.35);
+
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          .35
+        );
+
       opacity:0;
+
       pointer-events:none;
-      transition:.25s ease;
+
+      transition:
+        .25s ease;
     }
 
+
     .menu-overlay.abierto{
+
       opacity:1;
+
       pointer-events:auto;
     }
 
+
     .menu-panel{
-      width:min(470px,92vw);
+
+      width:
+        min(
+          470px,
+          92vw
+        );
+
       height:100%;
+
       padding:28px;
-      background:var(--fondo);
+
+      background:
+        var(--fondo);
+
       display:flex;
+
       flex-direction:column;
-      transform:translateX(-102%);
-      transition:.3s ease;
+
+      transform:
+        translateX(-102%);
+
+      transition:
+        .3s ease;
     }
 
-    .menu-overlay.abierto .menu-panel{
-      transform:translateX(0);
+
+    .menu-overlay.abierto
+    .menu-panel{
+
+      transform:
+        translateX(0);
     }
+
 
     .menu-top{
+
       padding-bottom:24px;
+
       display:flex;
+
       align-items:center;
-      justify-content:space-between;
-      border-bottom:1px solid var(--linea);
+
+      justify-content:
+        space-between;
+
+      border-bottom:
+        1px solid
+        var(--linea);
     }
 
+
     .menu-logo img{
+
       max-width:90px;
+
       max-height:48px;
     }
 
+
     .menu-close{
+
       border:0;
+
       background:none;
+
       font-size:9px;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
     }
 
+
     .menu-links{
+
       padding-top:42px;
+
       display:flex;
+
       flex-direction:column;
+
       gap:8px;
     }
+
 
     .menu-links a{
-      font-size:clamp(34px,6vw,52px);
+
+      font-size:
+        clamp(
+          34px,
+          6vw,
+          52px
+        );
+
       font-weight:500;
+
       line-height:1.08;
-      letter-spacing:-.045em;
+
+      letter-spacing:
+        -.045em;
     }
+
 
     .menu-contact{
+
       margin-top:auto;
+
       padding-top:22px;
+
       display:flex;
+
       flex-direction:column;
+
       gap:8px;
-      border-top:1px solid var(--linea);
+
+      border-top:
+        1px solid
+        var(--linea);
+
       font-size:11px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
-    /* =========================================================
+
+    /* =========================================
        HERO
-    ========================================================= */
+    ========================================= */
+
 
     .hero{
-      width:calc(100% - 28px);
-      height:min(79vh,850px);
+
+      width:
+        calc(
+          100% - 28px
+        );
+
+      height:
+        min(
+          79vh,
+          850px
+        );
+
       min-height:570px;
-      margin:14px auto 0;
+
+      margin:
+        14px auto 0;
+
       position:relative;
+
       overflow:hidden;
+
       background:#d8d4cc;
     }
 
+
     .hero-media,
     .hero-fallback{
+
       position:absolute;
+
       inset:0;
     }
 
+
     .hero-fallback{
+
       display:flex;
+
       align-items:center;
+
       justify-content:center;
+
       background:#dedad2;
     }
 
+
     .hero-fallback img{
-      width:min(240px,45vw);
+
+      width:
+        min(
+          240px,
+          45vw
+        );
+
       opacity:.45;
     }
 
+
     .hero-slide{
+
       position:absolute;
+
       inset:0;
+
       width:100%;
+
       height:100%;
+
       object-fit:cover;
+
       object-position:center;
+
       opacity:0;
-      transform:scale(1.01);
+
+      transform:
+        scale(1.01);
+
       transition:
         opacity .7s ease,
         transform 7s ease;
     }
 
+
     .hero-slide.activo{
+
       opacity:1;
-      transform:scale(1.04);
+
+      transform:
+        scale(1.04);
     }
 
+
     .hero::after{
+
       content:"";
+
       position:absolute;
+
       inset:0;
+
       z-index:2;
+
       pointer-events:none;
+
       background:
         linear-gradient(
           to top,
@@ -309,271 +598,548 @@
         );
     }
 
+
     .hero-content{
+
       position:absolute;
+
       z-index:3;
-      left:clamp(24px,6vw,90px);
-      bottom:clamp(35px,7vw,90px);
+
+      left:
+        clamp(
+          24px,
+          6vw,
+          90px
+        );
+
+      bottom:
+        clamp(
+          35px,
+          7vw,
+          90px
+        );
+
       max-width:850px;
+
       color:#fff;
     }
 
+
     .hero-label{
+
       margin-bottom:15px;
+
       font-size:10px;
+
       font-weight:500;
+
       letter-spacing:.18em;
+
       text-transform:uppercase;
     }
 
+
     .hero-title{
+
       max-width:800px;
+
       margin:0;
-      font-size:clamp(
-        40px,
-        7vw,
-        var(--hero-title-desktop)
-      );
+
+      font-size:
+        clamp(
+          40px,
+          7vw,
+          var(--hero-title-desktop)
+        );
+
       font-weight:500;
+
       line-height:.99;
-      letter-spacing:-.055em;
+
+      letter-spacing:
+        -.055em;
     }
 
+
     .hero-subtitle{
+
       max-width:580px;
-      margin:18px 0 0;
-      font-size:var(--hero-subtitle-desktop);
+
+      margin:
+        18px 0 0;
+
+      font-size:
+        var(--hero-subtitle-desktop);
+
       line-height:1.55;
     }
 
+
     .hero-controls{
+
       position:absolute;
+
       z-index:4;
+
       right:28px;
+
       bottom:28px;
+
       display:flex;
+
       gap:6px;
     }
 
+
     .hero-arrow{
+
       width:42px;
+
       height:42px;
-      border:1px solid rgba(255,255,255,.6);
-      background:rgba(0,0,0,.14);
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          .6
+        );
+
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          .14
+        );
+
       color:#fff;
+
       border-radius:50%;
     }
 
-    /* =========================================================
+
+    /* =========================================
        PRODUCTOS
-    ========================================================= */
+    ========================================= */
+
 
     .products-heading{
-      width:calc(100% - 28px);
+
+      width:
+        calc(
+          100% - 28px
+        );
+
       max-width:1700px;
-      margin:0 auto;
-      padding:88px 0 38px;
+
+      margin:
+        0 auto;
+
+      padding:
+        88px 0 38px;
+
       display:grid;
-      grid-template-columns:1fr minmax(260px,480px);
+
+      grid-template-columns:
+        1fr
+        minmax(
+          260px,
+          480px
+        );
+
       gap:40px;
+
       align-items:end;
     }
 
+
     .section-label{
+
       display:block;
+
       margin-bottom:13px;
+
       font-size:9px;
+
       letter-spacing:.18em;
+
       text-transform:uppercase;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
+
 
     .products-heading h2{
+
       margin:0;
-      font-size:var(--products-title-desktop);
+
+      font-size:
+        var(--products-title-desktop);
+
       font-weight:500;
+
       line-height:1;
-      letter-spacing:-.05em;
+
+      letter-spacing:
+        -.05em;
     }
+
 
     .products-heading p{
+
       margin:0;
-      font-size:var(--products-text-desktop);
+
+      font-size:
+        var(--products-text-desktop);
+
       line-height:1.6;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
+
+    /* =========================================
+       BUSCADOR
+    ========================================= */
+
+
     .search-wrap{
-      width:calc(100% - 28px);
+
+      width:
+        calc(
+          100% - 28px
+        );
+
       max-width:1700px;
-      margin:0 auto 30px;
+
+      margin:
+        0 auto 30px;
+
       display:flex;
+
       align-items:center;
+
       gap:14px;
     }
 
+
     .search-box{
+
       position:relative;
+
       flex:1;
+
       max-width:720px;
     }
 
+
     .search-input{
+
       width:100%;
+
       height:48px;
-      padding:0 50px 0 16px;
-      border:1px solid var(--linea);
+
+      padding:
+        0 50px 0 16px;
+
+      border:
+        1px solid
+        var(--linea);
+
       border-radius:0;
+
       background:transparent;
+
       outline:none;
+
       font-size:12px;
-      letter-spacing:.01em;
     }
+
 
     .search-input:focus{
       border-color:#777;
     }
 
+
     .search-clear{
+
       position:absolute;
+
       right:8px;
+
       top:50%;
-      transform:translateY(-50%);
+
+      transform:
+        translateY(-50%);
+
       width:34px;
+
       height:34px;
+
       border:0;
+
       background:transparent;
+
       font-size:18px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
+
     .search-status{
+
       min-width:110px;
+
       font-size:9px;
+
       letter-spacing:.1em;
+
       text-transform:uppercase;
-      color:var(--suave);
+
+      color:
+        var(--suave);
+
       text-align:right;
     }
 
+
+    /* =========================================
+       GRID
+    ========================================= */
+
+
     .products-section{
-      width:calc(100% - 28px);
+
+      width:
+        calc(
+          100% - 28px
+        );
+
       max-width:1700px;
+
       margin:auto;
+
       padding-bottom:30px;
     }
 
+
     .products-grid{
+
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(
+            0,
+            1fr
+          )
+        );
+
       column-gap:16px;
+
       row-gap:42px;
+
       align-items:stretch;
     }
 
+
     .product{
+
       min-width:0;
+
       cursor:pointer;
+
       outline:none;
+
       display:flex;
+
       flex-direction:column;
     }
 
+
     .product:focus-visible{
-      outline:1px solid #333;
+
+      outline:
+        1px solid #333;
+
       outline-offset:4px;
     }
 
+
     .product-image{
+
       position:relative;
-      aspect-ratio:1/1.08;
+
+      aspect-ratio:
+        1 / 1.08;
+
       overflow:hidden;
+
       background:#e5e1da;
     }
 
-    .product-image>img{
+
+    .product-image > img{
+
       width:100%;
+
       height:100%;
+
       object-fit:cover;
-      transition:transform .55s ease;
+
+      transition:
+        transform .55s ease;
     }
 
-    .product:hover .product-image>img{
-      transform:scale(1.025);
+
+    .product:hover
+    .product-image > img{
+
+      transform:
+        scale(1.025);
     }
+
 
     .product-image-fallback{
+
       width:100%;
+
       height:100%;
+
       display:flex;
+
       align-items:center;
+
       justify-content:center;
     }
 
+
     .product-image-fallback img{
+
       width:35%;
+
       opacity:.35;
     }
 
+
     .product-zoom-hint{
+
       position:absolute;
+
       left:10px;
+
       bottom:10px;
-      padding:5px 7px;
-      background:rgba(255,255,255,.82);
+
+      padding:
+        5px 7px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          .82
+        );
+
       font-size:7px;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
+
       opacity:0;
+
       transition:.2s;
     }
 
-    .product:hover .product-zoom-hint{
+
+    .product:hover
+    .product-zoom-hint{
+
       opacity:1;
     }
 
-    /* =========================================================
-       CORAZÓN
-    ========================================================= */
+
+    /* =========================================
+       CORAZON
+    ========================================= */
+
 
     .favorite-heart{
+
       position:absolute;
+
       z-index:3;
+
       right:10px;
+
       top:10px;
 
       width:40px;
+
       height:40px;
 
       padding:0;
+
       border:0;
+
       border-radius:50%;
 
-      background:rgba(255,255,255,.94);
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          .94
+        );
 
       display:flex;
+
       align-items:center;
+
       justify-content:center;
 
       color:transparent;
+
       font-size:0;
+
       line-height:0;
 
       box-shadow:
-        0 2px 12px rgba(0,0,0,.08);
+        0 2px 12px
+        rgba(
+          0,
+          0,
+          0,
+          .08
+        );
     }
 
+
     .favorite-heart::before{
+
       content:"";
 
       width:16px;
+
       height:16px;
+
       min-width:16px;
+
       min-height:16px;
 
       background-position:center;
+
       background-repeat:no-repeat;
-      background-size:16px 16px;
+
+      background-size:
+        16px 16px;
 
       background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z' fill='none' stroke='%23141414' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -583,86 +1149,154 @@
         background-image .18s ease;
     }
 
+
     .favorite-heart:hover::before,
     .favorite-heart:focus-visible::before{
-      transform:scale(1.06);
+
+      transform:
+        scale(1.06);
     }
 
+
     .favorite-heart.activo::before{
+
       background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z' fill='%23B35947' stroke='%23B35947' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
 
+
     .product-body{
+
       padding-top:10px;
+
       padding-bottom:14px;
-      border-bottom:1px solid var(--linea);
+
+      border-bottom:
+        1px solid
+        var(--linea);
+
       display:flex;
+
       flex-direction:column;
+
       flex:1;
     }
 
+
     .product-head{
+
       display:flex;
-      justify-content:space-between;
+
+      justify-content:
+        space-between;
+
       gap:14px;
+
       align-items:flex-start;
     }
 
+
     .product-name{
+
       margin:0;
+
       font-size:11px;
+
       font-weight:500;
+
       line-height:1.35;
     }
 
+
     .product-price{
+
       font-size:11px;
-      font-weight:var(--peso-precio);
+
+      font-weight:
+        var(--peso-precio);
+
       white-space:nowrap;
     }
 
+
     .product-description-slot{
+
       display:none;
+
       min-height:0;
+
       margin:0;
     }
 
-    .product.row-has-description .product-description-slot{
+
+    .product.row-has-description
+    .product-description-slot{
+
       display:block;
+
       margin-top:7px;
-      height:var(--row-desc-height,auto);
+
+      height:
+        var(
+          --row-desc-height,
+          auto
+        );
     }
+
 
     .product-description{
+
       margin:0;
+
       font-size:9px;
+
       line-height:1.45;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
+
 
     .product-description.vacia{
       visibility:hidden;
     }
 
+
+    /* =========================================
+       BOTON COMPRAR
+    ========================================= */
+
+
     .purchase-button{
+
       display:inline-flex;
+
       width:max-content;
+
       min-height:36px;
+
       margin-top:8px;
-      padding:0 14px;
+
+      padding:
+        0 14px;
 
       align-items:center;
+
       justify-content:center;
 
-      border:1px solid #141414;
+      border:
+        1px solid #141414;
 
       background:transparent;
+
       color:#141414;
 
       font-size:7px;
+
       font-weight:600;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
 
       transition:
@@ -671,417 +1305,750 @@
         border-color .2s ease;
     }
 
+
     .purchase-button:hover,
     .purchase-button:focus-visible,
     .purchase-button:active{
+
       border-color:#373435;
+
       background:#373435;
+
       color:#fff;
     }
 
+
+    /* =========================================
+       ESTADO VACIO
+    ========================================= */
+
+
     .empty-state{
-      grid-column:1/-1;
-      padding:60px 0;
-      border-top:1px solid var(--linea);
+
+      grid-column:
+        1 / -1;
+
+      padding:
+        60px 0;
+
+      border-top:
+        1px solid
+        var(--linea);
+
       display:flex;
+
       flex-direction:column;
+
       gap:7px;
     }
 
+
     .empty-state strong{
+
       font-size:18px;
+
       font-weight:500;
     }
 
+
     .empty-state span{
+
       font-size:11px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
-    /* =========================================================
-       PAGINACIÓN
-    ========================================================= */
+
+    /* =========================================
+       PAGINACION
+    ========================================= */
+
 
     .pagination{
-      width:calc(100% - 28px);
+
+      width:
+        calc(
+          100% - 28px
+        );
+
       max-width:1700px;
-      margin:20px auto 80px;
+
+      margin:
+        20px auto 80px;
+
       display:flex;
+
       align-items:center;
+
       gap:6px;
+
       flex-wrap:wrap;
     }
+
 
     .pagination.oculta{
       display:none;
     }
 
+
     .page-button{
+
       min-width:36px;
+
       height:36px;
-      padding:0 10px;
-      border:1px solid var(--linea);
+
+      padding:
+        0 10px;
+
+      border:
+        1px solid
+        var(--linea);
+
       background:transparent;
+
       font-size:9px;
     }
 
+
     .page-button.activa{
+
       background:#111;
+
       color:#fff;
+
       border-color:#111;
     }
 
+
     .page-button:disabled{
+
       opacity:.35;
+
       cursor:default;
     }
 
+
     .page-status{
+
       margin-left:auto;
+
       font-size:9px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
-    /* =========================================================
-       EDITORIAL Y FOOTER
-    ========================================================= */
+
+    /* =========================================
+       EDITORIAL
+    ========================================= */
+
 
     .editorial{
+
       margin-top:30px;
-      padding:110px 14px;
+
+      padding:
+        110px 14px;
+
       background:#171717;
+
       color:#fff;
     }
 
+
     .editorial-inner{
+
       max-width:1200px;
+
       margin:auto;
     }
 
+
     .editorial-label{
+
       margin-bottom:22px;
+
       font-size:9px;
+
       letter-spacing:.18em;
+
       text-transform:uppercase;
+
       opacity:.6;
     }
 
+
     .editorial-text{
+
       max-width:1100px;
+
       margin:0;
-      font-size:var(--editorial-text-desktop);
+
+      font-size:
+        var(--editorial-text-desktop);
+
       font-weight:500;
+
       line-height:1.08;
-      letter-spacing:-.045em;
+
+      letter-spacing:
+        -.045em;
     }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
 
     .footer{
-      padding:60px 28px 26px;
+
+      padding:
+        60px 28px 26px;
     }
 
+
     .footer-inner{
+
       max-width:1700px;
+
       margin:auto;
     }
+
 
     .footer-logo img{
       max-width:100px;
     }
 
+
     .footer-contact{
+
       margin-top:50px;
+
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
       gap:25px;
-      padding:30px 0;
-      border-top:1px solid var(--linea);
-      border-bottom:1px solid var(--linea);
+
+      padding:
+        30px 0;
+
+      border-top:
+        1px solid
+        var(--linea);
+
+      border-bottom:
+        1px solid
+        var(--linea);
     }
 
+
     .footer-item{
+
       display:flex;
+
       flex-direction:column;
+
       gap:7px;
+
       font-size:11px;
     }
 
+
     .footer-label{
+
       font-size:8px;
+
       letter-spacing:.14em;
+
       text-transform:uppercase;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
+
 
     .footer-bottom{
+
       padding-top:20px;
+
       display:flex;
-      justify-content:space-between;
+
+      justify-content:
+        space-between;
+
       font-size:9px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
-    /* =========================================================
+
+    /* =========================================
        FAVORITOS
-    ========================================================= */
+    ========================================= */
+
 
     .favorites-fab{
+
       position:fixed;
+
       right:18px;
+
       bottom:18px;
+
       z-index:160;
 
       min-height:44px;
-      padding:0 16px;
 
-      border:1px solid #111;
+      padding:
+        0 16px;
+
+      border:
+        1px solid #111;
+
       background:#111;
+
       color:#fff;
 
       display:flex;
+
       align-items:center;
+
       gap:8px;
 
       font-size:9px;
+
       font-weight:600;
+
       letter-spacing:.1em;
+
       text-transform:uppercase;
 
       box-shadow:
-        0 10px 30px rgba(0,0,0,.15);
+        0 10px 30px
+        rgba(
+          0,
+          0,
+          0,
+          .15
+        );
     }
 
-    .favorites-fab .count{
+
+    .favorites-fab
+    .count{
+
       min-width:20px;
+
       height:20px;
-      padding:0 5px;
+
+      padding:
+        0 5px;
 
       border-radius:10px;
 
       background:#fff;
+
       color:#111;
 
       display:grid;
+
       place-items:center;
 
       font-size:9px;
     }
 
+
     .favorites-overlay{
+
       position:fixed;
+
       inset:0;
+
       z-index:420;
 
-      background:rgba(0,0,0,.4);
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          .4
+        );
 
       opacity:0;
+
       pointer-events:none;
 
       transition:.25s;
     }
 
+
     .favorites-overlay.abierto{
+
       opacity:1;
+
       pointer-events:auto;
     }
 
+
     .favorites-panel{
+
       position:absolute;
+
       right:0;
+
       top:0;
 
-      width:min(470px,94vw);
+      width:
+        min(
+          470px,
+          94vw
+        );
+
       height:100%;
 
-      background:var(--fondo);
+      background:
+        var(--fondo);
 
       padding:26px;
 
       display:flex;
+
       flex-direction:column;
 
-      transform:translateX(102%);
+      transform:
+        translateX(102%);
+
       transition:.3s;
     }
 
-    .favorites-overlay.abierto .favorites-panel{
-      transform:translateX(0);
+
+    .favorites-overlay.abierto
+    .favorites-panel{
+
+      transform:
+        translateX(0);
     }
+
 
     .favorites-top{
+
       display:flex;
-      justify-content:space-between;
+
+      justify-content:
+        space-between;
+
       align-items:center;
+
       padding-bottom:20px;
-      border-bottom:1px solid var(--linea);
+
+      border-bottom:
+        1px solid
+        var(--linea);
     }
+
 
     .favorites-title{
+
       font-size:22px;
+
       font-weight:500;
-      letter-spacing:-.03em;
+
+      letter-spacing:
+        -.03em;
     }
 
+
     .favorites-close{
+
       border:0;
+
       background:none;
+
       font-size:9px;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
     }
 
+
     .favorites-list{
+
       flex:1;
+
       overflow:auto;
-      padding:8px 0;
+
+      padding:
+        8px 0;
     }
+
 
     .favorite-row{
+
       display:grid;
-      grid-template-columns:68px 1fr auto;
+
+      grid-template-columns:
+        68px
+        1fr
+        auto;
+
       gap:12px;
+
       align-items:center;
-      padding:12px 0;
-      border-bottom:1px solid var(--linea);
+
+      padding:
+        12px 0;
+
+      border-bottom:
+        1px solid
+        var(--linea);
     }
 
+
     .favorite-row img{
+
       width:68px;
+
       height:76px;
+
       object-fit:cover;
+
       background:#e5e1da;
     }
 
+
     .favorite-row-name{
+
       font-size:10px;
+
       font-weight:500;
     }
 
+
     .favorite-row-price{
+
       margin-top:4px;
+
       font-size:9px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
+
 
     .favorite-remove{
+
       border:0;
+
       background:none;
+
       font-size:18px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
+
 
     .favorites-empty{
-      padding:30px 0;
+
+      padding:
+        30px 0;
+
       font-size:11px;
+
       line-height:1.6;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
+
 
     .favorites-bottom{
+
       padding-top:18px;
-      border-top:1px solid var(--linea);
+
+      border-top:
+        1px solid
+        var(--linea);
     }
 
+
     .favorites-buy{
+
       width:100%;
+
       min-height:46px;
 
-      border:1px solid #111;
+      border:
+        1px solid #111;
 
       background:#111;
+
       color:#fff;
 
       font-size:8px;
+
       font-weight:600;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
     }
 
+
     .favorites-buy:disabled{
+
       opacity:.35;
+
       cursor:default;
     }
 
-    /* =========================================================
-       MODAL PRODUCTO
-    ========================================================= */
+
+    /* =========================================
+       MODAL
+    ========================================= */
+
 
     .product-modal{
+
       position:fixed;
+
       inset:0;
+
       z-index:500;
 
       display:none;
+
       padding:60px;
 
-      background:rgba(20,20,20,.72);
-      backdrop-filter:blur(10px);
+      background:
+        rgba(
+          20,
+          20,
+          20,
+          .72
+        );
+
+      backdrop-filter:
+        blur(10px);
 
       overflow:auto;
     }
 
+
     .product-modal.abierto{
+
       display:flex;
+
       align-items:center;
+
       justify-content:center;
     }
 
-    .modal-shell{
-      width:min(
-        1040px,
-        94vw,
-        calc((100vh - 80px) * 1.857142857)
-      );
 
-      aspect-ratio:1040/560;
+    .modal-shell{
+
+      width:
+        min(
+          1040px,
+          94vw,
+          calc(
+            (100vh - 80px)
+            *
+            1.857142857
+          )
+        );
+
+      aspect-ratio:
+        1040 / 560;
 
       position:relative;
 
-      background:var(--fondo);
+      background:
+        var(--fondo);
 
       display:grid;
-      grid-template-columns:1.05fr .95fr;
+
+      grid-template-columns:
+        1.05fr .95fr;
 
       box-shadow:
-        0 30px 80px rgba(0,0,0,.28);
+        0 30px 80px
+        rgba(
+          0,
+          0,
+          0,
+          .28
+        );
 
       overflow:visible;
     }
 
+
     .modal-close{
+
       position:absolute;
+
       z-index:60;
 
       right:14px;
+
       top:14px;
 
       width:36px;
+
       height:36px;
 
       border:0;
+
       border-radius:50%;
 
-      background:rgba(244,242,237,.92);
+      background:
+        rgba(
+          244,
+          242,
+          237,
+          .92
+        );
 
       font-size:20px;
     }
 
+
     .modal-media{
+
       min-height:0;
+
       height:100%;
 
       background:#e5e1da;
 
       position:relative;
+
       overflow:visible;
     }
 
-    /* =========================================================
-       ZOOM + ARRASTRE
-    ========================================================= */
+
+    /* =========================================
+       ZOOM
+    ========================================= */
+
 
     .modal-image-frame{
+
       width:100%;
+
       height:100%;
+
       min-height:0;
 
       position:relative;
@@ -1091,146 +2058,209 @@
       cursor:zoom-in;
 
       user-select:none;
+
       -webkit-user-select:none;
     }
 
+
     .modal-image-frame.zoom{
+
       cursor:grab;
+
       touch-action:none;
     }
+
 
     .modal-image-frame.zoom.dragging{
       cursor:grabbing;
     }
 
+
     .modal-product-image{
+
       width:100%;
+
       height:100%;
 
       object-fit:cover;
 
       transform:
-        translate3d(0,0,0)
+        translate3d(
+          0,
+          0,
+          0
+        )
         scale(1);
 
-      transform-origin:center center;
+      transform-origin:
+        center center;
 
       transition:
         transform .28s ease;
 
-      will-change:transform;
+      will-change:
+        transform;
 
       pointer-events:none;
 
       user-select:none;
+
       -webkit-user-drag:none;
+
       -webkit-user-select:none;
     }
 
+
     .modal-info{
-      padding:70px 48px;
+
+      padding:
+        70px 48px;
 
       display:flex;
+
       flex-direction:column;
+
       justify-content:center;
     }
 
+
     .modal-eyebrow{
+
       font-size:8px;
+
       letter-spacing:.16em;
+
       text-transform:uppercase;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
+
 
     .modal-product-name{
-      margin:16px 0 0;
+
+      margin:
+        16px 0 0;
 
       font-size:42px;
+
       font-weight:500;
+
       line-height:1.02;
-      letter-spacing:-.045em;
+
+      letter-spacing:
+        -.045em;
     }
 
+
     .modal-product-price{
+
       margin-top:18px;
 
       font-size:18px;
-      font-weight:var(--peso-precio);
+
+      font-weight:
+        var(--peso-precio);
     }
+
 
     .modal-product-description{
+
       min-height:24px;
-      margin:16px 0 0;
+
+      margin:
+        16px 0 0;
 
       font-size:11px;
+
       line-height:1.6;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
+
     .modal-actions{
+
       margin-top:24px;
 
       display:flex;
+
       gap:8px;
+
       flex-wrap:wrap;
     }
 
-    .modal-actions .purchase-button{
+
+    .modal-actions
+    .purchase-button{
       margin:0;
     }
 
-    .modal-favorite{
-      min-height:36px;
-      padding:0 14px;
 
-      border:1px solid #111;
+    .modal-favorite{
+
+      min-height:36px;
+
+      padding:
+        0 14px;
+
+      border:
+        1px solid #111;
 
       background:transparent;
 
       font-size:7px;
+
       font-weight:600;
+
       letter-spacing:.1em;
+
       text-transform:uppercase;
     }
 
+
     .modal-favorite.activo{
+
       border-color:#B35947;
+
       background:#B35947;
+
       color:#fff;
     }
 
+
     .modal-zoom-help{
+
       margin-top:12px;
+
       font-size:8px;
-      color:var(--suave);
+
+      color:
+        var(--suave);
     }
 
-    /* =========================================================
-       GLOBO ESCRITORIO
-       NUEVA UBICACIÓN
-       5% MÁS PEQUEÑO
-    ========================================================= */
+
+    /* =========================================
+       GLOBO WEB
+    ========================================= */
+
 
     .speech-bubble{
+
       position:absolute;
+
       z-index:45;
 
-      /*
-        Antes: 41.63%
-        Ahora: 39.55%
-        = aproximadamente 5% más pequeño.
-      */
       width:39.55%;
 
-      aspect-ratio:930/290;
+      aspect-ratio:
+        930 / 290;
 
-      /*
-        Nueva ubicación según tu referencia:
-        zona inferior de la imagen,
-        cruzando ligeramente hacia el panel derecho.
-      */
       right:-16.7%;
+
       top:auto;
+
       bottom:6.8%;
 
       pointer-events:none;
@@ -1241,39 +2271,53 @@
         opacity .14s ease;
     }
 
+
     .speech-bubble.visible{
       opacity:1;
     }
 
-    .speech-bubble.cambiando .speech-text{
+
+    .speech-bubble.cambiando
+    .speech-text{
       opacity:0;
     }
 
+
     .speech-shape{
+
       position:absolute;
+
       inset:0;
 
       width:100%;
+
       height:100%;
 
       display:block;
     }
 
+
     .speech-text{
+
       position:absolute;
+
       z-index:2;
 
       left:8%;
+
       right:8%;
 
       top:40.5%;
+
       height:47%;
 
       transform:
         translateY(-50%);
 
       display:flex;
+
       align-items:center;
+
       justify-content:center;
 
       overflow:hidden;
@@ -1282,11 +2326,15 @@
 
       color:#171717;
 
-      font-family:"Handjet",sans-serif;
+      font-family:
+        "Handjet",
+        sans-serif;
+
       font-weight:500;
 
       letter-spacing:.01em;
-      line-height:.94;
+
+      line-height:.92;
 
       opacity:1;
 
@@ -1294,20 +2342,28 @@
         opacity .12s ease;
 
       word-break:normal;
+
       white-space:nowrap;
     }
+
 
     .speech-text.una-linea{
       white-space:nowrap;
     }
 
+
     .speech-text.dos-lineas{
+
       white-space:pre-line;
+
       line-height:.92;
     }
 
+
     @keyframes globoParpadeo{
-      0%,100%{
+
+      0%,
+      100%{
         opacity:1;
       }
 
@@ -1324,113 +2380,174 @@
       }
     }
 
+
     .speech-bubble.parpadeo{
+
       animation:
-        globoParpadeo .46s ease-in-out;
+        globoParpadeo
+        .46s
+        ease-in-out;
     }
 
-    /* =========================================================
+
+    /* =========================================
        TABLET
-    ========================================================= */
+    ========================================= */
+
 
     @media(max-width:900px){
 
       .products-heading{
+
         grid-template-columns:1fr;
+
         gap:18px;
       }
 
+
       .products-grid{
+
         grid-template-columns:
-          repeat(2,minmax(0,1fr));
+          repeat(
+            2,
+            minmax(
+              0,
+              1fr
+            )
+          );
       }
 
+
       .modal-shell{
+
         grid-template-columns:1fr;
+
         aspect-ratio:auto;
       }
 
+
       .modal-media,
       .modal-image-frame{
+
         min-height:380px;
+
         height:auto;
       }
+
 
       .modal-info{
         padding:36px 28px;
       }
+
 
       .modal-product-name{
         font-size:34px;
       }
     }
 
-    /* =========================================================
-       MÓVIL
-       EL GLOBO SE MANTIENE COMO ESTABA
-    ========================================================= */
+
+    /* =========================================
+       MOVIL
+    ========================================= */
+
 
     @media(max-width:760px){
 
       .topbar{
+
         min-height:26px;
-        padding:6px 12px;
+
+        padding:
+          6px 12px;
+
         font-size:8px;
       }
 
+
       .contact-bar{
+
         min-height:34px;
-        padding:7px 16px;
+
+        padding:
+          7px 16px;
       }
+
 
       .contact-label,
       .contact-email{
         display:none;
       }
 
+
       .contact-links{
+
         width:100%;
-        justify-content:space-between;
+
+        justify-content:
+          space-between;
+
         gap:10px;
       }
 
+
       .header{
+
         height:60px;
-        padding:0 16px;
+
+        padding:
+          0 16px;
       }
 
+
       .header-logo img{
+
         max-width:79px;
+
         max-height:42px;
       }
+
 
       .menu-button,
       .header-products{
         font-size:8px;
       }
 
+
       .hero{
-        width:calc(100% - 16px);
+
+        width:
+          calc(
+            100% - 16px
+          );
+
         height:auto;
+
         min-height:0;
 
         aspect-ratio:
-          var(--hero-mobile-ratio);
+          var(
+            --hero-mobile-ratio
+          );
 
         margin-top:8px;
 
         background:transparent;
       }
 
+
       .hero-media{
         background:transparent;
       }
 
+
       .hero-slide{
+
         width:100%;
+
         height:100%;
 
         object-fit:contain;
+
         object-position:center;
 
         transform:none;
@@ -1438,11 +2555,14 @@
         background:transparent;
       }
 
+
       .hero-slide.activo{
         transform:none;
       }
 
+
       .hero::after{
+
         background:
           linear-gradient(
             to top,
@@ -1452,274 +2572,456 @@
           );
       }
 
+
       .hero-content{
+
         left:18px;
+
         right:18px;
+
         bottom:18px;
+
         max-width:92%;
       }
 
+
       .hero-label{
+
         margin-bottom:7px;
+
         font-size:7px;
       }
 
+
       .hero-title{
+
         max-width:95%;
-        font-size:var(--hero-title-mobile);
+
+        font-size:
+          var(
+            --hero-title-mobile
+          );
+
         line-height:1.02;
-        letter-spacing:-.045em;
+
+        letter-spacing:
+          -.045em;
       }
 
+
       .hero-subtitle{
+
         max-width:95%;
+
         margin-top:8px;
-        font-size:var(--hero-subtitle-mobile);
+
+        font-size:
+          var(
+            --hero-subtitle-mobile
+          );
+
         line-height:1.38;
       }
 
+
       .hero-controls{
+
         top:10px;
+
         right:10px;
+
         bottom:auto;
       }
 
+
       .hero-arrow{
+
         width:35px;
+
         height:35px;
       }
 
+
       .products-heading{
-        width:calc(100% - 16px);
+
+        width:
+          calc(
+            100% - 16px
+          );
+
         padding:
-          var(--products-mobile-top-space)
+          var(
+            --products-mobile-top-space
+          )
           0
           24px;
       }
 
+
       .products-heading h2{
+
         font-size:
-          var(--products-title-mobile);
+          var(
+            --products-title-mobile
+          );
       }
 
-      .products-heading p{
-        font-size:
-          var(--products-text-mobile);
 
-        display:-webkit-box;
+      .products-heading p{
+
+        font-size:
+          var(
+            --products-text-mobile
+          );
+
+        display:
+          -webkit-box;
 
         -webkit-line-clamp:
-          var(--products-mobile-lines);
+          var(
+            --products-mobile-lines
+          );
 
-        -webkit-box-orient:vertical;
+        -webkit-box-orient:
+          vertical;
 
         overflow:hidden;
       }
 
+
       .section-label{
+
         font-size:7px;
+
         margin-bottom:9px;
       }
 
+
       .search-wrap{
-        width:calc(100% - 16px);
+
+        width:
+          calc(
+            100% - 16px
+          );
+
         margin-bottom:22px;
+
         display:block;
       }
 
+
       .search-input{
+
         height:44px;
+
         font-size:11px;
       }
 
+
       .search-status{
+
         min-width:0;
+
         margin-top:8px;
+
         text-align:left;
+
         font-size:7px;
       }
 
+
       .products-section{
-        width:calc(100% - 16px);
+
+        width:
+          calc(
+            100% - 16px
+          );
+
         padding-bottom:25px;
       }
 
+
       .products-grid{
+
         grid-template-columns:
-          repeat(2,minmax(0,1fr));
+          repeat(
+            2,
+            minmax(
+              0,
+              1fr
+            )
+          );
 
         column-gap:8px;
+
         row-gap:28px;
       }
 
+
       .product-image{
-        aspect-ratio:1/1.12;
+
+        aspect-ratio:
+          1 / 1.12;
       }
 
+
       .favorite-heart{
+
         right:8px;
+
         top:8px;
+
         width:40px;
+
         height:40px;
       }
 
+
       .product-body{
+
         padding-top:8px;
+
         padding-bottom:12px;
       }
+
 
       .product-head{
         display:block;
       }
+
 
       .product-name,
       .product-price{
         font-size:9px;
       }
 
+
       .product-price{
         margin-top:4px;
       }
 
-      .product.row-has-description .product-description-slot{
+
+      .product.row-has-description
+      .product-description-slot{
         margin-top:5px;
       }
 
+
       .product-description{
+
         font-size:7.5px;
+
         line-height:1.4;
       }
 
+
       .purchase-button{
+
         min-height:36px;
+
         margin-top:7px;
-        padding:0 10px;
+
+        padding:
+          0 10px;
+
         font-size:6px;
+
         letter-spacing:.075em;
       }
+
 
       .product-zoom-hint{
         display:none;
       }
 
+
       .pagination{
-        width:calc(100% - 16px);
+
+        width:
+          calc(
+            100% - 16px
+          );
+
         margin-bottom:55px;
       }
 
+
       .page-status{
+
         width:100%;
-        margin:8px 0 0;
+
+        margin:
+          8px 0 0;
       }
+
 
       .editorial{
         padding:70px 16px;
       }
 
+
       .editorial-text{
+
         font-size:
-          var(--editorial-text-mobile);
+          var(
+            --editorial-text-mobile
+          );
       }
+
 
       .footer{
         padding:45px 16px 24px;
       }
 
+
       .footer-contact{
+
         grid-template-columns:1fr;
+
         gap:22px;
       }
 
+
       .footer-bottom{
+
         gap:12px;
+
         flex-wrap:wrap;
       }
 
+
       .favorites-fab{
+
         right:10px;
+
         bottom:10px;
+
         min-height:42px;
-        padding:0 12px;
+
+        padding:
+          0 12px;
+
         font-size:7px;
       }
+
 
       .favorites-panel{
         padding:20px;
       }
 
+
       .product-modal{
-        padding:10px 10px 34px;
+
+        padding:
+          10px 10px 34px;
+
         align-items:flex-start;
       }
 
+
       .modal-shell{
+
         width:100%;
+
         max-width:520px;
+
         margin:auto;
+
         display:block;
+
         overflow:visible;
+
         aspect-ratio:auto;
       }
 
+
       .modal-media,
       .modal-image-frame{
+
         min-height:60vh;
+
         height:60vh;
       }
+
 
       .modal-info{
         padding:26px 20px 30px;
       }
 
+
       .modal-product-name{
         font-size:30px;
       }
 
+
       .modal-actions{
+
         display:grid;
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+          1fr 1fr;
       }
 
-      .modal-actions .purchase-button,
+
+      .modal-actions
+      .purchase-button,
       .modal-favorite{
+
         width:100%;
+
         min-height:38px;
       }
 
+
       /*
-        IMPORTANTE:
-        móvil se mantiene exactamente
-        con la proporción que aprobaste.
+        EL GLOBO MOVIL
+        QUEDA COMO YA LO APROBASTE
       */
+
+
       .speech-bubble{
+
         width:40.5%;
 
         left:5%;
+
         right:auto;
 
         top:auto;
+
         bottom:-16px;
 
-        aspect-ratio:930/290;
+        aspect-ratio:
+          930 / 290;
       }
 
+
       .speech-text{
+
         left:8%;
+
         right:8%;
+
         top:40.5%;
+
         height:47%;
       }
     }
 
+
     @media(max-width:390px){
 
       .hero-title{
+
         font-size:
           min(
-            var(--hero-title-mobile),
+            var(
+              --hero-title-mobile
+            ),
             30px
           );
       }
+
 
       .product-name,
       .product-price{
@@ -1727,20 +3029,31 @@
       }
     }
 
+
     @media(prefers-reduced-motion:reduce){
 
       *,
       *::before,
       *::after{
-        scroll-behavior:auto!important;
-        transition-duration:.01ms!important;
-        animation-duration:.01ms!important;
+
+        scroll-behavior:
+          auto!important;
+
+        transition-duration:
+          .01ms!important;
+
+        animation-duration:
+          .01ms!important;
       }
     }
+
   </style>
+
 </head>
 
+
 <body>
+
 
   <div
     class="topbar"
@@ -1748,6 +3061,7 @@
   >
     DAI PY · TIENDA OFICIAL
   </div>
+
 
   <div class="contact-bar">
 
@@ -1787,7 +3101,9 @@
       </a>
 
     </div>
+
   </div>
+
 
   <header class="header">
 
@@ -1820,6 +3136,7 @@
     </a>
 
   </header>
+
 
   <div
     class="menu-overlay"
@@ -1854,6 +3171,7 @@
 
       </div>
 
+
       <div class="menu-links">
 
         <a
@@ -1886,6 +3204,7 @@
 
       </div>
 
+
       <div class="menu-contact">
 
         <a
@@ -1914,10 +3233,14 @@
         </a>
 
       </div>
+
     </nav>
+
   </div>
 
+
   <main>
+
 
     <section
       class="hero"
@@ -1928,13 +3251,18 @@
         class="hero-media"
         id="hero-media"
       >
+
         <div class="hero-fallback">
+
           <img
             src="./logo.png"
             alt="DAI PY"
           >
+
         </div>
+
       </div>
+
 
       <div class="hero-content">
 
@@ -1961,6 +3289,7 @@
 
       </div>
 
+
       <div
         class="hero-controls oculto"
         id="hero-controls"
@@ -1985,7 +3314,9 @@
         </button>
 
       </div>
+
     </section>
+
 
     <section
       class="products-heading"
@@ -2012,6 +3343,7 @@
       </p>
 
     </section>
+
 
     <section
       class="search-wrap"
@@ -2040,12 +3372,14 @@
 
       </div>
 
+
       <div
         class="search-status"
         id="search-status"
       ></div>
 
     </section>
+
 
     <section
       class="products-section"
@@ -2058,22 +3392,28 @@
       >
 
         <div class="empty-state">
+
           <strong>
             Cargando productos…
           </strong>
+
           <span>
             Un momento, por favor.
           </span>
+
         </div>
 
       </div>
+
     </section>
+
 
     <nav
       class="pagination oculta"
       id="pagination"
       aria-label="Páginas de productos"
     ></nav>
+
 
     <section class="editorial">
 
@@ -2094,9 +3434,12 @@
         </p>
 
       </div>
+
     </section>
 
+
   </main>
+
 
   <footer
     class="footer"
@@ -2105,14 +3448,19 @@
 
     <div class="footer-inner">
 
+
       <div class="footer-logo">
+
         <img
           src="./logo.png"
           alt="DAI PY"
         >
+
       </div>
 
+
       <div class="footer-contact">
+
 
         <div class="footer-item">
 
@@ -2131,6 +3479,7 @@
           </a>
 
         </div>
+
 
         <div class="footer-item">
 
@@ -2152,6 +3501,7 @@
 
         </div>
 
+
         <div class="footer-item">
 
           <span
@@ -2172,7 +3522,9 @@
 
         </div>
 
+
       </div>
+
 
       <div class="footer-bottom">
 
@@ -2185,8 +3537,12 @@
         </span>
 
       </div>
+
+
     </div>
+
   </footer>
+
 
   <button
     class="favorites-fab"
@@ -2194,6 +3550,7 @@
     type="button"
     aria-label="Abrir favoritos"
   >
+
     <span>
       ♡ Favoritos
     </span>
@@ -2204,7 +3561,9 @@
     >
       0
     </span>
+
   </button>
+
 
   <div
     class="favorites-overlay"
@@ -2233,10 +3592,12 @@
 
       </div>
 
+
       <div
         class="favorites-list"
         id="favorites-list"
       ></div>
+
 
       <div class="favorites-bottom">
 
@@ -2250,12 +3611,16 @@
 
       </div>
 
+
     </aside>
+
   </div>
 
-  <!-- =======================================================
+
+  <!-- =========================================
        MODAL PRODUCTO
-  ======================================================== -->
+  ========================================== -->
+
 
   <div
     class="product-modal"
@@ -2268,6 +3633,7 @@
 
     <div class="modal-shell">
 
+
       <button
         class="modal-close"
         id="modal-close"
@@ -2277,9 +3643,12 @@
         ×
       </button>
 
+
       <div class="modal-media">
 
+
         <!-- GLOBO -->
+
 
         <div
           class="speech-bubble"
@@ -2294,87 +3663,364 @@
             viewBox="280 130 930 290"
           >
 
+
             <g>
 
               <g>
 
                 <g>
 
-                  <rect fill="#a5a5a5" x="368.79" y="360" width="11.4" height="45.41"/>
-                  <rect fill="#a5a5a5" x="380.19" y="405.41" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="391.6" y="394.07" width="11.4" height="11.37"/>
-                  <rect fill="#a5a5a5" x="403" y="382.7" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="414.41" y="371.36" width="11.4" height="11.37"/>
-                  <rect fill="#a5a5a5" x="425.81" y="360" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="425.81" y="360" width="752.28" height="11.37"/>
-                  <rect fill="#a5a5a5" x="328.24" y="360" width="51.95" height="11.37"/>
-                  <rect fill="#a5a5a5" x="328.24" y="137.22" width="849.85" height="11.37"/>
-                  <rect fill="#a5a5a5" x="1200.68" y="159.68" width="11.41" height="177.67"/>
-                  <rect fill="#a5a5a5" x="1177.87" y="136.91" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="1189.28" y="148.28" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="1177.87" y="348.62" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="1189.28" y="337.25" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="294.03" y="170.68" width="11.41" height="166.57"/>
-                  <rect fill="#a5a5a5" x="316.84" y="148.59" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="305.43" y="159.96" width="11.4" height="11.37"/>
-                  <rect fill="#a5a5a5" x="316.84" y="348.62" width="11.41" height="11.37"/>
-                  <rect fill="#a5a5a5" x="305.43" y="337.25" width="11.4" height="11.37"/>
+                  <rect
+                    fill="#a5a5a5"
+                    x="368.79"
+                    y="360"
+                    width="11.4"
+                    height="45.41"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="380.19"
+                    y="405.41"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="391.6"
+                    y="394.07"
+                    width="11.4"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="403"
+                    y="382.7"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="414.41"
+                    y="371.36"
+                    width="11.4"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="425.81"
+                    y="360"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="425.81"
+                    y="360"
+                    width="752.28"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="328.24"
+                    y="360"
+                    width="51.95"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="328.24"
+                    y="137.22"
+                    width="849.85"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="1200.68"
+                    y="159.68"
+                    width="11.41"
+                    height="177.67"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="1177.87"
+                    y="136.91"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="1189.28"
+                    y="148.28"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="1177.87"
+                    y="348.62"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="1189.28"
+                    y="337.25"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="294.03"
+                    y="170.68"
+                    width="11.41"
+                    height="166.57"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="316.84"
+                    y="148.59"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="305.43"
+                    y="159.96"
+                    width="11.4"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="316.84"
+                    y="348.62"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#a5a5a5"
+                    x="305.43"
+                    y="337.25"
+                    width="11.4"
+                    height="11.37"
+                  />
 
                 </g>
+
 
                 <g>
 
+
                   <g>
 
-                    <rect fill="#231f20" x="362.68" y="357.96" width="11.4" height="45.41"/>
+                    <rect
+                      fill="#231f20"
+                      x="362.68"
+                      y="357.96"
+                      width="11.4"
+                      height="45.41"
+                    />
+
 
                     <g>
 
-                      <rect fill="#231f20" x="374.08" y="403.37" width="11.41" height="11.37"/>
-                      <rect fill="#231f20" x="385.49" y="392.04" width="11.4" height="11.37"/>
-                      <rect fill="#231f20" x="396.89" y="380.66" width="11.41" height="11.37"/>
-                      <rect fill="#231f20" x="408.29" y="369.33" width="11.4" height="11.37"/>
-                      <rect fill="#231f20" x="419.69" y="357.96" width="11.41" height="11.37"/>
+                      <rect
+                        fill="#231f20"
+                        x="374.08"
+                        y="403.37"
+                        width="11.41"
+                        height="11.37"
+                      />
+
+                      <rect
+                        fill="#231f20"
+                        x="385.49"
+                        y="392.04"
+                        width="11.4"
+                        height="11.37"
+                      />
+
+                      <rect
+                        fill="#231f20"
+                        x="396.89"
+                        y="380.66"
+                        width="11.41"
+                        height="11.37"
+                      />
+
+                      <rect
+                        fill="#231f20"
+                        x="408.29"
+                        y="369.33"
+                        width="11.4"
+                        height="11.37"
+                      />
+
+                      <rect
+                        fill="#231f20"
+                        x="419.69"
+                        y="357.96"
+                        width="11.41"
+                        height="11.37"
+                      />
 
                     </g>
 
+
                   </g>
 
-                  <rect fill="#231f20" x="419.69" y="357.96" width="752.28" height="11.37"/>
-                  <rect fill="#231f20" x="322.13" y="357.96" width="51.95" height="11.37"/>
-                  <rect fill="#231f20" x="322.13" y="135.18" width="849.85" height="11.37"/>
-                  <rect fill="#231f20" x="1194.57" y="157.64" width="11.41" height="177.67"/>
-                  <rect fill="#231f20" x="1171.76" y="134.87" width="11.41" height="11.37"/>
-                  <rect fill="#231f20" x="1183.16" y="146.24" width="11.41" height="11.37"/>
-                  <rect fill="#231f20" x="1171.76" y="346.59" width="11.41" height="11.37"/>
-                  <rect fill="#231f20" x="1183.16" y="335.22" width="11.41" height="11.37"/>
-                  <rect fill="#231f20" x="287.91" y="168.64" width="11.41" height="166.57"/>
-                  <rect fill="#231f20" x="310.72" y="146.55" width="11.41" height="11.37"/>
-                  <rect fill="#231f20" x="299.32" y="157.93" width="11.4" height="11.37"/>
-                  <rect fill="#231f20" x="310.72" y="346.59" width="11.41" height="11.37"/>
-                  <rect fill="#231f20" x="299.32" y="335.22" width="11.4" height="11.37"/>
+
+                  <rect
+                    fill="#231f20"
+                    x="419.69"
+                    y="357.96"
+                    width="752.28"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="322.13"
+                    y="357.96"
+                    width="51.95"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="322.13"
+                    y="135.18"
+                    width="849.85"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="1194.57"
+                    y="157.64"
+                    width="11.41"
+                    height="177.67"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="1171.76"
+                    y="134.87"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="1183.16"
+                    y="146.24"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="1171.76"
+                    y="346.59"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="1183.16"
+                    y="335.22"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="287.91"
+                    y="168.64"
+                    width="11.41"
+                    height="166.57"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="310.72"
+                    y="146.55"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="299.32"
+                    y="157.93"
+                    width="11.4"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="310.72"
+                    y="346.59"
+                    width="11.41"
+                    height="11.37"
+                  />
+
+                  <rect
+                    fill="#231f20"
+                    x="299.32"
+                    y="335.22"
+                    width="11.4"
+                    height="11.37"
+                  />
+
 
                 </g>
 
+
               </g>
 
+
             </g>
+
 
             <polygon
               fill="#fff"
               points="1189.27 157.61 1183.16 157.61 1183.16 148.28 1178.08 148.28 1178.08 148.59 328.23 148.59 328.23 148.59 328.23 149.48 328.23 159.96 316.83 159.96 316.83 171.34 305.49 171.34 305.49 173.05 305.42 173.05 305.42 335.22 310.71 335.22 310.71 337.25 316.83 337.25 316.83 346.59 322.12 346.59 322.12 348.62 328.23 348.62 328.23 357.96 362.67 357.96 374.07 357.96 374.07 357.96 374.07 360 380.18 360 380.18 360 380.18 403.37 385.48 403.37 385.48 403.37 385.48 392.04 396.72 392.04 396.72 390.91 396.88 390.91 396.88 380.66 408.28 380.66 408.28 369.33 419.69 369.33 419.69 369.32 419.69 357.96 431.09 357.96 1171.75 357.96 1171.75 346.59 1183.15 346.59 1183.16 346.59 1183.16 335.22 1194.56 335.22 1194.56 159.65 1189.27 159.65 1189.27 157.61"
             />
 
+
           </svg>
+
 
           <span
             class="speech-text una-linea"
             id="speech-text"
           ></span>
 
+
         </div>
 
-        <!-- FOTO -->
+
+        <!-- FOTO PRODUCTO -->
+
 
         <div
           class="modal-image-frame"
@@ -2394,7 +4040,9 @@
 
         </div>
 
+
       </div>
+
 
       <div class="modal-info">
 
@@ -2424,6 +4072,7 @@
           id="modal-product-description"
         ></p>
 
+
         <div class="modal-actions">
 
           <a
@@ -2446,6 +4095,7 @@
 
         </div>
 
+
         <div
           class="modal-zoom-help"
           id="modal-zoom-help"
@@ -2453,317 +4103,580 @@
           Tocá la imagen para acercar.
         </div>
 
+
       </div>
+
 
     </div>
 
   </div>
 
+
   <script>
 
-    const REPO=
+
+    /* =========================================
+       CONFIGURACION GENERAL
+    ========================================= */
+
+
+    const REPO =
       "daipyofficial/daipyofficial";
 
-    const BRANCH=
+
+    const BRANCH =
       "main";
 
-    const API_BASE=
+
+    const API_BASE =
       `https://api.github.com/repos/${REPO}/contents`;
 
-    const VERSION=
+
+    const VERSION =
       Date.now();
 
-    const PRODUCTS_PER_PAGE=
+
+    const PRODUCTS_PER_PAGE =
       12;
 
-    const DEFAULT_TEXTOS={
+
+    /*
+      NUEVO SISTEMA DE CATALOGO.
+
+      Primero se intenta leer catalogo.json
+      desde el propio sitio.
+
+      Si no existe o falla:
+
+      1. API GitHub.
+      2. Cache del navegador.
+    */
+
+
+    const CATALOGO_URL =
+      "./contenido/catalogo.json";
+
+
+    const CACHE_CATALOGO =
+      "daipy_catalogo_estatico_v1";
+
+
+    const CACHE_PRODUCTOS =
+      "daipy_productos_v3";
+
+
+    const CACHE_BANNERS =
+      "daipy_banners_v3";
+
+
+    /* =========================================
+       TEXTOS PREDETERMINADOS
+    ========================================= */
+
+
+    const DEFAULT_TEXTOS = {
+
 
       topbar_texto:
         "DAI PY · TIENDA OFICIAL",
 
+
       contacto_etiqueta:
         "Contacto",
+
 
       menu_inicio:
         "Inicio",
 
+
       menu_productos:
         "Productos",
+
 
       menu_contacto:
         "Contacto",
 
+
       hero_etiqueta:
         "DAI PY",
+
 
       productos_etiqueta:
         "Tienda",
 
+
       productos_titulo:
         "Productos",
+
 
       productos_texto:
         "Elegí tu producto y realizá tu pedido directamente por WhatsApp.",
 
+
       editorial_etiqueta:
         "DAI PY",
+
 
       editorial_texto:
         "Las cosas que elegimos llevar con nosotros también cuentan una historia.",
 
+
       footer_correo:
         "Correo",
+
 
       footer_instagram:
         "Instagram",
 
+
       footer_pedidos:
         "Pedidos",
+
 
       footer_copy:
         "© DAI PY Tienda Oficial",
 
+
       footer_pais:
         "Paraguay",
+
 
       boton_comprar:
         "Comprar por WhatsApp",
 
+
       texto_zoom:
         "Ver detalle",
+
 
       modal_etiqueta:
         "DAI PY · Detalle",
 
+
       modal_ayuda_zoom:
         "Tocá la imagen para acercar.",
+
 
       tamano_titulo_banner:
         72,
 
+
       tamano_subtitulo_banner:
         14,
+
 
       tamano_titulo_productos:
         64,
 
+
       tamano_texto_productos:
         13,
+
 
       tamano_editorial:
         56,
 
+
       tamano_titulo_banner_movil:
         34,
+
 
       tamano_subtitulo_banner_movil:
         12,
 
+
       tamano_titulo_productos_movil:
         30,
+
 
       tamano_texto_productos_movil:
         11,
 
+
       tamano_editorial_movil:
         30,
+
 
       espacio_banner_productos_movil:
         28,
 
+
       max_lineas_texto_productos_movil:
         2,
+
 
       popup_activo:
         true,
 
+
       frases_popup:[
+
         "Lo merezco.",
+
         "Es una compra necesaria.",
+
         "Un buen detalle para regalar.",
+
         "Es una inversión.",
+
         "Lo necesito.",
+
         "Esto sí suma.",
+
         "Pequeño detalle, gran acierto.",
+
         "Un regalo que no falla."
+
       ]
+
     };
 
-    const FUENTES={
+
+    /* =========================================
+       FUENTES
+    ========================================= */
+
+
+    const FUENTES = {
+
 
       Poppins:[
+
         "Poppins:wght@400;500;600;700",
+
         '"Poppins",Arial,sans-serif'
+
       ],
+
 
       Montserrat:[
+
         "Montserrat:wght@400;500;600;700",
+
         '"Montserrat",Arial,sans-serif'
+
       ],
+
 
       Inter:[
+
         "Inter:wght@400;500;600;700",
+
         '"Inter",Arial,sans-serif'
+
       ],
+
 
       Roboto:[
+
         "Roboto:wght@400;500;700",
+
         '"Roboto",Arial,sans-serif'
+
       ],
+
 
       Lato:[
+
         "Lato:wght@400;700",
+
         '"Lato",Arial,sans-serif'
+
       ]
+
     };
 
-    const CATEGORY_ORDER=[
+
+    /* =========================================
+       ORDEN CATEGORIAS
+    ========================================= */
+
+
+    const CATEGORY_ORDER = [
+
       "Bolsos",
+
       "Joyería",
+
       "Llaveros",
+
       "Papelería",
+
       "Accesorios",
+
       "Otros"
+
     ];
 
-    const SYNONYM_GROUPS=[
+
+    /* =========================================
+       SINONIMOS BUSCADOR
+    ========================================= */
+
+
+    const SYNONYM_GROUPS = [
+
 
       [
+
         "bolso",
+
         "bolsos",
+
         "bolson",
+
         "bolsones",
+
         "bolsa",
+
         "bolsas",
+
         "cartera",
+
         "carteras",
+
         "mochila",
+
         "mochilas",
+
         "bag",
+
         "bags",
+
         "minibag",
+
         "mini bag",
+
         "mini-bag"
+
       ],
 
+
       [
+
         "llavero",
+
         "llaveros",
+
         "keychain",
+
         "keychains",
+
         "keyring",
+
         "keyrings"
+
       ],
 
+
       [
+
         "collar",
+
         "collares",
+
         "necklace",
+
         "necklaces"
+
       ],
 
+
       [
+
         "brazalete",
+
         "brazaletes",
+
         "pulsera",
+
         "pulseras",
+
         "bracelet",
+
         "bracelets"
+
       ],
 
+
       [
+
         "cuaderno",
+
         "cuadernos",
+
         "cuadernito",
+
         "cuadernitos",
+
         "libreta",
+
         "libretas",
+
         "notebook",
+
         "notebooks",
+
         "agenda",
+
         "agendas"
+
       ],
 
+
       [
+
         "paraguas",
+
         "umbrella",
+
         "sombrilla"
+
       ],
 
+
       [
+
         "cordon",
+
         "cordones",
+
         "lanyard",
+
         "strap",
+
         "cinta"
+
       ],
 
+
       [
+
         "joyeria",
+
         "joyas",
+
         "accesorio",
+
         "accesorios"
+
       ],
 
+
       [
+
         "fitness",
+
         "gym",
+
         "gimnasio",
+
         "deporte",
+
         "sport"
+
       ],
 
+
       [
+
         "cafe",
+
         "coffee",
+
         "coffe"
+
       ],
 
+
       [
+
         "musica",
+
         "music",
+
         "musical"
+
       ],
 
+
       [
+
         "dentista",
+
         "dentist",
+
         "odontologo",
+
         "odontologia"
+
       ],
 
+
       [
+
         "doctor",
+
         "doc",
+
         "medico",
+
         "medicina"
+
       ],
 
+
       [
+
         "oso",
+
         "osito",
+
         "ositos",
+
         "bear",
+
         "bears"
+
       ],
 
+
       [
+
         "pareja",
+
         "parejas",
+
         "lovers",
+
         "amor",
+
         "heart",
+
         "corazon",
+
         "corazones"
+
       ],
 
+
       [
+
         "snoopy",
+
         "peanuts"
+
       ]
+
     ];
 
-    let CONTACTO={
+
+    /* =========================================
+       VARIABLES
+    ========================================= */
+
+
+    let CONTACTO = {
 
       whatsapp:
         "+595985824098",
@@ -2773,87 +4686,171 @@
 
       instagram:
         "@daiofficial.py"
+
     };
 
-    let TEXTOS=
-      {...DEFAULT_TEXTOS};
 
-    let BANNERS=[];
-    let PRODUCTOS=[];
-    let VISIBLES=[];
+    let TEXTOS = {
+      ...DEFAULT_TEXTOS
+    };
 
-    let paginaActual=1;
-    let bannerActual=0;
-    let bannerTimer=null;
 
-    let consulta="";
+    let CATALOGO_ESTATICO =
+      null;
 
-    let favoritos=
+
+    let BANNERS = [];
+
+
+    let PRODUCTOS = [];
+
+
+    let VISIBLES = [];
+
+
+    let paginaActual =
+      1;
+
+
+    let bannerActual =
+      0;
+
+
+    let bannerTimer =
+      null;
+
+
+    let consulta =
+      "";
+
+
+    let favoritos =
       new Set();
 
-    let productoModal=
+
+    let productoModal =
       null;
 
-    let fraseTimer=
+
+    /* =========================================
+       GLOBOS
+    ========================================= */
+
+
+    let fraseTimer =
       null;
 
-    let fraseCambioTimer=
+
+    let fraseCambioTimer =
       null;
 
-    let frasesRotacion=
+
+    let frasesRotacion =
       [];
 
-    let fraseIndice=
+
+    let fraseIndice =
       0;
 
-    /* =========================================================
-       ESTADO DEL ZOOM
-    ========================================================= */
 
-    let zoomActivo=
-      false;
+    /*
+      ESTA VARIABLE ES LA CLAVE DEL CAMBIO.
 
-    const ZOOM_ESCALA=
-      1.8;
+      Se calcula UNA sola medida que permita
+      mostrar correctamente la frase más larga.
 
-    let zoomPanX=
-      0;
+      Esa medida se usa después para TODAS
+      las frases.
 
-    let zoomPanY=
-      0;
+      Por lo tanto:
 
-    let zoomArrastrando=
-      false;
+      "Lo merezco."
 
-    let zoomPointerId=
+      y
+
+      "Pequeño detalle, gran acierto."
+
+      utilizan exactamente el mismo font-size.
+    */
+
+
+    let tamanoComunGlobo =
       null;
 
-    let zoomInicioX=
-      0;
 
-    let zoomInicioY=
-      0;
+    /* =========================================
+       ZOOM
+    ========================================= */
 
-    let zoomInicioPanX=
-      0;
 
-    let zoomInicioPanY=
-      0;
-
-    let zoomMovio=
+    let zoomActivo =
       false;
 
-    let ignorarSiguienteClickZoom=
+
+    let zoomPanX =
+      0;
+
+
+    let zoomPanY =
+      0;
+
+
+    let zoomArrastrando =
       false;
 
-    const $=
-      id=>
-        document.getElementById(id);
 
-    const normalizar=
-      v=>
-        String(v??"")
-        .normalize("NFD")
+    let zoomPointerId =
+      null;
+
+
+    let zoomInicioX =
+      0;
+
+
+    let zoomInicioY =
+      0;
+
+
+    let zoomInicioPanX =
+      0;
+
+
+    let zoomInicioPanY =
+      0;
+
+
+    let zoomMovio =
+      false;
+
+
+    let ignorarSiguienteClickZoom =
+      false;
+
+
+    const ZOOM_ESCALA =
+      1.8;
+
+
+    /* =========================================
+       UTILIDADES
+    ========================================= */
+
+
+    const $ =
+      id =>
+        document.getElementById(
+          id
+        );
+
+
+    const normalizar =
+      v =>
+        String(
+          v ?? ""
+        )
+        .normalize(
+          "NFD"
+        )
         .replace(
           /[\u0300-\u036f]/g,
           ""
@@ -2869,12 +4866,15 @@
         )
         .trim();
 
-    const escaparHTML=
-      v=>
-        String(v??"")
+
+    const escaparHTML =
+      v =>
+        String(
+          v ?? ""
+        )
         .replace(
           /[&<>'"]/g,
-          c=>({
+          c => ({
             "&":"&amp;",
             "<":"&lt;",
             ">":"&gt;",
@@ -2883,35 +4883,51 @@
           }[c])
         );
 
-    const rutaMedia=
-      r=>{
 
-        if(!r){
-          return"";
+    const rutaMedia =
+      r => {
+
+
+        if(
+          !r
+        ){
+          return "";
         }
+
 
         if(
           /^https?:\/\//i
-          .test(r)
+          .test(
+            r
+          )
         ){
           return r;
         }
+
 
         if(
-          r.startsWith("/")
+          r.startsWith(
+            "/"
+          )
         ){
           return r;
         }
 
+
         return `./${
-          r.replace(/^\.\//,"")
+          r.replace(
+            /^\.\//,
+            ""
+          )
         }`;
+
       };
 
-    const numeroWhatsApp=
-      ()=>
+
+    const numeroWhatsApp =
+      () =>
         String(
-          CONTACTO.whatsapp||
+          CONTACTO.whatsapp ||
           ""
         )
         .replace(
@@ -2919,67 +4935,184 @@
           ""
         );
 
-    const whatsappURL=
-      mensaje=>
-        `https://wa.me/${numeroWhatsApp()}${
+
+    const whatsappURL =
+      mensaje =>
+        `https://wa.me/${
+          numeroWhatsApp()
+        }${
           mensaje
-            ?`?text=${encodeURIComponent(mensaje)}`
+            ?`?text=${
+              encodeURIComponent(
+                mensaje
+              )
+            }`
             :""
         }`;
 
-    const precioFormateado=
-      v=>{
 
-        const s=
-          String(v??"")
+    /* =========================================
+       PRECIOS
+    ========================================= */
+
+
+    /*
+      REGLA FIJA:
+
+      29        -> Gs. 29.000
+      32        -> Gs. 32.000
+      45        -> Gs. 45.000
+      150       -> Gs. 150.000
+
+      29000     -> Gs. 29.000
+      32000     -> Gs. 32.000
+      150000    -> Gs. 150.000
+
+      29.000    -> Gs. 29.000
+      32.000    -> Gs. 32.000
+
+      Gs. 32    -> Gs. 32.000
+      Gs. 32000 -> Gs. 32.000
+
+      Esto evita tener que controlar
+      manualmente el formato producto
+      por producto.
+    */
+
+
+    const precioFormateado =
+      v => {
+
+
+        const original =
+          String(
+            v ?? ""
+          )
           .trim();
 
-        if(!s){
-          return"Consultar";
-        }
 
         if(
-          /[a-z]/i
-          .test(s)
+          !original
         ){
-          return s;
+          return "Consultar";
         }
 
-        const n=
-          Number(
-            s.replace(
-              /\D/g,
-              ""
-            )
+
+        const texto =
+          normalizar(
+            original
           );
 
-        return(
-          Number.isFinite(n)&&
-          n
-        )
-          ?`Gs. ${n.toLocaleString("es-PY")}`
-          :s;
-      };
 
-    const idProducto=
-      p=>
-        p.id||
-        normalizar(
-          `${p.nombre}|${p.img}`
+        if(
+          texto.includes(
+            "agotado"
+          )
+        ){
+          return "AGOTADO";
+        }
+
+
+        if(
+          texto === "consultar"
+          ||
+          texto === "consulta"
+        ){
+          return "Consultar";
+        }
+
+
+        const soloNumeros =
+          original.replace(
+            /\D/g,
+            ""
+          );
+
+
+        if(
+          !soloNumeros
+        ){
+          return original;
+        }
+
+
+        let numero =
+          Number(
+            soloNumeros
+          );
+
+
+        if(
+          !Number.isFinite(
+            numero
+          )
+          ||
+          numero <= 0
+        ){
+          return original;
+        }
+
+
+        /*
+          Si el valor resultante es menor
+          que 1000 interpretamos que Sveltia
+          está guardando el valor abreviado.
+
+          32 = 32 mil.
+        */
+
+
+        if(
+          numero < 1000
+        ){
+          numero *= 1000;
+        }
+
+
+        return (
+          "Gs. "
+          +
+          Math.round(
+            numero
+          )
+          .toLocaleString(
+            "es-PY"
+          )
         );
 
-    /* =========================================================
-       AGOTADOS
-    ========================================================= */
+      };
 
-    const esAgotado=
-      p=>
+
+    const idProducto =
+      p =>
+        p.id
+        ||
         normalizar(
           `${
-            p?.precio||
+            p.nombre
+          }|${
+            p.img
+          }`
+        );
+
+
+    /*
+      Detecta AGOTADO tanto en precio
+      como en descripción.
+
+      Esto conserva compatibilidad
+      con productos antiguos.
+    */
+
+
+    const esAgotado =
+      p =>
+        normalizar(
+          `${
+            p?.precio ||
             ""
           } ${
-            p?.desc||
+            p?.desc ||
             ""
           }`
         )
@@ -2987,59 +5120,279 @@
           "agotado"
         );
 
-    const descripcionProducto=
-      p=>
+
+    const descripcionProducto =
+      p =>
         /^agotado[.!]*$/i
         .test(
           String(
-            p?.desc||
+            p?.desc ||
             ""
           )
           .trim()
         )
           ?""
           :String(
-            p?.desc||
+            p?.desc ||
             ""
           )
           .trim();
 
-    const precioProducto=
-      p=>
-        esAgotado(p)
+
+    const precioProducto =
+      p =>
+        esAgotado(
+          p
+        )
           ?"AGOTADO"
           :precioFormateado(
             p?.precio
           );
 
-    /* =========================================================
-       DATOS
-    ========================================================= */
 
-    async function cargarJSON(ruta){
+    /* =========================================
+       CACHE
+    ========================================= */
 
-      const r=
+
+    function leerLocalStorage(
+      clave
+    ){
+
+      try{
+
+        return JSON.parse(
+          localStorage.getItem(
+            clave
+          )
+          ||
+          "null"
+        );
+
+      }
+      catch{
+
+        return null;
+
+      }
+
+    }
+
+
+    function guardarLocalStorage(
+      clave,
+      valor
+    ){
+
+      try{
+
+        localStorage.setItem(
+          clave,
+          JSON.stringify(
+            valor
+          )
+        );
+
+      }
+      catch{}
+
+    }
+
+
+    /* =========================================
+       CATALOGO ESTATICO
+    ========================================= */
+
+
+    /*
+      Este catálogo vive directamente en:
+
+      contenido/catalogo.json
+
+      GitHub Actions lo genera automáticamente.
+
+      Ventaja:
+
+      la web ya no necesita consultar la API
+      pública de GitHub para descubrir los
+      productos cada vez que entra una persona.
+    */
+
+
+    async function cargarCatalogoEstatico(){
+
+      try{
+
+
+        const r =
+          await fetch(
+            `${
+              CATALOGO_URL
+            }?v=${
+              VERSION
+            }`,
+            {
+              cache:
+                "no-store"
+            }
+          );
+
+
+        if(
+          !r.ok
+        ){
+
+          throw new Error(
+            `Catalogo ${r.status}`
+          );
+
+        }
+
+
+        const data =
+          await r.json();
+
+
+        if(
+          !data
+          ||
+          !Array.isArray(
+            data.productos
+          )
+          ||
+          !Array.isArray(
+            data.banners
+          )
+        ){
+
+          throw new Error(
+            "Catalogo invalido"
+          );
+
+        }
+
+
+        CATALOGO_ESTATICO =
+          data;
+
+
+        guardarLocalStorage(
+          CACHE_CATALOGO,
+          data
+        );
+
+
+        return data;
+
+
+      }
+      catch(e){
+
+
+        /*
+          SEGUNDA PROTECCION:
+
+          Si catalogo.json no estuviera
+          disponible temporalmente usamos
+          la última copia guardada.
+        */
+
+
+        const cache =
+          leerLocalStorage(
+            CACHE_CATALOGO
+          );
+
+
+        if(
+          cache
+          &&
+          Array.isArray(
+            cache.productos
+          )
+          &&
+          Array.isArray(
+            cache.banners
+          )
+        ){
+
+          CATALOGO_ESTATICO =
+            cache;
+
+
+          return cache;
+
+        }
+
+
+        CATALOGO_ESTATICO =
+          null;
+
+
+        return null;
+
+      }
+
+    }
+
+
+    /* =========================================
+       JSON
+    ========================================= */
+
+
+    async function cargarJSON(
+      ruta
+    ){
+
+
+      const r =
         await fetch(
-          `${ruta}?v=${VERSION}`,
+          `${
+            ruta
+          }?v=${
+            VERSION
+          }`,
           {
-            cache:"no-store"
+            cache:
+              "no-store"
           }
         );
 
-      if(!r.ok){
+
+      if(
+        !r.ok
+      ){
+
         throw new Error(
           r.status
         );
+
       }
 
+
       return r.json();
+
     }
 
-    function parsearYamlSimple(texto){
 
-      const out={};
+    /* =========================================
+       YAML SIMPLE
+       FALLBACK API GITHUB
+    ========================================= */
 
-      String(texto)
+
+    function parsearYamlSimple(
+      texto
+    ){
+
+
+      const out = {};
+
+
+      String(
+        texto
+      )
       .replace(
         /^---\s*/m,
         ""
@@ -3052,165 +5405,428 @@
         /\r?\n/
       )
       .forEach(
-        linea=>{
+        linea => {
 
-          const t=
+
+          const t =
             linea.trim();
 
+
           if(
-            !t||
-            t.startsWith("#")
+            !t
+            ||
+            t.startsWith(
+              "#"
+            )
           ){
             return;
           }
 
-          const i=
-            t.indexOf(":");
 
-          if(i<0){
+          const i =
+            t.indexOf(
+              ":"
+            );
+
+
+          if(
+            i < 0
+          ){
             return;
           }
 
-          let k=
+
+          let k =
             t
-            .slice(0,i)
+            .slice(
+              0,
+              i
+            )
             .trim();
 
-          let v=
+
+          let v =
             t
-            .slice(i+1)
+            .slice(
+              i + 1
+            )
             .trim();
+
 
           if(
             (
-              v.startsWith('"')&&
-              v.endsWith('"')
+              v.startsWith(
+                '"'
+              )
+              &&
+              v.endsWith(
+                '"'
+              )
             )
             ||
             (
-              v.startsWith("'")&&
-              v.endsWith("'")
+              v.startsWith(
+                "'"
+              )
+              &&
+              v.endsWith(
+                "'"
+              )
             )
           ){
-            v=
+
+            v =
               v.slice(
                 1,
                 -1
               );
+
           }
 
+
           if(
-            v==="true"
+            v === "true"
           ){
-            v=true;
+
+            v = true;
+
           }
           else if(
-            v==="false"
+            v === "false"
           ){
-            v=false;
+
+            v = false;
+
           }
           else if(
             /^\d+$/
-            .test(v)
+            .test(
+              v
+            )
             &&
-            ["orden"]
-            .includes(k)
+            [
+              "orden"
+            ]
+            .includes(
+              k
+            )
           ){
-            v=
-              Number(v);
+
+            v =
+              Number(
+                v
+              );
+
           }
 
-          out[k]=v;
+
+          out[k] =
+            v;
+
+
         }
       );
 
+
       return out;
+
     }
 
-    async function cargarColeccion(carpeta){
 
-      const r=
-        await fetch(
-          `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
-          {
-            cache:"no-store"
-          }
-        );
+    function claveColeccion(
+      carpeta
+    ){
 
-      if(!r.ok){
-        throw new Error(
-          `GitHub ${r.status}`
-        );
+
+      if(
+        carpeta.includes(
+          "productos"
+        )
+      ){
+        return "productos";
       }
 
-      const lista=
-        await r.json();
 
-      const md=
-        lista.filter(
-          x=>
-            x.type==="file"&&
-            x.name.endsWith(".md")
-        );
-
-      return Promise.all(
-        md.map(
-          async archivo=>{
-
-            const rr=
-              await fetch(
-                `${archivo.download_url}?v=${VERSION}`,
-                {
-                  cache:"no-store"
-                }
-              );
-
-            if(!rr.ok){
-              throw new Error(
-                archivo.name
-              );
-            }
-
-            return{
-
-              nombreArchivo:
-                archivo.name,
-
-              datos:
-                parsearYamlSimple(
-                  await rr.text()
-                )
-            };
-          }
+      if(
+        carpeta.includes(
+          "banners"
         )
-      );
+      ){
+        return "banners";
+      }
+
+
+      return null;
+
     }
 
-    /* =========================================================
+
+    function cacheColeccion(
+      carpeta
+    ){
+
+
+      return carpeta.includes(
+        "productos"
+      )
+        ?CACHE_PRODUCTOS
+        :CACHE_BANNERS;
+
+    }
+
+
+    /* =========================================
+       CARGAR COLECCION
+    ========================================= */
+
+
+    /*
+      ORDEN DE CARGA:
+
+      1. catalogo.json del propio sitio.
+      2. API GitHub.
+      3. última copia local del navegador.
+
+      Esto evita que un fallo de API vacíe
+      visualmente la tienda.
+    */
+
+
+    async function cargarColeccion(
+      carpeta
+    ){
+
+
+      const clave =
+        claveColeccion(
+          carpeta
+        );
+
+
+      /*
+        OPCION 1:
+        CATALOGO ESTATICO
+      */
+
+
+      if(
+        clave
+        &&
+        CATALOGO_ESTATICO
+        &&
+        Array.isArray(
+          CATALOGO_ESTATICO[
+            clave
+          ]
+        )
+      ){
+
+
+        const items =
+          CATALOGO_ESTATICO[
+            clave
+          ];
+
+
+        guardarLocalStorage(
+          cacheColeccion(
+            carpeta
+          ),
+          items
+        );
+
+
+        return items;
+
+      }
+
+
+      /*
+        OPCION 2:
+        API GITHUB
+      */
+
+
+      try{
+
+
+        const r =
+          await fetch(
+            `${
+              API_BASE
+            }/${
+              carpeta
+            }?ref=${
+              BRANCH
+            }&v=${
+              VERSION
+            }`,
+            {
+              cache:
+                "no-store"
+            }
+          );
+
+
+        if(
+          !r.ok
+        ){
+
+          throw new Error(
+            `GitHub ${r.status}`
+          );
+
+        }
+
+
+        const lista =
+          await r.json();
+
+
+        const md =
+          lista.filter(
+            x =>
+              x.type === "file"
+              &&
+              x.name.endsWith(
+                ".md"
+              )
+          );
+
+
+        const items =
+          await Promise.all(
+            md.map(
+              async archivo => {
+
+
+                const rr =
+                  await fetch(
+                    `${
+                      archivo.download_url
+                    }?v=${
+                      VERSION
+                    }`,
+                    {
+                      cache:
+                        "no-store"
+                    }
+                  );
+
+
+                if(
+                  !rr.ok
+                ){
+
+                  throw new Error(
+                    archivo.name
+                  );
+
+                }
+
+
+                return {
+
+                  nombreArchivo:
+                    archivo.name,
+
+                  datos:
+                    parsearYamlSimple(
+                      await rr.text()
+                    )
+
+                };
+
+              }
+            )
+          );
+
+
+        guardarLocalStorage(
+          cacheColeccion(
+            carpeta
+          ),
+          items
+        );
+
+
+        return items;
+
+
+      }
+      catch(e){
+
+
+        /*
+          OPCION 3:
+          ULTIMA COPIA BUENA
+      */
+
+
+        const cache =
+          leerLocalStorage(
+            cacheColeccion(
+              carpeta
+            )
+          );
+
+
+        if(
+          Array.isArray(
+            cache
+          )
+        ){
+
+          return cache;
+
+        }
+
+
+        throw e;
+
+      }
+
+    }
+
+
+    /* =========================================
        APARIENCIA
-    ========================================================= */
+    ========================================= */
 
-    function aplicarApariencia(c={}){
 
-      const nombre=
-        FUENTES[c.fuente]
+    function aplicarApariencia(
+      c = {}
+    ){
+
+
+      const nombre =
+        FUENTES[
+          c.fuente
+        ]
           ?c.fuente
           :"Poppins";
 
-      const[
+
+      const [
         google,
         family
-      ]=
-        FUENTES[nombre];
+      ] =
+        FUENTES[
+          nombre
+        ];
 
-      $("dynamic-font")
-      .href=
+
+      $(
+        "dynamic-font"
+      )
+      .href =
         `https://fonts.googleapis.com/css2?family=${
           google.replace(
             / /g,
             "+"
           )
         }&display=swap`;
+
 
       document
       .documentElement
@@ -3220,16 +5836,19 @@
         family
       );
 
+
       document
       .documentElement
       .style
       .setProperty(
         "--peso-precio",
-        c.precio_negrita===false
+        c.precio_negrita === false
           ?"400"
           :"700"
       );
+
     }
+
 
     async function cargarApariencia(){
 
@@ -3245,206 +5864,345 @@
       catch{
 
         aplicarApariencia({
-          fuente:"Poppins",
-          precio_negrita:true
+
+          fuente:
+            "Poppins",
+
+          precio_negrita:
+            true
+
         });
 
       }
+
     }
 
-    function aplicarTextos(t={}){
 
-      TEXTOS={
+    /* =========================================
+       TEXTOS
+    ========================================= */
+
+
+    function aplicarTextos(
+      t = {}
+    ){
+
+
+      TEXTOS = {
+
         ...DEFAULT_TEXTOS,
+
         ...t
+
       };
 
-      const set=
-        (id,v)=>{
 
-          const e=
-            $(id);
+      const set =
+        (
+          id,
+          v
+        ) => {
 
-          if(e){
-            e.textContent=v;
+
+          const e =
+            $(
+              id
+            );
+
+
+          if(
+            e
+          ){
+
+            e.textContent =
+              v;
+
           }
+
         };
+
 
       set(
         "topbar-text",
         TEXTOS.topbar_texto
       );
 
+
       set(
         "contact-label",
         TEXTOS.contacto_etiqueta
       );
+
 
       set(
         "menu-home",
         TEXTOS.menu_inicio
       );
 
+
       set(
         "menu-products",
         TEXTOS.menu_productos
       );
+
 
       set(
         "header-products-text",
         TEXTOS.menu_productos
       );
 
+
       set(
         "menu-contact",
         TEXTOS.menu_contacto
       );
+
 
       set(
         "hero-label",
         TEXTOS.hero_etiqueta
       );
 
+
       set(
         "products-label",
         TEXTOS.productos_etiqueta
       );
+
 
       set(
         "products-title",
         TEXTOS.productos_titulo
       );
 
+
       set(
         "products-intro",
         TEXTOS.productos_texto
       );
+
 
       set(
         "editorial-label",
         TEXTOS.editorial_etiqueta
       );
 
+
       set(
         "editorial-text",
         TEXTOS.editorial_texto
       );
+
 
       set(
         "footer-email-label",
         TEXTOS.footer_correo
       );
 
+
       set(
         "footer-instagram-label",
         TEXTOS.footer_instagram
       );
+
 
       set(
         "footer-orders-label",
         TEXTOS.footer_pedidos
       );
 
+
       set(
         "footer-copy",
         TEXTOS.footer_copy
       );
+
 
       set(
         "footer-country",
         TEXTOS.footer_pais
       );
 
+
       set(
         "modal-eyebrow",
         TEXTOS.modal_etiqueta
       );
+
 
       set(
         "modal-zoom-help",
         TEXTOS.modal_ayuda_zoom
       );
 
-      const root=
-        document.documentElement;
 
-      const s=
-        (k,v)=>
-          root.style.setProperty(
+      const s =
+        (
+          k,
+          v
+        ) =>
+          document
+          .documentElement
+          .style
+          .setProperty(
             k,
             v
           );
 
+
       s(
         "--hero-title-desktop",
-        `${Number(TEXTOS.tamano_titulo_banner)||72}px`
+        `${
+          Number(
+            TEXTOS.tamano_titulo_banner
+          )
+          ||
+          72
+        }px`
       );
+
 
       s(
         "--hero-subtitle-desktop",
-        `${Number(TEXTOS.tamano_subtitulo_banner)||14}px`
+        `${
+          Number(
+            TEXTOS.tamano_subtitulo_banner
+          )
+          ||
+          14
+        }px`
       );
+
 
       s(
         "--products-title-desktop",
-        `${Number(TEXTOS.tamano_titulo_productos)||64}px`
+        `${
+          Number(
+            TEXTOS.tamano_titulo_productos
+          )
+          ||
+          64
+        }px`
       );
+
 
       s(
         "--products-text-desktop",
-        `${Number(TEXTOS.tamano_texto_productos)||13}px`
+        `${
+          Number(
+            TEXTOS.tamano_texto_productos
+          )
+          ||
+          13
+        }px`
       );
+
 
       s(
         "--editorial-text-desktop",
-        `${Number(TEXTOS.tamano_editorial)||56}px`
+        `${
+          Number(
+            TEXTOS.tamano_editorial
+          )
+          ||
+          56
+        }px`
       );
+
 
       s(
         "--hero-title-mobile",
-        `${Number(TEXTOS.tamano_titulo_banner_movil)||34}px`
+        `${
+          Number(
+            TEXTOS.tamano_titulo_banner_movil
+          )
+          ||
+          34
+        }px`
       );
+
 
       s(
         "--hero-subtitle-mobile",
-        `${Number(TEXTOS.tamano_subtitulo_banner_movil)||12}px`
+        `${
+          Number(
+            TEXTOS.tamano_subtitulo_banner_movil
+          )
+          ||
+          12
+        }px`
       );
+
 
       s(
         "--products-title-mobile",
-        `${Number(TEXTOS.tamano_titulo_productos_movil)||30}px`
+        `${
+          Number(
+            TEXTOS.tamano_titulo_productos_movil
+          )
+          ||
+          30
+        }px`
       );
+
 
       s(
         "--products-text-mobile",
-        `${Number(TEXTOS.tamano_texto_productos_movil)||11}px`
+        `${
+          Number(
+            TEXTOS.tamano_texto_productos_movil
+          )
+          ||
+          11
+        }px`
       );
+
 
       s(
         "--editorial-text-mobile",
-        `${Number(TEXTOS.tamano_editorial_movil)||30}px`
+        `${
+          Number(
+            TEXTOS.tamano_editorial_movil
+          )
+          ||
+          30
+        }px`
       );
+
 
       s(
         "--products-mobile-top-space",
-        `${Number(TEXTOS.espacio_banner_productos_movil)||28}px`
+        `${
+          Number(
+            TEXTOS.espacio_banner_productos_movil
+          )
+          ||
+          28
+        }px`
       );
+
 
       s(
         "--products-mobile-lines",
         String(
           Number(
             TEXTOS.max_lineas_texto_productos_movil
-          )||2
+          )
+          ||
+          2
         )
       );
+
     }
 
+
     async function cargarTextos(){
+
 
       aplicarTextos(
         DEFAULT_TEXTOS
       );
+
 
       try{
 
@@ -3456,21 +6214,26 @@
 
       }
       catch{}
+
     }
 
-    /* =========================================================
+
+    /* =========================================
        CONTACTO
-    ========================================================= */
+    ========================================= */
+
 
     function aplicarContacto(){
 
-      const email=
-        CONTACTO.email||
+
+      const email =
+        CONTACTO.email ||
         "";
 
-      const ig=
+
+      const ig =
         String(
-          CONTACTO.instagram||
+          CONTACTO.instagram ||
           ""
         )
         .trim()
@@ -3479,20 +6242,24 @@
           ""
         );
 
-      const igTxt=
+
+      const igTxt =
         ig
           ?`@${ig}`
           :"";
 
-      const igUrl=
+
+      const igUrl =
         ig
           ?`https://www.instagram.com/${ig}/`
           :"#";
 
-      const wa=
+
+      const wa =
         whatsappURL(
           "Hola DAI PY, quisiera realizar una consulta."
         );
+
 
       [
         "top-email",
@@ -3500,21 +6267,31 @@
         "footer-email"
       ]
       .forEach(
-        id=>{
+        id => {
 
-          const e=
-            $(id);
 
-          if(e){
+          const e =
+            $(
+              id
+            );
 
-            e.textContent=
+
+          if(
+            e
+          ){
+
+            e.textContent =
               email;
 
-            e.href=
+
+            e.href =
               `mailto:${email}`;
+
           }
+
         }
       );
+
 
       [
         "top-instagram",
@@ -3522,21 +6299,31 @@
         "footer-instagram"
       ]
       .forEach(
-        id=>{
+        id => {
 
-          const e=
-            $(id);
 
-          if(e){
+          const e =
+            $(
+              id
+            );
 
-            e.textContent=
+
+          if(
+            e
+          ){
+
+            e.textContent =
               igTxt;
 
-            e.href=
+
+            e.href =
               igUrl;
+
           }
+
         }
       );
+
 
       [
         "top-whatsapp",
@@ -3544,59 +6331,88 @@
         "footer-whatsapp"
       ]
       .forEach(
-        id=>{
+        id => {
 
-          const e=
-            $(id);
 
-          if(e){
-            e.href=
+          const e =
+            $(
+              id
+            );
+
+
+          if(
+            e
+          ){
+
+            e.href =
               wa;
+
           }
+
         }
       );
+
     }
+
 
     async function cargarContacto(){
 
+
       try{
 
-        CONTACTO={
+        CONTACTO = {
+
           ...CONTACTO,
+
           ...await cargarJSON(
             "./contenido/configuracion/contacto.json"
           )
+
         };
 
       }
       catch{}
 
+
       aplicarContacto();
+
     }
 
-    /* =========================================================
-       MENÚ
-    ========================================================= */
+
+    /* =========================================
+       MENU
+    ========================================= */
+
 
     function abrirMenu(){
 
-      $("menu")
+
+      $(
+        "menu"
+      )
       .classList
       .add(
         "abierto"
       );
 
-      $("menu")
+
+      $(
+        "menu"
+      )
       .setAttribute(
         "aria-hidden",
         "false"
       );
 
-      $("open-menu")
+
+      $(
+        "open-menu"
+      )
       .setAttribute(
         "aria-expanded",
         "true"
       );
+
 
       document
       .body
@@ -3604,36 +6420,54 @@
       .add(
         "locked"
       );
+
     }
+
 
     function cerrarMenu(){
 
-      $("menu")
+
+      $(
+        "menu"
+      )
       .classList
       .remove(
         "abierto"
       );
 
-      $("menu")
+
+      $(
+        "menu"
+      )
       .setAttribute(
         "aria-hidden",
         "true"
       );
 
-      $("open-menu")
+
+      $(
+        "open-menu"
+      )
       .setAttribute(
         "aria-expanded",
         "false"
       );
 
+
       if(
-        !$("favorites-overlay")
+        !$
+        (
+          "favorites-overlay"
+        )
         .classList
         .contains(
           "abierto"
         )
         &&
-        !$("product-modal")
+        !$
+        (
+          "product-modal"
+        )
         .classList
         .contains(
           "abierto"
@@ -3646,18 +6480,27 @@
         .remove(
           "locked"
         );
+
       }
+
     }
 
-    /* =========================================================
-       BANNERS
-    ========================================================= */
 
-    function actualizarRatioHero(img){
+    /* =========================================
+       BANNERS
+    ========================================= */
+
+
+    function actualizarRatioHero(
+      img
+    ){
+
 
       if(
-        img&&
-        img.naturalWidth&&
+        img
+        &&
+        img.naturalWidth
+        &&
         img.naturalHeight
       ){
 
@@ -3666,12 +6509,22 @@
         .style
         .setProperty(
           "--hero-mobile-ratio",
-          `${img.naturalWidth}/${img.naturalHeight}`
+          `${
+            img.naturalWidth
+          }/${
+            img.naturalHeight
+          }`
         );
+
       }
+
     }
 
-    function actualizarBanner(i){
+
+    function actualizarBanner(
+      i
+    ){
+
 
       if(
         !BANNERS.length
@@ -3679,68 +6532,103 @@
         return;
       }
 
-      if(i<0){
-        i=
-          BANNERS.length-1;
-      }
 
       if(
-        i>=BANNERS.length
+        i < 0
       ){
-        i=0;
+
+        i =
+          BANNERS.length - 1;
+
       }
 
-      bannerActual=
+
+      if(
+        i >= BANNERS.length
+      ){
+
+        i = 0;
+
+      }
+
+
+      bannerActual =
         i;
+
 
       document
       .querySelectorAll(
         ".hero-slide"
       )
       .forEach(
-        (img,n)=>
+        (
+          img,
+          n
+        ) =>
           img
           .classList
           .toggle(
             "activo",
-            n===i
+            n === i
           )
       );
 
-      const b=
-        BANNERS[i];
 
-      $("hero-title")
-      .textContent=
-        b.titulo||
+      const b =
+        BANNERS[
+          i
+        ];
+
+
+      $(
+        "hero-title"
+      )
+      .textContent =
+        b.titulo ||
         "";
 
-      $("hero-subtitle")
-      .textContent=
-        b.subtitulo||
+
+      $(
+        "hero-subtitle"
+      )
+      .textContent =
+        b.subtitulo ||
         "";
 
-      $("hero-title")
+
+      $(
+        "hero-title"
+      )
       .style
-      .display=
+      .display =
         b.titulo
           ?""
           :"none";
 
-      $("hero-subtitle")
+
+      $(
+        "hero-subtitle"
+      )
       .style
-      .display=
+      .display =
         b.subtitulo
           ?""
           :"none";
 
-      const img=
+
+      const img =
         document
         .querySelectorAll(
           ".hero-slide"
-        )[i];
+        )[
+          i
+        ];
 
-      if(img){
+
+      if(
+        img
+      ){
+
 
         if(
           img.complete
@@ -3755,7 +6643,7 @@
 
           img.addEventListener(
             "load",
-            ()=>
+            () =>
               actualizarRatioHero(
                 img
               ),
@@ -3763,142 +6651,187 @@
               once:true
             }
           );
+
         }
+
       }
+
     }
 
+
     function iniciarCarrusel(){
+
 
       clearInterval(
         bannerTimer
       );
 
+
       if(
-        BANNERS.length>1
+        BANNERS.length > 1
       ){
 
-        bannerTimer=
+        bannerTimer =
           setInterval(
-            ()=>
+            () =>
               actualizarBanner(
-                bannerActual+1
+                bannerActual + 1
               ),
             6500
           );
+
       }
+
     }
+
 
     async function cargarBanners(){
 
+
       try{
 
-        const archivos=
+
+        const archivos =
           await cargarColeccion(
             "contenido/banners"
           );
 
-        BANNERS=
+
+        BANNERS =
           archivos
           .map(
-            a=>({
+            a => ({
 
               titulo:
-                a.datos.titulo||
+                a.datos?.titulo ||
                 "",
 
               subtitulo:
-                a.datos.subtitulo||
+                a.datos?.subtitulo ||
                 "",
 
               imagen:
-                a.datos.imagen||
+                a.datos?.imagen ||
                 "",
 
               activo:
-                a.datos.activo!==false,
+                a.datos?.activo !== false,
 
               orden:
                 Number(
-                  a.datos.orden
-                )||999
+                  a.datos?.orden
+                )
+                ||
+                999
+
             })
           )
           .filter(
-            b=>
-              b.activo&&
+            b =>
+              b.activo
+              &&
               b.imagen
           )
           .sort(
-            (a,b)=>
-              a.orden-b.orden
+            (
+              a,
+              b
+            ) =>
+              a.orden -
+              b.orden
           );
 
-        const media=
-          $("hero-media");
 
-        media.innerHTML=
+        const media =
+          $(
+            "hero-media"
+          );
+
+
+        media.innerHTML =
           '<div class="hero-fallback"><img src="./logo.png" alt="DAI PY"></div>';
 
-        BANNERS.forEach(
-          (b,i)=>{
 
-            const img=
+        BANNERS.forEach(
+          (
+            b,
+            i
+          ) => {
+
+
+            const img =
               document
               .createElement(
                 "img"
               );
 
-            img.className=
+
+            img.className =
               `hero-slide${
-                i===0
+                i === 0
                   ?" activo"
                   :""
               }`;
 
-            img.src=
+
+            img.src =
               rutaMedia(
                 b.imagen
               );
 
-            img.alt=
-              b.titulo||
+
+            img.alt =
+              b.titulo ||
               "DAI PY";
 
-            img.loading=
-              i===0
+
+            img.loading =
+              i === 0
                 ?"eager"
                 :"lazy";
 
-            img.decoding=
+
+            img.decoding =
               "async";
+
 
             img.addEventListener(
               "load",
-              ()=>{
+              () => {
+
 
                 if(
-                  i===bannerActual
+                  i === bannerActual
                 ){
 
                   actualizarRatioHero(
                     img
                   );
+
                 }
+
               }
             );
+
 
             media.appendChild(
               img
             );
+
+
           }
         );
 
-        $("hero-controls")
+
+        $(
+          "hero-controls"
+        )
         .classList
         .toggle(
           "oculto",
-          BANNERS.length<=1
+          BANNERS.length <= 1
         );
+
 
         if(
           BANNERS.length
@@ -3908,8 +6841,11 @@
             0
           );
 
+
           iniciarCarrusel();
+
         }
+
 
       }
       catch(e){
@@ -3918,401 +6854,576 @@
           "Error banners",
           e
         );
+
       }
+
     }
 
-    /* =========================================================
-       CLASIFICACIÓN
-    ========================================================= */
 
-    function inferirClasificacion(p){
+    /* =========================================
+       CLASIFICACION
+    ========================================= */
 
-      const n=
+
+    function inferirClasificacion(
+      p
+    ){
+
+
+      const n =
         normalizar(
-          `${p.nombre} ${p.desc}`
+          `${
+            p.nombre
+          } ${
+            p.desc
+          }`
         );
 
-      let categoria=
-        p.categoria||
+
+      let categoria =
+        p.categoria ||
         "";
 
-      let tipo=
-        p.tipo||
+
+      let tipo =
+        p.tipo ||
         "";
+
 
       if(
         !categoria
       ){
 
+
         if(
           /mini\s*bag|\bbag\b|bolso|bolson|cartera|mochila/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          categoria=
+          categoria =
             "Bolsos";
 
         }
         else if(
           /collar|brazalete|pulsera/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          categoria=
+          categoria =
             "Joyería";
 
         }
         else if(
           /llavero/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          categoria=
+          categoria =
             "Llaveros";
 
         }
         else if(
           /cuaderno|cuadernito|libreta/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          categoria=
+          categoria =
             "Papelería";
 
         }
         else if(
           /umbrella|paraguas|cordon/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          categoria=
+          categoria =
             "Accesorios";
 
         }
         else{
 
-          categoria=
+          categoria =
             "Otros";
+
         }
+
       }
+
 
       if(
         !tipo
       ){
 
+
         if(
           /mini\s*bag|\bbag\b/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Mini Bag";
 
         }
         else if(
           /collar/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Collares";
 
         }
         else if(
           /brazalete|pulsera/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Brazaletes";
 
         }
         else if(
           /cuaderno|cuadernito/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Cuadernos";
 
         }
         else if(
           /umbrella|paraguas/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Paraguas";
 
         }
         else if(
           /cordon/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Cordones";
 
         }
         else if(
           /fitness/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Fitness";
 
         }
         else if(
           /coffee|coffe|cafe/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Café";
 
         }
         else if(
           /dentist|\bdoc\b|doctor|medico/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Profesiones";
 
         }
         else if(
           /music|musica/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Música";
 
         }
         else if(
           /snoopy/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Snoopy";
 
         }
         else if(
           /lovers|heart|osito/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Parejas";
 
         }
         else if(
           /llavero/
-          .test(n)
+          .test(
+            n
+          )
         ){
 
-          tipo=
+          tipo =
             "Temáticos";
 
         }
         else{
 
-          tipo=
+          tipo =
             "General";
+
         }
+
       }
 
-      return{
+
+      return {
+
         ...p,
+
         categoria,
+
         tipo
+
       };
+
     }
 
-    /* =========================================================
-       ORDEN
-       AGOTADOS SIEMPRE AL FINAL
-    ========================================================= */
 
-    function ordenarProductos(a,b){
+    /* =========================================
+       ORDEN PRODUCTOS
+    ========================================= */
 
-      const agotadoA=
-        esAgotado(a);
 
-      const agotadoB=
-        esAgotado(b);
+    function ordenarProductos(
+      a,
+      b
+    ){
+
+
+      /*
+        AGOTADOS PRIMERO SE COMPARAN.
+
+        Si uno está agotado y otro no,
+        el agotado va al final.
+
+        Siempre.
+
+        Antes de categoría,
+        tipo u orden.
+      */
+
+
+      const agotadoA =
+        esAgotado(
+          a
+        );
+
+
+      const agotadoB =
+        esAgotado(
+          b
+        );
+
 
       if(
-        agotadoA!==
-        agotadoB
+        agotadoA !== agotadoB
       ){
 
         return agotadoA
           ?1
           :-1;
+
       }
 
-      const ca=
+
+      const ca =
         CATEGORY_ORDER
         .indexOf(
           a.categoria
         );
 
-      const cb=
+
+      const cb =
         CATEGORY_ORDER
         .indexOf(
           b.categoria
         );
 
-      const ia=
-        ca<0
+
+      const ia =
+        ca < 0
           ?999
           :ca;
 
-      const ib=
-        cb<0
+
+      const ib =
+        cb < 0
           ?999
           :cb;
 
+
       if(
-        ia!==ib
+        ia !== ib
       ){
 
-        return ia-ib;
+        return ia - ib;
+
       }
 
-      const t=
+
+      const t =
         a.tipo
         .localeCompare(
           b.tipo,
           "es",
           {
-            sensitivity:"base"
+            sensitivity:
+              "base"
           }
         );
 
-      if(t){
+
+      if(
+        t
+      ){
         return t;
       }
 
-      const o=
+
+      const o =
         (
           Number(
             a.orden
-          )||999
+          )
+          ||
+          999
         )
         -
         (
           Number(
             b.orden
-          )||999
+          )
+          ||
+          999
         );
 
-      if(o){
+
+      if(
+        o
+      ){
         return o;
       }
+
 
       return a.nombre
       .localeCompare(
         b.nombre,
         "es",
         {
-          sensitivity:"base"
+          sensitivity:
+            "base"
         }
       );
+
     }
 
-    /* =========================================================
+
+    /* =========================================
        BUSCADOR
-    ========================================================= */
+    ========================================= */
 
-    function distancia(a,b){
 
-      const m=
+    function distancia(
+      a,
+      b
+    ){
+
+
+      const m =
         a.length;
 
-      const n=
+
+      const n =
         b.length;
 
-      const dp=
-        Array(n+1)
-        .fill(0)
+
+      const dp =
+        Array(
+          n + 1
+        )
+        .fill(
+          0
+        )
         .map(
-          (_,i)=>i
+          (
+            _,
+            i
+          ) =>
+            i
         );
 
+
       for(
-        let i=1;
-        i<=m;
+        let i = 1;
+        i <= m;
         i++
       ){
 
-        let prev=
-          dp[0];
 
-        dp[0]=i;
+        let prev =
+          dp[
+            0
+          ];
+
+
+        dp[
+          0
+        ] =
+          i;
+
 
         for(
-          let j=1;
-          j<=n;
+          let j = 1;
+          j <= n;
           j++
         ){
 
-          const tmp=
-            dp[j];
 
-          dp[j]=
+          const tmp =
+            dp[
+              j
+            ];
+
+
+          dp[
+            j
+          ] =
             Math.min(
 
-              dp[j]+1,
+              dp[
+                j
+              ]
+              +
+              1,
 
-              dp[j-1]+1,
+              dp[
+                j - 1
+              ]
+              +
+              1,
 
-              prev+
+              prev
+              +
               (
-                a[i-1]===
-                b[j-1]
+                a[
+                  i - 1
+                ]
+                ===
+                b[
+                  j - 1
+                ]
                   ?0
                   :1
               )
+
             );
 
-          prev=
+
+          prev =
             tmp;
+
         }
+
       }
 
-      return dp[n];
+
+      return dp[
+        n
+      ];
+
     }
 
-    function grupoSinonimos(token){
+
+    function grupoSinonimos(
+      token
+    ){
+
 
       for(
         const g
-        of SYNONYM_GROUPS
+        of
+        SYNONYM_GROUPS
       ){
+
 
         if(
           g.some(
-            x=>{
+            x => {
 
-              const nx=
-                normalizar(x);
 
-              return(
-                nx===token
+              const nx =
+                normalizar(
+                  x
+                );
+
+
+              return (
+                nx === token
                 ||
                 (
-                  token.length>=4
+                  token.length >= 4
                   &&
                   distancia(
                     nx,
                     token
-                  )<=1
+                  )
+                  <=
+                  1
                 )
               );
+
             }
           )
         ){
@@ -4320,99 +7431,158 @@
           return g.map(
             normalizar
           );
+
         }
+
       }
 
-      return[
+
+      return [
         token
       ];
+
     }
 
-    function coincideBusqueda(p,q){
 
-      q=
-        normalizar(q);
+    function coincideBusqueda(
+      p,
+      q
+    ){
 
-      if(!q){
-        return true;
-      }
 
-      const hay=
+      q =
         normalizar(
-          `${p.nombre} ${p.desc} ${p.categoria} ${p.tipo}`
+          q
         );
 
-      const palabras=
-        hay
-        .split(" ")
-        .filter(Boolean);
-
-      const tokens=
-        q
-        .split(" ")
-        .filter(Boolean);
 
       if(
-        hay.includes(q)
+        !q
       ){
         return true;
       }
 
+
+      const hay =
+        normalizar(
+          `${
+            p.nombre
+          } ${
+            p.desc
+          } ${
+            p.categoria
+          } ${
+            p.tipo
+          }`
+        );
+
+
+      const palabras =
+        hay
+        .split(
+          " "
+        )
+        .filter(
+          Boolean
+        );
+
+
+      const tokens =
+        q
+        .split(
+          " "
+        )
+        .filter(
+          Boolean
+        );
+
+
+      if(
+        hay.includes(
+          q
+        )
+      ){
+
+        return true;
+
+      }
+
+
       return tokens.every(
-        tok=>
-          grupoSinonimos(tok)
+        tok =>
+          grupoSinonimos(
+            tok
+          )
           .some(
-            op=>
-              hay.includes(op)
+            op =>
+              hay.includes(
+                op
+              )
               ||
               palabras.some(
-                w=>{
+                w => {
+
 
                   if(
-                    w.includes(op)
+                    w.includes(
+                      op
+                    )
                     ||
                     (
-                      op.includes(w)
+                      op.includes(
+                        w
+                      )
                       &&
-                      w.length>=4
+                      w.length >= 4
                     )
                   ){
 
                     return true;
+
                   }
 
-                  const lim=
-                    op.length>=7
+
+                  const lim =
+                    op.length >= 7
                       ?2
                       :1;
 
-                  return(
-                    op.length>=4
+
+                  return (
+                    op.length >= 4
                     &&
-                    w.length>=4
+                    w.length >= 4
                     &&
                     Math.abs(
-                      op.length-
+                      op.length -
                       w.length
-                    )<=lim
+                    )
+                    <=
+                    lim
                     &&
                     distancia(
                       op,
                       w
-                    )<=lim
+                    )
+                    <=
+                    lim
                   );
+
                 }
               )
           )
       );
+
     }
+
 
     function actualizarVisibles(){
 
-      VISIBLES=
+
+      VISIBLES =
         PRODUCTOS
         .filter(
-          p=>
+          p =>
             coincideBusqueda(
               p,
               consulta
@@ -4422,172 +7592,349 @@
           ordenarProductos
         );
 
-      paginaActual=
+
+      paginaActual =
         1;
+
 
       renderizarProductos();
 
-      $("search-status")
-      .textContent=
+
+      $(
+        "search-status"
+      )
+      .textContent =
         consulta
-          ?`${VISIBLES.length} resultado${VISIBLES.length===1?"":"s"}`
+          ?`${
+            VISIBLES.length
+          } resultado${
+            VISIBLES.length === 1
+              ?""
+              :"s"
+          }`
           :"";
 
-      $("search-clear")
+
+      $(
+        "search-clear"
+      )
       .classList
       .toggle(
         "oculto",
         !consulta
       );
+
     }
 
-    /* =========================================================
+
+    /* =========================================
        WHATSAPP
-    ========================================================= */
+    ========================================= */
 
-    function mensajeCompra(p){
 
-      const desc=
-        descripcionProducto(p);
+    function mensajeCompra(
+      p
+    ){
 
-      let m=
-        `Hola DAI PY, quiero realizar un pedido.\n\nProducto: ${p.nombre}\nPrecio: ${precioProducto(p)}`;
 
-      if(desc){
+      const desc =
+        descripcionProducto(
+          p
+        );
 
-        m+=
+
+      let m =
+        `Hola DAI PY, quiero realizar un pedido.\n\nProducto: ${
+          p.nombre
+        }\nPrecio: ${
+          precioProducto(
+            p
+          )
+        }`;
+
+
+      if(
+        desc
+      ){
+
+        m +=
           `\n\n${desc}`;
+
       }
 
+
       return m;
+
     }
 
-    /* =========================================================
-       TARJETA PRODUCTO
-    ========================================================= */
+
+    /* =========================================
+       HTML PRODUCTO
+    ========================================= */
+
 
     function htmlProducto(
       p,
       indice
     ){
 
-      const id=
+
+      const id =
         escaparHTML(
-          idProducto(p)
+          idProducto(
+            p
+          )
         );
 
-      const fav=
+
+      const fav =
         favoritos.has(
-          idProducto(p)
+          idProducto(
+            p
+          )
         );
 
-      const desc=
-        descripcionProducto(p);
 
-      const precio=
-        precioProducto(p);
+      const desc =
+        descripcionProducto(
+          p
+        );
 
-      return`
+
+      const precio =
+        precioProducto(
+          p
+        );
+
+
+      return `
+
         <article
+
           class="product"
+
           tabindex="0"
+
           data-visible-index="${indice}"
-          data-has-description="${desc?"true":"false"}"
-          aria-label="Ver ${escaparHTML(p.nombre)}"
+
+          data-has-description="${
+            desc
+              ?"true"
+              :"false"
+          }"
+
+          aria-label="Ver ${
+            escaparHTML(
+              p.nombre
+            )
+          }"
+
         >
 
+
           <div class="product-image">
+
 
             ${
               p.img
                 ?`
+
                   <img
-                    src="${escaparHTML(rutaMedia(p.img))}"
-                    alt="${escaparHTML(p.nombre)}"
+
+                    src="${
+                      escaparHTML(
+                        rutaMedia(
+                          p.img
+                        )
+                      )
+                    }"
+
+                    alt="${
+                      escaparHTML(
+                        p.nombre
+                      )
+                    }"
+
                     loading="lazy"
+
                     decoding="async"
+
                   >
+
                 `
                 :`
+
                   <div class="product-image-fallback">
+
                     <img
+
                       src="./logo.png"
+
                       alt="DAI PY"
+
                     >
+
                   </div>
+
                 `
             }
 
+
             <button
-              class="favorite-heart ${fav?"activo":""}"
+
+              class="favorite-heart ${
+                fav
+                  ?"activo"
+                  :""
+              }"
+
               type="button"
+
               data-favorite-id="${id}"
-              aria-label="${fav?"Quitar":"Agregar"} de favoritos"
+
+              aria-label="${
+                fav
+                  ?"Quitar"
+                  :"Agregar"
+              } de favoritos"
+
             >
-              ${fav?"♥":"♡"}
+              ${
+                fav
+                  ?"♥"
+                  :"♡"
+              }
             </button>
 
+
             <span class="product-zoom-hint">
-              ${escaparHTML(TEXTOS.texto_zoom)}
+
+              ${
+                escaparHTML(
+                  TEXTOS.texto_zoom
+                )
+              }
+
             </span>
+
 
           </div>
 
+
           <div class="product-body">
+
 
             <div class="product-head">
 
+
               <h3 class="product-name">
-                ${escaparHTML(p.nombre)}
+
+                ${
+                  escaparHTML(
+                    p.nombre
+                  )
+                }
+
               </h3>
 
+
               <div class="product-price">
-                ${escaparHTML(precio)}
+
+                ${
+                  escaparHTML(
+                    precio
+                  )
+                }
+
               </div>
+
 
             </div>
 
+
             <div class="product-description-slot">
+
 
               ${
                 desc
                   ?`
+
                     <p class="product-description">
-                      ${escaparHTML(desc)}
+
+                      ${
+                        escaparHTML(
+                          desc
+                        )
+                      }
+
                     </p>
+
                   `
                   :`
+
                     <p
+
                       class="product-description vacia"
+
                       aria-hidden="true"
+
                     >
                       Sin comentario
                     </p>
+
                   `
               }
 
+
             </div>
 
+
             <a
+
               class="purchase-button product-buy-button"
-              href="${escaparHTML(whatsappURL(mensajeCompra(p)))}"
+
+              href="${
+                escaparHTML(
+                  whatsappURL(
+                    mensajeCompra(
+                      p
+                    )
+                  )
+                )
+              }"
+
               target="_blank"
+
               rel="noopener"
+
             >
-              ${escaparHTML(TEXTOS.boton_comprar)}
+
+              ${
+                escaparHTML(
+                  TEXTOS.boton_comprar
+                )
+              }
+
             </a>
+
 
           </div>
 
+
         </article>
+
       `;
+
     }
 
-    /* =========================================================
-       ALINEACIÓN DE DESCRIPCIONES
-    ========================================================= */
+
+    /* =========================================
+       ALINEACION DESCRIPCIONES
+    ========================================= */
+
 
     function columnasActuales(){
+
 
       return window
       .matchMedia(
@@ -4596,16 +7943,25 @@
       .matches
         ?2
         :3;
+
     }
+
 
     function ajustarFilasDescripcion(){
 
-      const cards=[
-        ...$("products-grid")
+
+      const cards = [
+
+        ...$
+        (
+          "products-grid"
+        )
         .querySelectorAll(
           ".product"
         )
+
       ];
+
 
       if(
         !cards.length
@@ -4613,40 +7969,50 @@
         return;
       }
 
+
       cards.forEach(
-        c=>{
+        c => {
+
 
           c.classList.remove(
             "row-has-description"
           );
 
+
           c.style.removeProperty(
             "--row-desc-height"
           );
+
         }
       );
 
-      const cols=
+
+      const cols =
         columnasActuales();
 
+
       for(
-        let i=0;
-        i<cards.length;
-        i+=cols
+        let i = 0;
+        i < cards.length;
+        i += cols
       ){
 
-        const fila=
+
+        const fila =
           cards.slice(
             i,
-            i+cols
+            i + cols
           );
 
-        const hay=
+
+        const hay =
           fila.some(
-            c=>
-              c.dataset.hasDescription===
+            c =>
+              c.dataset.hasDescription
+              ===
               "true"
           );
+
 
         if(
           !hay
@@ -4654,106 +8020,135 @@
           continue;
         }
 
+
         fila.forEach(
-          c=>
+          c =>
             c.classList.add(
               "row-has-description"
             )
         );
 
-        requestAnimationFrame(
-          ()=>{
 
-            const max=
+        requestAnimationFrame(
+          () => {
+
+
+            const max =
               Math.max(
                 ...fila.map(
-                  c=>{
-
-                    const s=
-                      c.querySelector(
-                        ".product-description-slot"
-                      );
-
-                    return s
-                      ?s.scrollHeight
-                      :0;
-                  }
+                  c =>
+                    c.querySelector(
+                      ".product-description-slot"
+                    )
+                    ?.scrollHeight
+                    ||
+                    0
                 )
               );
 
+
             fila.forEach(
-              c=>
+              c =>
                 c.style.setProperty(
                   "--row-desc-height",
                   `${max}px`
                 )
             );
+
+
           }
         );
+
       }
+
     }
 
-    /* =========================================================
-       PAGINACIÓN
-    ========================================================= */
+
+    /* =========================================
+       PAGINACION
+    ========================================= */
+
 
     function totalPaginas(){
+
 
       return Math.max(
         1,
         Math.ceil(
-          VISIBLES.length/
+          VISIBLES.length
+          /
           PRODUCTS_PER_PAGE
         )
       );
+
     }
+
 
     function renderizarProductos(){
 
-      const grid=
-        $("products-grid");
+
+      const grid =
+        $(
+          "products-grid"
+        );
+
 
       if(
         !VISIBLES.length
       ){
 
-        grid.innerHTML=`
+
+        grid.innerHTML = `
+
           <div class="empty-state">
 
             <strong>
+
               ${
                 consulta
                   ?"No encontramos coincidencias."
                   :"No hay productos publicados."
               }
+
             </strong>
 
             <span>
+
               ${
                 consulta
                   ?"Probá con otra palabra, sinónimo o categoría."
                   :"Podés agregarlos desde el administrador."
               }
+
             </span>
 
           </div>
+
         `;
 
-        $("pagination")
+
+        $(
+          "pagination"
+        )
         .classList
         .add(
           "oculta"
         );
 
+
         renderizarFavoritos();
 
+
         return;
+
       }
 
-      const total=
+
+      const total =
         totalPaginas();
 
-      paginaActual=
+
+      paginaActual =
         Math.min(
           total,
           Math.max(
@@ -4762,48 +8157,61 @@
           )
         );
 
-      const inicio=
+
+      const inicio =
         (
-          paginaActual-1
+          paginaActual - 1
         )
         *
         PRODUCTS_PER_PAGE;
 
-      const pagina=
+
+      const pagina =
         VISIBLES.slice(
           inicio,
-          inicio+
+          inicio
+          +
           PRODUCTS_PER_PAGE
         );
 
-      grid.innerHTML=
+
+      grid.innerHTML =
         pagina
         .map(
-          (p,i)=>
+          (
+            p,
+            i
+          ) =>
             htmlProducto(
               p,
-              inicio+i
+              inicio + i
             )
         )
-        .join("");
+        .join(
+          ""
+        );
+
 
       grid
       .querySelectorAll(
         ".product"
       )
       .forEach(
-        card=>{
+        card => {
 
-          const p=
+
+          const p =
             VISIBLES[
               Number(
                 card.dataset.visibleIndex
               )
             ];
 
+
           card.addEventListener(
             "click",
-            e=>{
+            e => {
+
 
               if(
                 e.target.closest(
@@ -4813,21 +8221,26 @@
                 return;
               }
 
+
               abrirProducto(
                 p
               );
+
+
             }
           );
 
+
           card.addEventListener(
             "keydown",
-            e=>{
+            e => {
+
 
               if(
                 (
-                  e.key==="Enter"
+                  e.key === "Enter"
                   ||
-                  e.key===" "
+                  e.key === " "
                 )
                 &&
                 !e.target.closest(
@@ -4835,125 +8248,252 @@
                 )
               ){
 
+
                 e.preventDefault();
+
 
                 abrirProducto(
                   p
                 );
+
+
               }
+
             }
           );
+
+
         }
       );
+
 
       grid
       .querySelectorAll(
         ".favorite-heart"
       )
       .forEach(
-        b=>
+        b =>
           b.addEventListener(
             "click",
-            e=>{
+            e => {
+
 
               e.stopPropagation();
+
 
               alternarFavorito(
                 b.dataset.favoriteId
               );
+
+
             }
           )
       );
 
+
       renderizarPaginacion();
+
 
       renderizarFavoritos();
 
+
       ajustarFilasDescripcion();
+
     }
+
+
+    /*
+      IMPORTANTE:
+
+      Si hay un fallo técnico total ya no
+      decimos "No hay productos publicados".
+
+      Eso era lo que podía hacer parecer
+      que tus productos habían desaparecido.
+    */
+
+
+    function renderizarErrorProductos(){
+
+
+      const grid =
+        $(
+          "products-grid"
+        );
+
+
+      grid.innerHTML = `
+
+        <div class="empty-state">
+
+          <strong>
+            No pudimos cargar el catálogo.
+          </strong>
+
+          <span>
+            Recargá la página. Tus productos no fueron borrados.
+          </span>
+
+        </div>
+
+      `;
+
+
+      $(
+        "pagination"
+      )
+      .classList
+      .add(
+        "oculta"
+      );
+
+    }
+
 
     function renderizarPaginacion(){
 
-      const nav=
-        $("pagination");
 
-      const total=
+      const nav =
+        $(
+          "pagination"
+        );
+
+
+      const total =
         totalPaginas();
 
+
       if(
-        VISIBLES.length<=
+        VISIBLES.length
+        <=
         PRODUCTS_PER_PAGE
       ){
+
 
         nav.classList.add(
           "oculta"
         );
 
-        nav.innerHTML=
+
+        nav.innerHTML =
           "";
 
+
         return;
+
       }
+
 
       nav.classList.remove(
         "oculta"
       );
 
-      let h=`
+
+      let h = `
+
         <button
+
           class="page-button"
-          data-page="${paginaActual-1}"
-          ${paginaActual===1?"disabled":""}
+
+          data-page="${
+            paginaActual - 1
+          }"
+
+          ${
+            paginaActual === 1
+              ?"disabled"
+              :""
+          }
+
         >
           Anterior
         </button>
+
       `;
 
+
       for(
-        let i=1;
-        i<=total;
+        let i = 1;
+        i <= total;
         i++
       ){
 
-        h+=`
+
+        h += `
+
           <button
-            class="page-button ${i===paginaActual?"activa":""}"
+
+            class="page-button ${
+              i === paginaActual
+                ?"activa"
+                :""
+            }"
+
             data-page="${i}"
-            ${i===paginaActual?'aria-current="page"':""}
+
+            ${
+              i === paginaActual
+                ?'aria-current="page"'
+                :""
+            }
+
           >
             ${i}
           </button>
+
         `;
+
       }
 
-      h+=`
+
+      h += `
+
         <button
+
           class="page-button"
-          data-page="${paginaActual+1}"
-          ${paginaActual===total?"disabled":""}
+
+          data-page="${
+            paginaActual + 1
+          }"
+
+          ${
+            paginaActual === total
+              ?"disabled"
+              :""
+          }
+
         >
           Siguiente
         </button>
 
+
         <div class="page-status">
+
           Página ${paginaActual}
+
           de ${total}
+
           · ${VISIBLES.length} productos
+
         </div>
+
       `;
 
-      nav.innerHTML=
+
+      nav.innerHTML =
         h;
+
 
       nav
       .querySelectorAll(
         "[data-page]"
       )
       .forEach(
-        b=>
+        b =>
           b.addEventListener(
             "click",
-            ()=>{
+            () => {
+
 
               if(
                 b.disabled
@@ -4961,7 +8501,8 @@
                 return;
               }
 
-              paginaActual=
+
+              paginaActual =
                 Math.min(
                   total,
                   Math.max(
@@ -4972,12 +8513,16 @@
                   )
                 );
 
+
               renderizarProductos();
+
 
               window.scrollTo({
 
                 top:
-                  $("productos")
+                  $(
+                    "productos"
+                  )
                   .getBoundingClientRect()
                   .top
                   +
@@ -4987,138 +8532,197 @@
 
                 behavior:
                   "smooth"
+
               });
+
+
             }
           )
       );
+
     }
 
-    /* =========================================================
+
+    /* =========================================
        CARGAR PRODUCTOS
-    ========================================================= */
+    ========================================= */
+
 
     async function cargarProductos(){
 
+
       try{
 
-        const archivos=
+
+        const archivos =
           await cargarColeccion(
             "contenido/productos"
           );
 
-        PRODUCTOS=
+
+        PRODUCTOS =
           archivos
           .map(
-            a=>
+            a =>
               inferirClasificacion({
+
 
                 id:
                   a.nombreArchivo,
 
+
                 nombre:
-                  a.datos.nombre||
+                  a.datos?.nombre
+                  ||
                   "Producto",
 
+
                 img:
-                  a.datos.img||
+                  a.datos?.img
+                  ||
                   "",
+
+
+                /*
+                  IMPORTANTE:
+
+                  usamos ?? y no ||
+
+                  Así un precio numérico
+                  como 32 tampoco se pierde.
+                */
+
 
                 precio:
-                  a.datos.precio||
+                  a.datos?.precio
+                  ??
                   "",
+
 
                 desc:
-                  a.datos.desc||
+                  a.datos?.desc
+                  ||
                   "",
+
 
                 categoria:
-                  a.datos.categoria||
+                  a.datos?.categoria
+                  ||
                   "",
 
+
                 tipo:
-                  a.datos.tipo||
+                  a.datos?.tipo
+                  ||
                   "",
+
 
                 orden:
                   Number(
-                    a.datos.orden
-                  )||999
+                    a.datos?.orden
+                  )
+                  ||
+                  999
+
+
               })
           )
           .sort(
             ordenarProductos
           );
 
+
         cargarFavoritos();
+
 
         actualizarVisibles();
 
+
       }
       catch(e){
+
 
         console.error(
           "Error productos",
           e
         );
 
-        PRODUCTOS=
-          [];
 
-        VISIBLES=
-          [];
+        PRODUCTOS = [];
 
-        renderizarProductos();
+
+        VISIBLES = [];
+
+
+        cargarFavoritos();
+
+
+        renderizarFavoritos();
+
+
+        /*
+          No mostramos "No hay productos".
+
+          Mostramos error técnico.
+        */
+
+
+        renderizarErrorProductos();
+
+
       }
+
     }
 
-    /* =========================================================
+
+    /* =========================================
        FAVORITOS
-    ========================================================= */
+    ========================================= */
+
 
     function cargarFavoritos(){
 
-      try{
 
-        const arr=
-          JSON.parse(
-            localStorage
-            .getItem(
-              "daipy_favoritos"
-            )
-            ||
-            "[]"
-          );
+      const arr =
+        leerLocalStorage(
+          "daipy_favoritos"
+        );
 
-        favoritos=
-          new Set(
-            Array.isArray(arr)
-              ?arr
-              :[]
-          );
 
-      }
-      catch{
+      favoritos =
+        new Set(
+          Array.isArray(
+            arr
+          )
+            ?arr
+            :[]
+        );
 
-        favoritos=
-          new Set();
-      }
     }
+
 
     function guardarFavoritos(){
 
-      localStorage
-      .setItem(
+
+      guardarLocalStorage(
         "daipy_favoritos",
-        JSON.stringify(
-          [...favoritos]
-        )
+        [
+          ...favoritos
+        ]
       );
+
     }
 
-    function alternarFavorito(id){
+
+    function alternarFavorito(
+      id
+    ){
+
 
       if(
-        favoritos.has(id)
+        favoritos.has(
+          id
+        )
       ){
 
         favoritos.delete(
@@ -5131,127 +8735,211 @@
         favoritos.add(
           id
         );
+
       }
+
 
       guardarFavoritos();
 
+
       renderizarProductos();
+
 
       if(
         productoModal
         &&
         idProducto(
           productoModal
-        )===id
+        )
+        ===
+        id
       ){
 
         actualizarBotonModalFavorito();
+
       }
+
     }
+
 
     function productosFavoritos(){
 
+
       return PRODUCTOS
       .filter(
-        p=>
+        p =>
           favoritos.has(
-            idProducto(p)
+            idProducto(
+              p
+            )
           )
       );
+
     }
+
 
     function renderizarFavoritos(){
 
-      const items=
+
+      const items =
         productosFavoritos();
 
-      $("favorites-count")
-      .textContent=
+
+      $(
+        "favorites-count"
+      )
+      .textContent =
         items.length;
 
-      $("favorites-buy")
-      .disabled=
+
+      $(
+        "favorites-buy"
+      )
+      .disabled =
         !items.length;
 
-      $("favorites-list")
-      .innerHTML=
+
+      $(
+        "favorites-list"
+      )
+      .innerHTML =
         items.length
-          ?
-          items
+          ?items
           .map(
-            p=>`
+            p => `
+
               <div class="favorite-row">
 
                 <img
-                  src="${escaparHTML(rutaMedia(p.img)||"./logo.png")}"
+
+                  src="${
+                    escaparHTML(
+                      rutaMedia(
+                        p.img
+                      )
+                      ||
+                      "./logo.png"
+                    )
+                  }"
+
                   alt=""
+
                 >
+
 
                 <div>
 
                   <div class="favorite-row-name">
-                    ${escaparHTML(p.nombre)}
+
+                    ${
+                      escaparHTML(
+                        p.nombre
+                      )
+                    }
+
                   </div>
 
+
                   <div class="favorite-row-price">
-                    ${escaparHTML(precioProducto(p))}
+
+                    ${
+                      escaparHTML(
+                        precioProducto(
+                          p
+                        )
+                      )
+                    }
+
                   </div>
 
                 </div>
 
+
                 <button
+
                   class="favorite-remove"
+
                   type="button"
-                  data-remove="${escaparHTML(idProducto(p))}"
+
+                  data-remove="${
+                    escaparHTML(
+                      idProducto(
+                        p
+                      )
+                    )
+                  }"
+
                   aria-label="Quitar"
+
                 >
                   ×
                 </button>
 
               </div>
+
             `
           )
-          .join("")
-          :
-          `
+          .join(
+            ""
+          )
+          :`
+
             <div class="favorites-empty">
+
               Todavía no agregaste productos.
+
               Tocá el corazón de cualquier producto
+
               y aparecerá acá.
+
             </div>
+
           `;
 
-      $("favorites-list")
+
+      $(
+        "favorites-list"
+      )
       .querySelectorAll(
         "[data-remove]"
       )
       .forEach(
-        b=>
+        b =>
           b.addEventListener(
             "click",
-            ()=>
+            () =>
               alternarFavorito(
                 b.dataset.remove
               )
           )
       );
+
     }
+
 
     function abrirFavoritos(){
 
+
       renderizarFavoritos();
 
-      $("favorites-overlay")
+
+      $(
+        "favorites-overlay"
+      )
       .classList
       .add(
         "abierto"
       );
 
-      $("favorites-overlay")
+
+      $(
+        "favorites-overlay"
+      )
       .setAttribute(
         "aria-hidden",
         "false"
       );
+
 
       document
       .body
@@ -5259,30 +8947,45 @@
       .add(
         "locked"
       );
+
     }
+
 
     function cerrarFavoritos(){
 
-      $("favorites-overlay")
+
+      $(
+        "favorites-overlay"
+      )
       .classList
       .remove(
         "abierto"
       );
 
-      $("favorites-overlay")
+
+      $(
+        "favorites-overlay"
+      )
       .setAttribute(
         "aria-hidden",
         "true"
       );
 
+
       if(
-        !$("menu")
+        !$
+        (
+          "menu"
+        )
         .classList
         .contains(
           "abierto"
         )
         &&
-        !$("product-modal")
+        !$
+        (
+          "product-modal"
+        )
         .classList
         .contains(
           "abierto"
@@ -5295,13 +8998,18 @@
         .remove(
           "locked"
         );
+
       }
+
     }
+
 
     function consultarFavoritos(){
 
-      const items=
+
+      const items =
         productosFavoritos();
+
 
       if(
         !items.length
@@ -5309,61 +9017,93 @@
         return;
       }
 
-      const lineas=
+
+      const lineas =
         items.map(
-          (p,i)=>
-            `${i+1}. ${p.nombre} — ${precioProducto(p)}`
+          (
+            p,
+            i
+          ) =>
+            `${
+              i + 1
+            }. ${
+              p.nombre
+            } — ${
+              precioProducto(
+                p
+              )
+            }`
         );
 
-      const m=
-        `Hola DAI PY, quiero consultar/comprar estos productos:\n\n${lineas.join("\n")}\n\n¿Me confirman disponibilidad?`;
+
+      const m =
+        `Hola DAI PY, quiero consultar/comprar estos productos:\n\n${
+          lineas.join(
+            "\n"
+          )
+        }\n\n¿Me confirman disponibilidad?`;
+
 
       window.open(
-        whatsappURL(m),
+        whatsappURL(
+          m
+        ),
         "_blank",
         "noopener"
       );
+
     }
 
-    /* =========================================================
-       TEXTO DEL GLOBO
-    ========================================================= */
+
+    /* =========================================
+       GLOBOS - MEDICION
+    ========================================= */
+
 
     function medirHandjet(
       texto,
       tamano
     ){
 
+
       if(
         !medirHandjet.canvas
       ){
 
-        medirHandjet.canvas=
+        medirHandjet.canvas =
           document
           .createElement(
             "canvas"
           );
+
       }
 
-      const ctx=
+
+      const ctx =
         medirHandjet
         .canvas
         .getContext(
           "2d"
         );
 
-      ctx.font=
-        `500 ${tamano}px Handjet`;
+
+      ctx.font =
+        `500 ${
+          tamano
+        }px Handjet`;
+
 
       return ctx
       .measureText(
         String(
-          texto||
+          texto ||
           ""
         )
       )
       .width;
+
     }
+
 
     function mejorCorteDosLineas(
       frase,
@@ -5371,33 +9111,40 @@
       maxWidth
     ){
 
-      const palabras=
+
+      const palabras =
         String(
-          frase||
+          frase ||
           ""
         )
         .trim()
         .split(
           /\s+/
         )
-        .filter(Boolean);
+        .filter(
+          Boolean
+        );
+
 
       if(
-        palabras.length<2
+        palabras.length < 2
       ){
         return null;
       }
 
-      let mejor=
+
+      let mejor =
         null;
 
+
       for(
-        let i=1;
-        i<palabras.length;
+        let i = 1;
+        i < palabras.length;
         i++
       ){
 
-        const a=
+
+        const a =
           palabras
           .slice(
             0,
@@ -5407,7 +9154,8 @@
             " "
           );
 
-        const b=
+
+        const b =
           palabras
           .slice(
             i
@@ -5416,103 +9164,196 @@
             " "
           );
 
-        const wa=
+
+        const wa =
           medirHandjet(
             a,
             tamano
           );
 
-        const wb=
+
+        const wb =
           medirHandjet(
             b,
             tamano
           );
 
-        const ancho=
+
+        const ancho =
           Math.max(
             wa,
             wb
           );
 
+
         if(
-          ancho<=
-          maxWidth
+          ancho <= maxWidth
         ){
 
-          const equilibrio=
+
+          const equilibrio =
             Math.abs(
-              wa-wb
+              wa - wb
             );
+
 
           if(
             !mejor
             ||
-            ancho<
-            mejor.ancho
+            ancho < mejor.ancho
             ||
             (
               Math.abs(
-                ancho-
+                ancho -
                 mejor.ancho
-              )<1
+              )
+              <
+              1
               &&
-              equilibrio<
+              equilibrio
+              <
               mejor.equilibrio
             )
           ){
 
-            mejor={
+
+            mejor = {
+
               a,
+
               b,
+
               ancho,
+
               equilibrio
+
             };
+
           }
+
         }
+
       }
 
+
       return mejor;
+
     }
 
-    function ajustarTextoGlobo(frase){
 
-      const texto=
-        $("speech-text");
+    /*
+      Comprueba si una frase puede
+      entrar con un font-size concreto.
+
+      Máximo dos líneas.
+    */
+
+
+    function fraseCabe(
+      frase,
+      tamano,
+      ancho,
+      alto
+    ){
+
+
+      if(
+        medirHandjet(
+          frase,
+          tamano
+        )
+        <=
+        ancho
+        &&
+        tamano * .98
+        <=
+        alto
+      ){
+
+        return true;
+
+      }
+
+
+      return !!(
+        mejorCorteDosLineas(
+          frase,
+          tamano,
+          ancho
+        )
+        &&
+        tamano * 1.84
+        <=
+        alto
+      );
+
+    }
+
+
+    /*
+      NUEVA REGLA:
+
+      Busca el tamaño más grande
+      que sirva para TODAS las frases.
+
+      Después ese tamaño queda fijo
+      para todas.
+
+      Esto significa que una frase corta
+      NO vuelve a aumentar de tamaño.
+    */
+
+
+    function calcularTamanoComunGlobo(){
+
+
+      const texto =
+        $(
+          "speech-text"
+        );
+
 
       if(
         !texto
       ){
-        return;
+        return 12;
       }
 
-      const movil=
+
+      const movil =
         window
         .matchMedia(
           "(max-width:760px)"
         )
         .matches;
 
-      const maxUna=
-        movil
-          ?20
-          :31;
 
-      const minUna=
-        movil
-          ?14
-          :20;
+      /*
+        Máximo que permitimos:
 
-      const maxDos=
+        web 20px
+        móvil 13.5px
+
+        Si la frase más larga requiere
+        menos, se reduce UNA SOLA VEZ
+        y ese mismo resultado se utiliza
+        en absolutamente todas las frases.
+      */
+
+
+      const max =
         movil
           ?13.5
           :20;
 
-      const minDos=
-        movil
-          ?9
-          :12;
 
-      const ancho=
+      const min =
+        movil
+          ?7
+          :9;
+
+
+      const ancho =
         Math.max(
           1,
           texto.clientWidth
@@ -5520,7 +9361,8 @@
         *
         .96;
 
-      const alto=
+
+      const alto =
         Math.max(
           1,
           texto.clientHeight
@@ -5528,165 +9370,383 @@
         *
         .95;
 
-      const aplicarUna=
-        t=>{
 
-          texto.className=
-            "speech-text una-linea";
+      const lista =
+        frasesRotacion.length
+          ?frasesRotacion
+          :[
+            ""
+          ];
 
-          texto.style.fontSize=
-            `${t}px`;
-
-          texto.style.lineHeight=
-            ".92";
-
-          texto.textContent=
-            frase;
-        };
 
       for(
-        let t=maxUna;
-        t>=minUna;
-        t-=.5
+        let t = max;
+        t >= min;
+        t -= .5
       ){
 
-        if(
-          medirHandjet(
-            frase,
-            t
-          )<=ancho
-          &&
-          t*.98<=alto
-        ){
 
-          aplicarUna(
-            t
+        const todasEntran =
+          lista.every(
+            f =>
+              fraseCabe(
+                f,
+                t,
+                ancho,
+                alto
+              )
           );
 
-          return;
+
+        if(
+          todasEntran
+        ){
+
+          return t;
+
         }
+
       }
 
-      for(
-        let t=maxDos;
-        t>=minDos;
-        t-=.5
+
+      return min;
+
+    }
+
+
+    /*
+      TODAS LAS FRASES USAN
+      tamanoComunGlobo.
+
+      Nunca se modifica por frase.
+    */
+
+
+    function ajustarTextoGlobo(
+      frase
+    ){
+
+
+      const texto =
+        $(
+          "speech-text"
+        );
+
+
+      if(
+        !texto
+      ){
+        return;
+      }
+
+
+      if(
+        tamanoComunGlobo == null
       ){
 
-        const corte=
-          mejorCorteDosLineas(
-            frase,
-            t,
-            ancho
-          );
+        tamanoComunGlobo =
+          calcularTamanoComunGlobo();
 
-        if(
-          corte
-          &&
-          t*1.84<=alto
-        ){
-
-          texto.className=
-            "speech-text dos-lineas";
-
-          texto.style.fontSize=
-            `${t}px`;
-
-          texto.style.lineHeight=
-            ".92";
-
-          texto.textContent=
-            `${corte.a}\n${corte.b}`;
-
-          return;
-        }
       }
 
-      texto.className=
-        "speech-text dos-lineas";
 
-      texto.style.fontSize=
-        `${minDos}px`;
+      const t =
+        tamanoComunGlobo;
 
-      texto.style.lineHeight=
-        ".9";
 
-      const palabras=
+      const ancho =
+        Math.max(
+          1,
+          texto.clientWidth
+        )
+        *
+        .96;
+
+
+      texto.style.fontSize =
+        `${t}px`;
+
+
+      texto.style.lineHeight =
+        ".92";
+
+
+      /*
+        Primero vemos si entra en
+        una sola línea.
+
+        EL TAMAÑO NO CAMBIA.
+      */
+
+
+      if(
+        medirHandjet(
+          frase,
+          t
+        )
+        <=
+        ancho
+      ){
+
+
+        texto.className =
+          "speech-text una-linea";
+
+
+        texto.textContent =
+          frase;
+
+
+        return;
+
+      }
+
+
+      /*
+        Si no entra, dos líneas.
+
+        EL TAMAÑO SIGUE SIN CAMBIAR.
+      */
+
+
+      const corte =
+        mejorCorteDosLineas(
+          frase,
+          t,
+          ancho
+        );
+
+
+      if(
+        corte
+      ){
+
+
+        texto.className =
+          "speech-text dos-lineas";
+
+
+        texto.textContent =
+          `${
+            corte.a
+          }\n${
+            corte.b
+          }`;
+
+
+        return;
+
+      }
+
+
+      /*
+        Fallback de seguridad.
+
+        Busca el punto más equilibrado.
+
+        Tampoco cambia el tamaño.
+      */
+
+
+      const palabras =
         String(
-          frase||
+          frase ||
           ""
         )
         .trim()
         .split(
           /\s+/
         )
-        .filter(Boolean);
-
-      const mitad=
-        Math.ceil(
-          palabras.length/
-          2
+        .filter(
+          Boolean
         );
 
-      texto.textContent=
-        palabras.length>1
-          ?`${palabras.slice(0,mitad).join(" ")}\n${palabras.slice(mitad).join(" ")}`
+
+      let mejorIndice =
+        Math.max(
+          1,
+          Math.floor(
+            palabras.length / 2
+          )
+        );
+
+
+      let mejorDiferencia =
+        Infinity;
+
+
+      for(
+        let i = 1;
+        i < palabras.length;
+        i++
+      ){
+
+
+        const d =
+          Math.abs(
+
+            medirHandjet(
+              palabras
+              .slice(
+                0,
+                i
+              )
+              .join(
+                " "
+              ),
+              t
+            )
+
+            -
+
+            medirHandjet(
+              palabras
+              .slice(
+                i
+              )
+              .join(
+                " "
+              ),
+              t
+            )
+
+          );
+
+
+        if(
+          d < mejorDiferencia
+        ){
+
+
+          mejorDiferencia =
+            d;
+
+
+          mejorIndice =
+            i;
+
+        }
+
+      }
+
+
+      texto.className =
+        "speech-text dos-lineas";
+
+
+      texto.textContent =
+        palabras.length > 1
+          ?`${
+            palabras
+            .slice(
+              0,
+              mejorIndice
+            )
+            .join(
+              " "
+            )
+          }\n${
+            palabras
+            .slice(
+              mejorIndice
+            )
+            .join(
+              " "
+            )
+          }`
           :frase;
+
     }
 
-    function tiempoLecturaFrase(texto){
 
-      const n=
+    function tiempoLecturaFrase(
+      texto
+    ){
+
+
+      const n =
         String(
-          texto||
+          texto ||
           ""
         )
         .trim()
         .length;
 
+
       return Math.max(
         4600,
         Math.min(
           7600,
-          3400+n*90
+          3400
+          +
+          n * 90
         )
       );
+
     }
 
-    function barajarFrases(lista){
 
-      const a=[
+    function barajarFrases(
+      lista
+    ){
+
+
+      const a = [
         ...lista
       ];
 
+
       for(
-        let i=a.length-1;
-        i>0;
+        let i = a.length - 1;
+        i > 0;
         i--
       ){
 
-        const j=
+
+        const j =
           Math.floor(
-            Math.random()*
-            (i+1)
+            Math.random()
+            *
+            (
+              i + 1
+            )
           );
 
+
         [
-          a[i],
-          a[j]
-        ]=[
-          a[j],
-          a[i]
+          a[
+            i
+          ],
+          a[
+            j
+          ]
+        ]
+        =
+        [
+          a[
+            j
+          ],
+          a[
+            i
+          ]
         ];
+
       }
 
+
       return a;
+
     }
+
 
     function parpadearGlobo(){
 
-      const globo=
-        $("speech-bubble");
+
+      const globo =
+        $(
+          "speech-bubble"
+        );
+
 
       if(
         !globo
@@ -5694,13 +9754,16 @@
         return;
       }
 
+
       globo
       .classList
       .remove(
         "parpadeo"
       );
 
+
       void globo.offsetWidth;
+
 
       globo
       .classList
@@ -5708,8 +9771,9 @@
         "parpadeo"
       );
 
+
       setTimeout(
-        ()=>
+        () =>
           globo
           .classList
           .remove(
@@ -5717,18 +9781,27 @@
           ),
         500
       );
+
     }
+
 
     function mostrarFraseModal(
       indice,
-      primera=false
+      primera = false
     ){
 
-      const globo=
-        $("speech-bubble");
 
-      const texto=
-        $("speech-text");
+      const globo =
+        $(
+          "speech-bubble"
+        );
+
+
+      const texto =
+        $(
+          "speech-text"
+        );
+
 
       if(
         !globo
@@ -5740,55 +9813,36 @@
         return;
       }
 
-      fraseIndice=
+
+      fraseIndice =
         (
-          indice+
+          indice
+          +
           frasesRotacion.length
         )
         %
         frasesRotacion.length;
 
-      const frase=
+
+      const frase =
         String(
           frasesRotacion[
             fraseIndice
-          ]||
+          ]
+          ||
           ""
         )
         .trim();
 
-      const colocar=
-        ()=>{
+
+      const colocar =
+        () => {
+
 
           ajustarTextoGlobo(
             frase
           );
 
-          if(
-            document.fonts
-            &&
-            document.fonts.ready
-          ){
-
-            document
-            .fonts
-            .ready
-            .then(
-              ()=>{
-
-                if(
-                  productoModal
-                  &&
-                  texto.isConnected
-                ){
-
-                  ajustarTextoGlobo(
-                    frase
-                  );
-                }
-              }
-            );
-          }
 
           globo
           .classList
@@ -5796,21 +9850,27 @@
             "visible"
           );
 
+
           if(
             !primera
           ){
 
             parpadearGlobo();
+
           }
+
         };
+
 
       clearTimeout(
         fraseTimer
       );
 
+
       clearTimeout(
         fraseCambioTimer
       );
+
 
       if(
         primera
@@ -5821,17 +9881,21 @@
       }
       else{
 
+
         globo
         .classList
         .add(
           "cambiando"
         );
 
-        fraseCambioTimer=
+
+        fraseCambioTimer =
           setTimeout(
-            ()=>{
+            () => {
+
 
               colocar();
+
 
               globo
               .classList
@@ -5839,45 +9903,59 @@
                 "cambiando"
               );
 
-              fraseCambioTimer=
+
+              fraseCambioTimer =
                 null;
+
 
             },
             120
           );
+
       }
 
-      fraseTimer=
+
+      fraseTimer =
         setTimeout(
-          ()=>
+          () =>
             mostrarFraseModal(
-              fraseIndice+1,
+              fraseIndice + 1,
               false
             ),
           tiempoLecturaFrase(
             frase
           )
         );
+
     }
+
 
     function aplicarFrasesModal(){
 
-      const globo=
-        $("speech-bubble");
+
+      const globo =
+        $(
+          "speech-bubble"
+        );
+
 
       clearTimeout(
         fraseTimer
       );
 
+
       clearTimeout(
         fraseCambioTimer
       );
 
-      fraseTimer=
+
+      fraseTimer =
         null;
 
-      fraseCambioTimer=
+
+      fraseCambioTimer =
         null;
+
 
       if(
         !globo
@@ -5885,11 +9963,14 @@
         return;
       }
 
-      const activo=
-        TEXTOS.popup_activo!==
+
+      const activo =
+        TEXTOS.popup_activo
+        !==
         false;
 
-      const lista=
+
+      const lista =
         Array.isArray(
           TEXTOS.frases_popup
         )
@@ -5898,13 +9979,14 @@
           ?TEXTOS.frases_popup
           :DEFAULT_TEXTOS.frases_popup;
 
-      frasesRotacion=
+
+      frasesRotacion =
         barajarFrases(
           lista
           .map(
-            v=>
+            v =>
               String(
-                v||
+                v ||
                 ""
               )
               .trim()
@@ -5914,12 +9996,27 @@
           )
         );
 
-      globo.style.display=
+
+      /*
+        Recalculamos solamente cuando
+        se abre el modal.
+
+        Después el tamaño queda fijo
+        durante toda la rotación.
+      */
+
+
+      tamanoComunGlobo =
+        null;
+
+
+      globo.style.display =
         activo
         &&
         frasesRotacion.length
           ?""
           :"none";
+
 
       globo
       .classList
@@ -5929,61 +10026,119 @@
         "parpadeo"
       );
 
+
       if(
         activo
         &&
         frasesRotacion.length
       ){
 
-        mostrarFraseModal(
-          0,
-          true
-        );
+
+        const iniciar =
+          () => {
+
+
+            tamanoComunGlobo =
+              null;
+
+
+            mostrarFraseModal(
+              0,
+              true
+            );
+
+          };
+
+
+        /*
+          Esperamos que Handjet esté cargada
+          antes de medir.
+
+          Esto evita diferencias de tamaño
+          entre la primera frase y las demás.
+        */
+
+
+        if(
+          document.fonts
+          ?.
+          ready
+        ){
+
+          document
+          .fonts
+          .ready
+          .then(
+            () =>
+              requestAnimationFrame(
+                iniciar
+              )
+          );
+
+        }
+        else{
+
+          requestAnimationFrame(
+            iniciar
+          );
+
+        }
+
       }
+
     }
 
+
     function detenerFrasesModal(){
+
 
       clearTimeout(
         fraseTimer
       );
 
+
       clearTimeout(
         fraseCambioTimer
       );
 
-      fraseTimer=
+
+      fraseTimer =
         null;
 
-      fraseCambioTimer=
+
+      fraseCambioTimer =
         null;
 
-      const globo=
-        $("speech-bubble");
 
-      if(
-        globo
-      ){
+      tamanoComunGlobo =
+        null;
 
-        globo
-        .classList
-        .remove(
-          "visible",
-          "cambiando",
-          "parpadeo"
-        );
-      }
+
+      $(
+        "speech-bubble"
+      )
+      ?.
+      classList
+      .remove(
+        "visible",
+        "cambiando",
+        "parpadeo"
+      );
+
     }
 
-    /* =========================================================
+
+    /* =========================================
        ZOOM Y ARRASTRE
-    ========================================================= */
+    ========================================= */
+
 
     function limitar(
       valor,
       minimo,
       maximo
     ){
+
 
       return Math.max(
         minimo,
@@ -5992,69 +10147,94 @@
           valor
         )
       );
+
     }
+
 
     function limitesZoom(){
 
-      const frame=
-        $("modal-image-frame");
+
+      const frame =
+        $(
+          "modal-image-frame"
+        );
+
 
       if(
         !frame
       ){
 
-        return{
+        return {
+
           x:0,
+
           y:0
+
         };
+
       }
 
-      return{
+
+      return {
 
         x:
-          frame.clientWidth*
+          frame.clientWidth
+          *
           (
-            ZOOM_ESCALA-1
+            ZOOM_ESCALA - 1
           )
           /
           2,
 
         y:
-          frame.clientHeight*
+          frame.clientHeight
+          *
           (
-            ZOOM_ESCALA-1
+            ZOOM_ESCALA - 1
           )
           /
           2
+
       };
+
     }
+
 
     function limitarPanZoom(){
 
-      const lim=
+
+      const lim =
         limitesZoom();
 
-      zoomPanX=
+
+      zoomPanX =
         limitar(
           zoomPanX,
           -lim.x,
           lim.x
         );
 
-      zoomPanY=
+
+      zoomPanY =
         limitar(
           zoomPanY,
           -lim.y,
           lim.y
         );
+
     }
 
+
     function aplicarTransformZoom(
-      animado=true
+      animado = true
     ){
 
-      const img=
-        $("modal-product-image");
+
+      const img =
+        $(
+          "modal-product-image"
+        );
+
 
       if(
         !img
@@ -6062,82 +10242,119 @@
         return;
       }
 
-      img.style.transition=
+
+      img.style.transition =
         animado
           ?"transform .28s ease"
           :"none";
+
 
       if(
         zoomActivo
       ){
 
+
         limitarPanZoom();
 
-        img.style.transform=
-          `translate3d(${zoomPanX}px,${zoomPanY}px,0) scale(${ZOOM_ESCALA})`;
+
+        img.style.transform =
+          `translate3d(${
+            zoomPanX
+          }px,${
+            zoomPanY
+          }px,0) scale(${
+            ZOOM_ESCALA
+          })`;
+
 
       }
       else{
 
-        img.style.transform=
+
+        img.style.transform =
           "translate3d(0,0,0) scale(1)";
+
+
       }
+
     }
+
 
     function activarZoom(){
 
-      zoomActivo=
+
+      zoomActivo =
         true;
 
-      zoomPanX=
+
+      zoomPanX =
         0;
 
-      zoomPanY=
+
+      zoomPanY =
         0;
 
-      $("modal-image-frame")
+
+      $(
+        "modal-image-frame"
+      )
       .classList
       .add(
         "zoom"
       );
 
+
       aplicarTransformZoom(
         true
       );
+
     }
 
+
     function desactivarZoom(
-      animado=true
+      animado = true
     ){
 
-      zoomActivo=
+
+      zoomActivo =
         false;
 
-      zoomPanX=
+
+      zoomPanX =
         0;
 
-      zoomPanY=
+
+      zoomPanY =
         0;
 
-      zoomArrastrando=
+
+      zoomArrastrando =
         false;
 
-      zoomPointerId=
+
+      zoomPointerId =
         null;
 
-      $("modal-image-frame")
+
+      $(
+        "modal-image-frame"
+      )
       .classList
       .remove(
         "zoom",
         "dragging"
       );
 
+
       aplicarTransformZoom(
         animado
       );
+
     }
 
+
     function alternarZoom(){
+
 
       if(
         zoomActivo
@@ -6151,10 +10368,16 @@
       else{
 
         activarZoom();
+
       }
+
     }
 
-    function iniciarArrastreZoom(e){
+
+    function iniciarArrastreZoom(
+      e
+    ){
+
 
       if(
         !zoomActivo
@@ -6162,37 +10385,50 @@
         return;
       }
 
+
       e.preventDefault();
 
-      const frame=
-        $("modal-image-frame");
 
-      zoomArrastrando=
+      const frame =
+        $(
+          "modal-image-frame"
+        );
+
+
+      zoomArrastrando =
         true;
 
-      zoomPointerId=
+
+      zoomPointerId =
         e.pointerId;
 
-      zoomInicioX=
+
+      zoomInicioX =
         e.clientX;
 
-      zoomInicioY=
+
+      zoomInicioY =
         e.clientY;
 
-      zoomInicioPanX=
+
+      zoomInicioPanX =
         zoomPanX;
 
-      zoomInicioPanY=
+
+      zoomInicioPanY =
         zoomPanY;
 
-      zoomMovio=
+
+      zoomMovio =
         false;
+
 
       frame
       .classList
       .add(
         "dragging"
       );
+
 
       try{
 
@@ -6204,88 +10440,133 @@
       }
       catch{}
 
-      $("modal-product-image")
+
+      $(
+        "modal-product-image"
+      )
       .style
-      .transition=
+      .transition =
         "none";
+
     }
 
-    function moverArrastreZoom(e){
+
+    function moverArrastreZoom(
+      e
+    ){
+
 
       if(
         !zoomArrastrando
         ||
-        e.pointerId!==
+        e.pointerId
+        !==
         zoomPointerId
       ){
         return;
       }
 
+
       e.preventDefault();
 
-      const dx=
-        e.clientX-
+
+      const dx =
+        e.clientX
+        -
         zoomInicioX;
 
-      const dy=
-        e.clientY-
+
+      const dy =
+        e.clientY
+        -
         zoomInicioY;
 
+
       if(
-        Math.abs(dx)+
-        Math.abs(dy)>
+        Math.abs(
+          dx
+        )
+        +
+        Math.abs(
+          dy
+        )
+        >
         4
       ){
 
-        zoomMovio=
+        zoomMovio =
           true;
+
       }
 
-      zoomPanX=
-        zoomInicioPanX+
+
+      zoomPanX =
+        zoomInicioPanX
+        +
         dx;
 
-      zoomPanY=
-        zoomInicioPanY+
+
+      zoomPanY =
+        zoomInicioPanY
+        +
         dy;
 
+
       limitarPanZoom();
+
 
       aplicarTransformZoom(
         false
       );
+
     }
 
-    function finalizarArrastreZoom(e){
+
+    function finalizarArrastreZoom(
+      e
+    ){
+
 
       if(
         !zoomArrastrando
         ||
         (
-          e.pointerId!==undefined
+          e.pointerId
+          !==
+          undefined
           &&
-          zoomPointerId!==null
+          zoomPointerId
+          !==
+          null
           &&
-          e.pointerId!==
+          e.pointerId
+          !==
           zoomPointerId
         )
       ){
         return;
       }
 
-      const frame=
-        $("modal-image-frame");
+
+      const frame =
+        $(
+          "modal-image-frame"
+        );
+
 
       if(
         zoomMovio
       ){
 
-        ignorarSiguienteClickZoom=
+        ignorarSiguienteClickZoom =
           true;
+
       }
 
-      zoomArrastrando=
+
+      zoomArrastrando =
         false;
+
 
       frame
       .classList
@@ -6293,9 +10574,13 @@
         "dragging"
       );
 
+
       if(
-        zoomPointerId!==null
+        zoomPointerId
+        !==
+        null
       ){
+
 
         try{
 
@@ -6306,35 +10591,49 @@
 
         }
         catch{}
+
       }
 
-      zoomPointerId=
+
+      zoomPointerId =
         null;
 
-      $("modal-product-image")
+
+      $(
+        "modal-product-image"
+      )
       .style
-      .transition=
+      .transition =
         "transform .28s ease";
+
     }
+
 
     function resetearZoomProducto(){
 
-      ignorarSiguienteClickZoom=
+
+      ignorarSiguienteClickZoom =
         false;
 
-      zoomMovio=
+
+      zoomMovio =
         false;
+
 
       desactivarZoom(
         false
       );
+
     }
 
-    /* =========================================================
-       MODAL FAVORITO
-    ========================================================= */
+
+    /* =========================================
+       FAVORITO MODAL
+    ========================================= */
+
 
     function actualizarBotonModalFavorito(){
+
 
       if(
         !productoModal
@@ -6342,93 +10641,133 @@
         return;
       }
 
-      const activo=
+
+      const activo =
         favoritos.has(
           idProducto(
             productoModal
           )
         );
 
-      const b=
-        $("modal-favorite");
 
-      b
-      .classList
-      .toggle(
+      const b =
+        $(
+          "modal-favorite"
+        );
+
+
+      b.classList.toggle(
         "activo",
         activo
       );
 
-      b.textContent=
+
+      b.textContent =
         activo
           ?"♥ Guardado en favoritos"
           :"♡ Agregar a favoritos";
+
     }
 
-    /* =========================================================
-       ABRIR PRODUCTO
-    ========================================================= */
 
-    function abrirProducto(p){
+    /* =========================================
+       ABRIR / CERRAR PRODUCTO
+    ========================================= */
 
-      productoModal=
+
+    function abrirProducto(
+      p
+    ){
+
+
+      productoModal =
         p;
+
 
       resetearZoomProducto();
 
-      $("modal-product-image")
-      .src=
+
+      $(
+        "modal-product-image"
+      )
+      .src =
         rutaMedia(
           p.img
         )
         ||
         "./logo.png";
 
-      $("modal-product-image")
-      .alt=
+
+      $(
+        "modal-product-image"
+      )
+      .alt =
         p.nombre;
 
-      $("modal-product-name")
-      .textContent=
+
+      $(
+        "modal-product-name"
+      )
+      .textContent =
         p.nombre;
 
-      $("modal-product-price")
-      .textContent=
+
+      $(
+        "modal-product-price"
+      )
+      .textContent =
         precioProducto(
           p
         );
 
-      $("modal-product-description")
-      .textContent=
+
+      $(
+        "modal-product-description"
+      )
+      .textContent =
         descripcionProducto(
           p
         );
 
-      $("modal-buy-button")
-      .textContent=
+
+      $(
+        "modal-buy-button"
+      )
+      .textContent =
         TEXTOS.boton_comprar;
 
-      $("modal-buy-button")
-      .href=
+
+      $(
+        "modal-buy-button"
+      )
+      .href =
         whatsappURL(
           mensajeCompra(
             p
           )
         );
 
+
       actualizarBotonModalFavorito();
 
-      $("product-modal")
+
+      $(
+        "product-modal"
+      )
       .classList
       .add(
         "abierto"
       );
 
-      $("product-modal")
+
+      $(
+        "product-modal"
+      )
       .setAttribute(
         "aria-hidden",
         "false"
       );
+
 
       document
       .body
@@ -6437,41 +10776,60 @@
         "locked"
       );
 
+
       requestAnimationFrame(
-        ()=>
+        () =>
           aplicarFrasesModal()
       );
+
     }
+
 
     function cerrarProducto(){
 
+
       detenerFrasesModal();
+
 
       resetearZoomProducto();
 
-      $("product-modal")
+
+      $(
+        "product-modal"
+      )
       .classList
       .remove(
         "abierto"
       );
 
-      $("product-modal")
+
+      $(
+        "product-modal"
+      )
       .setAttribute(
         "aria-hidden",
         "true"
       );
 
-      productoModal=
+
+      productoModal =
         null;
 
+
       if(
-        !$("menu")
+        !$
+        (
+          "menu"
+        )
         .classList
         .contains(
           "abierto"
         )
         &&
-        !$("favorites-overlay")
+        !$
+        (
+          "favorites-overlay"
+        )
         .classList
         .contains(
           "abierto"
@@ -6484,196 +10842,295 @@
         .remove(
           "locked"
         );
+
       }
+
     }
 
-    /* =========================================================
-       EVENTOS
-    ========================================================= */
 
-    $("open-menu")
+    /* =========================================
+       EVENTOS
+    ========================================= */
+
+
+    $(
+      "open-menu"
+    )
     .addEventListener(
       "click",
       abrirMenu
     );
 
-    $("close-menu")
+
+    $(
+      "close-menu"
+    )
     .addEventListener(
       "click",
       cerrarMenu
     );
 
-    $("menu")
+
+    $(
+      "menu"
+    )
     .addEventListener(
       "click",
-      e=>{
+      e => {
+
 
         if(
-          e.target===
-          $("menu")
+          e.target
+          ===
+          $(
+            "menu"
+          )
         ){
 
           cerrarMenu();
+
         }
+
       }
     );
+
 
     document
     .querySelectorAll(
       ".menu-links a:not(#menu-favorites)"
     )
     .forEach(
-      a=>
+      a =>
         a.addEventListener(
           "click",
           cerrarMenu
         )
     );
 
-    $("menu-favorites")
+
+    $(
+      "menu-favorites"
+    )
     .addEventListener(
       "click",
-      e=>{
+      e => {
+
 
         e.preventDefault();
 
+
         cerrarMenu();
 
+
         abrirFavoritos();
+
+
       }
     );
 
-    $("previous-banner")
+
+    $(
+      "previous-banner"
+    )
     .addEventListener(
       "click",
-      ()=>{
+      () => {
+
 
         actualizarBanner(
-          bannerActual-1
+          bannerActual - 1
         );
 
+
         iniciarCarrusel();
+
+
       }
     );
 
-    $("next-banner")
+
+    $(
+      "next-banner"
+    )
     .addEventListener(
       "click",
-      ()=>{
+      () => {
+
 
         actualizarBanner(
-          bannerActual+1
+          bannerActual + 1
         );
 
+
         iniciarCarrusel();
+
+
       }
     );
+
 
     let searchTimer;
 
-    $("product-search")
+
+    $(
+      "product-search"
+    )
     .addEventListener(
       "input",
-      e=>{
+      e => {
+
 
         clearTimeout(
           searchTimer
         );
 
-        searchTimer=
-          setTimeout(
-            ()=>{
 
-              consulta=
+        searchTimer =
+          setTimeout(
+            () => {
+
+
+              consulta =
                 e.target
                 .value
                 .trim();
 
+
               actualizarVisibles();
+
 
             },
             100
           );
+
+
       }
     );
 
-    $("search-clear")
+
+    $(
+      "search-clear"
+    )
     .addEventListener(
       "click",
-      ()=>{
+      () => {
 
-        $("product-search")
-        .value=
+
+        $(
+          "product-search"
+        )
+        .value =
           "";
 
-        consulta=
+
+        consulta =
           "";
+
 
         actualizarVisibles();
 
-        $("product-search")
+
+        $(
+          "product-search"
+        )
         .focus();
+
+
       }
     );
 
-    $("favorites-fab")
+
+    $(
+      "favorites-fab"
+    )
     .addEventListener(
       "click",
       abrirFavoritos
     );
 
-    $("favorites-close")
+
+    $(
+      "favorites-close"
+    )
     .addEventListener(
       "click",
       cerrarFavoritos
     );
 
-    $("favorites-overlay")
+
+    $(
+      "favorites-overlay"
+    )
     .addEventListener(
       "click",
-      e=>{
+      e => {
+
 
         if(
-          e.target===
-          $("favorites-overlay")
+          e.target
+          ===
+          $(
+            "favorites-overlay"
+          )
         ){
 
           cerrarFavoritos();
+
         }
+
       }
     );
 
-    $("favorites-buy")
+
+    $(
+      "favorites-buy"
+    )
     .addEventListener(
       "click",
       consultarFavoritos
     );
 
-    $("modal-close")
+
+    $(
+      "modal-close"
+    )
     .addEventListener(
       "click",
       cerrarProducto
     );
 
-    $("product-modal")
+
+    $(
+      "product-modal"
+    )
     .addEventListener(
       "click",
-      e=>{
+      e => {
+
 
         if(
-          e.target===
-          $("product-modal")
+          e.target
+          ===
+          $(
+            "product-modal"
+          )
         ){
 
           cerrarProducto();
+
         }
+
       }
     );
 
-    $("modal-favorite")
+
+    $(
+      "modal-favorite"
+    )
     .addEventListener(
       "click",
-      ()=>{
+      () => {
+
 
         if(
           productoModal
@@ -6684,166 +11141,222 @@
               productoModal
             )
           );
+
         }
+
       }
     );
 
-    /*
-      CLICK:
-      activa o desactiva el zoom.
 
-      Si venimos de arrastrar,
-      ignoramos ese click para que
-      no se cierre accidentalmente el zoom.
-    */
-    $("modal-image-frame")
+    /* =========================================
+       ZOOM CLICK
+    ========================================= */
+
+
+    $(
+      "modal-image-frame"
+    )
     .addEventListener(
       "click",
-      ()=>{
+      () => {
+
 
         if(
           ignorarSiguienteClickZoom
         ){
 
-          ignorarSiguienteClickZoom=
+          ignorarSiguienteClickZoom =
             false;
 
+
           return;
+
         }
 
+
         alternarZoom();
+
+
       }
     );
 
-    /*
-      ARRASTRE CON MOUSE / DEDO / PEN
-    */
-    $("modal-image-frame")
+
+    /* =========================================
+       ZOOM ARRASTRE
+    ========================================= */
+
+
+    $(
+      "modal-image-frame"
+    )
     .addEventListener(
       "pointerdown",
       iniciarArrastreZoom
     );
 
-    $("modal-image-frame")
+
+    $(
+      "modal-image-frame"
+    )
     .addEventListener(
       "pointermove",
       moverArrastreZoom
     );
 
-    $("modal-image-frame")
+
+    $(
+      "modal-image-frame"
+    )
     .addEventListener(
       "pointerup",
       finalizarArrastreZoom
     );
 
-    $("modal-image-frame")
+
+    $(
+      "modal-image-frame"
+    )
     .addEventListener(
       "pointercancel",
       finalizarArrastreZoom
     );
 
-    /*
-      TECLADO:
-      Enter o espacio alternan el zoom.
-    */
-    $("modal-image-frame")
+
+    $(
+      "modal-image-frame"
+    )
     .addEventListener(
       "keydown",
-      e=>{
+      e => {
+
 
         if(
-          e.key==="Enter"
+          e.key === "Enter"
           ||
-          e.key===" "
+          e.key === " "
         ){
+
 
           e.preventDefault();
 
+
           alternarZoom();
+
+
         }
+
       }
     );
+
 
     document
     .addEventListener(
       "keydown",
-      e=>{
+      e => {
+
 
         if(
-          e.key!==
-          "Escape"
+          e.key !== "Escape"
         ){
           return;
         }
 
-        /*
-          Si está ampliada la imagen,
-          primer Escape quita el zoom.
-        */
+
         if(
           zoomActivo
           &&
-          $("product-modal")
+          $(
+            "product-modal"
+          )
           .classList
           .contains(
             "abierto"
           )
         ){
+
 
           desactivarZoom();
 
+
           return;
+
+
         }
 
+
         if(
-          $("product-modal")
+          $(
+            "product-modal"
+          )
           .classList
           .contains(
             "abierto"
           )
         ){
+
 
           cerrarProducto();
 
+
         }
         else if(
-          $("favorites-overlay")
+          $(
+            "favorites-overlay"
+          )
           .classList
           .contains(
             "abierto"
           )
         ){
 
+
           cerrarFavoritos();
+
 
         }
         else{
 
+
           cerrarMenu();
+
+
         }
+
+
       }
     );
 
+
+    /* =========================================
+       RESIZE
+    ========================================= */
+
+
     let resizeTimer;
+
 
     window
     .addEventListener(
       "resize",
-      ()=>{
+      () => {
+
 
         clearTimeout(
           resizeTimer
         );
 
-        resizeTimer=
-          setTimeout(
-            ()=>{
 
-              const activo=
+        resizeTimer =
+          setTimeout(
+            () => {
+
+
+              const activo =
                 document
                 .querySelector(
                   ".hero-slide.activo"
                 );
+
 
               if(
                 activo
@@ -6852,9 +11365,20 @@
                 actualizarRatioHero(
                   activo
                 );
+
               }
 
+
               ajustarFilasDescripcion();
+
+
+              /*
+                Si cambia el tamaño de pantalla
+                hay que recalcular el tamaño
+                COMÚN, pero sigue siendo común
+                para todas las frases.
+              */
+
 
               if(
                 productoModal
@@ -6862,56 +11386,102 @@
                 frasesRotacion.length
               ){
 
+
+                tamanoComunGlobo =
+                  null;
+
+
                 ajustarTextoGlobo(
                   frasesRotacion[
                     fraseIndice
-                  ]||
+                  ]
+                  ||
                   ""
                 );
+
+
               }
 
-              /*
-                Si la foto estaba ampliada,
-                adapta los límites al nuevo tamaño.
-              */
+
               if(
                 zoomActivo
               ){
 
+
                 limitarPanZoom();
+
 
                 aplicarTransformZoom(
                   false
                 );
+
+
               }
+
 
             },
             120
           );
+
+
       }
     );
 
-    /* =========================================================
+
+    /* =========================================
        INICIO
-    ========================================================= */
+    ========================================= */
+
 
     async function iniciar(){
 
-      await Promise.allSettled([
-        cargarApariencia(),
-        cargarTextos(),
-        cargarContacto()
-      ]);
+
+      /*
+        PRIMER BLOQUE:
+
+        además de textos y diseño
+        cargamos catalogo.json.
+      */
+
 
       await Promise.allSettled([
-        cargarBanners(),
-        cargarProductos()
+
+        cargarApariencia(),
+
+        cargarTextos(),
+
+        cargarContacto(),
+
+        cargarCatalogoEstatico()
+
       ]);
+
+
+      /*
+        PRODUCTOS Y BANNERS.
+
+        Si catalogo.json existe,
+        no necesitan consultar la API.
+      */
+
+
+      await Promise.allSettled([
+
+        cargarBanners(),
+
+        cargarProductos()
+
+      ]);
+
     }
+
 
     iniciar();
 
+
   </script>
 
+
 </body>
+
 </html>
