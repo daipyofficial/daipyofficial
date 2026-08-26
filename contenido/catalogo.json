@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "productos": [
+    {
+      "nombreArchivo": "01861756572b.md",
+      "datos": {
+        "nombre": "Llavero Mini Casco",
+        "img": "/daipyofficial/public/uploads/IMG_7619.jpeg",
+        "precio": 29.0,
+        "desc": "Disponible en negro y blanco.",
+        "categoria": "Llaveros",
+        "tipo": "Temáticos",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "121ab5e01bd4.md",
+      "datos": {
+        "nombre": "Collar Two heart",
+        "img": "/daipyofficial/public/uploads/IMG_7623-1.jpeg",
+        "precio": "32",
+        "desc": "",
+        "categoria": "Joyería",
+        "tipo": "Collares",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "12ad068a2a8f.md",
+      "datos": {
+        "nombre": "Brazalete Snoopy",
+        "img": "/daipyofficial/public/uploads/IMG_7235.png",
+        "precio": 90.0,
+        "desc": null,
+        "categoria": "Joyería",
+        "tipo": "Brazaletes",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "1bda619a4e3a.md",
+      "datos": {
+        "nombre": "Mini Bag",
+        "img": "/daipyofficial/public/uploads/IMG_7234.jpeg",
+        "precio": "AGOTADO",
+        "desc": ""
+      }
+    },
+    {
+      "nombreArchivo": "2a4819935ee9.md",
+      "datos": {
+        "nombre": "Snoopy Umbrella",
+        "img": "/daipyofficial/public/uploads/pasted-image-1787220131733.png",
+        "precio": 59.0,
+        "desc": null,
+        "categoria": "Accesorios",
+        "tipo": "Paraguas",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "4bbf3ea6c477.md",
+      "datos": {
+        "nombre": "Mini Bag",
+        "img": "/daipyofficial/public/uploads/IMG_7506.jpeg",
+        "precio": "AGOTADO",
+        "desc": ""
+      }
+    },
+    {
+      "nombreArchivo": "5168a6bf43d9.md",
+      "datos": {
+        "nombre": "Collar Cat Lovers",
+        "img": "/daipyofficial/public/uploads/IMG_7381.jpeg",
+        "precio": 32.0,
+        "desc": null,
+        "categoria": "Joyería",
+        "tipo": "Collares",
+        "orden": 2
+      }
+    },
+    {
+      "nombreArchivo": "5492a5e6458e.md",
+      "datos": {
+        "nombre": "Llavero Dentist",
+        "img": "/daipyofficial/public/uploads/IMG_7476.jpeg",
+        "precio": 25.0,
+        "desc": null,
+        "categoria": "Llaveros",
+        "tipo": "Profesiones",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "6addfb463c20.md",
+      "datos": {
+        "nombre": "Llavero Fitness fucsia",
+        "img": "/daipyofficial/public/uploads/IMG_7494.jpeg",
+        "precio": 34.0,
+        "desc": null,
+        "categoria": "Llaveros",
+        "tipo": "Fitness",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "95bb0b0d9b80.md",
+      "datos": {
+        "nombre": "Llavero Coffe Bear",
+        "img": "/daipyofficial/public/uploads/magnific_usa-la-imagen-adjunta-com_3zGyYkFREY - copia.png",
+        "precio": 27000,
+        "desc": null,
+        "categoria": "Llaveros",
+        "tipo": "Café",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "a0e21f8769e8.md",
+      "datos": {
+        "nombre": "Llavero Doc",
+        "img": "/daipyofficial/public/uploads/IMG_7478.jpeg",
+        "precio": 25.0,
+        "desc": null,
+        "categoria": "Llaveros",
+        "tipo": "Profesiones",
+        "orden": 2
+      }
+    },
+    {
+      "nombreArchivo": "a84f4bb60f98.md",
+      "datos": {
+        "nombre": "Cuadernito Snoopy",
+        "img": "/daipyofficial/public/uploads/IMG_7555.jpeg",
+        "precio": 32.0,
+        "desc": null,
+        "categoria": "Papelería",
+        "tipo": "Cuadernos",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "b0530c9289b6.md",
+      "datos": {
+        "nombre": "Llavero Music Vintage",
+        "img": "/daipyofficial/public/uploads/pasted-image-1787220197301.png",
+        "precio": 29.0,
+        "desc": null,
+        "categoria": "Llaveros",
+        "tipo": "Música",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "b27fc8ac1fd5.md",
+      "datos": {
+        "nombre": "Cordón peluche",
+        "img": "/daipyofficial/public/uploads/IMG_7690.jpeg",
+        "precio": "35",
+        "desc": "AGOTADO.",
+        "categoria": "Accesorios",
+        "tipo": "Cordones",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "b457a7dedc56.md",
+      "datos": {
+        "nombre": "Llavero Mini Snoopy Metal",
+        "img": "/daipyofficial/public/uploads/IMG_7698.jpeg",
+        "precio": "29000",
+        "desc": "",
+        "categoria": "Llaveros",
+        "tipo": "Snoopy",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "c3e036740443.md",
+      "datos": {
+        "nombre": "Llavero Snoopy",
+        "img": "/daipyofficial/public/uploads/IMG_7402.jpeg",
+        "precio": 29.0,
+        "desc": null,
+        "categoria": "Llaveros",
+        "tipo": "Snoopy",
+        "orden": 2
+      }
+    },
+    {
+      "nombreArchivo": "cbd1edd7c9ec.md",
+      "datos": {
+        "nombre": "Llaveros Ositos Lovers",
+        "img": "/daipyofficial/public/uploads/IMG_7628.jpeg",
+        "precio": "41.000",
+        "desc": "",
+        "categoria": "Llaveros",
+        "tipo": "Parejas",
+        "orden": 1
+      }
+    },
+    {
+      "nombreArchivo": "cce913614c8e.md",
+      "datos": {
+        "nombre": "Llavero Coffee Italy",
+        "img": "/daipyofficial/public/uploads/IMG_7338.png",
+        "precio": 29.0,
+        "desc": "Disponible en Negro y Plata.",
+        "categoria": "Llaveros",
+        "tipo": "Café",
+        "orden": 2
+      }
+    },
+    {
+      "nombreArchivo": "eab2d778ffc2.md",
+      "datos": {
+        "nombre": "Llavero Fitness white",
+        "img": "/daipyofficial/public/uploads/IMG_7341.jpeg",
+        "precio": 34.0,
+        "desc": null,
+        "categoria": "Llaveros",
+        "tipo": "Fitness",
+        "orden": 2
+      }
+    },
+    {
+      "nombreArchivo": "fd082cbf0f43.md",
+      "datos": {
+        "nombre": "Mini Bag",
+        "img": "/daipyofficial/public/uploads/IMG_7233.jpeg",
+        "precio": "AGOTADO",
+        "desc": ""
+      }
+    },
+    {
+      "nombreArchivo": "producto-1.md",
+      "datos": {
+        "nombre": "Cuaderno Snoopy",
+        "img": "/daipyofficial/public/uploads/pasted-image-1787220348125.png",
+        "precio": "AGOTADO",
+        "desc": null,
+        "categoria": "Papelería",
+        "tipo": "Cuadernos",
+        "orden": 2
+      }
+    }
+  ],
+  "banners": [
+    {
+      "nombreArchivo": "e0eba96260cd.md",
+      "datos": {
+        "titulo": "",
+        "subtitulo": "",
+        "imagen": "/daipyofficial/public/uploads/Three Stages to Colour Grading Photography YouTube Thumbnail - 1.png",
+        "activo": true,
+        "orden": 1
+      }
+    }
+  ]
+}
