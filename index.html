@@ -7,13 +7,9 @@
   <title>DAI PY · Tienda Oficial</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    id="dynamic-font"
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
+  <link id="dynamic-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap">
 
   <style>
     :root{
@@ -21,77 +17,32 @@
       --texto:#111;
       --suave:#77736d;
       --linea:#d7d3cc;
-      --blanco:#fff;
-      --negro:#111;
-
       --fuente:"Poppins",Arial,sans-serif;
       --peso-precio:700;
-
       --hero-mobile-ratio:16/9;
-
       --hero-title-desktop:72px;
       --hero-subtitle-desktop:14px;
       --products-title-desktop:64px;
       --products-text-desktop:13px;
       --editorial-text-desktop:56px;
-
       --hero-title-mobile:34px;
       --hero-subtitle-mobile:12px;
       --products-title-mobile:30px;
       --products-text-mobile:11px;
       --editorial-text-mobile:30px;
-
       --products-mobile-top-space:28px;
       --products-mobile-lines:2;
     }
 
-    *{
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      margin:0;
-      background:var(--fondo);
-      color:var(--texto);
-      font-family:var(--fuente);
-      font-size:14px;
-    }
-
-    body.locked{
-      overflow:hidden;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    button,
-    input{
-      font:inherit;
-      color:inherit;
-    }
-
-    button{
-      cursor:pointer;
-    }
-
-    img{
-      display:block;
-      max-width:100%;
-    }
-
-    .oculto{
-      display:none!important;
-    }
-
-    /* =========================================================
-       BARRA SUPERIOR
-    ========================================================= */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--fuente);font-size:14px}
+    body.locked{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit;color:inherit}
+    button{cursor:pointer}
+    img{display:block;max-width:100%}
+    .oculto{display:none!important}
 
     .topbar{
       min-height:28px;
@@ -132,10 +83,6 @@
       text-decoration:underline;
     }
 
-    /* =========================================================
-       HEADER
-    ========================================================= */
-
     .header{
       height:76px;
       padding:0 28px;
@@ -161,23 +108,14 @@
       text-transform:uppercase;
     }
 
-    .menu-button{
-      justify-self:start;
-    }
-
-    .header-products{
-      justify-self:end;
-    }
+    .menu-button{justify-self:start}
+    .header-products{justify-self:end}
 
     .header-logo img{
       width:auto;
       max-width:100px;
       max-height:54px;
     }
-
-    /* =========================================================
-       MENÚ LATERAL
-    ========================================================= */
 
     .menu-overlay{
       position:fixed;
@@ -255,10 +193,6 @@
       color:var(--suave);
     }
 
-    /* =========================================================
-       BANNER
-    ========================================================= */
-
     .hero{
       width:calc(100% - 28px);
       height:min(79vh,850px);
@@ -296,9 +230,7 @@
       object-position:center;
       opacity:0;
       transform:scale(1.01);
-      transition:
-        opacity .7s ease,
-        transform 7s ease;
+      transition:opacity .7s ease,transform 7s ease;
     }
 
     .hero-slide.activo{
@@ -312,13 +244,7 @@
       inset:0;
       z-index:2;
       pointer-events:none;
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.62),
-          rgba(0,0,0,.15) 50%,
-          rgba(0,0,0,.02)
-        );
+      background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,.15) 50%,rgba(0,0,0,.02));
     }
 
     .hero-content{
@@ -341,11 +267,7 @@
     .hero-title{
       max-width:800px;
       margin:0;
-      font-size:clamp(
-        40px,
-        7vw,
-        var(--hero-title-desktop)
-      );
+      font-size:clamp(40px,7vw,var(--hero-title-desktop));
       font-weight:500;
       line-height:.99;
       letter-spacing:-.055em;
@@ -376,19 +298,13 @@
       border-radius:50%;
     }
 
-    /* =========================================================
-       ENCABEZADO PRODUCTOS
-    ========================================================= */
-
     .products-heading{
       width:calc(100% - 28px);
       max-width:1700px;
       margin:0 auto;
       padding:88px 0 38px;
       display:grid;
-      grid-template-columns:
-        1fr
-        minmax(260px,480px);
+      grid-template-columns:1fr minmax(260px,480px);
       gap:40px;
       align-items:end;
     }
@@ -416,10 +332,6 @@
       line-height:1.6;
       color:var(--suave);
     }
-
-    /* =========================================================
-       BUSCADOR
-    ========================================================= */
 
     .search-wrap{
       width:calc(100% - 28px);
@@ -474,10 +386,6 @@
       text-align:right;
     }
 
-    /* =========================================================
-       PRODUCTOS
-    ========================================================= */
-
     .products-section{
       width:calc(100% - 28px);
       max-width:1700px;
@@ -487,16 +395,18 @@
 
     .products-grid{
       display:grid;
-      grid-template-columns:
-        repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
       column-gap:16px;
-      row-gap:54px;
+      row-gap:42px;
+      align-items:stretch;
     }
 
     .product{
       min-width:0;
       cursor:pointer;
       outline:none;
+      display:flex;
+      flex-direction:column;
     }
 
     .product:focus-visible{
@@ -552,67 +462,37 @@
       opacity:1;
     }
 
-    /* =========================================================
-       CORAZÓN FAVORITOS
-       círculo 40x40
-       corazón 16x16 perfectamente centrado
-    ========================================================= */
-
     .favorite-heart{
       position:absolute;
       z-index:3;
       right:10px;
       top:10px;
-
-      width:40px!important;
-      height:40px!important;
-
-      padding:0!important;
-      margin:0!important;
-
-      border:0!important;
-      border-radius:50%!important;
-
-      background:rgba(255,255,255,.94)!important;
-
-      display:flex!important;
-      align-items:center!important;
-      justify-content:center!important;
-
-      color:transparent!important;
-      font-size:0!important;
-      line-height:0!important;
-
-      box-shadow:
-        0 2px 12px rgba(0,0,0,.08)!important;
+      width:40px;
+      height:40px;
+      padding:0;
+      border:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.94);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:transparent;
+      font-size:0;
+      line-height:0;
+      box-shadow:0 2px 12px rgba(0,0,0,.08);
     }
 
     .favorite-heart::before{
       content:"";
-
-      display:block!important;
-
-      width:16px!important;
-      height:16px!important;
-
-      min-width:16px!important;
-      min-height:16px!important;
-
-      margin:0!important;
-      padding:0!important;
-
-      flex:0 0 16px!important;
-
-      background-position:center!important;
-      background-repeat:no-repeat!important;
-      background-size:16px 16px!important;
-
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z' fill='none' stroke='%23141414' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-
-      transition:
-        transform .18s ease,
-        background-image .18s ease;
+      width:16px;
+      height:16px;
+      min-width:16px;
+      min-height:16px;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-size:16px 16px;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z' fill='none' stroke='%23141414' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      transition:transform .18s ease,background-image .18s ease;
     }
 
     .favorite-heart:hover::before,
@@ -620,20 +500,17 @@
       transform:scale(1.06);
     }
 
-    .favorite-heart.activo{
-      background:rgba(255,255,255,.96)!important;
-      color:transparent!important;
-    }
-
     .favorite-heart.activo::before{
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z' fill='%23B35947' stroke='%23B35947' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z' fill='%23B35947' stroke='%23B35947' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
 
     .product-body{
-      padding-top:14px;
+      padding-top:10px;
+      padding-bottom:14px;
       border-bottom:1px solid var(--linea);
-      padding-bottom:18px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
     }
 
     .product-head{
@@ -657,13 +534,21 @@
     }
 
     .product-description-slot{
-      min-height:42px;
+      display:none;
+      min-height:0;
+      margin:0;
+    }
+
+    .product.row-has-description .product-description-slot{
+      display:block;
+      margin-top:7px;
+      height:var(--row-desc-height,auto);
     }
 
     .product-description{
-      margin:8px 0 0;
+      margin:0;
       font-size:9px;
-      line-height:1.5;
+      line-height:1.45;
       color:var(--suave);
     }
 
@@ -671,35 +556,22 @@
       visibility:hidden;
     }
 
-    /* =========================================================
-       BOTÓN CONSULTAR / COMPRAR
-    ========================================================= */
-
     .purchase-button{
       display:inline-flex;
-      width:auto;
+      width:max-content;
       min-height:36px;
-
-      margin-top:12px;
+      margin-top:8px;
       padding:0 14px;
-
       align-items:center;
       justify-content:center;
-
       border:1px solid #141414;
-
       background:transparent;
       color:#141414;
-
       font-size:7px;
       font-weight:600;
       letter-spacing:.12em;
       text-transform:uppercase;
-
-      transition:
-        background .2s ease,
-        color .2s ease,
-        border-color .2s ease;
+      transition:background .2s ease,color .2s ease,border-color .2s ease;
     }
 
     .purchase-button:hover,
@@ -728,10 +600,6 @@
       font-size:11px;
       color:var(--suave);
     }
-
-    /* =========================================================
-       PAGINACIÓN
-    ========================================================= */
 
     .pagination{
       width:calc(100% - 28px);
@@ -773,10 +641,6 @@
       color:var(--suave);
     }
 
-    /* =========================================================
-       EDITORIAL
-    ========================================================= */
-
     .editorial{
       margin-top:30px;
       padding:110px 14px;
@@ -805,10 +669,6 @@
       line-height:1.08;
       letter-spacing:-.045em;
     }
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
 
     .footer{
       padding:60px 28px 26px;
@@ -855,49 +715,35 @@
       color:var(--suave);
     }
 
-    /* =========================================================
-       PANEL FAVORITOS
-    ========================================================= */
-
     .favorites-fab{
       position:fixed;
       right:18px;
       bottom:18px;
       z-index:160;
-
       min-height:44px;
       padding:0 16px;
-
       border:1px solid #111;
       background:#111;
       color:#fff;
-
       display:flex;
       align-items:center;
       gap:8px;
-
       font-size:9px;
       font-weight:600;
       letter-spacing:.1em;
       text-transform:uppercase;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,.15);
+      box-shadow:0 10px 30px rgba(0,0,0,.15);
     }
 
     .favorites-fab .count{
       min-width:20px;
       height:20px;
       padding:0 5px;
-
       border-radius:10px;
-
       background:#fff;
       color:#111;
-
       display:grid;
       place-items:center;
-
       font-size:9px;
     }
 
@@ -905,12 +751,9 @@
       position:fixed;
       inset:0;
       z-index:420;
-
       background:rgba(0,0,0,.4);
-
       opacity:0;
       pointer-events:none;
-
       transition:.25s;
     }
 
@@ -923,17 +766,12 @@
       position:absolute;
       right:0;
       top:0;
-
       width:min(470px,94vw);
       height:100%;
-
       background:var(--fondo);
-
       padding:26px;
-
       display:flex;
       flex-direction:column;
-
       transform:translateX(102%);
       transition:.3s;
     }
@@ -946,7 +784,6 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-
       padding-bottom:20px;
       border-bottom:1px solid var(--linea);
     }
@@ -960,7 +797,6 @@
     .favorites-close{
       border:0;
       background:none;
-
       font-size:9px;
       letter-spacing:.12em;
       text-transform:uppercase;
@@ -977,7 +813,6 @@
       grid-template-columns:68px 1fr auto;
       gap:12px;
       align-items:center;
-
       padding:12px 0;
       border-bottom:1px solid var(--linea);
     }
@@ -1022,12 +857,9 @@
     .favorites-buy{
       width:100%;
       min-height:46px;
-
       border:1px solid #111;
-
       background:#111;
       color:#fff;
-
       font-size:8px;
       font-weight:600;
       letter-spacing:.12em;
@@ -1039,22 +871,14 @@
       cursor:default;
     }
 
-    /* =========================================================
-       POPUP PRODUCTO
-    ========================================================= */
-
     .product-modal{
       position:fixed;
       inset:0;
       z-index:500;
-
       display:none;
-
       padding:60px;
-
       background:rgba(20,20,20,.72);
       backdrop-filter:blur(10px);
-
       overflow:auto;
     }
 
@@ -1066,57 +890,45 @@
 
     .modal-shell{
       width:min(1040px,94vw);
-
       position:relative;
-
       background:var(--fondo);
-
       display:grid;
       grid-template-columns:1.05fr .95fr;
-
-      box-shadow:
-        0 30px 80px rgba(0,0,0,.28);
+      box-shadow:0 30px 80px rgba(0,0,0,.28);
     }
 
     .modal-close{
       position:absolute;
-      z-index:50;
-
+      z-index:60;
       right:14px;
       top:14px;
-
       width:36px;
       height:36px;
-
       border:0;
       border-radius:50%;
-
       background:rgba(244,242,237,.92);
-
       font-size:20px;
     }
 
     .modal-media{
       min-height:560px;
       background:#e5e1da;
+      position:relative;
+      overflow:visible;
     }
 
     .modal-image-frame{
       width:100%;
       height:100%;
       min-height:560px;
-
       overflow:hidden;
-
       cursor:zoom-in;
     }
 
     .modal-product-image{
       width:100%;
       height:100%;
-
       object-fit:cover;
-
       transition:transform .28s ease;
     }
 
@@ -1127,7 +939,6 @@
 
     .modal-info{
       padding:70px 48px;
-
       display:flex;
       flex-direction:column;
       justify-content:center;
@@ -1142,7 +953,6 @@
 
     .modal-product-name{
       margin:16px 0 0;
-
       font-size:42px;
       font-weight:500;
       line-height:1.02;
@@ -1151,7 +961,6 @@
 
     .modal-product-price{
       margin-top:18px;
-
       font-size:18px;
       font-weight:var(--peso-precio);
     }
@@ -1159,7 +968,6 @@
     .modal-product-description{
       min-height:24px;
       margin:16px 0 0;
-
       font-size:11px;
       line-height:1.6;
       color:var(--suave);
@@ -1167,7 +975,6 @@
 
     .modal-actions{
       margin-top:24px;
-
       display:flex;
       gap:8px;
       flex-wrap:wrap;
@@ -1180,11 +987,8 @@
     .modal-favorite{
       min-height:36px;
       padding:0 14px;
-
       border:1px solid #111;
-
       background:transparent;
-
       font-size:7px;
       font-weight:600;
       letter-spacing:.1em;
@@ -1199,131 +1003,102 @@
 
     .modal-zoom-help{
       margin-top:12px;
-
       font-size:8px;
       color:var(--suave);
     }
 
-    /* =========================================================
-       GLOBOS POPUP - ESCRITORIO
-    ========================================================= */
-
+    /* GLOBO */
     .speech-bubble{
       position:absolute;
-      z-index:40;
-
-      width:max-content;
-      min-width:200px;
-      max-width:300px;
-
-      padding:17px 24px;
-
-      background:#fff;
-      color:#151515;
-
-      border:1.5px solid rgba(20,20,20,.68);
-      border-radius:30px;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,.13);
-
-      font-size:16px;
-      font-weight:500;
-      line-height:1.3;
-      text-align:center;
-
+      z-index:45;
+      width:36.2%;
+      aspect-ratio:940/300;
+      right:-10.5%;
+      top:13%;
       pointer-events:none;
+      opacity:0;
+      transition:opacity .14s ease;
     }
 
-    .speech-bubble::before,
-    .speech-bubble::after{
-      content:"";
+    .speech-bubble.visible{
+      opacity:1;
+    }
+
+    .speech-bubble.cambiando .speech-text{
+      opacity:0;
+    }
+
+    .speech-shape{
       position:absolute;
-      width:0;
-      height:0;
+      inset:0;
+      width:100%;
+      height:100%;
     }
 
-    .speech-one{
-      top:14%;
-      left:-32px;
-      right:auto;
-      bottom:auto;
-
-      transform:translateX(-100%);
-    }
-
-    .speech-one::before{
-      right:-20px;
-      bottom:17px;
-
-      border-top:13px solid transparent;
-      border-bottom:13px solid transparent;
-      border-left:20px solid rgba(20,20,20,.68);
-    }
-
-    .speech-one::after{
-      right:-17px;
-      bottom:18px;
-
-      border-top:12px solid transparent;
-      border-bottom:12px solid transparent;
-      border-left:18px solid #fff;
-    }
-
-    .speech-two{
+    .speech-text{
+      position:absolute;
+      z-index:2;
+      left:9.5%;
+      right:9.5%;
+      top:43%;
+      transform:translateY(-50%);
       display:block;
-
-      right:-32px;
-      bottom:16%;
-      left:auto;
-      top:auto;
-
-      transform:translateX(100%);
+      overflow:hidden;
+      text-align:center;
+      color:#171717;
+      font-family:"Handjet",sans-serif;
+      font-weight:500;
+      letter-spacing:.01em;
+      line-height:.98;
+      opacity:1;
+      transition:opacity .12s ease;
+      word-break:normal;
     }
 
-    .speech-two::before{
-      left:-20px;
-      top:17px;
-
-      border-top:13px solid transparent;
-      border-bottom:13px solid transparent;
-      border-right:20px solid rgba(20,20,20,.68);
+    .speech-text.corta{
+      font-size:24px;
+      line-height:.92;
+      white-space:nowrap;
     }
 
-    .speech-two::after{
-      left:-17px;
-      top:18px;
-
-      border-top:12px solid transparent;
-      border-bottom:12px solid transparent;
-      border-right:18px solid #fff;
+    .speech-text.media{
+      font-size:18px;
+      line-height:.95;
+      white-space:nowrap;
     }
 
-    /* =========================================================
-       TABLET
-    ========================================================= */
+    .speech-text.larga{
+      font-size:13px;
+      line-height:1.02;
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2;
+      white-space:normal;
+      overflow-wrap:anywhere;
+    }
 
-    @media(max-width:1050px) and (min-width:761px){
+    @keyframes globoParpadeo{
+      0%,100%{opacity:1}
+      24%{opacity:.45}
+      48%{opacity:1}
+      72%{opacity:.68}
+    }
 
+    .speech-bubble.parpadeo{
+      animation:globoParpadeo .46s ease-in-out;
+    }
+
+    @media(max-width:900px){
       .products-heading{
         grid-template-columns:1fr;
         gap:18px;
       }
 
       .products-grid{
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-      }
-
-      .product-modal{
-        padding:84px 40px;
-        align-items:flex-start!important;
+        grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
       .modal-shell{
-        width:min(850px,100%);
-        margin:auto;
-
         grid-template-columns:1fr;
       }
 
@@ -1339,85 +1114,9 @@
       .modal-product-name{
         font-size:34px;
       }
-
-      .speech-bubble{
-        width:max-content;
-        min-width:0;
-        max-width:260px;
-
-        padding:13px 18px;
-
-        border:1px solid rgba(20,20,20,.65);
-        border-radius:25px;
-
-        font-size:12px;
-        line-height:1.3;
-
-        box-shadow:
-          0 8px 24px rgba(0,0,0,.11);
-      }
-
-      .speech-bubble::before{
-        display:none;
-      }
-
-      .speech-bubble::after{
-        content:"";
-        position:absolute;
-
-        width:14px;
-        height:14px;
-
-        background:#fff;
-      }
-
-      .speech-one{
-        top:-14px;
-        left:14px;
-        right:auto;
-        bottom:auto;
-
-        transform:translateY(-100%);
-      }
-
-      .speech-one::after{
-        left:24px;
-        bottom:-8px;
-
-        border-right:1px solid rgba(20,20,20,.65);
-        border-bottom:1px solid rgba(20,20,20,.65);
-
-        transform:rotate(45deg);
-      }
-
-      .speech-two{
-        display:block;
-
-        right:14px;
-        bottom:-14px;
-        left:auto;
-        top:auto;
-
-        transform:translateY(100%);
-      }
-
-      .speech-two::after{
-        right:24px;
-        top:-8px;
-
-        border-left:1px solid rgba(20,20,20,.65);
-        border-top:1px solid rgba(20,20,20,.65);
-
-        transform:rotate(45deg);
-      }
     }
 
-    /* =========================================================
-       MÓVIL
-    ========================================================= */
-
     @media(max-width:760px){
-
       .topbar{
         min-height:26px;
         padding:6px 12px;
@@ -1455,18 +1154,12 @@
         font-size:8px;
       }
 
-      /* banner completo */
       .hero{
         width:calc(100% - 16px);
-
         height:auto;
         min-height:0;
-
-        aspect-ratio:
-          var(--hero-mobile-ratio);
-
+        aspect-ratio:var(--hero-mobile-ratio);
         margin-top:8px;
-
         background:transparent;
       }
 
@@ -1474,34 +1167,21 @@
         background:transparent;
       }
 
-      .hero-fallback{
-        background:#dedad2;
-      }
-
       .hero-slide{
         width:100%;
         height:100%;
-
-        object-fit:contain!important;
-        object-position:center!important;
-
-        transform:none!important;
-
+        object-fit:contain;
+        object-position:center;
+        transform:none;
         background:transparent;
       }
 
       .hero-slide.activo{
-        transform:none!important;
+        transform:none;
       }
 
       .hero::after{
-        background:
-          linear-gradient(
-            to top,
-            rgba(0,0,0,.48),
-            rgba(0,0,0,.05) 52%,
-            transparent
-          );
+        background:linear-gradient(to top,rgba(0,0,0,.48),rgba(0,0,0,.05) 52%,transparent);
       }
 
       .hero-content{
@@ -1518,22 +1198,15 @@
 
       .hero-title{
         max-width:95%;
-
-        font-size:
-          var(--hero-title-mobile);
-
+        font-size:var(--hero-title-mobile);
         line-height:1.02;
         letter-spacing:-.045em;
       }
 
       .hero-subtitle{
         max-width:95%;
-
         margin-top:8px;
-
-        font-size:
-          var(--hero-subtitle-mobile);
-
+        font-size:var(--hero-subtitle-mobile);
         line-height:1.38;
       }
 
@@ -1550,32 +1223,18 @@
 
       .products-heading{
         width:calc(100% - 16px);
-
-        padding:
-          var(--products-mobile-top-space)
-          0
-          24px;
-
-        grid-template-columns:1fr;
-        gap:18px;
+        padding:var(--products-mobile-top-space) 0 24px;
       }
 
       .products-heading h2{
-        font-size:
-          var(--products-title-mobile);
+        font-size:var(--products-title-mobile);
       }
 
       .products-heading p{
-        font-size:
-          var(--products-text-mobile);
-
+        font-size:var(--products-text-mobile);
         display:-webkit-box;
-
-        -webkit-line-clamp:
-          var(--products-mobile-lines);
-
+        -webkit-line-clamp:var(--products-mobile-lines);
         -webkit-box-orient:vertical;
-
         overflow:hidden;
       }
 
@@ -1608,47 +1267,25 @@
       }
 
       .products-grid{
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-
+        grid-template-columns:repeat(2,minmax(0,1fr));
         column-gap:8px;
-        row-gap:32px;
+        row-gap:28px;
       }
 
       .product-image{
         aspect-ratio:1/1.12;
       }
 
-      /* CORAZÓN MÓVIL:
-         misma forma y proporción exacta que escritorio */
       .favorite-heart{
-        width:40px!important;
-        height:40px!important;
-
-        right:8px!important;
-        top:8px!important;
-
-        display:flex!important;
-        align-items:center!important;
-        justify-content:center!important;
-      }
-
-      .favorite-heart::before{
-        width:16px!important;
-        height:16px!important;
-
-        min-width:16px!important;
-        min-height:16px!important;
-
-        flex:0 0 16px!important;
-
-        background-size:
-          16px 16px!important;
+        right:8px;
+        top:8px;
+        width:40px;
+        height:40px;
       }
 
       .product-body{
-        padding-top:10px;
-        padding-bottom:14px;
+        padding-top:8px;
+        padding-bottom:12px;
       }
 
       .product-head{
@@ -1664,22 +1301,19 @@
         margin-top:4px;
       }
 
-      .product-description-slot{
-        min-height:34px;
+      .product.row-has-description .product-description-slot{
+        margin-top:5px;
       }
 
       .product-description{
         font-size:7.5px;
-        margin-top:6px;
+        line-height:1.4;
       }
 
       .purchase-button{
-        width:auto;
         min-height:36px;
-
-        margin-top:3px;
-        padding:7px 10px;
-
+        margin-top:7px;
+        padding:0 10px;
         font-size:6px;
         letter-spacing:.075em;
       }
@@ -1703,8 +1337,7 @@
       }
 
       .editorial-text{
-        font-size:
-          var(--editorial-text-mobile);
+        font-size:var(--editorial-text-mobile);
       }
 
       .footer{
@@ -1724,11 +1357,8 @@
       .favorites-fab{
         right:10px;
         bottom:10px;
-
         min-height:42px;
-
         padding:0 12px;
-
         font-size:7px;
       }
 
@@ -1736,20 +1366,16 @@
         padding:20px;
       }
 
-      /* modal móvil */
       .product-modal{
-        padding:78px 10px;
-        align-items:flex-start!important;
+        padding:10px 10px 34px;
+        align-items:flex-start;
       }
 
       .modal-shell{
         width:100%;
         max-width:520px;
-
         margin:auto;
-
         display:block;
-
         overflow:visible;
       }
 
@@ -1778,122 +1404,60 @@
         min-height:38px;
       }
 
-      /* globos móvil */
       .speech-bubble{
-        position:absolute;
-        z-index:40;
-
-        width:max-content;
-        min-width:0;
-
-        max-width:min(230px,78vw);
-
-        padding:11px 15px;
-
-        background:#fff;
-        color:#151515;
-
-        border:
-          1px solid rgba(20,20,20,.65);
-
-        border-radius:24px;
-
-        box-shadow:
-          0 8px 26px rgba(0,0,0,.10);
-
-        font-size:11px;
-        font-weight:500;
-        line-height:1.25;
-        text-align:center;
-
-        pointer-events:none;
-      }
-
-      .speech-bubble::before{
-        display:none;
-      }
-
-      .speech-bubble::after{
-        content:"";
-        position:absolute;
-
-        width:15px;
-        height:15px;
-
-        background:#fff;
-      }
-
-      .speech-one{
-        display:block;
-
-        top:-14px;
-        left:8px;
+        width:40.5%;
+        left:5%;
         right:auto;
-        bottom:auto;
-
-        transform:translateY(-100%);
-      }
-
-      .speech-one::after{
-        left:24px;
-        bottom:-8px;
-
-        border-right:
-          1px solid rgba(20,20,20,.65);
-
-        border-bottom:
-          1px solid rgba(20,20,20,.65);
-
-        transform:rotate(45deg);
-      }
-
-      .speech-two{
-        display:block;
-
-        right:8px;
-        bottom:-14px;
-        left:auto;
         top:auto;
-
-        transform:translateY(100%);
+        bottom:-8px;
       }
 
-      .speech-two::after{
-        right:24px;
-        top:-8px;
+      .speech-text{
+        left:9%;
+        right:9%;
+        top:43%;
+      }
 
-        border-left:
-          1px solid rgba(20,20,20,.65);
+      .speech-text.corta{
+        font-size:17px;
+        line-height:.92;
+      }
 
-        border-top:
-          1px solid rgba(20,20,20,.65);
+      .speech-text.media{
+        font-size:13.5px;
+        line-height:.95;
+      }
 
-        transform:rotate(45deg);
+      .speech-text.larga{
+        font-size:10px;
+        line-height:1;
       }
     }
 
     @media(max-width:390px){
-
-      .hero{
-        min-height:0;
-      }
-
       .hero-title{
-        font-size:
-          min(
-            var(--hero-title-mobile),
-            30px
-          );
+        font-size:min(var(--hero-title-mobile),30px);
       }
 
       .product-name,
       .product-price{
         font-size:8.5px;
       }
+
+      .speech-text.corta{
+        font-size:16px;
+      }
+
+      .speech-text.media{
+        font-size:12.5px;
+      }
+
+      .speech-text.larga{
+        font-size:9.5px;
+      }
     }
 
     @media(prefers-reduced-motion:reduce){
-
       *,
       *::before,
       *::after{
@@ -1913,10 +1477,7 @@
 
   <div class="contact-bar">
 
-    <span
-      class="contact-label"
-      id="contact-label"
-    >
+    <span class="contact-label" id="contact-label">
       Contacto
     </span>
 
@@ -1968,10 +1529,7 @@
       href="#inicio"
       aria-label="DAI PY - Inicio"
     >
-      <img
-        src="./logo.png"
-        alt="DAI PY"
-      >
+      <img src="./logo.png" alt="DAI PY">
     </a>
 
     <a
@@ -2001,10 +1559,7 @@
           class="menu-logo"
           href="#inicio"
         >
-          <img
-            src="./logo.png"
-            alt="DAI PY"
-          >
+          <img src="./logo.png" alt="DAI PY">
         </a>
 
         <button
@@ -2019,31 +1574,19 @@
 
       <div class="menu-links">
 
-        <a
-          id="menu-home"
-          href="#inicio"
-        >
+        <a id="menu-home" href="#inicio">
           Inicio
         </a>
 
-        <a
-          id="menu-products"
-          href="#productos"
-        >
+        <a id="menu-products" href="#productos">
           Productos
         </a>
 
-        <a
-          id="menu-favorites"
-          href="#"
-        >
+        <a id="menu-favorites" href="#">
           Favoritos
         </a>
 
-        <a
-          id="menu-contact"
-          href="#contacto"
-        >
+        <a id="menu-contact" href="#contacto">
           Contacto
         </a>
 
@@ -2084,25 +1627,15 @@
 
   <main>
 
-    <section
-      class="hero"
-      id="inicio"
-    >
+    <section class="hero" id="inicio">
 
       <div
         class="hero-media"
         id="hero-media"
       >
-
         <div class="hero-fallback">
-
-          <img
-            src="./logo.png"
-            alt="DAI PY"
-          >
-
+          <img src="./logo.png" alt="DAI PY">
         </div>
-
       </div>
 
       <div class="hero-content">
@@ -2163,7 +1696,6 @@
     >
 
       <div>
-
         <span
           class="section-label"
           id="products-label"
@@ -2174,7 +1706,6 @@
         <h2 id="products-title">
           Productos
         </h2>
-
       </div>
 
       <p id="products-intro">
@@ -2226,19 +1757,10 @@
         class="products-grid"
         id="products-grid"
       >
-
         <div class="empty-state">
-
-          <strong>
-            Cargando productos…
-          </strong>
-
-          <span>
-            Un momento, por favor.
-          </span>
-
+          <strong>Cargando productos…</strong>
+          <span>Un momento, por favor.</span>
         </div>
-
       </div>
 
     </section>
@@ -2281,12 +1803,7 @@
     <div class="footer-inner">
 
       <div class="footer-logo">
-
-        <img
-          src="./logo.png"
-          alt="DAI PY"
-        >
-
+        <img src="./logo.png" alt="DAI PY">
       </div>
 
       <div class="footer-contact">
@@ -2367,33 +1884,15 @@
 
   </footer>
 
-  <!-- =======================================================
-       BOTÓN FAVORITOS
-  ======================================================== -->
-
   <button
     class="favorites-fab"
     id="favorites-fab"
     type="button"
     aria-label="Abrir favoritos"
   >
-
-    <span>
-      ♡ Favoritos
-    </span>
-
-    <span
-      class="count"
-      id="favorites-count"
-    >
-      0
-    </span>
-
+    <span>♡ Favoritos</span>
+    <span class="count" id="favorites-count">0</span>
   </button>
-
-  <!-- =======================================================
-       PANEL FAVORITOS
-  ======================================================== -->
 
   <div
     class="favorites-overlay"
@@ -2443,10 +1942,6 @@
 
   </div>
 
-  <!-- =======================================================
-       POPUP PRODUCTO
-  ======================================================== -->
-
   <div
     class="product-modal"
     id="product-modal"
@@ -2458,16 +1953,6 @@
 
     <div class="modal-shell">
 
-      <div
-        class="speech-bubble speech-one"
-        id="speech-one"
-      ></div>
-
-      <div
-        class="speech-bubble speech-two"
-        id="speech-two"
-      ></div>
-
       <button
         class="modal-close"
         id="modal-close"
@@ -2478,6 +1963,98 @@
       </button>
 
       <div class="modal-media">
+
+        <div
+          class="speech-bubble"
+          id="speech-bubble"
+          aria-hidden="true"
+        >
+
+          <svg
+            class="speech-shape"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1500 500"
+          >
+            <g id="OBJECTS">
+
+              <g>
+
+                <g>
+
+                  <rect fill="#a5a5a5" x="368.79" y="360" width="11.4" height="45.41"/>
+                  <rect fill="#a5a5a5" x="380.19" y="405.41" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="391.6" y="394.07" width="11.4" height="11.37"/>
+                  <rect fill="#a5a5a5" x="403" y="382.7" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="414.41" y="371.36" width="11.4" height="11.37"/>
+                  <rect fill="#a5a5a5" x="425.81" y="360" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="425.81" y="360" width="752.28" height="11.37"/>
+                  <rect fill="#a5a5a5" x="328.24" y="360" width="51.95" height="11.37"/>
+                  <rect fill="#a5a5a5" x="328.24" y="137.22" width="849.85" height="11.37"/>
+                  <rect fill="#a5a5a5" x="1200.68" y="159.68" width="11.41" height="177.67"/>
+                  <rect fill="#a5a5a5" x="1177.87" y="136.91" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="1189.28" y="148.28" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="1177.87" y="348.62" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="1189.28" y="337.25" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="294.03" y="170.68" width="11.41" height="166.57"/>
+                  <rect fill="#a5a5a5" x="316.84" y="148.59" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="305.43" y="159.96" width="11.4" height="11.37"/>
+                  <rect fill="#a5a5a5" x="316.84" y="348.62" width="11.41" height="11.37"/>
+                  <rect fill="#a5a5a5" x="305.43" y="337.25" width="11.4" height="11.37"/>
+
+                </g>
+
+                <g>
+
+                  <g>
+
+                    <rect fill="#231f20" x="362.68" y="357.96" width="11.4" height="45.41"/>
+
+                    <g>
+
+                      <rect fill="#231f20" x="374.08" y="403.37" width="11.41" height="11.37"/>
+                      <rect fill="#231f20" x="385.49" y="392.04" width="11.4" height="11.37"/>
+                      <rect fill="#231f20" x="396.89" y="380.66" width="11.41" height="11.37"/>
+                      <rect fill="#231f20" x="408.29" y="369.33" width="11.4" height="11.37"/>
+                      <rect fill="#231f20" x="419.69" y="357.96" width="11.41" height="11.37"/>
+
+                    </g>
+
+                  </g>
+
+                  <rect fill="#231f20" x="419.69" y="357.96" width="752.28" height="11.37"/>
+                  <rect fill="#231f20" x="322.13" y="357.96" width="51.95" height="11.37"/>
+                  <rect fill="#231f20" x="322.13" y="135.18" width="849.85" height="11.37"/>
+                  <rect fill="#231f20" x="1194.57" y="157.64" width="11.41" height="177.67"/>
+                  <rect fill="#231f20" x="1171.76" y="134.87" width="11.41" height="11.37"/>
+                  <rect fill="#231f20" x="1183.16" y="146.24" width="11.41" height="11.37"/>
+                  <rect fill="#231f20" x="1171.76" y="346.59" width="11.41" height="11.37"/>
+                  <rect fill="#231f20" x="1183.16" y="335.22" width="11.41" height="11.37"/>
+                  <rect fill="#231f20" x="287.91" y="168.64" width="11.41" height="166.57"/>
+                  <rect fill="#231f20" x="310.72" y="146.55" width="11.41" height="11.37"/>
+                  <rect fill="#231f20" x="299.32" y="157.93" width="11.4" height="11.37"/>
+                  <rect fill="#231f20" x="310.72" y="346.59" width="11.41" height="11.37"/>
+                  <rect fill="#231f20" x="299.32" y="335.22" width="11.4" height="11.37"/>
+
+                </g>
+
+              </g>
+
+            </g>
+
+            <polygon
+              fill="#fff"
+              points="1189.27 157.61 1183.16 157.61 1183.16 148.28 1178.08 148.28 1178.08 148.59 328.23 148.59 328.23 148.59 328.23 149.48 328.23 159.96 316.83 159.96 316.83 171.34 305.49 171.34 305.49 173.05 305.42 173.05 305.42 335.22 310.71 335.22 310.71 337.25 316.83 337.25 316.83 346.59 322.12 346.59 322.12 348.62 328.23 348.62 328.23 357.96 362.67 357.96 374.07 357.96 374.07 357.96 374.07 360 380.18 360 380.18 360 380.18 403.37 385.48 403.37 385.48 403.37 385.48 392.04 396.72 392.04 396.72 390.91 396.88 390.91 396.88 380.66 408.28 380.66 408.28 369.33 419.69 369.33 419.69 369.32 419.69 357.96 431.09 357.96 1171.75 357.96 1171.75 346.59 1183.15 346.59 1183.16 346.59 1183.16 335.22 1194.56 335.22 1194.56 159.65 1189.27 159.65 1189.27 157.61"
+            />
+
+          </svg>
+
+          <span
+            class="speech-text corta"
+            id="speech-text"
+          ></span>
+
+        </div>
 
         <div
           class="modal-image-frame"
@@ -2562,122 +2139,47 @@
   </div>
 
   <script>
-    const REPO =
-      "daipyofficial/daipyofficial";
 
-    const BRANCH =
-      "main";
+    const REPO="daipyofficial/daipyofficial";
+    const BRANCH="main";
+    const API_BASE=`https://api.github.com/repos/${REPO}/contents`;
+    const VERSION=Date.now();
+    const PRODUCTS_PER_PAGE=12;
 
-    const API_BASE =
-      `https://api.github.com/repos/${REPO}/contents`;
-
-    const VERSION =
-      Date.now();
-
-    const PRODUCTS_PER_PAGE =
-      12;
-
-    const DEFAULT_TEXTOS = {
-
-      topbar_texto:
-        "DAI PY · TIENDA OFICIAL",
-
-      contacto_etiqueta:
-        "Contacto",
-
-      menu_inicio:
-        "Inicio",
-
-      menu_productos:
-        "Productos",
-
-      menu_contacto:
-        "Contacto",
-
-      hero_etiqueta:
-        "DAI PY",
-
-      productos_etiqueta:
-        "Tienda",
-
-      productos_titulo:
-        "Productos",
-
-      productos_texto:
-        "Elegí tu producto y realizá tu pedido directamente por WhatsApp.",
-
-      editorial_etiqueta:
-        "DAI PY",
-
-      editorial_texto:
-        "Las cosas que elegimos llevar con nosotros también cuentan una historia.",
-
-      footer_correo:
-        "Correo",
-
-      footer_instagram:
-        "Instagram",
-
-      footer_pedidos:
-        "Pedidos",
-
-      footer_copy:
-        "© DAI PY Tienda Oficial",
-
-      footer_pais:
-        "Paraguay",
-
-      boton_comprar:
-        "Comprar por WhatsApp",
-
-      texto_zoom:
-        "Ver detalle",
-
-      modal_etiqueta:
-        "DAI PY · Detalle",
-
-      modal_ayuda_zoom:
-        "Tocá la imagen para acercar.",
-
-      tamano_titulo_banner:
-        72,
-
-      tamano_subtitulo_banner:
-        14,
-
-      tamano_titulo_productos:
-        64,
-
-      tamano_texto_productos:
-        13,
-
-      tamano_editorial:
-        56,
-
-      tamano_titulo_banner_movil:
-        34,
-
-      tamano_subtitulo_banner_movil:
-        12,
-
-      tamano_titulo_productos_movil:
-        30,
-
-      tamano_texto_productos_movil:
-        11,
-
-      tamano_editorial_movil:
-        30,
-
-      espacio_banner_productos_movil:
-        28,
-
-      max_lineas_texto_productos_movil:
-        2,
-
-      popup_activo:
-        true,
-
+    const DEFAULT_TEXTOS={
+      topbar_texto:"DAI PY · TIENDA OFICIAL",
+      contacto_etiqueta:"Contacto",
+      menu_inicio:"Inicio",
+      menu_productos:"Productos",
+      menu_contacto:"Contacto",
+      hero_etiqueta:"DAI PY",
+      productos_etiqueta:"Tienda",
+      productos_titulo:"Productos",
+      productos_texto:"Elegí tu producto y realizá tu pedido directamente por WhatsApp.",
+      editorial_etiqueta:"DAI PY",
+      editorial_texto:"Las cosas que elegimos llevar con nosotros también cuentan una historia.",
+      footer_correo:"Correo",
+      footer_instagram:"Instagram",
+      footer_pedidos:"Pedidos",
+      footer_copy:"© DAI PY Tienda Oficial",
+      footer_pais:"Paraguay",
+      boton_comprar:"Comprar por WhatsApp",
+      texto_zoom:"Ver detalle",
+      modal_etiqueta:"DAI PY · Detalle",
+      modal_ayuda_zoom:"Tocá la imagen para acercar.",
+      tamano_titulo_banner:72,
+      tamano_subtitulo_banner:14,
+      tamano_titulo_productos:64,
+      tamano_texto_productos:13,
+      tamano_editorial:56,
+      tamano_titulo_banner_movil:34,
+      tamano_subtitulo_banner_movil:12,
+      tamano_titulo_productos_movil:30,
+      tamano_texto_productos_movil:11,
+      tamano_editorial_movil:30,
+      espacio_banner_productos_movil:28,
+      max_lineas_texto_productos_movil:2,
+      popup_activo:true,
       frases_popup:[
         "Lo merezco.",
         "Es una compra necesaria.",
@@ -2690,35 +2192,30 @@
       ]
     };
 
-    const FUENTES = {
-
+    const FUENTES={
       Poppins:[
         "Poppins:wght@400;500;600;700",
         '"Poppins",Arial,sans-serif'
       ],
-
       Montserrat:[
         "Montserrat:wght@400;500;600;700",
         '"Montserrat",Arial,sans-serif'
       ],
-
       Inter:[
         "Inter:wght@400;500;600;700",
         '"Inter",Arial,sans-serif'
       ],
-
       Roboto:[
         "Roboto:wght@400;500;700",
         '"Roboto",Arial,sans-serif'
       ],
-
       Lato:[
         "Lato:wght@400;700",
         '"Lato",Arial,sans-serif'
       ]
     };
 
-    const CATEGORY_ORDER = [
+    const CATEGORY_ORDER=[
       "Bolsos",
       "Joyería",
       "Llaveros",
@@ -2727,292 +2224,121 @@
       "Otros"
     ];
 
-    const SYNONYM_GROUPS = [
-
-      [
-        "bolso",
-        "bolsos",
-        "bolson",
-        "bolsones",
-        "bolsa",
-        "bolsas",
-        "cartera",
-        "carteras",
-        "mochila",
-        "mochilas",
-        "bag",
-        "bags",
-        "minibag",
-        "mini bag",
-        "mini-bag"
-      ],
-
-      [
-        "llavero",
-        "llaveros",
-        "keychain",
-        "keychains",
-        "keyring",
-        "keyrings"
-      ],
-
-      [
-        "collar",
-        "collares",
-        "necklace",
-        "necklaces"
-      ],
-
-      [
-        "brazalete",
-        "brazaletes",
-        "pulsera",
-        "pulseras",
-        "bracelet",
-        "bracelets"
-      ],
-
-      [
-        "cuaderno",
-        "cuadernos",
-        "cuadernito",
-        "cuadernitos",
-        "libreta",
-        "libretas",
-        "notebook",
-        "notebooks",
-        "agenda",
-        "agendas"
-      ],
-
-      [
-        "paraguas",
-        "umbrella",
-        "sombrilla"
-      ],
-
-      [
-        "cordon",
-        "cordones",
-        "lanyard",
-        "strap",
-        "cinta"
-      ],
-
-      [
-        "joyeria",
-        "joyas",
-        "accesorio",
-        "accesorios"
-      ],
-
-      [
-        "fitness",
-        "gym",
-        "gimnasio",
-        "deporte",
-        "sport"
-      ],
-
-      [
-        "cafe",
-        "coffee",
-        "coffe"
-      ],
-
-      [
-        "musica",
-        "music",
-        "musical"
-      ],
-
-      [
-        "dentista",
-        "dentist",
-        "odontologo",
-        "odontologia"
-      ],
-
-      [
-        "doctor",
-        "doc",
-        "medico",
-        "medicina"
-      ],
-
-      [
-        "oso",
-        "osito",
-        "ositos",
-        "bear",
-        "bears"
-      ],
-
-      [
-        "pareja",
-        "parejas",
-        "lovers",
-        "amor",
-        "heart",
-        "corazon",
-        "corazones"
-      ],
-
-      [
-        "snoopy",
-        "peanuts"
-      ]
+    const SYNONYM_GROUPS=[
+      ["bolso","bolsos","bolson","bolsones","bolsa","bolsas","cartera","carteras","mochila","mochilas","bag","bags","minibag","mini bag","mini-bag"],
+      ["llavero","llaveros","keychain","keychains","keyring","keyrings"],
+      ["collar","collares","necklace","necklaces"],
+      ["brazalete","brazaletes","pulsera","pulseras","bracelet","bracelets"],
+      ["cuaderno","cuadernos","cuadernito","cuadernitos","libreta","libretas","notebook","notebooks","agenda","agendas"],
+      ["paraguas","umbrella","sombrilla"],
+      ["cordon","cordones","lanyard","strap","cinta"],
+      ["joyeria","joyas","accesorio","accesorios"],
+      ["fitness","gym","gimnasio","deporte","sport"],
+      ["cafe","coffee","coffe"],
+      ["musica","music","musical"],
+      ["dentista","dentist","odontologo","odontologia"],
+      ["doctor","doc","medico","medicina"],
+      ["oso","osito","ositos","bear","bears"],
+      ["pareja","parejas","lovers","amor","heart","corazon","corazones"],
+      ["snoopy","peanuts"]
     ];
 
-    let CONTACTO = {
-
-      whatsapp:
-        "+595985824098",
-
-      email:
-        "daiofficial.py@gmail.com",
-
-      instagram:
-        "@daiofficial.py"
+    let CONTACTO={
+      whatsapp:"+595985824098",
+      email:"daiofficial.py@gmail.com",
+      instagram:"@daiofficial.py"
     };
 
-    let TEXTOS =
-      {...DEFAULT_TEXTOS};
+    let TEXTOS={...DEFAULT_TEXTOS};
+    let BANNERS=[];
+    let PRODUCTOS=[];
+    let VISIBLES=[];
+    let paginaActual=1;
+    let bannerActual=0;
+    let bannerTimer=null;
+    let consulta="";
+    let favoritos=new Set();
+    let productoModal=null;
 
-    let BANNERS = [];
+    let fraseTimer=null;
+    let fraseCambioTimer=null;
+    let frasesRotacion=[];
+    let fraseIndice=0;
 
-    let PRODUCTOS = [];
+    const $=id=>document.getElementById(id);
 
-    let VISIBLES = [];
+    const normalizar=v=>
+      String(v??"")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g,"")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g," ")
+      .replace(/\s+/g," ")
+      .trim();
 
-    let paginaActual = 1;
+    const escaparHTML=v=>
+      String(v??"")
+      .replace(
+        /[&<>'"]/g,
+        c=>({
+          "&":"&amp;",
+          "<":"&lt;",
+          ">":"&gt;",
+          "'":"&#39;",
+          '"':"&quot;"
+        }[c])
+      );
 
-    let bannerActual = 0;
+    const rutaMedia=r=>{
+      if(!r)return"";
+      if(/^https?:\/\//i.test(r))return r;
+      if(r.startsWith("/"))return r;
+      return `./${r.replace(/^\.\//,"")}`;
+    };
 
-    let bannerTimer = null;
+    const numeroWhatsApp=()=>
+      String(CONTACTO.whatsapp||"")
+      .replace(/\D/g,"");
 
-    let consulta = "";
+    const whatsappURL=mensaje=>
+      `https://wa.me/${numeroWhatsApp()}${
+        mensaje
+          ?`?text=${encodeURIComponent(mensaje)}`
+          :""
+      }`;
 
-    let favoritos =
-      new Set();
+    const precioFormateado=v=>{
+      const s=String(v??"").trim();
 
-    let productoModal =
-      null;
+      if(!s)return"Consultar";
 
-    const $ =
-      id =>
-        document.getElementById(id);
+      if(/[a-z]/i.test(s)){
+        return s;
+      }
 
-    const normalizar =
-      v =>
-        String(v ?? "")
-          .normalize("NFD")
-          .replace(
-            /[\u0300-\u036f]/g,
-            ""
-          )
-          .toLowerCase()
-          .replace(
-            /[^a-z0-9\s-]/g,
-            " "
-          )
-          .replace(
-            /\s+/g,
-            " "
-          )
-          .trim();
+      const n=Number(
+        s.replace(/\D/g,"")
+      );
 
-    const escaparHTML =
-      v =>
-        String(v ?? "")
-          .replace(
-            /[&<>'"]/g,
-            c => ({
-              "&":"&amp;",
-              "<":"&lt;",
-              ">":"&gt;",
-              "'":"&#39;",
-              '"':"&quot;"
-            }[c])
-          );
+      return Number.isFinite(n)&&n
+        ?`Gs. ${n.toLocaleString("es-PY")}`
+        :s;
+    };
 
-    const rutaMedia =
-      r => {
+    const idProducto=p=>
+      p.id||
+      normalizar(
+        `${p.nombre}|${p.img}`
+      );
 
-        if(!r)
-          return "";
-
-        if(
-          /^https?:\/\//i.test(r)
-        )
-          return r;
-
-        if(
-          r.startsWith("/")
-        )
-          return r;
-
-        return `./${r.replace(/^\.\//,"")}`;
-      };
-
-    const numeroWhatsApp =
-      () =>
-        String(
-          CONTACTO.whatsapp || ""
-        ).replace(
-          /\D/g,
-          ""
-        );
-
-    const whatsappURL =
-      mensaje =>
-        `https://wa.me/${numeroWhatsApp()}${
-          mensaje
-            ? `?text=${encodeURIComponent(mensaje)}`
-            : ""
-        }`;
-
-    const precioFormateado =
-      v => {
-
-        const s =
-          String(v ?? "").trim();
-
-        if(!s)
-          return "Consultar";
-
-        if(
-          /[a-z]/i.test(s)
-        )
-          return s;
-
-        const n =
-          Number(
-            s.replace(/\D/g,"")
-          );
-
-        return (
-          Number.isFinite(n) &&
-          n
-        )
-          ? `Gs. ${n.toLocaleString("es-PY")}`
-          : s;
-      };
-
-    const idProducto =
-      p =>
-        p.id ||
-        normalizar(
-          `${p.nombre}|${p.img}`
-        );
-
-    /* =========================================================
-       CARGAR JSON
-    ========================================================= */
+    const esAgotado=p=>
+      normalizar(
+        p?.precio
+      ).includes("agotado");
 
     async function cargarJSON(ruta){
 
-      const r =
+      const r=
         await fetch(
           `${ruta}?v=${VERSION}`,
           {
@@ -3020,105 +2346,77 @@
           }
         );
 
-      if(!r.ok)
+      if(!r.ok){
         throw new Error(r.status);
+      }
 
       return r.json();
     }
 
-    /* =========================================================
-       PARSER YAML SIMPLE
-    ========================================================= */
-
     function parsearYamlSimple(texto){
 
-      const out = {};
+      const out={};
 
       String(texto)
-        .replace(
-          /^---\s*/m,
-          ""
-        )
-        .replace(
-          /\s*---\s*$/m,
-          ""
-        )
-        .split(/\r?\n/)
-        .forEach(
-          linea => {
+      .replace(/^---\s*/m,"")
+      .replace(/\s*---\s*$/m,"")
+      .split(/\r?\n/)
+      .forEach(linea=>{
 
-            const t =
-              linea.trim();
+        const t=linea.trim();
 
-            if(
-              !t ||
-              t.startsWith("#")
-            )
-              return;
+        if(
+          !t||
+          t.startsWith("#")
+        ){
+          return;
+        }
 
-            const i =
-              t.indexOf(":");
+        const i=t.indexOf(":");
 
-            if(i < 0)
-              return;
+        if(i<0){
+          return;
+        }
 
-            let k =
-              t
-                .slice(0,i)
-                .trim();
+        let k=t.slice(0,i).trim();
+        let v=t.slice(i+1).trim();
 
-            let v =
-              t
-                .slice(i+1)
-                .trim();
+        if(
+          (
+            v.startsWith('"')&&
+            v.endsWith('"')
+          )
+          ||
+          (
+            v.startsWith("'")&&
+            v.endsWith("'")
+          )
+        ){
+          v=v.slice(1,-1);
+        }
 
-            if(
-              (
-                v.startsWith('"') &&
-                v.endsWith('"')
-              )
-              ||
-              (
-                v.startsWith("'") &&
-                v.endsWith("'")
-              )
-            ){
-              v =
-                v.slice(1,-1);
-            }
+        if(v==="true"){
+          v=true;
+        }
+        else if(v==="false"){
+          v=false;
+        }
+        else if(
+          /^\d+$/.test(v)&&
+          ["orden"].includes(k)
+        ){
+          v=Number(v);
+        }
 
-            if(
-              v === "true"
-            ){
-              v = true;
-            }
-            else if(
-              v === "false"
-            ){
-              v = false;
-            }
-            else if(
-              /^\d+$/.test(v) &&
-              ["orden"].includes(k)
-            ){
-              v =
-                Number(v);
-            }
-
-            out[k] = v;
-          }
-        );
+        out[k]=v;
+      });
 
       return out;
     }
 
-    /* =========================================================
-       CARGAR COLECCIÓN DESDE GITHUB
-    ========================================================= */
-
     async function cargarColeccion(carpeta){
 
-      const r =
+      const r=
         await fetch(
           `${API_BASE}/${carpeta}?ref=${BRANCH}&v=${VERSION}`,
           {
@@ -3126,26 +2424,27 @@
           }
         );
 
-      if(!r.ok)
+      if(!r.ok){
         throw new Error(
           `GitHub ${r.status}`
         );
+      }
 
-      const lista =
+      const lista=
         await r.json();
 
-      const md =
+      const md=
         lista.filter(
-          x =>
-            x.type === "file" &&
+          x=>
+            x.type==="file"&&
             x.name.endsWith(".md")
         );
 
       return Promise.all(
         md.map(
-          async archivo => {
+          async archivo=>{
 
-            const rr =
+            const rr=
               await fetch(
                 `${archivo.download_url}?v=${VERSION}`,
                 {
@@ -3153,15 +2452,15 @@
                 }
               );
 
-            if(!rr.ok)
+            if(!rr.ok){
               throw new Error(
                 archivo.name
               );
+            }
 
-            return {
+            return{
               nombreArchivo:
                 archivo.name,
-
               datos:
                 parsearYamlSimple(
                   await rr.text()
@@ -3172,41 +2471,39 @@
       );
     }
 
-    /* =========================================================
-       APARIENCIA
-    ========================================================= */
-
     function aplicarApariencia(c={}){
 
-      const nombre =
+      const nombre=
         FUENTES[c.fuente]
-          ? c.fuente
-          : "Poppins";
+          ?c.fuente
+          :"Poppins";
 
       const [
         google,
         family
-      ] =
+      ]=
         FUENTES[nombre];
 
-      $("dynamic-font").href =
-        `https://fonts.googleapis.com/css2?family=${google.replace(/ /g,"+")}&display=swap`;
+      $("dynamic-font").href=
+        `https://fonts.googleapis.com/css2?family=${
+          google.replace(/ /g,"+")
+        }&display=swap`;
 
       document.documentElement
-        .style
-        .setProperty(
-          "--fuente",
-          family
-        );
+      .style
+      .setProperty(
+        "--fuente",
+        family
+      );
 
       document.documentElement
-        .style
-        .setProperty(
-          "--peso-precio",
-          c.precio_negrita === false
-            ? "400"
-            : "700"
-        );
+      .style
+      .setProperty(
+        "--peso-precio",
+        c.precio_negrita===false
+          ?"400"
+          :"700"
+      );
     }
 
     async function cargarApariencia(){
@@ -3230,25 +2527,20 @@
       }
     }
 
-    /* =========================================================
-       TEXTOS
-    ========================================================= */
-
     function aplicarTextos(t={}){
 
-      TEXTOS = {
+      TEXTOS={
         ...DEFAULT_TEXTOS,
         ...t
       };
 
-      const set =
-        (id,v) => {
+      const set=(id,v)=>{
+        const e=$(id);
 
-          const e = $(id);
-
-          if(e)
-            e.textContent = v;
-        };
+        if(e){
+          e.textContent=v;
+        }
+      };
 
       set(
         "topbar-text",
@@ -3345,15 +2637,14 @@
         TEXTOS.modal_ayuda_zoom
       );
 
-      const root =
+      const root=
         document.documentElement;
 
-      const s =
-        (k,v) =>
-          root.style.setProperty(
-            k,
-            v
-          );
+      const s=(k,v)=>
+        root.style.setProperty(
+          k,
+          v
+        );
 
       s(
         "--hero-title-desktop",
@@ -3415,7 +2706,7 @@
         String(
           Number(
             TEXTOS.max_lineas_texto_productos_movil
-          ) || 2
+          )||2
         )
       );
     }
@@ -3438,36 +2729,29 @@
       catch{}
     }
 
-    /* =========================================================
-       CONTACTO
-    ========================================================= */
-
     function aplicarContacto(){
 
-      const email =
-        CONTACTO.email || "";
+      const email=
+        CONTACTO.email||"";
 
-      const ig =
+      const ig=
         String(
-          CONTACTO.instagram || ""
+          CONTACTO.instagram||""
         )
         .trim()
-        .replace(
-          /^@/,
-          ""
-        );
+        .replace(/^@/,"");
 
-      const igTxt =
+      const igTxt=
         ig
-          ? `@${ig}`
-          : "";
+          ?`@${ig}`
+          :"";
 
-      const igUrl =
+      const igUrl=
         ig
-          ? `https://www.instagram.com/${ig}/`
-          : "#";
+          ?`https://www.instagram.com/${ig}/`
+          :"#";
 
-      const wa =
+      const wa=
         whatsappURL(
           "Hola DAI PY, quisiera realizar una consulta."
         );
@@ -3477,64 +2761,54 @@
         "menu-email",
         "footer-email"
       ]
-      .forEach(
-        id => {
+      .forEach(id=>{
 
-          const e = $(id);
+        const e=$(id);
 
-          if(e){
-
-            e.textContent =
-              email;
-
-            e.href =
-              `mailto:${email}`;
-          }
+        if(e){
+          e.textContent=email;
+          e.href=`mailto:${email}`;
         }
-      );
+
+      });
 
       [
         "top-instagram",
         "menu-instagram",
         "footer-instagram"
       ]
-      .forEach(
-        id => {
+      .forEach(id=>{
 
-          const e = $(id);
+        const e=$(id);
 
-          if(e){
-
-            e.textContent =
-              igTxt;
-
-            e.href =
-              igUrl;
-          }
+        if(e){
+          e.textContent=igTxt;
+          e.href=igUrl;
         }
-      );
+
+      });
 
       [
         "top-whatsapp",
         "menu-whatsapp",
         "footer-whatsapp"
       ]
-      .forEach(
-        id => {
+      .forEach(id=>{
 
-          const e = $(id);
+        const e=$(id);
 
-          if(e)
-            e.href = wa;
+        if(e){
+          e.href=wa;
         }
-      );
+
+      });
     }
 
     async function cargarContacto(){
 
       try{
 
-        CONTACTO = {
+        CONTACTO={
           ...CONTACTO,
           ...await cargarJSON(
             "./contenido/configuracion/contacto.json"
@@ -3547,50 +2821,46 @@
       aplicarContacto();
     }
 
-    /* =========================================================
-       MENÚ
-    ========================================================= */
-
     function abrirMenu(){
 
       $("menu")
-        .classList
-        .add("abierto");
+      .classList
+      .add("abierto");
 
       $("menu")
-        .setAttribute(
-          "aria-hidden",
-          "false"
-        );
+      .setAttribute(
+        "aria-hidden",
+        "false"
+      );
 
       $("open-menu")
-        .setAttribute(
-          "aria-expanded",
-          "true"
-        );
+      .setAttribute(
+        "aria-expanded",
+        "true"
+      );
 
       document.body
-        .classList
-        .add("locked");
+      .classList
+      .add("locked");
     }
 
     function cerrarMenu(){
 
       $("menu")
-        .classList
-        .remove("abierto");
+      .classList
+      .remove("abierto");
 
       $("menu")
-        .setAttribute(
-          "aria-hidden",
-          "true"
-        );
+      .setAttribute(
+        "aria-hidden",
+        "true"
+      );
 
       $("open-menu")
-        .setAttribute(
-          "aria-expanded",
-          "false"
-        );
+      .setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
       if(
         !$("favorites-overlay")
@@ -3602,111 +2872,91 @@
           .contains("abierto")
       ){
         document.body
-          .classList
-          .remove("locked");
+        .classList
+        .remove("locked");
       }
     }
-
-    /* =========================================================
-       BANNER
-    ========================================================= */
 
     function actualizarRatioHero(img){
 
       if(
-        img &&
-        img.naturalWidth &&
+        img&&
+        img.naturalWidth&&
         img.naturalHeight
       ){
-
         document.documentElement
-          .style
-          .setProperty(
-            "--hero-mobile-ratio",
-            `${img.naturalWidth}/${img.naturalHeight}`
-          );
+        .style
+        .setProperty(
+          "--hero-mobile-ratio",
+          `${img.naturalWidth}/${img.naturalHeight}`
+        );
       }
     }
 
     function actualizarBanner(i){
 
-      if(!BANNERS.length)
+      if(!BANNERS.length){
         return;
+      }
 
-      if(i < 0)
-        i =
-          BANNERS.length - 1;
+      if(i<0){
+        i=BANNERS.length-1;
+      }
 
-      if(
-        i >= BANNERS.length
-      )
-        i = 0;
+      if(i>=BANNERS.length){
+        i=0;
+      }
 
-      bannerActual = i;
+      bannerActual=i;
 
       document
-        .querySelectorAll(
-          ".hero-slide"
-        )
-        .forEach(
-          (img,n) =>
-            img
-              .classList
-              .toggle(
-                "activo",
-                n === i
-              )
-        );
+      .querySelectorAll(".hero-slide")
+      .forEach(
+        (img,n)=>
+          img.classList.toggle(
+            "activo",
+            n===i
+          )
+      );
 
-      const b =
+      const b=
         BANNERS[i];
 
-      $("hero-title")
-        .textContent =
-          b.titulo || "";
+      $("hero-title").textContent=
+        b.titulo||"";
 
-      $("hero-subtitle")
-        .textContent =
-          b.subtitulo || "";
+      $("hero-subtitle").textContent=
+        b.subtitulo||"";
 
-      $("hero-title")
-        .style
-        .display =
-          b.titulo
-            ? ""
-            : "none";
+      $("hero-title").style.display=
+        b.titulo
+          ?""
+          :"none";
 
-      $("hero-subtitle")
-        .style
-        .display =
-          b.subtitulo
-            ? ""
-            : "none";
+      $("hero-subtitle").style.display=
+        b.subtitulo
+          ?""
+          :"none";
 
-      const img =
+      const img=
         document
-          .querySelectorAll(
-            ".hero-slide"
-          )[i];
+        .querySelectorAll(
+          ".hero-slide"
+        )[i];
 
       if(img){
 
         if(img.complete){
-
           actualizarRatioHero(img);
-
         }
         else{
-
           img.addEventListener(
             "load",
-            () =>
-              actualizarRatioHero(img),
+            ()=>actualizarRatioHero(img),
             {
               once:true
             }
           );
-
         }
       }
     }
@@ -3717,15 +2967,13 @@
         bannerTimer
       );
 
-      if(
-        BANNERS.length > 1
-      ){
+      if(BANNERS.length>1){
 
-        bannerTimer =
+        bannerTimer=
           setInterval(
-            () =>
+            ()=>
               actualizarBanner(
-                bannerActual + 1
+                bannerActual+1
               ),
             6500
           );
@@ -3736,88 +2984,81 @@
 
       try{
 
-        const archivos =
+        const archivos=
           await cargarColeccion(
             "contenido/banners"
           );
 
-        BANNERS =
+        BANNERS=
           archivos
-            .map(
-              a => ({
-                titulo:
-                  a.datos.titulo || "",
+          .map(a=>({
+            titulo:
+              a.datos.titulo||"",
+            subtitulo:
+              a.datos.subtitulo||"",
+            imagen:
+              a.datos.imagen||"",
+            activo:
+              a.datos.activo!==false,
+            orden:
+              Number(
+                a.datos.orden
+              )||999
+          }))
+          .filter(
+            b=>
+              b.activo&&
+              b.imagen
+          )
+          .sort(
+            (a,b)=>
+              a.orden-b.orden
+          );
 
-                subtitulo:
-                  a.datos.subtitulo || "",
-
-                imagen:
-                  a.datos.imagen || "",
-
-                activo:
-                  a.datos.activo !== false,
-
-                orden:
-                  Number(
-                    a.datos.orden
-                  ) || 999
-              })
-            )
-            .filter(
-              b =>
-                b.activo &&
-                b.imagen
-            )
-            .sort(
-              (a,b) =>
-                a.orden -
-                b.orden
-            );
-
-        const media =
+        const media=
           $("hero-media");
 
-        media.innerHTML =
+        media.innerHTML=
           '<div class="hero-fallback"><img src="./logo.png" alt="DAI PY"></div>';
 
         BANNERS.forEach(
-          (b,i) => {
+          (b,i)=>{
 
-            const img =
+            const img=
               document.createElement(
                 "img"
               );
 
-            img.className =
+            img.className=
               `hero-slide${
-                i === 0
-                  ? " activo"
-                  : ""
+                i===0
+                  ?" activo"
+                  :""
               }`;
 
-            img.src =
+            img.src=
               rutaMedia(
                 b.imagen
               );
 
-            img.alt =
-              b.titulo ||
+            img.alt=
+              b.titulo||
               "DAI PY";
 
-            img.loading =
-              i === 0
-                ? "eager"
-                : "lazy";
+            img.loading=
+              i===0
+                ?"eager"
+                :"lazy";
 
-            img.decoding =
+            img.decoding=
               "async";
 
             img.addEventListener(
               "load",
-              () => {
+              ()=>{
 
                 if(
-                  i === bannerActual
+                  i===bannerActual
                 ){
                   actualizarRatioHero(
                     img
@@ -3833,15 +3074,13 @@
         );
 
         $("hero-controls")
-          .classList
-          .toggle(
-            "oculto",
-            BANNERS.length <= 1
-          );
+        .classList
+        .toggle(
+          "oculto",
+          BANNERS.length<=1
+        );
 
-        if(
-          BANNERS.length
-        ){
+        if(BANNERS.length){
 
           actualizarBanner(0);
 
@@ -3859,58 +3098,48 @@
       }
     }
 
-    /* =========================================================
-       CATEGORÍAS
-    ========================================================= */
-
     function inferirClasificacion(p){
 
-      const n =
+      const n=
         normalizar(
           `${p.nombre} ${p.desc}`
         );
 
-      let categoria =
-        p.categoria || "";
+      let categoria=
+        p.categoria||"";
 
-      let tipo =
-        p.tipo || "";
+      let tipo=
+        p.tipo||"";
 
       if(!categoria){
 
         if(
           /mini\s*bag|\bbag\b|bolso|bolson|cartera|mochila/.test(n)
         ){
-          categoria =
-            "Bolsos";
+          categoria="Bolsos";
         }
         else if(
           /collar|brazalete|pulsera/.test(n)
         ){
-          categoria =
-            "Joyería";
+          categoria="Joyería";
         }
         else if(
           /llavero/.test(n)
         ){
-          categoria =
-            "Llaveros";
+          categoria="Llaveros";
         }
         else if(
           /cuaderno|cuadernito|libreta/.test(n)
         ){
-          categoria =
-            "Papelería";
+          categoria="Papelería";
         }
         else if(
           /umbrella|paraguas|cordon/.test(n)
         ){
-          categoria =
-            "Accesorios";
+          categoria="Accesorios";
         }
         else{
-          categoria =
-            "Otros";
+          categoria="Otros";
         }
       }
 
@@ -3919,94 +3148,74 @@
         if(
           /mini\s*bag|\bbag\b/.test(n)
         ){
-          tipo =
-            "Mini Bag";
+          tipo="Mini Bag";
         }
         else if(
           /collar/.test(n)
         ){
-          tipo =
-            "Collares";
+          tipo="Collares";
         }
         else if(
           /brazalete|pulsera/.test(n)
         ){
-          tipo =
-            "Brazaletes";
+          tipo="Brazaletes";
         }
         else if(
           /cuaderno|cuadernito/.test(n)
         ){
-          tipo =
-            "Cuadernos";
+          tipo="Cuadernos";
         }
         else if(
           /umbrella|paraguas/.test(n)
         ){
-          tipo =
-            "Paraguas";
+          tipo="Paraguas";
         }
         else if(
           /cordon/.test(n)
         ){
-          tipo =
-            "Cordones";
+          tipo="Cordones";
         }
         else if(
           /fitness/.test(n)
         ){
-          tipo =
-            "Fitness";
+          tipo="Fitness";
         }
         else if(
           /coffee|coffe|cafe/.test(n)
         ){
-          tipo =
-            "Café";
+          tipo="Café";
         }
         else if(
-          /dentist/.test(n)
+          /dentist|\bdoc\b|doctor|medico/.test(n)
         ){
-          tipo =
-            "Profesiones";
-        }
-        else if(
-          /\bdoc\b|doctor|medico/.test(n)
-        ){
-          tipo =
-            "Profesiones";
+          tipo="Profesiones";
         }
         else if(
           /music|musica/.test(n)
         ){
-          tipo =
-            "Música";
+          tipo="Música";
         }
         else if(
           /snoopy/.test(n)
         ){
-          tipo =
-            "Snoopy";
+          tipo="Snoopy";
         }
         else if(
           /lovers|heart|osito/.test(n)
         ){
-          tipo =
-            "Parejas";
+          tipo="Parejas";
         }
         else if(
           /llavero/.test(n)
         ){
-          tipo =
-            "Temáticos";
+          tipo="Temáticos";
         }
         else{
-          tipo =
-            "General";
+          tipo="General";
         }
       }
 
-      return {
+      return{
         ...p,
         categoria,
         tipo
@@ -4015,34 +3224,47 @@
 
     function ordenarProductos(a,b){
 
-      const ca =
-        CATEGORY_ORDER
-          .indexOf(
-            a.categoria
-          );
+      const agotadoA=
+        esAgotado(a);
 
-      const cb =
-        CATEGORY_ORDER
-          .indexOf(
-            b.categoria
-          );
-
-      const ia =
-        ca < 0
-          ? 999
-          : ca;
-
-      const ib =
-        cb < 0
-          ? 999
-          : cb;
+      const agotadoB=
+        esAgotado(b);
 
       if(
-        ia !== ib
-      )
-        return ia - ib;
+        agotadoA!==agotadoB
+      ){
+        return agotadoA
+          ?1
+          :-1;
+      }
 
-      const t =
+      const ca=
+        CATEGORY_ORDER
+        .indexOf(
+          a.categoria
+        );
+
+      const cb=
+        CATEGORY_ORDER
+        .indexOf(
+          b.categoria
+        );
+
+      const ia=
+        ca<0
+          ?999
+          :ca;
+
+      const ib=
+        cb<0
+          ?999
+          :cb;
+
+      if(ia!==ib){
+        return ia-ib;
+      }
+
+      const t=
         a.tipo.localeCompare(
           b.tipo,
           "es",
@@ -4051,22 +3273,26 @@
           }
         );
 
-      if(t)
+      if(t){
         return t;
+      }
 
-      const o =
+      const o=
         (
-          Number(a.orden) ||
-          999
+          Number(
+            a.orden
+          )||999
         )
         -
         (
-          Number(b.orden) ||
-          999
+          Number(
+            b.orden
+          )||999
         );
 
-      if(o)
+      if(o){
         return o;
+      }
 
       return a.nombre.localeCompare(
         b.nombre,
@@ -4077,24 +3303,17 @@
       );
     }
 
-    /* =========================================================
-       BUSCADOR INTELIGENTE
-    ========================================================= */
-
     function distancia(a,b){
 
-      const m =
-        a.length;
+      const m=a.length;
+      const n=b.length;
 
-      const n =
-        b.length;
-
-      const dp =
+      const dp=
         Array(n+1)
-          .fill(0)
-          .map(
-            (_,i) => i
-          );
+        .fill(0)
+        .map(
+          (_,i)=>i
+        );
 
       for(
         let i=1;
@@ -4102,10 +3321,10 @@
         i++
       ){
 
-        let prev =
+        let prev=
           dp[0];
 
-        dp[0] = i;
+        dp[0]=i;
 
         for(
           let j=1;
@@ -4113,26 +3332,22 @@
           j++
         ){
 
-          const tmp =
+          const tmp=
             dp[j];
 
-          dp[j] =
+          dp[j]=
             Math.min(
-
-              dp[j] + 1,
-
-              dp[j-1] + 1,
-
-              prev +
+              dp[j]+1,
+              dp[j-1]+1,
+              prev+
               (
-                a[i-1] ===
-                b[j-1]
-                  ? 0
-                  : 1
+                a[i-1]===b[j-1]
+                  ?0
+                  :1
               )
             );
 
-          prev = tmp;
+          prev=tmp;
         }
       }
 
@@ -4147,78 +3362,71 @@
       ){
 
         if(
-          g.some(
-            x => {
+          g.some(x=>{
 
-              const nx =
-                normalizar(x);
+            const nx=
+              normalizar(x);
 
-              return (
-                nx === token
-                ||
-                (
-                  token.length >= 4
-                  &&
-                  distancia(
-                    nx,
-                    token
-                  ) <= 1
-                )
+            return nx===token
+              ||
+              (
+                token.length>=4
+                &&
+                distancia(
+                  nx,
+                  token
+                )<=1
               );
-            }
-          )
+          })
         ){
-
           return g.map(
             normalizar
           );
         }
       }
 
-      return [token];
+      return[token];
     }
 
     function coincideBusqueda(p,q){
 
-      q =
+      q=
         normalizar(q);
 
-      if(!q)
+      if(!q){
         return true;
+      }
 
-      const hay =
+      const hay=
         normalizar(
           `${p.nombre} ${p.desc} ${p.categoria} ${p.tipo}`
         );
 
-      const palabras =
+      const palabras=
         hay
-          .split(" ")
-          .filter(Boolean);
+        .split(" ")
+        .filter(Boolean);
 
-      const tokens =
+      const tokens=
         q
-          .split(" ")
-          .filter(Boolean);
+        .split(" ")
+        .filter(Boolean);
 
       if(
         hay.includes(q)
-      )
+      ){
         return true;
+      }
 
       return tokens.every(
-        tok => {
-
-          const opciones =
-            grupoSinonimos(tok);
-
-          return opciones.some(
-            op =>
-
+        tok=>
+          grupoSinonimos(tok)
+          .some(
+            op=>
               hay.includes(op)
               ||
               palabras.some(
-                w => {
+                w=>{
 
                   if(
                     w.includes(op)
@@ -4226,111 +3434,100 @@
                     (
                       op.includes(w)
                       &&
-                      w.length >= 4
+                      w.length>=4
                     )
                   ){
                     return true;
                   }
 
-                  const lim =
-                    op.length >= 7
-                      ? 2
-                      : 1;
+                  const lim=
+                    op.length>=7
+                      ?2
+                      :1;
 
-                  return (
-                    op.length >= 4
+                  return(
+                    op.length>=4
                     &&
-                    w.length >= 4
+                    w.length>=4
                     &&
                     Math.abs(
-                      op.length -
-                      w.length
-                    ) <= lim
+                      op.length-w.length
+                    )<=lim
                     &&
                     distancia(
                       op,
                       w
-                    ) <= lim
+                    )<=lim
                   );
                 }
               )
-          );
-        }
+          )
       );
     }
 
     function actualizarVisibles(){
 
-      VISIBLES =
+      VISIBLES=
         PRODUCTOS
-          .filter(
-            p =>
-              coincideBusqueda(
-                p,
-                consulta
-              )
-          )
-          .sort(
-            ordenarProductos
-          );
+        .filter(
+          p=>
+            coincideBusqueda(
+              p,
+              consulta
+            )
+        )
+        .sort(
+          ordenarProductos
+        );
 
-      paginaActual = 1;
+      paginaActual=1;
 
       renderizarProductos();
 
       $("search-status")
-        .textContent =
-          consulta
-            ? `${VISIBLES.length} resultado${VISIBLES.length===1?"":"s"}`
-            : "";
+      .textContent=
+        consulta
+          ?`${VISIBLES.length} resultado${VISIBLES.length===1?"":"s"}`
+          :"";
 
       $("search-clear")
-        .classList
-        .toggle(
-          "oculto",
-          !consulta
-        );
+      .classList
+      .toggle(
+        "oculto",
+        !consulta
+      );
     }
-
-    /* =========================================================
-       WHATSAPP
-    ========================================================= */
 
     function mensajeCompra(p){
 
-      let m =
+      let m=
         `Hola DAI PY, quiero realizar un pedido.\n\nProducto: ${p.nombre}\nPrecio: ${precioFormateado(p.precio)}`;
 
       if(p.desc){
-
-        m +=
-          `\n\n${p.desc}`;
+        m+=`\n\n${p.desc}`;
       }
 
       return m;
     }
 
-    /* =========================================================
-       HTML PRODUCTO
-    ========================================================= */
-
     function htmlProducto(p,indice){
 
-      const id =
+      const id=
         escaparHTML(
           idProducto(p)
         );
 
-      const fav =
+      const fav=
         favoritos.has(
           idProducto(p)
         );
 
-      return `
+      return`
         <article
           class="product"
           tabindex="0"
           data-visible-index="${indice}"
+          data-has-description="${p.desc?"true":"false"}"
           aria-label="Ver ${escaparHTML(p.nombre)}"
         >
 
@@ -4338,8 +3535,7 @@
 
             ${
               p.img
-                ?
-                `
+                ?`
                   <img
                     src="${escaparHTML(rutaMedia(p.img))}"
                     alt="${escaparHTML(p.nombre)}"
@@ -4347,8 +3543,7 @@
                     decoding="async"
                   >
                 `
-                :
-                `
+                :`
                   <div class="product-image-fallback">
                     <img
                       src="./logo.png"
@@ -4391,14 +3586,12 @@
 
               ${
                 p.desc
-                  ?
-                  `
+                  ?`
                     <p class="product-description">
                       ${escaparHTML(p.desc)}
                     </p>
                   `
-                  :
-                  `
+                  :`
                     <p
                       class="product-description vacia"
                       aria-hidden="true"
@@ -4425,16 +3618,109 @@
       `;
     }
 
-    /* =========================================================
-       PAGINACIÓN
-    ========================================================= */
+    function columnasActuales(){
+
+      return window
+        .matchMedia(
+          "(max-width:900px)"
+        )
+        .matches
+          ?2
+          :3;
+    }
+
+    function ajustarFilasDescripcion(){
+
+      const cards=[
+        ...$("products-grid")
+        .querySelectorAll(
+          ".product"
+        )
+      ];
+
+      if(!cards.length){
+        return;
+      }
+
+      cards.forEach(c=>{
+
+        c.classList.remove(
+          "row-has-description"
+        );
+
+        c.style.removeProperty(
+          "--row-desc-height"
+        );
+
+      });
+
+      const cols=
+        columnasActuales();
+
+      for(
+        let i=0;
+        i<cards.length;
+        i+=cols
+      ){
+
+        const fila=
+          cards.slice(
+            i,
+            i+cols
+          );
+
+        const hay=
+          fila.some(
+            c=>
+              c.dataset.hasDescription==="true"
+          );
+
+        if(!hay){
+          continue;
+        }
+
+        fila.forEach(
+          c=>
+            c.classList.add(
+              "row-has-description"
+            )
+        );
+
+        requestAnimationFrame(()=>{
+
+          const max=
+            Math.max(
+              ...fila.map(c=>{
+
+                const s=
+                  c.querySelector(
+                    ".product-description-slot"
+                  );
+
+                return s
+                  ?s.scrollHeight
+                  :0;
+              })
+            );
+
+          fila.forEach(
+            c=>
+              c.style.setProperty(
+                "--row-desc-height",
+                `${max}px`
+              )
+          );
+
+        });
+      }
+    }
 
     function totalPaginas(){
 
       return Math.max(
         1,
         Math.ceil(
-          VISIBLES.length /
+          VISIBLES.length/
           PRODUCTS_PER_PAGE
         )
       );
@@ -4442,33 +3728,27 @@
 
     function renderizarProductos(){
 
-      const grid =
+      const grid=
         $("products-grid");
 
-      if(
-        !VISIBLES.length
-      ){
+      if(!VISIBLES.length){
 
-        grid.innerHTML = `
+        grid.innerHTML=`
           <div class="empty-state">
 
             <strong>
               ${
                 consulta
-                  ?
-                  "No encontramos coincidencias."
-                  :
-                  "No hay productos publicados."
+                  ?"No encontramos coincidencias."
+                  :"No hay productos publicados."
               }
             </strong>
 
             <span>
               ${
                 consulta
-                  ?
-                  "Probá con otra palabra, sinónimo o categoría."
-                  :
-                  "Podés agregarlos desde el administrador."
+                  ?"Probá con otra palabra, sinónimo o categoría."
+                  :"Podés agregarlos desde el administrador."
               }
             </span>
 
@@ -4476,18 +3756,18 @@
         `;
 
         $("pagination")
-          .classList
-          .add("oculta");
+        .classList
+        .add("oculta");
 
         renderizarFavoritos();
 
         return;
       }
 
-      const total =
+      const total=
         totalPaginas();
 
-      paginaActual =
+      paginaActual=
         Math.min(
           total,
           Math.max(
@@ -4496,136 +3776,135 @@
           )
         );
 
-      const inicio =
+      const inicio=
         (
-          paginaActual - 1
+          paginaActual-1
         )
         *
         PRODUCTS_PER_PAGE;
 
-      const pagina =
+      const pagina=
         VISIBLES.slice(
           inicio,
-          inicio +
+          inicio+
           PRODUCTS_PER_PAGE
         );
 
-      grid.innerHTML =
+      grid.innerHTML=
         pagina
-          .map(
-            (p,i) =>
-              htmlProducto(
-                p,
-                inicio + i
-              )
-          )
-          .join("");
+        .map(
+          (p,i)=>
+            htmlProducto(
+              p,
+              inicio+i
+            )
+        )
+        .join("");
 
       grid
-        .querySelectorAll(
-          ".product"
-        )
-        .forEach(
-          card => {
+      .querySelectorAll(".product")
+      .forEach(card=>{
 
-            const p =
-              VISIBLES[
-                Number(
-                  card.dataset.visibleIndex
-                )
-              ];
+        const p=
+          VISIBLES[
+            Number(
+              card.dataset.visibleIndex
+            )
+          ];
 
-            card.addEventListener(
-              "click",
-              e => {
+        card.addEventListener(
+          "click",
+          e=>{
 
-                if(
-                  e.target.closest(
-                    "a,button"
-                  )
-                )
-                  return;
+            if(
+              e.target.closest(
+                "a,button"
+              )
+            ){
+              return;
+            }
 
-                abrirProducto(p);
-              }
-            );
-
-            card.addEventListener(
-              "keydown",
-              e => {
-
-                if(
-                  (
-                    e.key === "Enter"
-                    ||
-                    e.key === " "
-                  )
-                  &&
-                  !e.target.closest(
-                    "a,button"
-                  )
-                ){
-
-                  e.preventDefault();
-
-                  abrirProducto(p);
-                }
-              }
-            );
+            abrirProducto(p);
           }
         );
 
-      grid
-        .querySelectorAll(
-          ".favorite-heart"
-        )
-        .forEach(
-          b =>
-            b.addEventListener(
-              "click",
-              e => {
+        card.addEventListener(
+          "keydown",
+          e=>{
 
-                e.stopPropagation();
+            if(
+              (
+                e.key==="Enter"
+                ||
+                e.key===" "
+              )
+              &&
+              !e.target.closest(
+                "a,button"
+              )
+            ){
 
-                alternarFavorito(
-                  b.dataset.favoriteId
-                );
-              }
-            )
+              e.preventDefault();
+
+              abrirProducto(p);
+            }
+          }
         );
+
+      });
+
+      grid
+      .querySelectorAll(
+        ".favorite-heart"
+      )
+      .forEach(b=>
+        b.addEventListener(
+          "click",
+          e=>{
+
+            e.stopPropagation();
+
+            alternarFavorito(
+              b.dataset.favoriteId
+            );
+          }
+        )
+      );
 
       renderizarPaginacion();
 
       renderizarFavoritos();
+
+      ajustarFilasDescripcion();
     }
 
     function renderizarPaginacion(){
 
-      const nav =
+      const nav=
         $("pagination");
 
-      const total =
+      const total=
         totalPaginas();
 
       if(
-        VISIBLES.length <=
+        VISIBLES.length<=
         PRODUCTS_PER_PAGE
       ){
 
-        nav
-          .classList
-          .add("oculta");
+        nav.classList.add(
+          "oculta"
+        );
 
-        nav.innerHTML = "";
+        nav.innerHTML="";
 
         return;
       }
 
-      nav
-        .classList
-        .remove("oculta");
+      nav.classList.remove(
+        "oculta"
+      );
 
-      let h = `
+      let h=`
         <button
           class="page-button"
           data-page="${paginaActual-1}"
@@ -4641,7 +3920,7 @@
         i++
       ){
 
-        h += `
+        h+=`
           <button
             class="page-button ${i===paginaActual?"activa":""}"
             data-page="${i}"
@@ -4652,7 +3931,7 @@
         `;
       }
 
-      h += `
+      h+=`
         <button
           class="page-button"
           data-page="${paginaActual+1}"
@@ -4664,113 +3943,94 @@
         <div class="page-status">
           Página ${paginaActual}
           de ${total}
-          · ${VISIBLES.length}
-          productos
+          · ${VISIBLES.length} productos
         </div>
       `;
 
-      nav.innerHTML = h;
+      nav.innerHTML=h;
 
       nav
-        .querySelectorAll(
-          "[data-page]"
-        )
-        .forEach(
-          b =>
-            b.addEventListener(
-              "click",
-              () => {
+      .querySelectorAll(
+        "[data-page]"
+      )
+      .forEach(
+        b=>
+          b.addEventListener(
+            "click",
+            ()=>{
 
-                if(b.disabled)
-                  return;
-
-                paginaActual =
-                  Math.min(
-                    total,
-                    Math.max(
-                      1,
-                      Number(
-                        b.dataset.page
-                      )
-                    )
-                  );
-
-                renderizarProductos();
-
-                window.scrollTo({
-
-                  top:
-                    $("productos")
-                      .getBoundingClientRect()
-                      .top
-                    +
-                    window.scrollY
-                    -
-                    70,
-
-                  behavior:
-                    "smooth"
-                });
+              if(b.disabled){
+                return;
               }
-            )
-        );
-    }
 
-    /* =========================================================
-       CARGAR PRODUCTOS
-    ========================================================= */
+              paginaActual=
+                Math.min(
+                  total,
+                  Math.max(
+                    1,
+                    Number(
+                      b.dataset.page
+                    )
+                  )
+                );
+
+              renderizarProductos();
+
+              window.scrollTo({
+                top:
+                  $("productos")
+                  .getBoundingClientRect()
+                  .top
+                  +
+                  window.scrollY
+                  -
+                  70,
+                behavior:"smooth"
+              });
+
+            }
+          )
+      );
+    }
 
     async function cargarProductos(){
 
       try{
 
-        const archivos =
+        const archivos=
           await cargarColeccion(
             "contenido/productos"
           );
 
-        PRODUCTOS =
+        PRODUCTOS=
           archivos
-            .map(
-              a =>
-                inferirClasificacion({
-
-                  id:
-                    a.nombreArchivo,
-
-                  nombre:
-                    a.datos.nombre ||
-                    "Producto",
-
-                  img:
-                    a.datos.img ||
-                    "",
-
-                  precio:
-                    a.datos.precio ||
-                    "",
-
-                  desc:
-                    a.datos.desc ||
-                    "",
-
-                  categoria:
-                    a.datos.categoria ||
-                    "",
-
-                  tipo:
-                    a.datos.tipo ||
-                    "",
-
-                  orden:
-                    Number(
-                      a.datos.orden
-                    ) || 999
-                })
-            )
-            .sort(
-              ordenarProductos
-            );
+          .map(
+            a=>
+              inferirClasificacion({
+                id:
+                  a.nombreArchivo,
+                nombre:
+                  a.datos.nombre||
+                  "Producto",
+                img:
+                  a.datos.img||"",
+                precio:
+                  a.datos.precio||"",
+                desc:
+                  a.datos.desc||"",
+                categoria:
+                  a.datos.categoria||"",
+                tipo:
+                  a.datos.tipo||"",
+                orden:
+                  Number(
+                    a.datos.orden
+                  )||999
+              })
+          )
+          .sort(
+            ordenarProductos
+          );
 
         cargarFavoritos();
 
@@ -4784,53 +4044,47 @@
           e
         );
 
-        PRODUCTOS = [];
-
-        VISIBLES = [];
+        PRODUCTOS=[];
+        VISIBLES=[];
 
         renderizarProductos();
       }
     }
 
-    /* =========================================================
-       FAVORITOS
-    ========================================================= */
-
     function cargarFavoritos(){
 
       try{
 
-        const arr =
+        const arr=
           JSON.parse(
             localStorage
-              .getItem(
-                "daipy_favoritos"
-              )
+            .getItem(
+              "daipy_favoritos"
+            )
             ||
             "[]"
           );
 
-        favoritos =
+        favoritos=
           new Set(
             Array.isArray(arr)
-              ? arr
-              : []
+              ?arr
+              :[]
           );
 
       }
       catch{
 
-        favoritos =
+        favoritos=
           new Set();
+
       }
     }
 
     function guardarFavoritos(){
 
       localStorage.setItem(
-
         "daipy_favoritos",
-
         JSON.stringify(
           [...favoritos]
         )
@@ -4849,6 +4103,7 @@
       else{
 
         favoritos.add(id);
+
       }
 
       guardarFavoritos();
@@ -4860,9 +4115,8 @@
         &&
         idProducto(
           productoModal
-        ) === id
+        )===id
       ){
-
         actualizarBotonModalFavorito();
       }
     }
@@ -4870,7 +4124,7 @@
     function productosFavoritos(){
 
       return PRODUCTOS.filter(
-        p =>
+        p=>
           favoritos.has(
             idProducto(p)
           )
@@ -4879,79 +4133,79 @@
 
     function renderizarFavoritos(){
 
-      const items =
+      const items=
         productosFavoritos();
 
       $("favorites-count")
-        .textContent =
-          items.length;
+      .textContent=
+        items.length;
 
       $("favorites-buy")
-        .disabled =
-          !items.length;
+      .disabled=
+        !items.length;
 
       $("favorites-list")
-        .innerHTML =
-          items.length
-            ?
-            items
-              .map(
-                p => `
-                  <div class="favorite-row">
+      .innerHTML=
+        items.length
+          ?
+          items
+          .map(
+            p=>`
+              <div class="favorite-row">
 
-                    <img
-                      src="${escaparHTML(rutaMedia(p.img)||"./logo.png")}"
-                      alt=""
-                    >
+                <img
+                  src="${escaparHTML(rutaMedia(p.img)||"./logo.png")}"
+                  alt=""
+                >
 
-                    <div>
+                <div>
 
-                      <div class="favorite-row-name">
-                        ${escaparHTML(p.nombre)}
-                      </div>
-
-                      <div class="favorite-row-price">
-                        ${escaparHTML(precioFormateado(p.precio))}
-                      </div>
-
-                    </div>
-
-                    <button
-                      class="favorite-remove"
-                      type="button"
-                      data-remove="${escaparHTML(idProducto(p))}"
-                      aria-label="Quitar"
-                    >
-                      ×
-                    </button>
-
+                  <div class="favorite-row-name">
+                    ${escaparHTML(p.nombre)}
                   </div>
-                `
-              )
-              .join("")
-            :
-            `
-              <div class="favorites-empty">
-                Todavía no agregaste productos.
-                Tocá el corazón de cualquier producto
-                y aparecerá acá.
+
+                  <div class="favorite-row-price">
+                    ${escaparHTML(precioFormateado(p.precio))}
+                  </div>
+
+                </div>
+
+                <button
+                  class="favorite-remove"
+                  type="button"
+                  data-remove="${escaparHTML(idProducto(p))}"
+                  aria-label="Quitar"
+                >
+                  ×
+                </button>
+
               </div>
-            `;
+            `
+          )
+          .join("")
+          :
+          `
+            <div class="favorites-empty">
+              Todavía no agregaste productos.
+              Tocá el corazón de cualquier producto
+              y aparecerá acá.
+            </div>
+          `;
 
       $("favorites-list")
-        .querySelectorAll(
-          "[data-remove]"
-        )
-        .forEach(
-          b =>
-            b.addEventListener(
-              "click",
-              () =>
-                alternarFavorito(
-                  b.dataset.remove
-                )
-            )
-        );
+      .querySelectorAll(
+        "[data-remove]"
+      )
+      .forEach(
+        b=>
+          b.addEventListener(
+            "click",
+            ()=>
+              alternarFavorito(
+                b.dataset.remove
+              )
+          )
+      );
     }
 
     function abrirFavoritos(){
@@ -4959,31 +4213,31 @@
       renderizarFavoritos();
 
       $("favorites-overlay")
-        .classList
-        .add("abierto");
+      .classList
+      .add("abierto");
 
       $("favorites-overlay")
-        .setAttribute(
-          "aria-hidden",
-          "false"
-        );
+      .setAttribute(
+        "aria-hidden",
+        "false"
+      );
 
       document.body
-        .classList
-        .add("locked");
+      .classList
+      .add("locked");
     }
 
     function cerrarFavoritos(){
 
       $("favorites-overlay")
-        .classList
-        .remove("abierto");
+      .classList
+      .remove("abierto");
 
       $("favorites-overlay")
-        .setAttribute(
-          "aria-hidden",
-          "true"
-        );
+      .setAttribute(
+        "aria-hidden",
+        "true"
+      );
 
       if(
         !$("menu")
@@ -4994,30 +4248,28 @@
           .classList
           .contains("abierto")
       ){
-
         document.body
-          .classList
-          .remove("locked");
+        .classList
+        .remove("locked");
       }
     }
 
     function consultarFavoritos(){
 
-      const items =
+      const items=
         productosFavoritos();
 
-      if(
-        !items.length
-      )
+      if(!items.length){
         return;
+      }
 
-      const lineas =
+      const lineas=
         items.map(
-          (p,i) =>
+          (p,i)=>
             `${i+1}. ${p.nombre} — ${precioFormateado(p.precio)}`
         );
 
-      const m =
+      const m=
         `Hola DAI PY, quiero consultar/comprar estos productos:\n\n${lineas.join("\n")}\n\n¿Me confirman disponibilidad?`;
 
       window.open(
@@ -5027,86 +4279,307 @@
       );
     }
 
-    /* =========================================================
-       FRASES POPUP
-    ========================================================= */
+    function claseFrase(texto){
 
-    function aplicarFrasesModal(){
-
-      const activo =
-        TEXTOS.popup_activo !== false;
-
-      const lista =
-        (
-          Array.isArray(
-            TEXTOS.frases_popup
-          )
-          &&
-          TEXTOS.frases_popup.length
+      const n=
+        String(
+          texto||""
         )
-          ?
-          TEXTOS.frases_popup
-          :
-          DEFAULT_TEXTOS.frases_popup;
+        .trim()
+        .length;
 
-      const mezcla =
-        [...lista]
-          .sort(
-            () =>
-              Math.random() -
-              .5
-          );
+      if(n<=20){
+        return"corta";
+      }
 
-      [
-        "speech-one",
-        "speech-two"
-      ]
-      .forEach(
-        (id,i) => {
+      if(n<=34){
+        return"media";
+      }
 
-          const e =
-            $(id);
+      return"larga";
+    }
 
-          e.style.display =
-            activo
-              ? ""
-              : "none";
+    function tiempoLecturaFrase(texto){
 
-          e.textContent =
-            activo
-              ?
-              (
-                mezcla[i]
-                ||
-                mezcla[0]
-                ||
-                ""
-              )
-              :
-              "";
-        }
+      const n=
+        String(
+          texto||""
+        )
+        .trim()
+        .length;
+
+      return Math.max(
+        4600,
+        Math.min(
+          7600,
+          3400+n*90
+        )
       );
     }
 
-    /* =========================================================
-       FAVORITO EN MODAL
-    ========================================================= */
+    function barajarFrases(lista){
+
+      const a=[
+        ...lista
+      ];
+
+      for(
+        let i=a.length-1;
+        i>0;
+        i--
+      ){
+
+        const j=
+          Math.floor(
+            Math.random()*
+            (i+1)
+          );
+
+        [
+          a[i],
+          a[j]
+        ]=[
+          a[j],
+          a[i]
+        ];
+      }
+
+      return a;
+    }
+
+    function parpadearGlobo(){
+
+      const globo=
+        $("speech-bubble");
+
+      if(!globo){
+        return;
+      }
+
+      globo.classList.remove(
+        "parpadeo"
+      );
+
+      void globo.offsetWidth;
+
+      globo.classList.add(
+        "parpadeo"
+      );
+
+      setTimeout(
+        ()=>
+          globo.classList.remove(
+            "parpadeo"
+          ),
+        500
+      );
+    }
+
+    function mostrarFraseModal(
+      indice,
+      primera=false
+    ){
+
+      const globo=
+        $("speech-bubble");
+
+      const texto=
+        $("speech-text");
+
+      if(
+        !globo||
+        !texto||
+        !frasesRotacion.length
+      ){
+        return;
+      }
+
+      fraseIndice=
+        (
+          indice+
+          frasesRotacion.length
+        )
+        %
+        frasesRotacion.length;
+
+      const frase=
+        String(
+          frasesRotacion[
+            fraseIndice
+          ]||""
+        )
+        .trim();
+
+      const colocar=()=>{
+
+        texto.textContent=
+          frase;
+
+        texto.className=
+          `speech-text ${claseFrase(frase)}`;
+
+        globo.classList.add(
+          "visible"
+        );
+
+        if(!primera){
+          parpadearGlobo();
+        }
+      };
+
+      clearTimeout(
+        fraseTimer
+      );
+
+      clearTimeout(
+        fraseCambioTimer
+      );
+
+      if(primera){
+
+        colocar();
+
+      }
+      else{
+
+        globo.classList.add(
+          "cambiando"
+        );
+
+        fraseCambioTimer=
+          setTimeout(
+            ()=>{
+
+              colocar();
+
+              globo.classList.remove(
+                "cambiando"
+              );
+
+              fraseCambioTimer=null;
+
+            },
+            120
+          );
+      }
+
+      fraseTimer=
+        setTimeout(
+          ()=>
+            mostrarFraseModal(
+              fraseIndice+1,
+              false
+            ),
+          tiempoLecturaFrase(
+            frase
+          )
+        );
+    }
+
+    function aplicarFrasesModal(){
+
+      const globo=
+        $("speech-bubble");
+
+      clearTimeout(
+        fraseTimer
+      );
+
+      clearTimeout(
+        fraseCambioTimer
+      );
+
+      fraseTimer=null;
+      fraseCambioTimer=null;
+
+      if(!globo){
+        return;
+      }
+
+      const activo=
+        TEXTOS.popup_activo!==false;
+
+      const lista=
+        Array.isArray(
+          TEXTOS.frases_popup
+        )
+        &&
+        TEXTOS.frases_popup.length
+          ?TEXTOS.frases_popup
+          :DEFAULT_TEXTOS.frases_popup;
+
+      frasesRotacion=
+        barajarFrases(
+          lista
+          .map(
+            v=>
+              String(v||"")
+              .trim()
+          )
+          .filter(Boolean)
+        );
+
+      globo.style.display=
+        activo&&frasesRotacion.length
+          ?""
+          :"none";
+
+      globo.classList.remove(
+        "visible",
+        "cambiando",
+        "parpadeo"
+      );
+
+      if(
+        activo&&
+        frasesRotacion.length
+      ){
+        mostrarFraseModal(
+          0,
+          true
+        );
+      }
+    }
+
+    function detenerFrasesModal(){
+
+      clearTimeout(
+        fraseTimer
+      );
+
+      clearTimeout(
+        fraseCambioTimer
+      );
+
+      fraseTimer=null;
+      fraseCambioTimer=null;
+
+      const globo=
+        $("speech-bubble");
+
+      if(globo){
+        globo.classList.remove(
+          "visible",
+          "cambiando",
+          "parpadeo"
+        );
+      }
+    }
 
     function actualizarBotonModalFavorito(){
 
-      if(
-        !productoModal
-      )
+      if(!productoModal){
         return;
+      }
 
-      const activo =
+      const activo=
         favoritos.has(
           idProducto(
             productoModal
           )
         );
 
-      const b =
+      const b=
         $("modal-favorite");
 
       b.classList.toggle(
@@ -5114,97 +4587,92 @@
         activo
       );
 
-      b.textContent =
+      b.textContent=
         activo
-          ?
-          "♥ Guardado en favoritos"
-          :
-          "♡ Agregar a favoritos";
+          ?"♥ Guardado en favoritos"
+          :"♡ Agregar a favoritos";
     }
-
-    /* =========================================================
-       ABRIR PRODUCTO
-    ========================================================= */
 
     function abrirProducto(p){
 
-      productoModal = p;
+      productoModal=p;
 
       $("modal-product-image")
-        .src =
-          rutaMedia(p.img)
-          ||
-          "./logo.png";
+      .src=
+        rutaMedia(p.img)
+        ||
+        "./logo.png";
 
       $("modal-product-image")
-        .alt =
-          p.nombre;
+      .alt=
+        p.nombre;
 
       $("modal-product-name")
-        .textContent =
-          p.nombre;
+      .textContent=
+        p.nombre;
 
       $("modal-product-price")
-        .textContent =
-          precioFormateado(
-            p.precio
-          );
+      .textContent=
+        precioFormateado(
+          p.precio
+        );
 
       $("modal-product-description")
-        .textContent =
-          p.desc || "";
+      .textContent=
+        p.desc||"";
 
       $("modal-buy-button")
-        .textContent =
-          TEXTOS.boton_comprar;
+      .textContent=
+        TEXTOS.boton_comprar;
 
       $("modal-buy-button")
-        .href =
-          whatsappURL(
-            mensajeCompra(p)
-          );
+      .href=
+        whatsappURL(
+          mensajeCompra(p)
+        );
 
       $("modal-image-frame")
-        .classList
-        .remove("zoom");
+      .classList
+      .remove("zoom");
 
       actualizarBotonModalFavorito();
 
       aplicarFrasesModal();
 
       $("product-modal")
-        .classList
-        .add("abierto");
+      .classList
+      .add("abierto");
 
       $("product-modal")
-        .setAttribute(
-          "aria-hidden",
-          "false"
-        );
+      .setAttribute(
+        "aria-hidden",
+        "false"
+      );
 
       document.body
-        .classList
-        .add("locked");
+      .classList
+      .add("locked");
     }
 
     function cerrarProducto(){
 
-      $("product-modal")
-        .classList
-        .remove("abierto");
+      detenerFrasesModal();
 
       $("product-modal")
-        .setAttribute(
-          "aria-hidden",
-          "true"
-        );
+      .classList
+      .remove("abierto");
+
+      $("product-modal")
+      .setAttribute(
+        "aria-hidden",
+        "true"
+      );
 
       $("modal-image-frame")
-        .classList
-        .remove("zoom");
+      .classList
+      .remove("zoom");
 
-      productoModal =
-        null;
+      productoModal=null;
 
       if(
         !$("menu")
@@ -5215,256 +4683,242 @@
           .classList
           .contains("abierto")
       ){
-
         document.body
-          .classList
-          .remove("locked");
+        .classList
+        .remove("locked");
       }
     }
 
-    /* =========================================================
-       EVENTOS
-    ========================================================= */
-
     $("open-menu")
-      .addEventListener(
-        "click",
-        abrirMenu
-      );
+    .addEventListener(
+      "click",
+      abrirMenu
+    );
 
     $("close-menu")
-      .addEventListener(
-        "click",
-        cerrarMenu
-      );
+    .addEventListener(
+      "click",
+      cerrarMenu
+    );
 
     $("menu")
-      .addEventListener(
-        "click",
-        e => {
+    .addEventListener(
+      "click",
+      e=>{
 
-          if(
-            e.target === $("menu")
-          ){
-
-            cerrarMenu();
-          }
+        if(
+          e.target===$("menu")
+        ){
+          cerrarMenu();
         }
-      );
+      }
+    );
 
     document
-      .querySelectorAll(
-        ".menu-links a:not(#menu-favorites)"
-      )
-      .forEach(
-        a =>
-          a.addEventListener(
-            "click",
-            cerrarMenu
-          )
-      );
+    .querySelectorAll(
+      ".menu-links a:not(#menu-favorites)"
+    )
+    .forEach(
+      a=>
+        a.addEventListener(
+          "click",
+          cerrarMenu
+        )
+    );
 
     $("menu-favorites")
-      .addEventListener(
-        "click",
-        e => {
+    .addEventListener(
+      "click",
+      e=>{
 
-          e.preventDefault();
+        e.preventDefault();
 
-          cerrarMenu();
+        cerrarMenu();
 
-          abrirFavoritos();
-        }
-      );
+        abrirFavoritos();
+      }
+    );
 
     $("previous-banner")
-      .addEventListener(
-        "click",
-        () => {
+    .addEventListener(
+      "click",
+      ()=>{
 
-          actualizarBanner(
-            bannerActual - 1
-          );
+        actualizarBanner(
+          bannerActual-1
+        );
 
-          iniciarCarrusel();
-        }
-      );
+        iniciarCarrusel();
+      }
+    );
 
     $("next-banner")
-      .addEventListener(
-        "click",
-        () => {
+    .addEventListener(
+      "click",
+      ()=>{
 
-          actualizarBanner(
-            bannerActual + 1
-          );
+        actualizarBanner(
+          bannerActual+1
+        );
 
-          iniciarCarrusel();
-        }
-      );
+        iniciarCarrusel();
+      }
+    );
 
     let searchTimer;
 
     $("product-search")
-      .addEventListener(
-        "input",
-        e => {
+    .addEventListener(
+      "input",
+      e=>{
 
-          clearTimeout(
-            searchTimer
+        clearTimeout(
+          searchTimer
+        );
+
+        searchTimer=
+          setTimeout(
+            ()=>{
+
+              consulta=
+                e.target.value
+                .trim();
+
+              actualizarVisibles();
+
+            },
+            100
           );
-
-          searchTimer =
-            setTimeout(
-              () => {
-
-                consulta =
-                  e.target
-                    .value
-                    .trim();
-
-                actualizarVisibles();
-              },
-              100
-            );
-        }
-      );
+      }
+    );
 
     $("search-clear")
-      .addEventListener(
-        "click",
-        () => {
+    .addEventListener(
+      "click",
+      ()=>{
 
-          $("product-search")
-            .value =
-              "";
+        $("product-search")
+        .value="";
 
-          consulta =
-            "";
+        consulta="";
 
-          actualizarVisibles();
+        actualizarVisibles();
 
-          $("product-search")
-            .focus();
-        }
-      );
+        $("product-search")
+        .focus();
+      }
+    );
 
     $("favorites-fab")
-      .addEventListener(
-        "click",
-        abrirFavoritos
-      );
+    .addEventListener(
+      "click",
+      abrirFavoritos
+    );
 
     $("favorites-close")
-      .addEventListener(
-        "click",
-        cerrarFavoritos
-      );
+    .addEventListener(
+      "click",
+      cerrarFavoritos
+    );
 
     $("favorites-overlay")
-      .addEventListener(
-        "click",
-        e => {
-
-          if(
-            e.target ===
-            $("favorites-overlay")
-          ){
-
-            cerrarFavoritos();
-          }
-        }
-      );
-
-    $("favorites-buy")
-      .addEventListener(
-        "click",
-        consultarFavoritos
-      );
-
-    $("modal-close")
-      .addEventListener(
-        "click",
-        cerrarProducto
-      );
-
-    $("product-modal")
-      .addEventListener(
-        "click",
-        e => {
-
-          if(
-            e.target ===
-            $("product-modal")
-          ){
-
-            cerrarProducto();
-          }
-        }
-      );
-
-    $("modal-favorite")
-      .addEventListener(
-        "click",
-        () => {
-
-          if(
-            productoModal
-          ){
-
-            alternarFavorito(
-              idProducto(
-                productoModal
-              )
-            );
-          }
-        }
-      );
-
-    $("modal-image-frame")
-      .addEventListener(
-        "click",
-        () => {
-
-          $("modal-image-frame")
-            .classList
-            .toggle("zoom");
-        }
-      );
-
-    $("modal-image-frame")
-      .addEventListener(
-        "keydown",
-        e => {
-
-          if(
-            e.key === "Enter"
-            ||
-            e.key === " "
-          ){
-
-            e.preventDefault();
-
-            $("modal-image-frame")
-              .classList
-              .toggle("zoom");
-          }
-        }
-      );
-
-    document.addEventListener(
-      "keydown",
-      e => {
+    .addEventListener(
+      "click",
+      e=>{
 
         if(
-          e.key !== "Escape"
-        )
+          e.target===
+          $("favorites-overlay")
+        ){
+          cerrarFavoritos();
+        }
+      }
+    );
+
+    $("favorites-buy")
+    .addEventListener(
+      "click",
+      consultarFavoritos
+    );
+
+    $("modal-close")
+    .addEventListener(
+      "click",
+      cerrarProducto
+    );
+
+    $("product-modal")
+    .addEventListener(
+      "click",
+      e=>{
+
+        if(
+          e.target===
+          $("product-modal")
+        ){
+          cerrarProducto();
+        }
+      }
+    );
+
+    $("modal-favorite")
+    .addEventListener(
+      "click",
+      ()=>{
+
+        if(productoModal){
+
+          alternarFavorito(
+            idProducto(
+              productoModal
+            )
+          );
+        }
+      }
+    );
+
+    $("modal-image-frame")
+    .addEventListener(
+      "click",
+      ()=>
+        $("modal-image-frame")
+        .classList
+        .toggle("zoom")
+    );
+
+    $("modal-image-frame")
+    .addEventListener(
+      "keydown",
+      e=>{
+
+        if(
+          e.key==="Enter"
+          ||
+          e.key===" "
+        ){
+
+          e.preventDefault();
+
+          $("modal-image-frame")
+          .classList
+          .toggle("zoom");
+        }
+      }
+    );
+
+    document
+    .addEventListener(
+      "keydown",
+      e=>{
+
+        if(e.key!=="Escape"){
           return;
+        }
 
         if(
           $("product-modal")
-            .classList
-            .contains("abierto")
+          .classList
+          .contains("abierto")
         ){
 
           cerrarProducto();
@@ -5472,8 +4926,8 @@
         }
         else if(
           $("favorites-overlay")
-            .classList
-            .contains("abierto")
+          .classList
+          .contains("abierto")
         ){
 
           cerrarFavoritos();
@@ -5482,31 +4936,45 @@
         else{
 
           cerrarMenu();
+
         }
       }
     );
 
-    window.addEventListener(
+    let resizeTimer;
+
+    window
+    .addEventListener(
       "resize",
-      () => {
+      ()=>{
 
-        const activo =
-          document.querySelector(
-            ".hero-slide.activo"
+        clearTimeout(
+          resizeTimer
+        );
+
+        resizeTimer=
+          setTimeout(
+            ()=>{
+
+              const activo=
+                document
+                .querySelector(
+                  ".hero-slide.activo"
+                );
+
+              if(activo){
+                actualizarRatioHero(
+                  activo
+                );
+              }
+
+              ajustarFilasDescripcion();
+
+            },
+            120
           );
-
-        if(activo){
-
-          actualizarRatioHero(
-            activo
-          );
-        }
       }
     );
-
-    /* =========================================================
-       INICIO
-    ========================================================= */
 
     async function iniciar(){
 
@@ -5523,6 +4991,7 @@
     }
 
     iniciar();
+
   </script>
 
 </body>
