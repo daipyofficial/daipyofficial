@@ -5,8 +5,8 @@
   "menu_productos": "Productos",
   "menu_contacto": "Contacto",
   "hero_etiqueta": "dai",
-  "productos_etiqueta": "Tienda",
-  "productos_titulo": "Productos",
+  "productos_etiqueta": "Disfrutá",
+  "productos_titulo": "NUESTRO CATÁLOGO",
   "productos_texto": "Elegí tu producto y realizá tu pedido directamente por WhatsApp.",
   "editorial_etiqueta": "dai",
   "editorial_texto": "Las cosas que elegimos llevar con nosotros también cuentan una historia.",
@@ -29,7 +29,6 @@
   "tamano_titulo_productos_movil": 30,
   "tamano_texto_productos_movil": 11,
   "tamano_editorial_movil": 30,
-  "alto_banner_movil": 58,
   "espacio_banner_productos_movil": 30,
   "max_lineas_texto_productos_movil": 2,
   "popup_activo": true,
@@ -49,5 +48,6 @@
     "Una compra responsable :)",
     "Qué casualidad, es de tu estilo.",
     "Autoregalo desbloqueado"
-  ]
+  ],
+  "alto_banner_movil": 58
 }
