@@ -295,6 +295,16 @@
   ],
   "banners": [
     {
+      "nombreArchivo": "70a30effc4a9.md",
+      "datos": {
+        "titulo": "",
+        "subtitulo": "",
+        "imagen": "/daipyofficial/public/uploads/Three Stages to Colour Grading Photography YouTube Thumbnail - 1-1.png",
+        "activo": true,
+        "orden": 1
+      }
+    },
+    {
       "nombreArchivo": "e0eba96260cd.md",
       "datos": {
         "titulo": "",
