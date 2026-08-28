@@ -51,8 +51,8 @@
       "datos": {
         "nombre": "Snoopy Umbrella",
         "img": "/daipyofficial/public/uploads/pasted-image-1787220131733.png",
-        "precio": 59.0,
-        "desc": null,
+        "precio": "59",
+        "desc": "Solo quedan 2 disponibles",
         "categoria": "Accesorios",
         "tipo": "Paraguas",
         "orden": 1
