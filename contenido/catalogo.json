@@ -192,8 +192,8 @@
       "datos": {
         "nombre": "Llavero Music Vintage",
         "img": "/daipyofficial/public/uploads/pasted-image-1787220197301.png",
-        "precio": 29.0,
-        "desc": null,
+        "precio": "29",
+        "desc": "AGOTADO",
         "categoria": "Llaveros",
         "tipo": "Música",
         "orden": 1
