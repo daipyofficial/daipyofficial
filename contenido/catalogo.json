@@ -252,8 +252,8 @@
       "datos": {
         "nombre": "Llavero Coffee Italy",
         "img": "/daipyofficial/public/uploads/IMG_7338.png",
-        "precio": 29.0,
-        "desc": "Disponible en Negro y Plata.",
+        "precio": "29",
+        "desc": "AGOTADO",
         "categoria": "Llaveros",
         "tipo": "Café",
         "orden": 2
