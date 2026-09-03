@@ -156,8 +156,8 @@
       "datos": {
         "nombre": "Llavero Doc",
         "img": "/daipyofficial/public/uploads/IMG_7478.jpeg",
-        "precio": 25.0,
-        "desc": null,
+        "precio": "25",
+        "desc": "AGOTADO",
         "categoria": "Llaveros",
         "tipo": "Profesiones",
         "orden": 2
