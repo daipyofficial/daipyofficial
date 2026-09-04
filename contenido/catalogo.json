@@ -108,8 +108,8 @@
       "datos": {
         "nombre": "Llavero Fitness fucsia",
         "img": "/daipyofficial/public/uploads/IMG_7494.jpeg",
-        "precio": 34.0,
-        "desc": null,
+        "precio": "34",
+        "desc": "AGOTADO",
         "categoria": "Llaveros",
         "tipo": "Fitness",
         "orden": 1
@@ -264,8 +264,8 @@
       "datos": {
         "nombre": "Llavero Fitness white",
         "img": "/daipyofficial/public/uploads/IMG_7341.jpeg",
-        "precio": 34.0,
-        "desc": null,
+        "precio": "34",
+        "desc": "AGOTADO",
         "categoria": "Llaveros",
         "tipo": "Fitness",
         "orden": 2
