@@ -30,8 +30,8 @@
       "datos": {
         "nombre": "Brazalete Snoopy",
         "img": "/daipyofficial/public/uploads/IMG_7235.png",
-        "precio": 90.0,
-        "desc": null,
+        "precio": "90",
+        "desc": "AGOTADO",
         "categoria": "Joyería",
         "tipo": "Brazaletes",
         "orden": 1
