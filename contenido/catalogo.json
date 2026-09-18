@@ -236,6 +236,18 @@
       }
     },
     {
+      "nombreArchivo": "aa2b24b4bd50.md",
+      "datos": {
+        "nombre": "Cordón para celular",
+        "img": "/daipyofficial/public/uploads/IMG_8130.jpeg",
+        "precio": "30.000",
+        "desc": "",
+        "categoria": "Otros",
+        "tipo": "General",
+        "orden": 1
+      }
+    },
+    {
       "nombreArchivo": "b0530c9289b6.md",
       "datos": {
         "nombre": "Llavero Music Vintage",
