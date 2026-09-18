@@ -164,6 +164,18 @@
       }
     },
     {
+      "nombreArchivo": "9080b5c2a060.md",
+      "datos": {
+        "nombre": "Llavero Coffee lovers",
+        "img": "/daipyofficial/public/uploads/IMG_8159.jpeg",
+        "precio": "55.000",
+        "desc": "",
+        "categoria": "Otros",
+        "tipo": "General",
+        "orden": 1
+      }
+    },
+    {
       "nombreArchivo": "95bb0b0d9b80.md",
       "datos": {
         "nombre": "Llavero Coffe Bear",
