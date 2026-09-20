@@ -241,7 +241,7 @@
         "nombre": "Cuadernito Snoopy",
         "img": "/daipyofficial/public/uploads/IMG_7555.jpeg",
         "precio": "32",
-        "desc": "AGOTADO",
+        "desc": "",
         "categoria": "Papelería",
         "tipo": "Cuadernos",
         "orden": 1
