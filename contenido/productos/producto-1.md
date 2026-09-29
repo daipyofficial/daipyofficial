@@ -1,8 +1,8 @@
 ---
 nombre: Cuaderno Snoopy
 img: /daipyofficial/public/uploads/pasted-image-1787220348125.png
-precio: AGOTADO
-desc:
+precio: '95.000'
+desc: ''
 categoria: Papelería
 tipo: Cuadernos
 orden: 2
